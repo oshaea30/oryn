@@ -88,3 +88,26 @@ crashlytics-build.properties
 # DevAgentSettings
 /[Aa]ssets/[Rr]esources/DevAgentSettings.asset
 /[Aa]ssets/[Rr]esources/DevAgentSettings.asset.meta
+
+# Local generation jobs and credentials (never ship in the Quest app).
+/.oryn-generation/
+/.oryn-usage/
+/Orchestrator/.env
+__pycache__/
+
+# Machine-local files, crash dumps, credentials, and signing material.
+.DS_Store
+/.utmp/
+/mono_crash.*
+.env
+.env.*
+!.env.example
+*.keystore
+*.jks
+*.p12
+*.pfx
+*.key
+*.pem
+*.sqlite3
+*.sqlite3-shm
+*.sqlite3-wal

@@ -1,0 +1,37 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ORYN / Drone structure</title>
+<style>
+:root{color-scheme:dark;font:16px system-ui;background:#10171e;color:#e8f0f5}body{max-width:1150px;margin:28px auto;padding:0 20px}h1{font-size:30px;margin:10px 0}p{color:#b1c2cf;line-height:1.5}.tag{color:#6fe3bd;letter-spacing:2px;font-size:12px}.controls{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin:20px 0}select,button{font:inherit;padding:9px;background:#243542;color:inherit;border:1px solid #506575;border-radius:6px}label{display:flex;align-items:center;gap:8px}input{accent-color:#6fe3bd}canvas{display:block;width:100%;height:580px;background:#17232d;border:1px solid #304351;border-radius:12px;touch-action:none;cursor:grab}#detail{min-height:24px;font-size:14px}.small{font-size:13px}@media(max-width:600px){canvas{height:430px}h1{font-size:24px}}
+</style></head><body><div class="tag">ORYN / LOCAL STRUCTURE INSPECTION</div><h1>One mesh. Many disconnected surfaces.</h1><p id="summary"></p>
+<div class="controls"><label>Inspect <select id="part"><option value="-1">All islands</option></select></label><label><input id="isolate" type="checkbox"> Isolate selected</label><label>Explode <input id="explode" type="range" min="0" max="1" step="0.01" value="0"></label><button id="reset">Reset view</button></div>
+<canvas id="view" aria-label="Rotatable projected drone mesh with selectable disconnected islands"></canvas><p id="detail" role="status"></p><p class="small">Drag to rotate. Color distinguishes surface islands, not confirmed mechanical parts. This diagnostic preview does not change the Quest app or the original model.</p>
+<script>
+const data=/*__ISLAND_DATA__*/null;
+const canvas=document.querySelector('#view'),ctx=canvas.getContext('2d'),select=document.querySelector('#part'),isolate=document.querySelector('#isolate'),explode=document.querySelector('#explode');
+if(!data){document.querySelector('#summary').textContent='Run mesh_islands.py to populate this preview.';}else{
+let yaw=.7,pitch=.65,drag=null;
+const center=data.bounds.center,size=Math.max(...data.bounds.size),islandOfFace=[];
+data.islands.forEach((p,i)=>{const o=document.createElement('option');o.value=i;o.textContent=p.id+' · '+p.triangles+' triangles';select.append(o);p.source_face_indices.forEach(f=>islandOfFace[f]=i);});
+document.querySelector('#summary').textContent=data.islands.length+' topology islands · '+data.faces.length.toLocaleString()+' triangles preserved · semantic identities unassigned';
+function draw(){
+ const w=canvas.clientWidth,h=canvas.clientHeight,dpr=devicePixelRatio||1;canvas.width=w*dpr;canvas.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,w,h);
+ const selected=+select.value,solo=isolate.checked&&selected>=0,box=solo?data.islands[selected].bounds_local:data.bounds,origin=box.center,amount=solo?0:+explode.value,scale=Math.min(w,h)*.65/(Math.max(...box.size,1e-6)*(1+amount*.7)),cy=Math.cos(yaw),sy=Math.sin(yaw),cp=Math.cos(pitch),sp=Math.sin(pitch);
+ const turn=p=>{const x=p[0]*cy+p[2]*sy,z=-p[0]*sy+p[2]*cy;return [x,p[1]*cp-z*sp,p[1]*sp+z*cp];};
+ const transformed=data.islands.map(p=>{const move=p.bounds_local.center.map((v,a)=>(v-center[a])*amount);return {move,color:'hsl('+((+p.id.slice(-3)*137.508)%360)+' 48% 62%)'};});
+ const rendered=[];
+ for(let f=0;f<data.faces.length;f++){
+  const island=islandOfFace[f];if(isolate.checked&&selected>=0&&island!==selected)continue;
+  const vs=data.faces[f].map(index=>turn(data.positions[index].map((v,a)=>v-origin[a]+transformed[island].move[a])));
+  const a=vs[1].map((v,k)=>v-vs[0][k]),b=vs[2].map((v,k)=>v-vs[0][k]);const n=[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]];const norm=Math.hypot(...n)||1;
+  const light=.48+.52*Math.abs((n[0]*.3+n[1]*.5+n[2]*.8)/norm);
+  rendered.push({vs,island,z:vs.reduce((s,p)=>s+p[2],0)/3,light});
+ }
+ rendered.sort((a,b)=>a.z-b.z);
+ for(const f of rendered){ctx.beginPath();f.vs.forEach((p,i)=>{const x=w/2+p[0]*scale,y=h/2-p[1]*scale;i?ctx.lineTo(x,y):ctx.moveTo(x,y);});ctx.closePath();const muted=selected>=0&&selected!==f.island;ctx.fillStyle=muted?'#39434d':transformed[f.island].color;ctx.fill();ctx.fillStyle='rgba(0,0,0,'+(1-f.light)+')';ctx.fill();}
+ const p=data.islands[selected];document.querySelector('#detail').textContent=p?p.id+' · '+p.triangles+' triangles · '+p.vertices+' vertices · identity not yet assigned':'Assembled geometry preserved. Select an island to highlight or isolate it.';
+}
+canvas.addEventListener('pointerdown',e=>{drag=[e.clientX,e.clientY];canvas.setPointerCapture(e.pointerId);});
+canvas.addEventListener('pointermove',e=>{if(!drag)return;yaw+=(e.clientX-drag[0])*.008;pitch=Math.max(-1.5,Math.min(1.5,pitch+(e.clientY-drag[1])*.008));drag=[e.clientX,e.clientY];draw();});
+canvas.addEventListener('pointerup',()=>drag=null);canvas.addEventListener('pointercancel',()=>drag=null);
+select.onchange=isolate.onchange=explode.oninput=draw;document.querySelector('#reset').onclick=()=>{yaw=.7;pitch=.65;select.value=-1;isolate.checked=false;explode.value=0;draw();};new ResizeObserver(draw).observe(canvas);draw();
+}
+</script></body></html>

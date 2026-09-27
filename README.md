@@ -1,52 +1,78 @@
-![Starter Samples Banner](./Documentation/Medias/banner.png "StarterSamples")
+# ORYN
 
-# Unity Starter Samples
-The starter samples you will find here are to help you navigate and understand our APIs with more flexibility. We encourage you to look into them, test them out and inspire yourself on how the APIs can be used in your own project.
+An experimental spatial workspace for generating, manipulating, and investigating
+3D objects on Meta Quest. Geometry generation is separate from ORYN's persistent
+object knowledge and validated runtime actions.
 
-This project was built using the [Unity engine](https://unity.com/download).
+## Current checkpoint
 
-## Getting The Code
-Clone this repo using the "Code" button above, or this command:
+- Unity/Quest passthrough workspace with controller and hand manipulation.
+- Runtime GLB import, mesh-island inspection, part selection, isolation, and
+  prayer-to-spread assembly explosion/reassembly.
+- Persistent part labels with provenance: user annotations remain unverified,
+  not automatically recognized mechanical components.
+- Local Meshy generation adapter with separate geometry, optional texturing,
+  inspection, and confirmed USB delivery steps.
+- Text-command lab with offline test interpretation, provider adapters, grounded
+  record lookup, explicit action confirmation, and headset execution receipts.
+- Persistent local command spending reservations, expiring quotes, bounded
+  requests, and no automatic paid retries. See the spending guide for scope and
+  limits; this is not an account-wide provider billing cap.
+
+This is a trusted-local-user prototype, not a production multi-user service.
+Schematic retrieval, automatic component understanding, voice, and production
+authentication are not implemented. Live cognitive-provider evaluation remains
+pending; mocked tests do not establish provider compatibility or answer quality.
+
+## Development
+
+Open this repository in Unity **6000.6.3f1** with Android build support. Package
+versions are recorded in `Packages/manifest.json` and `Packages/packages-lock.json`.
+The active build scene is `Assets/Oryn/Scenes/MilestoneThreeWorkspace.unity`.
+Meta XR Core, OpenXR, and glTFast remain required dependencies.
+
+The local services use Python 3 and its standard library. From the repository root,
+run either service in its own terminal:
+
 ```sh
-git clone https://github.com/oculus-samples/Unity-StarterSamples.git
+python3 Orchestrator/app.py          # Generation lab: http://127.0.0.1:8765/
+python3 Orchestrator/command_app.py  # Command lab: http://127.0.0.1:8767/
 ```
 
-## How to run the project in Unity
-1. Make sure you're using  *Unity 6000.0.66f2* or newer.
-2. In the Project window, navigate to [Assets/StarterSamples/Usage](Assets/StarterSamples/Usage).
-3. Click on individual scenes.
-4. Click **Play** button to explore scene functionality in Unity.
+Quest delivery and commands require Android Debug Bridge (ADB), an authorized USB
+connection, and ORYN installed/open. See the milestone guides for build and device
+setup. Existing local model caches and generated jobs are not part of this repo;
+`RuntimeAssets/Avocado.glb` is the included no-generation import fixture.
 
-## How to test on device
-1. Navigate to **Meta** > **Samples** > **Build Starter Scene** to build an APK that will launch the **Starter Scene**.
-    <div style="margin-left: 4.5em;"><img src="./Documentation/Medias/buildsamples.png" width="300"></div>
-    * In this apk you will be able to cycle through the different sample scenes to test them out on device.
-2. Navigate to the `Unity-StarterSamples` folder and copy the `StartScene.apk` to your device using [Meta Quest Developer Hub](https://developers.meta.com/horizon/documentation/unity/ts-mqdh-deploy-build/).
+Run the local Python suite without paid provider calls:
 
-## SDK Dependencies
-All Meta SDKs can be found in the [Unity Asset Store](https://assetstore.unity.com/publishers/25353).
-This project depends on SDKs defined in the [Packages/manifest.json](./Packages/manifest.json):
-* [Meta XR Core SDK](https://assetstore.unity.com/packages/tools/integration/meta-xr-core-sdk-269169)
+```sh
+python3 -m unittest discover -s Orchestrator -p 'test_*.py' -v
+node --check Orchestrator/command.js
+```
 
-## Integrate Samples to your own project
-1. Make sure your project uses the same SDK version
-2. Move the samples to your project
-   <details>
-      <summary><b>Copy Samples directory</b></summary>
+Configure API keys only through the local service's in-memory settings. Do not
+commit credentials. Generated jobs, usage databases, Unity caches, builds, crash
+dumps, and local environment files are excluded from version control. Restarting
+a service clears its in-memory key; it does not clear persistent spending records.
 
-      + Copy [Assets/StarterSamples](./Assets/StarterSamples) directory to your own project
-    </details>
-    <details>
-      <summary><b>Create UnityPackage and Import it</b></summary>
+## Guides
 
-      1. Open Unity-StarterSamples project in Unity
-      2. Right-click on [Assets/StarterSamples](./Assets/StarterSamples) and select <i>Export Package...</i>
-      3. Save package in an easy location to retrieve
-      4. Open your own project (where you want the samples to be added)
-      5. Click on <i>Assets->Import Package->Custom Package...</i> from the menu bar
-      6. Find the package we saved in step 3 and click <i>Open</i>
-    </details>
+- [Quest setup](ORYN_MILESTONE_1.md) and [local preview](ORYN_LOCAL_PREVIEW.md)
+- [Workspace and controls](ORYN_WORKSPACE.md)
+- [Runtime model loading](ORYN_RUNTIME_LOADING.md) and [generation](ORYN_GENERATION.md)
+- [Assembly interactions](ORYN_ASSEMBLIES.md) and [object knowledge](ORYN_KNOWLEDGE.md)
+- [Text commands](ORYN_COMMANDS.md) and [spending guardrails](ORYN_SPENDING.md)
 
-## License
+## Starter provenance
 
-The majority of Starter Samples is licensed under the [MIT LICENSE](./LICENSE); however, files from [Audio360](./Assets/StarterSamples/Core/Video/Plugins/Android/Audio360) are licensed under their respective licensing terms.
+ORYN began from [Meta Unity Starter Samples](https://github.com/oculus-samples/Unity-StarterSamples).
+This repository preserves the upstream history and starter assets as a checkpoint;
+ORYN's active scene and code live under `Assets/Oryn`, not the starter demo scenes.
+Removing unused starter assets is a separate build-tested cleanup. The local folder
+name may still be `Unity-StarterSamples`; it does not determine the app's identity.
+
+The original [upstream README](UPSTREAM_README.md), [Meta MIT license](LICENSE),
+and component-specific notices are retained. Audio360 has its own terms under
+`Assets/StarterSamples/Core/Video/Plugins/Android/Audio360`. The included avocado
+fixture has [separate CC0 attribution](RuntimeAssets/README.md).

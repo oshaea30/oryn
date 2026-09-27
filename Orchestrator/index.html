@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ORYN — Generation Lab</title>
+<style>
+:root{color-scheme:dark;font:16px system-ui,sans-serif;background:#10171e;color:#e8f0f5}body{max-width:980px;margin:40px auto;padding:0 24px}h1{font-size:40px;margin-bottom:8px;letter-spacing:-1px}p{line-height:1.6;color:#b1c2cf}.tag{font-size:12px;letter-spacing:2px;color:#6fe3bd}section,article{padding:24px;background:#19252f;border:1px solid #304351;border-radius:14px;margin:22px 0}h2{font-size:20px;margin-top:0}textarea,input[type=password],select{box-sizing:border-box;width:100%;background:#10171e;border:1px solid #506575;border-radius:8px;padding:14px;color:white;font:inherit}textarea{height:135px;resize:vertical}button{background:#6fe3bd;color:#10231d;border:0;border-radius:8px;padding:12px 18px;font-weight:700;cursor:pointer;margin:12px 8px 0 0}button.secondary{background:#314757;color:white}button:disabled{opacity:.4;cursor:default}label{display:block;margin:16px 0;line-height:1.5}.small{font-size:13px;color:#b1c2cf}.error{color:#ffb5a7;white-space:pre-wrap}progress{width:100%;accent-color:#6fe3bd;height:8px}a{color:#6fe3bd}summary{cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px;max-height:340px;overflow:auto;background:#10171e;padding:14px;border-radius:8px}#notice{min-height:24px}.status{color:#6fe3bd}article h3{margin-top:0;overflow-wrap:anywhere}#connection{font-size:14px}.stages{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0}.stages span{padding:10px 14px;border:1px solid #405461;border-radius:8px;font-size:13px}.stages span:first-child{border-color:#6fe3bd}.variant{border-top:1px solid #304351;margin-top:24px;padding-top:16px}.metrics{display:flex;flex-wrap:wrap;gap:12px}.metrics span{background:#10171e;padding:10px;border-radius:8px;font-size:14px}input[type=checkbox]{accent-color:#6fe3bd}#balanceResult{display:inline}details{margin-top:8px}button:focus-visible,summary:focus-visible{outline:2px solid white;outline-offset:4px}@media(max-width:600px){body{padding:0 14px;margin:24px auto}h1{font-size:30px}section,article{padding:18px}}
+</style></head><body>
+<div class="tag">ORYN / GENERATION LAB</div><h1>Geometry first. Understand what arrives.</h1>
+<p>A staged workspace for structural experiments. The provider makes geometry; ORYN owns the object model and interactions.</p>
+<div class="stages"><span>01 · Generate geometry</span><span>02 · Inspect structure</span><span>03 · Texture, optional</span><span>04 · Send to Quest</span></div>
+<div id="connection" class="status" role="status">Connecting to local service…</div>
+<section><details id="setup"><summary>Connect your Meshy API key</summary><p>Use a new key if you previously shared one in chat. It stays in this Mac service’s memory, never in the headset or saved job files. Restarting clears it.</p>
+<input type="password" id="key" autocomplete="off" placeholder="Paste a new API key locally" aria-label="Meshy API key"><button id="saveKey">Use key for this session</button>
+<p class="small"><a href="https://www.meshy.ai/settings/api" target="_blank" rel="noreferrer">Manage Meshy API keys</a> · Only use non-sensitive test prompts.</p></details>
+<button class="secondary" id="balance" disabled>Check API balance — no generation</button><p id="balanceResult" class="small" role="status"> Balance not checked.</p></section>
+<section><h2>01 / Generate geometry</h2><label for="profile">Experiment profile</label><select id="profile"><option value="structure">Structure Test · T2 geometry · 5 credits</option><option value="quality">Quality Test · 7.1 geometry · 20 credits</option></select><p id="profileInfo" class="small"></p>
+<label for="prompt">Describe the object</label><textarea id="prompt" maxlength="800">A realistic compact quadcopter drone with a central chassis, removable rectangular battery, four distinct arms, four exposed electric motors and four separate propellers. Each major mechanical component should be physically distinct and clearly separable. Clean functional industrial design, no background, no display stand.</textarea>
+<label><input type="checkbox" id="approve"> <span id="approvalText">I approve one geometry task, estimated at 5 credits.</span></label>
+<p class="small">No automatic texturing, delivery, or paid retries. Estimates checked September 26, 2026; <a href="https://docs.meshy.ai/en/api/pricing" target="_blank" rel="noreferrer">verify current pricing</a>. Output can still fail Quest import limits.</p>
+<button id="generate" disabled>Generate geometry · 5 credits</button><p id="notice" class="error" role="status"></p></section>
+<section><h2>Connection check / no generation</h2><p>Send the existing avocado through the same inspection and USB delivery path. This is a test asset, not AI-generated output.</p><button class="secondary" id="demo">Send test avocado — no generation</button>
+<p class="small">Open Oryn in one authorized USB-connected Quest and leave a clear spawn slot. “Loaded on Quest” requires an import receipt, not just a successful file copy. If a delivery is already waiting below, wear the headset instead of sending another copy.</p></section>
+<h2>02–04 / Inspect, texture, deliver</h2><div id="jobs"><p>No jobs yet.</p></div>
+<script>
+let token='',busy=false,configured=false,requesting=false,connected=false,lastJobs='',profiles={};
+const textureApprovals=new Set(),$=id=>document.getElementById(id);
+function profile(){return profiles[$('profile').value]||{geometry_credits:5,description:'Meshy T2 · Smart Topology · target 10,000 triangles · geometry only'};}
+function buttons(){
+  $('generate').disabled=!connected||!configured||busy||requesting||!$('approve').checked||!$('prompt').value.trim();
+  $('demo').disabled=!connected||busy||requesting;$('balance').disabled=!connected||!configured||requesting;$('saveKey').disabled=!connected||requesting;
+  document.querySelectorAll('[data-action]').forEach(b=>{b.disabled=!connected||busy||requesting||b.dataset.blocked==='true'||(b.dataset.action==='texture'&&(!configured||!textureApprovals.has(b.dataset.job)));});
+}
+function updateProfile(){const p=profile();$('profileInfo').textContent=p.description+($('profile').value==='structure'?' · T2 texturing is disabled until refine compatibility is verified.':' · Optional 2K texturing is a separate 10-credit task.');$('approvalText').textContent='I approve one geometry task, estimated at '+p.geometry_credits+' credits.';$('generate').textContent='Generate geometry · '+p.geometry_credits+' credits';buttons();}
+async function post(path,body){const r=await fetch(path,{method:'POST',headers:{'Content-Type':'application/json','X-Oryn-Token':token},body:JSON.stringify(body)});const data=await r.json();if(!r.ok)throw Error(data.error||'Request failed');return data;}
+function line(parent,text,cls){const p=document.createElement('p');p.textContent=text;p.className=cls||'';parent.append(p);return p;}
+async function action(fn){if(requesting)return;requesting=true;buttons();$('notice').textContent='';try{await fn();}catch(e){$('notice').textContent=e.message+' Inspect job history before submitting another paid request.';}finally{requesting=false;await refresh();}}
+function renderJobs(jobs){
+  $('jobs').replaceChildren();
+  for(const j of jobs){
+    const card=document.createElement('article'),title=document.createElement('h3');title.textContent=j.prompt;card.append(title);
+    line(card,j.demo?'TEST DELIVERY · NOT GENERATED':((profiles[j.profile]?.label||'Earlier generation')+' · MESHY'),'tag');
+    line(card,j.status.replaceAll('_',' ').toUpperCase(),'status');const p=document.createElement('progress');p.max=100;p.value=j.progress;card.append(p);
+    if(j.error)line(card,j.error,'error');if(j.inspection_error)line(card,j.inspection_error,'error');
+    if(j.preview_task_id)line(card,'Geometry task: '+j.preview_task_id,'small');if(j.refine_task_id)line(card,'Texture task: '+j.refine_task_id,'small');
+    if(j.approved_geometry_credits)line(card,'Approved estimates: '+j.approved_geometry_credits+' geometry'+(j.approved_texture_credits?' + '+j.approved_texture_credits+' texture':'')+' credits. Actual billing: provider dashboard.','small');
+    for(const [variant,r] of Object.entries(j.variants||{})){
+      const box=document.createElement('div');box.className='variant';card.append(box);
+      line(box,(variant==='geometry'?(j.demo?'Test asset':j.legacy?'Original saved asset':'Geometry'):'Textured copy')+' · Static preflight: '+r.preflight,r.preflight==='PASS'?'status':'error');
+      const metrics=document.createElement('div');metrics.className='metrics';box.append(metrics);
+      for(const text of [r.mesh_objects+' mesh objects',r.unique_meshes+' unique meshes',r.triangles.toLocaleString()+' triangles',r.materials+' materials',r.textures+' textures',(r.bytes/1048576).toFixed(2)+' MiB']){const s=document.createElement('span');s.textContent=text;metrics.append(s);}
+      const details=document.createElement('details'),summary=document.createElement('summary');summary.textContent='Inspect scene hierarchy and checks';details.append(summary);
+      const tree=document.createElement('pre');tree.textContent='Scene: '+r.scene+'\n'+r.hierarchy.map(n=>'  '.repeat(n.depth)+'· '+n.name+' [node '+n.node_index+(n.mesh_index===null?'':', mesh '+n.mesh_index)+']').join('\n');details.append(tree);
+      line(details,'Conservative vertex count: '+r.vertices_upper_bound.toLocaleString()+' · Primitives: '+r.primitives,'small');
+      for(const issue of r.issues)line(details,issue,'error');for(const warning of r.warnings)line(details,warning,'small');line(details,r.scope,'small');box.append(details);
+      const send=document.createElement('button');send.textContent='Send '+(j.legacy?'saved asset':variant)+' to Quest — no generation charge';send.className='secondary';send.dataset.action='deliver';send.dataset.blocked=String(r.preflight!=='PASS'||j.status==='waiting_for_headset');
+      send.onclick=()=>action(()=>post('/api/deliver',{id:j.id,variant}));box.append(send);
+    }
+    if(j.profile==='quality'&&!j.demo&&j.variants?.geometry&&!j.texture_request_id&&!j.refine_task_id){
+      const label=document.createElement('label'),check=document.createElement('input');check.type='checkbox';check.checked=textureApprovals.has(j.id);check.onchange=()=>{if(check.checked)textureApprovals.add(j.id);else textureApprovals.delete(j.id);buttons();};label.append(check,document.createTextNode(' I approve one optional 2K texture task, estimated at 10 additional credits.'));card.append(label);
+      const b=document.createElement('button');b.textContent='Texture saved geometry · 10 credits';b.dataset.action='texture';b.dataset.job=j.id;b.dataset.blocked=String(j.status==='waiting_for_headset');
+      b.onclick=()=>action(async()=>{textureApprovals.delete(j.id);check.checked=false;await post('/api/texture',{id:j.id,request_id:crypto.randomUUID().replaceAll('-',''),approve_paid:true,approved_credits:10});});card.append(b);
+    }
+    if(j.status==='waiting_for_headset')line(card,'USB transfer completed; waiting for Oryn to confirm import. Wear the headset and open the app.','small');
+    line(card,'Job '+j.id+' · '+new Date(j.created*1000).toLocaleString(),'small');$('jobs').append(card);
+  }
+  if(!jobs.length)line($('jobs'),'Your first structural experiment is ready above. No generation has started.');
+}
+async function refresh(){try{const r=await fetch('/api/state');if(!r.ok)throw Error();const s=await r.json();token=s.token;busy=s.busy;configured=s.configured;connected=true;profiles=s.profiles;
+  $('connection').textContent=configured?'Local service ready · API key configured · balance check verifies access':'Local service ready · add a new API key to enable generation';
+  const signature=JSON.stringify(s.jobs);if(signature!==lastJobs){renderJobs(s.jobs);lastJobs=signature;}updateProfile();buttons();
+}catch{connected=false;$('connection').textContent='Local service disconnected — generation will not auto-retry';buttons();}}
+function submit(mode){return action(async()=>{
+  // Keep only the request UUID in session storage, never a prompt or credential.
+  const storageKey='oryn-pending-'+mode;let id=sessionStorage.getItem(storageKey);if(!id){id=crypto.randomUUID().replaceAll('-','');sessionStorage.setItem(storageKey,id);}
+  await post('/api/generate',{request_id:id,mode,profile:$('profile').value,prompt:$('prompt').value,approve_paid:mode==='meshy'&&$('approve').checked,approved_credits:profile().geometry_credits});
+  sessionStorage.removeItem(storageKey);$('approve').checked=false;
+});}
+$('generate').onclick=()=>submit('meshy');$('demo').onclick=()=>submit('demo');$('approve').onchange=buttons;$('prompt').oninput=buttons;$('profile').onchange=()=>{$('approve').checked=false;updateProfile();};
+$('saveKey').onclick=()=>action(async()=>{const key=$('key').value;$('key').value='';await post('/api/key',{key});$('setup').open=false;$('balanceResult').textContent=' Balance not checked for this key.';});
+$('balance').onclick=()=>action(async()=>{const s=await post('/api/balance',{});$('balanceResult').textContent=' Available API credits: '+s.balance+' · checked '+new Date(s.checked_at*1000).toLocaleTimeString();});
+updateProfile();refresh();setInterval(refresh,2000);
+</script></body></html>

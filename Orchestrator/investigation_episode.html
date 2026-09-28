@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ORYN — Investigation episode</title>
+<style>
+:root{color-scheme:dark;font:16px system-ui;background:#10171e;color:#e8f0f5}body{max-width:1000px;margin:40px auto;padding:0 20px}p,li{line-height:1.6;overflow-wrap:anywhere;color:#b1c2cf}a{color:#6fe3bd}section,details{padding:22px;background:#19252f;border:1px solid #304351;border-radius:12px;margin:18px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px}label{display:block;margin-top:14px}textarea,input,select{box-sizing:border-box;max-width:100%;width:100%;padding:12px;background:#10171e;color:white;border:1px solid #506575;border-radius:6px;font:inherit}button{padding:12px;background:#6fe3bd;color:#10231d;border:0;border-radius:6px;font:inherit;margin-top:16px}button:disabled{opacity:.45}#notice{color:#ffb5a7}summary{cursor:pointer}
+</style></head><body>
+<a href="/">← Object requests</a><h1>Investigation episode</h1><p>Observable evidence, proposals and corrections. No hidden model reasoning. Original hypotheses stay in history; human feedback does not automatically establish verified mechanical facts.</p>
+<p id="status">Loading…</p><p id="notice" role="alert"></p><button id="refresh">Refresh history</button>
+<button id="prepare" disabled>Prepare local object images — no upload</button>
+<button id="investigate" disabled>Investigate prepared pieces</button>
+<p id="budget"></p><details id="rasters" hidden><summary>Exact object-only images retained locally</summary><div id="images"></div></details>
+<section><h2>Candidates</h2><div id="candidates"></div></section>
+<section id="reviewArea" hidden><h2>Record a review</h2><form id="review"><label for="piece">Original candidate</label><select id="piece"></select><label for="decision">Review</label><select id="decision"><option value="rejected">Reject candidate</option><option value="corrected">Propose correction</option><option value="accepted">Accept as a candidate, not verified</option></select><label for="reason">Reason and evidence</label><textarea id="reason" maxlength="1000" rows="3" required></textarea><label for="replacement">Replacement name (correction only)</label><input id="replacement" maxlength="200" disabled><label for="sources">Supporting reference IDs, comma-separated (optional)</label><input id="sources" maxlength="600"><p>The review is attributed to the local development operator. Reference IDs must already belong to this episode. Training eligibility remains unassessed.</p><button id="save">Save review event</button></form></section>
+<section><h2>Episode history</h2><div id="events"></div></section>
+<script>
+const $=id=>document.getElementById(id),id=new URLSearchParams(location.search).get('id');let record,token='',sending=false,requestId=null,uncertain=false;
+function text(parent,tag,value){const node=document.createElement(tag);node.textContent=value;parent.append(node);return node;}
+async function load(){
+ try{
+  if(!/^[a-f0-9]{64}$/.test(id||''))throw Error('Invalid episode link.');
+  const response=await fetch('/api/episode?id='+id,{signal:AbortSignal.timeout(10000)});if(!response.ok)throw Error('Episode unavailable.');record=await response.json();
+  if(uncertain&&record.events.some(e=>e.kind==='human_review'&&e.payload.request_id===requestId)){uncertain=false;requestId=null;$('notice').textContent='Saved review confirmed from episode history. No duplicate was submitted.';}
+  $('status').textContent=record.status==='waiting_policy'?(record.vision?.policy_ready?'Prepared locally · bounded vision pilot ready':'Prepared locally · vision awaits account sharing and data-policy confirmation'):record.status+(record.error?' · '+record.error:'');
+  $('events').replaceChildren();$('candidates').replaceChildren();$('piece').replaceChildren();
+  $('images').replaceChildren();
+  const observations=record.events.find(e=>e.kind==='observations_prepared');$('rasters').hidden=!observations;
+  if(observations)for(const [n,image] of observations.payload.images.entries()){const img=document.createElement('img');img.src='/api/episode-image?id='+id+'&piece='+n;img.alt=image.geometry_id;img.style.width='100%';img.loading='lazy';$('images').append(img);}
+  $('budget').textContent=record.budget?`Investigation usage/reservations: $${(record.budget.charged_and_reserved_nanos/1e9).toFixed(5)} of $0.05. This includes prior text research, not just vision; settled amounts are conservative estimates, not invoices.`:'';
+  const published=record.events.find(e=>e.kind==='candidates_persisted'),mappings=published?.payload.mappings||[];
+  if(!mappings.length)text($('candidates'),'p','No candidate identities have been published. Unknowns are preserved.');
+  for(const mapping of mappings){
+   const reviews=record.events.filter(e=>e.kind==='human_review'&&e.payload.geometry_id===mapping.geometry_id),last=reviews.at(-1);
+   text($('candidates'),'p',mapping.geometry_id+' — '+mapping.candidate_name+' · candidate, not verified');text($('candidates'),'p',mapping.rationale);
+   if(last)text($('candidates'),'p','Latest review: '+last.payload.decision+' — '+last.payload.reason+(last.payload.replacement_name?' → '+last.payload.replacement_name:''));
+   const option=document.createElement('option');option.value=mapping.geometry_id;option.textContent=mapping.geometry_id.split(':').slice(-2).join(':')+' — '+mapping.candidate_name;$('piece').append(option);
+  }
+  $('reviewArea').hidden=record.status!=='completed'||!mappings.length;
+  for(const event of record.events){const details=document.createElement('details');text(details,'summary',event.sequence+' · '+event.kind+' · '+new Date(event.created_at*1000).toLocaleString());text(details,'pre',JSON.stringify(event.payload,null,2));$('events').append(details);}
+  const state=await fetch('/api/state',{signal:AbortSignal.timeout(10000)});if(!state.ok)throw Error('Local connection unavailable.');token=(await state.json()).token;
+ }catch(error){$('notice').textContent=error.message;}finally{$('save').disabled=sending||uncertain||!token;$('prepare').disabled=sending||!token||record?.status!=='waiting_policy'||record?.events.some(e=>e.kind==='observations_prepared');$('investigate').disabled=sending||!token||record?.status!=='waiting_policy'||!record?.vision?.policy_ready||record?.vision?.busy||!record?.events.some(e=>e.kind==='observations_prepared');}
+}
+$('investigate').onclick=async()=>{
+ if(sending||!token)return;sending=true;$('investigate').disabled=true;
+ try{const response=await fetch('/api/investigate-episode',{method:'POST',headers:{'Content-Type':'application/json','X-Oryn-Token':token},body:JSON.stringify({episode_id:id}),signal:AbortSignal.timeout(10000)});if(!response.ok)throw Error('Vision dispatch rejected. Check policy, prepared evidence and worker state.');$('notice').textContent='Investigation started. At most one bounded attempt; candidates remain unverified.';}
+ catch(error){$('notice').textContent='Dispatch response unavailable or rejected. No automatic resubmission. Refresh history to check status.';}finally{sending=false;await load();}
+};
+$('prepare').onclick=async()=>{
+ if(sending||!token)return;sending=true;$('prepare').disabled=true;
+ try{const response=await fetch('/api/prepare-episode-evidence',{method:'POST',headers:{'Content-Type':'application/json','X-Oryn-Token':token},body:JSON.stringify({episode_id:id}),signal:AbortSignal.timeout(55000)});if(!response.ok)throw Error('Local image preparation unavailable. Check renderer configuration; no images were sent.');$('notice').textContent='Object-only PNGs retained locally. No images uploaded; no paid calls.';}
+ catch(error){$('notice').textContent=error.message;}finally{sending=false;await load();}
+};
+$('decision').onchange=()=>{$('replacement').disabled=$('decision').value!=='corrected';$('replacement').required=!$('replacement').disabled;if($('replacement').disabled)$('replacement').value='';};
+$('review').onsubmit=async event=>{
+ event.preventDefault();if(sending||uncertain||!token)return;sending=true;$('save').disabled=true;requestId=requestId||crypto.randomUUID().replaceAll('-','');
+ const gid=$('piece').value,last=record.events.filter(e=>e.kind==='human_review'&&e.payload.geometry_id===gid).at(-1);
+ const review={request_id:requestId,revision_id:record.candidate_revision_id,geometry_id:gid,decision:$('decision').value,reason:$('reason').value,replacement_name:$('replacement').value,source_ids:$('sources').value.split(',').map(s=>s.trim()).filter(Boolean),previous_review_id:last?.id||null};
+ try{
+  const response=await fetch('/api/episode-review',{method:'POST',headers:{'Content-Type':'application/json','X-Oryn-Token':token},body:JSON.stringify({episode_id:id,review}),signal:AbortSignal.timeout(10000)});
+  if(!response.ok){requestId=null;throw Error('Review rejected. Refresh history and check the candidate and evidence IDs.');}
+  requestId=null;$('notice').textContent='Review event saved. Original candidate preserved.';
+ }catch(error){if(requestId){uncertain=true;$('notice').textContent='Response uncertain. No automatic retry. Refresh history to inspect whether this review was saved before submitting more feedback.';}else $('notice').textContent=error.message;}
+ finally{sending=false;await load();}
+};
+$('refresh').onclick=load;load();
+setInterval(()=>{if(!sending&&record?.status==='running')load();},3000);
+</script></body></html>

@@ -17,6 +17,7 @@ from credential_store import CredentialError, MacKeychain, validate_key
 from ingestion import prepare_asset, summary as ingestion_summary
 from workflow import WorkflowStore, summary as workflow_summary
 from geometry_evidence import GeometryEvidenceStore
+from investigation_episodes import Episodes
 from urllib.parse import urlsplit, parse_qs
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -51,6 +52,8 @@ class Jobs:
         self.root.mkdir(parents=True, exist_ok=True)
         self.workflows = WorkflowStore(self.root / 'workflows.sqlite3')
         self.geometry_evidence = GeometryEvidenceStore(self.workflows)
+        self.episodes = Episodes(self.workflows)
+        self.vision = None  # Main wires bounded, explicit episode dispatch.
         self.research = None  # Main wires live providers after local-only backfill.
         self.key, self.provider = key, provider
         self.credential_store = credential_store
@@ -109,6 +112,22 @@ class Jobs:
             temp = folder / "job.json.partial"
             temp.write_text(json.dumps(self.jobs[job_id], indent=2))
             temp.replace(folder / "job.json")
+
+    def refresh_episode_history(self):
+        """Local metadata only. This does not claim or execute vision work."""
+        if self.research is None:return
+        with self.lock:
+            for job in self.jobs.values():
+                if not job.get('research_id') or not job.get('geometry_evidence_id'):continue
+                try:
+                    evidence=self.geometry_evidence.get(job['geometry_evidence_id'])
+                    research=self.research.engine.get(job['research_id'])
+                    if evidence['status']!='ready' or research['status']!='reference_notes_ready':continue
+                    episode=self.episodes.ensure(evidence,research)
+                    if job.get('episode_id')!=episode['id']:
+                        self.update(job['id'],_preserve_updated=True,episode_id=episode['id'])
+                except Exception:
+                    continue  # A missing historical record never invalidates delivery.
 
     def state(self):
         with self.lock:
@@ -450,6 +469,25 @@ class Handler(BaseHTTPRequestHandler):
             return self.respond(200, (Path(__file__).parent / "index.html").read_bytes(), html=True)
         if urlsplit(self.path).path == '/geometry-evidence':
             return self.respond(200, (Path(__file__).parent / 'geometry_evidence.html').read_bytes(), html=True)
+        if urlsplit(self.path).path == '/investigation-episode':
+            return self.respond(200,(Path(__file__).parent/'investigation_episode.html').read_bytes(),html=True)
+        if urlsplit(self.path).path == '/api/episode':
+            try:
+                query=parse_qs(urlsplit(self.path).query,strict_parsing=True)
+                if set(query)!={'id'} or len(query['id'])!=1 or not re.fullmatch('[a-f0-9]{64}',query['id'][0]):raise ValueError()
+                identifier=query['id'][0]
+                record=self.server.jobs.episodes.get(identifier)
+                record['vision']=self.server.jobs.vision.state() if self.server.jobs.vision else {'connected':False,'policy_ready':False}
+                if self.server.jobs.research is not None:
+                    record['budget']=self.server.jobs.research.ledger.investigation_summary(record['asset_id'])
+                return self.respond(200,{**record,'events':self.server.jobs.episodes.events(identifier)})
+            except (ValueError,KeyError):return self.respond(404,{'error':'Unknown episode.'})
+        if urlsplit(self.path).path == '/api/episode-image':
+            try:
+                query=parse_qs(urlsplit(self.path).query,strict_parsing=True)
+                if set(query)!={'id','piece'} or any(len(v)!=1 for v in query.values()) or not re.fullmatch('[a-f0-9]{64}',query['id'][0]):raise ValueError()
+                return self.respond(200,self.server.jobs.episodes.image(query['id'][0],int(query['piece'][0])),content_type='image/png')
+            except (ValueError,KeyError):return self.respond(404,{'error':'Unknown episode image.'})
         if urlsplit(self.path).path in {'/api/geometry-evidence','/api/geometry-view'}:
             try:
                 query = parse_qs(urlsplit(self.path).query, strict_parsing=True)
@@ -494,6 +532,18 @@ class Handler(BaseHTTPRequestHandler):
                 return self.respond(200, self.server.jobs.research.configure_key(body.get('key','')))
             if self.path == '/api/investigate' and self.server.jobs.research is not None:
                 return self.respond(202, self.server.jobs.research.enqueue_job(body.get('id')))
+            if self.path == '/api/episode-review':
+                if set(body)!={'episode_id','review'}:raise ValueError('Invalid review request.')
+                event=self.server.jobs.episodes.review(body['episode_id'],body['review'],self.server.jobs.geometry_evidence)
+                return self.respond(200,{'event_id':event})
+            if self.path == '/api/vision-policy' and self.server.jobs.vision is not None:
+                return self.respond(200,self.server.jobs.vision.configure_policy(body))
+            if self.path == '/api/investigate-episode' and self.server.jobs.vision is not None:
+                if set(body)!={'episode_id'} or not isinstance(body['episode_id'],str) or not re.fullmatch('[a-f0-9]{64}',body['episode_id']):raise ValueError('Invalid episode ID.')
+                return self.respond(202,self.server.jobs.vision.start_episode(body['episode_id']))
+            if self.path == '/api/prepare-episode-evidence':
+                if set(body)!={'episode_id'} or not isinstance(body['episode_id'],str) or not re.fullmatch('[a-f0-9]{64}',body['episode_id']):raise ValueError('Invalid episode ID.')
+                return self.respond(200,self.server.jobs.episodes.prepare_local(body['episode_id'],self.server.jobs.geometry_evidence))
             if self.path == "/api/generate":
                 return self.respond(202, self.server.jobs.submit(body))
             if self.path == "/api/request-object":
@@ -525,12 +575,15 @@ def main():
     jobs.research = ResearchService(jobs, credential_store=MacKeychain(account=b'openai-api-key'),
         key=os.environ.get('ORYN_OPENAI_API_KEY',''))
     server = Server(args.port, jobs)
+    from vision_service import VisionService
+    jobs.vision = VisionService(jobs)
     jobs.research.start()
     jobs.geometry_evidence.start()
     def receipts():
         while True:
             time.sleep(5)
             jobs.refresh_receipts()
+            jobs.refresh_episode_history()
     threading.Thread(target=receipts, daemon=True).start()
     print(f"Oryn generation console: {server.origin}", flush=True)
     print("Local only. Request mode automatically generates and delivers within its credit cap. Developer lab remains staged. Ctrl+C stops.", flush=True)

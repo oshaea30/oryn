@@ -6,12 +6,14 @@ Uncertain reservations carry forward across UTC days until operator reconciliati
 from contextlib import contextmanager
 from pathlib import Path
 import os
+import re
 import sqlite3
 import time
 from cognition import CommandError
 from spending import DAILY_LIMIT, utc_day
 
 DEFAULT_PATH = Path(__file__).resolve().parent.parent / '.oryn-usage' / 'usage.sqlite3'
+INVESTIGATION_LIMIT = 50_000_000
 
 
 class UsageLedger:
@@ -25,6 +27,9 @@ class UsageLedger:
             version = db.execute('PRAGMA user_version').fetchone()[0]
             if version not in (0, 1):
                 raise CommandError('Unsupported ledger schema; paid calls blocked.')
+            # Additive: existing command-service v1 connections remain compatible.
+            db.execute('CREATE TABLE IF NOT EXISTS investigation_usage (request_id TEXT PRIMARY KEY, investigation_id TEXT NOT NULL)')
+            db.commit()
             if version == 1:
                 if db.execute('PRAGMA quick_check').fetchone()[0] != 'ok':
                     raise CommandError('Ledger integrity check failed; paid calls blocked.')
@@ -99,7 +104,7 @@ class UsageLedger:
         if actor is not None: sql += ' AND actor_id=?'; args.append(actor)
         return db.execute(sql, args).fetchone()[0]
 
-    def reserve(self, ident, actor, fingerprint, approved_nanos):
+    def reserve(self, ident, actor, fingerprint, approved_nanos, investigation_id=None):
         with self.transaction() as db:
             now = self._clock(db)
             row = db.execute('SELECT * FROM usage WHERE request_id=? AND actor_id=?', (ident, actor)).fetchone()
@@ -110,10 +115,42 @@ class UsageLedger:
             if not row['created'] <= now < row['expires']:
                 raise CommandError('Quote expired. Prepare and approve a new quote.')
             day = utc_day(now)
+            if investigation_id is not None:
+                self._bind_investigation(db, ident, investigation_id)
+                spent = self._investigation_spent(db, investigation_id)
+                if spent + row['reserved_nanos'] > INVESTIGATION_LIMIT:
+                    raise CommandError('Cumulative object investigation budget exhausted. Nothing sent.')
             for scope in (None, actor):
                 if self._spent(db, day, scope) + row['reserved_nanos'] > DAILY_LIMIT:
                     raise CommandError('Daily $2 budget exhausted, including outstanding reservations. Nothing sent.')
             db.execute("UPDATE usage SET status='reserved',charged_nanos=reserved_nanos,admission_day=? WHERE request_id=?", (day, ident))
+
+    @staticmethod
+    def _bind_investigation(db, ident, investigation_id):
+        if not isinstance(investigation_id,str) or not re.fullmatch('[a-f0-9]{64}', investigation_id):
+            raise CommandError('Stable object investigation identity required.')
+        if db.execute('SELECT 1 FROM usage WHERE request_id=?',(ident,)).fetchone() is None:
+            raise CommandError('Cannot bind missing usage; investigation blocked.')
+        prior=db.execute('SELECT investigation_id FROM investigation_usage WHERE request_id=?',(ident,)).fetchone()
+        if prior and prior[0] != investigation_id:
+            raise CommandError('Usage belongs to another investigation.')
+        db.execute('INSERT OR IGNORE INTO investigation_usage VALUES (?,?)',(ident,investigation_id))
+
+    def bind_investigation(self, ident, investigation_id):
+        """Import prior text usage without resetting charges or creating requests."""
+        with self.transaction() as db:
+            self._bind_investigation(db,ident,investigation_id)
+
+    @staticmethod
+    def _investigation_spent(db, investigation_id):
+        return db.execute('SELECT COALESCE(SUM(u.charged_nanos),0) FROM usage u JOIN investigation_usage i ON i.request_id=u.request_id WHERE i.investigation_id=?',(investigation_id,)).fetchone()[0]
+
+    def investigation_summary(self, investigation_id):
+        with self.connection() as db:
+            spent=self._investigation_spent(db,investigation_id)
+            return {'limit_nanos':INVESTIGATION_LIMIT,'charged_and_reserved_nanos':spent,
+                    'remaining_nanos':max(0,INVESTIGATION_LIMIT-spent),'scope':'asset_lifetime_development',
+                    'actual_cost_nanos':None}
 
     def uncertain(self, ident, halt=False):
         with self.transaction() as db:

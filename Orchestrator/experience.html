@@ -25,6 +25,9 @@ function showResearch(job){
   const labels={queued:'Research queued',running:'Research in progress — your model remains available',awaiting_cognitive_provider:'References saved — connect OpenAI to prepare notes',awaiting_retrieval_provider:'Reference provider unavailable',no_references:'No references found; no reasoning call made',no_relevant_references:'References did not match; no reasoning call made',reference_notes_ready:'Reference notes ready · unverified candidates',failed:'Research stopped; no automatic retry',interrupted:'Research interrupted; review required before further work'};
   $('researchStatus').textContent=job.research_error||(r?(labels[r.status]||'Research status unavailable'):'No research run yet for this saved object.');
   if(!r)return;
+  if(/^[a-f0-9]{64}$/.test(job.episode_id||'')){
+    const a=document.createElement('a');a.href='/investigation-episode?id='+job.episode_id;a.textContent='Inspect investigation episode and review history';a.target='_blank';a.rel='noopener';area.append(a);
+  }
   const sources=new Map((r.sources||[]).map(s=>[s.id,s]));
   function cite(parent,id){
     const source=sources.get(id);if(!source)return;

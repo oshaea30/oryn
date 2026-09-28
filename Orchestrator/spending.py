@@ -20,6 +20,7 @@ PROFILES = {
     'routine': ('gpt-6-sol', 'medium', 30_000_000),
     'question': ('gpt-6-sol', 'medium', 50_000_000),
     'question_high': ('gpt-6-sol', 'high', 50_000_000),
+    'vision': ('gpt-6-sol', 'medium', 50_000_000),
     'benchmark': ('gpt-6-astra', 'medium', 100_000_000),
     'benchmark_high': ('gpt-6-astra', 'high', 100_000_000),
 }
@@ -36,7 +37,7 @@ def policy(provider, profile, now):
         raise CommandError('Pricing review expired or clock invalid. Paid requests are blocked until prices are reviewed.')
     model, effort, ceiling = PROFILES[profile]
     return {'provider': provider, 'profile': profile, 'model': model, 'effort': effort,
-            'ceiling_nanos': ceiling, 'max_output_tokens': MAX_OUTPUT, 'price_version': PRICE_VERSION,
+            'ceiling_nanos': ceiling, 'max_output_tokens': 2048 if profile=='vision' else MAX_OUTPUT, 'price_version': PRICE_VERSION,
             'rates': MODELS[model], 'price_expires': PRICE_EXPIRES, 'service_tier': 'default'}
 
 
@@ -45,7 +46,7 @@ def quote_cost(selected_policy, input_tokens):
         raise CommandError('Exact input count missing or exceeds the 16,000-token development limit.')
     rates = selected_policy['rates']
     # Assume the most expensive input category for EVERY token; no cache discount assumptions.
-    cost = input_tokens * max(rates['input'], rates['cache_write']) + MAX_OUTPUT * rates['output']
+    cost = input_tokens * max(rates['input'], rates['cache_write']) + selected_policy['max_output_tokens'] * rates['output']
     if cost > selected_policy['ceiling_nanos']:
         raise CommandError('Worst-case cost exceeds this profile’s request ceiling. Nothing was generated; no automatic escalation.')
     return cost

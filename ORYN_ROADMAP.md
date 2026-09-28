@@ -27,6 +27,20 @@ Generated shapes and user labels must not become verified mechanical facts.
 
 ## Current milestone: no-approval object-request user experience
 
+Latest increment: the user confirmed disabled API sharing with a Data controls
+screenshot and authorized the bounded vision pilot. ORYN's application-owned
+episode service now dispatches prepared images, records evidence/provenance/usage,
+preserves unknowns and supports append-only reviews. The live three-piece V8 pilot
+completed in 18.052 seconds: islands 001/002 received “Cylinder-bank upper cover”
+**candidate** labels; island 003 stayed unknown. These are unverified hypotheses,
+not established mechanical identities. No Quest build or runtime capability changed.
+The conservative vision usage estimate was $0.01309; total with earlier text
+research is $0.0196625 of the cumulative $0.05 object allowance. Actual invoice cost
+is not asserted. Shared $2/day admission and no-retry behavior remain enforced.
+The service runs explicitly requested episodes only, not all 200 V8 pieces or all
+new generations. Next: reference-backed assessment of candidates, preserving the
+original episode and rejected/corrected hypotheses. No new key was required.
+
 Latest increment: local geometry evidence is now application-owned. The background
 worker measured all 200 V8 pieces and all 39 drone pieces, producing four context
 and four isolated diagnostic views for eight targets per asset. The first live
@@ -34,9 +48,9 @@ local preparations each took approximately 1.1 seconds, excluding later storage
 compression/persistence. No generation, research, images-out or Quest actions were
 triggered. Views are accessible through the existing object UI; all identities
 remain unknown. Source-local AABB proximity is explicitly not mechanical adjacency.
-Candidate mapping validation and immutable revision storage are implemented and
-fixture-tested, but no vision adapter is wired, no real candidate mappings exist,
-and no semantic grouping or new runtime capability is enabled. Next: agree the
+At that earlier checkpoint, candidate mapping validation and immutable revision
+storage were fixture-only; the subsequent live pilot is recorded above. No
+semantic grouping or new runtime capability is enabled. The initial next step was to agree the
 object-image data/cost policy, rasterize bounded views for the selected vision
 provider, and test reviewable reference-backed candidates under spending admission.
 See [geometry evidence contract](ORYN_WORKFLOW.md#local-geometry-evidence-checkpoint).

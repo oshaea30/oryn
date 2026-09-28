@@ -23,8 +23,20 @@ class ResearchService:
         self.engine=Investigations(jobs.workflows,
             retrieval if retrieval is not None else WikipediaRetrieval(),
             cognitive_factory(self.ledger,self.key) if self.key else None)
+        self.budget_error=''
+        try:
+            with jobs.workflows.connect() as db:
+                import json
+                records=[json.loads(r[0]) for r in db.execute('SELECT record FROM research_runs')]
+            for record in records:
+                stage=record['stages']['synthesis'];op=stage.get('operation_id')
+                if op and self.ledger.get(op):self.ledger.bind_investigation(op,record['asset_id'])
+                elif stage.get('cost',{}).get('status')=='usage_estimate':raise ValueError('Missing previous usage.')
+        except Exception:
+            self.budget_error='Previous research usage could not be reconciled; paid research blocked.'
+            self.engine.cognitive=None
         self.engine.recover_interrupted()
-        if self.key: self._resume_waiting()
+        if self.key and not self.budget_error: self._resume_waiting()
         self.lock=threading.Lock()
         self.stop_event=threading.Event()
         self.thread=None
@@ -34,12 +46,13 @@ class ResearchService:
             budget=self.ledger.summary()
         except Exception:
             budget={'halted':True,'remaining_nanos':0,'error':'Cognition budget unavailable; paid research is blocked.'}
-        return {'enabled':True,'configured':bool(self.key),'keyStorage':self.key_storage,'error':self.error,
+        return {'enabled':True,'configured':bool(self.key),'keyStorage':self.key_storage,'error':self.budget_error or self.error,
                 'policy':{'max_investigation_nanos':50_000_000,'shared_daily_nanos':2_000_000_000,
                           'max_references':5,'max_synthesis_references':3,'automatic_retries':False},
                 'budget':budget}
 
     def configure_key(self, value):
+        if self.budget_error:raise ValueError(self.budget_error)
         key=validate_key(value)
         with self.lock:
             if self.credentials is not None: self.credentials.save(key)
@@ -82,6 +95,7 @@ class ResearchService:
         return {k:record[k] for k in ('id','status','blocker','findings','stages')} | {
             'billing':billing,
             'derived_by':record.get('derived_by'),
+            'investigation_budget':self.ledger.investigation_summary(record['asset_id']),
             'sources':[{k:s[k] for k in ('id','title','url','source_type','content_sha256')} for s in record['sources']],
             'selected_source_ids':record['selected_source_ids']}
 

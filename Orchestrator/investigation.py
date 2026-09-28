@@ -19,7 +19,7 @@ class RetrievalProvider(Protocol):
 
 
 class CognitiveProvider(Protocol):
-    def investigate(self, operation_id: str, request: dict) -> dict: ...
+    def investigate(self, operation_id: str, request: dict, *, investigation_id: str) -> dict: ...
 
 
 def validate_sources(sources):
@@ -196,7 +196,7 @@ class Investigations:
             sources=[s for s in record['sources'] if s['id'] in record['selected_source_ids']]
             # Send only the bounded payload; no paths, GLBs, room images or secrets.
             request={'query':record['query'],'sources':deepcopy(sources),'geometry':dict(record['geometry'])}
-            result=self.cognitive.investigate(operation_id,request)
+            result=self.cognitive.investigate(operation_id,request,investigation_id=record['asset_id'])
             record['findings']=validate_findings(result['findings'],sources)
             derived=result['derived_by']
             if not isinstance(derived,dict) or set(derived)!={'provider','model','method'} or any(not isinstance(v,str) or not 1<=len(v)<=100 for v in derived.values()):

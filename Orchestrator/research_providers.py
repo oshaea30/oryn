@@ -98,7 +98,7 @@ class OpenAICognitiveProvider:
     def __init__(self, ledger, key, counter=count_input, sender=generate_priced, clock=time.time):
         self.ledger,self.key,self.counter,self.sender,self.clock=ledger,key,counter,sender,clock
 
-    def investigate(self, operation_id, request):
+    def investigate(self, operation_id, request, *, investigation_id=None):
         if not isinstance(operation_id,str) or not re.fullmatch('[a-f0-9]{32}',operation_id) or not self.key:
             raise CommandError('Research identity and connection required.')
         chosen=policy('openai','question',int(self.clock()))
@@ -116,7 +116,8 @@ class OpenAICognitiveProvider:
             'max_output_tokens':chosen['max_output_tokens'],'reserved_nanos':cost,
             'ceiling_nanos':chosen['ceiling_nanos'],'created':now,'expires':min(now+120,PRICE_EXPIRES)}
         self.ledger.create_quote(quote)
-        self.ledger.reserve(operation_id,'developer',quote['fingerprint'],cost)
+        self.ledger.reserve(operation_id,'developer',quote['fingerprint'],cost,
+                            investigation_id=investigation_id or digest(request))
         try:
             result=self.sender(self.key,deepcopy(body))
         except Exception:

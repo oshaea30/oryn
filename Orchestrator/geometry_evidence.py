@@ -32,12 +32,8 @@ VIEWS = (('XY', (1, 0, 0), (0, 1, 0), (0, 0, 1)),
 
 
 class MappingCognitiveProvider(Protocol):
-    """Future adapter boundary; deliberately not wired to live paid execution.
-
-The application will own consent, admission, token/image budgets and retry
-policy before calling this. Provider output is untrusted until validated.
-"""
-    def propose_mappings(self, evidence, references) -> dict: ...
+    """Replaceable mapping boundary; application owns admission and persistence."""
+    def propose_mappings(self, episode, package, references, images, record_event) -> tuple: ...
 
 
 def gap(a, b):

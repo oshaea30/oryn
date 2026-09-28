@@ -232,6 +232,105 @@ identities are still unknown. Tests use synthetic candidates, not claimed V8 lab
 
 ## Next implementation and benchmark gates
 
+### Episode and vision-adapter increment — 2026-09-28
+
+Implemented locally; the initially disconnected adapter is now connected for
+explicit, bounded episode dispatch following the sharing confirmation below:
+
+- `investigation_episodes.py` stores append-only observed events and immutable
+  source snapshots. An episode records its query, bound asset/view IDs, reference
+  excerpts, explicit lack of a verified component plan, and unassessed dataset
+  eligibility/reuse rights. It does not manufacture an investigation narrative or
+  retain hidden/encrypted model reasoning.
+- Source-backed candidate responses can be retained before validation, including
+  malformed/refused outcomes. Valid candidates remain separate from the source
+  manifest. The local review interface appends rejection/acceptance/correction
+  events with actor, reason, source IDs, predecessor event and superseded candidate.
+  Corrections remain candidates; neither model nor reviewer can promote to verified
+  through this endpoint. Stale/conflicting reviews fail without overwriting history.
+- The object request UI links `/investigation-episode?id=…`; GET history and PNG
+  routes are read-only. Token/Origin-protected review writes are local-only. Local
+  PNG preparation is available separately and does not count tokens or call a model.
+- The rasterizer renders only checksum-bound generated SVGs into 1000×540 PNGs.
+  Chromium network routes are disabled, image content is loaded into an isolated
+  image element, and only that element is captured. No desktop, headset, room
+  capture or arbitrary image URL/upload is accepted. Exact PNG bytes/hashes are
+  retained before any future image request, under a 128 MiB aggregate raster quota.
+  A single local render is allowed per process; preserve 576 MiB of free disk space.
+- Runtime dependencies: Node plus Playwright and Chromium, already available on
+  this development Mac. Configure `ORYN_NODE_BINARY`, `NODE_PATH` for Playwright,
+  and optional `ORYN_CHROMIUM`; no packages or Unity SDKs were installed. These
+  dependencies are for local rendering, not a production headset requirement.
+- `OpenAIMappingProvider` is fixture-tested and pilot-tested: `gpt-6-sol`, stateless
+  Responses with `store:false`, no tools/history/files, three object-only sheets,
+  at most three source excerpts, exact input-token counting and 2,048 output tokens.
+  Short request-local aliases map back to immutable geometry/view IDs. Every target
+  must be candidate or unknown; citation membership does not prove factual support.
+- Quote/admission uses the existing reviewed token rates and expiry, with the most
+  expensive input category reserved. Both generation and counting transmit
+  the object images under the confirmed policy. The provider retains observable
+  output messages, operation/model IDs, usage, settings and exact input fingerprints,
+  but never keys or hidden reasoning. Model aliases are recorded as returned; an
+  immutable provider model revision is not invented when unavailable.
+- The usage ledger now binds research operations to the stable asset identity.
+  A single atomic admission transaction checks both the existing $2/day limit and
+  a cumulative $0.05 object research allowance. Earlier completed text usage and
+  outstanding reservations are included. Restarts, UTC-day rollover, prompt changes
+  and evidence revisions do not reset the object allowance. For this prototype it
+  is conservatively asset-lifetime; renewal is not implemented. Meshy generation
+  credits remain a separate budget. Missing historical billed usage blocks new
+  paid research rather than assuming zero.
+
+**Gate resolved:** the user supplied the API Data controls → Sharing screenshot
+showing all three sharing settings disabled and explicitly authorized continuation.
+The earlier refusal was respected; wiring and live dispatch were separately
+approved only after this confirmation. No new key was needed. The local policy
+record is credential-bound operator confirmation, not automated provider-account
+verification; changing the key invalidates it.
+
+`vision_service.py` now owns the pilot end to end. Authenticated
+`POST /api/vision-policy` saves the one-time object-image/sharing/budget confirmation;
+`POST /api/investigate-episode` accepts only a saved episode ID. The episode page
+can invoke it and poll read-only progress. The service requires prepared local
+images, atomically claims the episode, serializes key/policy changes with dispatch,
+calls the replaceable adapter and persists a validated candidate revision. It does
+not scan the library or automatically start image investigations for new assets.
+Repeated clicks/lost responses cannot replay an episode. Restarted in-flight work
+becomes interrupted; uncertain costs remain held. The five other viewed targets
+are explicitly not examined, not falsely presented as model-reviewed unknowns.
+
+Live V8 pilot: episode
+`a8c8da0cf61cd9713560b1d11ded16143f0d329b25130f63d91adcc301b81d19`
+completed in **18.052 seconds** (count/admission/generation/persistence, excluding
+earlier local preparation). Three retained PNGs and three existing excerpts were
+sent with `store:false`, without tools, room imagery or GLB upload. Exact count:
+3,120 input tokens; response: 529 output tokens. Reservation: $0.02828; conservative
+usage-derived estimate: **$0.01309**, not an invoice amount. Including prior text
+research, cumulative V8 estimate: **$0.0196625 / $0.05**. No retry occurred.
+
+The application persisted two **candidate** “Cylinder-bank upper cover” mappings
+for islands 001/002, each bound to its own view and source `wiki-13147596`. Island
+003 remains model-reported unknown. Islands 004–008 were not examined by vision;
+the remaining 192 geometric pieces were outside this prepared-view batch entirely.
+No verified identity, semantic grouping, manifest or runtime capability changed.
+Schema/ID checks passed; factual entailment, exact mechanical identity and internal
+completeness remain unverified. Human corrections are still fixture-tested only;
+no synthetic reviews were inserted into the real V8 episode.
+
+Next: improve relevant references and assess these candidates against evidence,
+preserving this original episode. Do not silently spend again or expand to all 200
+pieces. This is a bounded investigation pilot, not finished engine understanding.
+
+Official API references checked during implementation:
+[image inputs](https://developers.openai.com/api/docs/guides/images-vision),
+[token counting](https://developers.openai.com/api/docs/guides/token-counting),
+[model rates/modalities](https://developers.openai.com/api/docs/models/gpt-6-sol),
+[data controls](https://developers.openai.com/api/docs/guides/your-data).
+`store:false` is not a claim of Zero Data Retention; provider safety/caching rules
+and actual organization/project settings still apply.
+
+### Remaining gates
+
 1. Extend the local evidence package into bounded raster inputs for live vision;
    evaluate preview occlusion artifacts before treating them as model evidence.
    Actual surface adjacency remains future work; AABB proximity is not a substitute.

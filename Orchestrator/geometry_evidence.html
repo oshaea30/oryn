@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ORYN — Geometry evidence</title>
+<style>
+:root{color-scheme:dark;font:16px system-ui;background:#10171e;color:#e8f0f5}body{max-width:1100px;margin:36px auto;padding:0 24px}h1{font-size:32px}p{line-height:1.6;color:#b1c2cf}a{color:#6fe3bd}section{background:#19252f;padding:24px;border:1px solid #304351;border-radius:14px;margin:20px 0}select{max-width:100%;background:#10171e;color:white;padding:12px;border:1px solid #506575;border-radius:8px;font:inherit}img{width:100%;display:block;margin-top:20px}code{overflow-wrap:anywhere}li{margin:10px 0;color:#b1c2cf}#notice{color:#ffb5a7}button{padding:10px;margin:10px 0;background:#6fe3bd;border:0;border-radius:6px;cursor:pointer}label{display:block;margin-bottom:12px}
+p,li{overflow-wrap:anywhere}select{min-width:0}#identity{font-size:13px}
+</style></head><body>
+<a href="/">← Object requests</a><h1>Geometry evidence</h1><p>Object-only diagnostic views prepared by ORYN on this Mac. No headset capture, no external image calls, no component identities inferred.</p>
+<p id="notice" role="status">Loading saved evidence…</p><button id="reload">Refresh saved status</button>
+<section id="evidence" hidden><label for="piece">Investigation piece</label><select id="piece"></select><p id="identity"></p><p id="measurements"></p><img id="views" alt="Selected surface highlighted in four context views, with four isolated views below"><p>Green: selected surface. Gray: other geometry. Upper row: common object scale. Lower row: independently fitted piece. XY / ZY / XZ are source axes, not established anatomical directions.</p><p id="neighbors"></p></section>
+<section><h2>What we know—and don’t</h2><p id="coverage"></p><ul id="limitations"></ul><p id="mapping">Component mapping has not run. Candidate identities require an approved vision provider and reference evidence. This does not unlock take-apart mode.</p></section>
+<script>
+const $=id=>document.getElementById(id),id=new URLSearchParams(location.search).get('id');let record;
+function showPiece(){
+  const n=Number($('piece').value),view=record.views[n],m=record.measurements.find(p=>p.geometry_id===view.geometry_id);
+  $('identity').textContent=view.geometry_id;
+  $('measurements').textContent=`Unidentified surface · ${m.triangles} triangles · ${m.vertices} vertices · local bounds size: ${m.bounds_local.size.map(v=>v.toPrecision(4)).join(' × ')} (unverified source units)`;
+  $('views').src='/api/geometry-view?id='+id+'&piece='+n;
+  $('neighbors').textContent='Nearest bounding boxes (not physical adjacency): '+view.nearest_bounds.map(p=>p.geometry_id.split(':').slice(-2).join(':')+' / gap '+p.aabb_gap_local.toPrecision(3)).join(', ');
+}
+async function load(){
+  $('reload').disabled=true;
+  try{
+    if(!/^[a-f0-9]{64}$/.test(id||''))throw Error('Invalid evidence link.');
+    const response=await fetch('/api/geometry-evidence?id='+id,{signal:AbortSignal.timeout(10000)});
+    if(!response.ok)throw Error('Saved evidence unavailable.');record=await response.json();
+    $('notice').textContent=record.status==='ready'?`Prepared locally in ${(record.latency_ms/1000).toFixed(2)} seconds · $0 provider cost`:record.error||'Local evidence: '+record.status;
+    $('evidence').hidden=record.status!=='ready';$('piece').replaceChildren();$('limitations').replaceChildren();$('coverage').textContent='';
+    if(record.status!=='ready')return;
+    for(const [n,v] of record.views.entries()){const option=document.createElement('option');option.value=n;option.textContent=v.geometry_id.split(':').slice(-2).join(':');$('piece').append(option);}
+    $('coverage').textContent=`${record.measurements.length} geometric pieces measured; ${record.targets.length} selected for views. All identities remain unverified. Original model and runtime capabilities are unchanged.`;
+    for(const text of record.limitations){const li=document.createElement('li');li.textContent=text;$('limitations').append(li);}
+    const revisions=record.candidate_revisions||[];
+    if(revisions.length)$('mapping').textContent=`${revisions.length} candidate revision(s) retained for review. None promote runtime capabilities or verified identity.`;
+    showPiece();
+  }catch(error){$('notice').textContent=error.message;$('evidence').hidden=true;}finally{$('reload').disabled=false;}
+}
+$('piece').onchange=showPiece;$('reload').onclick=load;load();
+</script></body></html>

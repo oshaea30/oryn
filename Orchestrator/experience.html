@@ -63,6 +63,14 @@ function showJob(job){
     line(loaded&&bound?'Geometric take-apart: prepared for this loaded model (headset interaction not yet verified)':'Geometric take-apart: prepared; the prepared version has not been confirmed loaded');
   }else line('Take-apart mode: unavailable — '+cap.reason);
   line('Semantic explanation: unsupported · Verified internal assembly: unsupported');
+  const evidence=job.geometry_evidence;
+  if(job.geometry_evidence_error)line(job.geometry_evidence_error);
+  if(evidence){
+    line(evidence.status==='ready'?`Local geometry evidence ready · ${evidence.targets.length} pieces · no images sent externally`:'Local geometry evidence: '+evidence.status);
+    if(/^[a-f0-9]{64}$/.test(evidence.id)){
+      const a=document.createElement('a');a.href='/geometry-evidence?id='+evidence.id;a.textContent='Inspect piece views and measurements';a.target='_blank';a.rel='noopener';$('capabilities').append(a);
+    }
+  }
   const investigation=job.investigations?.[job.delivery_variant||'geometry'];
   if(job.investigation_error)line(job.investigation_error);
   else if(investigation){

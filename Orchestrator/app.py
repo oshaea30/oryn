@@ -16,6 +16,7 @@ from transport import AdbTransport, DeliveryError
 from credential_store import CredentialError, MacKeychain, validate_key
 from ingestion import prepare_asset, summary as ingestion_summary
 from workflow import WorkflowStore, summary as workflow_summary
+from geometry_evidence import GeometryEvidenceStore
 from urllib.parse import urlsplit, parse_qs
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -49,6 +50,7 @@ class Jobs:
         self.root, self.fixture = Path(root), Path(fixture)
         self.root.mkdir(parents=True, exist_ok=True)
         self.workflows = WorkflowStore(self.root / 'workflows.sqlite3')
+        self.geometry_evidence = GeometryEvidenceStore(self.workflows)
         self.research = None  # Main wires live providers after local-only backfill.
         self.key, self.provider = key, provider
         self.credential_store = credential_store
@@ -111,6 +113,12 @@ class Jobs:
     def state(self):
         with self.lock:
             jobs = [dict(job) for job in sorted(self.jobs.values(), key=lambda job: job['created'], reverse=True)]
+            for job in jobs:
+                if job.get('geometry_evidence_id'):
+                    try:
+                        job['geometry_evidence'] = self.geometry_evidence.summary(job['geometry_evidence_id'])
+                    except Exception:
+                        job['geometry_evidence_error'] = 'Local geometry evidence unavailable; model interaction is unchanged.'
             if self.research is not None:
                 for job in jobs:
                     if job.get('research_id'):
@@ -294,6 +302,12 @@ class Jobs:
             investigations = dict(job.get('investigations', {}))
             investigations[variant] = workflow_summary(investigation)
             self.update(job_id, _preserve_updated=True, investigations=investigations, investigation_error='')
+            if variant == 'geometry' and not job.get('demo') and investigation.get('investigation_targets'):
+                try:
+                    evidence_id = self.geometry_evidence.enqueue(source, manifest, investigation['investigation_targets'])
+                    self.update(job_id, _preserve_updated=True, geometry_evidence_id=evidence_id, geometry_evidence_error='')
+                except Exception:
+                    self.update(job_id, _preserve_updated=True, geometry_evidence_error='Local geometry evidence could not be queued; model interaction is unchanged.')
         except Exception:
             self.update(job_id, _preserve_updated=True, investigation_error='Investigation preparation unavailable; model capabilities are unchanged.')
         return manifest, chosen
@@ -416,10 +430,10 @@ class Handler(BaseHTTPRequestHandler):
     def valid_host(self):
         return self.headers.get("Host") == f"127.0.0.1:{self.server.server_port}"
 
-    def respond(self, status, value, html=False):
-        data = value if html else json.dumps(value).encode()
+    def respond(self, status, value, html=False, content_type=None):
+        data = value if html or content_type else json.dumps(value).encode()
         self.send_response(status)
-        self.send_header("Content-Type", "text/html; charset=utf-8" if html else "application/json")
+        self.send_header("Content-Type", content_type or ("text/html; charset=utf-8" if html else "application/json"))
         self.send_header("Content-Length", str(len(data)))
         self.send_header("Cache-Control", "no-store")
         self.send_header("X-Content-Type-Options", "nosniff")
@@ -434,6 +448,20 @@ class Handler(BaseHTTPRequestHandler):
             return self.respond(200, (Path(__file__).parent / "experience.html").read_bytes(), html=True)
         if self.path == "/lab":
             return self.respond(200, (Path(__file__).parent / "index.html").read_bytes(), html=True)
+        if urlsplit(self.path).path == '/geometry-evidence':
+            return self.respond(200, (Path(__file__).parent / 'geometry_evidence.html').read_bytes(), html=True)
+        if urlsplit(self.path).path in {'/api/geometry-evidence','/api/geometry-view'}:
+            try:
+                query = parse_qs(urlsplit(self.path).query, strict_parsing=True)
+                is_view = urlsplit(self.path).path == '/api/geometry-view'
+                if set(query) != ({'id','piece'} if is_view else {'id'}) or any(len(v)!=1 for v in query.values()) or not re.fullmatch(r'[a-f0-9]{64}',query['id'][0]):
+                    raise ValueError('Invalid evidence ID.')
+                if is_view:
+                    svg = self.server.jobs.geometry_evidence.view(query['id'][0],int(query['piece'][0]))
+                    return self.respond(200,svg.encode(),content_type='image/svg+xml')
+                return self.respond(200,self.server.jobs.geometry_evidence.report(query['id'][0]))
+            except (ValueError,KeyError):
+                return self.respond(404,{'error':'Geometry evidence unavailable.'})
         if self.path == "/health":
             return self.respond(200, {"status": "ok"})
         if self.path == "/api/state":
@@ -498,6 +526,7 @@ def main():
         key=os.environ.get('ORYN_OPENAI_API_KEY',''))
     server = Server(args.port, jobs)
     jobs.research.start()
+    jobs.geometry_evidence.start()
     def receipts():
         while True:
             time.sleep(5)
@@ -511,6 +540,7 @@ def main():
         pass
     finally:
         jobs.research.stop()
+        jobs.geometry_evidence.stop()
         server.server_close()
 
 

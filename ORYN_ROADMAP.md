@@ -1,6 +1,6 @@
 # ORYN working roadmap
 
-Last checkpoint: 2026-09-27. This file records the agreed direction so new ideas
+Last checkpoint: 2026-09-28. This file records the agreed direction so new ideas
 do not silently replace the current milestone.
 
 ## Product goal
@@ -26,6 +26,20 @@ Generated shapes and user labels must not become verified mechanical facts.
   not general interpretation quality or semantic understanding.
 
 ## Current milestone: no-approval object-request user experience
+
+Latest increment: local geometry evidence is now application-owned. The background
+worker measured all 200 V8 pieces and all 39 drone pieces, producing four context
+and four isolated diagnostic views for eight targets per asset. The first live
+local preparations each took approximately 1.1 seconds, excluding later storage
+compression/persistence. No generation, research, images-out or Quest actions were
+triggered. Views are accessible through the existing object UI; all identities
+remain unknown. Source-local AABB proximity is explicitly not mechanical adjacency.
+Candidate mapping validation and immutable revision storage are implemented and
+fixture-tested, but no vision adapter is wired, no real candidate mappings exist,
+and no semantic grouping or new runtime capability is enabled. Next: agree the
+object-image data/cost policy, rasterize bounded views for the selected vision
+provider, and test reviewable reference-backed candidates under spending admission.
+See [geometry evidence contract](ORYN_WORKFLOW.md#local-geometry-evidence-checkpoint).
 
 Latest increment: [persistent local investigation baseline](ORYN_WORKFLOW.md).
 The user approved bounded Wikipedia/OpenAI research. The durable retrieval →

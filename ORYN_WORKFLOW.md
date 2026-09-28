@@ -184,10 +184,57 @@ These diagnostics use the existing loopback/Host restriction. Keys, headers,
 signed URLs and raw provider exceptions are not decision inputs or log fields.
 The SQLite file is ignored by Git; no files are uploaded to cloud storage.
 
+## Local geometry evidence checkpoint
+
+Implemented 2026-09-28 in `Orchestrator/geometry_evidence.py`. A dedicated local
+background worker runs independently of generation delivery and paid research.
+Startup backfills a local queue for saved generated assets; new objects enqueue
+after ingestion. It does not upload, regenerate, invoke a provider or send Quest
+commands. Asset/source/manifest IDs and exact face membership are checked again
+before rendering. Views and measurements persist in the ignored workflow SQLite
+store, independently from immutable interaction manifests.
+
+- All supported pieces get fresh local bounds/triangle/vertex measurements.
+- Up to eight baseline investigation targets get four orthographic context views
+  plus four isolated views. Full source-local orientation/transform provenance is
+  retained. Views use deterministic painter-order SVGs; they are not photos,
+  engineering drawings, z-buffer-accurate captures or model-ready raster inputs.
+- Nearest bounding-box gaps are lower-bound spatial measurements, **not** surface
+  adjacency, component identity or evidence of mechanical attachment. No assembly
+  groups or semantic labels are inferred from them.
+- Narrow layout support intentionally matches the lossless decoder: position-only
+  indexed triangles in one static mesh node. Unsupported layouts remain unchanged
+  with an explicit unavailable status, never a silent attribute-dropping conversion.
+- Work bounds: 20,000 triangles, 2,048 recorded pieces, eight viewed targets,
+  16 MiB/view and 64 MiB/package uncompressed, 256 MiB aggregate compressed view
+  storage. Preserve a 576 MiB free-space floor before preparation. No eviction.
+  Compressed SVGs have bounded decompression and are SHA-checked before serving.
+  SQLite freed pages may remain allocated for reuse; this is not cloud storage.
+- Content-addressed reuse and transactional claims avoid duplicate work. Running
+  work interrupted by restart is marked interrupted, not silently replayed. Local
+  errors never invalidate an existing model or trigger a paid replacement.
+- `/geometry-evidence?id=…` is a read-only inspection page. The object request UI
+  links it. `/api/geometry-evidence` returns measurements/view hashes without local
+  filesystem paths; `/api/geometry-view` returns one checksum-bound SVG.
+- `MappingCognitiveProvider` defines a separate future vision boundary. No live
+  adapter or HTTP mapping writer exists. The strict result contract requires each
+  selected piece to be a reference/view-linked candidate or explicitly unknown.
+  Unknown/duplicate IDs, wrong views/citations, fake confidence and epistemic
+  promotion are rejected. Each accepted candidate carries model/operation
+  provenance and `not_reviewed` status. Revisions are idempotent and append-only;
+  they do not upgrade manifests or interaction capabilities.
+
+Live local check: V8 200 measurements/eight view sheets, drone 39 measurements/eight
+view sheets; both ready in about 1.1 seconds before the later compression change.
+The real V8 page was browser-rendered and visually inspected. Source geometry,
+completed V8 reference notes and Quest capabilities were unchanged. All component
+identities are still unknown. Tests use synthetic candidates, not claimed V8 labels.
+
 ## Next implementation and benchmark gates
 
-1. Build an application-owned geometry-evidence package: object-only multi-view
-   renders, stable piece IDs, bounds and adjacency. Start with a bounded V8 subset.
+1. Extend the local evidence package into bounded raster inputs for live vision;
+   evaluate preview occlusion artifacts before treating them as model evidence.
+   Actual surface adjacency remains future work; AABB proximity is not a substitute.
    Sending rendered images would expand the current outbound scope and requires
    a separate image-data/cost policy before any live vision call; room imagery
    remains out of scope.

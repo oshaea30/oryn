@@ -6,7 +6,7 @@ import secrets
 import threading
 import time
 import uuid
-from cognition import CommandError, decide, offline_intent, valid_hex
+from cognition import CommandError, decide, offline_intent, valid_hex, action_context, snapshot_summary
 from cognitive_providers import validate_config
 from command_transport import CommandTransport
 from paid_gateway import PaidGateway
@@ -50,15 +50,19 @@ class Commands:
             if data.get('profile') != profile:
                 raise CommandError('Profile changed. Save the selected profile configuration first.')
             serial, state = self.transport.snapshot()
-            if not state['context']['ready']:
-                raise CommandError('Headset not ready. Open ORYN and release objects first.')
-            return self.gateway.prepare(provider,profile,key,question,state,serial,self.config_revisions[provider])
+            if not state['context']['parts']:
+                raise CommandError('Load/select an assembly before capturing an interpretation snapshot.')
+            quote = self.gateway.prepare(provider,profile,key,question,state,serial,self.config_revisions[provider])
+            return dict(quote, snapshot=snapshot_summary(state), contextFingerprint=action_context(state,serial))
 
     def status(self):
         with self.lock:
             configured = {p: value[0] for p, value in self.config.items()}
-        _, state = self.transport.snapshot()
-        return {'state': state, 'configured': configured}
+        try:
+            serial, state = self.transport.snapshot()
+            return {'state': state, 'configured': configured, 'contextFingerprint': action_context(state,serial)}
+        except CommandError as error:
+            return {'state': None, 'stateError': str(error), 'configured': configured}
 
     def ask(self, data):
         ident, question, provider = data.get('id'), data.get('question'), data.get('provider')
@@ -76,9 +80,10 @@ class Commands:
                 raise CommandError('Session request limit reached. Restart the command service.')
             if provider != 'offline' and (data.get('approvePaid') is not True or provider not in self.config):
                 raise CommandError('Configure this provider and approve this single paid request first.')
-            serial, state = self.transport.snapshot()
-            if not state['context']['ready']:
-                raise CommandError('Put on the Quest, open ORYN and release held objects/gestures first.')
+            if provider == 'offline':
+                serial, state = self.transport.snapshot()
+            else:
+                serial, state = self.gateway.interpretation_snapshot(ident)
             record = {'serial': serial, 'state': state, 'created': time.time(), 'sent': False,
                       'public': {'id': ident, 'provider': provider, 'answer': 'Request started; result unavailable.', 'action': None}}
             # Reserve ID before external I/O. Same ID, including after timeout, is not billed again.
@@ -94,7 +99,8 @@ class Commands:
                     intent, model = self.gateway.run(data,provider,profile,key,question,state,serial,self.config_revisions[provider])
                 decision = decide(state, intent)
                 record['decision'] = decision
-                record['public'] = dict(decision, id=ident, provider=provider, model=model)
+                record['public'] = dict(decision, id=ident, provider=provider, model=model,
+                                        contextFingerprint=action_context(state,serial), snapshot=snapshot_summary(state))
             except Exception as error:
                 message = str(error) if isinstance(error, CommandError) else 'Request failed. No automatic retry or action was performed.'
                 record['public'] = {'id': ident, 'provider': provider, 'answer': message, 'action': None}
@@ -114,12 +120,14 @@ class Commands:
                 return dict(self.transport.receipt(record['serial'], ident), id=ident)
             serial, current = self.transport.snapshot()
             original = record['state']
-            if serial != record['serial'] or current['session'] != original['session'] or current['contextToken'] != original['contextToken']:
-                raise CommandError('The selected part or workspace changed. Ask again before applying.')
-            if not current['context']['ready'] or time.time() - record['created'] > 120:
-                raise CommandError('Action proposal expired or headset not ready. Ask again.')
+            if action_context(current,serial) != action_context(original,record['serial']):
+                raise CommandError('Object, selection, saved records or assembly state changed. Ask again before applying.')
+            if time.time() - record['created'] > 120:
+                raise CommandError('Action proposal expired. Ask again.')
+            if not current['context']['ready']:
+                raise CommandError('Headset busy or unfocused. Release objects/open ORYN, then confirm this proposal again before it expires. No new paid interpretation is needed.')
             decision = record['decision']
-            command = {'schema': 1, 'id': ident, 'session': original['session'], 'contextToken': original['contextToken'],
+            command = {'schema': 1, 'id': ident, 'session': current['session'], 'contextToken': current['contextToken'],
                        'expires': int(time.time()) + 30, 'action': decision['action'], 'partId': decision['partId']}
             # Mark before transfer: uncertain transport must not trigger a second execution attempt.
             record['sent'] = True
@@ -182,7 +190,7 @@ class Handler(BaseHTTPRequestHandler):
                 name, mime = assets[self.path]
                 return self.respond(Path(__file__).with_name(name).read_bytes(), mime=mime)
             if self.path == '/api/session':
-                return self.respond({'token': self.server.token})
+                return self.respond({'token': self.server.token, 'commandContract': 2})
             if self.path == '/api/state':
                 return self.respond(self.server.commands.status())
             if self.path == '/api/budget':

@@ -13,18 +13,53 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from providers import GenerationError, MeshyProvider, PROFILES, validate_glb
 from asset_inspection import inspect_glb
 from transport import AdbTransport, DeliveryError
+from credential_store import CredentialError, MacKeychain, validate_key
+from ingestion import prepare_asset, summary as ingestion_summary
+from workflow import WorkflowStore, summary as workflow_summary
+from urllib.parse import urlsplit, parse_qs
 
 ROOT = Path(__file__).resolve().parents[1]
 ID = re.compile(r"^[a-f0-9]{32}$")
 TERMINAL = {"loaded_on_quest", "ready", "failed", "texture_failed", "delivery_failed", "waiting_for_headset", "interrupted"}
 VARIANT_FILES = {"geometry": "model.glb", "textured": "textured.glb"}
+EXPERIENCE_CREDITS = 5
+EXPERIENCE_DAILY_CREDITS = 50
+
+
+class ExperienceError(ValueError):
+    """Controlled, user-facing request errors; never provider exception text."""
+
+
+def object_prompt(value):
+    if not isinstance(value, str) or not 1 <= len(value.strip()) <= 800:
+        raise ExperienceError("Describe an object in 1–800 characters.")
+    # This is an object-request box, not a general assistant or semantic search.
+    prompt = re.sub(r"^(?:please\s+)?(?:show me|generate|create|make)(?:\s+|$)", "", value.strip(), flags=re.I).strip()
+    if not prompt:
+        raise ExperienceError("Include the object you want to see.")
+    return prompt
+
+
+def prompt_key(value):
+    return " ".join(object_prompt(value).casefold().split())
 
 
 class Jobs:
-    def __init__(self, root, fixture, key="", provider=MeshyProvider, transport=None):
+    def __init__(self, root, fixture, key="", provider=MeshyProvider, transport=None, credential_store=None):
         self.root, self.fixture = Path(root), Path(fixture)
         self.root.mkdir(parents=True, exist_ok=True)
+        self.workflows = WorkflowStore(self.root / 'workflows.sqlite3')
+        self.research = None  # Main wires live providers after local-only backfill.
         self.key, self.provider = key, provider
+        self.credential_store = credential_store
+        self.key_storage, self.credential_error = "session" if key else "missing", ""
+        if not key and credential_store is not None:
+            try:
+                self.key = credential_store.load()
+                if self.key:
+                    self.key_storage = "keychain"
+            except CredentialError as error:
+                self.credential_error = str(error)
         self.transport = transport or AdbTransport()
         self.lock = threading.RLock()
         self.jobs, self.busy = {}, False
@@ -53,10 +88,20 @@ class Jobs:
                         self.update(job["id"], inspection_error="Cached model did not pass structural inspection.")
             except (OSError, ValueError, KeyError, TypeError):
                 continue
+        # Local-only backfill: preserve delivery history, source files and records.
+        # Never generate, deliver or overwrite an existing ingestion revision here.
+        for job_id, job in self.jobs.items():
+            for variant, report in list(job.get('variants', {}).items()):
+                if variant in VARIANT_FILES and report.get('preflight') == 'PASS':
+                    try:
+                        self.prepare_ingestion(job_id, variant)
+                    except (OSError, ValueError, KeyError, TypeError, GenerationError):
+                        self.update(job_id, _preserve_updated=True, ingestion_error='Saved asset ingestion failed validation; original and existing manifest preserved. No automatic delivery.')
 
-    def update(self, job_id, **fields):
+    def update(self, job_id, *, _preserve_updated=False, **fields):
         with self.lock:
-            self.jobs[job_id].update(fields, updated=time.time())
+            stamp = self.jobs[job_id].get('updated', self.jobs[job_id]['created']) if _preserve_updated else time.time()
+            self.jobs[job_id].update(fields, updated=stamp)
             folder = self.root / job_id
             folder.mkdir(exist_ok=True)
             temp = folder / "job.json.partial"
@@ -65,10 +110,47 @@ class Jobs:
 
     def state(self):
         with self.lock:
+            jobs = [dict(job) for job in sorted(self.jobs.values(), key=lambda job: job['created'], reverse=True)]
+            if self.research is not None:
+                for job in jobs:
+                    if job.get('research_id'):
+                        try:
+                            job['research'] = self.research.summary(job['research_id'])
+                        except Exception:
+                            job['research_error'] = 'Saved research is unavailable; model interaction remains available.'
             return {"configured": bool(self.key), "busy": self.busy, "provider": "Meshy", "profiles": PROFILES,
-                "jobs": [dict(job) for job in sorted(self.jobs.values(), key=lambda job: job["created"], reverse=True)]}
+                "keyStorage": self.key_storage, "credentialError": self.credential_error,
+                "experienceContract": 1, "deliveryPending": bool(self.receipts),
+                "experiencePolicy": {"credits_per_generation": EXPERIENCE_CREDITS,
+                    "rolling_day_limit": EXPERIENCE_DAILY_CREDITS, "reserved_last_day": self.reserved_credits()},
+                "jobs": jobs, 'researchConnection': self.research.state() if self.research is not None else None}
 
-    def submit(self, body):
+    def configure_key(self, value):
+        key = validate_key(value)
+        with self.lock:
+            if self.credential_store is not None:
+                # Persist first: a denied/locked Keychain must not report success.
+                self.credential_store.save(key)
+            self.key = key
+            self.key_storage = "keychain" if self.credential_store is not None else "session"
+            self.credential_error = ""
+            return {"configured": True, "keyStorage": self.key_storage}
+
+    def reserved_credits(self):
+        # Persisted before dispatch; failed/uncertain calls retain their reservation.
+        # Include lab spending too. This is a local cap, not account-wide billing.
+        cutoff = time.time() - 86400
+        return sum(job.get("approved_geometry_credits", 0) + job.get("approved_texture_credits", 0)
+            for job in self.jobs.values() if job.get("updated", job["created"]) >= cutoff)
+
+    def request_object(self, body):
+        """A direct user request authorizes one bounded generate/load operation."""
+        prompt = object_prompt(body.get("prompt"))
+        # Client cannot escalate model/profile, add texturing or change the cap.
+        return self.submit({"request_id": body.get("request_id"), "mode": "meshy",
+            "profile": "structure", "prompt": prompt}, experience=True)
+
+    def submit(self, body, *, experience=False):
         job_id = body.get("request_id", "")
         if not isinstance(job_id, str) or not ID.fullmatch(job_id):
             raise ValueError("A unique request_id is required.")
@@ -83,23 +165,51 @@ class Jobs:
             raise ValueError("Enter an object description of 1-800 characters.")
         with self.lock:
             if job_id in self.jobs:
+                existing = self.jobs[job_id]
+                if experience and (not existing.get("experience") or prompt_key(existing["prompt"]) != prompt_key(prompt)):
+                    raise ExperienceError("This request ID belongs to a different request. Check the existing result.")
                 return dict(self.jobs[job_id])  # Idempotent retry, including after restart.
-            if self.busy:
+            if self.busy or (experience and self.receipts):
                 raise ValueError("A job is already running. Wait before starting another.")
             if len(self.jobs) >= 20:
                 raise ValueError("This prototype keeps at most 20 jobs. Archive local job folders before creating more.")
             if shutil.disk_usage(self.root).free < 512 * 1024 * 1024:
                 raise ValueError("Free at least 512 MB before generating assets.")
-            if mode == "meshy" and (not self.key or body.get("approve_paid") is not True):
+            reuse = None
+            if experience:
+                for saved in sorted(self.jobs.values(), key=lambda j: j["created"], reverse=True):
+                    report = saved.get("variants", {}).get("geometry", {})
+                    if not saved.get("demo") and saved.get("profile") == "structure" and report.get("preflight") == "PASS" and prompt_key(saved["prompt"]) == prompt_key(prompt):
+                        reuse = saved
+                        break
+                if not reuse and not self.key:
+                    raise ExperienceError("Add the Meshy key once in connection settings, then request your object.")
+                if not reuse and (PROFILES["structure"]["geometry_credits"] != EXPERIENCE_CREDITS or self.reserved_credits() + EXPERIENCE_CREDITS > EXPERIENCE_DAILY_CREDITS):
+                    raise ExperienceError("The automatic generation credit limit has been reached. Saved assets remain available; nothing was charged.")
+            if not experience and mode == "meshy" and (not self.key or body.get("approve_paid") is not True):
                 raise ValueError("Configure the local API key and explicitly approve this paid generation first.")
-            if mode == "meshy" and body.get("approved_credits") != PROFILES[profile]["geometry_credits"]:
+            if not experience and mode == "meshy" and body.get("approved_credits") != PROFILES[profile]["geometry_credits"]:
                 raise ValueError("Approve the credit estimate for the selected geometry profile.")
             job = {"id": job_id, "prompt": prompt.strip() if mode == "meshy" else "TEST ONLY: existing avocado — not AI-generated",
                 "demo": mode == "demo", "profile": profile, "provider": "meshy", "variants": {},
-                "approved_geometry_credits": 0 if mode == "demo" else PROFILES[profile]["geometry_credits"],
+                "approved_geometry_credits": 0 if mode == "demo" or reuse else PROFILES[profile]["geometry_credits"],
+                "experience": experience, "reused_from": reuse["id"] if reuse else None,
                 "status": "queued", "progress": 0, "created": time.time(), "error": ""}
             self.jobs[job_id] = job
             self.update(job_id)
+            if experience:
+                # Bounded routing seam. Hard credit, eligibility and integrity gates
+                # above/below remain application-owned, not model permissions.
+                try:
+                    decision = self.workflows.decide_local(job_id, 'asset_route',
+                        [{'id': job_id, 'exact_saved_match': reuse is not None}])
+                    expected = 'library' if reuse else 'generation'
+                    if decision['results'][0]['action'] != expected:
+                        raise ValueError('Unsupported acquisition route.')
+                    self.update(job_id, route_decision_id=decision['id'])
+                except Exception:
+                    self.update(job_id, status='failed', error='Acquisition routing failed; no provider call was made.')
+                    raise ExperienceError('Acquisition routing failed; nothing was dispatched.') from None
             self.busy = True
             key = self.key  # Snapshot; never written to a job or sent to Quest.
             threading.Thread(target=self.work, args=(job_id, key), daemon=True).start()
@@ -111,7 +221,14 @@ class Jobs:
     def work(self, job_id, key):
         job = self.jobs[job_id]
         try:
-            if job["demo"]:
+            if job.get("reused_from"):
+                self.progress(job_id, "loading_saved_asset", 0)
+                source = self.jobs[job["reused_from"]]
+                data = (self.root / source["id"] / "model.glb").read_bytes()
+                report = inspect_glb(data)
+                if report["preflight"] != "PASS" or report["sha256"] != source["variants"]["geometry"]["sha256"]:
+                    raise GenerationError("Saved asset changed or failed inspection. Stopped without spending credits.")
+            elif job["demo"]:
                 self.progress(job_id, "reading_test_fixture", 0)
                 data = self.fixture.read_bytes()
             else:
@@ -119,9 +236,9 @@ class Jobs:
                     lambda phase, amount: self.progress(job_id, phase, amount),
                     lambda name, value: self.update(job_id, **{name: value}))
             self.save_asset(job_id, "geometry", data)
-            # The test button explicitly requests delivery. Paid generation stops
-            # after inspection: no implicit texturing or headset transfer.
-            if job["demo"]:
+            # Request mode includes delivery; the developer lab still stops at
+            # inspection. Neither path silently adds a texturing task.
+            if job["demo"] or job.get("experience"):
                 self.deliver(job_id, "geometry")
         except GenerationError as error:
             self.update(job_id, status="failed", error=str(error))
@@ -145,7 +262,41 @@ class Jobs:
         with self.lock:
             variants = dict(self.jobs[job_id].get("variants", {}))
             variants[variant] = report
-            self.update(job_id, status="ready", progress=100, bytes=len(data), variants=variants)
+            self.update(job_id, status="preparing_assembly", progress=100, bytes=len(data), variants=variants)
+        if report['preflight'] == 'PASS':
+            self.prepare_ingestion(job_id, variant)
+        self.update(job_id, status='ready')
+        if variant == 'geometry' and self.jobs[job_id].get('experience') and self.research is not None:
+            try:
+                self.research.enqueue_job(job_id)  # SQLite only; remote work runs separately.
+            except Exception:
+                self.update(job_id, _preserve_updated=True, research_error='Research could not be queued; model delivery continues.')
+
+    def prepare_ingestion(self, job_id, variant):
+        job = self.jobs[job_id]
+        provenance = {'job_id': job_id, 'provider': None if job.get('demo') else job.get('provider'), 'profile': job.get('profile'),
+            'provider_task_id': job.get('preview_task_id') if variant == 'geometry' else job.get('refine_task_id'),
+            'reused_from': job.get('reused_from')}
+        source = self.root / job_id / VARIANT_FILES[variant]
+        if inspect_glb(source.read_bytes())['sha256'] != job['variants'][variant]['sha256']:
+            raise GenerationError('Source no longer matches the saved generation report.')
+        manifest, chosen = prepare_asset(self.root / job_id, variant, provenance)
+        # An importable but replaced source must not silently acquire a new identity.
+        if manifest['source_geometry']['sha256'] != job['variants'][variant]['sha256']:
+            raise GenerationError('Source no longer matches the saved generation report.')
+        ingestions = dict(job.get('ingestions', {}))
+        ingestions[variant] = ingestion_summary(manifest)
+        self.update(job_id, _preserve_updated=True, ingestions=ingestions, ingestion_error='')
+        # Cheap, deterministic analysis is reusable across deliveries and restarts.
+        # A failed investigation must not erase geometry or prevent interaction.
+        try:
+            investigation = self.workflows.prepare(manifest)
+            investigations = dict(job.get('investigations', {}))
+            investigations[variant] = workflow_summary(investigation)
+            self.update(job_id, _preserve_updated=True, investigations=investigations, investigation_error='')
+        except Exception:
+            self.update(job_id, _preserve_updated=True, investigation_error='Investigation preparation unavailable; model capabilities are unchanged.')
+        return manifest, chosen
 
     def texture(self, body):
         job_id, request_id = body.get("id"), body.get("request_id")
@@ -200,14 +351,15 @@ class Jobs:
             report = self.jobs[job_id].get("variants", {}).get(variant)
             if not report or report["preflight"] != "PASS":
                 raise DeliveryError("Model failed static preflight. Inspect the report before delivery.")
-            self.update(job_id, delivery_variant=variant)
-            receipt = self.transport.deliver(self.root / job_id / VARIANT_FILES[variant], self.jobs[job_id],
+            manifest, chosen = self.prepare_ingestion(job_id, variant)
+            self.update(job_id, delivery_variant=variant, delivery_asset_sha256=manifest['runtime']['sha256'])
+            receipt = self.transport.deliver(chosen, self.jobs[job_id],
                 lambda phase, amount, **extra: self.progress(job_id, phase, amount, **extra))
             if receipt:
                 with self.lock:
                     self.receipts[job_id] = receipt
                     self.update(job_id, serial=receipt[0])
-        except DeliveryError as error:
+        except (DeliveryError, GenerationError) as error:
             self.update(job_id, status="delivery_failed", error=str(error))
 
     def redeliver(self, job_id, variant="geometry"):
@@ -279,11 +431,23 @@ class Handler(BaseHTTPRequestHandler):
         if not self.valid_host():
             return self.respond(403, {"error": "Local console only"})
         if self.path == "/":
+            return self.respond(200, (Path(__file__).parent / "experience.html").read_bytes(), html=True)
+        if self.path == "/lab":
             return self.respond(200, (Path(__file__).parent / "index.html").read_bytes(), html=True)
         if self.path == "/health":
             return self.respond(200, {"status": "ok"})
         if self.path == "/api/state":
             return self.respond(200, dict(self.server.jobs.state(), token=self.server.token))
+        if self.path == '/api/workflow-metrics':
+            return self.respond(200, self.server.jobs.workflows.metrics())
+        if self.path.startswith('/api/workflow?'):
+            try:
+                query = parse_qs(urlsplit(self.path).query, strict_parsing=True)
+                if set(query) != {'id'} or len(query['id']) != 1 or not re.fullmatch(r'[a-f0-9]{64}', query['id'][0]):
+                    raise ValueError('Invalid investigation ID.')
+                return self.respond(200, self.server.jobs.workflows.report(query['id'][0]))
+            except ValueError:
+                return self.respond(404, {'error': 'Unknown investigation.'})
         self.respond(404, {"error": "Not found"})
 
     def do_POST(self):
@@ -297,14 +461,15 @@ class Handler(BaseHTTPRequestHandler):
             if not isinstance(body, dict):
                 raise ValueError("Expected an object")
             if self.path == "/api/key":
-                key = body.get("key", "")
-                if not isinstance(key, str) or not 10 <= len(key.strip()) <= 500 or '\n' in key or '\r' in key:
-                    raise ValueError("Enter a valid API key")
-                with self.server.jobs.lock:
-                    self.server.jobs.key = key.strip()
-                return self.respond(200, {"configured": True})
+                return self.respond(200, self.server.jobs.configure_key(body.get("key", "")))
+            if self.path == '/api/research-key' and self.server.jobs.research is not None:
+                return self.respond(200, self.server.jobs.research.configure_key(body.get('key','')))
+            if self.path == '/api/investigate' and self.server.jobs.research is not None:
+                return self.respond(202, self.server.jobs.research.enqueue_job(body.get('id')))
             if self.path == "/api/generate":
                 return self.respond(202, self.server.jobs.submit(body))
+            if self.path == "/api/request-object":
+                return self.respond(202, self.server.jobs.request_object(body))
             if self.path == "/api/deliver":
                 self.server.jobs.redeliver(body.get("id"), body.get("variant", "geometry"))
                 return self.respond(202, {"accepted": True})
@@ -313,11 +478,11 @@ class Handler(BaseHTTPRequestHandler):
             if self.path == "/api/balance":
                 return self.respond(200, self.server.jobs.balance())
             return self.respond(404, {"error": "Not found"})
-        except GenerationError as error:
+        except (GenerationError, ExperienceError, CredentialError) as error:
             return self.respond(400, {"error": str(error)})
         except (ValueError, TypeError):
             # Validation messages are controlled locally; never echo request bodies.
-            return self.respond(400, {"error": "Request rejected. Check key, profile/credit approval, prompt length, pending operations, and available disk space. T2 texture and duplicate texture attempts are blocked."})
+            return self.respond(400, {"error": "Request rejected. Check connection settings, prompt length, pending operations and available disk space. The developer lab also requires matching credit approval."})
         except Exception:
             return self.respond(500, {"error": "Local operation failed. Check job history before retrying; paid tasks never auto-retry."})
 
@@ -327,20 +492,25 @@ def main():
     parser.add_argument("--port", type=int, default=8765)
     args = parser.parse_args()
     os.umask(0o077)
-    jobs = Jobs(ROOT / ".oryn-generation", ROOT / "RuntimeAssets/Avocado.glb", os.environ.get("ORYN_MESHY_API_KEY", ""))
+    jobs = Jobs(ROOT / ".oryn-generation", ROOT / "RuntimeAssets/Avocado.glb", os.environ.get("ORYN_MESHY_API_KEY", ""), credential_store=MacKeychain())
+    from research_service import ResearchService
+    jobs.research = ResearchService(jobs, credential_store=MacKeychain(account=b'openai-api-key'),
+        key=os.environ.get('ORYN_OPENAI_API_KEY',''))
     server = Server(args.port, jobs)
+    jobs.research.start()
     def receipts():
         while True:
             time.sleep(5)
             jobs.refresh_receipts()
     threading.Thread(target=receipts, daemon=True).start()
     print(f"Oryn generation console: {server.origin}", flush=True)
-    print("Local only. API key stays in memory. Paid jobs require per-job approval. Ctrl+C stops.", flush=True)
+    print("Local only. Request mode automatically generates and delivers within its credit cap. Developer lab remains staged. Ctrl+C stops.", flush=True)
     try:
         server.serve_forever()
     except KeyboardInterrupt:
         pass
     finally:
+        jobs.research.stop()
         server.server_close()
 
 

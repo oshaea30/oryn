@@ -201,8 +201,9 @@ class SpendingTests(unittest.TestCase):
         service=Commands(FakeTransport(),gateway=self.gateway)
         with self.assertRaises(CommandError):service.configure({'provider':'gemini','key':'fake-key-for-test'})
         service.configure({'provider':'openai','profile':'routine','key':'fake-key-for-test'})
-        response=service.ask({'id':uuid.uuid4().hex,'provider':'openai','profile':'routine','question':'Isolate this','approvePaid':True})
-        self.assertIsNone(response['action']); self.assertEqual(self.sent,[])
+        with self.assertRaises(CommandError):
+            service.ask({'id':uuid.uuid4().hex,'provider':'openai','profile':'routine','question':'Isolate this','approvePaid':True})
+        self.assertEqual(self.sent,[])
 
 
 if __name__=='__main__':unittest.main()

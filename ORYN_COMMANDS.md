@@ -40,8 +40,34 @@ IDs and unpriced Gemini generation are no longer offered as paid routes.
 Click “Send text for token-count quote” to share this bounded request with the
 provider's counting endpoint. Review the exact input count, maximum output, maximum
 cost and daily remaining allowance. Then approve that exact quote and interpret.
-Quotes expire after 120 seconds and are invalidated by changes to input, context,
-credentials or policy. Every generation first reserves its maximum in SQLite.
+Quotes expire after 120 seconds and bind the exact text, captured object facts,
+credentials and policy. Every generation first reserves its maximum in SQLite.
+
+### Interpretation approval versus action approval
+
+Quote creation needs one fresh Quest snapshot with an assembly loaded. The snapshot
+is copied into server memory with its counted request. Temporary `ready` changes
+(focus, held objects or gestures) do not block capturing otherwise fresh facts.
+Once quoted, paid interpretation uses **that frozen snapshot**, not a new headset
+read. You can take the headset off without invalidating an unexpired quote. The
+UI shows the capture time, assembly and selected part for both quote and response.
+Changing text/profile/credentials/policy still requires a new quote; output limits,
+exact amount approval, expiration, replay protection and ledger admission remain.
+
+If selection or saved knowledge changes afterward, interpretation still concerns
+the displayed captured facts. It never silently follows a new selection. Applying
+an action separately requires a fresh snapshot on the same device/app session with
+the same assembly, selected part, part records/revisions and assembly/isolation mode.
+Only `ready`, heartbeat time and the transient context token are excluded from this
+meaningful-state comparison. Current readiness must be true. The outgoing command
+is then bound to the **current** context token, which Unity independently checks
+again before execution. Temporary readiness recovery alone needs no new paid call.
+
+A definite busy/stale-read rejection before dispatch leaves the proposal available
+for another manual confirmation within its 120-second action lifetime. There is no
+automatic action queue or retry. A dispatched/uncertain command ID is never resent.
+Real target/state changes or action expiry still require a new proposal. Quote
+expiry is not extended merely because readiness changed.
 
 The request sends its question and bounded part IDs, labels, status and revision;
 never GLB, room image, file path, voice or annotation history. Keys are not persisted
@@ -71,11 +97,14 @@ use fake credentials and responses; they do not establish live model performance
 The headset writes `CommandBridge/state.json` in app-specific storage. It includes
 an app-session UUID, context token, heartbeat and selected assembly instance.
 Context includes saved record revisions and reports unreadable records explicitly.
-The Mac rejects stale snapshots. Both sides require a ready, focused workspace.
+The Mac rejects stale snapshots when acquiring a quote or executing an action.
+Execution on both sides requires a ready, focused workspace; interpreting an
+approved frozen snapshot does not.
 
-Each confirmed command binds to that exact session/context, expires after 30 seconds,
-and can only select, isolate, explode or reassemble. Changes to selection, labels,
-assembly or readiness invalidate the context. No relabeling, deletion, generation,
+Each confirmed command binds to the freshly validated session/context, expires
+after 30 seconds, and can only select, isolate, explode or reassemble. Changes to
+selection, labels, assembly or readiness after dispatch invalidate that execution
+context. No relabeling, deletion, generation,
 arbitrary Unity method calls or shell strings can be supplied by the model/browser.
 
 The Mac publishes via a temporary file followed by atomic rename. Unity validates
@@ -121,3 +150,11 @@ were made.
 
 Next: run identical paid provider evaluations, then extend evidence-backed
 explanations and relationships. Voice can feed this same validated text boundary.
+
+2026-09-27 approval split: 104 Python tests and the mocked Chrome UI regression
+passed. Tests cover interpretation with the headset disconnected, frozen target
+binding, focus/readiness recovery, fresh execution tokens, blocking real selection/
+record/session changes, expired quotes, and unchanged financial safeguards. No
+paid provider or headset action was invoked for this change. Command UI contract
+version 2 refuses an old running server. Restart clears its memory-only key and
+quotes, but keeps the existing ledger; reload the page and save the key again.

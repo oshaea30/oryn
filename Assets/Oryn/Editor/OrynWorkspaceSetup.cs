@@ -144,7 +144,7 @@ namespace Oryn.Editor
             config.handTrackingSupport = OVRProjectConfig.HandTrackingSupport.ControllersAndHands;
             OVRProjectConfig.CommitProjectConfig(config);
             PlayerSettings.productName = "Oryn Workspace";
-            PlayerSettings.bundleVersion = "1.10.0"; PlayerSettings.Android.bundleVersionCode = 13;
+            PlayerSettings.bundleVersion = "1.11.0"; PlayerSettings.Android.bundleVersionCode = 14;
             if (!File.Exists(ScenePath)) Generate(); else EditorSceneManager.OpenScene(ScenePath);
             var workspace = UnityEngine.Object.FindAnyObjectByType<OrynWorkspace>();
             EnsureRuntimePanel(workspace);

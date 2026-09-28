@@ -11,8 +11,11 @@ object knowledge and validated runtime actions.
   prayer-to-spread assembly explosion/reassembly.
 - Persistent part labels with provenance: user annotations remain unverified,
   not automatically recognized mechanical components.
-- Local Meshy generation adapter with separate geometry, optional texturing,
-  inspection, and confirmed USB delivery steps.
+- Single-submit object requests: exact saved match or bounded Meshy geometry,
+  automatic inspection and USB delivery, with no per-request approvals.
+  The staged developer lab remains available at `/lab`.
+- Versioned ingestion manifests, lossless assembly preparation for supported layouts,
+  and explicit capability limits. Geometry pieces remain distinct from components.
 - Text-command lab with offline test interpretation, provider adapters, grounded
   record lookup, explicit action confirmation, and headset execution receipts.
 - Persistent local command spending reservations, expiring quotes, bounded
@@ -21,8 +24,10 @@ object knowledge and validated runtime actions.
 
 This is a trusted-local-user prototype, not a production multi-user service.
 Schematic retrieval, automatic component understanding, voice, and production
-authentication are not implemented. Live cognitive-provider evaluation remains
-pending; mocked tests do not establish provider compatibility or answer quality.
+authentication are not implemented. One live OpenAI reassembly request passed
+interpretation, execution and 39-part state verification; this is not broad
+cognitive-provider validation. Automatic object requests are tested offline;
+the new end-to-end user experience still needs a live generation check.
 
 ## Development
 
@@ -35,7 +40,7 @@ The local services use Python 3 and its standard library. From the repository ro
 run either service in its own terminal:
 
 ```sh
-python3 Orchestrator/app.py          # Generation lab: http://127.0.0.1:8765/
+python3 Orchestrator/app.py          # Object requests: http://127.0.0.1:8765/ (lab at /lab)
 python3 Orchestrator/command_app.py  # Command lab: http://127.0.0.1:8767/
 ```
 
@@ -51,18 +56,23 @@ python3 -m unittest discover -s Orchestrator -p 'test_*.py' -v
 node --check Orchestrator/command.js
 ```
 
-Configure API keys only through the local service's in-memory settings. Do not
-commit credentials. Generated jobs, usage databases, Unity caches, builds, crash
-dumps, and local environment files are excluded from version control. Restarting
-a service clears its in-memory key; it does not clear persistent spending records.
+Configure API keys through the local services. Meshy is stored in macOS Keychain
+under service `com.oryn.local-generation`, account `meshy-api-key`, and restored
+automatically at startup. The command lab's language-provider keys still live only
+in memory. Do not commit credentials. Generated jobs, usage databases, Unity caches,
+builds, crash dumps, and local environment files are excluded from version control.
+Restarting does not clear persistent spending records.
 
 ## Guides
 
+- [Working roadmap and storage direction](ORYN_ROADMAP.md)
 - [Quest setup](ORYN_MILESTONE_1.md) and [local preview](ORYN_LOCAL_PREVIEW.md)
 - [Workspace and controls](ORYN_WORKSPACE.md)
 - [Runtime model loading](ORYN_RUNTIME_LOADING.md) and [generation](ORYN_GENERATION.md)
 - [Assembly interactions](ORYN_ASSEMBLIES.md) and [object knowledge](ORYN_KNOWLEDGE.md)
+- [Object ingestion manifest and preparation](ORYN_INGESTION.md)
 - [Text commands](ORYN_COMMANDS.md) and [spending guardrails](ORYN_SPENDING.md)
+- [XR inspection and guarded assembly regression](ORYN_XR_INSPECTION.md)
 
 ## Starter provenance
 

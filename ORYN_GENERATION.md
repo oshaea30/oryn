@@ -1,5 +1,51 @@
 # Oryn: geometry → inspection → optional texture → Quest
 
+## Current default: ask → generate → load (2026-09-27)
+
+The user explicitly removed per-request approval gates to test the actual product
+experience. `http://127.0.0.1:8765/` is now the object-request screen. Configure the
+Meshy connection once, type e.g. "Show me a desk lamp", and submit. That request
+authorizes a fixed Structure geometry task and automatic delivery after inspection.
+There is no quote, approval checkbox, texture step or second delivery click.
+The previous staged developer console is preserved at `/lab`; the historical
+instructions below describe that lab, not the default user experience.
+
+- `POST /api/request-object` accepts only a request UUID and object description.
+  Model/profile and spending policy are server-owned. No OpenAI call is needed:
+  this is an object-request box, not a general conversational intent router.
+- Exact normalized prompt matches reuse inspected Structure geometry, with checksum
+  revalidation and no provider charge. This is not semantic search. Changed/missing
+  saved assets stop without silently falling back to paid generation.
+- New objects use the existing T2 geometry-only profile, 5 estimated credits each
+  (Meshy pricing checked 2026-09-27), at most 50 reserved credits per rolling 24h.
+  Recent developer-lab estimates also count toward request-mode eligibility. Lab
+  operations remain separately approved and are not constrained by this new cap.
+  Updated job timestamps conservatively extend reservations. Failed/uncertain
+  submissions retain reservations; this is not an account-wide billing guarantee.
+- Reservations and request IDs are persisted before provider dispatch. Same-ID
+  retries return the existing job, including after restart, and cannot rebind to
+  a different object. No automatic paid resubmission, texturing or profile escalation.
+- One active operation; outstanding headset receipts block new object requests.
+  "In your space" requires a loaded receipt, not file transfer. If Quest is asleep,
+  the published inbox item waits for ORYN to resume. If transfer fails, the model
+  remains saved; requesting the same object again can reuse it without generation.
+- Existing 16 MiB GLB limit, static preflight, checksum verification, 512 MiB free
+  disk requirement and 20-job storage bound remain. Reused requests also consume
+  a job slot. No automatic eviction, cloud provisioning or uploads were added.
+- Host/origin/token protections remain. Meshy credentials are now stored in macOS
+  Keychain and loaded automatically at startup, using Security.framework directly
+  (no secret subprocess arguments, logs or plaintext fallback). Denied saves do not
+  replace the working connection. Login Keychain access may require a macOS prompt.
+  Service: `com.oryn.local-generation`; account: `meshy-api-key`. An explicit
+  `ORYN_MESHY_API_KEY` environment override remains session-only. Browser storage
+  contains request IDs only. No generated object is treated as verified knowledge.
+
+Offline validation: `test_experience.py` covers bounded automatic generation/loading,
+cache integrity, idempotency/restart, no retries, cap persistence and HTTP protection.
+`check_experience_ui.cjs` mocks every route and checks one-submit flow, pending receipts,
+lost-response recovery, HTML escaping and mobile layout. These checks spend no credits
+and do not replace a live UX check in Quest. No Unity changes or rebuild required.
+
 ## Priority and status
 
 The user confirmed that runtime asset loading, manipulation and resizing work. They
@@ -33,7 +79,7 @@ headset. On the Mac, from `/Users/oshaealexis/Developer/Oryn/Unity-StarterSample
 python3 Orchestrator/app.py
 ```
 
-Open **http://127.0.0.1:8765**. The service is bound to loopback, not the LAN. No Python
+For the staged developer lab, open **http://127.0.0.1:8765/lab**. The service is bound to loopback, not the LAN. No Python
 package installation is needed (tested with Python 3.14.3; standard library only).
 
 1. Finish the pending avocado receipt check before the first paid experiment. If no

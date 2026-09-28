@@ -162,11 +162,105 @@ class ServiceTests(unittest.TestCase):
         self.assertEqual(self.transport.sent[0]['partId'], 'd'*64)
 
     def test_stale_session_or_selection(self):
-        for field in ['session', 'contextToken']:
+        for change in [lambda s: s.update(session='0'*32),
+                       lambda s: s['context'].update(selectedPartId='e'*64),
+                       lambda s: s['context'].update(owner=2),
+                       lambda s: s['context'].update(assetSha256='0'*64),
+                       lambda s: s['context'].update(partsMode=False),
+                       lambda s: s['context'].update(isolated=True),
+                       lambda s: s['context']['parts'][0].update(revision=2)]:
             self.setUp(); self.service.ask(self.data)
-            self.transport.state[field] = '0'*32
+            change(self.transport.state)
             with self.assertRaises(CommandError): self.service.apply({'id':self.data['id']})
             self.assertEqual(self.transport.sent, [])
+
+    def paid_quote(self):
+        self.service.configure({'provider':'openai','key':'fake-test-key-only'})
+        self.data.update(provider='openai',approvePaid=True,profile='routine')
+        quote = self.service.prepare_quote(dict(self.data,approveCount=True))
+        self.data.update(id=quote['request_id'],approvedCostNanos=quote['reserved_nanos'])
+        return quote
+
+    def test_paid_interpretation_uses_frozen_snapshot_with_headset_disconnected(self):
+        quote = self.paid_quote()
+        def unavailable():
+            raise CommandError('Headset unavailable')
+        self.transport.snapshot = unavailable
+        result = self.service.ask(self.data)
+        self.assertEqual(result['action'], 'isolate')
+        self.assertEqual(result['partId'], 'd'*64)
+        self.assertEqual(result['snapshot']['selectedPartNumber'], 4)
+        self.assertEqual(result['contextFingerprint'], quote['contextFingerprint'])
+        self.assertEqual(len(self.calls),1)
+        self.assertEqual(self.transport.sent,[])
+        with self.assertRaises(CommandError): self.service.apply({'id':self.data['id']})
+        self.assertEqual(self.transport.sent,[])
+
+    def test_quote_while_busy_and_interpretation_ignore_transient_readiness(self):
+        self.transport.state['context']['ready'] = False
+        self.paid_quote()
+        self.transport.state['contextToken'] = '0'*32
+        result = self.service.ask(self.data)
+        self.assertEqual(result['action'], 'isolate')
+        with self.assertRaisesRegex(CommandError, 'No new paid interpretation'):
+            self.service.apply({'id':self.data['id']})
+        self.transport.state['context']['ready'] = True
+        self.transport.state['contextToken'] = '1'*32
+        self.service.apply({'id':self.data['id']})
+        self.assertEqual(self.transport.sent[0]['contextToken'], '1'*32)
+        self.assertEqual(len(self.calls),1)
+
+    def test_readiness_round_trip_preserves_proposal_but_rebinds_execution_token(self):
+        self.service.ask(self.data)
+        self.transport.state.update(contextToken='0'*32)
+        self.transport.state['context']['ready'] = False
+        with self.assertRaises(CommandError): self.service.apply({'id':self.data['id']})
+        self.assertFalse(self.service.requests[self.data['id']]['sent'])
+        self.transport.state['context']['ready'] = True
+        self.transport.state['contextToken'] = '1'*32
+        self.service.apply({'id':self.data['id']})
+        self.assertEqual(self.transport.sent[0]['contextToken'],'1'*32)
+
+    def test_real_context_change_after_quote_never_silently_retargets_action(self):
+        self.paid_quote()
+        self.transport.state['context']['selectedPartId'] = 'e'*64
+        self.transport.state['contextToken'] = '0'*32
+        result = self.service.ask(self.data)
+        self.assertEqual(result['partId'],'d'*64)
+        sent_body = json.loads(self.calls[0][1]['input'][1]['content'])
+        self.assertEqual(sent_body['selectedPartId'],'d'*64)
+        with self.assertRaises(CommandError): self.service.apply({'id':self.data['id']})
+        self.assertEqual(self.transport.sent,[])
+
+    def test_changed_text_or_credentials_still_blocks_paid_dispatch(self):
+        for change in [lambda: self.data.update(question='Explode'),
+                       lambda: self.service.configure({'provider':'openai','key':'another-test-key-only'})]:
+            self.setUp(); self.paid_quote(); change()
+            result = self.service.ask(self.data)
+            self.assertIsNone(result['action'])
+            self.assertEqual(self.calls,[])
+
+    def test_snapshot_is_deep_copied_and_stale_quote_is_not_executable(self):
+        q = self.paid_quote()
+        _, state = self.service.gateway.interpretation_snapshot(q['request_id'])
+        state['context']['selectedPartId'] = 'e'*64
+        _, second = self.service.gateway.interpretation_snapshot(q['request_id'])
+        self.assertEqual(second['context']['selectedPartId'],'d'*64)
+        self.service.gateway.clock = lambda: q['expires']
+        with self.assertRaises(CommandError): self.service.ask(self.data)
+        self.assertEqual(self.calls,[])
+
+    def test_new_quote_requires_fresh_snapshot_but_status_keeps_config_visible(self):
+        self.service.configure({'provider':'openai','key':'fake-test-key-only'})
+        def unavailable():
+            raise CommandError('Stale snapshot')
+        self.transport.snapshot = unavailable
+        with self.assertRaises(CommandError):
+            self.service.prepare_quote({'provider':'openai','profile':'routine','question':'Explode','approveCount':True})
+        status = self.service.status()
+        self.assertIsNone(status['state'])
+        self.assertEqual(status['configured'],{'openai':'routine'})
+        self.assertNotIn('fake-test-key-only',json.dumps(status))
 
     def test_expired_and_busy_proposals(self):
         self.service.ask(self.data)

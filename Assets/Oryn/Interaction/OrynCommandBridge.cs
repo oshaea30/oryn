@@ -22,6 +22,7 @@ namespace Oryn.Interaction
         public int schema = 1;
         public string session, contextToken;
         public long utc;
+        public bool testGuideAvailable;
         public OrynCommandContext context;
     }
     [Serializable] public sealed class OrynRuntimeCommand
@@ -43,6 +44,17 @@ namespace Oryn.Interaction
         private readonly string session = Guid.NewGuid().ToString("N");
         private string lastContext, token;
         private float nextPoll;
+        private OrynTestGuide testGuide;
+        private void Start()
+        {
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+            if (Workspace != null && Workspace.Rig != null)
+            {
+                testGuide = gameObject.AddComponent<OrynTestGuide>();
+                testGuide.Initialize(Workspace.Rig.centerEyeAnchor, Workspace.MarkerMaterial);
+            }
+#endif
+        }
         private string Root => Path.Combine(Application.persistentDataPath, "CommandBridge");
         public static bool IsId(string value) => value != null && value.Length == 32 && value.All(c => c >= '0' && c <= '9' || c >= 'a' && c <= 'f');
         public static string Validate(OrynRuntimeCommand command, string filename, OrynCommandSnapshot state, long now)
@@ -85,7 +97,7 @@ namespace Oryn.Interaction
             string encoded = JsonUtility.ToJson(context);
             if (encoded != lastContext) { lastContext = encoded; token = Guid.NewGuid().ToString("N"); }
             return new OrynCommandSnapshot { session = session, contextToken = token,
-                utc = DateTimeOffset.UtcNow.ToUnixTimeSeconds(), context = context };
+                utc = DateTimeOffset.UtcNow.ToUnixTimeSeconds(), context = context, testGuideAvailable = testGuide != null };
         }
         private void LateUpdate()
         {
@@ -94,6 +106,7 @@ namespace Oryn.Interaction
             try
             {
                 Directory.CreateDirectory(Root);
+                testGuide?.Poll(Root, session, DateTimeOffset.UtcNow.ToUnixTimeSeconds());
                 var state = Snapshot();
                 // Receipts remain durable across process restarts: never replay a claimed command.
                 foreach (string path in Directory.EnumerateFiles(Root, "*.command").Take(8))

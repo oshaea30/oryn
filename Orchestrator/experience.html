@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ORYN — Ask for an object</title>
+<style>
+:root{color-scheme:dark;font:16px system-ui,sans-serif;background:#10171e;color:#e8f0f5}body{max-width:760px;margin:60px auto;padding:0 24px}h1{font-size:42px;letter-spacing:-1px}p{line-height:1.6;color:#b1c2cf}small,.tag{color:#94b1bf}.tag{letter-spacing:3px;font-size:12px}section,details{padding:24px;background:#19252f;border:1px solid #304351;border-radius:14px;margin:24px 0}textarea,input{box-sizing:border-box;width:100%;background:#10171e;border:1px solid #506575;border-radius:8px;padding:14px;color:white;font:inherit}textarea{margin-top:12px;resize:vertical}button{background:#6fe3bd;color:#10231d;border:0;border-radius:8px;padding:14px 22px;font:inherit;font-weight:650;cursor:pointer;margin-top:14px}button:disabled{opacity:.45;cursor:default}button:focus-visible,summary:focus-visible,a:focus-visible{outline:2px solid white;outline-offset:4px}summary{cursor:pointer}a{color:#6fe3bd}#notice{color:#ffb5a7;min-height:24px}#status{font-size:24px;color:#6fe3bd}progress{width:100%;accent-color:#6fe3bd}#object{overflow-wrap:anywhere}.row{display:flex;gap:24px;flex-wrap:wrap}footer{margin-top:32px;font-size:13px}label{display:block}@media(max-width:600px){body{margin:28px auto;padding:0 16px}h1{font-size:34px}}
+</style></head><body>
+<header><span class="tag">ORYN / OBJECT REQUESTS</span><h1>Ask. It appears.</h1><p>Describe an object. ORYN finds an exact saved match or generates it, checks it, and loads it into your Quest. No confirmation steps.</p></header>
+<form id="request"><label for="prompt">What would you like in your space?</label><textarea id="prompt" rows="3" maxlength="800" required placeholder="Show me a compact desk lamp"></textarea><button id="show" disabled>Show me</button></form>
+<p id="notice" role="alert"></p>
+<section aria-live="polite"><span class="tag">YOUR SPACE</span><p id="status">Connecting…</p><p id="object"></p><progress id="progress" max="100" value="0" hidden></progress><p id="detail">Keep ORYN open on your USB-connected Quest when the object arrives. Leave a clear spot nearby.</p><div id="capabilities"></div></section>
+<details id="settings"><summary>Connection settings</summary><p id="connection">Checking generation service…</p><label for="key">Meshy API key</label><input id="key" type="password" autocomplete="off" spellcheck="false"><button id="saveKey" disabled>Save connection</button><p><small>Saved securely in macOS Keychain and loaded automatically after restarts. Never stored in project files, browser storage or the headset.</small></p></details>
+<footer><p id="limits">Geometry-only prototype. Models are generated representations, not verified schematics.</p><div class="row"><a href="/lab">Developer generation lab</a><a href="http://127.0.0.1:8767/">Developer command lab</a></div><p>Local bounded storage for now; cloud library is planned. No voice input yet.</p></footer>
+<section aria-live="polite"><span class="tag">OBJECT RESEARCH</span><p id="researchStatus">Research connection loading…</p><div id="researchNotes"></div><button id="investigate" disabled>Research this saved object</button><p><small>Wikipedia discovery → bounded OpenAI reference notes. Up to $0.05 per investigation within the shared $2/day cognition budget. Model delivery does not wait for research. No automatic retries.</small></p></section>
+<details id="researchSettings"><summary>Research connection</summary><p id="researchConnection">Checking…</p><label for="researchKey">OpenAI API key</label><input id="researchKey" type="password" autocomplete="off" spellcheck="false"><button id="saveResearchKey" disabled>Save research connection</button><p><small>Stored in ORYN’s own macOS Keychain entry. A key held only in the separate command service is not automatically shared. No key, room image, or GLB is added to research records.</small></p></details>
+<script>
+const $=id=>document.getElementById(id),pendingKey='oryn-object-request',lastKey='oryn-object-last';
+let token='',connected=false,busy=false,pendingDelivery=false,sending=false,refreshing=false,jobs=[],currentJob=null,researchEnabled=false;
+const labels={queued:'Getting your object…',loading_saved_asset:'Found it in your library',submitting_geometry:'Starting generation…',generating_geometry:'Generating your object…',downloading_geometry:'Receiving your object…',inspecting_geometry:'Checking the model…',preparing_assembly:'Preparing the assembly…',ready:'Model prepared',transferring:'Loading into your space…',waiting_for_headset:'Ready for your headset',loaded_on_quest:'In your space',failed:'Couldn’t generate this object',delivery_failed:'Couldn’t load this object',interrupted:'Request interrupted',texture_failed:'Texture failed'};
+function buttons(){ $('show').disabled=!connected||sending||busy||pendingDelivery||!$('prompt').value.trim();$('saveKey').disabled=!connected||sending;
+  $('saveResearchKey').disabled=!connected||sending||!researchEnabled;
+  $('investigate').disabled=!connected||sending||!researchEnabled||!currentJob?.ingestions?.geometry||currentJob.demo||!!currentJob.research;
+}
+function showResearch(job){
+  const r=job.research,area=$('researchNotes');area.replaceChildren();
+  const line=text=>{const p=document.createElement('p');p.textContent=text;area.append(p);return p;};
+  const labels={queued:'Research queued',running:'Research in progress — your model remains available',awaiting_cognitive_provider:'References saved — connect OpenAI to prepare notes',awaiting_retrieval_provider:'Reference provider unavailable',no_references:'No references found; no reasoning call made',no_relevant_references:'References did not match; no reasoning call made',reference_notes_ready:'Reference notes ready · unverified candidates',failed:'Research stopped; no automatic retry',interrupted:'Research interrupted; review required before further work'};
+  $('researchStatus').textContent=job.research_error||(r?(labels[r.status]||'Research status unavailable'):'No research run yet for this saved object.');
+  if(!r)return;
+  const sources=new Map((r.sources||[]).map(s=>[s.id,s]));
+  function cite(parent,id){
+    const source=sources.get(id);if(!source)return;
+    try{const url=new URL(source.url);if(url.protocol!=='https:'||url.hostname!=='en.wikipedia.org'||url.username||url.password)return;
+      const a=document.createElement('a');a.href=url.href;a.textContent=source.title;a.target='_blank';a.rel='noopener noreferrer';parent.append(document.createTextNode(' · '),a);
+    }catch{}
+  }
+  if(r.findings){
+    line('These notes describe an object family, not verified components of this generated model. No geometry pieces have been labeled.');
+    for(const claim of r.findings.overview||[]){const p=line(claim.text);for(const id of claim.source_ids||[])cite(p,id);}
+    for(const claim of r.findings.component_families||[]){const p=line(claim.name+': '+claim.description);for(const id of claim.source_ids||[])cite(p,id);}
+    for(const unknown of r.findings.unknowns||[])line('Unknown: '+unknown);
+  }else if(sources.size)line(`${sources.size} candidate references saved. Their relevance and exact object revision remain unverified.`);
+  for(const source of sources.values()){const p=line('Reference');cite(p,source.id);}
+  if(sources.size)line('Wikipedia excerpts are secondary discovery material, not engineering schematics. See source pages for attribution and licensing.');
+  const cost=r.stages?.synthesis?.cost;
+  if(cost?.status==='usage_estimate'&&Number.isFinite(cost.calculated_nanos))line(`Conservative reasoning usage estimate: $${(cost.calculated_nanos/1e9).toFixed(5)} (not an invoice).`);
+  if(['reserved','uncertain'].includes(r.billing?.status))line('Reasoning usage is not confirmed. Its maximum remains reserved; no paid retry will run.');
+}
+function showJob(job){
+  if(!job)return;
+  currentJob=job;showResearch(job);
+  $('status').textContent=labels[job.status]||'Working…';$('object').textContent=job.prompt;
+  $('progress').value=job.progress||0;$('progress').hidden=['loaded_on_quest','failed','delivery_failed','interrupted','waiting_for_headset'].includes(job.status);
+  $('detail').textContent=job.error||(job.status==='loaded_on_quest'?'Ready to grab, rotate and resize.':job.status==='waiting_for_headset'?'The model is transferred. Put on the Quest and open ORYN; it will load without another request.':job.reused_from?'Using your saved geometry. No generation charge.':'Generating geometry only. You can take the headset off while you wait.');
+  const info=job.ingestions?.[job.delivery_variant||'geometry'],loaded=job.status==='loaded_on_quest';
+  $('capabilities').replaceChildren();
+  const line=text=>{const p=document.createElement('p');p.textContent=text;$('capabilities').append(p);};
+  line(loaded?'Model loaded ✓ · Whole-object interaction available':'Model load: awaiting Quest import');
+  if(job.ingestion_error){line(job.ingestion_error);line('Take-apart capability: not established');return;}
+  if(!info){line(job.ingestion_error||'Assembly preparation: not yet established');line('Take-apart mode: not ready');return;}
+  line(`${info.piece_count} geometric pieces recorded · ${info.component_count} identified components`);
+  const cap=info.capabilities.geometric_explosion;
+  if(cap.status==='supported'){
+    const bound=job.delivery_asset_sha256===info.runtime.sha256;
+    line(loaded&&bound?'Geometric take-apart: prepared for this loaded model (headset interaction not yet verified)':'Geometric take-apart: prepared; the prepared version has not been confirmed loaded');
+  }else line('Take-apart mode: unavailable — '+cap.reason);
+  line('Semantic explanation: unsupported · Verified internal assembly: unsupported');
+  const investigation=job.investigations?.[job.delivery_variant||'geometry'];
+  if(job.investigation_error)line(job.investigation_error);
+  else if(investigation){
+    if(investigation.status==='awaiting_research')line(`Local triage saved: ${investigation.selected_for_investigation} pieces prioritized for investigation. ${researchEnabled?'Reference research is separate; semantic geometry mapping remains unavailable.':'Research and semantic mapping are not connected yet; no parts were identified by this step.'}`);
+    else line('Investigation preparation: '+investigation.status+' — model interaction remains available.');
+    if(/^[a-f0-9]{64}$/.test(investigation.id)){
+      const a=document.createElement('a');a.href='/api/workflow?id='+investigation.id;a.textContent='Inspect saved investigation record';a.target='_blank';a.rel='noopener';$('capabilities').append(a);
+    }
+  }
+}
+async function post(path,body){
+  const response=await fetch(path,{method:'POST',headers:{'Content-Type':'application/json','X-Oryn-Token':token},body:JSON.stringify(body),signal:AbortSignal.timeout(15000)});
+  const data=await response.json();if(!response.ok){const error=Error(data.error||'Request rejected.');error.rejected=response.status===400||response.status===403;throw error;}return data;
+}
+async function refresh(){
+  if(refreshing)return;refreshing=true;
+  try{
+    const response=await fetch('/api/state',{signal:AbortSignal.timeout(10000)});if(!response.ok)throw Error();const state=await response.json();
+    if(state.experienceContract!==1)throw Error();
+    token=state.token;connected=true;busy=state.busy;pendingDelivery=state.deliveryPending;jobs=state.jobs;researchEnabled=!!state.researchConnection?.enabled;
+    const research=state.researchConnection;
+    $('researchConnection').textContent=!research?'Research service unavailable.':research.error||(!research.configured?'OpenAI research is not connected. Save your existing key here once. References can still be retrieved.':research.keyStorage==='keychain'?'OpenAI research connected · saved in macOS Keychain.':'OpenAI research connected for this session.');
+    const pending=sessionStorage.getItem(pendingKey),accepted=jobs.find(j=>j.id===pending);
+    if(accepted){sessionStorage.setItem(lastKey,pending);sessionStorage.removeItem(pendingKey);$('notice').textContent='';}
+    const selected=jobs.find(j=>j.id===sessionStorage.getItem(lastKey))||jobs.find(j=>j.experience);
+    if(selected)showJob(selected);else{$('status').textContent='What shall we make?';$('object').textContent='';}
+    $('connection').textContent=state.configured?(state.keyStorage==='keychain'?'Meshy connected · saved in macOS Keychain.':'Meshy connected for this session.'):(state.credentialError||'Add your Meshy key once to enable new generation. Saved matches still work.');
+    if(!state.configured)$('settings').open=true;
+    const p=state.experiencePolicy;$('limits').textContent=`Geometry only · ${p.credits_per_generation} credits per new object · ${p.reserved_last_day}/${p.rolling_day_limit} credits reserved in the last 24 hours. No automatic paid retries. Generated shapes are not verified schematics.`;
+  }catch{connected=false;$('connection').textContent='Service unavailable. Requests are not automatically resent.';}finally{refreshing=false;buttons();}
+}
+$('request').onsubmit=async event=>{
+  event.preventDefault();if(sending||!connected||busy||pendingDelivery||!$('prompt').value.trim())return;
+  sending=true;buttons();$('notice').textContent='';
+  let id=sessionStorage.getItem(pendingKey);if(!id){id=crypto.randomUUID().replaceAll('-','');sessionStorage.setItem(pendingKey,id);}
+  try{const job=await post('/api/request-object',{request_id:id,prompt:$('prompt').value});sessionStorage.setItem(lastKey,job.id);sessionStorage.removeItem(pendingKey);showJob(job);}
+  catch(error){if(error.rejected)sessionStorage.removeItem(pendingKey);$('notice').textContent=error.rejected?error.message:'Connection interrupted. Checking this same request; no automatic resubmission. If you click again, the same request ID prevents another generation.';}
+  finally{sending=false;await refresh();buttons();}
+};
+$('saveKey').onclick=async()=>{
+  if(sending)return;sending=true;buttons();const key=$('key').value;$('key').value='';
+  try{await post('/api/key',{key});$('settings').open=false;$('notice').textContent='';}catch(error){$('notice').textContent=error.message;}finally{sending=false;await refresh();buttons();}
+};
+$('saveResearchKey').onclick=async()=>{
+  if(sending)return;sending=true;buttons();const key=$('researchKey').value;$('researchKey').value='';
+  try{await post('/api/research-key',{key});$('researchSettings').open=false;$('notice').textContent='';}catch(error){$('notice').textContent=error.message;}finally{sending=false;await refresh();buttons();}
+};
+$('investigate').onclick=async()=>{
+  if(sending||!currentJob)return;const id=currentJob.id;sending=true;buttons();
+  try{await post('/api/investigate',{id});$('notice').textContent='';}catch(error){$('notice').textContent=error.message;}finally{sending=false;await refresh();buttons();}
+};
+$('prompt').oninput=buttons;refresh();setInterval(refresh,2000);
+</script></body></html>

@@ -43,10 +43,18 @@ class PaidGateway:
                  'expires':min(now+120, PRICE_EXPIRES)}
         # DB stores only billing metadata + digest; request text/context live in memory for 120 seconds.
         self.ledger.create_quote(quote)
-        self.quotes[quote['request_id']] = {'quote':quote,'body':body}
+        self.quotes[quote['request_id']] = {'quote':quote,'body':body,
+                                          'state':copy.deepcopy(state),'serial':serial}
         return dict(quote, daily_remaining_nanos=budget['remaining_nanos'],
                     input_count_method='provider exact count', tool_cost_nanos=0,
                     note='Conservative maximum, not an invoice. All input reserved at cache-write rate; no discounts assumed.')
+
+    def interpretation_snapshot(self, ident):
+        cached = self.quotes.get(ident)
+        if cached is None or self.clock() >= cached['quote']['expires']:
+            raise CommandError('Quote missing or expired. Prepare a new quote; no paid request sent.')
+        # Interpret exactly the already counted facts, not a newer Quest snapshot.
+        return cached['serial'], copy.deepcopy(cached['state'])
 
     def run(self, data, provider, profile, key, question, state, serial, credential_revision):
         ident = data.get('id')

@@ -7,21 +7,24 @@ const {chromium} = require('playwright');
   try {
     const page = await browser.newPage({viewport:{width:1100,height:1050}});
     const posts = [], errors = [];
+    let stateAvailable=true, ready=true, fingerprint='stable-context', busyApply=false;
+    const snapshot={capturedUtc:Math.floor(Date.now()/1000),owner:1,selectedPartNumber:4,partCount:39};
     page.on('pageerror', error => errors.push(error.message));
     await page.route('**/api/**', async route => {
       const path = new URL(route.request().url()).pathname;
       let result = {};
-      if (path === '/api/session') result = {token:'fixture-only'};
+      if (path === '/api/session') result = {token:'fixture-only',commandContract:2};
       if (path === '/api/budget') result = {day:'2026-09-27',halted:false,daily_limit_nanos:2000000000,charged_and_reserved_nanos:0,remaining_nanos:2000000000,recent:[]};
-      if (path === '/api/quote') result = {request_id:'e'.repeat(32),model:'gpt-6-sol',effort:'medium',input_tokens:500,max_output_tokens:1024,reserved_nanos:11490000,ceiling_nanos:30000000,daily_remaining_nanos:2000000000,expires:Math.floor(Date.now()/1000)+120,note:'Fixture cost quote'};
-      if (path === '/api/state') result = {configured:{},state:{session:'a'.repeat(32),contextToken:'b'.repeat(32),context:{
-        owner:1,ready:true,partsMode:true,isolated:false,selectedPartId:'d'.repeat(64),
-        parts:[{partId:'d'.repeat(64),number:4,label:'Other',revision:1,error:''}]}}};
+      if (path === '/api/quote') result = {snapshot,contextFingerprint:fingerprint,request_id:'e'.repeat(32),model:'gpt-6-sol',effort:'medium',input_tokens:500,max_output_tokens:1024,reserved_nanos:11490000,ceiling_nanos:30000000,daily_remaining_nanos:2000000000,expires:Math.floor(Date.now()/1000)+120,note:'Fixture cost quote'};
+      if (path === '/api/state') result = stateAvailable?{contextFingerprint:fingerprint,configured:{},state:{session:'a'.repeat(32),contextToken:(ready?'b':'c').repeat(32),context:{
+        owner:1,ready,partsMode:true,isolated:false,selectedPartId:'d'.repeat(64),
+        parts:[{partId:'d'.repeat(64),number:4,label:'Other',revision:1,error:''}]}}}:{configured:{openai:'routine'},state:null,stateError:'Headset unavailable'};
       if (path === '/api/ask') {
         posts.push(route.request().postDataJSON());
-        result = {id:'f'.repeat(32),provider:'offline',model:'fixture',answer:'Other — unverified user annotation. <img src=x>',action:'isolate'};
+        result = {snapshot,contextFingerprint:fingerprint,id:'f'.repeat(32),provider:'offline',model:'fixture',answer:'Other — unverified user annotation. <img src=x>',action:'isolate'};
       }
       if (path === '/api/apply') {
+        if(busyApply) return route.fulfill({status:409,contentType:'application/json',body:JSON.stringify({error:'Headset busy; confirm again when ready.'})});
         posts.push(route.request().postDataJSON());
         result = {id:'f'.repeat(32),status:'waiting',message:'Fixture transfer'};
       }
@@ -52,6 +55,14 @@ const {chromium} = require('playwright');
     await page.locator('#quote').click();
     await page.waitForFunction(()=>!document.querySelector('#paid').disabled);
     await page.locator('#paid').check();
+    ready=false;
+    await page.locator('#refresh').click();
+    await page.waitForFunction(()=>document.querySelector('#connection').textContent.includes('release objects'));
+    assert.equal(await page.locator('#paid').isChecked(),true,'Temporary readiness must not invalidate quote consent');
+    stateAvailable=false;
+    await page.locator('#refresh').click();
+    await page.waitForFunction(()=>document.querySelector('#connection').textContent.includes('unavailable'));
+    assert.equal(await page.locator('#paid').isChecked(),true,'Disconnection preserves approval of the frozen snapshot');
     await page.locator('#ask').click();
     await page.waitForFunction(()=>!document.querySelector('#ask').disabled);
     assert.equal(posts.length,3);
@@ -59,12 +70,25 @@ const {chromium} = require('playwright');
     assert.equal(posts[2].approvedCostNanos,11490000);
     assert.equal(posts[2].approvePaid,true);
     assert.equal(await page.locator('#paid').isDisabled(),true,'Approval consumed once');
+    assert.ok((await page.locator('#attribution').innerText()).includes('Part 4'),'Response identifies frozen target');
+    busyApply=true;
+    await page.locator('#apply').click();
+    await page.waitForFunction(()=>document.querySelector('#receipt').textContent.includes('Headset busy'));
+    assert.equal(await page.locator('#apply').isDisabled(),false,'Definite busy rejection preserves proposal for manual confirmation');
+    assert.equal(posts.length,3,'Busy rejection does not reinterpret');
+    busyApply=false;stateAvailable=true;ready=true;
+    await page.locator('#refresh').click();
+    await page.waitForFunction(()=>document.querySelector('#connection').textContent==='Connected / ready');
+    assert.equal(await page.locator('#apply').isDisabled(),false,'Readiness recovery preserves action proposal');
+    fingerprint='different-target';
+    await page.locator('#refresh').click();
+    await page.waitForFunction(()=>document.querySelector('#apply').disabled);
     await page.locator('#provider').selectOption('gemini');
     assert.equal(await page.locator('#paid').isChecked(),false,'Consent is not carried across providers');
     assert.equal(await page.locator('#quote').isDisabled(),true,'Unpriced provider cannot get a quote');
     await page.setViewportSize({width:390,height:844});
     assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false,'No mobile overflow');
     assert.deepEqual(errors,[]);
-    console.log('ORYN_COMMAND_UI_OK confirmation, receipts, bound quotes, consumed approval, blocked providers, text escaping, mobile layout');
+    console.log('ORYN_COMMAND_UI_OK frozen quotes, offline interpretation, fresh-action gate, manual busy retry, target changes, confirmation, receipts, escaping, mobile layout');
   } finally { await browser.close(); }
 })().catch(error=>{ console.error(error.message); process.exitCode=1; });

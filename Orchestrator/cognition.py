@@ -1,6 +1,8 @@
 """Provider-neutral intent contract and deterministic, evidence-bounded ORYN decisions."""
 import re
 import time
+import hashlib
+import json
 
 INTENTS = ['describe', 'find', 'isolate', 'explode', 'reassemble', 'unknown']
 SCHEMA = {'type': 'object', 'additionalProperties': False, 'properties': {
@@ -21,6 +23,20 @@ The application, not you, resolves targets, produces grounded answers and approv
 
 class CommandError(Exception):
     pass
+
+
+def action_context(state, serial):
+    """Meaningful scene identity; transient readiness is checked only at execution."""
+    context = {k: v for k, v in state['context'].items() if k != 'ready'}
+    value = {'serial': serial, 'session': state['session'], 'context': context}
+    return hashlib.sha256(json.dumps(value, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+
+
+def snapshot_summary(state):
+    context = state['context']
+    selected = next((p['number'] for p in context['parts'] if p['partId'] == context['selectedPartId']), None)
+    return {'capturedUtc': state['utc'], 'owner': context['owner'],
+            'selectedPartNumber': selected, 'partCount': len(context['parts'])}
 
 
 def valid_hex(value, size):
@@ -97,8 +113,8 @@ def decide(state, intent):
     if kind == 'unknown':
         result['answer'] = 'That is outside this prototype. Try “What is this?”, “Find the battery”, “Isolate this”, “Explode”, or “Put it back together”. Functions, schematics and relationships are not recorded yet.'
         return result
-    if not c['ready']:
-        raise CommandError('Open ORYN in the headset and release held objects/gestures before asking.')
+    # This pure decision is only a proposal against a captured snapshot, never
+    # execution permission. Commands.apply and Unity enforce live readiness.
     if kind in ('explode', 'reassemble'):
         result.update(answer='Ready to ' + kind + ' the current assembly. Confirm below to apply on Quest.', action=kind)
         return result

@@ -43,8 +43,11 @@ Future authenticated account IDs belong here; the client cannot choose its ident
    There are no billable tools enabled. The profile ceiling must cover this amount.
 4. An opaque quote ID is bound by SHA-256 to the entire request, policy, actor,
    credential revision, Quest serial, session and context. The approval must name
-   that ID and the exact quoted amount. Quotes expire after 120 seconds or pricing
-   review expiry, whichever comes first. No amount is accepted as policy from UI.
+   that ID and the exact quoted amount. The captured state and request are copied
+   into server memory; interpretation uses those counted facts even if live
+   headset focus/readiness changes. It does not substitute new context. Quotes
+   expire after 120 seconds or pricing review expiry, whichever comes first.
+   No amount is accepted as policy from UI.
 5. Before the generation HTTP call, SQLite `BEGIN IMMEDIATE` atomically verifies
    identity, quote, expiry, replay status and both budgets, then durably records the
    full reservation with `synchronous=FULL`. Multiple processes sharing this file
@@ -104,6 +107,13 @@ unless evidence establishes the charge. There is intentionally no browser button
 that can clear this safety state. Back up the database before any future audited
 reconciliation. Losing/deleting the entire ledger loses its accounting history;
 production requires managed durable storage, backups and authenticated operations.
+
+Interpretation approval is separate from runtime action approval. A live Quest
+read is not required to interpret an already captured, approved, unexpired quote.
+Action confirmation always reads fresh state, compares meaningful scene identity
+and records against that captured state, requires current readiness, and sends
+Unity the current context token. This separation does not extend quote lifetime,
+alter prices, refresh approvals automatically, or relax ledger reservations.
 
 This is single-host SQLite coordination, not a multi-region billing platform.
 A cloud deployment should keep the same admission contract using a shared

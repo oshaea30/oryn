@@ -100,7 +100,7 @@ def bounds(points):
         'size':[b-a for a,b in zip(low,high)]}
 
 
-def separate(data):
+def separate(data, *, root_name='Drone / original transform'):
     doc, positions, faces = decode(data)
     islands = components(positions, faces)
     welded = components(positions, faces, weld_exact=True)
@@ -116,7 +116,7 @@ def separate(data):
     out['asset']['generator'] = 'ORYN offline island separator v1'
     original_node = deepcopy(doc['nodes'][0])
     original_node.pop('mesh')
-    original_node['name'] = 'Drone / original transform'
+    original_node['name'] = root_name
     original_node['children'] = list(range(1, len(islands) + 1))
     out['nodes'] = [original_node]
     out['meshes'], out['accessors'], out['bufferViews'] = [], [], []

@@ -31,6 +31,14 @@ namespace Oryn.Editor
             check(OrynCommandBridge.Validate(null, id, state, 1000) != null, "missing command");
             foreach (string invalid in new[] { null, "", "../file", new string('A',32), new string('a',31), new string('g',32) })
                 check(!OrynCommandBridge.IsId(invalid), "invalid ID");
+            var notice = new OrynTestNotice { id = id, session = session, sequence = 1, phase = "ready", message = "Grab the drone, then release.", expires = 1015 };
+            check(OrynTestGuide.Valid(notice, session, 1000), "test notice accepted");
+            check(!OrynTestGuide.Valid(notice, new string('f',32), 1000), "notice session bound");
+            check(!OrynTestGuide.Valid(notice, session, 1016), "expired notice rejected");
+            check(!OrynTestGuide.Valid(notice, session, 980), "future notice bounded");
+            check(!OrynTestGuide.Newer(notice, notice), "notice replay rejected");
+            notice.message = "<b>injection</b>"; check(!OrynTestGuide.Valid(notice, session, 1000), "notice markup rejected");
+            notice.message = "ok"; notice.phase = "explode"; check(!OrynTestGuide.Valid(notice, session, 1000), "display is not an action channel");
             Debug.Log("ORYN_COMMAND_TESTS_OK checks=" + checks);
         }
     }

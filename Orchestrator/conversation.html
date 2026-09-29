@@ -4,16 +4,18 @@
 :root{color-scheme:dark;font:17px system-ui,sans-serif;color:#e8f0f5;background:#10171e}body{max-width:720px;margin:60px auto;padding:0 24px}h1{font-size:42px;letter-spacing:-1px}p{line-height:1.6;color:#b1c2cf}textarea{box-sizing:border-box;width:100%;padding:16px;font:inherit;color:inherit;background:#19252f;border:1px solid #506575;border-radius:12px}button{font:inherit;background:#6fe3bd;color:#10231d;border:0;border-radius:8px;padding:12px 18px;margin:12px 8px 12px 0;cursor:pointer}button:disabled{opacity:.45;cursor:default}a{color:#6fe3bd}section{background:#19252f;border:1px solid #304351;border-radius:14px;padding:24px;margin:20px 0}#status{color:#6fe3bd}small{color:#94b1bf}#error{color:#ffb5a7}button:focus-visible,a:focus-visible{outline:2px solid white;outline-offset:4px}
 </style></head><body>
 <header><small>ORYN / COMPLETE OBJECT EXPERIENCE</small><h1>Explore the drone.</h1><p>Try “Show me a drone.” Then select a component in Quest and ask what it does.</p></header>
-<form id="request"><label for="question">Ask ORYN</label><textarea id="question" rows="3" maxlength="500" required placeholder="Show me a drone"></textarea><button id="send" disabled>Ask</button></form>
+<form id="request"><label for="question">Ask ORYN</label><textarea id="question" rows="3" maxlength="500" required placeholder="Show me a drone"></textarea><button id="send" disabled>Ask</button><button id="cancel" type="button" disabled>Cancel request</button></form>
 <section aria-live="polite"><small id="status">Connecting…</small><p id="answer">Keep ORYN open on your connected Quest.</p><p id="evidence"></p><small id="timing"></small></section><p id="error" role="alert"></p>
 <details><summary>Things to explore</summary><p>Take it apart · What does this do? · Show me · Slow it down · Show only propulsion · Why these? · Put it back together · Reset everything</p></details>
-<footer><p><small>This drone is an authored teaching model. Its motion illustrates relationships; it does not simulate flight or establish facts about a particular real drone.</small></p><p><a href="/objects">Other objects and connection settings</a> · <a href="/lab">Developer lab</a></p><p><small>Typed integration preview. Voice and in-headset conversation are still being built.</small></p></footer>
+<footer><p><small>This drone is an authored teaching model. Its motion illustrates relationships; it does not simulate flight or establish facts about a particular real drone.</small></p><p><a href="/objects">Other objects and connection settings</a> · <a href="/lab">Developer lab</a></p><p><small>Typed integration preview. Answers and status appear in Quest. Voice input is still being built.</small></p></footer>
 <script>
 const $=id=>document.getElementById(id),storageKey='oryn-conversation-pending';
-let token='',busy=false,polling=false;
-function buttons(){$('send').disabled=!token||busy||!$('question').value.trim();}
+let token='',busy=false,polling=false,activeId=sessionStorage.getItem(storageKey),cancellable=false;
+function buttons(){$('send').disabled=!token||busy||!$('question').value.trim();$('cancel').disabled=!token||!busy||!cancellable;}
 function show(value){
- $('status').textContent=({working:'Thinking…',pending:'Waiting for Quest…',completed:'Ready',failed:'Could not complete',rejected:'Quest declined the action',uncertain:'Check the headset'})[value.status]||'Checking…';
+ if(value.id!==activeId)return;
+ cancellable=value.status==='working';
+ $('status').textContent=({working:'Thinking…',pending:'Waiting for Quest…',completed:'Ready',failed:'Could not complete',rejected:'Quest declined the action',uncertain:'Check the headset',cancelled:'Cancelled'})[value.status]||'Checking…';
  $('answer').textContent=value.answer||'';
  $('evidence').textContent=value.evidence?.length?'Explanation scope: authored model. Real-object evidence: '+[...new Set(value.evidence.map(x=>x.status))].join(', ')+'.':'';
  $('timing').textContent=value.timing?.receipt_ms!=null?'Request to execution receipt: '+(value.timing.receipt_ms/1000).toFixed(2)+' s':value.timing?.interpretation_ms!=null?'Interpretation: '+(value.timing.interpretation_ms/1000).toFixed(2)+' s':'';
@@ -22,7 +24,7 @@ function show(value){
 }
 async function poll(){
  const id=sessionStorage.getItem(storageKey);if(!id||polling)return;polling=true;
- try{const r=await fetch('/api/conversation/'+id,{signal:AbortSignal.timeout(10000)});const v=await r.json();if(!r.ok)throw Error(v.error);show(v);$('error').textContent='';}
+ try{const r=await fetch('/api/conversation/'+id,{signal:AbortSignal.timeout(10000)});const v=await r.json();if(id!==activeId)return;if(!r.ok)throw Error(v.error);show(v);$('error').textContent='';}
  catch(e){$('error').textContent=e.message||'Connection unavailable. No request has been resent.';}
  finally{polling=false;}
 }
@@ -33,11 +35,17 @@ async function connect(){
 }
 $('request').onsubmit=async event=>{
  event.preventDefault();if(busy||!token)return;busy=true;buttons();$('error').textContent='';$('status').textContent='Thinking…';
- const id=crypto.randomUUID().replaceAll('-','');sessionStorage.setItem(storageKey,id);
+ const id=crypto.randomUUID().replaceAll('-','');activeId=id;cancellable=true;sessionStorage.setItem(storageKey,id);buttons();
  try{const r=await fetch('/api/conversation',{method:'POST',headers:{'Content-Type':'application/json','X-Oryn-Token':token},body:JSON.stringify({id,question:$('question').value}),signal:AbortSignal.timeout(110000)});
- const v=await r.json();if(!r.ok){if(r.status===409||r.status===400||r.status===403){sessionStorage.removeItem(storageKey);busy=false;}throw Error(v.error||'Request unavailable.');}show(v);}
- catch(e){$('error').textContent=e.message||'Connection interrupted. Checking the existing request without resubmitting.';}
+ const v=await r.json();if(id!==activeId)return;if(!r.ok){if(r.status===409||r.status===400||r.status===403){sessionStorage.removeItem(storageKey);busy=false;}throw Error(v.error||'Request unavailable.');}show(v);}
+ catch(e){if(id===activeId)$('error').textContent=e.message||'Connection interrupted. Checking the existing request without resubmitting.';}
  finally{buttons();}
+};
+$('cancel').onclick=async()=>{
+ const id=activeId;if(!id||!cancellable)return;$('cancel').disabled=true;
+ try{const r=await fetch('/api/conversation-cancel',{method:'POST',headers:{'Content-Type':'application/json','X-Oryn-Token':token},body:JSON.stringify({id}),signal:AbortSignal.timeout(10000)});
+ const v=await r.json();if(id!==activeId)return;if(!r.ok)throw Error(v.error);show(v);if(v.cancelMessage)$('error').textContent=v.cancelMessage;}
+ catch(e){if(id===activeId)$('error').textContent=e.message||'Cancellation is unconfirmed.';}finally{buttons();}
 };
 $('question').oninput=buttons;connect();setInterval(poll,1000);
 </script></body></html>

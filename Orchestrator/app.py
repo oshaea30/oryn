@@ -542,6 +542,8 @@ class Handler(BaseHTTPRequestHandler):
             body = json.loads(self.rfile.read(length))
             if not isinstance(body, dict):
                 raise ValueError("Expected an object")
+            if self.path == '/api/conversation-cancel':
+                return self.respond(200, self.server.conversation.cancel(body))
             if self.path == "/api/conversation":
                 return self.respond(200, self.server.conversation.ask(body))
             if self.path == "/api/key":
@@ -607,6 +609,7 @@ def main():
     def receipts():
         while True:
             time.sleep(5)
+            server.conversation.refresh_pending()
             jobs.refresh_receipts()
             jobs.refresh_episode_history()
     threading.Thread(target=receipts, daemon=True).start()
@@ -619,6 +622,7 @@ def main():
     finally:
         jobs.research.stop()
         jobs.geometry_evidence.stop()
+        server.conversation.close()
         server.server_close()
 
 

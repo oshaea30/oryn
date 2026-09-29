@@ -5,7 +5,7 @@ const {chromium}=require('playwright');
  const browser=await chromium.launch({headless:true,executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'});
  try{
   const page=await browser.newPage({viewport:{width:1050,height:1000}}),posts=[],errors=[];
-  let result=null,lost=false;
+  let result=null,lost=false,holdNext=false,held=null,heldResult=null;
   page.on('pageerror',e=>errors.push(e.message));
   await page.route('**/*',async route=>{
    const name=new URL(route.request().url()).pathname;
@@ -14,8 +14,10 @@ const {chromium}=require('playwright');
    if(name==='/api/conversation'){
     const body=route.request().postDataJSON();posts.push(body);
     result={id:body.id,status:'pending',answer:'<img src=x> Opening drone.',action:'show_drone',evidence:[],timing:{interpretation_ms:80}};
+    if(holdNext){holdNext=false;result.status='working';held=route;heldResult={...result};return;}
     if(lost)return route.abort();return route.fulfill({json:result});
    }
+   if(name==='/api/conversation-cancel'){result={...result,status:'cancelled',answer:'Cancelled safely.'};return route.fulfill({json:result});}
    if(name.startsWith('/api/conversation/'))return route.fulfill({json:result});
    return route.abort();
   });
@@ -34,6 +36,15 @@ const {chromium}=require('playwright');
   result.status='rejected';result.answer='Selection changed; ask again.';await page.evaluate(()=>poll());
   await page.locator('#question').fill('Try again');assert.equal(await page.locator('#send').isDisabled(),false);
   assert.equal(await page.evaluate(()=>sessionStorage.getItem('oryn-conversation-pending')),null);
+  lost=false;holdNext=true;await page.locator('#question').fill('Play motion');await page.locator('#send').click();
+  await page.waitForFunction(()=>!document.querySelector('#cancel').disabled);
+  await page.locator('#cancel').click();await page.waitForFunction(()=>document.querySelector('#status').textContent==='Cancelled');
+  await page.locator('#question').fill('What is this?');await page.locator('#send').click();
+  await page.waitForFunction(()=>document.querySelector('#status').textContent==='Waiting for Quest…');
+  await held.fulfill({json:{...heldResult,status:'cancelled',answer:'Old cancelled response'}});
+  await page.waitForTimeout(100);
+  assert.equal(await page.locator('#status').innerText(),'Waiting for Quest…','Late cancelled response cannot overwrite the new turn');
+  assert.equal(posts.length,4);
   assert.deepEqual(errors,[]);
   await page.screenshot({path:'/private/tmp/oryn-conversation-preview.png',fullPage:true});
   console.log('ORYN_CONVERSATION_UI_OK');

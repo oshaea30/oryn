@@ -34,6 +34,11 @@ namespace Oryn.Interaction
         public long expires;
     }
 
+    [Serializable] public sealed class OrynExperienceReceipt
+    {
+        public string id, status, message, referenceToken;
+    }
+
     // Application-owned USB transport. Separate identity/records from generated meshes.
     [DefaultExecutionOrder(1101)]
     public sealed class OrynExperienceBridge : MonoBehaviour
@@ -42,6 +47,13 @@ namespace Oryn.Interaction
         private readonly string session = Guid.NewGuid().ToString("N");
         private string lastContext, token, lastReference, referenceToken;
         private float nextPoll;
+        private OrynExperienceFeedback feedback;
+        private void Start()
+        {
+            if (Workspace == null || Workspace.Rig == null) return;
+            feedback = gameObject.AddComponent<OrynExperienceFeedback>();
+            feedback.Initialize(Workspace.Rig.centerEyeAnchor, Workspace.MarkerMaterial);
+        }
         private string Root => Path.Combine(Application.persistentDataPath, "ExperienceBridge");
         public static readonly string[] Actions = { "select", "isolate_component", "isolate_subsystem", "demonstrate",
             "play", "pause", "slow", "normal", "explode", "reassemble", "restore" };
@@ -122,18 +134,20 @@ namespace Oryn.Interaction
                     OrynExperienceCommand command = null;
                     try { if (new FileInfo(path).Length <= 4096) command = JsonUtility.FromJson<OrynExperienceCommand>(File.ReadAllText(path)); } catch (Exception) { }
                     string error = Validate(command, id, state, DateTimeOffset.UtcNow.ToUnixTimeSeconds());
-                    var receipt = new OrynCommandReceipt { id = id, status = error == null ? "uncertain" : "rejected", message = error ?? "Execution claimed; do not retry" };
+                    var receipt = new OrynExperienceReceipt { id = id, status = error == null ? "uncertain" : "rejected", message = error ?? "Execution claimed; do not retry" };
                     OrynKnowledgeStore.AtomicWrite(ack, JsonUtility.ToJson(receipt));
                     if (error == null)
                     {
                         try { Workspace.ApplyExperience(command); receipt.status = "executed"; receipt.message = "Applied on Quest: " + command.action; }
                         catch (Exception) { receipt.message = "Execution could not be confirmed. Check the headset."; }
-                        OrynKnowledgeStore.AtomicWrite(ack, JsonUtility.ToJson(receipt));
                         state = Snapshot();
+                        receipt.referenceToken = state.referenceToken;
+                        OrynKnowledgeStore.AtomicWrite(ack, JsonUtility.ToJson(receipt));
                     }
                     File.Delete(path);
                 }
                 OrynKnowledgeStore.AtomicWrite(Path.Combine(Root, "state.json"), JsonUtility.ToJson(state));
+                feedback?.Poll(Root, state, state.utc);
             }
             catch (Exception) { nextPoll = Time.unscaledTime + 3; Debug.LogWarning("ORYN_EXPERIENCE_BRIDGE_UNAVAILABLE"); }
         }

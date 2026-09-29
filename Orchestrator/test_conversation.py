@@ -126,7 +126,7 @@ class ConversationTests(unittest.TestCase):
         self.assertEqual(self.app.ask(self.request)['status'],'pending')
         self.assertIsNone(self.app.memory(self.state))
         self.state.update(selected='',contextToken='d'*32,isolated=True)
-        self.transport.receipt.return_value={'status':'executed','message':'Applied'}
+        self.transport.receipt.return_value={'status':'executed','message':'Applied','referenceToken':self.state['referenceToken']}
         self.assertEqual(self.app.get(self.request['id'])['status'],'completed')
         self.provider.interpret.return_value=intent('why','previous')
         r=self.app.ask({'id':'e'*32,'question':'Why these?'})
@@ -137,7 +137,7 @@ class ConversationTests(unittest.TestCase):
         self.provider.interpret.return_value=intent('slow')
         self.app.ask({'id':'d'*32,'question':'Slow it down'})
         self.state['contextToken']='e'*32;self.state['speed']=0.15
-        self.transport.receipt.return_value={'status':'executed','message':'Applied'}
+        self.transport.receipt.return_value={'status':'executed','message':'Applied','referenceToken':self.state['referenceToken']}
         self.app.get('d'*32)
         self.assertEqual(self.app.memory(self.state)['subject']['id'],'motor_0')
 
@@ -145,7 +145,7 @@ class ConversationTests(unittest.TestCase):
         self.provider.interpret.return_value=intent('isolate_subsystem','subsystem','propulsion')
         self.app.ask(self.request)
         self.state['subject']['instance']='2';self.state['selected']=''
-        self.transport.receipt.return_value={'status':'executed','message':'Applied'}
+        self.transport.receipt.return_value={'status':'executed','message':'Applied','referenceToken':self.state['referenceToken']}
         self.app.get(self.request['id']);self.assertIsNone(self.app.memory(self.state))
 
     def test_transfer_failure_waits_for_receipt_and_never_resends(self):
@@ -172,6 +172,60 @@ class ConversationTests(unittest.TestCase):
         again=Conversation(self.path,self.factory,self.transport)
         self.assertEqual(again.get('f'*32)['status'],'uncertain')
         self.provider.interpret.assert_not_called()
+
+    def test_cancel_during_provider_call_prevents_late_action_and_replay(self):
+        import threading
+        entered,release=threading.Event(),threading.Event()
+        def interpret(*_):
+            entered.set();self.assertTrue(release.wait(3));return intent('play')
+        self.provider.interpret.side_effect=interpret
+        results=[];worker=threading.Thread(target=lambda:results.append(self.app.ask(self.request)))
+        worker.start();self.assertTrue(entered.wait(3))
+        try:
+            cancelled=self.app.cancel({'id':self.request['id']})
+            self.assertEqual(cancelled['status'],'cancelled')
+            self.assertEqual(self.app.get(self.request['id'])['status'],'cancelled')
+        finally:release.set();worker.join(3)
+        self.assertFalse(worker.is_alive());self.assertEqual(results[0]['status'],'cancelled')
+        self.transport.send.assert_not_called();self.assertIsNone(self.app.memory(self.state))
+        self.assertEqual(self.app.ask(self.request)['status'],'cancelled')
+        self.provider.interpret.assert_called_once()
+
+    def test_cancelled_provider_failure_cannot_overwrite_cancellation(self):
+        def interpret(*_):
+            self.app.cancel({'id':self.request['id']});raise RuntimeError('provider failure')
+        self.provider.interpret.side_effect=interpret
+        self.assertEqual(self.app.ask(self.request)['status'],'cancelled')
+        self.transport.send.assert_not_called()
+
+    def test_cancel_after_dispatch_is_honest_about_execution(self):
+        self.provider.interpret.return_value=intent('play');self.app.ask(self.request)
+        result=self.app.cancel({'id':self.request['id']})
+        self.assertEqual(result['status'],'pending');self.assertIn('already been dispatched',result['cancelMessage'])
+        self.transport.send.assert_called_once()
+
+    def test_late_receipt_after_selection_away_and_back_does_not_revive_context(self):
+        self.provider.interpret.return_value=intent('isolate_component','component','motor_0')
+        self.app.ask(self.request)
+        previous=self.state['referenceToken'];self.state['referenceToken']='e'*32
+        self.transport.receipt.return_value={'status':'executed','message':'Applied','referenceToken':previous}
+        self.app.get(self.request['id']);self.assertIsNone(self.app.memory(self.state))
+
+    def test_feedback_and_receipt_progress_without_browser_polling(self):
+        self.app.feedback=Mock();self.provider.interpret.return_value=intent('play')
+        self.app.ask(self.request)
+        self.assertEqual([c.args[1]['phase'] for c in self.app.feedback.publish.call_args_list],['working','pending'])
+        self.transport.receipt.return_value={'status':'executed','message':'Applied','referenceToken':self.state['referenceToken']}
+        self.app.refresh_pending()
+        notices=[c.args[1] for c in self.app.feedback.publish.call_args_list]
+        self.assertEqual(notices[-1]['phase'],'completed')
+        self.assertEqual(notices[-1]['message'],'Motion is playing.')
+        self.assertEqual([n['sequence'] for n in notices],sorted(n['sequence'] for n in notices))
+
+    def test_feedback_failure_does_not_break_application_answer(self):
+        self.app.feedback=Mock();self.app.feedback.publish.side_effect=RuntimeError('display lost')
+        self.assertEqual(self.app.ask(self.request)['status'],'completed')
+
 
 
 class InterpreterTests(unittest.TestCase):

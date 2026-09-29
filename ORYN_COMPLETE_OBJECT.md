@@ -78,3 +78,34 @@ route after installing the matching APK. The existing OpenAI research connection
 supplies the key and shared budget; `/objects` retains connection settings and
 other object requests. There is no offline production fallback or automatic paid
 retry. The developer command lab at port 8767 keeps its existing diagnostic gates.
+
+## Follow-up checkpoint — feedback and cancellation
+
+- ORYN now publishes ordered thinking/working/answer/failure/cancelled notices to
+  an application-owned Quest panel. Delivery is asynchronous and best-effort; a
+  display failure never authorizes or repeats a command. Stale, expired and
+  out-of-order notices are rejected. Contextual answers hide on selection changes.
+- Pending execution receipts are processed by the application without requiring
+  the browser to remain open. Receipts now carry the runtime's post-action
+  reference token, preventing a late receipt from restoring an obsolete subject.
+- Cancel Request atomically stops undispatched work. A provider call already in
+  flight may still incur usage; its eventual result cannot execute an action or
+  replace a newer browser turn. Dispatched actions are not falsely claimed to be
+  undone. Replacement requests still wait for the current provider call to finish;
+  full voice interruption and speech cancellation are not implemented.
+- Existing journal records retain identity and execution state across the upgrade.
+- 264 offline Python tests pass, including cancellation races and ordered feedback
+  delivery. Browser cancellation/reload/late-response checks pass. Unity build gates
+  pass with 49 Complete Object checks; the feedback panel was rendered and inspected.
+- Android 1.13.1/code 17 built and signature-checked. Final APK SHA-256:
+  `b231221b9e62aa2c741d560c9c16e9afcd3efdf5070126f4bee25d6d97c86ab5`.
+- The final 1.13.1 build installed and launched with app data retained. The final
+  package passed installation and startup checks. Quest reported not ready
+  for object actions; no object command was sent in this checkpoint.
+- The local ORYN service is running with its existing connection and spending
+  controls. A proposed single live read-only OpenAI test was rejected by automatic
+  approval review pending explicit authorization of the payload and paid call.
+  No live provider test ran. Installation is not visual or end-to-end acceptance.
+
+Remaining: live approved interpretation and Quest acceptance, spoken input through
+this same application path, full interruption behavior, and polished hero geometry.

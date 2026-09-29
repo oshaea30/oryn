@@ -46,6 +46,16 @@ class CommandTransport:
             self.command('-s', serial, 'push', str(path), self.root + '/' + ident + '.partial')
             self.command('-s', serial, 'shell', 'mv', self.root + '/' + ident + '.partial', self.root + '/' + ident + '.command')
 
+    def notice(self, serial, notice):
+        """Display channel only; publishing cannot create an executable command."""
+        if not isinstance(notice, dict) or not valid_hex(notice.get('id'), 32):
+            raise CommandError('Invalid notice ID.')
+        with tempfile.TemporaryDirectory(prefix='oryn-feedback-') as folder:
+            path = Path(folder) / 'feedback.json'
+            path.write_text(json.dumps(notice), encoding='utf-8')
+            self.command('-s', serial, 'push', str(path), self.root + '/feedback.partial')
+            self.command('-s', serial, 'shell', 'mv', self.root + '/feedback.partial', self.root + '/feedback.json')
+
     def receipt(self, serial, ident):
         if not valid_hex(ident, 32):
             raise CommandError('Invalid receipt ID.')
@@ -53,7 +63,9 @@ class CommandTransport:
             raw = self.command('-s', serial, 'shell', 'head', '-c', '4097', self.root + '/' + ident + '.ack')
             value = json.loads(raw) if len(raw.encode()) <= 4096 else {}
             if value.get('id') == ident and value.get('status') in ('executed', 'rejected', 'uncertain'):
-                return {'status': value['status'], 'message': str(value.get('message', ''))[:200]}
+                result = {'status': value['status'], 'message': str(value.get('message', ''))[:200]}
+                if valid_hex(value.get('referenceToken'), 32): result['referenceToken'] = value['referenceToken']
+                return result
         except (CommandError, ValueError, TypeError, AttributeError):
             pass
         return {'status': 'waiting', 'message': 'Waiting for Quest receipt. Do not resend. Open ORYN to apply or reject the expiring command.'}

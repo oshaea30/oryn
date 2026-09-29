@@ -34,6 +34,14 @@ grounded authored explanations, follow-up context and validated automatic comman
 See [Complete Object v1](ORYN_COMPLETE_OBJECT.md). Voice, visual polish and full
 uncoached Quest acceptance remain required before calling MVP 1 complete.
 
+Latest continuation: the typed integration is committed. ORYN now owns in-headset
+conversation feedback and cancellation before dispatch, with post-action reference
+receipts and late-response protection. 264 offline Python tests and the Unity build
+gates pass. The 1.13.1/code 17 update is built; installation/startup and user visual
+acceptance remain distinct. Live provider testing awaits payload-specific approval;
+voice, full interruption and visual polish remain open. See the Complete Object
+checkpoint for exact verification scope.
+
 ### Completed mechanical foundation
 
 See [mechanical foundation and verification gates](ORYN_MECHANICS.md). A reusable

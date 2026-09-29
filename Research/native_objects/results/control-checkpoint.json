@@ -1,0 +1,156 @@
+{
+  "date": "2026-09-29",
+  "new_model_inference_performed": false,
+  "cases": [
+    {
+      "name": "authored-control",
+      "report": {
+        "id": "authored-drone-propulsion",
+        "origins": {
+          "geometry": "authored",
+          "semantics": "authored",
+          "hierarchy": "authored",
+          "motion": "authored"
+        },
+        "components": 17,
+        "triangles": 748,
+        "structural_checks_passed": true,
+        "native_generation_goal_passed": false,
+        "manual_repair_count": 0,
+        "checks": {
+          "package_version": {
+            "status": "pass",
+            "detail": "Research contract v1"
+          },
+          "provenance": {
+            "status": "pass",
+            "detail": "Each facet identifies origin; repairs remain explicit"
+          },
+          "unique_components": {
+            "status": "pass",
+            "detail": "Exact geometry/component binding"
+          },
+          "usable_geometry": {
+            "status": "pass",
+            "detail": "Invalid/empty/all-degenerate components: []"
+          },
+          "reference_graphs": {
+            "status": "pass",
+            "detail": "References exist and parent/driver graphs are acyclic"
+          },
+          "motion_parameters": {
+            "status": "pass",
+            "detail": "Bounded fixed/rotation experiment; other mechanisms require another evaluator"
+          },
+          "runtime_motion_agreement": {
+            "status": "pass",
+            "detail": "Sampled actual runtime vertices vs declared motion; max error=6.999625075536149e-08, invalid=[]"
+          },
+          "semantic_correctness": {
+            "status": "not_assessed",
+            "detail": "Part names/count alone cannot establish meaning; independent review required"
+          },
+          "attachment_fit": {
+            "status": "not_assessed",
+            "detail": "No attachment interfaces/ground truth established; parent graph alone is insufficient"
+          },
+          "motion_clearance": {
+            "status": "not_assessed",
+            "detail": "No triangle collision sweep implemented; valid axes do not establish clearance"
+          },
+          "visual_quality": {
+            "status": "not_assessed",
+            "detail": "Requires user review of original materials and geometry in Quest"
+          },
+          "quest_performance": {
+            "status": "not_assessed",
+            "detail": "No runtime import or frame-time measurement in this experiment"
+          },
+          "physical_validity": {
+            "status": "not_assessed",
+            "detail": "Kinematic motion is not physical feasibility"
+          }
+        },
+        "missing_output_facets": [],
+        "verdict": "Control/evidence only; complete native generation is not demonstrated."
+      }
+    },
+    {
+      "name": "saved-geometry-control",
+      "report": {
+        "id": "saved-geometry-control",
+        "origins": {
+          "geometry": "geometric_decomposition",
+          "semantics": "unknown",
+          "hierarchy": "unknown",
+          "motion": "unknown"
+        },
+        "components": 39,
+        "triangles": 10491,
+        "structural_checks_passed": true,
+        "native_generation_goal_passed": false,
+        "manual_repair_count": 0,
+        "checks": {
+          "package_version": {
+            "status": "pass",
+            "detail": "Research contract v1"
+          },
+          "provenance": {
+            "status": "pass",
+            "detail": "Each facet identifies origin; repairs remain explicit"
+          },
+          "unique_components": {
+            "status": "pass",
+            "detail": "Exact geometry/component binding"
+          },
+          "usable_geometry": {
+            "status": "pass",
+            "detail": "Invalid/empty/all-degenerate components: []"
+          },
+          "reference_graphs": {
+            "status": "pass",
+            "detail": "References exist and parent/driver graphs are acyclic"
+          },
+          "motion_parameters": {
+            "status": "missing",
+            "detail": "No predicted or supplied motion"
+          },
+          "runtime_motion_agreement": {
+            "status": "not_assessed",
+            "detail": "Requires usable joints and independently exported runtime frames"
+          },
+          "semantic_correctness": {
+            "status": "not_assessed",
+            "detail": "Part names/count alone cannot establish meaning; independent review required"
+          },
+          "attachment_fit": {
+            "status": "not_assessed",
+            "detail": "No attachment interfaces/ground truth established; parent graph alone is insufficient"
+          },
+          "motion_clearance": {
+            "status": "not_assessed",
+            "detail": "No triangle collision sweep implemented; valid axes do not establish clearance"
+          },
+          "visual_quality": {
+            "status": "not_assessed",
+            "detail": "Requires user review of original materials and geometry in Quest"
+          },
+          "quest_performance": {
+            "status": "not_assessed",
+            "detail": "No runtime import or frame-time measurement in this experiment"
+          },
+          "physical_validity": {
+            "status": "not_assessed",
+            "detail": "Kinematic motion is not physical feasibility"
+          }
+        },
+        "missing_output_facets": [
+          "semantics",
+          "hierarchy",
+          "motion"
+        ],
+        "verdict": "Control/evidence only; complete native generation is not demonstrated."
+      }
+    }
+  ]
+}

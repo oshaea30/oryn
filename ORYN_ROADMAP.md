@@ -1,6 +1,6 @@
 # ORYN working roadmap
 
-Last checkpoint: 2026-09-28. This file records the agreed direction so new ideas
+Last checkpoint: 2026-09-29. This file records the agreed direction so new ideas
 do not silently replace the current milestone.
 
 ## Product goal
@@ -25,7 +25,31 @@ Generated shapes and user labels must not become verified mechanical facts.
   all 39 parts restored in position, rotation and scale. This proves one live case,
   not general interpretation quality or semantic understanding.
 
-## Current milestone: Complete Object Experience / MVP 1
+## Current milestone: native-object generation experiment
+
+User priority: visual object quality, meaningful components and behavior on the
+same generated object. The core generative capability is part of the invention;
+a permanent fixed-parts configurator is not the destination. General answering,
+voice and question-specific answer patches are paused. Existing answer fixtures
+are not evidence that autonomous answering works.
+
+The [native-object experiment](Research/native_objects/README.md) now provides an
+isolated output representation, partial evaluator, actual Unity mesh/motion control
+export, source-preserving saved-geometry comparison, visual inspector and prepared
+PartCrafter inference adapter. Sixteen offline checks pass; Unity export and browser
+controls pass. Authored motion agrees with sampled geometry; the saved generated
+model remains missing semantics, hierarchy and motion. Neither passes the complete
+native generation goal. Appearance, attachment fit and clearance remain unassessed.
+
+No new model inference or training has run. A CUDA worker is required for the
+selected released baseline; the user's Mac does not provide that platform. A
+single GPU experiment is prepared, with a proposed $5 spend ceiling subject to
+approval, account access, current pricing and a rental termination mechanism.
+Do not replace that missing run with another manually assembled demo. Record all
+supplied structure, failed outputs and manual repairs. Use the observed failures
+to choose subsequent articulation work or model adaptation.
+
+## Earlier milestone: Complete Object Experience / MVP 1
 
 The user approved implementation with ORYN owning its own brain; Codex must not
 operate the product as a runtime puppeteer. First increment: the authored drone

@@ -123,6 +123,20 @@ namespace Oryn.Interaction
             part.Bounds.enabled = PartsMode && part.gameObject.activeSelf;
         }
 
+        public void IsolateParts(HashSet<OrynWorkspaceObject> chosen)
+        {
+            if (chosen == null || chosen.Count == 0) throw new System.ArgumentException("Subsystem parts required");
+            foreach (var part in chosen) if (!parts.Contains(part)) throw new System.ArgumentException("Part outside assembly");
+            SetPartsMode(true);
+            foreach (var part in parts)
+            {
+                part.State.ReleaseAll();
+                part.gameObject.SetActive(chosen.Contains(part));
+                part.Bounds.enabled = part.gameObject.activeSelf;
+            }
+            Isolated = true;
+        }
+
         public void Reassemble()
         {
             SpreadAmount = 0;

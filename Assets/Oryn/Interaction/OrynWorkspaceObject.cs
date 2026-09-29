@@ -8,6 +8,7 @@ namespace Oryn.Interaction
         public OrynTwoHandState State { get; private set; }
         public Collider Bounds { get; private set; }
         public int Number { get; set; }
+        public OrynMechanicalBehavior Mechanical => GetComponent<OrynMechanicalBehavior>();
         public OrynAssembly Assembly { get; private set; }
         public OrynAssembly PartOf { get; private set; }
         public bool IsImported { get; private set; }
@@ -17,6 +18,19 @@ namespace Oryn.Interaction
         private Renderer surface;
         private MaterialPropertyBlock colors;
         private LineRenderer importOutline;
+        private static readonly int[] OutlineOrder = { 0, 1, 3, 2, 0, 4, 5, 1, 5, 7, 3, 7, 6, 2, 6, 4 };
+        public void UpdateMechanicalBounds(UnityEngine.Bounds bounds)
+        {
+            var box = (BoxCollider)Bounds;
+            box.center = bounds.center; box.size = Vector3.Max(bounds.size, Vector3.one * 0.015f);
+            if (importOutline == null) return;
+            for (int i = 0; i < OutlineOrder.Length; i++)
+            {
+                int c = OutlineOrder[i];
+                importOutline.SetPosition(i, box.center + Vector3.Scale(box.size * 0.5f,
+                    new Vector3((c & 1) == 0 ? -1 : 1, (c & 2) == 0 ? -1 : 1, (c & 4) == 0 ? -1 : 1)));
+            }
+        }
         public void AttachModel(OrynRuntimeModel model, Material outlineMaterial)
         {
             Initialize();

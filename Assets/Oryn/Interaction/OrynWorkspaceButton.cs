@@ -4,7 +4,8 @@ namespace Oryn.Interaction
 {
     public sealed class OrynWorkspaceButton : MonoBehaviour
     {
-        public enum Command { Cube, Sphere, Delete, Reset, LoadModel, Parts, Explode, Isolate, Reassemble, PreviousLabel, NextLabel, SaveLabel }
+        public enum Command { Cube, Sphere, Delete, Reset, LoadModel, Parts, Explode, Isolate, Reassemble, PreviousLabel, NextLabel, SaveLabel,
+            DroneDemo, V8Demo, MotionPlay, MotionPause, MotionStop, MotionSlow, MotionNormal, MotionIsolate }
         public Command Action;
         public Collider Bounds;
         private Renderer surface;

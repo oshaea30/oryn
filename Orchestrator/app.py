@@ -54,6 +54,7 @@ class Jobs:
         self.geometry_evidence = GeometryEvidenceStore(self.workflows)
         self.episodes = Episodes(self.workflows)
         self.vision = None  # Main wires bounded, explicit episode dispatch.
+        self.assessments = None
         self.research = None  # Main wires live providers after local-only backfill.
         self.key, self.provider = key, provider
         self.credential_store = credential_store
@@ -477,6 +478,7 @@ class Handler(BaseHTTPRequestHandler):
                 if set(query)!={'id'} or len(query['id'])!=1 or not re.fullmatch('[a-f0-9]{64}',query['id'][0]):raise ValueError()
                 identifier=query['id'][0]
                 record=self.server.jobs.episodes.get(identifier)
+                record['assessment']=self.server.jobs.assessments.get(identifier) if self.server.jobs.assessments else None
                 record['vision']=self.server.jobs.vision.state() if self.server.jobs.vision else {'connected':False,'policy_ready':False}
                 if self.server.jobs.research is not None:
                     record['budget']=self.server.jobs.research.ledger.investigation_summary(record['asset_id'])
@@ -541,6 +543,9 @@ class Handler(BaseHTTPRequestHandler):
             if self.path == '/api/investigate-episode' and self.server.jobs.vision is not None:
                 if set(body)!={'episode_id'} or not isinstance(body['episode_id'],str) or not re.fullmatch('[a-f0-9]{64}',body['episode_id']):raise ValueError('Invalid episode ID.')
                 return self.respond(202,self.server.jobs.vision.start_episode(body['episode_id']))
+            if self.path == '/api/assess-candidates' and self.server.jobs.assessments is not None:
+                if set(body)!={'episode_id'} or not isinstance(body['episode_id'],str) or not re.fullmatch('[a-f0-9]{64}',body['episode_id']):raise ValueError('Invalid episode ID.')
+                return self.respond(202,self.server.jobs.assessments.start_episode(body['episode_id']))
             if self.path == '/api/prepare-episode-evidence':
                 if set(body)!={'episode_id'} or not isinstance(body['episode_id'],str) or not re.fullmatch('[a-f0-9]{64}',body['episode_id']):raise ValueError('Invalid episode ID.')
                 return self.respond(200,self.server.jobs.episodes.prepare_local(body['episode_id'],self.server.jobs.geometry_evidence))
@@ -577,6 +582,8 @@ def main():
     server = Server(args.port, jobs)
     from vision_service import VisionService
     jobs.vision = VisionService(jobs)
+    from candidate_assessment import CandidateAssessmentService
+    jobs.assessments = CandidateAssessmentService(jobs)
     jobs.research.start()
     jobs.geometry_evidence.start()
     def receipts():

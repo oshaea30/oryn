@@ -25,7 +25,44 @@ Generated shapes and user labels must not become verified mechanical facts.
   all 39 parts restored in position, rotation and scale. This proves one live case,
   not general interpretation quality or semantic understanding.
 
-## Current milestone: no-approval object-request user experience
+## Current milestone: mechanical behavior / MVP 1
+
+See [mechanical foundation and verification gates](ORYN_MECHANICS.md). A reusable
+deterministic schema/evaluator, separate authored drone/V8 teaching fixtures,
+desktop viewer and headset controls are implemented. Runtime/editor code compiles;
+an isolated Unity solver run passed 11,576 checks. On 2026-09-29 the full-project
+mechanical/workspace/menu/command/synthetic-assembly tests passed, and both rendered
+fixtures were inspected. ORYN 1.12.0/code 15 is now built, signature-checked, installed
+on Quest 2 and launched with live state/hand-grab logs. The user has now visually
+confirmed drone play/slow/pause and V8 synchronized motion, slow/pause and continued
+motion during subsystem isolation. This bounded authored-demo headset checkpoint
+is complete, not verification of generated anatomy or general physical accuracy.
+Stop before another major intelligence subsystem and reassess MVP 1 scope.
+No generated meshes have been falsely bound to presumed mechanisms.
+
+The explicitly authorized second reference pass used a targeted Fel-Pro manufacturer
+excerpt. ORYN completed one bounded object-only comparison: both upper-cover
+hypotheses were tentatively consistent, **still candidate**, with underside/contact
+checks outstanding. Original hypotheses and the earlier insufficient-evidence pass
+remain in episode history. Cumulative V8 conservative usage is $0.0332725 of $0.05
+(not an invoice). No mappings/capabilities were promoted. This closes the bounded
+hypothesis-checking checkpoint, not the question of exact component identity.
+
+## Earlier checkpoints
+
+Latest increment: ORYN owns a one-shot follow-up assessment of saved candidates.
+It plans at most two targeted searches, stores retrieved excerpts plus local
+selection decisions, then admits at most one image/reference comparison under the
+same cumulative object cap. Support/conflict/insufficient-evidence outcomes are
+separate assessment records: original hypotheses are never overwritten or promoted.
+The real V8 follow-up completed in 0.622 seconds with **insufficient evidence**:
+ten Wikipedia discovery results returned introductory excerpts, none qualified as
+new component-specific context. The paid comparison was skipped; V8 usage remains
+$0.0196625 at that point. This was a retrieval limitation, not a mechanical verdict or
+successful reference-backed identification. The paid comparison path was then fixture-
+tested only. The next explicitly authorized pass retrieved targeted technical sections and more
+authoritative component references; preserve this unsuccessful attempt. No Quest
+change, new generation, extra model charge or automatic retry occurred.
 
 Latest increment: the user confirmed disabled API sharing with a Data controls
 screenshot and authorized the bounded vision pilot. ORYN's application-owned

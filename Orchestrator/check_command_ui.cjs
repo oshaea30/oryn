@@ -1,6 +1,7 @@
 // Optional browser regression. Requires Playwright and installed Chrome on macOS.
 // All API routes are mocked: no ADB actions, provider requests or credentials.
 const assert = require('node:assert/strict');
+const fs = require('node:fs'), path = require('node:path');
 const {chromium} = require('playwright');
 (async () => {
   const browser = await chromium.launch({headless:true, executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'});
@@ -10,6 +11,11 @@ const {chromium} = require('playwright');
     let stateAvailable=true, ready=true, fingerprint='stable-context', busyApply=false;
     const snapshot={capturedUtc:Math.floor(Date.now()/1000),owner:1,selectedPartNumber:4,partCount:39};
     page.on('pageerror', error => errors.push(error.message));
+    // Serve the checked-out UI as a fixture too; a running command/ADB service
+    // should not be a prerequisite for this mocked browser regression.
+    for (const [url,name,mime] of [['/','command.html','text/html'],['/command.js','command.js','text/javascript'],['/command.css','command.css','text/css']]) {
+      await page.route('http://127.0.0.1:8767'+url, route => route.fulfill({contentType:mime,body:fs.readFileSync(path.join(__dirname,name),'utf8')}));
+    }
     await page.route('**/api/**', async route => {
       const path = new URL(route.request().url()).pathname;
       let result = {};

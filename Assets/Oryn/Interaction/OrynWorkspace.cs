@@ -78,6 +78,7 @@ namespace Oryn.Interaction
             handVisuals[1] = new OrynContactHandVisual(RightHand, RightSkeleton, transform);
             gameObject.AddComponent<OrynGenerationInbox>().Workspace = this;
             gameObject.AddComponent<OrynCommandBridge>().Workspace = this;
+            OrynMechanicalControls.Install(this);
         }
 
         private void Start()
@@ -298,6 +299,8 @@ namespace Oryn.Interaction
         }
         private bool CanExecute(OrynWorkspaceButton.Command action)
         {
+            if (action == OrynWorkspaceButton.Command.DroneDemo || action == OrynWorkspaceButton.Command.V8Demo) return objects.Count < ObjectLimit && !loadingModel;
+            if (action >= OrynWorkspaceButton.Command.MotionPlay) return SelectedAssembly()?.Owner.Mechanical != null;
             if (action == OrynWorkspaceButton.Command.PreviousLabel || action == OrynWorkspaceButton.Command.NextLabel)
                 return Inspector != null && Inspector.CanEdit;
             if (action == OrynWorkspaceButton.Command.SaveLabel) return Inspector != null && Inspector.CanSave;
@@ -316,6 +319,18 @@ namespace Oryn.Interaction
             if (action != OrynWorkspaceButton.Command.Delete) confirmDelete = false;
             switch (action)
             {
+                case OrynWorkspaceButton.Command.DroneDemo: SpawnMechanism(false); break;
+                case OrynWorkspaceButton.Command.V8Demo: SpawnMechanism(true); break;
+                case OrynWorkspaceButton.Command.MotionPlay: SelectedAssembly().Owner.Mechanical.Play(); break;
+                case OrynWorkspaceButton.Command.MotionPause: SelectedAssembly().Owner.Mechanical.Pause(); break;
+                case OrynWorkspaceButton.Command.MotionStop: SelectedAssembly().Owner.Mechanical.StopHome(); break;
+                case OrynWorkspaceButton.Command.MotionSlow: SelectedAssembly().Owner.Mechanical.SetSpeed(0.15f); break;
+                case OrynWorkspaceButton.Command.MotionNormal: SelectedAssembly().Owner.Mechanical.SetSpeed(1); break;
+                case OrynWorkspaceButton.Command.MotionIsolate:
+                    var mechanism = SelectedAssembly(); ReleaseAssembly(mechanism);
+                    if (mechanism.Isolated) mechanism.Reassemble();
+                    else mechanism.Owner.Mechanical.IsolateSubsystem(mechanism.Owner.Mechanical.Definition.Id.Contains("v8") ? "rotating_assembly" : "propulsion");
+                    selected = mechanism.Owner; break;
                 case OrynWorkspaceButton.Command.PreviousLabel: Inspector.Cycle(-1); break;
                 case OrynWorkspaceButton.Command.NextLabel: Inspector.Cycle(1); break;
                 case OrynWorkspaceButton.Command.SaveLabel: Inspector.Save(); break;
@@ -357,6 +372,18 @@ namespace Oryn.Interaction
             if (!TrySpawnPose(out Pose pose)) return;
             var item = Instantiate(sphere ? SpherePrefab : CubePrefab, pose.position, pose.rotation);
             Register(item, pose);
+        }
+        private void SpawnMechanism(bool engine)
+        {
+            if (objects.Count >= ObjectLimit || !TrySpawnPose(out Pose pose)) return;
+            var item = Instantiate(CubePrefab, pose.position, pose.rotation);
+            try
+            {
+                OrynMechanicalBenchmarks.Attach(item, engine, CubePrefab.GetComponent<Renderer>().sharedMaterial, MarkerMaterial);
+                Register(item, pose);
+                StartupNotice("Authored mechanism demo, not a verified mapping of your generated model");
+            }
+            catch { Destroy(item.gameObject); throw; }
         }
         private bool TrySpawnPose(out Pose pose)
         {
@@ -473,6 +500,7 @@ namespace Oryn.Interaction
             if (selected.PartOf != null)
             { Release(selected); selected.PartOf.ResetPart(selected); return; }
             if (selected.Assembly != null) { ReleaseAssembly(selected.Assembly); selected.Assembly.Reassemble(); }
+            selected.Mechanical?.StopHome();
             Release(selected);
             selected.State.Reset(ReachPose());
             selected.Apply(false, true);

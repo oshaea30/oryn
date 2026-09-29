@@ -321,6 +321,55 @@ Next: improve relevant references and assess these candidates against evidence,
 preserving this original episode. Do not silently spend again or expand to all 200
 pieces. This is a bounded investigation pilot, not finished engine understanding.
 
+### Candidate reference assessment increment — 2026-09-28
+
+`candidate_assessment.py` owns a separate durable follow-up record bound to the
+completed episode and original candidate revision. `POST /api/assess-candidates`
+uses the existing local token/origin protection; a repeated request returns the
+persisted state instead of rerunning work. Startup marks in-flight assessment work
+interrupted. Read-only episode responses and the UI expose results independently
+from the original vision episode's completed state.
+
+The current planner issues at most two query variants (description and component
+head term), with at most five excerpts per query through the existing fixed-host
+Wikipedia adapter. This is secondary discovery, not manufacturer documentation.
+The deterministic `candidate-head-term-v1` selection step records matching terms,
+excluded results, freshness by excerpt hash, latency, known-zero local cost and
+unreviewed quality. It selects at most three new excerpts; lexical overlap neither
+proves relevance nor authority. No Jev call or general web crawler is introduced.
+
+When references qualify, `OpenAIAssessmentProvider` reuses the vision adapter's
+count/admit/settle path. The separate assessment profile uses `gpt-6-sol`, medium,
+1,536 maximum output tokens, `store:false`, no tools/history/GLB/room imagery and
+only retained candidate views. The same $0.05 asset-lifetime cap and shared $2/day
+limit include all previous text/vision charges and uncertain reservations. Quotes
+that no longer fit block generation; no retry, fallback or budget renewal exists.
+
+Outputs distinguish `supports_candidate`, `contradicts_candidate`, and
+`insufficient_evidence`. Each includes visible observations, a tentative reference
+comparison and missing checks. Non-abstaining outcomes require a bound image and a
+short exact excerpt quote (at most 12 words); validators check source membership,
+substring equality and complete candidate coverage. These are mechanical checks,
+not independent factual entailment verification. All identities remain candidate;
+no model output can set reference-supported or verified, mutate the ingestion
+manifest, rename the original candidate or change runtime capabilities. The
+observable response, including invalid proposals, is retained before validation.
+Completed assessment references can be cited in later append-only human reviews.
+
+**Live V8 result:** assessment
+`fd27ce1407086fc6a2b0c38e3da51d0b789f6eb2594d3775f7e5b03a6ea02c63`
+searched `a v8 engine cylinder bank upper cover` and `engine cover`. Ten search
+results arrived, but none of the returned introductory excerpts passed the
+new-component-context filter. Both original candidates therefore received
+deterministic `insufficient_evidence` outcomes in 622 ms. No additional visual
+assessment occurred, and neither token counting nor paid model generation ran.
+Usage remains $0.0196625, with $0.0303375 left in the object allowance. The original
+two candidate mappings and all earlier evidence are unchanged. This does **not**
+establish that relevant references do not exist: the introductory-excerpt search
+adapter missed the targeted technical material. No hidden retry was made. Better
+section-level/authoritative retrieval is the next increment; paid assessment
+success, source entailment and real human corrections remain unproven.
+
 Official API references checked during implementation:
 [image inputs](https://developers.openai.com/api/docs/guides/images-vision),
 [token counting](https://developers.openai.com/api/docs/guides/token-counting),
@@ -365,3 +414,17 @@ remain unmeasured until the controlled comparison exists.
 
 Cloud-backed durable assets and bounded caches remain the storage direction in
 ORYN_ROADMAP.md; this increment neither provisions storage nor evicts local assets.
+# 2026-09-28 reference-check completion
+
+The curated-v2 pass preserves the first unsuccessful Wikipedia pass and its
+append-only episode events. It uses a fixed, bounded manufacturer catalogue entry
+for engine-cover queries, not arbitrary model-selected URLs, and snapshots excerpts
+with unknown exact-object/revision match. Other queries retain the retrieval adapter.
+One object-only comparison completed for the two V8 cover candidates: tentative
+support, no identity promotion. The useful output includes observations, comparison,
+source/view bindings, missing checks and model/operation provenance. Total asset
+usage estimate is $0.0332725; no automatic retry or budget reset was introduced.
+
+The next foundation is [mechanical behavior](ORYN_MECHANICS.md), with authored
+demonstrations explicitly separate from unidentified generated geometry. Stop after
+its verification/product checkpoint before extending autonomous investigation.

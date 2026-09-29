@@ -209,6 +209,11 @@ class Episodes:
         revision=next((r for r in report['candidate_revisions'] if r['id']==body['revision_id']),None)
         if not revision or body['geometry_id'] not in {m['geometry_id'] for m in revision['mappings']}:raise ValueError('Unknown candidate.')
         ids=body['source_ids'];valid={s['id'] for s in record['sources']}
+        for event in self.events(identifier):
+            result=event['payload']
+            if (event['kind']=='assessment_finished' and result.get('status')=='completed' and
+                    result.get('candidate_revision_id')==body['revision_id']):
+                valid.update(s['id'] for s in result.get('sources',[]))
         if not isinstance(ids,list) or any(not isinstance(i,str) or i not in valid for i in ids) or len(ids)>5:raise ValueError('Invalid review evidence.')
         payload={**deepcopy(body),'actor':'local_operator','authentication_scope':'local_development_console',
                  'promoted_to_verified':False,'epistemic_status':'candidate',

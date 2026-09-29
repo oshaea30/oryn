@@ -66,30 +66,35 @@ def vision_body(chosen, query, package, references, images):
 
 
 class OpenAIMappingProvider:
+    profile='vision'
+    operation='geometry_vision'
+    contract=CONTRACT
+    validation_checks=['schema','geometry_membership','view_binding','reference_membership','unknown_coverage']
+
     def __init__(self, ledger, key, counter=count_input, sender=generate_priced, clock=time.time):
         self.ledger,self.key,self.counter,self.sender,self.clock=ledger,key,counter,sender,clock
 
     def propose_mappings(self, episode, package, references, images, record_event):
         op=episode['operation_id'];asset=episode['asset_id']
-        chosen=policy('openai','vision',int(self.clock()))
+        chosen=policy('openai',self.profile,int(self.clock()))
         if self.ledger.get(op):raise CommandError('Vision already attempted; no paid retry.')
         daily=self.ledger.summary();budget=self.ledger.investigation_summary(asset)
         if daily['halted'] or not daily['remaining_nanos'] or not budget['remaining_nanos']:
             raise CommandError('Research budget unavailable.')
-        body,aliases,view_aliases,sources=vision_body(chosen,episode['query'],package,references,images)
+        body,aliases,view_aliases,sources=self.build_body(chosen,episode,package,references,images)
         # Persist the exact text/settings/alias binding and hashes of the exact
         # internally retained rasters. Do not duplicate base64, keys or headers.
         snapshot=deepcopy(body)
         for part in snapshot['input'][1]['content']:
             if part['type']=='input_image':part['image_url']='retained-object-raster'
-        record_event('request_prepared',{'contract':CONTRACT,'body_without_image_bytes':snapshot,
+        record_event('request_prepared',{'contract':self.contract,'body_without_image_bytes':snapshot,
             'request_fingerprint':digest(body),'piece_aliases':aliases,'view_aliases':view_aliases,
             'images':[{k:v for k,v in image.items() if k!='png'} for image in images]})
         record_event('count_dispatch',{'provider':'openai','endpoint':'responses/input_tokens','contains_object_images':True})
         count=self.counter(self.key,deepcopy(body));cost=quote_cost(chosen,count)
         now=int(self.clock())
-        quote={'request_id':op,'actor_id':'developer','provider':'openai','profile':'vision',
-            'model':chosen['model'],'effort':chosen['effort'],'operation':'geometry_vision',
+        quote={'request_id':op,'actor_id':'developer','provider':'openai','profile':self.profile,
+            'model':chosen['model'],'effort':chosen['effort'],'operation':self.operation,
             'fingerprint':digest(body),'price_version':chosen['price_version'],'input_tokens':count,
             'max_output_tokens':chosen['max_output_tokens'],'reserved_nanos':cost,
             'ceiling_nanos':50_000_000,'created':now,'expires':min(now+120,PRICE_EXPIRES)}
@@ -112,20 +117,27 @@ class OpenAIMappingProvider:
         try:
             if result.get('status')!='completed' or len(messages)!=1 or messages[0]['type']!='output_text':raise ValueError('Incomplete response.')
             raw=json.loads(messages[0]['text'])
-            if not isinstance(raw,dict) or set(raw)!={'mappings','unknown_geometry_ids'} or not isinstance(raw['mappings'],list):raise ValueError('Invalid response contract.')
-            translated=deepcopy(raw)
-            for item in translated['mappings']:
-                item['geometry_id']=aliases[item['geometry_id']]
-                item['view_ids']=[view_aliases[v] for v in item['view_ids']]
-            translated['unknown_geometry_ids']=[aliases[g] for g in translated['unknown_geometry_ids']]
             provenance={'method':'multimodal_model','provider':'openai','model':result['model'],'operation_id':op}
-            validate_candidates(translated,package,sources,provenance)
+            translated=self.validate_result(raw,aliases,view_aliases,package,sources,provenance)
         except (ValueError,KeyError,TypeError,AttributeError):
             self.ledger.settle(op,incoming,outgoing,calculated,'invalid_response')
             record_event('validation_rejected',{'reason':'Invalid output, citation or geometry binding. No candidate published.','calculated_nanos':calculated})
             raise CommandError('Vision result failed validation; response retained for inspection, no retry.') from None
         self.ledger.settle(op,incoming,outgoing,calculated,'completed')
-        record_event('validation_passed',{'checks':['schema','geometry_membership','view_binding','reference_membership','unknown_coverage'],
+        record_event('validation_passed',{'checks':self.validation_checks,
             'not_checked':['factual_entailment','mechanical_identity','internal_completeness'],
             'calculated_nanos':calculated,'actual_cost_nanos':None})
         return translated,sources,provenance
+
+    def build_body(self,chosen,episode,package,references,images):
+        return vision_body(chosen,episode['query'],package,references,images)
+
+    def validate_result(self,raw,aliases,view_aliases,package,sources,provenance):
+        if not isinstance(raw,dict) or set(raw)!={'mappings','unknown_geometry_ids'} or not isinstance(raw['mappings'],list):raise ValueError('Invalid response contract.')
+        translated=deepcopy(raw)
+        for item in translated['mappings']:
+            item['geometry_id']=aliases[item['geometry_id']]
+            item['view_ids']=[view_aliases[v] for v in item['view_ids']]
+        translated['unknown_geometry_ids']=[aliases[g] for g in translated['unknown_geometry_ids']]
+        validate_candidates(translated,package,sources,provenance)
+        return translated

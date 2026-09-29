@@ -18,6 +18,14 @@ namespace Oryn.Interaction
         public string SourceHash { get; private set; }
         public string SourcePath { get; private set; }
         private GltfImport importer;
+        public static OrynRuntimeModel AuthoredDemonstration(string name, Bounds bounds)
+        {
+            var model = new GameObject(name).AddComponent<OrynRuntimeModel>();
+            model.LocalBounds = bounds;
+            // No generated-asset hash: a family demonstration cannot inherit the
+            // identity, mappings or research records of a generated model.
+            return model;
+        }
         public static string ImportPath => Path.Combine(Application.persistentDataPath, "Imports", "model.glb");
 
         public static async Task<OrynRuntimeModel> Load(string path, CancellationToken cancellation = default)

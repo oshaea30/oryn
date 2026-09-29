@@ -5,7 +5,7 @@ const {chromium}=require('playwright');
  const browser=await chromium.launch({headless:true,executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'});
  try{
   const page=await browser.newPage({viewport:{width:1100,height:1000}}),id='a'.repeat(64),gid='b'.repeat(64)+':island:001';
-  const posts=[],errors=[],dispatches=[];let lose=false;
+  const posts=[],errors=[],dispatches=[],assessments=[];let lose=false;
   const record={id,status:'waiting_policy',candidate_revision_id:'c'.repeat(64),events:[{id:'opened',sequence:1,kind:'episode_opened',created_at:1,payload:{question:'<img src=x> Untrusted query'}}]};
   page.on('pageerror',e=>errors.push(e.message));
   await page.route('**/*',async route=>{
@@ -13,6 +13,10 @@ const {chromium}=require('playwright');
    if(url.pathname==='/investigation-episode')return route.fulfill({contentType:'text/html',body:fs.readFileSync(path.join(__dirname,'investigation_episode.html'),'utf8')});
    if(url.pathname==='/api/episode')return route.fulfill({json:record});
    if(url.pathname==='/api/state')return route.fulfill({json:{token:'fixture-token'}});
+   if(url.pathname==='/api/assess-candidates'){
+    assessments.push(request.postDataJSON());assert.equal(request.headers()['x-oryn-token'],'fixture-token');
+    record.assessment={status:'running',assessments:[],sources:[]};return route.abort();
+   }
    if(url.pathname==='/api/investigate-episode'){
     dispatches.push(request.postDataJSON());record.status='running';
     assert.equal(request.headers()['x-oryn-token'],'fixture-token');
@@ -48,6 +52,14 @@ const {chromium}=require('playwright');
   assert.equal(posts.length,2);assert.equal(posts[1].review.previous_review_id,'review-1');
   assert.match(await page.locator('#candidates').innerText(),/Fixture rocker arm/);
   assert.equal(record.events.filter(e=>e.kind==='human_review').length,2);
+  await page.locator('#assess').click();await page.waitForFunction(()=>document.querySelector('#assessmentStatus').textContent==='running');
+  assert.equal(assessments.length,1);assert.equal(await page.locator('#assess').isEnabled(),false);
+  record.assessment={status:'completed',assessments:[{geometry_id:gid,outcome:'insufficient_evidence',observation:'<img src=x> Fixture observation',comparison:'Not enough evidence.',missing_evidence:['An exact reference.'],evidence:[{source_id:'r1',quote:'Fixture quote.'}]}],sources:[{id:'r1',title:'<img src=x> Reference',url:'https://example.org/reference',source_type:'test_fixture'},{id:'bad',title:'Unsafe',url:'javascript:alert(1)',source_type:'test_fixture'}]};
+  await page.locator('#refresh').click();await page.waitForFunction(()=>document.querySelector('#assessmentStatus').textContent==='completed');
+  assert.match(await page.locator('#assessments').innerText(),/Still unknown/);
+  assert.equal(await page.locator('#assessments img').count(),0);assert.equal(await page.locator('#references img').count(),0);
+  assert.equal(await page.locator('#references a').count(),1);assert.equal(assessments.length,1);
+  assert.match(await page.locator('#candidates').innerText(),/Fixture rocker arm/);
   await page.setViewportSize({width:390,height:844});
   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
   assert.deepEqual(errors,[]);

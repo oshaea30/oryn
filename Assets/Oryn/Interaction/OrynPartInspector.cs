@@ -56,6 +56,13 @@ namespace Oryn.Interaction
             if (Details == null) return;
             if (!CanEdit)
             {
+                var behavior = target == null ? null : (target.PartOf != null ? target.PartOf.Owner.Mechanical : target.Mechanical);
+                if (behavior != null)
+                {
+                    Details.text = "AUTHORED MECHANISM\n\n" + (target.PartOf != null ? target.GeometryName : behavior.Definition.Title) +
+                        "\n\nDemonstration only.\nDimensions / ratios authored.\nNo reference verification.\nNot mapped to generated pieces.";
+                    return;
+                }
                 Details.text = "PART KNOWLEDGE\n\nExplode, then grab a piece.\nNo identities are inferred.\n\nLabels are user annotations.\n" + notice;
                 return;
             }

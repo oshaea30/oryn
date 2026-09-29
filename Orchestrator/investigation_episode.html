@@ -9,6 +9,7 @@
 <button id="investigate" disabled>Investigate prepared pieces</button>
 <p id="budget"></p><details id="rasters" hidden><summary>Exact object-only images retained locally</summary><div id="images"></div></details>
 <section><h2>Candidates</h2><div id="candidates"></div></section>
+<section><h2>Reference assessment</h2><p>Compare existing hypotheses against targeted reference excerpts and the same object-only views. Support is a model assessment, not a verified identity. Original labels and reviews remain unchanged.</p><button id="assess" disabled>Assess saved candidates</button><p id="assessmentStatus"></p><div id="assessments"></div><div id="references"></div></section>
 <section id="reviewArea" hidden><h2>Record a review</h2><form id="review"><label for="piece">Original candidate</label><select id="piece"></select><label for="decision">Review</label><select id="decision"><option value="rejected">Reject candidate</option><option value="corrected">Propose correction</option><option value="accepted">Accept as a candidate, not verified</option></select><label for="reason">Reason and evidence</label><textarea id="reason" maxlength="1000" rows="3" required></textarea><label for="replacement">Replacement name (correction only)</label><input id="replacement" maxlength="200" disabled><label for="sources">Supporting reference IDs, comma-separated (optional)</label><input id="sources" maxlength="600"><p>The review is attributed to the local development operator. Reference IDs must already belong to this episode. Training eligibility remains unassessed.</p><button id="save">Save review event</button></form></section>
 <section><h2>Episode history</h2><div id="events"></div></section>
 <script>
@@ -34,10 +35,29 @@ async function load(){
    const option=document.createElement('option');option.value=mapping.geometry_id;option.textContent=mapping.geometry_id.split(':').slice(-2).join(':')+' — '+mapping.candidate_name;$('piece').append(option);
   }
   $('reviewArea').hidden=record.status!=='completed'||!mappings.length;
+  const assessment=record.assessment;$('assessmentStatus').textContent=assessment?(assessment.status==='completed'&&!assessment.sources?.length?'Reference search finished · insufficient excerpts; paid comparison skipped':assessment.status)+(assessment.error?' · '+assessment.error:''):'Not run. One bounded assessment; the existing object budget applies.';
+  $('assessments').replaceChildren();$('references').replaceChildren();
+  const outcomeLabels={supports_candidate:'Supports candidate — not verified',contradicts_candidate:'Conflicts with candidate — model assessment',insufficient_evidence:'Still unknown — insufficient evidence'};
+  for(const a of assessment?.assessments||[]){
+   text($('assessments'),'h3',a.geometry_id.split(':').slice(-2).join(':')+' · '+(outcomeLabels[a.outcome]||'Unknown outcome'));
+   text($('assessments'),'p','Observed: '+a.observation);text($('assessments'),'p','Comparison: '+a.comparison);
+   text($('assessments'),'p','Still needed: '+a.missing_evidence.join(' '));
+   for(const e of a.evidence)text($('assessments'),'p',e.source_id+' — “'+e.quote+'”');
+  }
+  for(const s of assessment?.sources||[]){
+   const p=text($('references'),'p',s.id+' · ');
+   try{const url=new URL(s.url);if(url.protocol==='https:'&&!url.username&&!url.password){const a=text(p,'a',s.title);a.href=url.href;a.target='_blank';a.rel='noopener noreferrer';}}catch{}
+   text($('references'),'p',s.source_type+' · exact object/revision match unverified');
+  }
   for(const event of record.events){const details=document.createElement('details');text(details,'summary',event.sequence+' · '+event.kind+' · '+new Date(event.created_at*1000).toLocaleString());text(details,'pre',JSON.stringify(event.payload,null,2));$('events').append(details);}
   const state=await fetch('/api/state',{signal:AbortSignal.timeout(10000)});if(!state.ok)throw Error('Local connection unavailable.');token=(await state.json()).token;
- }catch(error){$('notice').textContent=error.message;}finally{$('save').disabled=sending||uncertain||!token;$('prepare').disabled=sending||!token||record?.status!=='waiting_policy'||record?.events.some(e=>e.kind==='observations_prepared');$('investigate').disabled=sending||!token||record?.status!=='waiting_policy'||!record?.vision?.policy_ready||record?.vision?.busy||!record?.events.some(e=>e.kind==='observations_prepared');}
+ }catch(error){$('notice').textContent=error.message;}finally{$('save').disabled=sending||uncertain||!token;$('prepare').disabled=sending||!token||record?.status!=='waiting_policy'||record?.events.some(e=>e.kind==='observations_prepared');$('investigate').disabled=sending||!token||record?.status!=='waiting_policy'||!record?.vision?.policy_ready||record?.vision?.busy||!record?.events.some(e=>e.kind==='observations_prepared');$('assess').disabled=sending||!token||record?.status!=='completed'||!record?.vision?.policy_ready||!!record?.assessment||!record?.events.some(e=>e.kind==='candidates_persisted'&&e.payload.mappings?.length);}
 }
+$('assess').onclick=async()=>{
+ if(sending||!token)return;sending=true;$('assess').disabled=true;
+ try{const response=await fetch('/api/assess-candidates',{method:'POST',headers:{'Content-Type':'application/json','X-Oryn-Token':token},body:JSON.stringify({episode_id:id}),signal:AbortSignal.timeout(10000)});if(!response.ok)throw Error('Assessment dispatch rejected.');$('notice').textContent='Reference assessment started. Original candidates stay in history.';}
+ catch(error){$('notice').textContent='Assessment dispatch unavailable or rejected. No automatic resubmission; refresh saved history.';}finally{sending=false;await load();}
+};
 $('investigate').onclick=async()=>{
  if(sending||!token)return;sending=true;$('investigate').disabled=true;
  try{const response=await fetch('/api/investigate-episode',{method:'POST',headers:{'Content-Type':'application/json','X-Oryn-Token':token},body:JSON.stringify({episode_id:id}),signal:AbortSignal.timeout(10000)});if(!response.ok)throw Error('Vision dispatch rejected. Check policy, prepared evidence and worker state.');$('notice').textContent='Investigation started. At most one bounded attempt; candidates remain unverified.';}
@@ -61,5 +81,5 @@ $('review').onsubmit=async event=>{
  finally{sending=false;await load();}
 };
 $('refresh').onclick=load;load();
-setInterval(()=>{if(!sending&&record?.status==='running')load();},3000);
+setInterval(()=>{if(!sending&&(record?.status==='running'||record?.assessment?.status==='running'))load();},3000);
 </script></body></html>

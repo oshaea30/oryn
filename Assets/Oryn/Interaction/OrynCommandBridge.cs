@@ -24,6 +24,9 @@ namespace Oryn.Interaction
         public long utc;
         public bool testGuideAvailable;
         public OrynCommandContext context;
+        public string mechanicalDefinitionId = "", mechanicalEvidence = "unsupported";
+        public bool mechanicalRunning;
+        public float mechanicalSpeed;
     }
     [Serializable] public sealed class OrynRuntimeCommand
     {
@@ -74,7 +77,10 @@ namespace Oryn.Interaction
         {
             var context = new OrynCommandContext { ready = Workspace.CommandsReady };
             var assembly = Workspace.CommandAssembly;
-            if (assembly != null)
+            // Authored demonstrations have no generated-asset identity. Never try
+            // to read/write their parts in the generated-model knowledge store.
+            if (assembly != null && !OrynKnowledgeStore.IsHash(assembly.AssetHash)) context.ready = false;
+            if (assembly != null && OrynKnowledgeStore.IsHash(assembly.AssetHash))
             {
                 context.owner = assembly.Owner.Number;
                 context.assetSha256 = assembly.AssetHash;
@@ -97,7 +103,10 @@ namespace Oryn.Interaction
             string encoded = JsonUtility.ToJson(context);
             if (encoded != lastContext) { lastContext = encoded; token = Guid.NewGuid().ToString("N"); }
             return new OrynCommandSnapshot { session = session, contextToken = token,
-                utc = DateTimeOffset.UtcNow.ToUnixTimeSeconds(), context = context, testGuideAvailable = testGuide != null };
+                utc = DateTimeOffset.UtcNow.ToUnixTimeSeconds(), context = context, testGuideAvailable = testGuide != null,
+                mechanicalDefinitionId = assembly?.Owner.Mechanical?.Definition.Id ?? "",
+                mechanicalRunning = assembly?.Owner.Mechanical?.Running ?? false,
+                mechanicalSpeed = assembly?.Owner.Mechanical?.Speed ?? 0 };
         }
         private void LateUpdate()
         {

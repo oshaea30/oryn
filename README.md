@@ -4,6 +4,17 @@ An experimental spatial workspace for generating, manipulating, and investigatin
 3D objects on Meta Quest. Geometry generation is separate from ORYN's persistent
 object knowledge and validated runtime actions.
 
+## Complete Object integration preview
+
+The default local page now routes typed requests through ORYN’s own bounded
+OpenAI interpreter, authored-object knowledge, persistent conversation journal
+and validated Quest transport. The first object is the authored drone. Run
+`Orchestrator/app.py`; generation/settings remain at `/objects`, labs at `/lab`
+and port 8767. This requires the updated Quest build and the existing OpenAI
+research connection. See [Complete Object v1](ORYN_COMPLETE_OBJECT.md).
+Voice, polished geometry and uncoached Quest acceptance remain future gates;
+the typed integration is not a completed MVP.
+
 ## Current checkpoint
 
 - Unity/Quest passthrough workspace with controller and hand manipulation.

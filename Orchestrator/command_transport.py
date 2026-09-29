@@ -11,8 +11,9 @@ ROOT = '/sdcard/Android/data/com.oryn.milestoneone/files/CommandBridge'
 
 
 class CommandTransport:
-    def __init__(self, adb=None):
+    def __init__(self, adb=None, *, root=ROOT, validator=validate_snapshot):
         self.adb = adb or AdbTransport()
+        self.root, self.validator = root, validator
 
     def command(self, *args):
         try:
@@ -26,11 +27,11 @@ class CommandTransport:
         if len(devices) != 1 or not re.fullmatch(r'[A-Za-z0-9._:-]{1,100}', devices[0]):
             raise CommandError('Connect exactly one authorized Quest.')
         serial = devices[0]
-        raw = self.command('-s', serial, 'shell', 'head', '-c', '65537', ROOT + '/state.json')
+        raw = self.command('-s', serial, 'shell', 'head', '-c', '65537', self.root + '/state.json')
         try:
             if len(raw.encode()) > 65536:
                 raise ValueError()
-            state = validate_snapshot(json.loads(raw))
+            state = self.validator(json.loads(raw))
         except (ValueError, TypeError):
             raise CommandError('Command bridge unavailable. Install the command-enabled build and open ORYN.') from None
         return serial, state
@@ -42,14 +43,14 @@ class CommandTransport:
         with tempfile.TemporaryDirectory(prefix='oryn-command-') as folder:
             path = Path(folder) / 'command.json'
             path.write_text(json.dumps(command), encoding='utf-8')
-            self.command('-s', serial, 'push', str(path), ROOT + '/' + ident + '.partial')
-            self.command('-s', serial, 'shell', 'mv', ROOT + '/' + ident + '.partial', ROOT + '/' + ident + '.command')
+            self.command('-s', serial, 'push', str(path), self.root + '/' + ident + '.partial')
+            self.command('-s', serial, 'shell', 'mv', self.root + '/' + ident + '.partial', self.root + '/' + ident + '.command')
 
     def receipt(self, serial, ident):
         if not valid_hex(ident, 32):
             raise CommandError('Invalid receipt ID.')
         try:
-            raw = self.command('-s', serial, 'shell', 'head', '-c', '4097', ROOT + '/' + ident + '.ack')
+            raw = self.command('-s', serial, 'shell', 'head', '-c', '4097', self.root + '/' + ident + '.ack')
             value = json.loads(raw) if len(raw.encode()) <= 4096 else {}
             if value.get('id') == ident and value.get('status') in ('executed', 'rejected', 'uncertain'):
                 return {'status': value['status'], 'message': str(value.get('message', ''))[:200]}

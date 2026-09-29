@@ -46,6 +46,37 @@ namespace Oryn.Interaction
             }
             StopHome();
         }
+        public string ComponentId(OrynWorkspaceObject part)
+        {
+            if (boundParts == null) return "";
+            int index = Array.IndexOf(boundParts, part);
+            return index < 0 ? "" : Definition.Links[index].Id;
+        }
+        public OrynWorkspaceObject Component(string id)
+        {
+            for (int i = 0; i < Definition.Links.Length; i++) if (Definition.Links[i].Id == id) return boundParts[i];
+            throw new ArgumentException("Unknown component");
+        }
+        public void Demonstrate(string id)
+        {
+            if (!string.IsNullOrEmpty(id))
+            {
+                var ids = new HashSet<string> { id };
+                var selectedLink = Array.Find(Definition.Links, link => link.Id == id);
+                if (selectedLink == null) throw new ArgumentException("Unknown component");
+                // A propeller demonstration includes its driver; a motor includes its moving children.
+                if (!string.IsNullOrEmpty(selectedLink.DriverId)) ids.Add(selectedLink.DriverId);
+                var parts = new HashSet<OrynWorkspaceObject>();
+                for (int i = 0; i < Definition.Links.Length; i++)
+                {
+                    var link = Definition.Links[i];
+                    if (ids.Contains(link.ParentId ?? "") || ids.Contains(link.DriverId ?? "")) ids.Add(link.Id);
+                    if (ids.Contains(link.Id)) parts.Add(boundParts[i]);
+                }
+                assembly.IsolateParts(parts);
+            }
+            Play();
+        }
         public void Play() { if (evaluator != null) Running = true; }
         public void Pause() { Running = false; }
         public void StopHome() { Running = false; Cycles = 0; ApplyPose(); }

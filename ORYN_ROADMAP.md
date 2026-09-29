@@ -25,7 +25,16 @@ Generated shapes and user labels must not become verified mechanical facts.
   all 39 parts restored in position, rotation and scale. This proves one live case,
   not general interpretation quality or semantic understanding.
 
-## Current milestone: mechanical behavior / MVP 1
+## Current milestone: Complete Object Experience / MVP 1
+
+The user approved implementation with ORYN owning its own brain; Codex must not
+operate the product as a runtime puppeteer. First increment: the authored drone
+through an application-owned typed interpreter, stable object/component identity,
+grounded authored explanations, follow-up context and validated automatic commands.
+See [Complete Object v1](ORYN_COMPLETE_OBJECT.md). Voice, visual polish and full
+uncoached Quest acceptance remain required before calling MVP 1 complete.
+
+### Completed mechanical foundation
 
 See [mechanical foundation and verification gates](ORYN_MECHANICS.md). A reusable
 deterministic schema/evaluator, separate authored drone/V8 teaching fixtures,

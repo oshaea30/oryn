@@ -50,6 +50,8 @@ namespace Oryn.Interaction
         private OrynTestGuide testGuide;
         private void Start()
         {
+            var experience = gameObject.AddComponent<OrynExperienceBridge>();
+            experience.Workspace = Workspace;
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
             if (Workspace != null && Workspace.Rig != null)
             {

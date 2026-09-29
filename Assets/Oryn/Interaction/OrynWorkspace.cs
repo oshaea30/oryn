@@ -540,15 +540,51 @@ namespace Oryn.Interaction
         private OrynAssembly SelectedAssembly() => selected == null ? null : selected.PartOf != null ? selected.PartOf : selected.Assembly;
         internal OrynAssembly CommandAssembly => SelectedAssembly();
         internal OrynWorkspaceObject CommandSelection => selected;
-        internal bool CommandsReady
+        internal bool CommandsReady => ExperienceReady && SelectedAssembly() != null;
+        internal bool ExperienceReady
         {
             get
             {
                 if (!initialized || loadingModel || prayerConsumesHands || spreadingAssembly ||
                     !OVRManager.hasInputFocus || !OVRManager.hasVrFocus || !isActiveAndEnabled) return false;
                 foreach (var item in held) if (item != null) return false;
-                return SelectedAssembly() != null;
+                return true;
             }
+        }
+        internal void ApplyExperience(OrynExperienceCommand command)
+        {
+            if (!ExperienceReady) throw new System.InvalidOperationException("Workspace not ready");
+            if (command.action == "show_drone")
+            {
+                var existing = objects.Find(item => item != null && item.Mechanical?.Definition.Id == "authored-drone-propulsion");
+                if (existing != null) { selected = existing; ResetSelected(); }
+                else
+                {
+                    int count = objects.Count; SpawnMechanism(false);
+                    if (objects.Count == count) throw new System.InvalidOperationException("No space for the drone");
+                }
+                Inspector?.Bind(selected); return;
+            }
+            var assembly = SelectedAssembly();
+            var mechanism = assembly?.Owner.Mechanical;
+            if (mechanism == null) throw new System.InvalidOperationException("Mechanical object unavailable");
+            switch (command.action)
+            {
+                case "select": ApplyCommand("select", mechanism.Component(command.component)); return;
+                case "isolate_component": ApplyCommand("isolate", mechanism.Component(command.component)); return;
+                case "explode": ApplyCommand("explode", null); return;
+                case "reassemble": ApplyCommand("reassemble", null); return;
+                case "isolate_subsystem": mechanism.IsolateSubsystem(command.subsystem); selected = assembly.Owner; break;
+                case "demonstrate": mechanism.Demonstrate(command.component); if (!string.IsNullOrEmpty(command.component)) selected = mechanism.Component(command.component); break;
+                case "play": mechanism.Play(); break;
+                case "pause": mechanism.Pause(); break;
+                case "slow": mechanism.SetSpeed(0.15f); break;
+                case "normal": mechanism.SetSpeed(1); break;
+                case "restore": assembly.Reassemble(); mechanism.StopHome(); mechanism.SetSpeed(1); selected = assembly.Owner; break;
+                default: throw new System.InvalidOperationException("Unsupported action");
+            }
+            Inspector?.Bind(selected);
+            modelNotice = "ORYN: " + command.action; modelNoticeUntil = Time.unscaledTime + 4;
         }
         // Called only after the bridge validates current context, expiry and target.
         internal void ApplyCommand(string action, OrynWorkspaceObject target)

@@ -39,6 +39,7 @@ namespace Oryn.Editor
             check(!OrynTestGuide.Newer(notice, notice), "notice replay rejected");
             notice.message = "<b>injection</b>"; check(!OrynTestGuide.Valid(notice, session, 1000), "notice markup rejected");
             notice.message = "ok"; notice.phase = "explode"; check(!OrynTestGuide.Valid(notice, session, 1000), "display is not an action channel");
+            OrynExperienceTests.Run();
             Debug.Log("ORYN_COMMAND_TESTS_OK checks=" + checks);
         }
     }

@@ -3,6 +3,8 @@ import argparse
 import json
 import os
 from pathlib import Path
+from cognition import CommandError
+from conversation import for_jobs
 import re
 import secrets
 import shutil
@@ -439,6 +441,7 @@ class Server(ThreadingHTTPServer):
     def __init__(self, port, jobs):
         super().__init__(("127.0.0.1", port), Handler)
         self.jobs = jobs
+        self.conversation = for_jobs(jobs)
         self.token = secrets.token_urlsafe(32)
         self.origin = f"http://127.0.0.1:{self.server_port}"
 
@@ -464,8 +467,19 @@ class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
         if not self.valid_host():
             return self.respond(403, {"error": "Local console only"})
-        if self.path == "/":
+        if self.path in ("/", "/conversation"):
+            return self.respond(200, (Path(__file__).parent / "conversation.html").read_bytes(), html=True)
+        if self.path == "/objects":
             return self.respond(200, (Path(__file__).parent / "experience.html").read_bytes(), html=True)
+        if self.path == '/api/conversation-session':
+            return self.respond(200, {'token': self.server.token, 'contract': 1})
+        if self.path.startswith('/api/conversation/'):
+            try:
+                return self.respond(200, self.server.conversation.get(self.path[len('/api/conversation/'):]))
+            except CommandError as error:
+                return self.respond(409, {'error': str(error)})
+            except Exception:
+                return self.respond(500, {'error': 'Conversation record unavailable.'})
         if self.path == "/lab":
             return self.respond(200, (Path(__file__).parent / "index.html").read_bytes(), html=True)
         if urlsplit(self.path).path == '/geometry-evidence':
@@ -528,6 +542,8 @@ class Handler(BaseHTTPRequestHandler):
             body = json.loads(self.rfile.read(length))
             if not isinstance(body, dict):
                 raise ValueError("Expected an object")
+            if self.path == "/api/conversation":
+                return self.respond(200, self.server.conversation.ask(body))
             if self.path == "/api/key":
                 return self.respond(200, self.server.jobs.configure_key(body.get("key", "")))
             if self.path == '/api/research-key' and self.server.jobs.research is not None:
@@ -561,6 +577,8 @@ class Handler(BaseHTTPRequestHandler):
             if self.path == "/api/balance":
                 return self.respond(200, self.server.jobs.balance())
             return self.respond(404, {"error": "Not found"})
+        except CommandError as error:
+            return self.respond(409, {"error": str(error)})
         except (GenerationError, ExperienceError, CredentialError) as error:
             return self.respond(400, {"error": str(error)})
         except (ValueError, TypeError):

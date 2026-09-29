@@ -187,7 +187,7 @@ class ExperienceTests(unittest.TestCase):
             request = urllib.request.Request(server.origin+'/api/request-object', data=body, headers=headers)
             with urllib.request.urlopen(request) as response: self.assertEqual(response.status, 202)
             self.wait(); self.assertEqual(self.transport.calls, 1)
-            with urllib.request.urlopen(server.origin+'/') as response: self.assertIn(b'Ask. It appears.', response.read())
+            with urllib.request.urlopen(server.origin+'/objects') as response: self.assertIn(b'Ask. It appears.', response.read())
             with urllib.request.urlopen(server.origin+'/lab') as response: self.assertIn(b'approvalText', response.read())
             investigation = self.jobs.jobs['a'*32]['investigations']['geometry']
             with urllib.request.urlopen(server.origin+'/api/workflow?id='+investigation['id']) as response:

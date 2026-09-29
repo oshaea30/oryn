@@ -37,10 +37,13 @@ uncoached Quest acceptance remain required before calling MVP 1 complete.
 Latest continuation: the typed integration is committed. ORYN now owns in-headset
 conversation feedback and cancellation before dispatch, with post-action reference
 receipts and late-response protection. 264 offline Python tests and the Unity build
-gates pass. The 1.13.1/code 17 update is built; installation/startup and user visual
-acceptance remain distinct. Live provider testing awaits payload-specific approval;
-voice, full interruption and visual polish remain open. See the Complete Object
-checkpoint for exact verification scope.
+gates pass. The 1.13.1/code 17 update is installed and launched; user visual
+acceptance remains open. One explicitly approved live read-only interpretation
+passed against the Unity-exported authored fixture: “What does this motor do?”
+resolved to the selected motor and ORYN's authored explanation in 4.812 seconds,
+with a conservative usage estimate of $0.00621. No Quest action or retry occurred.
+Headset integration acceptance, voice, full interruption and visual polish remain
+open. See the Complete Object checkpoint for exact verification scope.
 
 ### Completed mechanical foundation
 

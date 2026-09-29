@@ -107,5 +107,29 @@ retry. The developer command lab at port 8767 keeps its existing diagnostic gate
   approval review pending explicit authorization of the payload and paid call.
   No live provider test ran. Installation is not visual or end-to-end acceptance.
 
-Remaining: live approved interpretation and Quest acceptance, spoken input through
-this same application path, full interruption behavior, and polished hero geometry.
+## Approved live interpretation checkpoint — 2026-09-29
+
+After explicit authorization of the payload and one paid call, ORYN's own
+conversation service and interpreter completed a read-only live OpenAI test using
+the Unity-exported authored drone record with `motor_0` selected. The transport
+used a recorded fixture and rejected any attempted command; this was not a live
+Quest interaction.
+
+- Question: “What does this motor do?”
+- Validated intent: `describe`, target `selected`.
+- Application answer: “In this authored model, this motor houses rotor 0, which
+  drives propeller 0. The motor housing stays fixed.”
+- Result: completed, no action, no retry. Model interpretation took 4,809 ms;
+  the test completed in 4.812 seconds.
+- Shared ledger settled successfully: conservative usage estimate $0.00621,
+  below the approved $0.03 ceiling (not an invoice).
+- Evidence retained authored provenance `oryn_authored_benchmark_v1` and
+  `unsupported` status for real-object verification. The model chose the intent;
+  ORYN resolved the selected component and supplied the authored explanation.
+
+This resolves the earlier approval blocker and proves one live interpretation
+case. It does not establish general language quality, headset answer visibility,
+command execution or first-minute usability.
+
+Remaining: Quest acceptance, spoken input through this same application path,
+full interruption behavior, and polished hero geometry.

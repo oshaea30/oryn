@@ -45,6 +45,18 @@ const {chromium}=require('playwright');
   await page.waitForTimeout(100);
   assert.equal(await page.locator('#status').innerText(),'Waiting for Quest…','Late cancelled response cannot overwrite the new turn');
   assert.equal(posts.length,4);
+  result={...result,status:'completed',answer:'Propellers produce thrust; this model does not simulate flight.',
+   evidence:[{status:'unsupported'}],explanationScope:'general_principle_and_authored_model',sources:[
+    {title:'NASA Glenn: Propellers',url:'https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/propellers/',scope:'general_propeller_thrust'},
+    {title:'Untrusted',url:'javascript:alert(1)',scope:'general_propeller_thrust'}]};
+  await page.evaluate(()=>poll());
+  assert.match(await page.locator('#evidence').innerText(),/general propulsion principle/);
+  assert.match(await page.locator('#evidence').innerText(),/unsupported/);
+  assert.equal(await page.locator('#sources a').count(),1);
+  assert.match(await page.locator('#sources a').getAttribute('href'),/^https:\/\/www1.grc.nasa.gov\//);
+  await page.locator('#question').fill('Pause');await page.locator('#send').click();
+  await page.waitForFunction(()=>document.querySelector('#status').textContent==='Waiting for Quest…');
+  assert.equal(await page.locator('#sources a').count(),0,'A new answer clears old citations');
   assert.deepEqual(errors,[]);
   await page.screenshot({path:'/private/tmp/oryn-conversation-preview.png',fullPage:true});
   console.log('ORYN_CONVERSATION_UI_OK');

@@ -133,3 +133,29 @@ command execution or first-minute usability.
 
 Remaining: Quest acceptance, spoken input through this same application path,
 full interruption behavior, and polished hero geometry.
+
+
+## Headset feedback fix — basic propulsion questions
+
+The first user headset session recorded an executed `show_drone` receipt, then two
+unsupported-request answers. The user supplied “What makes this drone fly?” as a
+reproduction. The interpreter explicitly excluded thrust/flight questions and the
+object record contained only drive relationships, so this was a knowledge and
+routing gap rather than a disconnected headset. Receipt and feedback acknowledgments
+do not establish visual acceptance.
+
+The application now supplies a curated general propulsion explanation, scoped to
+the reviewed authored drone revision and its four motor/rotor/propeller chains.
+Basic propulsion questions can select that explanation through the existing
+`describe` subsystem route. General thrust is sourced to
+[NASA Glenn: Propellers](https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/propellers/);
+the browser presents that source separately from model-specific evidence. Component
+identities and flight performance remain unverified. Numerical thrust, payload,
+flightworthiness and “make it fly” remain unsupported. No simulation or action is
+added by this explanation.
+
+Validated intent is now journaled for diagnosis; question text is not retained.
+268 offline Python tests and the mocked conversation browser checks pass; the real
+Unity-exported record matches the scoped explanation. No new paid interpretation
+was run for this fix. The user must retry the question through ORYN to establish
+live interpretation and headset presentation. No APK update is required.

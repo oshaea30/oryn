@@ -10,6 +10,33 @@ INTENTS = ACTIONS + ('describe', 'why', 'unknown')
 TARGETS = ('none', 'selected', 'previous', 'component', 'subsystem')
 
 
+def propulsion_explanation(obj):
+    """Curated general principle, separately scoped from authored mesh evidence.
+
+    Only attach to the reviewed teaching definition and its declared drive chain.
+    A reference about propellers cannot verify a particular mesh or flight performance.
+    """
+    if not obj or obj.get('id') != 'authored-drone-propulsion' or obj.get('revision') != '1' or obj.get('scope') != 'authored_family_demonstration':
+        return None
+    components = {c['id']: c for c in obj.get('components', [])}
+    for i in range(4):
+        motor, rotor, prop = [components.get(f'{kind}_{i}', {}) for kind in ('motor', 'rotor', 'propeller')]
+        if (not all(c.get('subsystem') == 'propulsion' for c in (motor, rotor, prop)) or
+                rotor.get('parentId') != motor.get('id') or prop.get('parentId') != rotor.get('id') or
+                prop.get('driverId') != rotor.get('id')):
+            return None
+    return {
+        'target': 'subsystem', 'id': 'propulsion',
+        'answer': 'A real quadcopter gets upward thrust from propellers that push air downward. '
+                  'Here, the authored motors turn rotors that drive the propellers. '
+                  'This model shows that drive relationship; it does not calculate thrust or prove it could fly.',
+        'sources': [{'title': 'NASA Glenn: Propellers',
+                     'url': 'https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/propellers/',
+                     'scope': 'general_propeller_thrust'}],
+        'explanationScope': 'general_principle_and_authored_model',
+    }
+
+
 def bounded(value, limit=500):
     return isinstance(value, str) and len(value) <= limit and not any(ord(c) < 32 or c in '<>' for c in value)
 
@@ -117,6 +144,10 @@ def decide(state, intent, memory=None):
         if target == 'component':
             result['answer'] = components[ident]['explanation']
         elif target == 'subsystem':
+            explanation = propulsion_explanation(obj) if kind == 'describe' and ident == 'propulsion' else None
+            if explanation:
+                result.update({k: explanation[k] for k in ('answer', 'sources', 'explanationScope')})
+                return result
             # Show actual declared relationships rather than invent a function from subsystem names.
             ids = {c['id'] for c in relevant}
             relations = [(components[c['driverId']]['name'], c['name']) for c in relevant if c['driverId'] in ids]

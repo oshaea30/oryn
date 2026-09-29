@@ -5,7 +5,7 @@
 </style></head><body>
 <header><small>ORYN / COMPLETE OBJECT EXPERIENCE</small><h1>Explore the drone.</h1><p>Try “Show me a drone.” Then select a component in Quest and ask what it does.</p></header>
 <form id="request"><label for="question">Ask ORYN</label><textarea id="question" rows="3" maxlength="500" required placeholder="Show me a drone"></textarea><button id="send" disabled>Ask</button><button id="cancel" type="button" disabled>Cancel request</button></form>
-<section aria-live="polite"><small id="status">Connecting…</small><p id="answer">Keep ORYN open on your connected Quest.</p><p id="evidence"></p><small id="timing"></small></section><p id="error" role="alert"></p>
+<section aria-live="polite"><small id="status">Connecting…</small><p id="answer">Keep ORYN open on your connected Quest.</p><p id="evidence"></p><p id="sources"></p><small id="timing"></small></section><p id="error" role="alert"></p>
 <details><summary>Things to explore</summary><p>Take it apart · What does this do? · Show me · Slow it down · Show only propulsion · Why these? · Put it back together · Reset everything</p></details>
 <footer><p><small>This drone is an authored teaching model. Its motion illustrates relationships; it does not simulate flight or establish facts about a particular real drone.</small></p><p><a href="/objects">Other objects and connection settings</a> · <a href="/lab">Developer lab</a></p><p><small>Typed integration preview. Answers and status appear in Quest. Voice input is still being built.</small></p></footer>
 <script>
@@ -17,7 +17,12 @@ function show(value){
  cancellable=value.status==='working';
  $('status').textContent=({working:'Thinking…',pending:'Waiting for Quest…',completed:'Ready',failed:'Could not complete',rejected:'Quest declined the action',uncertain:'Check the headset',cancelled:'Cancelled'})[value.status]||'Checking…';
  $('answer').textContent=value.answer||'';
- $('evidence').textContent=value.evidence?.length?'Explanation scope: authored model. Real-object evidence: '+[...new Set(value.evidence.map(x=>x.status))].join(', ')+'.':'';
+ $('evidence').textContent=value.evidence?.length?(value.explanationScope==='general_principle_and_authored_model'?'Explanation scope: general propulsion principle + authored model. Model-specific evidence: ':'Explanation scope: authored model. Real-object evidence: ')+[...new Set(value.evidence.map(x=>x.status))].join(', ')+'.':'';
+ $('sources').replaceChildren();
+ for(const source of value.sources||[]){
+  if(source.url!=='https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/propellers/'||source.scope!=='general_propeller_thrust')continue;
+  const a=document.createElement('a');a.href=source.url;a.textContent='General principle: '+source.title;a.target='_blank';a.rel='noopener noreferrer';$('sources').append(a);
+ }
  $('timing').textContent=value.timing?.receipt_ms!=null?'Request to execution receipt: '+(value.timing.receipt_ms/1000).toFixed(2)+' s':value.timing?.interpretation_ms!=null?'Interpretation: '+(value.timing.interpretation_ms/1000).toFixed(2)+' s':'';
  if(!['working','pending'].includes(value.status)){sessionStorage.removeItem(storageKey);busy=false;}
  buttons();

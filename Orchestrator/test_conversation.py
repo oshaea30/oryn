@@ -7,7 +7,7 @@ import unittest
 from unittest.mock import Mock
 
 from cognition import CommandError
-from complete_object import ACTIONS, binding, decide, validate_state
+from complete_object import ACTIONS, binding, decide, validate_state, propulsion_explanation
 from conversation import Conversation
 from experience_interpreter import ExperienceInterpreter
 from spending import PRICE_REVIEWED
@@ -29,6 +29,18 @@ def state():
         'subject': {'id': 'authored-drone-propulsion', 'revision': '1', 'instance': '1', 'title': 'Drone',
             'scope': 'authored_family_demonstration', 'explanation': 'Authored example; no flight simulation.',
             'actions': list(ACTIONS[1:]), 'components': components}}
+
+
+def drone_state():
+    s = state()
+    first = deepcopy(s['subject']['components'])
+    for i in range(1, 4):
+        for original in first:
+            c = deepcopy(original)
+            for key in ('id', 'geometryId', 'parentId', 'driverId'):
+                c[key] = c[key].replace('_0', f'_{i}')
+            s['subject']['components'].append(c)
+    return validate_state(s)
 
 
 class ContractTests(unittest.TestCase):
@@ -71,6 +83,29 @@ class ContractTests(unittest.TestCase):
         self.assertIsNone(decide(state(),intent('unknown'))['action'])
         with self.assertRaises(CommandError):decide(state(),dict(intent('play'),code='execute'))
 
+    def test_general_propulsion_answer_preserves_model_uncertainty(self):
+        s=drone_state();before=deepcopy(s)
+        result=decide(s,intent('describe','subsystem','propulsion'))
+        self.assertIn('push air downward',result['answer'])
+        self.assertIn('does not calculate thrust or prove it could fly',result['answer'])
+        self.assertIsNone(result['action'])
+        self.assertEqual(result['explanationScope'],'general_principle_and_authored_model')
+        self.assertEqual(result['sources'][0]['scope'],'general_propeller_thrust')
+        self.assertEqual({e['status'] for e in result['evidence']},{'unsupported'})
+        self.assertEqual(result['references'],[],'General source does not become mesh evidence')
+        self.assertEqual(s,before)
+        self.assertLessEqual(len(result['answer']),480,'Full limitation fits the headset notice')
+
+    def test_propulsion_principle_requires_reviewed_definition_and_drive_bindings(self):
+        for mutate in [lambda s:s.update(subject=None),
+                       lambda s:s['subject'].update(id='generated-drone'),
+                       lambda s:s['subject'].update(revision='2'),
+                       lambda s:s['subject'].update(scope='generated'),
+                       lambda s:s['subject']['components'].pop(),
+                       lambda s:s['subject']['components'][2].update(driverId='')]:
+            s=drone_state();mutate(s)
+            self.assertIsNone(propulsion_explanation(s.get('subject')))
+
     def test_show_drone_from_empty_workspace(self):
         s=state();s.update(subject=None,selected='')
         validate_state(s)
@@ -95,6 +130,19 @@ class ConversationTests(unittest.TestCase):
         self.assertEqual(r['status'],'completed');self.assertIn('motor_0',r['answer'])
         self.provider.interpret.assert_called_once();self.transport.send.assert_not_called()
         self.assertEqual(self.app.memory(self.state)['subject']['id'],'motor_0')
+
+    def test_flight_question_uses_scoped_answer_and_keeps_followup_subject(self):
+        self.state=drone_state();self.app.feedback=Mock()
+        self.provider.interpret.return_value=intent('describe','subsystem','propulsion')
+        result=self.app.ask(dict(self.request,question='What makes this drone fly?'))
+        self.assertEqual(result['status'],'completed');self.assertIsNone(result['action'])
+        self.transport.send.assert_not_called()
+        self.assertEqual(self.app.current(self.request['id'])['intent'],intent('describe','subsystem','propulsion'))
+        self.assertEqual(self.app.memory(self.state)['subject'],{'target':'subsystem','id':'propulsion'})
+        self.assertEqual(self.app.feedback.publish.call_args.args[1]['message'],result['answer'])
+        self.provider.interpret.return_value=intent('isolate_subsystem','previous')
+        result=self.app.ask({'id':'d'*32,'question':'Show only that subsystem'})
+        self.assertEqual((result['action'],result['subsystem']),('isolate_subsystem','propulsion'))
 
     def test_duplicate_and_restart_never_repeat_provider_or_command(self):
         self.provider.interpret.return_value=intent('play')
@@ -246,6 +294,16 @@ class InterpreterTests(unittest.TestCase):
         body=self.sender.call_args.args[1];self.assertNotIn('tools',body);self.assertFalse(body['store'])
         with self.assertRaises(CommandError):self.provider.interpret('c'*32,'play',state(),None)
         self.sender.assert_called_once()
+    def test_model_receives_scoped_knowledge_without_promoting_component_evidence(self):
+        s=drone_state()
+        self.provider.interpret('c'*32,'What makes this drone fly?',s,None)
+        body=self.sender.call_args.args[1]
+        payload=json.loads(body['input'][1]['content'])
+        self.assertEqual(payload['request'],'What makes this drone fly?')
+        self.assertEqual(payload['explanations'][0],propulsion_explanation(s['subject']))
+        self.assertEqual(payload['object'],s['subject'])
+        self.assertEqual({c['evidence'] for c in payload['object']['components']},{'unsupported'})
+
     def test_uncertain_usage_no_retry(self):
         self.sender.side_effect=RuntimeError('SECRET')
         with self.assertRaises(CommandError):self.provider.interpret('c'*32,'play',state(),None)

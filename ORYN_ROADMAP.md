@@ -43,7 +43,11 @@ passed against the Unity-exported authored fixture: â€œWhat does this motor do?â
 resolved to the selected motor and ORYN's authored explanation in 4.812 seconds,
 with a conservative usage estimate of $0.00621. No Quest action or retry occurred.
 Headset integration acceptance, voice, full interruption and visual polish remain
-open. See the Complete Object checkpoint for exact verification scope.
+open. See the Complete Object checkpoint for exact verification scope. The first headset request received an executed drone
+receipt, but the user's basic flight question exposed an overly restrictive
+interpreter and missing general propulsion explanation. That route now has a
+separately sourced explanation without promoting mesh evidence; 268 offline tests
+and browser checks pass. Live retest and user visual acceptance remain open.
 
 ### Completed mechanical foundation
 

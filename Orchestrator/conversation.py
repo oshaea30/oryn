@@ -200,6 +200,7 @@ class Conversation:
                 intent = self.factory().interpret(ident, question, state, memory)
                 if self.current(ident)['public']['status'] == 'cancelled':
                     return self.current(ident)['public']
+                record['intent'] = intent
                 decision = decide(state, intent, memory)
                 record['public']['timing']['interpretation_ms'] = round((self.clock() - started) * 1000)
                 current_serial, current = self.transport.snapshot()

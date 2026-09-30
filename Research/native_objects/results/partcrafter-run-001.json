@@ -1,0 +1,185 @@
+{
+  "date": "2026-09-30",
+  "baseline": "PartCrafter",
+  "run_id": "26f7a1f79ae04aecade8dda00c865cd7",
+  "revision": "3d773bf02fad51c7ab31a5615573fec93b287b30",
+  "model_revisions": {
+    "wgsxm/PartCrafter": "69a0ffc1dad5e48e7e5ed91c0609f2b1276eb31f"
+  },
+  "input_sha256": "c954797dfdff8c547fc9325bcbf7fe8bd9f4fdef997247be0f2b36ef23f23460",
+  "adapter_sha256": "2f67f5b128bbf298d63e09de7b760390b1352e0ddb75aa7991fad3a0418b72ed",
+  "parameters": {
+    "num_parts": 13,
+    "seed": 0,
+    "steps": 50,
+    "tokens_per_part": 1024
+  },
+  "inference": {
+    "status": "completed",
+    "elapsed_seconds": 204.461,
+    "environment": {
+      "python": "3.11.10 (main, Sep  7 2024, 18:35:41) [GCC 11.4.0]",
+      "torch": "2.5.1+cu124",
+      "cuda": "12.4",
+      "gpu": "NVIDIA A40"
+    },
+    "output_sha256": {
+      "part_00.glb": "049c0d194f6aec3d824c4dfee9769762c08e1c1184aa069aa3d69b7df98bcc20",
+      "part_01.glb": "a45de6c3a317573127baaf326080fddb0ad2d31736b6adaced746fb3a361d937",
+      "part_02.glb": "1d493bcb20e2dcfddcf680dd9ab9ab0b23b9fbcc129460a7d3cc5c453fc8168e",
+      "part_03.glb": "b5c37877b00959639ab9af7aeabc5200b5db9684b97a3958f377492e0da95bc0",
+      "part_04.glb": "16689d26bed64a2ff71913792372e8d6a2fdc138fd0538e32b84b7d7341c2317",
+      "part_05.glb": "564a3bbd8bba1c25adfd9388855c40cfc94b85970adb5f62a17ecb5b9dd31fae",
+      "part_06.glb": "10701aaf8eb4f7ed1422966b5662911e1975dcee05c23f8e89610954f94b0489",
+      "part_07.glb": "f1e164ec0e012958f1ec345d4cef701493c57b9b918de7579edc652c6b38ac95",
+      "part_08.glb": "0104e70a577233728ed89e68c5d27f6cf8d47aebc84dbebac2a95c40173ed9bc",
+      "part_09.glb": "fe341cb1c067700e289a370269479d6610718fcbd26e5dff70c70e838558364a",
+      "part_10.glb": "3ca8b5cac96cb66fc1d9345cbadf14ddf439faaba61d91b6efcf6f68693b0ee8",
+      "part_11.glb": "2b1a0007bfae4c357e5b6bbc43e87447dc189a6842796d3edd71a2e8580a5783",
+      "part_12.glb": "92dea421144d26eda981ccffa1461223a7dc0a044e7d535e6d1825a68420a10e"
+    }
+  },
+  "evaluation": {
+    "id": "partcrafter-26f7a1f79ae04aecade8dda00c865cd7",
+    "origins": {
+      "geometry": "model_generated",
+      "semantics": "unknown",
+      "hierarchy": "unknown",
+      "motion": "unknown"
+    },
+    "components": 13,
+    "triangles": 195708,
+    "structural_checks_passed": true,
+    "native_generation_goal_passed": false,
+    "manual_repair_count": 0,
+    "checks": {
+      "package_version": {
+        "status": "pass",
+        "detail": "Research contract v1"
+      },
+      "provenance": {
+        "status": "pass",
+        "detail": "Geometry, semantics and hierarchy identify origin; repairs remain explicit"
+      },
+      "unique_components": {
+        "status": "pass",
+        "detail": "Exact geometry/component binding"
+      },
+      "usable_geometry": {
+        "status": "pass",
+        "detail": "Invalid/empty/all-degenerate components: []"
+      },
+      "assembly_references": {
+        "status": "pass",
+        "detail": "Assembly references exist and parent graph is acyclic"
+      },
+      "motion_provenance": {
+        "status": "pass",
+        "detail": "Motion origin is explicit, including unknown"
+      },
+      "motion_references": {
+        "status": "pass",
+        "detail": "Motion drivers exist and driver graph is acyclic"
+      },
+      "motion_parameters": {
+        "status": "missing",
+        "detail": "No predicted or supplied motion"
+      },
+      "runtime_motion_agreement": {
+        "status": "not_assessed",
+        "detail": "Requires usable joints and independently exported runtime frames"
+      },
+      "semantic_correctness": {
+        "status": "not_assessed",
+        "detail": "Part names/count alone cannot establish meaning; independent review required"
+      },
+      "attachment_fit": {
+        "status": "not_assessed",
+        "detail": "No attachment interfaces/ground truth established; parent graph alone is insufficient"
+      },
+      "motion_clearance": {
+        "status": "not_assessed",
+        "detail": "No triangle collision sweep implemented; valid axes do not establish clearance"
+      },
+      "visual_quality": {
+        "status": "not_assessed",
+        "detail": "Requires user review of original materials and geometry in Quest"
+      },
+      "quest_performance": {
+        "status": "not_assessed",
+        "detail": "No runtime import or frame-time measurement in this experiment"
+      },
+      "physical_validity": {
+        "status": "not_assessed",
+        "detail": "Kinematic motion is not physical feasibility"
+      }
+    },
+    "layers": {
+      "object": {
+        "structural_checks_passed": true,
+        "failed_checks": [],
+        "missing_output_facets": [
+          "semantics",
+          "hierarchy"
+        ],
+        "quality_status": "not_assessed",
+        "detail": "Geometry and assembly checks only; semantic meaning, materials, fit and Quest quality need evaluation."
+      },
+      "behavior_decision": {
+        "status": "not_assessed",
+        "detail": "No application-owned model decision recorded for this object and request. Missing motion does not mean animation is unnecessary."
+      },
+      "motion": {
+        "status": "absent",
+        "failed_checks": [],
+        "detail": "Optional motion on this geometry. Sampled agreement does not prove appropriate behavior, clearance or physical validity."
+      }
+    },
+    "missing_output_facets": [
+      "semantics",
+      "hierarchy",
+      "motion"
+    ],
+    "verdict": "Control/evidence only; complete native generation is not demonstrated."
+  },
+  "desktop_visual_review": {
+    "method": "Neutral-shaded local viewer; assembled, exploded and isolated part screenshots. Qualitative agent observation, not a Quest acceptance test.",
+    "assessment": "Does not meet the intended visual target in this run.",
+    "observations": [
+      "Partial recognizable drone body with substantial detached fragments.",
+      "Propeller-like shapes are poorly formed; a clean coherent four-rotor assembly is not established.",
+      "Thirteen requested output meshes do not establish thirteen meaningful components."
+    ],
+    "limitations": [
+      "One supplied reference, one seed and an imposed part count.",
+      "Reference is a neutral render of a previously generated object, occupying a small central area of the image.",
+      "Input framing/background preparation may contribute; this run does not isolate that cause or establish the model ceiling.",
+      "No semantic labels, assembly relationships or motion were generated."
+    ]
+  },
+  "verification": {
+    "output_hashes": "all 13 match the worker journal",
+    "viewer": "assemble/explode, isolate, reset and absent-motion controls pass; no browser page errors",
+    "manual_repairs": 0
+  },
+  "rental": {
+    "pod_id": "f6r0wztuej7rfs",
+    "terminated": true,
+    "remaining_pods": 0,
+    "remaining_network_volumes": 0,
+    "duration_seconds": 553.273,
+    "gpu_usd_per_hour": 0.49,
+    "container_disk_gb": 80,
+    "estimated_compute_usd": 0.0753,
+    "estimated_storage_usd": 0.0017,
+    "billing_status": "Pending: billing API has no records yet. These are estimates, not an invoice.",
+    "authorized_max_usd": 5,
+    "guard": "Local two-hour explicit-delete watchdog; Mac kept awake. Deleted early after verified download. Provider automatic-stop flags are not reliable (runpodctl PR 330)."
+  },
+  "artifacts": {
+    "raw": "Builds/NativeObjects/partcrafter-run-001",
+    "viewer": "Builds/NativeObjects/generated-run-001",
+    "dependency_versions": "Builds/NativeObjects/partcrafter-run-001/oryn/environment.txt"
+  },
+  "next_step": "Audit input preprocessing against upstream and predeclare a reference-framing comparison before another paid run. Preserve this result unchanged; do not add authored parts or motion to make it pass."
+}

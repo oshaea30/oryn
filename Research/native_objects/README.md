@@ -100,8 +100,8 @@ model is connected; do not count scripted responses as successful reasoning.
 - Negative tests deliberately corrupt geometry, graph references and motion axes.
   An otherwise valid but wrong axis fails against independent runtime samples.
 
-Neither control is evidence of native generation. No new inference or training
-has run. No part has been moved or labeled to make a generated result pass.
+Neither control is evidence of native generation. At that checkpoint, no new inference or training
+had run. No part has been moved or labeled to make a generated result pass.
 
 Run from the repository root:
 
@@ -146,9 +146,9 @@ clean pinned checkout, CUDA, previously downloaded and hashed pinned weights and
 a new output directory. It journals before inference, enforces a 30-minute process
 timeout, records environment/adapter/weight/input/output hashes and never retries.
 The timeout does not terminate a cloud rental or impose an account billing cap.
-GPU results remain untested until a real worker is available.
+The first completed GPU run is recorded below; its structural pass does not establish visual quality.
 
-## Proposed first run — no rental started
+## First-run protocol — executed 2026-09-30
 
 Input: a neutral-background render of our saved generated drone, derived locally
 without changing geometry. Record its source checksum, image checksum and camera
@@ -164,22 +164,25 @@ smoke test, use independently chosen references and multiple predeclared seeds;
 do not train or tune on the evaluation set. A learned articulation baseline is a
 separate subsequent comparison, not a property to attach by hand to this output.
 
-Proposed worker: NVIDIA A40 48 GB, Linux, Python 3.11, CUDA 12.4/PyTorch 2.5.1.
-[Runpod pricing](https://www.runpod.io/pricing), checked 2026-09-29, lists A40 Pods
-at $0.49/hour. Two hours would be $0.98 GPU time before storage, taxes or other
-charges. Treat this as an estimate, not a reserved quote or total-spend guarantee.
-Propose a $5 maximum authorized spend and two-hour rental window including setup;
-confirm actual instance/storage rates and a termination mechanism before launch.
-The user deferred the paid experiment on 2026-09-29 until funds are available.
-Do not provision or spend until the user resumes it. Local evaluation work continues.
-A funded account/connection and verified termination mechanism are still needed. No provisioning,
-account creation, download of weights or paid run has occurred.
+Worker: NVIDIA A40 48 GB, Linux, Python 3.11.10, CUDA 12.4/PyTorch 2.5.1.
+The user resumed the deferred experiment after funding Runpod. Live Secure Cloud
+pricing was $0.49/hour plus 80 GB of temporary container disk at $0.10/GB/month.
+One pod ran for approximately 9.22 minutes and was terminated after verified download.
+Estimated total compute and disk cost: $0.077; the billing API had not posted records
+at cleanup, so this is not an invoiced total. The authorized experiment ceiling was $5.
+No pod or network volume remained in independent account listings after cleanup.
+
+Runpod's advertised stop/terminate timers were removed because the backend did not
+honor them ([runpodctl PR 330](https://github.com/runpod/runpodctl/pull/330)).
+A separate local two-hour explicit-delete watchdog was armed before provisioning,
+with the Mac kept awake; it deleted the rental early when downloads were verified.
+This depends on the Mac and API connectivity and is not a provider-enforced billing cap.
 
 Only the research adapter, reference image and public model/code belong on the
 worker. Production keys, object library, application journals and headset data
 are not required. Download results and terminate the worker/storage after the run.
 
-Preparation on an approved worker (not executed here):
+Worker procedure used for this run (installed dependency versions are preserved with the results):
 
 ```sh
 git clone https://github.com/wgsxm/PartCrafter.git /workspace/PartCrafter
@@ -199,8 +202,32 @@ python3 -m Research.native_objects.experiment --partcrafter /path/to/oryn-run-00
 ```
 
 The installed dependency versions must be recorded on the worker; upstream's
-requirements are not fully locked. Environment setup and VRAM usage still need a
-real-worker test, so successful execution is not promised.
+requirements are not fully locked. The first run completed on this environment; that is not a guarantee for future inputs.
+
+## First generated result (2026-09-30)
+
+[Recorded result](results/partcrafter-run-001.json): one attempt completed in
+204.461 seconds, exporting 13 unmodified meshes with 195,708 triangles. All output
+hashes match the worker journal. Geometry structure passes; semantics, assembly
+hierarchy and motion remain unknown. The browser's explode, isolate and reset
+controls work on the same geometry. No motion is invented for the result.
+
+Desktop visual inspection does **not** meet the intended quality target: a partial
+drone body is recognizable, but substantial fragments float away and propeller
+geometry is poorly formed. The requested part count does not establish meaningful
+components. This is a successful execution and an inadequate visual result, not a
+product milestone. Quest quality, component correctness and physical fit are untested.
+
+The input was a small, centrally framed neutral render of a previously generated
+drone. One image, seed and supplied count cannot distinguish a model limitation
+from input-preparation issues. Audit upstream image preprocessing and predeclare a
+framing comparison before another paid run. Do not manually repair this output or
+attach authored animation to make it appear successful.
+
+Raw meshes, dependency versions, setup/inference logs and cleanup evidence are in
+`Builds/NativeObjects/partcrafter-run-001`. The generated viewer is in
+`Builds/NativeObjects/generated-run-001`; these large local artifacts are not tracked.
+No model weights or production credentials were added to the repository.
 
 ## Articulation comparison
 

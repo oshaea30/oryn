@@ -50,7 +50,11 @@ they resume it. Account access, current pricing and termination remain unresolve
 Local work now separates object structure/quality, application-owned behavioral
 judgment, and optional validated animation. Missing animation does not fail object
 structure and does not imply a deliberate decision to stay static. Behavioral
-judgment is still unimplemented; reports explicitly keep it unassessed. This is
+judgment has an application-side model interface and candidate validator in
+`Orchestrator/behavior_decision.py`. It binds proposals to the exact object, request
+and selection; rejects invented IDs/stale results; and never enables execution.
+Fifteen offline tests use scripted responses, not demonstrated model judgment.
+No live adapter or production route is connected; reports keep judgment unassessed. This is
 preparation for measuring generation, not a replacement for the deferred GPU run.
 Do not replace that missing run with another manually assembled demo. Record all
 supplied structure, failed outputs and manual repairs. Use the observed failures

@@ -41,8 +41,8 @@ must not invalidate otherwise usable static geometry. The legacy combined
 Missing semantics and hierarchy remain object gaps; missing motion is reported
 separately. Passing object structure does not establish completeness or quality.
 
-Behavioral judgment stays `not_assessed` for both existing controls. No classifier
-or model call is implemented here. A future application-owned model must consider
+Behavioral judgment stays `not_assessed` for both existing controls. The application-side proposal interface is implemented in
+`Orchestrator/behavior_decision.py`; no live model adapter is connected. A future application-owned model must consider
 the actual object, available components and the user's request, and may choose
 animation, no animation, or uncertainty. Neither missing motion nor an authored
 motion fixture establishes that judgment. The runtime must validate proposed
@@ -52,6 +52,42 @@ Motion reports absent, failed, blocked by invalid object structure, unassessed,
 or sampled agreement. Agreement is a narrow replay check, not clearance or physics.
 Generation quality should be evaluated first; behavioral judgment should later
 be tested on unfamiliar objects and requests without object-specific answer patches.
+
+## Local behavior-decision preparation
+
+`BehaviorPlanner` accepts an explicitly injected model adapter and passes a bounded
+snapshot containing the request, selection, component IDs, declared roles/motion,
+origins and bounds. It does not choose behavior from object names. The model must
+return animate, no_animation, or uncertain with a short reason; missing evidence
+remains explicit. Unknown semantics stay unknown. No images are supplied yet, so
+this interface alone cannot judge the shape or appearance of unlabeled pieces.
+
+The validator rejects invented/duplicate component references and extra command
+fields. A fingerprint binds the exact package, request and selection, rechecked
+against current context after the adapter returns. Every result remains a candidate
+with execution disabled. Future execution needs validated motion bindings and a
+fresh context check at dispatch. A model's static decision is scoped to the request,
+not a permanent restriction on the object. Failures do not trigger automatic retries.
+
+There is no default network adapter, paid call, production conversation route or
+Quest dispatch for this module. The injected adapter will need its own spending
+policy before connection. Tests use explicitly scripted responses to verify the
+contract only; they do not demonstrate intelligent judgment. Existing control
+reports therefore continue to mark behavioral judgment unassessed.
+
+Prepare the exact input for a later model evaluation entirely offline:
+
+```sh
+python3 Orchestrator/behavior_decision.py \
+  --package Builds/NativeObjects/control-run-002/saved-geometry-control/package.json \
+  --request "Show me how this works." \
+  --output /tmp/oryn-behavior-request.json
+python3 -m unittest discover -s Orchestrator -p 'test_behavior_decision.py' -v
+```
+
+The preview command refuses to overwrite an existing file and never calls a model.
+Keep unfamiliar-object judgment tests separate from these contract tests when a
+model is connected; do not count scripted responses as successful reasoning.
 
 ## Measured controls (2026-09-29)
 

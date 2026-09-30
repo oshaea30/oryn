@@ -19,6 +19,14 @@ keeps GLB as a possible geometry carrier within a future intelligent object pack
 It authorizes no new format, schema rewrite, packaging system or `.oryn` implementation;
 missing broader concepts do not expand the immediate experiment's acceptance criteria.
 
+## Current local step: request planning
+
+[Planning experiment 001](PLANNING_EXPERIMENT.md) tests one application-owned policy
+across four different requests before another geometry investment. It reuses the
+existing model connection, bounded evidence snapshots and spending ledger. Plans
+remain unverified proposals; passing this test does not pass the generation gate.
+No retrieval execution, GPU run, new format or production route is included.
+
 ## Minimum output and evaluation
 
 The research package (`oryn-native-experiment-v1`) retains component-bound triangle

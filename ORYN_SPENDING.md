@@ -137,3 +137,12 @@ Implementation verification (2026-09-27): 86 Python tests passed, JavaScript syn
 check passed, and the browser regression passed. The live console was restarted
 with the same ledger and displayed $0 charged/reserved, $2 available, offline mode.
 No Unity rebuild was needed; headset controls and generation service were untouched.
+
+## Bounded object-planning experiment (2026-09-30)
+
+The research CLI also shares this ledger. Its `planning` profile uses gpt-6-sol
+with medium reasoning, a 2,048-token output cap and $0.05 request ceiling. The
+frozen four-case batch has a $0.20 total ceiling. Exact counting, reservation,
+price expiry, daily limits and uncertainty holds remain unchanged. This does not
+raise the output limits of existing command profiles or authorize automatic
+retries, external retrieval, geometry generation or GPU rentals.

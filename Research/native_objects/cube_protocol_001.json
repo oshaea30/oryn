@@ -1,0 +1,285 @@
+{
+  "id": "cube-bridge-001",
+  "source_plan_sha256": "83eb9a6ba24e8c9de611d34fc1c4e7e88c235cae666f2bb9dcc0c85ad0a0d09a",
+  "code_revision": "3c6d06ddbef3160a1e1950cb13ab63dd12a61e50",
+  "model_revisions": {
+    "Roblox/cube3d-v0.5": "8cab4886803e8210f4282aef212c6b6b92f68d16",
+    "Roblox/cubepart": "28431d124e77040fcaf34c0a71623ff61d35a6c0",
+    "Qwen/Qwen3-VL-4B-Instruct": "ebb281ec70b05090aa6165b016eac8ec08e71b17",
+    "openai/clip-vit-large-patch14": "32bd64288804d66eefd0ccbe215aa642df71cc41",
+    "Qwen/Qwen-Image": "75e0b4be04f60ec59a75f475837eced720f823b6"
+  },
+  "cases": [
+    {
+      "case_id": "generic-drone",
+      "request": "Show me a generic quadcopter drone I can explore and take apart into its major components.",
+      "plan": {
+        "assumptions": [
+          "X-shaped four-arm layout",
+          "Exposed propellers",
+          "Removable battery"
+        ],
+        "components": [
+          {
+            "basis": "design_proposal",
+            "name": "Central frame",
+            "source_ids": []
+          },
+          {
+            "basis": "design_proposal",
+            "name": "Four arms",
+            "source_ids": []
+          },
+          {
+            "basis": "design_proposal",
+            "name": "Four motors",
+            "source_ids": []
+          },
+          {
+            "basis": "design_proposal",
+            "name": "Four propellers",
+            "source_ids": []
+          },
+          {
+            "basis": "design_proposal",
+            "name": "Battery",
+            "source_ids": []
+          },
+          {
+            "basis": "design_proposal",
+            "name": "Flight controller",
+            "source_ids": []
+          },
+          {
+            "basis": "design_proposal",
+            "name": "Electronic speed controllers",
+            "source_ids": []
+          }
+        ],
+        "depth": "major_components",
+        "detail_reason": "Major removable groups suit exploration without implying a complete parts list.",
+        "fidelity": "generic_design",
+        "intent": "inspect",
+        "next_step": "propose_geometry",
+        "object": "Generic quadcopter drone",
+        "retrieval": "none",
+        "unknowns": [
+          "Component dimensions and mounting details",
+          "Wiring and internal packaging",
+          "Whether a camera or other payload is desired"
+        ]
+      },
+      "status": "eligible_research_only",
+      "reason": "Names are unchanged planned groups, not verified mesh identities or individual instances.",
+      "whole_shape_prompt": "Generic quadcopter drone",
+      "part_names": [
+        "Central frame",
+        "Four arms",
+        "Four motors",
+        "Four propellers",
+        "Battery",
+        "Flight controller",
+        "Electronic speed controllers"
+      ],
+      "production_generation_allowed": false
+    },
+    {
+      "case_id": "generic-speaker",
+      "request": "Generate a generic portable Bluetooth speaker I can take apart to understand its main systems.",
+      "plan": {
+        "assumptions": [
+          "Conceptual, non-product-specific speaker with a rechargeable battery.",
+          "A single full-range driver and passive radiator are proposed design choices.",
+          "Enclosure sections are separable to expose the main systems."
+        ],
+        "components": [
+          {
+            "basis": "design_proposal",
+            "name": "Separable enclosure sections",
+            "source_ids": []
+          },
+          {
+            "basis": "design_proposal",
+            "name": "Front grille",
+            "source_ids": []
+          },
+          {
+            "basis": "design_proposal",
+            "name": "Full-range speaker driver",
+            "source_ids": []
+          },
+          {
+            "basis": "design_proposal",
+            "name": "Passive radiator",
+            "source_ids": []
+          },
+          {
+            "basis": "design_proposal",
+            "name": "Rechargeable battery pack",
+            "source_ids": []
+          },
+          {
+            "basis": "design_proposal",
+            "name": "Bluetooth and control board",
+            "source_ids": []
+          },
+          {
+            "basis": "design_proposal",
+            "name": "Audio amplifier board",
+            "source_ids": []
+          },
+          {
+            "basis": "design_proposal",
+            "name": "Charging port",
+            "source_ids": []
+          },
+          {
+            "basis": "design_proposal",
+            "name": "Control buttons",
+            "source_ids": []
+          }
+        ],
+        "depth": "major_components",
+        "detail_reason": "Separates the enclosure, sound-producing parts, power, and electronics for inspection without detailing every small part.",
+        "fidelity": "generic_design",
+        "intent": "inspect",
+        "next_step": "propose_geometry",
+        "object": "Generic portable Bluetooth speaker",
+        "retrieval": "none",
+        "unknowns": [
+          "Exact dimensions and component fit",
+          "Battery capacity and electrical design",
+          "Actual internal layout and acoustic performance"
+        ]
+      },
+      "status": "unsupported_part_count",
+      "reason": "Pinned CubePart supports one to eight named groups; no merging or truncation permitted.",
+      "whole_shape_prompt": "Generic portable Bluetooth speaker",
+      "part_names": [
+        "Separable enclosure sections",
+        "Front grille",
+        "Full-range speaker driver",
+        "Passive radiator",
+        "Rechargeable battery pack",
+        "Bluetooth and control board",
+        "Audio amplifier board",
+        "Charging port",
+        "Control buttons"
+      ],
+      "production_generation_allowed": false
+    },
+    {
+      "case_id": "exact-product",
+      "request": "Show me the internal assembly of a JBL Flip 7, including how the battery is mounted.",
+      "plan": {
+        "assumptions": [],
+        "components": [],
+        "depth": "task_relevant",
+        "detail_reason": "The request focuses on the internal assembly and battery mount. No matching source was supplied, so internal parts and mounting details cannot be identified reliably.",
+        "fidelity": "exact_product",
+        "intent": "inspect",
+        "next_step": "retrieve_evidence",
+        "object": "JBL Flip 7",
+        "retrieval": "exact_documents",
+        "unknowns": [
+          "Internal assembly layout for the JBL Flip 7",
+          "Battery mounting method and fit",
+          "Applicable model or hardware revision"
+        ]
+      },
+      "status": "blocked_evidence",
+      "reason": "Plan does not propose a generic/creative geometry test.",
+      "whole_shape_prompt": "JBL Flip 7",
+      "part_names": [],
+      "production_generation_allowed": false
+    },
+    {
+      "case_id": "creative-concept",
+      "request": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside. Let me inspect its main pieces; it does not need to be a buildable electrical product.",
+      "plan": {
+        "assumptions": [
+          "The lamp is a visual concept, not a buildable electrical product.",
+          "The glowing seed is represented as an illuminated form without modeled circuitry."
+        ],
+        "components": [
+          {
+            "basis": "design_proposal",
+            "name": "Curled leaf shade",
+            "source_ids": []
+          },
+          {
+            "basis": "design_proposal",
+            "name": "Glowing seed",
+            "source_ids": []
+          },
+          {
+            "basis": "design_proposal",
+            "name": "Seed suspension strand",
+            "source_ids": []
+          },
+          {
+            "basis": "design_proposal",
+            "name": "Stem support",
+            "source_ids": []
+          },
+          {
+            "basis": "design_proposal",
+            "name": "Desk base",
+            "source_ids": []
+          }
+        ],
+        "depth": "major_components",
+        "detail_reason": "Separate the main visible pieces so the leaf, suspended seed, and supporting forms can be inspected.",
+        "fidelity": "creative_concept",
+        "intent": "inspect",
+        "next_step": "propose_geometry",
+        "object": "Curled-leaf desk lamp with a suspended glowing seed",
+        "retrieval": "none",
+        "unknowns": [
+          "Overall size and proportions are unspecified.",
+          "Leaf curl and seed shape are open to interpretation."
+        ]
+      },
+      "status": "eligible_research_only",
+      "reason": "Names are unchanged planned groups, not verified mesh identities or individual instances.",
+      "whole_shape_prompt": "Curled-leaf desk lamp with a suspended glowing seed",
+      "part_names": [
+        "Curled leaf shade",
+        "Glowing seed",
+        "Seed suspension strand",
+        "Stem support",
+        "Desk base"
+      ],
+      "production_generation_allowed": false
+    }
+  ],
+  "max_parts": 8,
+  "parameters": {
+    "seed": 0,
+    "whole_resolution_base": 8.0,
+    "whole_top_p": null,
+    "whole_engine": "Engine",
+    "part_resolution_base": 8.5,
+    "part_steps": 50,
+    "part_guidance": 7.5,
+    "part_timeshift": 4.0,
+    "part_scheduler": "dpm_solver",
+    "surface_samples": 128000
+  },
+  "budget": {
+    "max_rentals": 1,
+    "max_hours": 2,
+    "max_gpu_usd_hour": 1.59,
+    "container_gb": 100,
+    "max_estimated_usd": 3.5,
+    "max_case_stage_seconds": 1200
+  },
+  "policy": {
+    "retries": 0,
+    "manual_repairs": 0,
+    "merge_or_drop_roles": false,
+    "seed_search": false,
+    "license_scope": "research_only",
+    "native_generation_goal_passed": false
+  }
+}

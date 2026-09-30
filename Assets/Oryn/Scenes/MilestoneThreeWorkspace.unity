@@ -376,6 +376,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Oryn.Interaction.OrynWorkspaceButton
   Action: 4
   Bounds: {fileID: 116202718}
+  WristStyle: 0
 --- !u!23 &116202717
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -670,6 +671,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Oryn.Interaction.OrynWorkspaceButton
   Action: 11
   Bounds: {fileID: 286549789}
+  WristStyle: 0
 --- !u!23 &286549788
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -894,6 +896,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Oryn.Interaction.OrynWorkspaceButton
   Action: 1
   Bounds: {fileID: 359092931}
+  WristStyle: 0
 --- !u!23 &359092930
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1599,6 +1602,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Oryn.Interaction.OrynWorkspaceButton
   Action: 6
   Bounds: {fileID: 918250149}
+  WristStyle: 0
 --- !u!23 &918250148
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2038,6 +2042,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Oryn.Interaction.OrynWorkspaceButton
   Action: 0
   Bounds: {fileID: 1007212348}
+  WristStyle: 0
 --- !u!23 &1007212347
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2165,6 +2170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Oryn.Interaction.OrynWorkspaceButton
   Action: 8
   Bounds: {fileID: 1027850192}
+  WristStyle: 0
 --- !u!23 &1027850191
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2292,6 +2298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Oryn.Interaction.OrynWorkspaceButton
   Action: 10
   Bounds: {fileID: 1086916380}
+  WristStyle: 0
 --- !u!23 &1086916379
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2627,6 +2634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Oryn.Interaction.OrynWorkspaceButton
   Action: 9
   Bounds: {fileID: 1242296337}
+  WristStyle: 0
 --- !u!23 &1242296336
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2868,6 +2876,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Oryn.Interaction.OrynWorkspaceButton
   Action: 3
   Bounds: {fileID: 1422850672}
+  WristStyle: 0
 --- !u!23 &1422850671
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3099,6 +3108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Oryn.Interaction.OrynWorkspaceButton
   Action: 2
   Bounds: {fileID: 1558898318}
+  WristStyle: 0
 --- !u!23 &1558898317
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3226,6 +3236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Oryn.Interaction.OrynWorkspaceButton
   Action: 7
   Bounds: {fileID: 1571371750}
+  WristStyle: 0
 --- !u!23 &1571371749
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3604,6 +3615,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Oryn.Interaction.OrynWorkspaceButton
   Action: 5
   Bounds: {fileID: 1842884261}
+  WristStyle: 0
 --- !u!23 &1842884260
 MeshRenderer:
   m_ObjectHideFlags: 0

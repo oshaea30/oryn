@@ -101,7 +101,7 @@ namespace Oryn.Interaction
             Inspector?.Bind(selected);
             UpdatePrayerSpread();
             bool menuChanged = wristMenu.Update(input, new Pose(Rig.centerEyeAnchor.position, Rig.centerEyeAnchor.rotation),
-                focused && initialized && held[0] == null && held[2] == null && !prayerConsumesHands, toggleMenu);
+                focused && initialized && !MenuInteractionBusy(), toggleMenu);
             if (menuChanged)
             {
                 confirmDelete = false;
@@ -288,6 +288,24 @@ namespace Oryn.Interaction
                 default: return "RELEASED";
             }
         }
+        private bool MenuInteractionBusy()
+        {
+            if (prayerConsumesHands) return true;
+            // Either hand/controller owns manipulation, including a pending close-to-surface grab.
+            for (int i = 0; i < held.Length; i++) if (held[i] != null) return true;
+            foreach (var item in InteractionObjects())
+            for (int source = 0; source < 4; source++)
+            {
+                if (!input.Valid[source]) continue;
+                if (source < 2)
+                {
+                    if (OrynWristReveal.NearObject(item.Bounds, input.AimPoints[source])) return true;
+                }
+                else for (int finger = 0; finger < 6; finger++)
+                    if (input.ContactValid[source - 2][finger] && OrynWristReveal.NearObject(item.Bounds, input.Contacts[source - 2][finger])) return true;
+            }
+            return false;
+        }
         private OrynWorkspaceButton NearestButton(Vector3 point)
         {
             if (!Panel.gameObject.activeInHierarchy) return null;
@@ -296,7 +314,7 @@ namespace Oryn.Interaction
 
         private bool CanExecute(OrynWorkspaceButton.Command action)
         {
-            if (action == OrynWorkspaceButton.Command.MenuPrevious || action == OrynWorkspaceButton.Command.MenuNext) return true;
+            if (action >= OrynWorkspaceButton.Command.MenuHome && action <= OrynWorkspaceButton.Command.MenuDetails) return true;
             if (action == OrynWorkspaceButton.Command.DroneDemo || action == OrynWorkspaceButton.Command.V8Demo) return objects.Count < ObjectLimit && !loadingModel;
             if (action >= OrynWorkspaceButton.Command.MotionPlay) return SelectedAssembly()?.Owner.Mechanical != null;
             if (action == OrynWorkspaceButton.Command.PreviousLabel || action == OrynWorkspaceButton.Command.NextLabel)
@@ -317,9 +335,12 @@ namespace Oryn.Interaction
             if (action != OrynWorkspaceButton.Command.Delete) confirmDelete = false;
             switch (action)
             {
-                case OrynWorkspaceButton.Command.MenuPrevious:
-                case OrynWorkspaceButton.Command.MenuNext:
-                    wristMenu.ChangePage(action == OrynWorkspaceButton.Command.MenuNext ? 1 : -1);
+                case OrynWorkspaceButton.Command.MenuHome:
+                case OrynWorkspaceButton.Command.MenuObject:
+                case OrynWorkspaceButton.Command.MenuMotion:
+                case OrynWorkspaceButton.Command.MenuLibrary:
+                case OrynWorkspaceButton.Command.MenuDetails:
+                    wristMenu.Navigate(action);
                     for (int i = 0; i < 4; i++) { presses[i].Clear(); contactPresses[i].Clear(); }
                     break;
                 case OrynWorkspaceButton.Command.DroneDemo: SpawnMechanism(false); break;
@@ -521,6 +542,7 @@ namespace Oryn.Interaction
         private void ReleaseEverything()
         {
             EndPrayerSpread();
+            wristMenu?.Hide();
             if (Panel != null) Panel.gameObject.SetActive(false);
             foreach (var line in menuRays) if (line != null) line.enabled = false;
             prayer.Reset(); prayerConsumesHands = false;
@@ -538,6 +560,7 @@ namespace Oryn.Interaction
         private OrynAssembly SelectedAssembly() => selected == null ? null : selected.PartOf != null ? selected.PartOf : selected.Assembly;
         internal OrynAssembly CommandAssembly => SelectedAssembly();
         internal OrynWorkspaceObject CommandSelection => selected;
+        internal bool MenuConfirmingDelete => confirmDelete;
         internal bool CommandsReady => ExperienceReady && SelectedAssembly() != null;
         internal bool ExperienceReady
         {

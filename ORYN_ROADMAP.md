@@ -62,26 +62,35 @@ to choose subsequent articulation work or model adaptation.
 
 ## Wrist controls (2026-09-29)
 
-The user requested a wrist menu. The Quest runtime now creates a 30 × 33 cm
-four-page menu near the left wrist in place of the large floating controls.
-An open left palm facing the user within view reveals it after 0.2 seconds;
-tracking/focus loss, a turned or closed palm, left-hand object holding and the
-prayer-spread gesture hide it. The right hand uses a fresh index pinch near a
-button. With controllers, left Y toggles the left-hand panel and the right
-controller aims and selects with trigger/A. The host hand cannot select its menu.
+User feedback rejected the first 30 × 33 cm board: it was visually intrusive and
+opened during object manipulation. The replacement uses a small 3.6 cm launcher
+with a curved fan inspired by the supplied wrist-menu references. The fan's
+controls sit 9–19 cm to the right of its wrist anchor, with a thin connecting
+line, dark surfaces, a turquoise accent and short labels. Wrist following uses a
+35 ms smoothing time constant. Comfort and size still require a headset check.
 
-Object, Motion, Library and Details pages retain existing actions. Library demos
-are explicitly authored; motion availability still follows the selected object's
-actual mechanical bindings. Hidden page colliders and rear-face proximity are
-excluded. Navigation/visibility transitions clear press latches to avoid replaying
-a held pinch or trigger. Runtime status and existing part annotations are shown
-on the wrist; conversation answer feedback is still a separate display.
+Turning an open left palm toward the user reveals ONLY the launcher after 0.3
+seconds. A fresh right index pinch near the launcher explicitly opens categories:
+Inspect, Motion, Objects and Details. The center is Back in a category and Close
+at home. With controllers, left Y explicitly toggles; the right trigger/A selects.
+A held pinch cannot open and immediately activate a newly exposed action.
 
-Unity compile and 16 focused wrist checks pass, alongside the existing build
-checks. Four editor-rendered page previews were inspected for layout. These are
-layout/logic checks, not proof of headset comfort or gesture reliability. Version
-1.14.0 (18) contains the wrist UI; headset acceptance remains required. No model
-calls or generation-provider charges were made for this change.
+Both the launcher and expanded menu are suppressed while EITHER hand/controller
+holds an object, either hand is within 10 cm of an active object surface, prayer
+spread is active, or focus/tracking is lost. Releasing an object or recovering
+tracking leaves the fan closed. Palm orientation by itself never expands it.
+The host hand cannot select its own menu. Hidden sectors, rear-face proximity
+and the visible gaps between radial actions are excluded from selection.
+
+Existing object actions and motion binding requirements are retained. Authored
+demos remain labeled, and Delete still requires its existing confirmation.
+Conversation answer feedback remains separate. General answering and paid GPU
+work remain deferred; this change invokes neither model nor generation services.
+
+Version 1.14.1 (19) contains this revision. The focused state and geometry tests
+cover intentional opening, manipulation suppression, tracking recovery, curved
+hit targets and gaps. Editor renders cover the launcher, categories and action
+pages; these do not establish real hand comfort or occlusion behavior.
 
 ## Earlier milestone: Complete Object Experience / MVP 1
 

@@ -72,11 +72,19 @@ recipes. All four met their predeclared planning criteria, including refusing to
 exact-product internals without evidence. Estimated usage was $0.020945 against a
 $0.20 ceiling. This tests request interpretation and evidence needs in four cases;
 it does not prove retrieval, geometry, repeatability or generalization.
-Next, assess whether an alternative generation approach can realize component plans
-across different objects, while addressing the observed
-fused body/arm/camera and fragmented propeller failures before paying again. This
-single pair does not establish PartCrafter's ceiling or justify training. Additional
-provider integrations, product changes and motion work stay paused.
+The subsequent [Cube geometry comparison](Research/native_objects/CUBE_RESULT.md)
+is also complete. The same bridge ran unchanged plans for a drone and a creative
+lamp; both assembled forms were coherent but component fidelity failed (7/10 and
+6/10, with every dimension needing 2/2). The speaker's nine groups exceeded the
+pinned eight-slot pipeline; exact-product reconstruction stayed evidence-blocked.
+Zero output repairs or inference retries. Rental estimate $0.4782; independent
+cleanup confirmed zero pods and network volumes. No Quest import was attempted.
+
+Stop both tested configurations without buying more seeds. Next, assess approaches
+that generate parts and their spatial relationships together, including internal
+roles, and can accept the unchanged speaker plan. A good exterior or part label
+is insufficient. These few trials do not establish every model's ceiling or justify
+training. Product changes, answering and motion expansion remain paused.
 
 Generation research is the active track. The product remains stable; answering,
 voice and motion-inference expansion are paused. Research output does not enter

@@ -1,0 +1,962 @@
+{
+  "date": "2026-09-30",
+  "id": "cube-bridge-001",
+  "frozen_commit": "aadebeb",
+  "manifest_sha256": "90b3aa47928580dabc0e37946b1a99bcec2bcf5e045e77974357a786b52381e8",
+  "code_revision": "3c6d06ddbef3160a1e1950cb13ab63dd12a61e50",
+  "model_revisions": {
+    "Roblox/cube3d-v0.5": "8cab4886803e8210f4282aef212c6b6b92f68d16",
+    "Roblox/cubepart": "28431d124e77040fcaf34c0a71623ff61d35a6c0",
+    "Qwen/Qwen3-VL-4B-Instruct": "ebb281ec70b05090aa6165b016eac8ec08e71b17",
+    "openai/clip-vit-large-patch14": "32bd64288804d66eefd0ccbe215aa642df71cc41",
+    "Qwen/Qwen-Image": "75e0b4be04f60ec59a75f475837eced720f823b6"
+  },
+  "parameters": {
+    "seed": 0,
+    "whole_resolution_base": 8.0,
+    "whole_top_p": null,
+    "whole_engine": "Engine",
+    "part_resolution_base": 8.5,
+    "part_steps": 50,
+    "part_guidance": 7.5,
+    "part_timeshift": 4.0,
+    "part_scheduler": "dpm_solver",
+    "surface_samples": 128000
+  },
+  "verdict": "fail_current_configuration",
+  "native_generation_goal_passed": false,
+  "scope": "Two eligible generic/creative plans, one seed, no output repairs. One unsupported plan and one evidence-blocked plan retained.",
+  "reviewer": "Codex qualitative review of original neutral-shaded whole/assembled/exploded/isolated views against frozen criteria; not independent human acceptance.",
+  "inference_attempts": 4,
+  "inference_retries": 0,
+  "manual_repairs": 0,
+  "infrastructure_events": [
+    "Initial system Python refused pip installation; setup resumed in a venv before any inference.",
+    "Transient SSH/API connectivity timeout during final stage; existing worker completed, no inference restart. Outputs recovered before termination."
+  ],
+  "rental": {
+    "gpu": "NVIDIA A100 80GB PCIe",
+    "gpu_usd_hour": 1.59,
+    "ephemeral_disk_gb": 100,
+    "elapsed_minutes": 17.88779985109965,
+    "estimated_cost_usd": 0.47816739046411755,
+    "ceiling_usd": 3.5,
+    "invoice_cost_usd": null,
+    "status": "terminated",
+    "pods_after": 0,
+    "network_volumes_after": 0,
+    "billing_note": "Account daily billing at cleanup showed $0.1531725205713883, not a settled invoice attributable to this rental.",
+    "guard": "Mac kept awake; local explicit-delete watchdog, early termination after verified download; independent account listings empty."
+  },
+  "cases": [
+    {
+      "case_id": "generic-drone",
+      "request": "Show me a generic quadcopter drone I can explore and take apart into its major components.",
+      "part_names": [
+        "Central frame",
+        "Four arms",
+        "Four motors",
+        "Four propellers",
+        "Battery",
+        "Flight controller",
+        "Electronic speed controllers"
+      ],
+      "compatibility_status": "eligible_research_only",
+      "paid_inference_attempted": true,
+      "whole": {
+        "case_id": "generic-drone",
+        "stage": "whole",
+        "status": "completed",
+        "started": 1790802253.9811509,
+        "manifest_sha256": "90b3aa47928580dabc0e37946b1a99bcec2bcf5e045e77974357a786b52381e8",
+        "manual_repairs": [],
+        "text_tokens": 5,
+        "meshes": [
+          {
+            "index": 0,
+            "requested_role": "whole_shape",
+            "semantic_status": "unverified",
+            "status": "present",
+            "file": "whole_shape.glb",
+            "sha256": "7fb5e37ee5f270db94e1c99881a4d4ff0785427e6c1196f63a04238ea0949904",
+            "vertices": 67560,
+            "triangles": 135116,
+            "bounds": [
+              [
+                -0.9502869248390198,
+                -0.26387274265289307,
+                -0.9450365304946899
+              ],
+              [
+                0.9482712745666504,
+                0.25745734572410583,
+                0.9382400512695312
+              ]
+            ],
+            "watertight": true
+          }
+        ],
+        "geometry_quality": "not_assessed",
+        "peak_gpu_bytes": 12766486528,
+        "elapsed_seconds": 133.3713719844818
+      },
+      "parts": {
+        "case_id": "generic-drone",
+        "stage": "parts",
+        "status": "completed",
+        "started": 1790802391.1027563,
+        "manifest_sha256": "90b3aa47928580dabc0e37946b1a99bcec2bcf5e045e77974357a786b52381e8",
+        "manual_repairs": [],
+        "input_normalization": {
+          "center": [
+            -0.0010078251361846924,
+            -0.0032076984643936157,
+            -0.0033982396125793457
+          ],
+          "scale": 1.0112937283676855,
+          "rotation_applied": false,
+          "canonical_orientation": "assumed_from_generator_not_verified"
+        },
+        "meshes": [
+          {
+            "index": 0,
+            "requested_role": "Central frame",
+            "semantic_status": "unverified",
+            "status": "present",
+            "file": "part_00.glb",
+            "sha256": "7993cdcf8292a42555b2940db3e2cafc20cfd358febef223e7af3b86c27ae369",
+            "vertices": 129944,
+            "triangles": 259920,
+            "bounds": [
+              [
+                -0.27894100546836853,
+                -0.1654982566833496,
+                -0.5486773252487183
+              ],
+              [
+                0.26777052879333496,
+                0.26007160544395447,
+                0.534062922000885
+              ]
+            ],
+            "watertight": true
+          },
+          {
+            "index": 1,
+            "requested_role": "Four arms",
+            "semantic_status": "unverified",
+            "status": "present",
+            "file": "part_01.glb",
+            "sha256": "d4b5c8fe969966a8dd85f6ca8ce12430ac6de444672f1c915112b62512fc0b12",
+            "vertices": 73960,
+            "triangles": 147904,
+            "bounds": [
+              [
+                -0.6721380949020386,
+                -0.2659533619880676,
+                -0.6683478355407715
+              ],
+              [
+                0.6577609777450562,
+                0.22674903273582458,
+                0.6605908274650574
+              ]
+            ],
+            "watertight": true
+          },
+          {
+            "index": 2,
+            "requested_role": "Four motors",
+            "semantic_status": "unverified",
+            "status": "present",
+            "file": "part_02.glb",
+            "sha256": "9b15384d165707ede2caa3763e0acaa2985e3b819276f214f1ff1bc7574dc2a1",
+            "vertices": 13004,
+            "triangles": 25992,
+            "bounds": [
+              [
+                -0.09109652042388916,
+                -0.1144145131111145,
+                -0.554440975189209
+              ],
+              [
+                0.08004433661699295,
+                0.047588225454092026,
+                0.5457966923713684
+              ]
+            ],
+            "watertight": true
+          },
+          {
+            "index": 3,
+            "requested_role": "Four propellers",
+            "semantic_status": "unverified",
+            "status": "present",
+            "file": "part_03.glb",
+            "sha256": "c70e21b72e074c4c9cf53c56e2952f5c358ff690b2baa954898e014257c94582",
+            "vertices": 25514,
+            "triangles": 51012,
+            "bounds": [
+              [
+                -0.9626377820968628,
+                0.2010551244020462,
+                -0.9555517435073853
+              ],
+              [
+                0.9569244980812073,
+                0.2609899044036865,
+                0.9489783048629761
+              ]
+            ],
+            "watertight": true
+          },
+          {
+            "index": 4,
+            "requested_role": "Battery",
+            "semantic_status": "unverified",
+            "status": "present",
+            "file": "part_04.glb",
+            "sha256": "72414804145347c9a6cff1d1436f0a389599e0f2b7e75bb7dde5274badb43d70",
+            "vertices": 3566,
+            "triangles": 7128,
+            "bounds": [
+              [
+                -0.13121159374713898,
+                -0.166020467877388,
+                0.09728255122900009
+              ],
+              [
+                0.12404579669237137,
+                -0.1487819105386734,
+                0.28554248809814453
+              ]
+            ],
+            "watertight": true
+          },
+          {
+            "index": 5,
+            "requested_role": "Flight controller",
+            "semantic_status": "unverified",
+            "status": "present",
+            "file": "part_05.glb",
+            "sha256": "c9f6da2dbca02576e13ba71e58c04e45d725dfca9df6ac6ed7635c28772c02b3",
+            "vertices": 352,
+            "triangles": 700,
+            "bounds": [
+              [
+                -0.024689143523573875,
+                0.24029894173145294,
+                0.060610879212617874
+              ],
+              [
+                0.008091255091130733,
+                0.2599053978919983,
+                0.18169212341308594
+              ]
+            ],
+            "watertight": true
+          },
+          {
+            "index": 6,
+            "requested_role": "Electronic speed controllers",
+            "semantic_status": "unverified",
+            "status": "present",
+            "file": "part_06.glb",
+            "sha256": "b77917323dc7efc64f8ad6e9e29e285c6bc98811b03e33f747ab89f1381789c3",
+            "vertices": 11902,
+            "triangles": 23752,
+            "bounds": [
+              [
+                -0.17768678069114685,
+                -0.002707861131057143,
+                -0.5161100029945374
+              ],
+              [
+                0.16866064071655273,
+                0.14266517758369446,
+                0.506523847579956
+              ]
+            ],
+            "watertight": true
+          }
+        ],
+        "geometry_quality": "not_assessed",
+        "peak_gpu_bytes": 35368003072,
+        "elapsed_seconds": 272.4884469509125
+      },
+      "connected_pieces": [
+        {
+          "id": "part_00",
+          "requested_role": "Central frame",
+          "index_connected_pieces": 1,
+          "triangle_counts": [
+            259920
+          ]
+        },
+        {
+          "id": "part_01",
+          "requested_role": "Four arms",
+          "index_connected_pieces": 4,
+          "triangle_counts": [
+            38424,
+            36992,
+            36728,
+            35760
+          ]
+        },
+        {
+          "id": "part_02",
+          "requested_role": "Four motors",
+          "index_connected_pieces": 4,
+          "triangle_counts": [
+            6512,
+            6504,
+            6500,
+            6476
+          ]
+        },
+        {
+          "id": "part_03",
+          "requested_role": "Four propellers",
+          "index_connected_pieces": 4,
+          "triangle_counts": [
+            12848,
+            12768,
+            12732,
+            12664
+          ]
+        },
+        {
+          "id": "part_04",
+          "requested_role": "Battery",
+          "index_connected_pieces": 1,
+          "triangle_counts": [
+            7128
+          ]
+        },
+        {
+          "id": "part_05",
+          "requested_role": "Flight controller",
+          "index_connected_pieces": 1,
+          "triangle_counts": [
+            700
+          ]
+        },
+        {
+          "id": "part_06",
+          "requested_role": "Electronic speed controllers",
+          "index_connected_pieces": 16,
+          "triangle_counts": [
+            2548,
+            2532,
+            2532,
+            2496,
+            2488,
+            2484,
+            2468,
+            2464,
+            1684,
+            1472,
+            300,
+            216,
+            28,
+            16,
+            16,
+            8
+          ]
+        }
+      ],
+      "part_triangle_count": 516408,
+      "part_vertex_count": 258242,
+      "scorecard": [
+        {
+          "criterion": "concept",
+          "score": 2,
+          "out_of": 2,
+          "observation": "Whole and assembled part views clearly depict a quadcopter with four arms and propellers."
+        },
+        {
+          "criterion": "coherence",
+          "score": 2,
+          "out_of": 2,
+          "observation": "Assembled outer form is coherent, without major missing shapes. This does not validate internal component meaning."
+        },
+        {
+          "criterion": "role_coverage",
+          "score": 1,
+          "out_of": 2,
+          "observation": "Propellers and arms are recognizable. Motor-labeled outputs look like thin caps while cylindrical housings remain with arms; the speed-controller label maps to 16 disconnected pieces. Internal roles are not established."
+        },
+        {
+          "criterion": "separation",
+          "score": 1,
+          "out_of": 2,
+          "observation": "Seven groups are independently selectable, but repeated instances have no individual bindings. Four indexed islands exist in each arm/motor/propeller group; disconnected islands alone do not establish correct components."
+        },
+        {
+          "criterion": "assembly",
+          "score": 1,
+          "out_of": 2,
+          "observation": "Assembly retains the visible drone form, but internal role boundaries and mechanical fit are not established. Visual reassembly is not disassembly-path or clearance validation."
+        }
+      ],
+      "score": 7,
+      "score_out_of": 10,
+      "verdict": "fail",
+      "evaluation": {
+        "id": "generic-drone-parts",
+        "origins": {
+          "geometry": "model_generated",
+          "semantics": "unknown",
+          "hierarchy": "unknown",
+          "motion": "unknown"
+        },
+        "components": 7,
+        "triangles": 516408,
+        "structural_checks_passed": true,
+        "native_generation_goal_passed": false,
+        "manual_repair_count": 0,
+        "checks": {
+          "package_version": {
+            "status": "pass",
+            "detail": "Research contract v1"
+          },
+          "provenance": {
+            "status": "pass",
+            "detail": "Geometry, semantics and hierarchy identify origin; repairs remain explicit"
+          },
+          "unique_components": {
+            "status": "pass",
+            "detail": "Exact geometry/component binding"
+          },
+          "usable_geometry": {
+            "status": "pass",
+            "detail": "Invalid/empty/all-degenerate components: []"
+          },
+          "assembly_references": {
+            "status": "pass",
+            "detail": "Assembly references exist and parent graph is acyclic"
+          },
+          "motion_provenance": {
+            "status": "pass",
+            "detail": "Motion origin is explicit, including unknown"
+          },
+          "motion_references": {
+            "status": "pass",
+            "detail": "Motion drivers exist and driver graph is acyclic"
+          },
+          "motion_parameters": {
+            "status": "missing",
+            "detail": "No predicted or supplied motion"
+          },
+          "runtime_motion_agreement": {
+            "status": "not_assessed",
+            "detail": "Requires usable joints and independently exported runtime frames"
+          },
+          "semantic_correctness": {
+            "status": "not_assessed",
+            "detail": "Part names/count alone cannot establish meaning; independent review required"
+          },
+          "attachment_fit": {
+            "status": "not_assessed",
+            "detail": "No attachment interfaces/ground truth established; parent graph alone is insufficient"
+          },
+          "motion_clearance": {
+            "status": "not_assessed",
+            "detail": "No triangle collision sweep implemented; valid axes do not establish clearance"
+          },
+          "visual_quality": {
+            "status": "not_assessed",
+            "detail": "Requires user review of original materials and geometry in Quest"
+          },
+          "quest_performance": {
+            "status": "not_assessed",
+            "detail": "No runtime import or frame-time measurement in this experiment"
+          },
+          "physical_validity": {
+            "status": "not_assessed",
+            "detail": "Kinematic motion is not physical feasibility"
+          }
+        },
+        "layers": {
+          "object": {
+            "structural_checks_passed": true,
+            "failed_checks": [],
+            "missing_output_facets": [
+              "semantics",
+              "hierarchy"
+            ],
+            "quality_status": "not_assessed",
+            "detail": "Geometry and assembly checks only; semantic meaning, materials, fit and Quest quality need evaluation."
+          },
+          "behavior_decision": {
+            "status": "not_assessed",
+            "detail": "No application-owned model decision recorded for this object and request. Missing motion does not mean animation is unnecessary."
+          },
+          "motion": {
+            "status": "absent",
+            "failed_checks": [],
+            "detail": "Optional motion on this geometry. Sampled agreement does not prove appropriate behavior, clearance or physical validity."
+          },
+          "runtime_viability": {
+            "status": "not_assessed",
+            "failed_static_preflight_files": [],
+            "detail": "Original static preflight retained. Offline research preview is not runtime acceptance; Quest remains untested."
+          }
+        },
+        "missing_output_facets": [
+          "semantics",
+          "hierarchy",
+          "motion"
+        ],
+        "verdict": "Control/evidence only; complete native generation is not demonstrated."
+      }
+    },
+    {
+      "case_id": "generic-speaker",
+      "request": "Generate a generic portable Bluetooth speaker I can take apart to understand its main systems.",
+      "part_names": [
+        "Separable enclosure sections",
+        "Front grille",
+        "Full-range speaker driver",
+        "Passive radiator",
+        "Rechargeable battery pack",
+        "Bluetooth and control board",
+        "Audio amplifier board",
+        "Charging port",
+        "Control buttons"
+      ],
+      "compatibility_status": "unsupported_part_count",
+      "reason": "Pinned CubePart supports one to eight named groups; no merging or truncation permitted.",
+      "paid_inference_attempted": false,
+      "verdict": "unsupported"
+    },
+    {
+      "case_id": "exact-product",
+      "request": "Show me the internal assembly of a JBL Flip 7, including how the battery is mounted.",
+      "part_names": [],
+      "compatibility_status": "blocked_evidence",
+      "reason": "Plan does not propose a generic/creative geometry test.",
+      "paid_inference_attempted": false,
+      "verdict": "correctly_blocked_for_evidence"
+    },
+    {
+      "case_id": "creative-concept",
+      "request": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside. Let me inspect its main pieces; it does not need to be a buildable electrical product.",
+      "part_names": [
+        "Curled leaf shade",
+        "Glowing seed",
+        "Seed suspension strand",
+        "Stem support",
+        "Desk base"
+      ],
+      "compatibility_status": "eligible_research_only",
+      "paid_inference_attempted": true,
+      "whole": {
+        "case_id": "creative-concept",
+        "stage": "whole",
+        "status": "completed",
+        "started": 1790802671.2974513,
+        "manifest_sha256": "90b3aa47928580dabc0e37946b1a99bcec2bcf5e045e77974357a786b52381e8",
+        "manual_repairs": [],
+        "text_tokens": 12,
+        "meshes": [
+          {
+            "index": 0,
+            "requested_role": "whole_shape",
+            "semantic_status": "unverified",
+            "status": "present",
+            "file": "whole_shape.glb",
+            "sha256": "c7902ebf8fc60612ce5f41a6cce8bff5ad0f11a9a69b1d6d6da4d53c12dff145",
+            "vertices": 112384,
+            "triangles": 224740,
+            "bounds": [
+              [
+                -0.7238292098045349,
+                -0.9531009793281555,
+                -0.650094747543335
+              ],
+              [
+                0.7282566428184509,
+                0.9512478113174438,
+                0.6381185054779053
+              ]
+            ],
+            "watertight": true
+          }
+        ],
+        "geometry_quality": "not_assessed",
+        "peak_gpu_bytes": 12766486528,
+        "elapsed_seconds": 109.76836609840393
+      },
+      "parts": {
+        "case_id": "creative-concept",
+        "stage": "parts",
+        "status": "completed",
+        "started": 1790802784.8795948,
+        "manifest_sha256": "90b3aa47928580dabc0e37946b1a99bcec2bcf5e045e77974357a786b52381e8",
+        "manual_repairs": [],
+        "input_normalization": {
+          "center": [
+            0.002213716506958008,
+            -0.000926584005355835,
+            -0.005988121032714844
+          ],
+          "scale": 1.0082186674160118,
+          "rotation_applied": false,
+          "canonical_orientation": "assumed_from_generator_not_verified"
+        },
+        "meshes": [
+          {
+            "index": 0,
+            "requested_role": "Curled leaf shade",
+            "semantic_status": "unverified",
+            "status": "present",
+            "file": "part_00.glb",
+            "sha256": "854ac0e4d298e17b284d1c6539bd3bc34bab9787101eecb8f8917308aaf48d5e",
+            "vertices": 42276,
+            "triangles": 84500,
+            "bounds": [
+              [
+                -0.7342911958694458,
+                -0.262334942817688,
+                -0.05469483509659767
+              ],
+              [
+                0.7296310067176819,
+                0.957613468170166,
+                0.034506138414144516
+              ]
+            ],
+            "watertight": true
+          },
+          {
+            "index": 1,
+            "requested_role": "Glowing seed",
+            "semantic_status": "unverified",
+            "status": "present",
+            "file": "part_01.glb",
+            "sha256": "696bbe5d1bc9345ec9178c3040f2af84af6dbd7f514e4978a33595df79a660bf",
+            "vertices": 14584,
+            "triangles": 29164,
+            "bounds": [
+              [
+                -0.12795542180538177,
+                -0.12404217571020126,
+                -0.14361420273780823
+              ],
+              [
+                0.13776786625385284,
+                0.4005425274372101,
+                0.12438700348138809
+              ]
+            ],
+            "watertight": true
+          },
+          {
+            "index": 2,
+            "requested_role": "Seed suspension strand",
+            "semantic_status": "unverified",
+            "status": "present",
+            "file": "part_02.glb",
+            "sha256": "c7b23d057bfdcdd018f3271320e5b4b837eb6215e5be0a53616d45a73cef4eb8",
+            "vertices": 5138,
+            "triangles": 10228,
+            "bounds": [
+              [
+                -0.5932275056838989,
+                -0.4244253635406494,
+                -0.02147102728486061
+              ],
+              [
+                0.660493791103363,
+                0.949893057346344,
+                0.004382500424981117
+              ]
+            ],
+            "watertight": true
+          },
+          {
+            "index": 3,
+            "requested_role": "Stem support",
+            "semantic_status": "unverified",
+            "status": "present",
+            "file": "part_03.glb",
+            "sha256": "cbb094dcd99dcf4b356eaebe1ed3458f16b429a020a7f3c4330a9f187896e526",
+            "vertices": 3424,
+            "triangles": 6840,
+            "bounds": [
+              [
+                -0.06498386710882187,
+                0.3674668073654175,
+                -0.07028315961360931
+              ],
+              [
+                0.2079167515039444,
+                0.8058304786682129,
+                0.048015810549259186
+              ]
+            ],
+            "watertight": true
+          },
+          {
+            "index": 4,
+            "requested_role": "Desk base",
+            "semantic_status": "unverified",
+            "status": "present",
+            "file": "part_04.glb",
+            "sha256": "0ac8aa75d2e36a96d6a9d9756840bd1c955feac62eaa8f42170406a6818a2f4a",
+            "vertices": 197964,
+            "triangles": 395924,
+            "bounds": [
+              [
+                -0.6665387749671936,
+                -0.9625508785247803,
+                -0.6485664248466492
+              ],
+              [
+                0.6457616686820984,
+                -0.2056344598531723,
+                0.6274965405464172
+              ]
+            ],
+            "watertight": true
+          }
+        ],
+        "geometry_quality": "not_assessed",
+        "peak_gpu_bytes": 30830111232,
+        "elapsed_seconds": 202.99756717681885
+      },
+      "connected_pieces": [
+        {
+          "id": "part_00",
+          "requested_role": "Curled leaf shade",
+          "index_connected_pieces": 14,
+          "triangle_counts": [
+            39712,
+            31412,
+            4200,
+            2748,
+            1324,
+            1244,
+            1208,
+            1200,
+            1172,
+            200,
+            40,
+            16,
+            16,
+            8
+          ]
+        },
+        {
+          "id": "part_01",
+          "requested_role": "Glowing seed",
+          "index_connected_pieces": 1,
+          "triangle_counts": [
+            29164
+          ]
+        },
+        {
+          "id": "part_02",
+          "requested_role": "Seed suspension strand",
+          "index_connected_pieces": 12,
+          "triangle_counts": [
+            1664,
+            1444,
+            1288,
+            1044,
+            912,
+            876,
+            660,
+            612,
+            540,
+            448,
+            404,
+            336
+          ]
+        },
+        {
+          "id": "part_03",
+          "requested_role": "Stem support",
+          "index_connected_pieces": 2,
+          "triangle_counts": [
+            3892,
+            2948
+          ]
+        },
+        {
+          "id": "part_04",
+          "requested_role": "Desk base",
+          "index_connected_pieces": 1,
+          "triangle_counts": [
+            395924
+          ]
+        }
+      ],
+      "part_triangle_count": 526656,
+      "part_vertex_count": 263386,
+      "scorecard": [
+        {
+          "criterion": "concept",
+          "score": 1,
+          "out_of": 2,
+          "observation": "Suspended seed and plant-like form survive; curled leaf shade becomes an ornate flower/bowl-and-arch silhouette. Lamp/leaf adherence is partial. Neutral geometry rendering does not evaluate glow."
+        },
+        {
+          "criterion": "coherence",
+          "score": 2,
+          "out_of": 2,
+          "observation": "Whole and assembled views retain a coherent overall plant-like silhouette. Isolated fragmentation is scored under roles/separation."
+        },
+        {
+          "criterion": "role_coverage",
+          "score": 1,
+          "out_of": 2,
+          "observation": "Seed is recognizable. Leaf-shade label maps to 14 arch/vine pieces, suspension-strand label to 12 disconnected pieces, and stem support to two pieces. A requested name is not semantic correctness."
+        },
+        {
+          "criterion": "separation",
+          "score": 1,
+          "out_of": 2,
+          "observation": "Five mesh groups can be selected, but suspension/support geometry is fragmented across groups rather than yielding complete requested components."
+        },
+        {
+          "criterion": "assembly",
+          "score": 1,
+          "out_of": 2,
+          "observation": "The visual arrangement is retained, but the separated support/strand geometry does not establish continuous plausible connections. No measured fit/clearance assessment."
+        }
+      ],
+      "score": 6,
+      "score_out_of": 10,
+      "verdict": "fail",
+      "evaluation": {
+        "id": "creative-concept-parts",
+        "origins": {
+          "geometry": "model_generated",
+          "semantics": "unknown",
+          "hierarchy": "unknown",
+          "motion": "unknown"
+        },
+        "components": 5,
+        "triangles": 526656,
+        "structural_checks_passed": true,
+        "native_generation_goal_passed": false,
+        "manual_repair_count": 0,
+        "checks": {
+          "package_version": {
+            "status": "pass",
+            "detail": "Research contract v1"
+          },
+          "provenance": {
+            "status": "pass",
+            "detail": "Geometry, semantics and hierarchy identify origin; repairs remain explicit"
+          },
+          "unique_components": {
+            "status": "pass",
+            "detail": "Exact geometry/component binding"
+          },
+          "usable_geometry": {
+            "status": "pass",
+            "detail": "Invalid/empty/all-degenerate components: []"
+          },
+          "assembly_references": {
+            "status": "pass",
+            "detail": "Assembly references exist and parent graph is acyclic"
+          },
+          "motion_provenance": {
+            "status": "pass",
+            "detail": "Motion origin is explicit, including unknown"
+          },
+          "motion_references": {
+            "status": "pass",
+            "detail": "Motion drivers exist and driver graph is acyclic"
+          },
+          "motion_parameters": {
+            "status": "missing",
+            "detail": "No predicted or supplied motion"
+          },
+          "runtime_motion_agreement": {
+            "status": "not_assessed",
+            "detail": "Requires usable joints and independently exported runtime frames"
+          },
+          "semantic_correctness": {
+            "status": "not_assessed",
+            "detail": "Part names/count alone cannot establish meaning; independent review required"
+          },
+          "attachment_fit": {
+            "status": "not_assessed",
+            "detail": "No attachment interfaces/ground truth established; parent graph alone is insufficient"
+          },
+          "motion_clearance": {
+            "status": "not_assessed",
+            "detail": "No triangle collision sweep implemented; valid axes do not establish clearance"
+          },
+          "visual_quality": {
+            "status": "not_assessed",
+            "detail": "Requires user review of original materials and geometry in Quest"
+          },
+          "quest_performance": {
+            "status": "not_assessed",
+            "detail": "No runtime import or frame-time measurement in this experiment"
+          },
+          "physical_validity": {
+            "status": "not_assessed",
+            "detail": "Kinematic motion is not physical feasibility"
+          }
+        },
+        "layers": {
+          "object": {
+            "structural_checks_passed": true,
+            "failed_checks": [],
+            "missing_output_facets": [
+              "semantics",
+              "hierarchy"
+            ],
+            "quality_status": "not_assessed",
+            "detail": "Geometry and assembly checks only; semantic meaning, materials, fit and Quest quality need evaluation."
+          },
+          "behavior_decision": {
+            "status": "not_assessed",
+            "detail": "No application-owned model decision recorded for this object and request. Missing motion does not mean animation is unnecessary."
+          },
+          "motion": {
+            "status": "absent",
+            "failed_checks": [],
+            "detail": "Optional motion on this geometry. Sampled agreement does not prove appropriate behavior, clearance or physical validity."
+          },
+          "runtime_viability": {
+            "status": "not_assessed",
+            "failed_static_preflight_files": [],
+            "detail": "Original static preflight retained. Offline research preview is not runtime acceptance; Quest remains untested."
+          }
+        },
+        "missing_output_facets": [
+          "semantics",
+          "hierarchy",
+          "motion"
+        ],
+        "verdict": "Control/evidence only; complete native generation is not demonstrated."
+      }
+    }
+  ],
+  "limitations": [
+    "Single seed and two eligible examples do not establish repeatability or broad generalization.",
+    "Planning roles were unchanged groups, not individually placed instances or measured assembly constraints.",
+    "Whole-shape input conditioning cannot certify hidden internals. No ground-truth component evidence was supplied.",
+    "No manual repair, simplification, role-merging, reorientation, architecture edits or seed search.",
+    "Standalone GLBs pass static preflight, but total assembled vertex count exceeds 200,000 in both part sets. No combined production asset or Quest acceptance was established.",
+    "No materials, lighting/glow, motion, physics, mechanical fit or Quest performance validation.",
+    "Upstream initialization warns about an ignored pooled_projection_dim config attribute; warning retained in original stage logs.",
+    "Research-only candidate; no production adoption or new object format."
+  ],
+  "preserved_log_sha256": {
+    "setup-venv.log": "6b39b15c9414306bf6f820ffd0b7bdbb76126c137c7c504dcf584465dbbc70e6",
+    "setup.log": "f327860a94b20895b30d480f6df299780aea2ca1806a51dd27806705991f66ba",
+    "cube-results/generic-drone-whole.log": "284571d5e20e639b02ccb356028474a3edabd6ecfb1a956e29ec7a29783dce44",
+    "cube-results/generic-drone-parts.log": "1a90ce271f4bf8f1d54bf5cf86d870161397803c2edceec07849c0a0a058558d",
+    "cube-results/creative-concept-parts.log": "f80e61281c800761bd88608dab6bb222a5ba5030f534affbdd475e943997803b",
+    "cube-results/creative-concept-whole.log": "808f086de601acb9f5672e543fd9c65101e81a42af7e2ade2cc1f67cf484d566"
+  }
+}

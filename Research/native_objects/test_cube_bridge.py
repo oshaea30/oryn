@@ -1,6 +1,8 @@
 import json
 from pathlib import Path
 import unittest
+import tempfile
+from unittest.mock import patch
 from Research.native_objects.cube_bridge import prepare,digest_bytes
 
 class BridgeTests(unittest.TestCase):
@@ -25,4 +27,23 @@ class BridgeTests(unittest.TestCase):
     def test_budget_and_no_retry(self):
         self.assertLessEqual(self.result['budget']['max_gpu_usd_hour']*self.result['budget']['max_hours']+100*.1/720*2,3.5)
         self.assertEqual(self.result['policy']['retries'],0)
+class InspectionTests(unittest.TestCase):
+    def test_requested_label_never_certifies_semantics(self):
+        from Research.native_objects.inspect_cube import package
+        with tempfile.TemporaryDirectory() as t:
+            folder=Path(t);(folder/'part.glb').write_bytes(b'synthetic')
+            r={'meshes':[{'status':'present','file':'part.glb','sha256':digest_bytes(b'synthetic'),'index':0,'requested_role':'plausible label'},
+                         {'status':'missing','index':1,'requested_role':'missing role'}]}
+            with patch('Research.native_objects.inspect_cube.glb_mesh',return_value=([[0,0,0],[1,0,0],[0,1,0]],[0,1,2])),patch('Research.native_objects.inspect_cube.inspect_glb',return_value={'preflight':'PASS'}):
+                p=package(folder,r,'synthetic',False)
+            self.assertIsNone(p['parts'][0]['semantic_role'])
+            self.assertEqual(p['origins']['semantics'],'unknown')
+            self.assertEqual(len(p['source']['missing_outputs']),1)
+    def test_hash_change_is_rejected_before_geometry_load(self):
+        from Research.native_objects.inspect_cube import package
+        with tempfile.TemporaryDirectory() as t:
+            folder=Path(t);(folder/'part.glb').write_bytes(b'changed')
+            r={'meshes':[{'status':'present','file':'part.glb','sha256':'wrong','index':0,'requested_role':'x'}]}
+            with self.assertRaises(ValueError):package(folder,r,'synthetic',False)
+
 if __name__=='__main__':unittest.main()

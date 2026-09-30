@@ -29,6 +29,17 @@ No retrieval execution, GPU run, new format or production route is included.
 The [first live result](PLANNING_RESULT.md) meets all four frozen planning criteria
 at an estimated $0.020945. Geometry and generalization remain unproven.
 
+## Completed geometry bridge: Cube 001
+
+The [frozen comparison](CUBE_COMPARISON.md) and [measured result](CUBE_RESULT.md)
+record Cube 3D whole-shape generation followed by CubePart synthesis from ORYN's
+unchanged component names. Both eligible objects completed, but component fidelity
+failed: mislabeled boundaries and fragmented requested parts. The nine-group
+speaker plan exceeded the pinned eight-slot implementation and was not rewritten.
+Exact-product reconstruction remained evidence-blocked. Stop this configuration;
+no extra seeds or per-output repairs. Estimated rental cost was $0.4782; cleanup
+independently confirmed no pods or network volumes. Nothing was sent to Quest.
+
 ## Minimum output and evaluation
 
 The research package (`oryn-native-experiment-v1`) retains component-bound triangle

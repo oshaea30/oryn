@@ -18,7 +18,8 @@ from asset_inspection import inspect_glb
 from mesh_islands import decode, components
 
 ORIGINS = {'authored', 'model_generated', 'geometric_decomposition', 'unknown'}
-FACETS = ('geometry', 'semantics', 'hierarchy', 'motion')
+OBJECT_FACETS = ('geometry', 'semantics', 'hierarchy')
+FACETS = (*OBJECT_FACETS, 'motion')
 
 
 def sha(path): return hashlib.sha256(Path(path).read_bytes()).hexdigest()
@@ -137,7 +138,7 @@ def evaluate(p):
         checks[name]={'status':'pass' if condition else 'fail','detail':detail}
         if not condition: errors.append(name)
     check('package_version',p.get('schema')=='oryn-native-experiment-v1','Research contract v1')
-    check('provenance',all(p.get('origins',{}).get(f) in ORIGINS for f in FACETS) and isinstance(p.get('manual_repairs'),list),'Each facet identifies origin; repairs remain explicit')
+    check('provenance',all(p.get('origins',{}).get(f) in ORIGINS for f in OBJECT_FACETS) and isinstance(p.get('manual_repairs'),list),'Geometry, semantics and hierarchy identify origin; repairs remain explicit')
     check('unique_components',bool(parts) and len(ids)==len(set(ids)) and all(isinstance(i,str) and i for i in ids),'Exact geometry/component binding')
     invalid=[];tri_count=0
     for part in parts:
@@ -160,7 +161,10 @@ def evaluate(p):
                 if cur in seen or cur not in parents:return False
                 seen.add(cur);cur=parents[cur]
         return True
-    check('reference_graphs',acyclic('parent') and acyclic('driver'),'References exist and parent/driver graphs are acyclic')
+    check('assembly_references',acyclic('parent'),'Assembly references exist and parent graph is acyclic')
+    object_errors=list(errors)
+    check('motion_provenance',p.get('origins',{}).get('motion') in ORIGINS,'Motion origin is explicit, including unknown')
+    check('motion_references',acyclic('driver'),'Motion drivers exist and driver graph is acyclic')
     motion=[part for part in parts if part.get('motion')]
     valid_motion=all(m['kind'] in ('fixed','rotation') and finite(m.get('axis'),3) and abs(length(m['axis'])-1)<1e-4 and finite(m.get('pivot'),3) and type(m.get('ratio')) in (int,float) and math.isfinite(m['ratio']) and abs(m['ratio'])<=8 and type(m.get('phase_degrees')) in (int,float) and math.isfinite(m['phase_degrees']) for m in [part['motion'] for part in motion])
     if motion:check('motion_parameters',valid_motion,'Bounded fixed/rotation experiment; other mechanisms require another evaluator')
@@ -188,9 +192,32 @@ def evaluate(p):
         'quest_performance':'No runtime import or frame-time measurement in this experiment',
         'physical_validity':'Kinematic motion is not physical feasibility',
     }.items():checks[name]={'status':'not_assessed','detail':detail}
+    # Structural validity is not object completeness or a behavioral judgment.
+    # In particular, absent motion must not stand in for a reasoned no-animation decision.
+    motion_errors=[name for name in errors if name not in object_errors]
+    motion_status=('absent' if not motion and not p.get('frames') and not motion_errors else
+                   'failed' if motion_errors else
+                   'blocked_by_object' if object_errors else
+                   'sampled_agreement' if checks['runtime_motion_agreement']['status']=='pass' else
+                   'not_assessed')
+    layers={
+        'object':{
+            'structural_checks_passed':not object_errors,
+            'failed_checks':object_errors,
+            'missing_output_facets':[f for f in OBJECT_FACETS if p['origins'].get(f)=='unknown'],
+            'quality_status':'not_assessed',
+            'detail':'Geometry and assembly checks only; semantic meaning, materials, fit and Quest quality need evaluation.'},
+        'behavior_decision':{
+            'status':'not_assessed',
+            'detail':'No application-owned model decision recorded for this object and request. Missing motion does not mean animation is unnecessary.'},
+        'motion':{
+            'status':motion_status,
+            'failed_checks':motion_errors,
+            'detail':'Optional motion on this geometry. Sampled agreement does not prove appropriate behavior, clearance or physical validity.'},
+    }
     return {'id':p['id'],'origins':p['origins'],'components':len(parts),'triangles':tri_count,
         'structural_checks_passed':not errors,'native_generation_goal_passed':False,
-        'manual_repair_count':len(p['manual_repairs']),'checks':checks,
+        'manual_repair_count':len(p['manual_repairs']),'checks':checks,'layers':layers,
         'missing_output_facets':[f for f in FACETS if p['origins'][f]=='unknown'],
         'verdict':'Control/evidence only; complete native generation is not demonstrated.'}
 

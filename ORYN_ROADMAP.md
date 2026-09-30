@@ -36,15 +36,22 @@ are not evidence that autonomous answering works.
 The [native-object experiment](Research/native_objects/README.md) now provides an
 isolated output representation, partial evaluator, actual Unity mesh/motion control
 export, source-preserving saved-geometry comparison, visual inspector and prepared
-PartCrafter inference adapter. Sixteen offline checks pass; Unity export and browser
+PartCrafter inference adapter. Offline checks cover the research contract; Unity export and browser
 controls pass. Authored motion agrees with sampled geometry; the saved generated
 model remains missing semantics, hierarchy and motion. Neither passes the complete
 native generation goal. Appearance, attachment fit and clearance remain unassessed.
 
 No new model inference or training has run. A CUDA worker is required for the
 selected released baseline; the user's Mac does not provide that platform. A
-single GPU experiment is prepared, with a proposed $5 spend ceiling subject to
-approval, account access, current pricing and a rental termination mechanism.
+single GPU experiment is prepared with a $5 spend ceiling. On 2026-09-29 the user
+deferred that paid run until funds are available; do not provision or spend until
+they resume it. Account access, current pricing and termination remain unresolved.
+
+Local work now separates object structure/quality, application-owned behavioral
+judgment, and optional validated animation. Missing animation does not fail object
+structure and does not imply a deliberate decision to stay static. Behavioral
+judgment is still unimplemented; reports explicitly keep it unassessed. This is
+preparation for measuring generation, not a replacement for the deferred GPU run.
 Do not replace that missing run with another manually assembled demo. Record all
 supplied structure, failed outputs and manual repairs. Use the observed failures
 to choose subsequent articulation work or model adaptation.

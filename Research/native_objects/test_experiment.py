@@ -54,6 +54,38 @@ class EvaluationTests(unittest.TestCase):
         self.assertEqual(r['checks']['runtime_motion_agreement']['status'],'not_assessed')
         self.assertIn('motion',r['missing_output_facets'])
         self.assertFalse(r['native_generation_goal_passed'])
+    def test_static_object_structure_is_independent_of_motion(self):
+        p=fixture();p['parts'][0]['motion']=None;p['frames']=[];p['origins']['motion']='unknown'
+        r=evaluate(p)
+        self.assertTrue(r['layers']['object']['structural_checks_passed'])
+        self.assertNotIn('motion',r['layers']['object']['missing_output_facets'])
+        self.assertEqual(r['layers']['motion']['status'],'absent')
+        self.assertEqual(r['layers']['behavior_decision']['status'],'not_assessed')
+        self.assertEqual(r['layers']['object']['quality_status'],'not_assessed')
+
+    def test_bad_animation_does_not_invalidate_object_structure(self):
+        for field,value in [('axis',[0,0,0]),('driver','missing'),('driver','rotor')]:
+            p=fixture();p['parts'][0]['motion'][field]=value
+            r=evaluate(p)
+            self.assertTrue(r['layers']['object']['structural_checks_passed'])
+            self.assertEqual(r['layers']['motion']['status'],'failed')
+            self.assertFalse(r['structural_checks_passed'])
+
+    def test_broken_assembly_is_still_an_object_failure(self):
+        p=fixture();p['parts'][0]['parent']='missing'
+        r=evaluate(p)
+        self.assertFalse(r['layers']['object']['structural_checks_passed'])
+        self.assertEqual(r['layers']['motion']['status'],'blocked_by_object')
+
+    def test_working_motion_does_not_prove_behavioral_judgment(self):
+        r=evaluate(fixture())
+        self.assertEqual(r['layers']['motion']['status'],'sampled_agreement')
+        self.assertEqual(r['layers']['behavior_decision']['status'],'not_assessed')
+
+    def test_geometry_only_retains_missing_semantics_and_hierarchy(self):
+        p=fixture();p['origins']['semantics']=p['origins']['hierarchy']='unknown'
+        self.assertEqual(evaluate(p)['layers']['object']['missing_output_facets'],['semantics','hierarchy'])
+
     def test_geometry_never_proves_semantics_or_visual_quality(self):
         r=evaluate(fixture())
         for name in ['semantic_correctness','visual_quality','attachment_fit','motion_clearance','physical_validity','quest_performance']:

@@ -1,8 +1,9 @@
 # ORYN native-object generation experiment
 
 Research question: can a generator produce geometry, semantic components,
-assembly relationships and usable motion for the same object, with no per-output
-manual repair? This directory is a research harness, not an implemented generator
+assembly relationships for an inspectable object, with no per-output manual repair?
+A separate application-owned reasoning layer should decide which behavior, if any,
+suits the object and the request. Motion execution is a third evaluation. This directory is a research harness, not an implemented generator
 or replacement for ORYN's production object route. Answer development is paused.
 
 ## Minimum output and evaluation
@@ -30,6 +31,27 @@ package cannot pass the native generation milestone; the goal flag stays false
 until those missing evaluations and an actual generation have been established.
 The viewer's explode/reset is a geometry inspection operation, not evidence that
 a physically feasible disassembly path exists.
+
+## Independent evaluation layers
+
+Reports separate object structure, behavioral judgment and optional motion.
+Object structure checks exclude motion axes and driver graphs: a bad animation
+must not invalidate otherwise usable static geometry. The legacy combined
+`structural_checks_passed` flag still reports any structural or motion failure.
+Missing semantics and hierarchy remain object gaps; missing motion is reported
+separately. Passing object structure does not establish completeness or quality.
+
+Behavioral judgment stays `not_assessed` for both existing controls. No classifier
+or model call is implemented here. A future application-owned model must consider
+the actual object, available components and the user's request, and may choose
+animation, no animation, or uncertainty. Neither missing motion nor an authored
+motion fixture establishes that judgment. The runtime must validate proposed
+motion against the same object's geometry before enabling it.
+
+Motion reports absent, failed, blocked by invalid object structure, unassessed,
+or sampled agreement. Agreement is a narrow replay check, not clearance or physics.
+Generation quality should be evaluated first; behavioral judgment should later
+be tested on unfamiliar objects and requests without object-specific answer patches.
 
 ## Measured controls (2026-09-29)
 
@@ -112,7 +134,9 @@ at $0.49/hour. Two hours would be $0.98 GPU time before storage, taxes or other
 charges. Treat this as an estimate, not a reserved quote or total-spend guarantee.
 Propose a $5 maximum authorized spend and two-hour rental window including setup;
 confirm actual instance/storage rates and a termination mechanism before launch.
-A funded account/connection and user approval are still needed. No provisioning,
+The user deferred the paid experiment on 2026-09-29 until funds are available.
+Do not provision or spend until the user resumes it. Local evaluation work continues.
+A funded account/connection and verified termination mechanism are still needed. No provisioning,
 account creation, download of weights or paid run has occurred.
 
 Only the research adapter, reference image and public model/code belong on the

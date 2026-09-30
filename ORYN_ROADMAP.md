@@ -60,6 +60,29 @@ Do not replace that missing run with another manually assembled demo. Record all
 supplied structure, failed outputs and manual repairs. Use the observed failures
 to choose subsequent articulation work or model adaptation.
 
+## Wrist controls (2026-09-29)
+
+The user requested a wrist menu. The Quest runtime now creates a 30 × 33 cm
+four-page menu near the left wrist in place of the large floating controls.
+An open left palm facing the user within view reveals it after 0.2 seconds;
+tracking/focus loss, a turned or closed palm, left-hand object holding and the
+prayer-spread gesture hide it. The right hand uses a fresh index pinch near a
+button. With controllers, left Y toggles the left-hand panel and the right
+controller aims and selects with trigger/A. The host hand cannot select its menu.
+
+Object, Motion, Library and Details pages retain existing actions. Library demos
+are explicitly authored; motion availability still follows the selected object's
+actual mechanical bindings. Hidden page colliders and rear-face proximity are
+excluded. Navigation/visibility transitions clear press latches to avoid replaying
+a held pinch or trigger. Runtime status and existing part annotations are shown
+on the wrist; conversation answer feedback is still a separate display.
+
+Unity compile and 16 focused wrist checks pass, alongside the existing build
+checks. Four editor-rendered page previews were inspected for layout. These are
+layout/logic checks, not proof of headset comfort or gesture reliability. Version
+1.14.0 (18) contains the wrist UI; headset acceptance remains required. No model
+calls or generation-provider charges were made for this change.
+
 ## Earlier milestone: Complete Object Experience / MVP 1
 
 The user approved implementation with ORYN owning its own brain; Codex must not

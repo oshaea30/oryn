@@ -10,6 +10,8 @@ namespace Oryn.Interaction
         public readonly Pose[] Poses = new Pose[4];
         public readonly OrynGesture[] Gestures = new OrynGesture[4];
         public readonly Vector3[] AimPoints = new Vector3[4];
+        public readonly Vector3[] Wrists = new Vector3[2];
+        public readonly bool[] WristValid = new bool[2];
         public readonly OrynPalmSample[] Palms = new OrynPalmSample[2];
         // Thumb, index, middle, ring, little, palm. Raw tracking only: visual
         // contact constraints must never feed back into gesture/input sampling.
@@ -50,7 +52,7 @@ namespace Oryn.Interaction
                 !hand.IsSystemGestureInProgress && skeleton.IsInitialized && skeleton.IsDataValid && skeleton.IsDataHighConfidence &&
                 hand.GetFingerConfidence(OVRHand.HandFinger.Thumb) == OVRHand.TrackingConfidence.High;
             int index = id - 2;
-            Palms[index] = default;
+            Palms[index] = default; WristValid[index] = false;
             for (int n = 0; n < 6; n++) ContactValid[index][n] = false;
             if (!Valid[id]) { classifiers[index].Clear(); Gestures[id] = OrynGesture.None; return; }
             float strongest = 0f;
@@ -84,6 +86,8 @@ namespace Oryn.Interaction
             }
             Valid[id] = thumb != null && indexTip != null;
             if (!Valid[id]) return;
+            WristValid[index] = wrist != null;
+            if (wrist != null) Wrists[index] = wrist.position;
             Contacts[index][0] = thumb.position; ContactValid[index][0] = true;
             Vector3 palm = wrist != null && knuckle != null ? Vector3.Lerp(wrist.position, knuckle.position, 0.55f) : hand.transform.position;
             Contacts[index][5] = palm; ContactValid[index][5] = wrist != null && knuckle != null;

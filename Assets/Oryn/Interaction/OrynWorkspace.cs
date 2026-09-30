@@ -37,6 +37,7 @@ namespace Oryn.Interaction
         private readonly OrynContactHandVisual[] handVisuals = new OrynContactHandVisual[2];
         private OrynWorkspaceObject selected;
         private bool initialized;
+        private OrynWristMenu wristMenu;
         private int nextNumber = 1;
         private string previousStatus;
         private float confirmationUntil;
@@ -78,7 +79,7 @@ namespace Oryn.Interaction
             handVisuals[1] = new OrynContactHandVisual(RightHand, RightSkeleton, transform);
             gameObject.AddComponent<OrynGenerationInbox>().Workspace = this;
             gameObject.AddComponent<OrynCommandBridge>().Workspace = this;
-            OrynMechanicalControls.Install(this);
+            wristMenu = new OrynWristMenu(this);
         }
 
         private void Start()
@@ -92,20 +93,20 @@ namespace Oryn.Interaction
             bool focused = OVRManager.hasInputFocus && OVRManager.hasVrFocus;
             if (!initialized && focused && Rig.centerEyeAnchor.position.y > 0.1f)
             {
-                PositionPanel();
                 initialized = true;
                 LoadStartupModel();
             }
             input.Read(Rig, LeftHand, RightHand, LeftSkeleton, RightSkeleton, focused);
-            bool recenterMenu = focused && ((input.Valid[0] && OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.LTouch)) ||
-                (input.Valid[1] && OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.RTouch)));
-            if (recenterMenu)
-            {
-                PositionPanel(); confirmDelete = false;
-                for (int i = 0; i < 2; i++) { presses[i].Clear(); contactPresses[i].Clear(); }
-            }
+            bool toggleMenu = focused && input.Valid[0] && OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.LTouch);
             Inspector?.Bind(selected);
             UpdatePrayerSpread();
+            bool menuChanged = wristMenu.Update(input, new Pose(Rig.centerEyeAnchor.position, Rig.centerEyeAnchor.rotation),
+                focused && initialized && held[0] == null && held[2] == null && !prayerConsumesHands, toggleMenu);
+            if (menuChanged)
+            {
+                confirmDelete = false;
+                for (int i = 0; i < 4; i++) { presses[i].Clear(); contactPresses[i].Clear(); }
+            }
             for (int i = 0; i < 4; i++)
             {
                 gripPoses[i] = input.Poses[i];
@@ -139,12 +140,13 @@ namespace Oryn.Interaction
                     presses[i].Clear(); contactPresses[i].Clear(); markers[i].enabled = false;
                     continue;
                 }
-                hoveredButtons[i] = input.Valid[i] && held[i] == null ? NearestButton(input.AimPoints[i]) : null;
+                bool menuSource = (i == 1 || i == 3) && Panel.gameObject.activeInHierarchy;
+                hoveredButtons[i] = menuSource && input.Valid[i] && held[i] == null ? NearestButton(input.AimPoints[i]) : null;
                 bool pointingAtMenu = false;
                 Vector3 menuEndpoint = input.AimPoints[i];
                 if (i < 2)
                 {
-                    if (input.Valid[i] && held[i] == null && hoveredButtons[i] == null && Panel.gameObject.activeInHierarchy)
+                    if (menuSource && input.Valid[i] && held[i] == null && hoveredButtons[i] == null)
                     {
                         hoveredButtons[i] = OrynMenuPlacement.PointedButton(Buttons, input.Poses[i], out menuEndpoint);
                         pointingAtMenu = hoveredButtons[i] != null;
@@ -160,7 +162,7 @@ namespace Oryn.Interaction
                 bool gestureReady = input.Gestures[i] == OrynGesture.Manipulate || input.Gestures[i] == OrynGesture.Resize;
                 // Preserve the fresh press while the finger classifier settles; do not consume it early.
                 float activation = gestureReady ? input.Strength[i] : Mathf.Min(input.Strength[i], 0.6f);
-                float menuActivation = activation;
+                float menuActivation = i == 3 && input.ContactValid[1][1] ? RightHand.GetFingerPinchStrength(OVRHand.HandFinger.Index) : activation;
                 if (i < 2)
                 {
                     var controller = i == 0 ? OVRInput.Controller.LTouch : OVRInput.Controller.RTouch;
@@ -168,7 +170,7 @@ namespace Oryn.Interaction
                         OVRInput.Get(OVRInput.Button.One, controller) ? 1f : 0f);
                 }
                 // Sample even off-target: dragging an already held trigger onto UI cannot click.
-                bool panelPress = presses[i].Sample(input.Valid[i] && !recenterMenu, menuActivation);
+                bool panelPress = presses[i].Sample(input.Valid[i] && menuSource && !menuChanged, menuActivation);
                 bool objectPress = contactPresses[i].Sample(input.Valid[i], activation, gestureReady && hoveredObjects[i] != null, Time.unscaledTime);
                 if (held[i] != null) continue;
                 if (hoveredButtons[i] != null)
@@ -216,6 +218,7 @@ namespace Oryn.Interaction
             if (message != previousStatus)
             { Status.text = message; Status.characterSize = message.Length > 45 ? 0.0035f : 0.0045f; previousStatus = message; }
             Inspector?.Bind(selected);
+            wristMenu.Refresh();
         }
 
         private OrynWorkspaceObject ContactObject(int source)
@@ -288,17 +291,12 @@ namespace Oryn.Interaction
         private OrynWorkspaceButton NearestButton(Vector3 point)
         {
             if (!Panel.gameObject.activeInHierarchy) return null;
-            OrynWorkspaceButton nearest = null;
-            float distance = 0.055f;
-            foreach (var button in Buttons)
-            {
-                float current = Vector3.Distance(point, button.Bounds.ClosestPoint(point));
-                if (current < distance) { distance = current; nearest = button; }
-            }
-            return nearest;
+            return OrynMenuPlacement.NearButton(Buttons, point);
         }
+
         private bool CanExecute(OrynWorkspaceButton.Command action)
         {
+            if (action == OrynWorkspaceButton.Command.MenuPrevious || action == OrynWorkspaceButton.Command.MenuNext) return true;
             if (action == OrynWorkspaceButton.Command.DroneDemo || action == OrynWorkspaceButton.Command.V8Demo) return objects.Count < ObjectLimit && !loadingModel;
             if (action >= OrynWorkspaceButton.Command.MotionPlay) return SelectedAssembly()?.Owner.Mechanical != null;
             if (action == OrynWorkspaceButton.Command.PreviousLabel || action == OrynWorkspaceButton.Command.NextLabel)
@@ -319,6 +317,11 @@ namespace Oryn.Interaction
             if (action != OrynWorkspaceButton.Command.Delete) confirmDelete = false;
             switch (action)
             {
+                case OrynWorkspaceButton.Command.MenuPrevious:
+                case OrynWorkspaceButton.Command.MenuNext:
+                    wristMenu.ChangePage(action == OrynWorkspaceButton.Command.MenuNext ? 1 : -1);
+                    for (int i = 0; i < 4; i++) { presses[i].Clear(); contactPresses[i].Clear(); }
+                    break;
                 case OrynWorkspaceButton.Command.DroneDemo: SpawnMechanism(false); break;
                 case OrynWorkspaceButton.Command.V8Demo: SpawnMechanism(true); break;
                 case OrynWorkspaceButton.Command.MotionPlay: SelectedAssembly().Owner.Mechanical.Play(); break;
@@ -515,15 +518,10 @@ namespace Oryn.Interaction
             Vector3 forward = Vector3.ProjectOnPlane(Rig.centerEyeAnchor.forward, Vector3.up).normalized;
             return forward.sqrMagnitude < 0.01f ? Vector3.forward : forward;
         }
-        private void PositionPanel()
-        {
-            Pose pose = OrynMenuPlacement.InFrontOf(new Pose(Rig.centerEyeAnchor.position, Rig.centerEyeAnchor.rotation));
-            Panel.SetPositionAndRotation(pose.position, pose.rotation);
-            Panel.gameObject.SetActive(true);
-        }
         private void ReleaseEverything()
         {
             EndPrayerSpread();
+            if (Panel != null) Panel.gameObject.SetActive(false);
             foreach (var line in menuRays) if (line != null) line.enabled = false;
             prayer.Reset(); prayerConsumesHands = false;
             foreach (var item in objects)

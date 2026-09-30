@@ -18,6 +18,19 @@ namespace Oryn.Interaction
             return new Pose(eye.position + forward * Distance - Vector3.up * BelowEyes - right * LayoutCenter,
                 Quaternion.LookRotation(forward, Vector3.up));
         }
+        public static OrynWorkspaceButton NearButton(OrynWorkspaceButton[] buttons, Vector3 point)
+        {
+            OrynWorkspaceButton nearest = null;
+            float distance = 0.018f;
+            foreach (var button in buttons)
+            {
+                if (button == null || !button.gameObject.activeInHierarchy || button.Bounds == null || !button.Bounds.enabled) continue;
+                if (Vector3.Dot(point - button.transform.position, button.transform.forward) >= 0) continue;
+                float current = Vector3.Distance(point, button.Bounds.ClosestPoint(point));
+                if (current < distance) { distance = current; nearest = button; }
+            }
+            return nearest;
+        }
         public static OrynWorkspaceButton PointedButton(OrynWorkspaceButton[] buttons, Pose pointer, out Vector3 endpoint)
         {
             var ray = new Ray(pointer.position, pointer.rotation * Vector3.forward);

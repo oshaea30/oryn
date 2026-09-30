@@ -26,6 +26,8 @@ across four different requests before another geometry investment. It reuses the
 existing model connection, bounded evidence snapshots and spending ledger. Plans
 remain unverified proposals; passing this test does not pass the generation gate.
 No retrieval execution, GPU run, new format or production route is included.
+The [first live result](PLANNING_RESULT.md) meets all four frozen planning criteria
+at an estimated $0.020945. Geometry and generalization remain unproven.
 
 ## Minimum output and evaluation
 

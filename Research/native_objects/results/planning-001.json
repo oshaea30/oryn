@@ -1,0 +1,456 @@
+{
+  "date": "2026-09-30",
+  "experiment": "planning-001",
+  "frozen_commit": "0224e76",
+  "protocol_sha256": "7be45f79c59edb642d561237f1f0a05b82c6181f8a75d8ef8c3190c49a9d85ec",
+  "instructions_sha256": "597e2b94ea650baf7edd3cc4edd0a9e4fed64bb437da1f079ab1aa4477833f88",
+  "schema_sha256": "8ebf06666b27569dda7f91d41d676bd83762dc3777e0a8dd70e7144548777f51",
+  "local_raw_record_sha256": "c4d5cdcc7b155e13ddaf9469631b9bd45ad8cdc40098d142796164c4bbf7ed24",
+  "model": "gpt-6-sol",
+  "effort": "medium",
+  "max_output_tokens": 2048,
+  "generation_calls": 4,
+  "automatic_retries": 0,
+  "external_retrieval_calls": 0,
+  "gpu_runs": 0,
+  "estimated_cost_usd": 0.020945,
+  "invoice_cost_usd": null,
+  "contract_assessment": "pass",
+  "semantic_assessment": "pass_for_these_four_cases",
+  "reviewer": "Codex agent qualitative review against frozen criteria; not independent human verification",
+  "native_generation_goal_passed": false,
+  "generalization_established": false,
+  "geometry_generated": false,
+  "items": [
+    {
+      "case_id": "generic-drone",
+      "operation_id": "a44aa10ac533b1a57b266011b0935b63",
+      "status": "completed",
+      "elapsed_seconds": 8.935,
+      "candidate": {
+        "version": "oryn-planning-experiment-v1",
+        "context_token": "2bbb092d36f60dba06ab4fab9939b21eaf14879ce70039d3ee4c69d6ad85a9b7",
+        "status": "candidate",
+        "plan": {
+          "assumptions": [
+            "X-shaped four-arm layout",
+            "Exposed propellers",
+            "Removable battery"
+          ],
+          "components": [
+            {
+              "basis": "design_proposal",
+              "name": "Central frame",
+              "source_ids": []
+            },
+            {
+              "basis": "design_proposal",
+              "name": "Four arms",
+              "source_ids": []
+            },
+            {
+              "basis": "design_proposal",
+              "name": "Four motors",
+              "source_ids": []
+            },
+            {
+              "basis": "design_proposal",
+              "name": "Four propellers",
+              "source_ids": []
+            },
+            {
+              "basis": "design_proposal",
+              "name": "Battery",
+              "source_ids": []
+            },
+            {
+              "basis": "design_proposal",
+              "name": "Flight controller",
+              "source_ids": []
+            },
+            {
+              "basis": "design_proposal",
+              "name": "Electronic speed controllers",
+              "source_ids": []
+            }
+          ],
+          "depth": "major_components",
+          "detail_reason": "Major removable groups suit exploration without implying a complete parts list.",
+          "fidelity": "generic_design",
+          "intent": "inspect",
+          "next_step": "propose_geometry",
+          "object": "Generic quadcopter drone",
+          "retrieval": "none",
+          "unknowns": [
+            "Component dimensions and mounting details",
+            "Wiring and internal packaging",
+            "Whether a camera or other payload is desired"
+          ]
+        },
+        "generation_allowed": false,
+        "execution_allowed": false,
+        "geometry_status": "not_generated",
+        "semantic_quality": "not_assessed",
+        "evidence_status": "citation_membership_checked_not_entailment",
+        "source_snapshots": [],
+        "limitations": [
+          "Model proposal, not a verified bill of materials.",
+          "Generator realization, fit, physical validity and Quest performance are untested."
+        ],
+        "derived_by": {
+          "provider": "openai",
+          "model": "gpt-6-sol",
+          "effort": "medium",
+          "instructions_sha256": "597e2b94ea650baf7edd3cc4edd0a9e4fed64bb437da1f079ab1aa4477833f88",
+          "body_sha256": "2fc9575268ef9a15b6fff64d44a07d4112345cb18ba865c4d8cd87d69501e665"
+        },
+        "cost": {
+          "calculated_nanos": 5285000,
+          "actual_nanos": null,
+          "status": "usage_estimate"
+        }
+      },
+      "billing": {
+        "status": "completed",
+        "outcome": "completed",
+        "reserved_nanos": 22235000,
+        "calculated_cost_nanos": 5285000,
+        "actual_cost_nanos": null,
+        "actual_input_tokens": 702,
+        "actual_output_tokens": 353
+      },
+      "request": "Show me a generic quadcopter drone I can explore and take apart into its major components.",
+      "review": [
+        {
+          "criterion": "Recognizable major propulsion/body/control roles, with propellers distinguished from motors.",
+          "status": "pass",
+          "observation": "Seven proposed roles distinguish four motors from four propellers and include frame, arms, battery, flight controller and speed controllers."
+        },
+        {
+          "criterion": "No unnecessary individual fasteners or purported exact engineering layout.",
+          "status": "pass",
+          "observation": "Major groups only; mounting dimensions and wiring are explicitly unknown. No individual fastener inventory or exact layout is claimed."
+        },
+        {
+          "criterion": "Design choices remain proposals; geometry and fit untested.",
+          "status": "pass",
+          "observation": "Every component is a design proposal. X layout, exposed propellers and removable battery are assumptions; geometry remains ungenerated."
+        }
+      ]
+    },
+    {
+      "case_id": "generic-speaker",
+      "operation_id": "cdccce5cdbc7dc70dd86df1995ba42fd",
+      "status": "completed",
+      "elapsed_seconds": 11.381,
+      "candidate": {
+        "version": "oryn-planning-experiment-v1",
+        "context_token": "ddec2709f0cc41e06813eda3aef550afe43bb87470c7949015f4bb1674d1ea28",
+        "status": "candidate",
+        "plan": {
+          "assumptions": [
+            "Conceptual, non-product-specific speaker with a rechargeable battery.",
+            "A single full-range driver and passive radiator are proposed design choices.",
+            "Enclosure sections are separable to expose the main systems."
+          ],
+          "components": [
+            {
+              "basis": "design_proposal",
+              "name": "Separable enclosure sections",
+              "source_ids": []
+            },
+            {
+              "basis": "design_proposal",
+              "name": "Front grille",
+              "source_ids": []
+            },
+            {
+              "basis": "design_proposal",
+              "name": "Full-range speaker driver",
+              "source_ids": []
+            },
+            {
+              "basis": "design_proposal",
+              "name": "Passive radiator",
+              "source_ids": []
+            },
+            {
+              "basis": "design_proposal",
+              "name": "Rechargeable battery pack",
+              "source_ids": []
+            },
+            {
+              "basis": "design_proposal",
+              "name": "Bluetooth and control board",
+              "source_ids": []
+            },
+            {
+              "basis": "design_proposal",
+              "name": "Audio amplifier board",
+              "source_ids": []
+            },
+            {
+              "basis": "design_proposal",
+              "name": "Charging port",
+              "source_ids": []
+            },
+            {
+              "basis": "design_proposal",
+              "name": "Control buttons",
+              "source_ids": []
+            }
+          ],
+          "depth": "major_components",
+          "detail_reason": "Separates the enclosure, sound-producing parts, power, and electronics for inspection without detailing every small part.",
+          "fidelity": "generic_design",
+          "intent": "inspect",
+          "next_step": "propose_geometry",
+          "object": "Generic portable Bluetooth speaker",
+          "retrieval": "none",
+          "unknowns": [
+            "Exact dimensions and component fit",
+            "Battery capacity and electrical design",
+            "Actual internal layout and acoustic performance"
+          ]
+        },
+        "generation_allowed": false,
+        "execution_allowed": false,
+        "geometry_status": "not_generated",
+        "semantic_quality": "not_assessed",
+        "evidence_status": "citation_membership_checked_not_entailment",
+        "source_snapshots": [],
+        "limitations": [
+          "Model proposal, not a verified bill of materials.",
+          "Generator realization, fit, physical validity and Quest performance are untested."
+        ],
+        "derived_by": {
+          "provider": "openai",
+          "model": "gpt-6-sol",
+          "effort": "medium",
+          "instructions_sha256": "597e2b94ea650baf7edd3cc4edd0a9e4fed64bb437da1f079ab1aa4477833f88",
+          "body_sha256": "7fc6d8944ee18e699ee3a1ae9ce091ce837670181c32718232ec8e6fd9129d3a"
+        },
+        "cost": {
+          "calculated_nanos": 6967500,
+          "actual_nanos": null,
+          "status": "usage_estimate"
+        }
+      },
+      "billing": {
+        "status": "completed",
+        "outcome": "completed",
+        "reserved_nanos": 22227500,
+        "calculated_cost_nanos": 6967500,
+        "actual_cost_nanos": null,
+        "actual_input_tokens": 699,
+        "actual_output_tokens": 522
+      },
+      "request": "Generate a generic portable Bluetooth speaker I can take apart to understand its main systems.",
+      "review": [
+        {
+          "criterion": "Enclosure, sound-producing driver, power and control/electronics roles are represented sensibly.",
+          "status": "pass",
+          "observation": "Nine proposed roles include separable enclosure, grille, driver, battery, control board, amplifier, charging port and buttons."
+        },
+        {
+          "criterion": "Driver count, battery arrangement and other design choices are assumptions, not universal facts.",
+          "status": "pass",
+          "observation": "Single full-range driver and passive radiator are explicitly design choices; fit, battery design and layout remain unknown."
+        },
+        {
+          "criterion": "No claimed exact internals or validated acoustics.",
+          "status": "pass",
+          "observation": "Generic design classification and proposal labels are retained. Acoustic performance is explicitly unknown."
+        }
+      ]
+    },
+    {
+      "case_id": "exact-product",
+      "operation_id": "d45853f9431406bfbf8ffbeee8092c22",
+      "status": "completed",
+      "elapsed_seconds": 5.306,
+      "candidate": {
+        "version": "oryn-planning-experiment-v1",
+        "context_token": "ee8b2e9e124712e408aa5b13c578c03c5f0e9e206009150dd7a6df6ad2e476be",
+        "status": "candidate",
+        "plan": {
+          "assumptions": [],
+          "components": [],
+          "depth": "task_relevant",
+          "detail_reason": "The request focuses on the internal assembly and battery mount. No matching source was supplied, so internal parts and mounting details cannot be identified reliably.",
+          "fidelity": "exact_product",
+          "intent": "inspect",
+          "next_step": "retrieve_evidence",
+          "object": "JBL Flip 7",
+          "retrieval": "exact_documents",
+          "unknowns": [
+            "Internal assembly layout for the JBL Flip 7",
+            "Battery mounting method and fit",
+            "Applicable model or hardware revision"
+          ]
+        },
+        "generation_allowed": false,
+        "execution_allowed": false,
+        "geometry_status": "not_generated",
+        "semantic_quality": "not_assessed",
+        "evidence_status": "citation_membership_checked_not_entailment",
+        "source_snapshots": [],
+        "limitations": [
+          "Model proposal, not a verified bill of materials.",
+          "Generator realization, fit, physical validity and Quest performance are untested."
+        ],
+        "derived_by": {
+          "provider": "openai",
+          "model": "gpt-6-sol",
+          "effort": "medium",
+          "instructions_sha256": "597e2b94ea650baf7edd3cc4edd0a9e4fed64bb437da1f079ab1aa4477833f88",
+          "body_sha256": "8c7ef854bcfc741182bb480fc38decabaf90c086b058549503f72d4308de8c3b"
+        },
+        "cost": {
+          "calculated_nanos": 3845000,
+          "actual_nanos": null,
+          "status": "usage_estimate"
+        }
+      },
+      "billing": {
+        "status": "completed",
+        "outcome": "completed",
+        "reserved_nanos": 22235000,
+        "calculated_cost_nanos": 3845000,
+        "actual_cost_nanos": null,
+        "actual_input_tokens": 702,
+        "actual_output_tokens": 209
+      },
+      "request": "Show me the internal assembly of a JBL Flip 7, including how the battery is mounted.",
+      "review": [
+        {
+          "criterion": "Recognizes an exact real product and requests matching technical evidence.",
+          "status": "pass",
+          "observation": "Classifies JBL Flip 7 as exact_product and requests exact_documents; applicable hardware revision is unknown."
+        },
+        {
+          "criterion": "Does not invent battery mounts, internal layout or supported component facts.",
+          "status": "pass",
+          "observation": "Returns an empty component list and identifies battery mounting method/fit and internal layout as missing evidence."
+        },
+        {
+          "criterion": "No geometry proposal proceeds as if reconstruction were established.",
+          "status": "pass",
+          "observation": "Chooses retrieve_evidence, not propose_geometry. No evidence was supplied, retrieved or invented."
+        }
+      ]
+    },
+    {
+      "case_id": "creative-concept",
+      "operation_id": "f8d54986c669705ebe72fecbdacbb7ab",
+      "status": "completed",
+      "elapsed_seconds": 7.869,
+      "candidate": {
+        "version": "oryn-planning-experiment-v1",
+        "context_token": "3daddc24a05067664784312b05d169e297612cc3853dff7d08f512527b6c70d0",
+        "status": "candidate",
+        "plan": {
+          "assumptions": [
+            "The lamp is a visual concept, not a buildable electrical product.",
+            "The glowing seed is represented as an illuminated form without modeled circuitry."
+          ],
+          "components": [
+            {
+              "basis": "design_proposal",
+              "name": "Curled leaf shade",
+              "source_ids": []
+            },
+            {
+              "basis": "design_proposal",
+              "name": "Glowing seed",
+              "source_ids": []
+            },
+            {
+              "basis": "design_proposal",
+              "name": "Seed suspension strand",
+              "source_ids": []
+            },
+            {
+              "basis": "design_proposal",
+              "name": "Stem support",
+              "source_ids": []
+            },
+            {
+              "basis": "design_proposal",
+              "name": "Desk base",
+              "source_ids": []
+            }
+          ],
+          "depth": "major_components",
+          "detail_reason": "Separate the main visible pieces so the leaf, suspended seed, and supporting forms can be inspected.",
+          "fidelity": "creative_concept",
+          "intent": "inspect",
+          "next_step": "propose_geometry",
+          "object": "Curled-leaf desk lamp with a suspended glowing seed",
+          "retrieval": "none",
+          "unknowns": [
+            "Overall size and proportions are unspecified.",
+            "Leaf curl and seed shape are open to interpretation."
+          ]
+        },
+        "generation_allowed": false,
+        "execution_allowed": false,
+        "geometry_status": "not_generated",
+        "semantic_quality": "not_assessed",
+        "evidence_status": "citation_membership_checked_not_entailment",
+        "source_snapshots": [],
+        "limitations": [
+          "Model proposal, not a verified bill of materials.",
+          "Generator realization, fit, physical validity and Quest performance are untested."
+        ],
+        "derived_by": {
+          "provider": "openai",
+          "model": "gpt-6-sol",
+          "effort": "medium",
+          "instructions_sha256": "597e2b94ea650baf7edd3cc4edd0a9e4fed64bb437da1f079ab1aa4477833f88",
+          "body_sha256": "7bfe5914ccdca6931c41d58a6373de8ab34deb4cdd46e49e43103e517fc41d8e"
+        },
+        "cost": {
+          "calculated_nanos": 4847500,
+          "actual_nanos": null,
+          "status": "usage_estimate"
+        }
+      },
+      "billing": {
+        "status": "completed",
+        "outcome": "completed",
+        "reserved_nanos": 22277500,
+        "calculated_cost_nanos": 4847500,
+        "actual_cost_nanos": null,
+        "actual_input_tokens": 719,
+        "actual_output_tokens": 305
+      },
+      "request": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside. Let me inspect its main pieces; it does not need to be a buildable electrical product.",
+      "review": [
+        {
+          "criterion": "Preserves leaf/seed design intent without requiring a real-product manual.",
+          "status": "pass",
+          "observation": "Preserves curled leaf, glowing seed and suspension in a five-role plan without requiring a product manual."
+        },
+        {
+          "criterion": "Plausible concise design components, clearly proposed.",
+          "status": "pass",
+          "observation": "Leaf shade, seed, suspension strand, stem and base are all design proposals; proportions and shapes remain open."
+        },
+        {
+          "criterion": "Does not claim electrical safety, manufacturability or generated geometry.",
+          "status": "pass",
+          "observation": "Explicitly calls the result a visual concept with no modeled circuitry or buildability claim."
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "One run per case, four selected cases, all inspection requests; no repeatability, broad generalization or intent-depth variation established.",
+    "No source snapshots were provided. Retrieval execution, source entailment, conflicting references and evidence-present planning remain untested live.",
+    "The model supplies fidelity classification. A misclassified exact request can evade category-specific validation; offline validation cannot certify semantic correctness.",
+    "Lists include groups, not instance IDs, mesh bindings, dimensions, placements or assembly relationships.",
+    "No geometry, animation, physical validity, fit, safety or Quest performance was tested.",
+    "Application-owned research CLI only; not connected to the headset or production generation route."
+  ]
+}

@@ -66,12 +66,14 @@ Estimated A+B rental cost is $0.1541; both pods were terminated, with no remaini
 pods or network volumes. Billing records have not settled.
 
 Stop paid trials of this configuration; do not automatically buy seeds 1/2 or
-promote B. Before another geometry run, execute the bounded
-[planning experiment 001](Research/native_objects/PLANNING_EXPERIMENT.md): four
-diverse requests, one shared model policy, no object-specific recipes, a $0.20
-batch ceiling, and predeclared semantic review. This tests request interpretation
-and evidence needs; it does not prove retrieval, geometry or generalization.
-Then assess an alternative generation approach against the observed
+promote B. The bounded [planning experiment 001](Research/native_objects/PLANNING_RESULT.md)
+completed four diverse live requests with one shared model policy and no object-specific
+recipes. All four met their predeclared planning criteria, including refusing to invent
+exact-product internals without evidence. Estimated usage was $0.020945 against a
+$0.20 ceiling. This tests request interpretation and evidence needs in four cases;
+it does not prove retrieval, geometry, repeatability or generalization.
+Next, assess whether an alternative generation approach can realize component plans
+across different objects, while addressing the observed
 fused body/arm/camera and fragmented propeller failures before paying again. This
 single pair does not establish PartCrafter's ceiling or justify training. Additional
 provider integrations, product changes and motion work stay paused.

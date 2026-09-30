@@ -6,6 +6,10 @@ A separate application-owned reasoning layer should decide which behavior, if an
 suits the object and the request. Motion execution is a third evaluation. This directory is a research harness, not an implemented generator
 or replacement for ORYN's production object route. Answer development is paused.
 
+Current next experiment: [framing comparison 001](FRAMING_COMPARISON.md), with
+criteria and input hashes frozen before run B. Product/research contract mapping
+is in [Complete Object](../../ORYN_COMPLETE_OBJECT.md#relationship-to-the-research-contract).
+
 ## Minimum output and evaluation
 
 The research package (`oryn-native-experiment-v1`) retains component-bound triangle

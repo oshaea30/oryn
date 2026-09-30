@@ -23,6 +23,28 @@ write knowledge, introduce component identities or author unsupported explanatio
 Unknown requests stay unknown. Open-ended generation stays at /objects during this
 increment, so an unrecognized command never accidentally purchases geometry.
 
+## Relationship to the research contract
+
+This document describes the product's validated, executable object record. The
+`oryn-native-experiment-v1` package in `Research/native_objects` records experimental
+geometry and missing information; it does not authorize runtime capabilities.
+We retain these two contracts instead of introducing another object format.
+
+| Concern | Research package | Product requirement before use |
+|---|---|---|
+| Identity and geometry | Stable part IDs, source hashes, original geometry | Explicit geometry/component bindings, object revision and session identity |
+| Scale and assembly | Source units and unknown parent relationships permitted | Established units and validated relationships for the requested operation |
+| Component meaning | Roles/subsystems may be unknown | Evidence-scoped meaning; a mesh ID alone is not a semantic component |
+| Behavior and motion | Absent motion and candidate proposals are allowed | Application judgment is separate from validated motion and dispatch eligibility |
+| Evidence | Origin and missing facets recorded | Claims preserve provenance and independently assessed support |
+| Capabilities | Inspection declarations for the research viewer | Runtime checks decide what this object can actually execute |
+
+Provenance (authored/model-generated), evidence support (unknown/candidate/supported)
+and execution eligibility are separate dimensions, never one combined status enum.
+Unknown hierarchy is not evidence of no hierarchy. No animation data is not a
+reasoned static decision. A structural pass does not prove visual quality, fit,
+physical accuracy or Quest performance. Research-to-product promotion is explicit.
+
 ## Application contract
 
 Typed input and eventual voice transcripts use the same conversation endpoint.

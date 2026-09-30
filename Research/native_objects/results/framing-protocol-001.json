@@ -1,0 +1,60 @@
+{
+  "experiment": "partcrafter-framing-001",
+  "predeclared_at_utc": "2026-09-30T19:31:35.661215+00:00",
+  "condition_a": {
+    "run_id": "26f7a1f79ae04aecade8dda00c865cd7",
+    "image_sha256": "c954797dfdff8c547fc9325bcbf7fe8bd9f4fdef997247be0f2b36ef23f23460",
+    "image_size": [
+      1024,
+      1024
+    ],
+    "foreground_bbox": [
+      353,
+      400,
+      663,
+      599
+    ]
+  },
+  "condition_b": {
+    "image_sha256": "9e73908b7e97b12fa04c2435626b155cd6b941d00a9baffc7813010af1e0599f",
+    "image_size": [
+      1024,
+      1024
+    ],
+    "operation": "Crop all non-white foreground (luminance difference >5), center on square white canvas with 10% longest-side padding on each side, resize with Pillow LANCZOS to original dimensions. No synthesis or mesh changes.",
+    "pillow_version": "12.3.0",
+    "crop_bbox": [
+      353,
+      400,
+      663,
+      599
+    ],
+    "padded_side": 372
+  },
+  "fixed": {
+    "upstream_revision": "3d773bf02fad51c7ab31a5615573fec93b287b30",
+    "model_revisions": {
+      "wgsxm/PartCrafter": "69a0ffc1dad5e48e7e5ed91c0609f2b1276eb31f"
+    },
+    "adapter_sha256": "2f67f5b128bbf298d63e09de7b760390b1352e0ddb75aa7991fad3a0418b72ed",
+    "dependencies_sha256": "43d9ebc9dc3d3be6dfa807a7d6085ecedd39f432f61e92c515a4926751619850",
+    "num_parts": 13,
+    "seed": 0,
+    "steps": 50,
+    "tokens_per_part": 1024,
+    "guidance_scale": 7.0,
+    "flash_decoder": false,
+    "gpu": "NVIDIA A40",
+    "dtype": "float16"
+  },
+  "runs_authorized_now": 1,
+  "manual_output_repairs_allowed": 0,
+  "budget": {
+    "combined_experiment_ceiling_usd": 5,
+    "a_estimated_usd": 0.077,
+    "b_gpu_rate_max_usd_hour": 0.49,
+    "b_rental_deadline_seconds": 7200
+  },
+  "scorecard": "Research/native_objects/FRAMING_COMPARISON.md",
+  "decision": "Material improvement requires visual score +2 and component usefulness score +2 versus A, no visual criterion at fail, at least three distinct useful major components, zero output repairs, and valid comparable execution. Otherwise stop spending on this configuration. More seeds are a separate follow-up; no automatic runs."
+}

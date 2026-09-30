@@ -4,6 +4,15 @@ An experimental spatial workspace for generating, manipulating, and investigatin
 3D objects on Meta Quest. Geometry generation is separate from ORYN's persistent
 object knowledge and validated runtime actions.
 
+## Current priority
+
+The active milestone is a controlled native-object generation comparison. The
+first PartCrafter run executed successfully but failed the intended visual target.
+See the [working roadmap](ORYN_ROADMAP.md) for current priorities and the
+[frozen framing protocol](Research/native_objects/FRAMING_COMPARISON.md) for the
+next experiment. The Quest product stays stable while this research is evaluated;
+general answering, voice, training and motion inference are paused.
+
 ## Complete Object integration preview
 
 The default local page now routes typed requests through ORYN’s own bounded

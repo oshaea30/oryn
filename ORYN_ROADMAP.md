@@ -1,6 +1,6 @@
 # ORYN working roadmap
 
-Last checkpoint: 2026-09-29. This file records the agreed direction so new ideas
+Last checkpoint: 2026-09-30. This file records the agreed direction so new ideas
 do not silently replace the current milestone.
 
 ## Product goal
@@ -41,11 +41,21 @@ controls pass. Authored motion agrees with sampled geometry; the saved generated
 model remains missing semantics, hierarchy and motion. Neither passes the complete
 native generation goal. Appearance, attachment fit and clearance remain unassessed.
 
-No new model inference or training has run. A CUDA worker is required for the
-selected released baseline; the user's Mac does not provide that platform. A
-single GPU experiment is prepared with a $5 spend ceiling. On 2026-09-29 the user
-deferred that paid run until funds are available; do not provision or spend until
-they resume it. Account access, current pricing and termination remain unresolved.
+The first PartCrafter GPU run completed: 13 meshes, 195,708 triangles, 204.461
+seconds, no manual repairs. Structure passes; desktop visual quality falls short,
+with floating fragments and malformed major shapes. Semantics, hierarchy and
+motion remain unknown. Estimated rental cost was $0.077; the pod was terminated.
+See the [measured result](Research/native_objects/results/partcrafter-run-001.json).
+
+Next is one [predeclared framing comparison](Research/native_objects/FRAMING_COMPARISON.md):
+audit expected preprocessing, compare the preserved original with tighter framing
+under fixed settings, and apply the frozen scorecard and stopping rule. Only a
+material improvement warrants later repeatability tests. Only promising geometry
+advances to measured Quest viability. Training and additional providers stay paused.
+
+Generation research is the active track. The product remains stable; answering,
+voice and motion-inference expansion are paused. Research output does not enter
+production automatically. The existing $5 research ceiling includes the prior run.
 
 Local work now separates object structure/quality, application-owned behavioral
 judgment, and optional validated animation. Missing animation does not fail object
@@ -54,9 +64,9 @@ judgment has an application-side model interface and candidate validator in
 `Orchestrator/behavior_decision.py`. It binds proposals to the exact object, request
 and selection; rejects invented IDs/stale results; and never enables execution.
 Fifteen offline tests use scripted responses, not demonstrated model judgment.
-No live adapter or production route is connected; reports keep judgment unassessed. This is
-preparation for measuring generation, not a replacement for the deferred GPU run.
-Do not replace that missing run with another manually assembled demo. Record all
+No live adapter or production route is connected; reports keep judgment unassessed. This remains
+preparation for later behavioral measurement, not demonstrated intelligent judgment.
+Do not replace failed generated output with a manually assembled demo. Record all
 supplied structure, failed outputs and manual repairs. Use the observed failures
 to choose subsequent articulation work or model adaptation.
 
@@ -87,8 +97,8 @@ The curved fan, short labels and thin wrist tether retain the user's visual
 references. Controls are 9–19 cm from the wrist anchor. Local tests cover both
 hand geometries, several hand sizes, pose timing, release/rearm and mirrored
 selection. Synthetic tracking tests and editor renders cannot establish real
-headset detection reliability; that acceptance remains open. General answering
-and paid GPU generation remain deferred.
+headset detection reliability; that acceptance remains open. General answering remains paused. The paid research run and next comparison are
+tracked in the current milestone above.
 
 ## Earlier milestone: Complete Object Experience / MVP 1
 

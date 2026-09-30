@@ -4,29 +4,33 @@ using UnityEngine;
 
 namespace Oryn.Interaction
 {
-    // Palm orientation reveals only the launcher. Opening always needs a separate action.
+    // Quick deliberate pose opens directly. Relaxing the fingers does not close an open menu.
     public sealed class OrynWristReveal
     {
-        public bool Visible { get; private set; }
+        public bool Visible => Expanded;
         public bool Expanded { get; private set; }
         private float dwell;
-        public void Reset() { Visible = Expanded = false; dwell = 0; }
-        public void Toggle() { if (Visible) Expanded = !Expanded; }
-        public bool Sample(OrynPalmSample palm, Vector3 wrist, Pose eye, bool eligible, float seconds)
+        private bool armed = true;
+        public void Reset() { Expanded = false; dwell = 0; armed = false; }
+        public void Toggle() { if (Expanded) Reset(); else { Expanded = true; armed = false; } }
+        public bool Sample(OrynPalmSample palm, Vector3 wrist, Pose eye, bool pose, bool eligible, float seconds)
         {
             Vector3 toEye = eye.position - wrist;
-            bool facing = eligible && palm.Valid && palm.Open && toEye.magnitude >= 0.20f && toEye.magnitude <= 0.85f &&
-                Vector3.Dot(palm.Normal, toEye.normalized) > (Visible ? 0.25f : 0.60f) &&
-                Vector3.Dot(eye.rotation * Vector3.forward, -toEye.normalized) > 0.50f;
-            if (!facing || !float.IsFinite(seconds)) { Reset(); return false; }
-            dwell += Mathf.Clamp(seconds, 0, 0.05f);
-            Visible = dwell >= 0.30f;
-            return Visible;
+            bool available = eligible && palm.Valid && toEye.magnitude >= 0.18f && toEye.magnitude <= 0.9f &&
+                Vector3.Dot(palm.Normal, Vector3.up) > (Expanded ? 0.15f : 0.5f) &&
+                Vector3.Dot(eye.rotation * Vector3.forward, -toEye.normalized) > 0.25f;
+            if (!available || !float.IsFinite(seconds)) { Reset(); return false; }
+            if (!pose) { armed = true; dwell = 0; }
+            else if (armed && !Expanded)
+            {
+                dwell += Mathf.Clamp(seconds, 0, 0.05f);
+                if (dwell >= 0.08f) { Expanded = true; armed = false; }
+            }
+            return Expanded;
         }
         public void Controller(bool available, bool toggle)
         {
             if (!available) { Reset(); return; }
-            Visible = true;
             if (toggle) Toggle();
         }
         public static bool NearObject(Collider bounds, Vector3 point)
@@ -63,7 +67,10 @@ namespace Oryn.Interaction
     {
         public const int PageCount = 4;
         private readonly OrynWorkspace workspace;
-        private readonly OrynWristReveal reveal = new OrynWristReveal();
+        private readonly OrynWristReveal[] reveals = { new OrynWristReveal(), new OrynWristReveal() };
+        private OrynWristReveal reveal => reveals[HostHand];
+        public int HostHand { get; private set; }
+        public bool AllowsSource(int source) => Expanded && source >= 0 && source < 4 && source % 2 != HostHand;
         private readonly OrynWristVisualResources resources;
         private readonly Transform fan, hubRing;
         private readonly LineRenderer tether;
@@ -72,7 +79,10 @@ namespace Oryn.Interaction
         private readonly TextMesh[] captions = new TextMesh[6];
         private readonly OrynWorkspaceButton[] slots = new OrynWorkspaceButton[6];
         private readonly Mesh[] homeMeshes = new Mesh[4], actionMeshes = new Mesh[6];
-        private int page = -1, inputMode = -1;
+        private readonly Mesh[] mirroredHome = new Mesh[4], mirroredActions = new Mesh[6];
+        private readonly Transform fanAccent;
+        private readonly int[] inputModes = { -1, -1 };
+        private int page = 0;
         private string previousStatus, previousDetails;
         public bool Expanded => reveal.Expanded;
         private static readonly string[] Titles = { "INSPECT", "MOTION", "OBJECTS", "DETAILS" };
@@ -110,13 +120,15 @@ namespace Oryn.Interaction
             tether = new GameObject("Wrist tether").AddComponent<LineRenderer>();
             tether.transform.SetParent(owner.Panel,false);tether.useWorldSpace=false;tether.positionCount=2;
             tether.startWidth=0.0012f;tether.endWidth=0.0006f;tether.sharedMaterial=resources.Accent;
-            Visual(fan,Own(Sector(0.076f,0.0775f,-82,82,40)),resources.Accent);
+            fanAccent = Visual(fan,Own(Sector(0.076f,0.0775f,-82,82,40)),resources.Accent);
             title = Label(fan,"ORYN",new Vector3(-0.003f,0.061f,-0.011f),0.0025f);
             status = Label(fan,"",new Vector3(-0.03f,-0.066f,-0.011f),0.0017f);
             details = Label(fan,"",new Vector3(-0.075f,-0.09f,-0.011f),0.00165f);
             details.anchor = TextAnchor.UpperLeft; details.alignment = TextAlignment.Left;
             for (int i=0;i<4;i++) homeMeshes[i] = Own(Sector(0.091f,0.19f,60-i*40-18,60-i*40+18,12));
             for (int i=0;i<6;i++) actionMeshes[i] = Own(Sector(0.091f,0.19f,67.5f-i*27-11.5f,67.5f-i*27+11.5f,10));
+            for(int i=0;i<4;i++) mirroredHome[i]=Own(Mirror(homeMeshes[i]));
+            for(int i=0;i<6;i++) mirroredActions[i]=Own(Mirror(actionMeshes[i]));
             for(int i=0;i<6;i++)
             {
                 slots[i] = Button(fan,material,actionMeshes[i]); owner.Buttons[i] = slots[i];
@@ -144,83 +156,93 @@ namespace Oryn.Interaction
             text.alignment=TextAlignment.Center;text.richText=false;text.text=value;text.color=new Color(0.86f,0.94f,0.96f);
             text.GetComponent<Renderer>().sharedMaterial=workspace.Status.GetComponent<Renderer>().sharedMaterial;return text;
         }
-        public static Vector3 SlotCenter(int index,bool home)
+        public static Vector3 SlotCenter(int index,bool home,int hand=0)
         {
             float radians=(home ? 60-index*40 : 67.5f-index*27)*Mathf.Deg2Rad;
-            return new Vector3(Mathf.Cos(radians)*0.143f,Mathf.Sin(radians)*0.143f,-0.011f);
+            return new Vector3(Mathf.Cos(radians)*0.143f*(hand==0 ? 1 : -1),Mathf.Sin(radians)*0.143f,-0.011f);
         }
         private void Layout()
         {
             fan.gameObject.SetActive(reveal.Expanded);
+            int direction = HostHand==0 ? 1 : -1;
+            fanAccent.localScale = new Vector3(direction,1,1);
+            status.transform.localPosition = new Vector3(-0.03f*direction,-0.066f,-0.011f);
+            details.transform.localPosition = new Vector3(HostHand==0 ? -0.075f : -0.02f,-0.09f,-0.011f);
             hub.transform.localScale=Vector3.one*(reveal.Expanded ? 1 : 0.60f);
             hubRing.localScale=hub.transform.localScale;
             hubText.transform.localScale=Vector3.one*(reveal.Expanded ? 1 : 0.70f);
-            hubText.text=!reveal.Expanded ? "ORYN" : page<0 ? "Close" : "Back";
-            title.text=page<0 ? "ORYN" : Titles[page];
+            hubText.text=HostHand==1 || page<0 ? "Close" : "Tools";
+            title.text=page<0 ? "LEFT / TOOLS" : (HostHand==0 ? "L / " : "R / ")+Titles[page];
             details.gameObject.SetActive(page==3);status.gameObject.SetActive(page!=3);
             previousStatus=previousDetails=null;
             for(int i=0;i<6;i++)
             {
-                bool active=page<0 ? i<4 : Labels[page][i].Length>0;
+                bool active=page<0 ? i<4 && i!=1 : Labels[page][i].Length>0;
                 slots[i].gameObject.SetActive(active);captions[i].gameObject.SetActive(active);
                 if(!active)continue;
-                Mesh mesh=page<0 ? homeMeshes[i] : actionMeshes[i];
+                Mesh mesh=HostHand==0 ? (page<0 ? homeMeshes[i] : actionMeshes[i]) : (page<0 ? mirroredHome[i] : mirroredActions[i]);
                 slots[i].GetComponent<MeshFilter>().sharedMesh=mesh;((MeshCollider)slots[i].Bounds).sharedMesh=mesh;
                 slots[i].Action=page<0 ? (OrynWorkspaceButton.Command)((int)OrynWorkspaceButton.Command.MenuObject+i) : Actions[page][i];
                 captions[i].text=page<0 ? new[]{"Inspect","Motion","Objects","Details"}[i] : Labels[page][i];
-                captions[i].transform.localPosition=SlotCenter(i,page<0);
+                captions[i].transform.localPosition=SlotCenter(i,page<0,HostHand);
             }
         }
         public void Navigate(OrynWorkspaceButton.Command action)
         {
+            if (!reveal.Expanded) return;
             if(action==OrynWorkspaceButton.Command.MenuHome)
             {
-                if(!reveal.Expanded) { page=-1;reveal.Toggle(); }
-                else if(page>=0) page=-1;
-                else reveal.Toggle();
+                if(HostHand==1 || page<0) reveal.Reset(); else page=-1;
             }
-            else if(reveal.Expanded && action>=OrynWorkspaceButton.Command.MenuObject && action<=OrynWorkspaceButton.Command.MenuDetails)
+            else if(HostHand==0 && action>=OrynWorkspaceButton.Command.MenuObject && action<=OrynWorkspaceButton.Command.MenuDetails && action!=OrynWorkspaceButton.Command.MenuMotion)
                 page=(int)action-(int)OrynWorkspaceButton.Command.MenuObject;
+            workspace.Panel.gameObject.SetActive(reveal.Visible);
             Layout();
         }
         public void Hide()
         {
-            reveal.Reset();page=-1;inputMode=-1;Layout();workspace.Panel.gameObject.SetActive(false);
+            foreach(var state in reveals) state.Reset();
+            page=HostHand==0 ? 0 : 1;Layout();workspace.Panel.gameObject.SetActive(false);
         }
-        public bool Update(OrynTrackedInput input,Pose eye,bool eligible,bool toggleController)
+        public bool Update(OrynTrackedInput input,Pose eye,bool eligible,bool toggleLeft,bool toggleRight=false)
         {
-            bool wasVisible=workspace.Panel.gameObject.activeSelf,wasExpanded=reveal.Expanded;
-            int mode=input.Valid[2] && input.WristValid[0] ? 2 : input.Valid[0] ? 0 : -1;
-            if(mode!=inputMode) { reveal.Reset();inputMode=mode; }
-            Pose pose=default;
-            if(!eligible || mode<0)reveal.Reset();
-            else if(mode==2)
+            bool wasVisible=workspace.Panel.gameObject.activeSelf;int previousHand=HostHand, requestedHand=-1;
+            for(int hand=0;hand<2;hand++)
             {
-                reveal.Sample(input.Palms[0],input.Wrists[0],eye,true,Time.unscaledDeltaTime);
-                pose=OrynWristReveal.Placement(input.Wrists[0],input.Palms[0].Fingers,input.Palms[0].Normal,eye);
+                bool wasOpen=reveals[hand].Expanded;
+                int mode=input.Valid[hand+2] && input.WristValid[hand] ? 2 : input.Valid[hand] ? 0 : -1;
+                if(mode!=inputModes[hand] && inputModes[hand]>=0) reveals[hand].Reset();
+                inputModes[hand]=mode;
+                if(!eligible || mode<0) reveals[hand].Reset();
+                else if(mode==2) reveals[hand].Sample(input.Palms[hand],input.Wrists[hand],eye,input.WristMenuPose[hand],true,Time.unscaledDeltaTime);
+                else reveals[hand].Controller(true,hand==0 ? toggleLeft : toggleRight);
+                if(!wasOpen && reveals[hand].Expanded)requestedHand=hand;
             }
-            else
+            if(requestedHand>=0)HostHand=requestedHand;
+            if(!reveals[HostHand].Expanded && reveals[1-HostHand].Expanded)HostHand=1-HostHand;
+            // A fresh pose switches wrists directly; a held pose on the old wrist cannot steal focus back.
+            if(reveal.Expanded && reveals[1-HostHand].Expanded)reveals[1-HostHand].Reset();
+            bool visible=reveal.Visible;
+            workspace.Panel.gameObject.SetActive(visible);
+            if(visible)
             {
-                reveal.Controller(true,toggleController);
-                pose=OrynWristReveal.Placement(input.Poses[0].position,input.Poses[0].rotation*Vector3.forward,
-                    (eye.position-input.Poses[0].position).normalized,eye);
-            }
-            workspace.Panel.gameObject.SetActive(reveal.Visible);
-            if(reveal.Visible)
-            {
-                // A short following filter removes raw wrist jitter without pinning the panel in space.
-                float t=!wasVisible ? 1 : 1-Mathf.Exp(-Mathf.Max(0,Time.unscaledDeltaTime)/0.035f);
+                int hand=HostHand;bool trackedHand=inputModes[hand]==2;
+                Vector3 wrist=trackedHand ? input.Wrists[hand] : input.Poses[hand].position;
+                Vector3 fingers=trackedHand ? input.Palms[hand].Fingers : input.Poses[hand].rotation*Vector3.forward;
+                Vector3 normal=trackedHand ? input.Palms[hand].Normal : (eye.position-wrist).normalized;
+                Pose pose=OrynWristReveal.Placement(wrist,fingers,normal,eye);
+                float t=!wasVisible || previousHand!=HostHand ? 1 : 1-Mathf.Exp(-Mathf.Max(0,Time.unscaledDeltaTime)/0.015f);
                 workspace.Panel.SetPositionAndRotation(Vector3.Lerp(workspace.Panel.position,pose.position,t),Quaternion.Slerp(workspace.Panel.rotation,pose.rotation,t));
-                Vector3 wrist = mode==2 ? input.Wrists[0] : input.Poses[0].position;
                 tether.SetPosition(0,workspace.Panel.InverseTransformPoint(wrist));tether.SetPosition(1,Vector3.zero);
             }
-            if(wasExpanded!=reveal.Expanded || wasVisible!=reveal.Visible) { page=-1;Layout(); }
-            return wasVisible!=reveal.Visible || wasExpanded!=reveal.Expanded;
+            bool changed=wasVisible!=visible || previousHand!=HostHand;
+            if(changed) { page=HostHand==0 ? 0 : 1;Layout(); }
+            return changed;
         }
         public void Refresh()
         {
             if(!reveal.Expanded)return;
-            string value=workspace.MenuConfirmingDelete ? "Pinch Delete again to confirm" : page<0 ? "Choose a tool" : page==1 ? (workspace.CommandAssembly?.Owner.Mechanical?.Status ?? "No bound motion") :
+            string value=workspace.MenuConfirmingDelete ? "Pinch Delete again to confirm" : page<0 ? "Choose a tool" : page==1 ? (workspace.CommandAssembly?.Owner.Mechanical?.Status ?? "Motion unavailable") :
                 page==2 ? "Authored demos" : workspace.Status.text;
             if(value!=previousStatus) { status.text=Wrap(value??"",19,3);previousStatus=value; }
             string info=workspace.Inspector?.Details?.text ?? "Select a part.";
@@ -260,6 +282,13 @@ namespace Oryn.Interaction
             }
             Quad(triangles,0,1,3,2);int last=steps*4;Quad(triangles,last,last+2,last+3,last+1);
             var mesh=new Mesh{name="ORYN radial segment"};mesh.vertices=vertices;mesh.triangles=triangles.ToArray();mesh.RecalculateNormals();mesh.RecalculateBounds();return mesh;
+        }
+        private static Mesh Mirror(Mesh source)
+        {
+            var mesh=UnityEngine.Object.Instantiate(source);var vertices=mesh.vertices;var triangles=mesh.triangles;
+            for(int i=0;i<vertices.Length;i++)vertices[i].x=-vertices[i].x;
+            for(int i=0;i<triangles.Length;i+=3) { int swap=triangles[i];triangles[i]=triangles[i+2];triangles[i+2]=swap; }
+            mesh.vertices=vertices;mesh.triangles=triangles;mesh.RecalculateNormals();mesh.RecalculateBounds();return mesh;
         }
         private static void Quad(List<int> indices,int a,int b,int c,int d)
         { indices.Add(a);indices.Add(b);indices.Add(c);indices.Add(a);indices.Add(c);indices.Add(d); }

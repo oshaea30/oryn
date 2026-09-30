@@ -14,100 +14,96 @@ namespace Oryn.Editor
         public static void Run()
         {
             checks=0;
-            var eye=new Pose(new Vector3(0,1.6f,0),Quaternion.identity);
-            var wrist=new Vector3(-0.1f,1.3f,0.4f);
-            var palm=new OrynPalmSample{Valid=true,Open=true,Normal=(eye.position-wrist).normalized,Fingers=Vector3.forward};
+            // Both hands, several hand sizes, all fingers curled with a lateral straight thumb.
+            foreach(float side in new[]{-1f,1f})foreach(float scale in new[]{0.65f,1f,1.35f})
+            {
+                var bases=new[]{new Vector3(.035f*side,0,.075f),new Vector3(0,0,.08f),new Vector3(-.015f*side,0,.075f),new Vector3(-.035f*side,0,.065f)};
+                var joints=new Vector3[4];var tips=new Vector3[4];var confidence=new[]{true,true,true,true};
+                for(int i=0;i<4;i++) { bases[i]*=scale;joints[i]=bases[i]+new Vector3(0,-.025f,.015f)*scale;tips[i]=bases[i]+new Vector3(0,-.025f,-.01f)*scale; }
+                Vector3 thumbBase=new Vector3(.045f*side,0,.035f)*scale,thumbJoint=new Vector3(.065f*side,0,.045f)*scale,thumbTip=new Vector3(.095f*side,0,.055f)*scale;
+                Check(OrynWristPose.Matches(true,Vector3.zero,thumbBase,thumbJoint,thumbTip,bases,joints,tips,confidence),"thumb-out fist recognized on either hand and at different sizes");
+                Check(!OrynWristPose.Matches(false,Vector3.zero,thumbBase,thumbJoint,thumbTip,bases,joints,tips,confidence),"untracked pose rejected");
+                Check(!OrynWristPose.Matches(true,Vector3.zero,thumbBase,thumbJoint,thumbBase,bases,joints,tips,confidence),"tucked thumb rejected");
+                for(int i=0;i<4;i++)
+                {
+                    Vector3 save=tips[i];tips[i]=joints[i]+(joints[i]-bases[i]);
+                    Check(!OrynWristPose.Matches(true,Vector3.zero,thumbBase,thumbJoint,thumbTip,bases,joints,tips,confidence),"each of four fingers must curl");tips[i]=save;
+                    confidence[i]=false;Check(!OrynWristPose.Matches(true,Vector3.zero,thumbBase,thumbJoint,thumbTip,bases,joints,tips,confidence),"low confidence rejected");confidence[i]=true;
+                }
+            }
+            var eye=new Pose(new Vector3(0,1.6f,0),Quaternion.identity);var wrist=new Vector3(-.1f,1.3f,.4f);
+            var palm=new OrynPalmSample{Valid=true,Open=false,Normal=Vector3.up,Fingers=Vector3.forward};
             var reveal=new OrynWristReveal();
-            Check(!reveal.Sample(palm,wrist,eye,true,0.05f),"passing wrist through view does not instantly reveal launcher");
-            for(int i=0;i<240;i++)reveal.Sample(palm,wrist,eye,true,0.05f);
-            Check(reveal.Visible && !reveal.Expanded,"even prolonged palm facing cannot open the menu");
-            reveal.Toggle();Check(reveal.Expanded,"explicit launcher action opens");
-            reveal.Sample(palm,wrist,eye,false,0.02f);
-            Check(!reveal.Visible && !reveal.Expanded,"either-hand manipulation suppresses and closes controls");
-            for(int i=0;i<10;i++)reveal.Sample(palm,wrist,eye,true,0.05f);
-            Check(reveal.Visible && !reveal.Expanded,"releasing a figure never reopens the menu");
-            reveal.Toggle();palm.Valid=false;reveal.Sample(palm,wrist,eye,true,0.02f);
-            Check(!reveal.Visible && !reveal.Expanded,"tracking loss closes and disarms");
-            reveal.Toggle();Check(!reveal.Expanded,"hidden launcher cannot open");
-            palm.Valid=true;palm.Open=false;
-            for(int i=0;i<20;i++)reveal.Sample(palm,wrist,eye,true,0.05f);
-            Check(!reveal.Visible,"closed hand cannot reveal launcher");
-            palm.Open=true;palm.Normal=-palm.Normal;
-            for(int i=0;i<20;i++)reveal.Sample(palm,wrist,eye,true,0.05f);
-            Check(!reveal.Visible,"turned palm hides launcher");palm.Normal=-palm.Normal;
-            Check(!reveal.Sample(palm,wrist,eye,true,float.NaN),"invalid timestep cannot reveal");
-            reveal.Controller(true,false);Check(reveal.Visible && !reveal.Expanded,"controller tracking does not open menu");
-            reveal.Controller(true,true);Check(reveal.Expanded,"controller Y explicitly opens");
-            reveal.Controller(false,false);reveal.Controller(true,false);
-            Check(!reveal.Expanded,"focus/tracking recovery requires a new toggle");
-            var pose=OrynWristReveal.Placement(wrist,palm.Fingers,palm.Normal,eye);
-            Check(Vector3.Distance(pose.position,wrist)<0.08f,"launcher stays within 8cm of wrist");
-            Check(Vector3.Dot(pose.rotation*Vector3.forward,(pose.position-eye.position).normalized)>0.999f,"fan faces user");
-            Vector3 delta=new Vector3(2,1,-3);
-            var shifted=OrynWristReveal.Placement(wrist+delta,palm.Fingers,palm.Normal,new Pose(eye.position+delta,eye.rotation));
-            Check(Vector3.Distance(shifted.position,pose.position+delta)<0.0001f,"recenter keeps wrist attachment");
+            Check(!reveal.Sample(palm,wrist,eye,true,true,.04f),"single noisy pose frame does not open");
+            Check(reveal.Sample(palm,wrist,eye,true,true,.04f),"80ms pose opens directly");
+            Check(reveal.Sample(palm,wrist,eye,false,true,.016f),"relaxing fingers preserves menu");
+            reveal.Toggle();for(int i=0;i<30;i++)reveal.Sample(palm,wrist,eye,true,true,.02f);
+            Check(!reveal.Expanded,"close cannot reopen from a held pose");
+            reveal.Sample(palm,wrist,eye,false,true,.02f);for(int i=0;i<5;i++)reveal.Sample(palm,wrist,eye,true,true,.02f);
+            Check(reveal.Expanded,"fresh pose opens again");
+            reveal.Sample(palm,wrist,eye,true,false,.02f);Check(!reveal.Expanded,"manipulation closes immediately");
+            for(int i=0;i<10;i++)reveal.Sample(palm,wrist,eye,true,true,.02f);
+            Check(!reveal.Expanded,"post-grab held pose cannot reopen automatically");
+            palm.Normal=Vector3.down;reveal.Sample(palm,wrist,eye,false,true,.02f);
+            Check(!reveal.Sample(palm,wrist,eye,true,true,.05f),"palm down cannot open");
+            palm.Normal=Vector3.up;reveal.Sample(palm,wrist,eye,false,true,.02f);
+            for(int i=0;i<20;i++)reveal.Sample(palm,wrist,eye,false,true,.05f);
+            Check(!reveal.Expanded,"open palm alone does not reveal a menu or launcher");
+            reveal.Controller(true,true);Check(reveal.Expanded,"controller toggle still opens");reveal.Controller(false,false);
+            Check(!reveal.Expanded,"controller tracking loss closes");
             var obj=GameObject.CreatePrimitive(PrimitiveType.Cube);
             try
             {
-                obj.transform.localScale=Vector3.one*0.2f;Physics.SyncTransforms();var collider=obj.GetComponent<Collider>();
-                Check(OrynWristReveal.NearObject(collider,new Vector3(0.18f,0,0)),"near-surface reach suppresses before touching");
-                Check(OrynWristReveal.NearObject(collider,Vector3.zero),"inside geometry also suppresses");
-                Check(!OrynWristReveal.NearObject(collider,new Vector3(0.3f,0,0)),"distant objects do not suppress");
-                obj.SetActive(false);Check(!OrynWristReveal.NearObject(collider,Vector3.zero),"inactive objects do not suppress");
+                obj.transform.localScale=Vector3.one*.2f;Physics.SyncTransforms();var bounds=obj.GetComponent<Collider>();
+                Check(OrynWristReveal.NearObject(bounds,new Vector3(.18f,0,0)),"reach suppression retained");
+                Check(!OrynWristReveal.NearObject(bounds,new Vector3(.3f,0,0)),"distant object does not suppress");
             }
             finally { UnityEngine.Object.DestroyImmediate(obj); }
-            var press=new OrynPressLatch();
-            Check(!press.Sample(true,1),"held pinch cannot open launcher");press.Sample(true,0);
-            Check(press.Sample(true,1),"fresh pinch opens launcher");press.Clear();
-            Check(!press.Sample(true,1),"opening cannot also select a newly exposed tool");
             Debug.Log("ORYN_WRIST_MENU_TESTS_OK checks="+checks);
         }
+        public static void BuildAndPreview() { RunAndPreview(); OrynWorkspaceSetup.BuildAndroid(); }
         public static void RunAndPreview()
         {
             Run();EditorSceneManager.OpenScene(OrynWorkspaceSetup.ScenePath);
             var workspace=UnityEngine.Object.FindAnyObjectByType<OrynWorkspace>();var menu=new OrynWristMenu(workspace);
-            var input=new OrynTrackedInput();input.Valid[0]=true;input.Poses[0]=new Pose(new Vector3(-0.1f,1.3f,0.4f),Quaternion.identity);
+            var input=new OrynTrackedInput();input.Valid[0]=input.Valid[1]=true;
+            input.Poses[0]=new Pose(new Vector3(-.2f,1.3f,.4f),Quaternion.identity);input.Poses[1]=new Pose(new Vector3(.2f,1.3f,.4f),Quaternion.identity);
             var eye=new Pose(new Vector3(0,1.6f,0),Quaternion.identity);
-            menu.Update(input,eye,true,false);workspace.Panel.SetPositionAndRotation(Vector3.zero,Quaternion.identity);
-            foreach(Transform child in workspace.Panel.GetComponentsInChildren<Transform>(true))child.gameObject.layer=30;
-            var go=new GameObject("Radial preview camera");var camera=go.AddComponent<Camera>();
-            camera.transform.position=new Vector3(0.055f,0,-0.55f);camera.orthographic=true;camera.orthographicSize=0.205f;
-            camera.clearFlags=CameraClearFlags.SolidColor;camera.backgroundColor=new Color(0.045f,0.063f,0.078f);camera.cullingMask=1<<30;
-            var rt=new RenderTexture(1024,1024,24);camera.targetTexture=rt;Directory.CreateDirectory("Builds/WristMenuRadial");
+            var go=new GameObject("Two-wrist preview camera");var camera=go.AddComponent<Camera>();
+            camera.orthographic=true;camera.orthographicSize=.205f;camera.clearFlags=CameraClearFlags.SolidColor;
+            camera.backgroundColor=new Color(.045f,.063f,.078f);camera.cullingMask=1<<30;
+            var rt=new RenderTexture(1024,1024,24);camera.targetTexture=rt;Directory.CreateDirectory("Builds/TwoWristMenu");
             try
             {
-                Check(!menu.Expanded && !workspace.Buttons[0].gameObject.activeInHierarchy,"only launcher is interactive when closed");
-                Capture(camera,rt,workspace,"launcher");menu.Navigate(OrynWorkspaceButton.Command.MenuHome);menu.Refresh();Physics.SyncTransforms();
-                Check(menu.Expanded,"launcher explicitly opens category fan");
-                Capture(camera,rt,workspace,"home");
-                for(int page=0;page<OrynWristMenu.PageCount;page++)
+                menu.Update(input,eye,true,false,false);Check(!menu.Expanded,"no automatic panel on tracking acquisition");
+                for(int hand=0;hand<2;hand++)
                 {
-                    menu.Navigate((OrynWorkspaceButton.Command)((int)OrynWorkspaceButton.Command.MenuObject+page));menu.Refresh();Physics.SyncTransforms();
+                    menu.Hide();menu.Update(input,eye,true,hand==0,hand==1);
+                    Check(menu.HostHand==hand && menu.Expanded,"correct wrist owns its menu");
+                    Check(workspace.Buttons[0].Action==(hand==0 ? OrynWorkspaceButton.Command.LoadModel : OrynWorkspaceButton.Command.MotionPlay),"left opens object controls; right opens motion directly");
+                    Check(menu.AllowsSource(1-hand) && menu.AllowsSource(3-hand),"opposite hand/controller can select");
+                    Check(!menu.AllowsSource(hand) && !menu.AllowsSource(hand+2),"host hand cannot select itself");
+                    workspace.Panel.SetPositionAndRotation(Vector3.zero,Quaternion.identity);menu.Refresh();Physics.SyncTransforms();
+                    foreach(Transform child in workspace.Panel.GetComponentsInChildren<Transform>(true))child.gameObject.layer=30;
                     for(int i=0;i<6;i++)
                     {
-                        if(!workspace.Buttons[i].gameObject.activeInHierarchy)continue;
-                        Vector3 center=OrynWristMenu.SlotCenter(i,false);
-                        Check(OrynMenuPlacement.PointedButton(workspace.Buttons,new Pose(new Vector3(center.x,center.y,-0.4f),Quaternion.identity),out _)==workspace.Buttons[i],"radial slice ray selects correct action");
-                        Check(OrynMenuPlacement.NearButton(workspace.Buttons,center)==workspace.Buttons[i],"near pinch selects correct curved slice");
-                        Check(OrynMenuPlacement.NearButton(workspace.Buttons,new Vector3(center.x,center.y,0.02f))==null,"rear touch cannot select");
+                        Vector3 center=OrynWristMenu.SlotCenter(i,false,hand);
+                        Check(OrynMenuPlacement.PointedButton(workspace.Buttons,new Pose(new Vector3(center.x,center.y,-.4f),Quaternion.identity),out _)==workspace.Buttons[i],"mirrored slice ray selects correct action");
+                        Check(OrynMenuPlacement.NearButton(workspace.Buttons,center)==workspace.Buttons[i],"mirrored near pinch selects correct action");
+                        Check(OrynMenuPlacement.NearButton(workspace.Buttons,new Vector3(center.x,center.y,.02f))==null,"rear touch rejected");
                     }
-                    Check(OrynMenuPlacement.PointedButton(workspace.Buttons,new Pose(new Vector3(0.143f,0,-0.4f),Quaternion.identity),out _)==null,"visible angular gaps are not hit targets");
-                    Capture(camera,rt,workspace,"page-"+page);menu.Navigate(OrynWorkspaceButton.Command.MenuHome);
+                    camera.transform.position=new Vector3(hand==0 ? .055f : -.055f,0,-.55f);
+                    foreach(var button in workspace.Buttons)button.ShowState(true,false);
+                    camera.Render();RenderTexture.active=rt;var texture=new Texture2D(1024,1024,TextureFormat.RGB24,false);
+                    texture.ReadPixels(new Rect(0,0,1024,1024),0,0);texture.Apply();File.WriteAllBytes("Builds/TwoWristMenu/"+(hand==0 ? "left" : "right")+".png",texture.EncodeToPNG());UnityEngine.Object.DestroyImmediate(texture);
                 }
-                menu.Navigate(OrynWorkspaceButton.Command.MenuHome);
-                Check(!menu.Expanded,"home center closes menu");
-                menu.Update(input,eye,true,true);Check(menu.Expanded,"controller opens fan");
-                menu.Update(input,eye,false,false);Check(!menu.Expanded && !workspace.Panel.gameObject.activeSelf,"manipulation hides entire menu including launcher");
-                menu.Update(input,eye,true,false);Check(!menu.Expanded,"post-grab recovery stays closed");
+                menu.Update(input,eye,true,true,false);Check(menu.HostHand==0 && menu.Expanded,"fresh left toggle takes over an open right menu");
+                menu.Update(input,eye,true,false,true);Check(menu.HostHand==1 && menu.Expanded,"fresh right toggle takes over an open left menu");
+                menu.Update(input,eye,false,false,false);Check(!menu.Expanded && !workspace.Panel.gameObject.activeSelf,"busy hides either menu");
+                menu.Update(input,eye,true,false,false);Check(!menu.Expanded,"release stays closed");
                 Debug.Log("ORYN_WRIST_PREVIEW_OK checks="+checks);
             }
             finally { RenderTexture.active=null;camera.targetTexture=null;rt.Release();UnityEngine.Object.DestroyImmediate(rt);UnityEngine.Object.DestroyImmediate(go); }
-        }
-        private static void Capture(Camera camera,RenderTexture rt,OrynWorkspace workspace,string name)
-        {
-            foreach(var button in workspace.Buttons)button.ShowState(true,false);
-            camera.Render();RenderTexture.active=rt;var texture=new Texture2D(1024,1024,TextureFormat.RGB24,false);
-            texture.ReadPixels(new Rect(0,0,1024,1024),0,0);texture.Apply();File.WriteAllBytes("Builds/WristMenuRadial/"+name+".png",texture.EncodeToPNG());UnityEngine.Object.DestroyImmediate(texture);
         }
     }
 }

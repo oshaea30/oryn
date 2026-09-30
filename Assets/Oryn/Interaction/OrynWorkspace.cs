@@ -97,11 +97,12 @@ namespace Oryn.Interaction
                 LoadStartupModel();
             }
             input.Read(Rig, LeftHand, RightHand, LeftSkeleton, RightSkeleton, focused);
+            bool toggleRight = focused && input.Valid[1] && OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.RTouch);
             bool toggleMenu = focused && input.Valid[0] && OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.LTouch);
             Inspector?.Bind(selected);
             UpdatePrayerSpread();
             bool menuChanged = wristMenu.Update(input, new Pose(Rig.centerEyeAnchor.position, Rig.centerEyeAnchor.rotation),
-                focused && initialized && !MenuInteractionBusy(), toggleMenu);
+                focused && initialized && !MenuInteractionBusy(), toggleMenu, toggleRight);
             if (menuChanged)
             {
                 confirmDelete = false;
@@ -140,7 +141,7 @@ namespace Oryn.Interaction
                     presses[i].Clear(); contactPresses[i].Clear(); markers[i].enabled = false;
                     continue;
                 }
-                bool menuSource = (i == 1 || i == 3) && Panel.gameObject.activeInHierarchy;
+                bool menuSource = wristMenu.AllowsSource(i) && Panel.gameObject.activeInHierarchy;
                 hoveredButtons[i] = menuSource && input.Valid[i] && held[i] == null ? NearestButton(input.AimPoints[i]) : null;
                 bool pointingAtMenu = false;
                 Vector3 menuEndpoint = input.AimPoints[i];
@@ -162,7 +163,7 @@ namespace Oryn.Interaction
                 bool gestureReady = input.Gestures[i] == OrynGesture.Manipulate || input.Gestures[i] == OrynGesture.Resize;
                 // Preserve the fresh press while the finger classifier settles; do not consume it early.
                 float activation = gestureReady ? input.Strength[i] : Mathf.Min(input.Strength[i], 0.6f);
-                float menuActivation = i == 3 && input.ContactValid[1][1] ? RightHand.GetFingerPinchStrength(OVRHand.HandFinger.Index) : activation;
+                float menuActivation = i >= 2 && input.ContactValid[i-2][1] ? (i==2 ? LeftHand : RightHand).GetFingerPinchStrength(OVRHand.HandFinger.Index) : activation;
                 if (i < 2)
                 {
                     var controller = i == 0 ? OVRInput.Controller.LTouch : OVRInput.Controller.RTouch;
@@ -291,19 +292,8 @@ namespace Oryn.Interaction
         private bool MenuInteractionBusy()
         {
             if (prayerConsumesHands) return true;
-            // Either hand/controller owns manipulation, including a pending close-to-surface grab.
+            // Deliberate pose opening can happen near a figure; only actual manipulation takes precedence.
             for (int i = 0; i < held.Length; i++) if (held[i] != null) return true;
-            foreach (var item in InteractionObjects())
-            for (int source = 0; source < 4; source++)
-            {
-                if (!input.Valid[source]) continue;
-                if (source < 2)
-                {
-                    if (OrynWristReveal.NearObject(item.Bounds, input.AimPoints[source])) return true;
-                }
-                else for (int finger = 0; finger < 6; finger++)
-                    if (input.ContactValid[source - 2][finger] && OrynWristReveal.NearObject(item.Bounds, input.Contacts[source - 2][finger])) return true;
-            }
             return false;
         }
         private OrynWorkspaceButton NearestButton(Vector3 point)

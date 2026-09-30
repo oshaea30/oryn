@@ -62,35 +62,33 @@ to choose subsequent articulation work or model adaptation.
 
 ## Wrist controls (2026-09-29)
 
-User feedback rejected the first 30 × 33 cm board: it was visually intrusive and
-opened during object manipulation. The replacement uses a small 3.6 cm launcher
-with a curved fan inspired by the supplied wrist-menu references. The fan's
-controls sit 9–19 cm to the right of its wrist anchor, with a thin connecting
-line, dark surfaces, a turquoise accent and short labels. Wrist following uses a
-35 ms smoothing time constant. Comfort and size still require a headset check.
+The latest user correction requests faster opening from a palm-up fist with the
+thumb extended, and separate controls on the two arms. Version 1.14.2 (20) opens
+directly after an 80 ms pose hold; there is no launcher pinch or open-palm reveal.
+Bone geometry checks all four curled fingers and a straight thumb extending away
+from the index side. Missing bones, low finger confidence and non-finite inputs
+reject the pose. Both legacy and OpenXR skeleton joint mappings are supported.
 
-Turning an open left palm toward the user reveals ONLY the launcher after 0.3
-seconds. A fresh right index pinch near the launcher explicitly opens categories:
-Inspect, Motion, Objects and Details. The center is Back in a category and Close
-at home. With controllers, left Y explicitly toggles; the right trigger/A selects.
-A held pinch cannot open and immediately activate a newly exposed action.
+Left wrist opens Inspect actions; its Tools center also exposes Objects and
+Details. Right wrist opens Motion actions. The right fan mirrors inward without
+mirroring text. The opposite hand/controller selects each menu. Only one fan is
+shown at a time so both hands remain usable. Controllers use left Y / right B
+for their respective menus. Following smoothing is reduced from 35 ms to 15 ms.
 
-Both the launcher and expanded menu are suppressed while EITHER hand/controller
-holds an object, either hand is within 10 cm of an active object surface, prayer
-spread is active, or focus/tracking is lost. Releasing an object or recovering
-tracking leaves the fan closed. Palm orientation by itself never expands it.
-The host hand cannot select its own menu. Hidden sectors, rear-face proximity
-and the visible gaps between radial actions are excluded from selection.
+After opening, fingers may relax while the palm stays up. Turning the palm down,
+losing focus/tracking or grabbing with either hand closes the menu. A held pose
+cannot reopen it after dismissal or manipulation; release and form a fresh pose.
+The broad 10 cm proximity block was removed: merely being near a figure must not
+prevent this deliberate pose from opening. Active grabs and prayer-spread still
+take precedence. Existing press latches prevent an opening gesture or held trigger
+from selecting a newly exposed action.
 
-Existing object actions and motion binding requirements are retained. Authored
-demos remain labeled, and Delete still requires its existing confirmation.
-Conversation answer feedback remains separate. General answering and paid GPU
-work remain deferred; this change invokes neither model nor generation services.
-
-Version 1.14.1 (19) contains this revision. The focused state and geometry tests
-cover intentional opening, manipulation suppression, tracking recovery, curved
-hit targets and gaps. Editor renders cover the launcher, categories and action
-pages; these do not establish real hand comfort or occlusion behavior.
+The curved fan, short labels and thin wrist tether retain the user's visual
+references. Controls are 9–19 cm from the wrist anchor. Local tests cover both
+hand geometries, several hand sizes, pose timing, release/rearm and mirrored
+selection. Synthetic tracking tests and editor renders cannot establish real
+headset detection reliability; that acceptance remains open. General answering
+and paid GPU generation remain deferred.
 
 ## Earlier milestone: Complete Object Experience / MVP 1
 

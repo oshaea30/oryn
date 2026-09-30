@@ -10,6 +10,10 @@ namespace Oryn.Interaction
         public readonly Pose[] Poses = new Pose[4];
         public readonly OrynGesture[] Gestures = new OrynGesture[4];
         public readonly Vector3[] AimPoints = new Vector3[4];
+        public readonly bool[] WristMenuPose = new bool[2];
+        private readonly Vector3[][] menuBases = { new Vector3[4], new Vector3[4] };
+        private readonly Vector3[][] menuJoints = { new Vector3[4], new Vector3[4] };
+        private readonly Vector3[][] menuTips = { new Vector3[4], new Vector3[4] };
         public readonly Vector3[] Wrists = new Vector3[2];
         public readonly bool[] WristValid = new bool[2];
         public readonly OrynPalmSample[] Palms = new OrynPalmSample[2];
@@ -52,7 +56,8 @@ namespace Oryn.Interaction
                 !hand.IsSystemGestureInProgress && skeleton.IsInitialized && skeleton.IsDataValid && skeleton.IsDataHighConfidence &&
                 hand.GetFingerConfidence(OVRHand.HandFinger.Thumb) == OVRHand.TrackingConfidence.High;
             int index = id - 2;
-            Palms[index] = default; WristValid[index] = false;
+            Palms[index] = default; WristValid[index] = false; WristMenuPose[index] = false;
+            for (int n = 0; n < 4; n++) { menuBases[index][n] = menuJoints[index][n] = menuTips[index][n] = Vector3.zero; }
             for (int n = 0; n < 6; n++) ContactValid[index][n] = false;
             if (!Valid[id]) { classifiers[index].Clear(); Gestures[id] = OrynGesture.None; return; }
             float strongest = 0f;
@@ -67,12 +72,18 @@ namespace Oryn.Interaction
             Strength[id] = strongest;
             bool xr = skeleton.GetSkeletonType() == OVRSkeleton.SkeletonType.XRHandLeft || skeleton.GetSkeletonType() == OVRSkeleton.SkeletonType.XRHandRight;
             var thumbId = xr ? OVRSkeleton.BoneId.XRHand_ThumbTip : OVRSkeleton.BoneId.Hand_ThumbTip;
+            Transform thumbBase = null, thumbJoint = null; int baseMask = 0, jointMask = 0, tipMask = 0;
             Transform thumb = null, indexTip = null, wrist = null, knuckle = null, indexBase = null, littleBase = null;
             Vector3 activeTips = Vector3.zero;
             int activeCount = 0;
             foreach (OVRBone bone in skeleton.Bones)
             {
                 if (bone.Id == thumbId) thumb = bone.Transform;
+                if (bone.Id == (xr ? OVRSkeleton.BoneId.XRHand_ThumbProximal : OVRSkeleton.BoneId.Hand_Thumb2)) thumbBase = bone.Transform;
+                if (bone.Id == (xr ? OVRSkeleton.BoneId.XRHand_ThumbDistal : OVRSkeleton.BoneId.Hand_Thumb3)) thumbJoint = bone.Transform;
+                int baseIndex = BaseIndex(bone.Id, xr), jointIndex = JointIndex(bone.Id, xr);
+                if (baseIndex >= 0) { menuBases[index][baseIndex] = bone.Transform.position; baseMask |= 1 << baseIndex; }
+                if (jointIndex >= 0) { menuJoints[index][jointIndex] = bone.Transform.position; jointMask |= 1 << jointIndex; }
                 if (bone.Id == (xr ? OVRSkeleton.BoneId.XRHand_Wrist : OVRSkeleton.BoneId.Hand_WristRoot)) wrist = bone.Transform;
                 if (bone.Id == (xr ? OVRSkeleton.BoneId.XRHand_MiddleProximal : OVRSkeleton.BoneId.Hand_Middle1)) knuckle = bone.Transform;
                 if (bone.Id == (xr ? OVRSkeleton.BoneId.XRHand_IndexProximal : OVRSkeleton.BoneId.Hand_Index1)) indexBase = bone.Transform;
@@ -80,7 +91,7 @@ namespace Oryn.Interaction
                 int finger = FingerIndex(bone.Id, xr);
                 if (finger == 0) indexTip = bone.Transform;
                 if (finger >= 0)
-                { Contacts[index][finger + 1] = bone.Transform.position; ContactValid[index][finger + 1] = confidence[index][finger]; }
+                { menuTips[index][finger] = bone.Transform.position; tipMask |= 1 << finger; Contacts[index][finger + 1] = bone.Transform.position; ContactValid[index][finger + 1] = confidence[index][finger]; }
                 if (finger >= 0 && confidence[index][finger] && fingers[index][finger] > 0.35f)
                 { activeTips += bone.Transform.position; activeCount++; }
             }
@@ -88,6 +99,9 @@ namespace Oryn.Interaction
             if (!Valid[id]) return;
             WristValid[index] = wrist != null;
             if (wrist != null) Wrists[index] = wrist.position;
+            if (wrist != null && thumbBase != null && thumbJoint != null && baseMask == 15 && jointMask == 15 && tipMask == 15)
+                WristMenuPose[index] = OrynWristPose.Matches(Valid[id], wrist.position, thumbBase.position, thumbJoint.position,
+                    thumb.position, menuBases[index], menuJoints[index], menuTips[index], confidence[index]);
             Contacts[index][0] = thumb.position; ContactValid[index][0] = true;
             Vector3 palm = wrist != null && knuckle != null ? Vector3.Lerp(wrist.position, knuckle.position, 0.55f) : hand.transform.position;
             Contacts[index][5] = palm; ContactValid[index][5] = wrist != null && knuckle != null;
@@ -99,6 +113,22 @@ namespace Oryn.Interaction
             if (wrist != null && knuckle != null && indexBase != null && littleBase != null && ContactValid[index][1] && ContactValid[index][2])
                 Palms[index] = OrynPrayerSpread.FromBones(Valid[id], index == 0, wrist.position, knuckle.position,
                     indexBase.position, littleBase.position, Contacts[index][1], Contacts[index][2], strongest);
+        }
+        private static int BaseIndex(OVRSkeleton.BoneId bone, bool xr)
+        {
+            if (bone == (xr ? OVRSkeleton.BoneId.XRHand_IndexProximal : OVRSkeleton.BoneId.Hand_Index1)) return 0;
+            if (bone == (xr ? OVRSkeleton.BoneId.XRHand_MiddleProximal : OVRSkeleton.BoneId.Hand_Middle1)) return 1;
+            if (bone == (xr ? OVRSkeleton.BoneId.XRHand_RingProximal : OVRSkeleton.BoneId.Hand_Ring1)) return 2;
+            if (bone == (xr ? OVRSkeleton.BoneId.XRHand_LittleProximal : OVRSkeleton.BoneId.Hand_Pinky1)) return 3;
+            return -1;
+        }
+        private static int JointIndex(OVRSkeleton.BoneId bone, bool xr)
+        {
+            if (bone == (xr ? OVRSkeleton.BoneId.XRHand_IndexIntermediate : OVRSkeleton.BoneId.Hand_Index2)) return 0;
+            if (bone == (xr ? OVRSkeleton.BoneId.XRHand_MiddleIntermediate : OVRSkeleton.BoneId.Hand_Middle2)) return 1;
+            if (bone == (xr ? OVRSkeleton.BoneId.XRHand_RingIntermediate : OVRSkeleton.BoneId.Hand_Ring2)) return 2;
+            if (bone == (xr ? OVRSkeleton.BoneId.XRHand_LittleIntermediate : OVRSkeleton.BoneId.Hand_Pinky2)) return 3;
+            return -1;
         }
         private static int FingerIndex(OVRSkeleton.BoneId bone, bool xr)
         {

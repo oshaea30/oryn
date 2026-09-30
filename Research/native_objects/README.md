@@ -1,15 +1,23 @@
 # ORYN native-object generation experiment
 
-Research question: can a generator produce geometry, semantic components,
-assembly relationships for an inspectable object, with no per-output manual repair?
+Immediate experiment: **Can this pipeline consistently generate a visually coherent
+object with useful separate components?** Preserve zero per-output manual repair;
+one successful sample would not establish consistency.
+
+The broader research ambition includes semantic components and assembly relationships.
 A separate application-owned reasoning layer should decide which behavior, if any,
-suits the object and the request. Motion execution is a third evaluation. This directory is a research harness, not an implemented generator
-or replacement for ORYN's production object route. Answer development is paused.
+suits the object and request; motion execution remains a separate evaluation. This
+directory is a research harness, not an implemented generator or replacement for
+ORYN's production object route. Answer development is paused.
 
 Completed: [framing comparison 001](FRAMING_RESULT.md). The predeclared improvement
 gate failed; paid trials of this configuration are stopped. The [protocol](FRAMING_COMPARISON.md)
 retains the criteria and input hashes frozen before run B. Product/research contract mapping
-is in [Complete Object](../../ORYN_COMPLETE_OBJECT.md#relationship-to-the-research-contract).
+is in [Complete Object](../../ORYN_COMPLETE_OBJECT.md#relationship-to-the-research-contract). The
+[long-term representation note](../../ORYN_COMPLETE_OBJECT.md#long-term-representation-note--deferred)
+keeps GLB as a possible geometry carrier within a future intelligent object package.
+It authorizes no new format, schema rewrite, packaging system or `.oryn` implementation;
+missing broader concepts do not expand the immediate experiment's acceptance criteria.
 
 ## Minimum output and evaluation
 

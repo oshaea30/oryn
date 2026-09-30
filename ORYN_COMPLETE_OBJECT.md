@@ -30,20 +30,44 @@ This document describes the product's validated, executable object record. The
 geometry and missing information; it does not authorize runtime capabilities.
 We retain these two contracts instead of introducing another object format.
 
-| Concern | Research package | Product requirement before use |
+| Concern | Research package / current gap | Product requirement before use |
 |---|---|---|
-| Identity and geometry | Stable part IDs, source hashes, original geometry | Explicit geometry/component bindings, object revision and session identity |
-| Scale and assembly | Source units and unknown parent relationships permitted | Established units and validated relationships for the requested operation |
-| Component meaning | Roles/subsystems may be unknown | Evidence-scoped meaning; a mesh ID alone is not a semantic component |
-| Behavior and motion | Absent motion and candidate proposals are allowed | Application judgment is separate from validated motion and dispatch eligibility |
-| Evidence | Origin and missing facets recorded | Claims preserve provenance and independently assessed support |
-| Capabilities | Inspection declarations for the research viewer | Runtime checks decide what this object can actually execute |
+| Identity and geometry | Stable part IDs, source hashes, original geometry and declared units | Explicit geometry/component bindings, established scale, object revision and session identity |
+| Semantic components | Roles/subsystems may be unknown; file count does not prove component meaning | Evidence-scoped meaning tied to actual geometry |
+| Assembly hierarchy | Parent references may be absent; a valid graph alone does not prove fit | Validated relationships for the requested operation |
+| Joints, pivots and constraints | Narrow fixed/rotation definitions and sampled checks; general constraints and mechanical fit unassessed | Validated bindings and limits for supported motion; no invented joints |
+| Behavior | Separate candidate decision may request animation, no animation or more evidence | Application-owned judgment, separate from motion validation and dispatch |
+| Capabilities | Inspection declarations for the research viewer | Runtime checks decide which actions this object can actually execute |
+| Knowledge | No general object-knowledge output established by the research package | Claims and explanations linked to components and scoped to available evidence |
+| Evidence / provenance | Origins, source hashes, missing facets and manual repairs recorded | Preserve claim sources and independently assessed support |
+| Uncertainty / epistemic state | Unknown facets, unassessed checks and uncertain behavior decisions remain explicit | Distinguish supported claims, candidates and unknowns; preserve uncertainty when answering or acting |
+
+These are shared evaluation concepts, not a new schema or a requirement to rename
+existing fields/status values. A generator may supply only some of them; record
+the remaining concepts as missing or unassessed rather than authoring data to pass.
 
 Provenance (authored/model-generated), evidence support (unknown/candidate/supported)
 and execution eligibility are separate dimensions, never one combined status enum.
 Unknown hierarchy is not evidence of no hierarchy. No animation data is not a
 reasoned static decision. A structural pass does not prove visual quality, fit,
 physical accuracy or Quest performance. Research-to-product promotion is explicit.
+
+## Long-term representation note — deferred
+
+ORYN-native generation may eventually produce a complete intelligent object package:
+geometry together with the semantic, assembly, mechanical, behavioral, capability,
+knowledge, evidence and uncertainty concepts above. GLB can remain the geometry
+carrier; this broader object is not limited to a standalone `model.glb`.
+
+This is a direction to retain, not the next milestone. Do not start a new binary
+format, schema rewrite, packaging system or `.oryn` implementation. Reconcile and
+judge outputs through the existing product/research contracts until evidence calls
+for a representation change.
+
+The immediate experiment remains: **Can this pipeline consistently generate a
+visually coherent object with useful separate components?** The broader object
+ambition does not add knowledge or motion requirements to that experiment, and one
+promising output would not establish consistency.
 
 ## Application contract
 

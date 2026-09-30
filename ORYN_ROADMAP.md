@@ -10,6 +10,11 @@ it spatially, and investigate it using persistent, evidence-backed knowledge.
 Geometry generation and object understanding are separate responsibilities.
 Generated shapes and user labels must not become verified mechanical facts.
 
+Long-term, the object may be a complete intelligent package with GLB carrying its
+geometry. The [existing contract mapping and deferred note](ORYN_COMPLETE_OBJECT.md#relationship-to-the-research-contract)
+cover the shared concepts. A new format, schema rewrite, packaging system and `.oryn`
+implementation are explicitly outside the next milestone.
+
 ## Proven checkpoint
 
 - A live geometry-only drone generation/download and Quest import worked.
@@ -26,6 +31,10 @@ Generated shapes and user labels must not become verified mechanical facts.
   not general interpretation quality or semantic understanding.
 
 ## Current milestone: native-object generation experiment
+
+Immediate question: **Can this pipeline consistently generate a visually coherent
+object with useful separate components?** Current failed trials remain stopped;
+assessing the next approach serves this same question.
 
 User priority: visual object quality, meaningful components and behavior on the
 same generated object. The core generative capability is part of the invention;

@@ -6,12 +6,13 @@ object knowledge and validated runtime actions.
 
 ## Current priority
 
-The active milestone is a controlled native-object generation comparison. The
-first PartCrafter run executed successfully but failed the intended visual target.
-See the [working roadmap](ORYN_ROADMAP.md) for current priorities and the
-[frozen framing protocol](Research/native_objects/FRAMING_COMPARISON.md) for the
-next experiment. The Quest product stays stable while this research is evaluated;
-general answering, voice, training and motion inference are paused.
+The controlled PartCrafter framing comparison is complete. Tighter framing made
+the drone more recognizable but did not meet the frozen improvement threshold for
+visual quality and useful components. Paid trials of this configuration are stopped.
+See the [comparison result](Research/native_objects/FRAMING_RESULT.md) and
+[working roadmap](ORYN_ROADMAP.md). Next is an evidence-based assessment of an
+alternative generation approach before another paid run. The Quest product stays
+stable; general answering, voice, training and motion inference are paused.
 
 ## Complete Object integration preview
 

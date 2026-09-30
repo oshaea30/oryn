@@ -79,7 +79,7 @@ def from_saved_geometry(path):
     return package
 
 
-def glb_mesh(path):
+def glb_mesh(path, *, allow_oversized_research=False):
     """Read standalone PartCrafter part GLBs for analysis, retaining original files.
 
     Supports identity mesh nodes beneath identity container nodes, float POSITION,
@@ -87,7 +87,12 @@ def glb_mesh(path):
     or transformed inputs rather than silently flattening them incorrectly.
     """
     data=Path(path).read_bytes();report=inspect_glb(data)
-    if report['preflight']!='PASS': raise ValueError('GLB static preflight failed')
+    # Explicit offline inspection only: retain the production failure, never repair
+    # or silently relax other validation. Bound even this opt-in to one million.
+    oversized_only=(report.get('issues')==['Conservative instantiated vertex count exceeds 200,000.']
+                    and report.get('vertices_upper_bound',float('inf'))<=1_000_000)
+    if report['preflight']!='PASS' and not (allow_oversized_research and oversized_only):
+        raise ValueError('GLB static preflight failed: '+str(report.get('issues',[])))
     size=struct.unpack_from('<I',data,12)[0];doc=json.loads(data[20:20+size]);binary=data[28+size:]
     if doc.get('animations') or doc.get('skins') or doc.get('extensionsRequired'): raise ValueError('Unsupported animated or compressed GLB')
     nodes=doc.get('nodes',[]);mesh_nodes=[n for n in nodes if 'mesh' in n]
@@ -115,15 +120,18 @@ def glb_mesh(path):
     return vertices,triangles
 
 
-def from_partcrafter(folder):
+def from_partcrafter(folder, *, allow_oversized_research=False):
     folder=Path(folder).resolve();run=json.loads((folder/'run.json').read_text())
     if run.get('status')!='completed': raise ValueError('A completed recorded inference run is required')
     package=base('partcrafter-'+run['id'],{'kind':'model_output','run':run},'source_units')
     package['origins']['geometry']='model_generated'
+    package['source']['static_preflight']={}
+    package['source']['allow_oversized_research']=allow_oversized_research
     for i in range(run['num_parts']):
         path=folder/'output'/f'part_{i:02}.glb'
         if sha(path)!=run['outputs'][path.name]: raise ValueError('Generated output checksum mismatch')
-        vertices,triangles=glb_mesh(path)
+        vertices,triangles=glb_mesh(path,allow_oversized_research=allow_oversized_research)
+        package['source']['static_preflight'][path.name]=inspect_glb(path.read_bytes())
         package['parts'].append({'id':f'part_{i:02}','vertices':vertices,'triangles':triangles,'color':[0.47,0.59,0.65],
             'semantic_role':None,'parent':None,'subsystem':None,'motion':None,'evidence':'unidentified'})
     package['source']['supplied_structure']={'part_count':run['num_parts']}
@@ -215,6 +223,12 @@ def evaluate(p):
             'failed_checks':motion_errors,
             'detail':'Optional motion on this geometry. Sampled agreement does not prove appropriate behavior, clearance or physical validity.'},
     }
+    preflights=p.get('source',{}).get('static_preflight',{})
+    blocked=[name for name,r in preflights.items() if r.get('preflight')!='PASS']
+    layers['runtime_viability']={
+        'status':'blocked' if blocked else 'not_assessed',
+        'failed_static_preflight_files':blocked,
+        'detail':'Original static preflight retained. Offline research preview is not runtime acceptance; Quest remains untested.'}
     return {'id':p['id'],'origins':p['origins'],'components':len(parts),'triangles':tri_count,
         'structural_checks_passed':not errors,'native_generation_goal_passed':False,
         'manual_repair_count':len(p['manual_repairs']),'checks':checks,'layers':layers,
@@ -230,12 +244,13 @@ def write_case(folder,p):
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--runtime',type=Path);parser.add_argument('--saved-glb',type=Path);parser.add_argument('--partcrafter',type=Path);parser.add_argument('--output',required=True,type=Path)
+    parser.add_argument('--allow-oversized-research',action='store_true',help='Offline analysis only; retains failed production preflight (max 1M vertices/part)')
     args=parser.parse_args()
     if args.output.exists():parser.error('Output already exists; use a new run folder')
     cases=[]
     if args.runtime:cases.append(('authored-control',from_runtime(args.runtime)))
     if args.saved_glb:cases.append(('saved-geometry-control',from_saved_geometry(args.saved_glb)))
-    if args.partcrafter:cases.append(('partcrafter',from_partcrafter(args.partcrafter)))
+    if args.partcrafter:cases.append(('partcrafter',from_partcrafter(args.partcrafter,allow_oversized_research=args.allow_oversized_research)))
     if not cases:parser.error('At least one input is required')
     args.output.mkdir(parents=True)
     for name,p in cases:write_case(args.output/name,p)

@@ -47,11 +47,20 @@ with floating fragments and malformed major shapes. Semantics, hierarchy and
 motion remain unknown. Estimated rental cost was $0.077; the pod was terminated.
 See the [measured result](Research/native_objects/results/partcrafter-run-001.json).
 
-Next is one [predeclared framing comparison](Research/native_objects/FRAMING_COMPARISON.md):
-audit expected preprocessing, compare the preserved original with tighter framing
-under fixed settings, and apply the frozen scorecard and stopping rule. Only a
-material improvement warrants later repeatability tests. Only promising geometry
-advances to measured Quest viability. Training and additional providers stay paused.
+The [predeclared framing comparison](Research/native_objects/FRAMING_COMPARISON.md)
+is complete; [results and scorecard](Research/native_objects/FRAMING_RESULT.md) are
+recorded. B improves recognizability, but scores only 2/6 visual and 3/8 component
+usefulness against A's 1/6 and 2/8. The material-improvement gate fails. B has
+1,090,246 triangles; part_09 exceeds the unchanged static import limit. Offline
+inspection preserved that failure and all original meshes. Quest was not attempted.
+Estimated A+B rental cost is $0.1541; both pods were terminated, with no remaining
+pods or network volumes. Billing records have not settled.
+
+Stop paid trials of this configuration; do not automatically buy seeds 1/2 or
+promote B. Next: assess an alternative generation approach against the observed
+fused body/arm/camera and fragmented propeller failures before paying again. This
+single pair does not establish PartCrafter's ceiling or justify training. Additional
+provider integrations, product changes and motion work stay paused.
 
 Generation research is the active track. The product remains stable; answering,
 voice and motion-inference expansion are paused. Research output does not enter
@@ -97,7 +106,7 @@ The curved fan, short labels and thin wrist tether retain the user's visual
 references. Controls are 9–19 cm from the wrist anchor. Local tests cover both
 hand geometries, several hand sizes, pose timing, release/rearm and mirrored
 selection. Synthetic tracking tests and editor renders cannot establish real
-headset detection reliability; that acceptance remains open. General answering remains paused. The paid research run and next comparison are
+headset detection reliability; that acceptance remains open. General answering remains paused. The completed paid research runs and comparison are
 tracked in the current milestone above.
 
 ## Earlier milestone: Complete Object Experience / MVP 1

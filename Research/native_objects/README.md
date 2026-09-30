@@ -6,8 +6,9 @@ A separate application-owned reasoning layer should decide which behavior, if an
 suits the object and the request. Motion execution is a third evaluation. This directory is a research harness, not an implemented generator
 or replacement for ORYN's production object route. Answer development is paused.
 
-Current next experiment: [framing comparison 001](FRAMING_COMPARISON.md), with
-criteria and input hashes frozen before run B. Product/research contract mapping
+Completed: [framing comparison 001](FRAMING_RESULT.md). The predeclared improvement
+gate failed; paid trials of this configuration are stopped. The [protocol](FRAMING_COMPARISON.md)
+retains the criteria and input hashes frozen before run B. Product/research contract mapping
 is in [Complete Object](../../ORYN_COMPLETE_OBJECT.md#relationship-to-the-research-contract).
 
 ## Minimum output and evaluation
@@ -224,8 +225,8 @@ product milestone. Quest quality, component correctness and physical fit are unt
 
 The input was a small, centrally framed neutral render of a previously generated
 drone. One image, seed and supplied count cannot distinguish a model limitation
-from input-preparation issues. Audit upstream image preprocessing and predeclare a
-framing comparison before another paid run. Do not manually repair this output or
+from input-preparation issues. The subsequent [framing comparison](FRAMING_RESULT.md)
+audited preprocessing and tested that change under predeclared criteria. Do not manually repair this output or
 attach authored animation to make it appear successful.
 
 Raw meshes, dependency versions, setup/inference logs and cleanup evidence are in
@@ -243,6 +244,18 @@ restricts use to non-commercial purposes without additional permission. Keep it 
 research candidate rather than adopting it into the product. No conclusion about
 its drone quality, internals, fit or Quest compatibility has been established.
 
-Next decision: examine the actual generated parts, preserve failures, and decide
-whether the principal gap is geometry, semantic structure or articulation. Do not
-spend weeks polishing a configurator or start training before that evidence exists.
+Next decision: assess an alternative approach against the observed geometry and
+component-boundary failures documented in the [framing result](FRAMING_RESULT.md).
+Articulation alone cannot resolve these failures. Do not buy additional seeds of
+this configuration or start training on the strength of this single comparison.
+
+## Offline oversized-output inspection
+
+Normal PartCrafter import retains the production static preflight limits. For
+research review of valid but overly dense geometry only, explicitly add
+`--allow-oversized-research` to the experiment command. This permits only the
+200,000-vertex count failure, bounded to 1,000,000 vertices per part. Other preflight
+or decoder errors still reject the input. Original reports and geometry are retained;
+`runtime_viability` stays `blocked`. This is neither repair nor Quest acceptance.
+The option was added after B hit the existing limit; the frozen visual criteria
+were not changed. No output was simplified to pass.

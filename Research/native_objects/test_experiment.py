@@ -123,6 +123,32 @@ class EvaluationTests(unittest.TestCase):
             path=Path(d)/'part.glb';path.write_bytes(glb_fixture())
             with self.assertRaises(ValueError):glb_mesh(path)
 
+    def test_oversized_research_preview_keeps_runtime_failure_and_geometry(self):
+        from test_mesh_islands import fixture as glb_fixture
+        from unittest.mock import patch
+        from Research.native_objects.experiment import inspect_glb
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d);(root/'output').mkdir();path=root/'output/part_00.glb'
+            path.write_bytes(glb_fixture(change=lambda doc:doc['nodes'][0].pop('translation')))
+            original=glb_mesh(path);report=inspect_glb(path.read_bytes())
+            report.update(preflight='FAIL',vertices_upper_bound=271462,
+                          issues=['Conservative instantiated vertex count exceeds 200,000.'])
+            (root/'run.json').write_text(json.dumps({'status':'completed','id':'test','num_parts':1,
+                                                   'outputs':{'part_00.glb':sha(path)}}))
+            with patch('Research.native_objects.experiment.inspect_glb',return_value=report):
+                with self.assertRaises(ValueError):from_partcrafter(root)
+                p=from_partcrafter(root,allow_oversized_research=True)
+                self.assertEqual((p['parts'][0]['vertices'],p['parts'][0]['triangles']),original)
+                self.assertEqual(p['source']['static_preflight'][path.name],report)
+                r=evaluate(p)
+                self.assertTrue(r['layers']['object']['structural_checks_passed'])
+                self.assertEqual(r['layers']['runtime_viability']['status'],'blocked')
+                self.assertFalse(r['native_generation_goal_passed'])
+                report['issues'].append('Another preflight problem')
+                with self.assertRaises(ValueError):glb_mesh(path,allow_oversized_research=True)
+                report['issues'].pop();report['vertices_upper_bound']=1_000_001
+                with self.assertRaises(ValueError):glb_mesh(path,allow_oversized_research=True)
+
     def test_failed_inference_cannot_be_imported(self):
         with tempfile.TemporaryDirectory() as d:
             (Path(d)/'run.json').write_text(json.dumps({'status':'failed'}))

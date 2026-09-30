@@ -1,0 +1,865 @@
+{
+  "experiment": "partcrafter-framing-001",
+  "date": "2026-09-30",
+  "frozen_protocol_commit": "0a2e466",
+  "protocol": "framing-protocol-001.json",
+  "a_review": {
+    "condition": "A",
+    "reviewed_before_B_inference": true,
+    "reviewer": "agent qualitative desktop review",
+    "views": "four assembled views, one exploded view, oblique and front views of every isolated mesh",
+    "scores": {
+      "V1": {
+        "score": 1,
+        "reason": "Central drone body and landing gear are recognizable, but four coherent rotor positions are not established."
+      },
+      "V2": {
+        "score": 0,
+        "reason": "Several substantial detached propeller-like pieces and smaller fragments float above the body in assembled views."
+      },
+      "V3": {
+        "score": 0,
+        "reason": "Multiple rotor/arm regions are thin, broken or missing; front and top views do not show a coherent quadrotor."
+      },
+      "P1": {
+        "score": 1,
+        "reason": "Conservative partial credit for body-like part_09, camera/body module part_10 and a landing-gear-like part_01. Most other parts are incomplete or fragmented; these names are visual descriptions, not verified semantics."
+      },
+      "P2": {
+        "score": 1,
+        "reason": "Those three regions can be selected separately, but part_09 fuses a body plate, arm and end housing."
+      },
+      "P3": {
+        "score": 0,
+        "reason": "Most remaining output meshes are fragments or malformed slivers; the body mesh also fuses important boundaries."
+      },
+      "P4": {
+        "score": 0,
+        "reason": "Multiple major blade/arm-like pieces are detached or misplaced in assembled views."
+      }
+    },
+    "visual_total": 1,
+    "component_total": 2,
+    "desktop_quality_pass": false,
+    "manual_repairs": 0,
+    "quest": "not_tested"
+  },
+  "b_review": {
+    "condition": "B",
+    "reviewer": "agent qualitative desktop review",
+    "views": "four assembled views, one exploded view, oblique and front views of every isolated mesh",
+    "scores": {
+      "V1": {
+        "score": 2,
+        "reason": "A recognizable body and four arm/rotor positions are visible in assembled top and oblique views. This earns identity credit despite the defects scored separately."
+      },
+      "V2": {
+        "score": 0,
+        "reason": "Substantial blade-like debris floats above the central body in the assembled top view; additional detached fragments are visible around the rotor positions."
+      },
+      "V3": {
+        "score": 0,
+        "reason": "Multiple propeller regions remain severely incomplete or malformed: single blade slivers and broken disconnected surfaces rather than four intact propellers."
+      },
+      "P1": {
+        "score": 1,
+        "reason": "Conservative partial credit for the compact part_00, body-like part_09 and complete main propeller shape in part_06. Other regions are incomplete/fused. These are visual descriptions, not validated semantic labels."
+      },
+      "P2": {
+        "score": 1,
+        "reason": "Those three shapes are selectable separately, but body, arms, camera and several end housings are fused in part_09; some selected meshes also include unrelated fragments."
+      },
+      "P3": {
+        "score": 0,
+        "reason": "Part_09 absorbs most useful body/arm/camera geometry. Most remaining meshes are blade slivers or scattered fragments; part_04 combines both landing-gear-like structures with end housings."
+      },
+      "P4": {
+        "score": 1,
+        "reason": "Most arm ends and landing-gear-like geometry are now positioned sensibly around the body, but detached and misaligned blade regions remain."
+      }
+    },
+    "manual_repairs": 0,
+    "quest": "not_tested",
+    "visual_total": 2,
+    "component_total": 3,
+    "desktop_quality_pass": false
+  },
+  "decision": {
+    "material_improvement": false,
+    "gates": {
+      "visual_gain_at_least_two": false,
+      "component_gain_at_least_two": false,
+      "no_visual_zero": false,
+      "three_useful_selectable_components": true,
+      "zero_repairs": true,
+      "comparable_execution_with_declared_driver_caveat": true
+    },
+    "action": "Stop paid trials of this configuration. No seeds 1/2, no Quest promotion. Assess an alternative approach against observed geometry and component-boundary failures before buying another run.",
+    "scope": "This seed/reference/configuration; not a universal failure claim or a case for custom training."
+  },
+  "b_run": {
+    "id": "4ca0cd5917044d4eab28f8916faa39de",
+    "baseline": "PartCrafter",
+    "revision": "3d773bf02fad51c7ab31a5615573fec93b287b30",
+    "input_sha256": "9e73908b7e97b12fa04c2435626b155cd6b941d00a9baffc7813010af1e0599f",
+    "num_parts": 13,
+    "seed": 0,
+    "supplied": [
+      "reference image",
+      "part count"
+    ],
+    "predicted": [
+      "geometry"
+    ],
+    "not_predicted": [
+      "semantic labels",
+      "hierarchy",
+      "joints",
+      "behavior"
+    ],
+    "manual_repairs": [],
+    "timeout_seconds": 1800,
+    "command": [
+      "/workspace/oryn/venv/bin/python",
+      "/workspace/oryn/Research/native_objects/partcrafter_entry.py",
+      "/workspace/PartCrafter",
+      "--image_path",
+      "/workspace/oryn/Builds/NativeObjects/framing-comparison-001/drone-framed.png",
+      "--num_parts",
+      "13",
+      "--seed",
+      "0",
+      "--num_inference_steps",
+      "50",
+      "--output_dir",
+      "/workspace/oryn-run-b-001",
+      "--tag",
+      "output"
+    ],
+    "adapter_sha256": "2f67f5b128bbf298d63e09de7b760390b1352e0ddb75aa7991fad3a0418b72ed",
+    "weights": {
+      "revisions": {
+        "wgsxm/PartCrafter": "69a0ffc1dad5e48e7e5ed91c0609f2b1276eb31f"
+      },
+      "files": {
+        "pretrained_weights/PartCrafter/.gitattributes": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361",
+        "pretrained_weights/PartCrafter/README.md": "759873b025f71187d8e5a8bb15602d4692e59a366c17cf8ef3af7f058e57356c",
+        "pretrained_weights/PartCrafter/feature_extractor_dinov2/preprocessor_config.json": "14e780d86fa1861f8751f868d7f45425b5feb55c38ca26f152ca5097ab30f828",
+        "pretrained_weights/PartCrafter/image_encoder_dinov2/config.json": "25329e19f8c1dc678017cc5fb47428a25169e1d90238a3584cccc89fbabc8525",
+        "pretrained_weights/PartCrafter/image_encoder_dinov2/model.safetensors": "aa0b83921a3339259fb1ef684ce63c9d09b5a45f9998e0789a0ad4cba318b07b",
+        "pretrained_weights/PartCrafter/model_index.json": "c6956993e6a5fb84dfaac5e003d2fec9ad2565fa7a27a22910e9905ba2bad6f4",
+        "pretrained_weights/PartCrafter/scheduler/scheduler_config.json": "83b4baea6a130db64b069df0e3e57417c2a1170a529c095d78f562ff89b31a7c",
+        "pretrained_weights/PartCrafter/transformer/config.json": "0c65b565d90ddcdeaaaff594b5c4622ca5d0e387b1dc583a2112d40c2f6f77dc",
+        "pretrained_weights/PartCrafter/transformer/diffusion_pytorch_model.safetensors": "915aba1d29c626d960305a0d36a6edb7798288a19c6724388b005c2fa53bcbf8",
+        "pretrained_weights/PartCrafter/vae/config.json": "c49fbf1e80542386d0bc14472061ee831c5edb558b973913a374325bbb9576dd",
+        "pretrained_weights/PartCrafter/vae/diffusion_pytorch_model.safetensors": "b43b006e5692223877427cdb568c2c1477f52a2d226db4d5eb354b4886c167a4"
+      }
+    },
+    "environment": {
+      "python": "3.11.10 (main, Sep  7 2024, 18:35:41) [GCC 11.4.0]",
+      "torch": "2.5.1+cu124",
+      "cuda": "12.4",
+      "gpu": "NVIDIA A40"
+    },
+    "status": "completed",
+    "started": 1790797093.0208342,
+    "outputs": {
+      "part_00.glb": "ffb9a48fae373067d94b4651aac8e2c5ca91434f8cb6c977a58b49d76a0b4ca0",
+      "part_01.glb": "6568042b64e270fdf6b4735d6ac28b49ab06fa709b7acd3c714fe02d3404c14e",
+      "part_02.glb": "96f5846e3ff24bf813956c9a6571c4a0ccc75edf33488dcb156971669760314e",
+      "part_03.glb": "a86b1c3e03015de295da33f49cd62960c319670a1b6c763b81206e3bb288735b",
+      "part_04.glb": "fb44d23135625a510e8fd8893c91d5550e751813f27dfbb407d545f68110ccd8",
+      "part_05.glb": "ceef85e21a703214df69637f9b391d43dd7e365c2f37b16e5cddf78f40243eaf",
+      "part_06.glb": "070c2393ff2e8d93a41aaefdaf928aac5df4a08b2d4f49f6fd86439a81965c28",
+      "part_07.glb": "0adab331e239e82ac6e4b5dc78c8133ff004a5574c68201b538a314d7f617599",
+      "part_08.glb": "ffe78752d20cb58d38971144bc712f02310b13d0adf2b6a2ecf414c4ad0438ce",
+      "part_09.glb": "a3dd8ba5a3fea56cd8aa9d1c8a28bd45cc7ec62a0e37a8e6b9e78ed355b9c739",
+      "part_10.glb": "1834002c9ff8f8f84c30a0c6566cb6dbbc2a28285793d2731fbd9ad6937966ae",
+      "part_11.glb": "f853b5a851f4d1405aa1b7e2f5398e85dd46dabbdf7c9b1a17be6901e95821bf",
+      "part_12.glb": "0051515d4a23b3331ceb7cff77c92533e9ac55d7868cfd3235de251b5481b791"
+    },
+    "elapsed_seconds": 211.582
+  },
+  "b_evaluation": {
+    "id": "partcrafter-4ca0cd5917044d4eab28f8916faa39de",
+    "origins": {
+      "geometry": "model_generated",
+      "semantics": "unknown",
+      "hierarchy": "unknown",
+      "motion": "unknown"
+    },
+    "components": 13,
+    "triangles": 1090246,
+    "structural_checks_passed": true,
+    "native_generation_goal_passed": false,
+    "manual_repair_count": 0,
+    "checks": {
+      "package_version": {
+        "status": "pass",
+        "detail": "Research contract v1"
+      },
+      "provenance": {
+        "status": "pass",
+        "detail": "Geometry, semantics and hierarchy identify origin; repairs remain explicit"
+      },
+      "unique_components": {
+        "status": "pass",
+        "detail": "Exact geometry/component binding"
+      },
+      "usable_geometry": {
+        "status": "pass",
+        "detail": "Invalid/empty/all-degenerate components: []"
+      },
+      "assembly_references": {
+        "status": "pass",
+        "detail": "Assembly references exist and parent graph is acyclic"
+      },
+      "motion_provenance": {
+        "status": "pass",
+        "detail": "Motion origin is explicit, including unknown"
+      },
+      "motion_references": {
+        "status": "pass",
+        "detail": "Motion drivers exist and driver graph is acyclic"
+      },
+      "motion_parameters": {
+        "status": "missing",
+        "detail": "No predicted or supplied motion"
+      },
+      "runtime_motion_agreement": {
+        "status": "not_assessed",
+        "detail": "Requires usable joints and independently exported runtime frames"
+      },
+      "semantic_correctness": {
+        "status": "not_assessed",
+        "detail": "Part names/count alone cannot establish meaning; independent review required"
+      },
+      "attachment_fit": {
+        "status": "not_assessed",
+        "detail": "No attachment interfaces/ground truth established; parent graph alone is insufficient"
+      },
+      "motion_clearance": {
+        "status": "not_assessed",
+        "detail": "No triangle collision sweep implemented; valid axes do not establish clearance"
+      },
+      "visual_quality": {
+        "status": "not_assessed",
+        "detail": "Requires user review of original materials and geometry in Quest"
+      },
+      "quest_performance": {
+        "status": "not_assessed",
+        "detail": "No runtime import or frame-time measurement in this experiment"
+      },
+      "physical_validity": {
+        "status": "not_assessed",
+        "detail": "Kinematic motion is not physical feasibility"
+      }
+    },
+    "layers": {
+      "object": {
+        "structural_checks_passed": true,
+        "failed_checks": [],
+        "missing_output_facets": [
+          "semantics",
+          "hierarchy"
+        ],
+        "quality_status": "not_assessed",
+        "detail": "Geometry and assembly checks only; semantic meaning, materials, fit and Quest quality need evaluation."
+      },
+      "behavior_decision": {
+        "status": "not_assessed",
+        "detail": "No application-owned model decision recorded for this object and request. Missing motion does not mean animation is unnecessary."
+      },
+      "motion": {
+        "status": "absent",
+        "failed_checks": [],
+        "detail": "Optional motion on this geometry. Sampled agreement does not prove appropriate behavior, clearance or physical validity."
+      },
+      "runtime_viability": {
+        "status": "blocked",
+        "failed_static_preflight_files": [
+          "part_09.glb"
+        ],
+        "detail": "Original static preflight retained. Offline research preview is not runtime acceptance; Quest remains untested."
+      }
+    },
+    "missing_output_facets": [
+      "semantics",
+      "hierarchy",
+      "motion"
+    ],
+    "verdict": "Control/evidence only; complete native generation is not demonstrated."
+  },
+  "b_static_preflight": {
+    "part_00.glb": {
+      "schema_version": 1,
+      "sha256": "ffb9a48fae373067d94b4651aac8e2c5ca91434f8cb6c977a58b49d76a0b4ca0",
+      "bytes": 590276,
+      "scene": "Scene_0",
+      "scene_index": 0,
+      "mesh_objects": 1,
+      "unique_meshes": 1,
+      "primitives": 1,
+      "triangles": 32748,
+      "vertices_upper_bound": 16376,
+      "materials": 0,
+      "textures": 0,
+      "images": 0,
+      "hierarchy": [
+        {
+          "node_index": 0,
+          "parent_index": null,
+          "depth": 0,
+          "name": "geometry_0",
+          "mesh_index": 0
+        }
+      ],
+      "preflight": "PASS",
+      "issues": [],
+      "warnings": [
+        "Separate mesh nodes are candidate parts, not semantic labels or independently grabbable parts yet."
+      ],
+      "scope": "Static metadata preflight only; Unity import, bounds, visuals and manipulation still need headset verification."
+    },
+    "part_01.glb": {
+      "schema_version": 1,
+      "sha256": "6568042b64e270fdf6b4735d6ac28b49ab06fa709b7acd3c714fe02d3404c14e",
+      "bytes": 327780,
+      "scene": "Scene_0",
+      "scene_index": 0,
+      "mesh_objects": 1,
+      "unique_meshes": 1,
+      "primitives": 1,
+      "triangles": 18164,
+      "vertices_upper_bound": 9086,
+      "materials": 0,
+      "textures": 0,
+      "images": 0,
+      "hierarchy": [
+        {
+          "node_index": 0,
+          "parent_index": null,
+          "depth": 0,
+          "name": "geometry_0",
+          "mesh_index": 0
+        }
+      ],
+      "preflight": "PASS",
+      "issues": [],
+      "warnings": [
+        "Separate mesh nodes are candidate parts, not semantic labels or independently grabbable parts yet."
+      ],
+      "scope": "Static metadata preflight only; Unity import, bounds, visuals and manipulation still need headset verification."
+    },
+    "part_02.glb": {
+      "schema_version": 1,
+      "sha256": "96f5846e3ff24bf813956c9a6571c4a0ccc75edf33488dcb156971669760314e",
+      "bytes": 427284,
+      "scene": "Scene_0",
+      "scene_index": 0,
+      "mesh_objects": 1,
+      "unique_meshes": 1,
+      "primitives": 1,
+      "triangles": 23676,
+      "vertices_upper_bound": 11866,
+      "materials": 0,
+      "textures": 0,
+      "images": 0,
+      "hierarchy": [
+        {
+          "node_index": 0,
+          "parent_index": null,
+          "depth": 0,
+          "name": "geometry_0",
+          "mesh_index": 0
+        }
+      ],
+      "preflight": "PASS",
+      "issues": [],
+      "warnings": [
+        "Separate mesh nodes are candidate parts, not semantic labels or independently grabbable parts yet."
+      ],
+      "scope": "Static metadata preflight only; Unity import, bounds, visuals and manipulation still need headset verification."
+    },
+    "part_03.glb": {
+      "schema_version": 1,
+      "sha256": "a86b1c3e03015de295da33f49cd62960c319670a1b6c763b81206e3bb288735b",
+      "bytes": 177300,
+      "scene": "Scene_0",
+      "scene_index": 0,
+      "mesh_objects": 1,
+      "unique_meshes": 1,
+      "primitives": 1,
+      "triangles": 9780,
+      "vertices_upper_bound": 4930,
+      "materials": 0,
+      "textures": 0,
+      "images": 0,
+      "hierarchy": [
+        {
+          "node_index": 0,
+          "parent_index": null,
+          "depth": 0,
+          "name": "geometry_0",
+          "mesh_index": 0
+        }
+      ],
+      "preflight": "PASS",
+      "issues": [],
+      "warnings": [
+        "Separate mesh nodes are candidate parts, not semantic labels or independently grabbable parts yet."
+      ],
+      "scope": "Static metadata preflight only; Unity import, bounds, visuals and manipulation still need headset verification."
+    },
+    "part_04.glb": {
+      "schema_version": 1,
+      "sha256": "fb44d23135625a510e8fd8893c91d5550e751813f27dfbb407d545f68110ccd8",
+      "bytes": 4289888,
+      "scene": "Scene_0",
+      "scene_index": 0,
+      "mesh_objects": 1,
+      "unique_meshes": 1,
+      "primitives": 1,
+      "triangles": 238320,
+      "vertices_upper_bound": 119105,
+      "materials": 0,
+      "textures": 0,
+      "images": 0,
+      "hierarchy": [
+        {
+          "node_index": 0,
+          "parent_index": null,
+          "depth": 0,
+          "name": "geometry_0",
+          "mesh_index": 0
+        }
+      ],
+      "preflight": "PASS",
+      "issues": [],
+      "warnings": [
+        "Separate mesh nodes are candidate parts, not semantic labels or independently grabbable parts yet."
+      ],
+      "scope": "Static metadata preflight only; Unity import, bounds, visuals and manipulation still need headset verification."
+    },
+    "part_05.glb": {
+      "schema_version": 1,
+      "sha256": "ceef85e21a703214df69637f9b391d43dd7e365c2f37b16e5cddf78f40243eaf",
+      "bytes": 1847240,
+      "scene": "Scene_0",
+      "scene_index": 0,
+      "mesh_objects": 1,
+      "unique_meshes": 1,
+      "primitives": 1,
+      "triangles": 102538,
+      "vertices_upper_bound": 51333,
+      "materials": 0,
+      "textures": 0,
+      "images": 0,
+      "hierarchy": [
+        {
+          "node_index": 0,
+          "parent_index": null,
+          "depth": 0,
+          "name": "geometry_0",
+          "mesh_index": 0
+        }
+      ],
+      "preflight": "PASS",
+      "issues": [],
+      "warnings": [
+        "Separate mesh nodes are candidate parts, not semantic labels or independently grabbable parts yet."
+      ],
+      "scope": "Static metadata preflight only; Unity import, bounds, visuals and manipulation still need headset verification."
+    },
+    "part_06.glb": {
+      "schema_version": 1,
+      "sha256": "070c2393ff2e8d93a41aaefdaf928aac5df4a08b2d4f49f6fd86439a81965c28",
+      "bytes": 777756,
+      "scene": "Scene_0",
+      "scene_index": 0,
+      "mesh_objects": 1,
+      "unique_meshes": 1,
+      "primitives": 1,
+      "triangles": 43156,
+      "vertices_upper_bound": 21592,
+      "materials": 0,
+      "textures": 0,
+      "images": 0,
+      "hierarchy": [
+        {
+          "node_index": 0,
+          "parent_index": null,
+          "depth": 0,
+          "name": "geometry_0",
+          "mesh_index": 0
+        }
+      ],
+      "preflight": "PASS",
+      "issues": [],
+      "warnings": [
+        "Separate mesh nodes are candidate parts, not semantic labels or independently grabbable parts yet."
+      ],
+      "scope": "Static metadata preflight only; Unity import, bounds, visuals and manipulation still need headset verification."
+    },
+    "part_07.glb": {
+      "schema_version": 1,
+      "sha256": "0adab331e239e82ac6e4b5dc78c8133ff004a5574c68201b538a314d7f617599",
+      "bytes": 170864,
+      "scene": "Scene_0",
+      "scene_index": 0,
+      "mesh_objects": 1,
+      "unique_meshes": 1,
+      "primitives": 1,
+      "triangles": 9408,
+      "vertices_upper_bound": 4766,
+      "materials": 0,
+      "textures": 0,
+      "images": 0,
+      "hierarchy": [
+        {
+          "node_index": 0,
+          "parent_index": null,
+          "depth": 0,
+          "name": "geometry_0",
+          "mesh_index": 0
+        }
+      ],
+      "preflight": "PASS",
+      "issues": [],
+      "warnings": [
+        "Separate mesh nodes are candidate parts, not semantic labels or independently grabbable parts yet."
+      ],
+      "scope": "Static metadata preflight only; Unity import, bounds, visuals and manipulation still need headset verification."
+    },
+    "part_08.glb": {
+      "schema_version": 1,
+      "sha256": "ffe78752d20cb58d38971144bc712f02310b13d0adf2b6a2ecf414c4ad0438ce",
+      "bytes": 122992,
+      "scene": "Scene_0",
+      "scene_index": 0,
+      "mesh_objects": 1,
+      "unique_meshes": 1,
+      "primitives": 1,
+      "triangles": 6750,
+      "vertices_upper_bound": 3435,
+      "materials": 0,
+      "textures": 0,
+      "images": 0,
+      "hierarchy": [
+        {
+          "node_index": 0,
+          "parent_index": null,
+          "depth": 0,
+          "name": "geometry_0",
+          "mesh_index": 0
+        }
+      ],
+      "preflight": "PASS",
+      "issues": [],
+      "warnings": [
+        "Separate mesh nodes are candidate parts, not semantic labels or independently grabbable parts yet."
+      ],
+      "scope": "Static metadata preflight only; Unity import, bounds, visuals and manipulation still need headset verification."
+    },
+    "part_09.glb": {
+      "schema_version": 1,
+      "sha256": "a3dd8ba5a3fea56cd8aa9d1c8a28bd45cc7ec62a0e37a8e6b9e78ed355b9c739",
+      "bytes": 9771092,
+      "scene": "Scene_0",
+      "scene_index": 0,
+      "mesh_objects": 1,
+      "unique_meshes": 1,
+      "primitives": 1,
+      "triangles": 542730,
+      "vertices_upper_bound": 271462,
+      "materials": 0,
+      "textures": 0,
+      "images": 0,
+      "hierarchy": [
+        {
+          "node_index": 0,
+          "parent_index": null,
+          "depth": 0,
+          "name": "geometry_0",
+          "mesh_index": 0
+        }
+      ],
+      "preflight": "FAIL",
+      "issues": [
+        "Conservative instantiated vertex count exceeds 200,000."
+      ],
+      "warnings": [
+        "Separate mesh nodes are candidate parts, not semantic labels or independently grabbable parts yet."
+      ],
+      "scope": "Static metadata preflight only; Unity import, bounds, visuals and manipulation still need headset verification."
+    },
+    "part_10.glb": {
+      "schema_version": 1,
+      "sha256": "1834002c9ff8f8f84c30a0c6566cb6dbbc2a28285793d2731fbd9ad6937966ae",
+      "bytes": 552468,
+      "scene": "Scene_0",
+      "scene_index": 0,
+      "mesh_objects": 1,
+      "unique_meshes": 1,
+      "primitives": 1,
+      "triangles": 30648,
+      "vertices_upper_bound": 15326,
+      "materials": 0,
+      "textures": 0,
+      "images": 0,
+      "hierarchy": [
+        {
+          "node_index": 0,
+          "parent_index": null,
+          "depth": 0,
+          "name": "geometry_0",
+          "mesh_index": 0
+        }
+      ],
+      "preflight": "PASS",
+      "issues": [],
+      "warnings": [
+        "Separate mesh nodes are candidate parts, not semantic labels or independently grabbable parts yet."
+      ],
+      "scope": "Static metadata preflight only; Unity import, bounds, visuals and manipulation still need headset verification."
+    },
+    "part_11.glb": {
+      "schema_version": 1,
+      "sha256": "f853b5a851f4d1405aa1b7e2f5398e85dd46dabbdf7c9b1a17be6901e95821bf",
+      "bytes": 491436,
+      "scene": "Scene_0",
+      "scene_index": 0,
+      "mesh_objects": 1,
+      "unique_meshes": 1,
+      "primitives": 1,
+      "triangles": 27232,
+      "vertices_upper_bound": 13656,
+      "materials": 0,
+      "textures": 0,
+      "images": 0,
+      "hierarchy": [
+        {
+          "node_index": 0,
+          "parent_index": null,
+          "depth": 0,
+          "name": "geometry_0",
+          "mesh_index": 0
+        }
+      ],
+      "preflight": "PASS",
+      "issues": [],
+      "warnings": [
+        "Separate mesh nodes are candidate parts, not semantic labels or independently grabbable parts yet."
+      ],
+      "scope": "Static metadata preflight only; Unity import, bounds, visuals and manipulation still need headset verification."
+    },
+    "part_12.glb": {
+      "schema_version": 1,
+      "sha256": "0051515d4a23b3331ceb7cff77c92533e9ac55d7868cfd3235de251b5481b791",
+      "bytes": 93124,
+      "scene": "Scene_0",
+      "scene_index": 0,
+      "mesh_objects": 1,
+      "unique_meshes": 1,
+      "primitives": 1,
+      "triangles": 5096,
+      "vertices_upper_bound": 2600,
+      "materials": 0,
+      "textures": 0,
+      "images": 0,
+      "hierarchy": [
+        {
+          "node_index": 0,
+          "parent_index": null,
+          "depth": 0,
+          "name": "geometry_0",
+          "mesh_index": 0
+        }
+      ],
+      "preflight": "PASS",
+      "issues": [],
+      "warnings": [
+        "Separate mesh nodes are candidate parts, not semantic labels or independently grabbable parts yet."
+      ],
+      "scope": "Static metadata preflight only; Unity import, bounds, visuals and manipulation still need headset verification."
+    }
+  },
+  "b_metrics": {
+    "triangles": 1090246,
+    "vertices_upper_bound": 545533,
+    "bytes": 19639500,
+    "primitives": 13,
+    "materials": 0,
+    "textures": 0,
+    "images": 0
+  },
+  "a_metrics": {
+    "source_assets": [
+      {
+        "part": "part_00",
+        "file_bytes": 52592,
+        "declared_materials": 0,
+        "declared_images": 0,
+        "mesh_primitives": 1
+      },
+      {
+        "part": "part_01",
+        "file_bytes": 204780,
+        "declared_materials": 0,
+        "declared_images": 0,
+        "mesh_primitives": 1
+      },
+      {
+        "part": "part_02",
+        "file_bytes": 174680,
+        "declared_materials": 0,
+        "declared_images": 0,
+        "mesh_primitives": 1
+      },
+      {
+        "part": "part_03",
+        "file_bytes": 160020,
+        "declared_materials": 0,
+        "declared_images": 0,
+        "mesh_primitives": 1
+      },
+      {
+        "part": "part_04",
+        "file_bytes": 103572,
+        "declared_materials": 0,
+        "declared_images": 0,
+        "mesh_primitives": 1
+      },
+      {
+        "part": "part_05",
+        "file_bytes": 172692,
+        "declared_materials": 0,
+        "declared_images": 0,
+        "mesh_primitives": 1
+      },
+      {
+        "part": "part_06",
+        "file_bytes": 60224,
+        "declared_materials": 0,
+        "declared_images": 0,
+        "mesh_primitives": 1
+      },
+      {
+        "part": "part_07",
+        "file_bytes": 294108,
+        "declared_materials": 0,
+        "declared_images": 0,
+        "mesh_primitives": 1
+      },
+      {
+        "part": "part_08",
+        "file_bytes": 70836,
+        "declared_materials": 0,
+        "declared_images": 0,
+        "mesh_primitives": 1
+      },
+      {
+        "part": "part_09",
+        "file_bytes": 1757692,
+        "declared_materials": 0,
+        "declared_images": 0,
+        "mesh_primitives": 1
+      },
+      {
+        "part": "part_10",
+        "file_bytes": 265404,
+        "declared_materials": 0,
+        "declared_images": 0,
+        "mesh_primitives": 1
+      },
+      {
+        "part": "part_11",
+        "file_bytes": 144516,
+        "declared_materials": 0,
+        "declared_images": 0,
+        "mesh_primitives": 1
+      },
+      {
+        "part": "part_12",
+        "file_bytes": 74492,
+        "declared_materials": 0,
+        "declared_images": 0,
+        "mesh_primitives": 1
+      }
+    ],
+    "quest": {
+      "runtime_import": "not_tested",
+      "manipulation": "not_tested",
+      "draw_calls": "not_tested",
+      "texture_memory": "not_tested",
+      "collider_count": "not_tested",
+      "load_time": "not_tested",
+      "frame_time": "not_tested",
+      "memory": "not_tested"
+    }
+  },
+  "verification": {
+    "all_13_output_hashes_match": true,
+    "default_import_error": "GLB static preflight failed: ['Conservative instantiated vertex count exceeds 200,000.']",
+    "offline_exception": "Explicit allow-oversized-research; original static preflight remains FAIL, geometry unmodified; production limit unchanged.",
+    "desktop": "31 views per condition; loading, explode, individual isolation and reset checked; motion disabled; no page errors.",
+    "quest": {
+      "runtime_import": "not_tested",
+      "manipulation": "not_tested",
+      "draw_calls": "not_tested",
+      "texture_memory": "not_tested",
+      "collider_count": "not_tested",
+      "load_time": "not_tested",
+      "frame_time": "not_tested",
+      "memory": "not_tested"
+    },
+    "unit_tests": "22 research evaluator tests passed, including default rejection, research-only opt-in, retained runtime failure and rejection of other issues.",
+    "desktop_reset": "Actual UI controls restore selection, separation, motion state and camera values. Exact canvas pixel equality did not hold across redraws (mean absolute RGBA delta: A 0.205/255, B 0.508/255); pixel-exact rendering is not claimed."
+  },
+  "comparison_controls": {
+    "matched": [
+      "upstream revision",
+      "all model weight file hashes",
+      "adapter hash",
+      "installed Python package versions",
+      "Python 3.11.10",
+      "PyTorch 2.5.1+cu124",
+      "CUDA runtime 12.4",
+      "A40",
+      "seed 0",
+      "13 parts",
+      "50 steps",
+      "1024 tokens/part",
+      "guidance 7",
+      "float16",
+      "flash decoder false"
+    ],
+    "intentional_change": "foreground framing only",
+    "limitations": [
+      "Provider-reported host CUDA capability 13.2 (A) vs 13.0 (B); same container CUDA runtime. Different rental host, numerical nondeterminism not excluded.",
+      "One reference/seed; qualitative agent scoring, not an independent blinded review or repeatability proof.",
+      "Source is a neutral render of an already generated drone, not a verified mechanical assembly.",
+      "No semantics, joints, hierarchy, fit, materials or motion inferred from appearances."
+    ]
+  },
+  "rental": {
+    "pod_id": "rdcw5yn2l8bs17",
+    "terminated": true,
+    "remaining_pods": 0,
+    "remaining_network_volumes": 0,
+    "duration_seconds": 554.015,
+    "estimated_compute_usd": 0.0754,
+    "estimated_storage_usd": 0.0017,
+    "estimated_b_total_usd": 0.0771,
+    "estimated_a_plus_b_usd": 0.1541,
+    "billing_status": "Billing API has no records yet; estimates are not a settled invoice.",
+    "combined_authorized_ceiling_usd": 5
+  },
+  "artifacts": {
+    "raw_b": "Builds/NativeObjects/partcrafter-framing-b-001",
+    "comparison": "Builds/NativeObjects/framing-comparison-001",
+    "download_archive_sha256": "7774fa455de5a0fcfea5ce30ce560eea567fa15bbf22d163c431a4cdd9ece161",
+    "screenshots": "Research/native_objects/results/framing-001/",
+    "capture_method": "Builds/NativeObjects/framing-comparison-001/capture_review.cjs"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "checked_date": "2026-09-30",
+  "sources": [
+    {
+      "repo": "InternRobotics/MeshCoder",
+      "revision": "2f7b3e45ee515caf6bb152a2fad06a1298612496",
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/InternRobotics/MeshCoder/2f7b3e45ee515caf6bb152a2fad06a1298612496/README.md",
+      "sha256": "e91cff3da30265cab21624aeefec3c5f0235081d99f37109daf943aee92f1518"
+    },
+    {
+      "repo": "Mobiuslqm/PAct",
+      "revision": "a5ccec5056e7b27f39ddb5b83613c0efba9b2861",
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/Mobiuslqm/PAct/a5ccec5056e7b27f39ddb5b83613c0efba9b2861/README.md",
+      "sha256": "bc5ed593ee3bdbeadf5fbfbe0945da2c6aa9abb35fd9549cf78e0258cf8017ec"
+    },
+    {
+      "repo": "HKU-MMLab/OmniPart",
+      "revision": "ceb1a4ff2d279a57a673d0f65954735c6bf8231c",
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/HKU-MMLab/OmniPart/ceb1a4ff2d279a57a673d0f65954735c6bf8231c/README.md",
+      "sha256": "7f3f6e8ac016eedbe691547db718985c9365791a1aeec5559cb5f852d123c412"
+    },
+    {
+      "repo": "HKU-MMLab/OmniPart",
+      "revision": "ceb1a4ff2d279a57a673d0f65954735c6bf8231c",
+      "path": "modules/inference_utils.py",
+      "url": "https://raw.githubusercontent.com/HKU-MMLab/OmniPart/ceb1a4ff2d279a57a673d0f65954735c6bf8231c/modules/inference_utils.py",
+      "sha256": "782b8d28cfc6f37fa1ec8f145f7f0d16d920cc472026c66c26211514144a5f7a"
+    },
+    {
+      "repo": "HKU-MMLab/OmniPart",
+      "revision": "ceb1a4ff2d279a57a673d0f65954735c6bf8231c",
+      "path": "modules/part_synthesis/pipelines/omnipart_image_to_parts.py",
+      "url": "https://raw.githubusercontent.com/HKU-MMLab/OmniPart/ceb1a4ff2d279a57a673d0f65954735c6bf8231c/modules/part_synthesis/pipelines/omnipart_image_to_parts.py",
+      "sha256": "516099cbdd302b5ac0dc3648af90510cfa40caa086e07f5c0fd2f07d413ed9cb"
+    },
+    {
+      "repo": "HKU-MMLab/OmniPart",
+      "revision": "ceb1a4ff2d279a57a673d0f65954735c6bf8231c",
+      "path": "scripts/inference_omnipart.py",
+      "url": "https://raw.githubusercontent.com/HKU-MMLab/OmniPart/ceb1a4ff2d279a57a673d0f65954735c6bf8231c/scripts/inference_omnipart.py",
+      "sha256": "f0c2d85885a57aa3f33c44583c4fec99b8f2d8f8bfffec5bb676edbbf1e01571"
+    }
+  ]
+}

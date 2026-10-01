@@ -1,0 +1,83 @@
+{
+  "id": "structure-preflight-001-mask",
+  "source_url": "https://raw.githubusercontent.com/HKU-MMLab/OmniPart/ceb1a4ff2d279a57a673d0f65954735c6bf8231c/modules/inference_utils.py",
+  "source_sha256": "782b8d28cfc6f37fa1ec8f145f7f0d16d920cc472026c66c26211514144a5f7a",
+  "numpy_version": "2.4.2",
+  "scope": "Exact upstream downsampling function only; synthetic masks, no model or GPU.",
+  "fixtures": [
+    {
+      "fixture": "nine_large_regions",
+      "input_shape": [
+        518,
+        518
+      ],
+      "output_shape": [
+        37,
+        37
+      ],
+      "input_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "output_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "lost_ids": []
+    },
+    {
+      "fixture": "nine_regions_one_tiny",
+      "input_shape": [
+        518,
+        518
+      ],
+      "output_shape": [
+        37,
+        37
+      ],
+      "input_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "output_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "lost_ids": [
+        9
+      ]
+    }
+  ],
+  "observation": "A visible small label can disappear before inference.",
+  "geometry_generated": false,
+  "model_quality_assessed": false,
+  "paid_calls": 0,
+  "native_generation_goal_passed": false
+}

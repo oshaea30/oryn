@@ -40,6 +40,15 @@ Exact-product reconstruction remained evidence-blocked. Stop this configuration;
 no extra seeds or per-output repairs. Estimated rental cost was $0.4782; cleanup
 independently confirmed no pods or network volumes. Nothing was sent to Quest.
 
+## Current preflight: construction guidance and latency
+
+[Structure preflight 001](STRUCTURE_PREFLIGHT.md) records a bounded source audit,
+an executed CPU input-retention check, and predeclared quality/identity/latency
+gates. No candidate has yet established the complete unchanged-request input path;
+no GPU run was dispatched. The existing planner proposes role groups, not spatial
+construction. Next establish a concrete plan-to-geometry input path without manual
+object-specific guidance. Preserve the failed Cube/PartCrafter decisions.
+
 ## Minimum output and evaluation
 
 The research package (`oryn-native-experiment-v1`) retains component-bound triangle

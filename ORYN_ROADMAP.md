@@ -80,11 +80,18 @@ pinned eight-slot pipeline; exact-product reconstruction stayed evidence-blocked
 Zero output repairs or inference retries. Rental estimate $0.4782; independent
 cleanup confirmed zero pods and network volumes. No Quest import was attempted.
 
-Stop both tested configurations without buying more seeds. Next, assess approaches
-that generate parts and their spatial relationships together, including internal
-roles, and can accept the unchanged speaker plan. A good exterior or part label
-is insufficient. These few trials do not establish every model's ceiling or justify
-training. Product changes, answering and motion expansion remain paused.
+Stop both tested configurations without buying more seeds. The bounded
+[construction-guidance preflight](Research/native_objects/STRUCTURE_PREFLIGHT.md)
+checked four candidates and reproduced loss of a small part label in OmniPart's
+input downsampling, without model inference or GPU spend. No candidate yet has an
+established input path covering all unchanged requests. The existing planner supplies
+role groups, not dimensions, instance placement or connections. Next establish a
+concrete application-owned plan-to-geometry path before another paid run. The
+predeclared gates require useful components, identity preserved through refinement,
+and measured cold/resident-model latency; 30 seconds to useful assembly and 120 to
+refinement are research targets, not demonstrated capabilities. A good exterior or
+part label is insufficient. These few trials do not establish every model's ceiling
+or justify training. Product changes, answering and motion expansion remain paused.
 
 Generation research is the active track. The product remains stable; answering,
 voice and motion-inference expansion are paused. Research output does not enter

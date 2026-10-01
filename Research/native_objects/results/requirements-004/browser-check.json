@@ -1,0 +1,41 @@
+{
+  "results": [
+    {
+      "name": "generic-speaker-plan-1",
+      "loaded": true,
+      "selection": true,
+      "separation": true,
+      "reset": true,
+      "geometry_unchanged": true,
+      "motion_disabled": true
+    },
+    {
+      "name": "generic-speaker-plan-0",
+      "loaded": true,
+      "selection": true,
+      "separation": true,
+      "reset": true,
+      "geometry_unchanged": true,
+      "motion_disabled": true
+    },
+    {
+      "name": "generic-drone-plan-0",
+      "loaded": true,
+      "selection": true,
+      "separation": true,
+      "reset": true,
+      "geometry_unchanged": true,
+      "motion_disabled": true
+    },
+    {
+      "name": "heldout-001-plan-0",
+      "loaded": true,
+      "selection": true,
+      "separation": true,
+      "reset": true,
+      "geometry_unchanged": true,
+      "motion_disabled": true
+    }
+  ],
+  "errors": []
+}

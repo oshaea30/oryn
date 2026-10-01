@@ -1,0 +1,211 @@
+{
+  "cases": [
+    {
+      "case": "heldout-001",
+      "request": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces.",
+      "attempts": [
+        {
+          "attempt": 0,
+          "status": "geometry_failed",
+          "geometry_executed": true,
+          "planning_seconds": 66.00246754195541,
+          "billing": {
+            "operation_id": "0d6923725ff79c3444656b1b6038dfd7",
+            "calculated_cost_nanos": 64837500,
+            "output_tokens": 5569,
+            "reasoning_tokens": 3624
+          },
+          "geometry_and_validation_seconds": 0.04534895799588412,
+          "declared_numeric_pass": false,
+          "coverage_complete": true,
+          "feedback": {
+            "failed_geometry_checks": [
+              {
+                "kind": "port_geometry",
+                "relation": {
+                  "port": "drive_outer",
+                  "part": "drive"
+                },
+                "passed": false,
+                "measurement": {
+                  "missing_surface_band_m3": -8.561319339923836e-23,
+                  "obstructed_exterior_m3": 1.993941923469908e-09,
+                  "scope": "declared finite cylindrical interval"
+                }
+              },
+              {
+                "kind": "executable_mate",
+                "relation": {
+                  "id": "drive_mount",
+                  "a": "housing_drive_bore",
+                  "b": "drive_outer",
+                  "kind": "coaxial",
+                  "offset": -0.01,
+                  "twist": 0,
+                  "minimum_clearance": 0.001,
+                  "minimum_overlap": 0.006
+                },
+                "passed": false,
+                "measurement": {
+                  "frame_max_error": 0.0,
+                  "radial_clearance_m": 0.002,
+                  "axial_overlap_m": 0.0035499999999999985
+                }
+              }
+            ]
+          },
+          "parts": 6,
+          "attempt_elapsed_seconds": 66.74022520903964
+        },
+        {
+          "attempt": 1,
+          "status": "request_failed",
+          "geometry_executed": false,
+          "error": "Research spending ceiling reached",
+          "attempt_elapsed_seconds": 0.33723641699180007
+        }
+      ],
+      "geometry_executed": true,
+      "status": "request_failed",
+      "extraction_billing": {
+        "replayed": true,
+        "new_cost_nanos": 0,
+        "original_operation_id": "92b8d097eea0fe88d1acdc602eb7dc45"
+      },
+      "contract": {
+        "source_request": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces.",
+        "source_sha256": "28761f62da3ac4403ac1104980f43f43857aabe4d3d994e5ead83069e35843e8",
+        "inventory": {
+          "entities": [
+            {
+              "id": "E1",
+              "role": "Outer housing"
+            },
+            {
+              "id": "E2",
+              "role": "Pencil guide"
+            },
+            {
+              "id": "E3",
+              "role": "Crank handle"
+            },
+            {
+              "id": "E4",
+              "role": "Drive mechanism"
+            },
+            {
+              "id": "E5",
+              "role": "Helical cutter assembly"
+            },
+            {
+              "id": "E6",
+              "role": "Shavings drawer"
+            }
+          ],
+          "requirements": [
+            {
+              "id": "R1",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "E1",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "R2",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "E2",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "R3",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "E3",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": "hand-cranked pencil sharpener"
+            },
+            {
+              "id": "R4",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "E4",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "R5",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "E5",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "R6",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "E6",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "R7",
+              "obligation": "required",
+              "kind": "visual",
+              "subject": "object",
+              "target": "",
+              "predicate": "appearance",
+              "value": "generic hand-cranked pencil sharpener",
+              "quote": "generic hand-cranked pencil sharpener"
+            },
+            {
+              "id": "R8",
+              "obligation": "required",
+              "kind": "behavior",
+              "subject": "object",
+              "target": "",
+              "predicate": "capability",
+              "value": "geometric_explode",
+              "quote": "I can take apart"
+            },
+            {
+              "id": "R9",
+              "obligation": "required",
+              "kind": "behavior",
+              "subject": "object",
+              "target": "",
+              "predicate": "capability",
+              "value": "inspect",
+              "quote": "understand its main pieces"
+            }
+          ]
+        },
+        "inventory_sha256": "fbb1cb3baed64939896c721b52ff0f922e403955166bf57b3a5515c2bdb6ade1",
+        "extraction_completeness": "unassessed; ID coverage is not natural-language entailment"
+      },
+      "extraction_seconds": 0.0010569170117378235
+    },
+    {
+      "case": "exact-product",
+      "status": "blocked_evidence",
+      "geometry_executed": false
+    }
+  ],
+  "native_generation_goal_passed": false,
+  "elapsed_seconds": 67.08111749996897
+}

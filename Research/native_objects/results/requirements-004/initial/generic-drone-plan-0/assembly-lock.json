@@ -1,0 +1,528 @@
+{
+  "clearances": [
+    {
+      "a": "motor_xn",
+      "b": "esc_xn",
+      "minimum": 0.025
+    },
+    {
+      "a": "motor_xp",
+      "b": "esc_xp",
+      "minimum": 0.025
+    },
+    {
+      "a": "motor_zn",
+      "b": "esc_zn",
+      "minimum": 0.025
+    },
+    {
+      "a": "motor_zp",
+      "b": "esc_zp",
+      "minimum": 0.025
+    }
+  ],
+  "containments": [],
+  "mates": [
+    {
+      "a": "arm_xn_esc",
+      "b": "esc_xn_top",
+      "id": "attach_esc_xn",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "arm_xn_motor",
+      "b": "motor_xn_bottom",
+      "id": "attach_motor_xn",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "arm_xp_esc",
+      "b": "esc_xp_top",
+      "id": "attach_esc_xp",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "arm_xp_motor",
+      "b": "motor_xp_bottom",
+      "id": "attach_motor_xp",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "arm_zn_esc",
+      "b": "esc_zn_top",
+      "id": "attach_esc_zn",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "arm_zn_motor",
+      "b": "motor_zn_bottom",
+      "id": "attach_motor_zn",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "arm_zp_esc",
+      "b": "esc_zp_top",
+      "id": "attach_esc_zp",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "arm_zp_motor",
+      "b": "motor_zp_bottom",
+      "id": "attach_motor_zp",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "frame_bottom",
+      "b": "battery_top",
+      "id": "attach_battery",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "frame_top",
+      "b": "controller_bottom",
+      "id": "attach_controller",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "frame_xn",
+      "b": "arm_xn_root",
+      "id": "attach_arm_xn",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "frame_xp",
+      "b": "arm_xp_root",
+      "id": "attach_arm_xp",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "frame_zn",
+      "b": "arm_zn_root",
+      "id": "attach_arm_zn",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "frame_zp",
+      "b": "arm_zp_root",
+      "id": "attach_arm_zp",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "motor_xn_top",
+      "b": "prop_xn_bottom",
+      "id": "attach_prop_xn",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "motor_xp_top",
+      "b": "prop_xp_bottom",
+      "id": "attach_prop_xp",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "motor_zn_top",
+      "b": "prop_zn_bottom",
+      "id": "attach_prop_zn",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "motor_zp_top",
+      "b": "prop_zp_bottom",
+      "id": "attach_prop_zp",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    }
+  ],
+  "parts": [
+    [
+      "arm_xn",
+      "Four arms",
+      "frame_main"
+    ],
+    [
+      "arm_xp",
+      "Four arms",
+      "frame_main"
+    ],
+    [
+      "arm_zn",
+      "Four arms",
+      "frame_main"
+    ],
+    [
+      "arm_zp",
+      "Four arms",
+      "frame_main"
+    ],
+    [
+      "battery_main",
+      "Battery",
+      "frame_main"
+    ],
+    [
+      "controller_main",
+      "Flight controller",
+      "frame_main"
+    ],
+    [
+      "esc_xn",
+      "Electronic speed controllers",
+      "arm_xn"
+    ],
+    [
+      "esc_xp",
+      "Electronic speed controllers",
+      "arm_xp"
+    ],
+    [
+      "esc_zn",
+      "Electronic speed controllers",
+      "arm_zn"
+    ],
+    [
+      "esc_zp",
+      "Electronic speed controllers",
+      "arm_zp"
+    ],
+    [
+      "frame_main",
+      "Central frame",
+      ""
+    ],
+    [
+      "motor_xn",
+      "Four motors",
+      "arm_xn"
+    ],
+    [
+      "motor_xp",
+      "Four motors",
+      "arm_xp"
+    ],
+    [
+      "motor_zn",
+      "Four motors",
+      "arm_zn"
+    ],
+    [
+      "motor_zp",
+      "Four motors",
+      "arm_zp"
+    ],
+    [
+      "prop_xn",
+      "Four propellers",
+      "motor_xn"
+    ],
+    [
+      "prop_xp",
+      "Four propellers",
+      "motor_xp"
+    ],
+    [
+      "prop_zn",
+      "Four propellers",
+      "motor_zn"
+    ],
+    [
+      "prop_zp",
+      "Four propellers",
+      "motor_zp"
+    ]
+  ],
+  "ports": [
+    [
+      "arm_xn_esc",
+      "arm_xn",
+      "face"
+    ],
+    [
+      "arm_xn_motor",
+      "arm_xn",
+      "face"
+    ],
+    [
+      "arm_xn_root",
+      "arm_xn",
+      "face"
+    ],
+    [
+      "arm_xp_esc",
+      "arm_xp",
+      "face"
+    ],
+    [
+      "arm_xp_motor",
+      "arm_xp",
+      "face"
+    ],
+    [
+      "arm_xp_root",
+      "arm_xp",
+      "face"
+    ],
+    [
+      "arm_zn_esc",
+      "arm_zn",
+      "face"
+    ],
+    [
+      "arm_zn_motor",
+      "arm_zn",
+      "face"
+    ],
+    [
+      "arm_zn_root",
+      "arm_zn",
+      "face"
+    ],
+    [
+      "arm_zp_esc",
+      "arm_zp",
+      "face"
+    ],
+    [
+      "arm_zp_motor",
+      "arm_zp",
+      "face"
+    ],
+    [
+      "arm_zp_root",
+      "arm_zp",
+      "face"
+    ],
+    [
+      "battery_top",
+      "battery_main",
+      "face"
+    ],
+    [
+      "controller_bottom",
+      "controller_main",
+      "face"
+    ],
+    [
+      "esc_xn_top",
+      "esc_xn",
+      "face"
+    ],
+    [
+      "esc_xp_top",
+      "esc_xp",
+      "face"
+    ],
+    [
+      "esc_zn_top",
+      "esc_zn",
+      "face"
+    ],
+    [
+      "esc_zp_top",
+      "esc_zp",
+      "face"
+    ],
+    [
+      "frame_bottom",
+      "frame_main",
+      "face"
+    ],
+    [
+      "frame_top",
+      "frame_main",
+      "face"
+    ],
+    [
+      "frame_xn",
+      "frame_main",
+      "face"
+    ],
+    [
+      "frame_xp",
+      "frame_main",
+      "face"
+    ],
+    [
+      "frame_zn",
+      "frame_main",
+      "face"
+    ],
+    [
+      "frame_zp",
+      "frame_main",
+      "face"
+    ],
+    [
+      "motor_xn_bottom",
+      "motor_xn",
+      "face"
+    ],
+    [
+      "motor_xn_top",
+      "motor_xn",
+      "face"
+    ],
+    [
+      "motor_xp_bottom",
+      "motor_xp",
+      "face"
+    ],
+    [
+      "motor_xp_top",
+      "motor_xp",
+      "face"
+    ],
+    [
+      "motor_zn_bottom",
+      "motor_zn",
+      "face"
+    ],
+    [
+      "motor_zn_top",
+      "motor_zn",
+      "face"
+    ],
+    [
+      "motor_zp_bottom",
+      "motor_zp",
+      "face"
+    ],
+    [
+      "motor_zp_top",
+      "motor_zp",
+      "face"
+    ],
+    [
+      "prop_xn_bottom",
+      "prop_xn",
+      "face"
+    ],
+    [
+      "prop_xp_bottom",
+      "prop_xp",
+      "face"
+    ],
+    [
+      "prop_zn_bottom",
+      "prop_zn",
+      "face"
+    ],
+    [
+      "prop_zp_bottom",
+      "prop_zp",
+      "face"
+    ]
+  ],
+  "symmetries": [
+    {
+      "a": "arm_xp",
+      "axis": "x",
+      "b": "arm_xn"
+    },
+    {
+      "a": "arm_zp",
+      "axis": "z",
+      "b": "arm_zn"
+    },
+    {
+      "a": "esc_xp",
+      "axis": "x",
+      "b": "esc_xn"
+    },
+    {
+      "a": "esc_zp",
+      "axis": "z",
+      "b": "esc_zn"
+    },
+    {
+      "a": "motor_xp",
+      "axis": "x",
+      "b": "motor_xn"
+    },
+    {
+      "a": "motor_zp",
+      "axis": "z",
+      "b": "motor_zn"
+    },
+    {
+      "a": "prop_xp",
+      "axis": "x",
+      "b": "prop_xn"
+    },
+    {
+      "a": "prop_zp",
+      "axis": "z",
+      "b": "prop_zn"
+    }
+  ]
+}

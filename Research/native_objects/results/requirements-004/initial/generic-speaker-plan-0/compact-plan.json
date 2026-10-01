@@ -1,0 +1,1066 @@
+{
+  "shapes": [
+    {
+      "id": "housing",
+      "forms": [
+        {
+          "kind": "box_shell",
+          "size": [
+            0.24,
+            0.09,
+            0.13
+          ],
+          "at": [],
+          "rotate": [],
+          "op": "add",
+          "detail": [
+            {
+              "key": "wall",
+              "values": [
+                0.004
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.012,
+            0.004,
+            0.012
+          ],
+          "at": [
+            -0.061,
+            -0.039,
+            -0.019
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.012,
+            0.004,
+            0.012
+          ],
+          "at": [
+            0.062,
+            -0.039,
+            0.022
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.012,
+            0.004,
+            0.012
+          ],
+          "at": [
+            -0.061,
+            -0.039,
+            0.042
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.008,
+            0.004,
+            0.008
+          ],
+          "at": [
+            0.002,
+            -0.039,
+            -0.042
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.008,
+            0.004,
+            0.008
+          ],
+          "at": [
+            0.077,
+            -0.039,
+            -0.04
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.01,
+            0.087,
+            0.01
+          ],
+          "at": [
+            0.105,
+            0.0015,
+            0.052
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.01,
+            0.014,
+            0.018
+          ],
+          "at": [
+            0.124,
+            0.012,
+            -0.036
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.012,
+            0.01,
+            0.012
+          ],
+          "at": [
+            -0.028,
+            0.016,
+            -0.067
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.012,
+            0.01,
+            0.012
+          ],
+          "at": [
+            0,
+            0.016,
+            -0.067
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.012,
+            0.01,
+            0.012
+          ],
+          "at": [
+            0.028,
+            0.016,
+            -0.067
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        }
+      ]
+    },
+    {
+      "id": "perforated_grille",
+      "forms": [
+        {
+          "kind": "rounded_box",
+          "size": [
+            0.226,
+            0.004,
+            0.116
+          ],
+          "at": [],
+          "rotate": [],
+          "op": "add",
+          "detail": [
+            {
+              "key": "radius",
+              "values": [
+                0.0015
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.006,
+            0.012,
+            0.006
+          ],
+          "at": [
+            -0.09,
+            0,
+            -0.041
+          ],
+          "rotate": [],
+          "op": "subtract",
+          "detail": [
+            {
+              "key": "repeat",
+              "values": [
+                11,
+                1,
+                5
+              ]
+            },
+            {
+              "key": "step",
+              "values": [
+                0.018,
+                0,
+                0.0205
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.01,
+            0.004,
+            0.01
+          ],
+          "at": [
+            0.105,
+            -0.004,
+            0.052
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        }
+      ]
+    },
+    {
+      "id": "driver_shape",
+      "forms": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.075,
+            0.028,
+            0.075
+          ],
+          "at": [],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.012,
+            0.006,
+            0.012
+          ],
+          "at": [
+            0,
+            -0.017,
+            0
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        }
+      ]
+    },
+    {
+      "id": "radiator_shape",
+      "forms": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.065,
+            0.011,
+            0.065
+          ],
+          "at": [],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.01,
+            0.004,
+            0.01
+          ],
+          "at": [
+            0,
+            -0.0075,
+            0
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        }
+      ]
+    },
+    {
+      "id": "battery_shape",
+      "forms": [
+        {
+          "kind": "rounded_box",
+          "size": [
+            0.064,
+            0.017,
+            0.02
+          ],
+          "at": [],
+          "rotate": [],
+          "op": "add",
+          "detail": [
+            {
+              "key": "radius",
+              "values": [
+                0.003
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.012,
+            0.004,
+            0.012
+          ],
+          "at": [
+            0,
+            -0.009,
+            0
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        }
+      ]
+    },
+    {
+      "id": "control_board_shape",
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.037,
+            0.003,
+            0.023
+          ],
+          "at": [],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.008,
+            0.004,
+            0.008
+          ],
+          "at": [
+            0,
+            -0.003,
+            0
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        }
+      ]
+    },
+    {
+      "id": "amplifier_shape",
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.037,
+            0.003,
+            0.019
+          ],
+          "at": [],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.008,
+            0.004,
+            0.008
+          ],
+          "at": [
+            0,
+            -0.003,
+            0
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        }
+      ]
+    },
+    {
+      "id": "charging_socket_shape",
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.014,
+            0.012,
+            0.016
+          ],
+          "at": [],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.006,
+            0.006,
+            0.009
+          ],
+          "at": [
+            0.0055,
+            0,
+            0
+          ],
+          "rotate": [],
+          "op": "subtract",
+          "detail": []
+        }
+      ]
+    },
+    {
+      "id": "button_shape",
+      "forms": [
+        {
+          "kind": "rounded_box",
+          "size": [
+            0.014,
+            0.01,
+            0.006
+          ],
+          "at": [],
+          "rotate": [],
+          "op": "add",
+          "detail": [
+            {
+              "key": "radius",
+              "values": [
+                0.002
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "parts": [
+    {
+      "id": "rear_housing",
+      "entity": "e1",
+      "parent": "",
+      "shape": "housing",
+      "color": [
+        0.19,
+        0.22,
+        0.24
+      ]
+    },
+    {
+      "id": "front_grille",
+      "entity": "e2",
+      "parent": "rear_housing",
+      "shape": "perforated_grille",
+      "color": [
+        0.34,
+        0.38,
+        0.39
+      ]
+    },
+    {
+      "id": "speaker_driver",
+      "entity": "e3",
+      "parent": "rear_housing",
+      "shape": "driver_shape",
+      "color": [
+        0.16,
+        0.17,
+        0.18
+      ]
+    },
+    {
+      "id": "passive_radiator",
+      "entity": "e4",
+      "parent": "rear_housing",
+      "shape": "radiator_shape",
+      "color": [
+        0.23,
+        0.25,
+        0.26
+      ]
+    },
+    {
+      "id": "battery_pack",
+      "entity": "e5",
+      "parent": "rear_housing",
+      "shape": "battery_shape",
+      "color": [
+        0.38,
+        0.39,
+        0.35
+      ]
+    },
+    {
+      "id": "control_board",
+      "entity": "e6",
+      "parent": "rear_housing",
+      "shape": "control_board_shape",
+      "color": [
+        0.12,
+        0.32,
+        0.24
+      ]
+    },
+    {
+      "id": "amplifier_board",
+      "entity": "e7",
+      "parent": "rear_housing",
+      "shape": "amplifier_shape",
+      "color": [
+        0.15,
+        0.29,
+        0.23
+      ]
+    },
+    {
+      "id": "charging_port",
+      "entity": "e8",
+      "parent": "rear_housing",
+      "shape": "charging_socket_shape",
+      "color": [
+        0.45,
+        0.46,
+        0.44
+      ]
+    },
+    {
+      "id": "button_left",
+      "entity": "e9",
+      "parent": "rear_housing",
+      "shape": "button_shape",
+      "color": [
+        0.29,
+        0.32,
+        0.32
+      ]
+    },
+    {
+      "id": "button_center",
+      "entity": "e9",
+      "parent": "rear_housing",
+      "shape": "button_shape",
+      "color": [
+        0.29,
+        0.32,
+        0.32
+      ]
+    },
+    {
+      "id": "button_right",
+      "entity": "e9",
+      "parent": "rear_housing",
+      "shape": "button_shape",
+      "color": [
+        0.29,
+        0.32,
+        0.32
+      ]
+    }
+  ],
+  "root_position": [
+    0,
+    0,
+    0
+  ],
+  "root_rotation": [
+    90,
+    0,
+    0
+  ],
+  "ports": [
+    {
+      "id": "h_grille",
+      "part": "rear_housing",
+      "kind": "face",
+      "form": 6,
+      "face": "+y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "g_mount",
+      "part": "front_grille",
+      "kind": "face",
+      "form": 2,
+      "face": "-y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "h_driver",
+      "part": "rear_housing",
+      "kind": "face",
+      "form": 1,
+      "face": "+y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "d_mount",
+      "part": "speaker_driver",
+      "kind": "face",
+      "form": 1,
+      "face": "-y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "h_radiator",
+      "part": "rear_housing",
+      "kind": "face",
+      "form": 2,
+      "face": "+y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "r_mount",
+      "part": "passive_radiator",
+      "kind": "face",
+      "form": 1,
+      "face": "-y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "h_battery",
+      "part": "rear_housing",
+      "kind": "face",
+      "form": 3,
+      "face": "+y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "b_mount",
+      "part": "battery_pack",
+      "kind": "face",
+      "form": 1,
+      "face": "-y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "h_control",
+      "part": "rear_housing",
+      "kind": "face",
+      "form": 4,
+      "face": "+y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "c_mount",
+      "part": "control_board",
+      "kind": "face",
+      "form": 1,
+      "face": "-y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "h_amplifier",
+      "part": "rear_housing",
+      "kind": "face",
+      "form": 5,
+      "face": "+y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "a_mount",
+      "part": "amplifier_board",
+      "kind": "face",
+      "form": 1,
+      "face": "-y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "h_charging",
+      "part": "rear_housing",
+      "kind": "face",
+      "form": 7,
+      "face": "+x",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "p_mount",
+      "part": "charging_port",
+      "kind": "face",
+      "form": 0,
+      "face": "-x",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "h_button_left",
+      "part": "rear_housing",
+      "kind": "face",
+      "form": 8,
+      "face": "-z",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "left_mount",
+      "part": "button_left",
+      "kind": "face",
+      "form": 0,
+      "face": "+z",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "h_button_center",
+      "part": "rear_housing",
+      "kind": "face",
+      "form": 9,
+      "face": "-z",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "center_mount",
+      "part": "button_center",
+      "kind": "face",
+      "form": 0,
+      "face": "+z",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "h_button_right",
+      "part": "rear_housing",
+      "kind": "face",
+      "form": 10,
+      "face": "-z",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "right_mount",
+      "part": "button_right",
+      "kind": "face",
+      "form": 0,
+      "face": "+z",
+      "span": [
+        0,
+        1
+      ]
+    }
+  ],
+  "mates": [
+    {
+      "id": "m_grille",
+      "a": "h_grille",
+      "b": "g_mount",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "m_driver",
+      "a": "h_driver",
+      "b": "d_mount",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "m_radiator",
+      "a": "h_radiator",
+      "b": "r_mount",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "m_battery",
+      "a": "h_battery",
+      "b": "b_mount",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "m_control",
+      "a": "h_control",
+      "b": "c_mount",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "m_amplifier",
+      "a": "h_amplifier",
+      "b": "a_mount",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "m_charging",
+      "a": "h_charging",
+      "b": "p_mount",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "m_button_left",
+      "a": "h_button_left",
+      "b": "left_mount",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "m_button_center",
+      "a": "h_button_center",
+      "b": "center_mount",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "m_button_right",
+      "a": "h_button_right",
+      "b": "right_mount",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    }
+  ],
+  "containments": [],
+  "clearances": [],
+  "symmetries": [
+    {
+      "a": "button_left",
+      "b": "button_right",
+      "axis": "x"
+    }
+  ],
+  "bindings": [
+    {
+      "id": "r1",
+      "kind": "components",
+      "refs": [
+        "part:rear_housing"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r2",
+      "kind": "components",
+      "refs": [
+        "part:front_grille"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r3",
+      "kind": "components",
+      "refs": [
+        "part:speaker_driver"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r4",
+      "kind": "components",
+      "refs": [
+        "part:passive_radiator"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r5",
+      "kind": "components",
+      "refs": [
+        "part:battery_pack"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r6",
+      "kind": "components",
+      "refs": [
+        "part:control_board"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r7",
+      "kind": "components",
+      "refs": [
+        "part:amplifier_board"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r8",
+      "kind": "components",
+      "refs": [
+        "part:charging_port"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r9",
+      "kind": "components",
+      "refs": [
+        "part:button_left",
+        "part:button_center",
+        "part:button_right"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r10",
+      "kind": "components",
+      "refs": [
+        "part:rear_housing",
+        "part:front_grille",
+        "part:speaker_driver",
+        "part:passive_radiator",
+        "part:battery_pack",
+        "part:control_board",
+        "part:amplifier_board",
+        "part:charging_port",
+        "part:button_left",
+        "part:button_center",
+        "part:button_right"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r11",
+      "kind": "capability",
+      "refs": [
+        "capability:geometric_explode"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r12",
+      "kind": "capability",
+      "refs": [
+        "capability:inspect"
+      ],
+      "note": ""
+    }
+  ]
+}

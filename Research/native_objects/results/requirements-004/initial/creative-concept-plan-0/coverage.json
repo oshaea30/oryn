@@ -1,0 +1,45 @@
+{
+  "coverage_complete": true,
+  "geometry_allowed": false,
+  "errors": [],
+  "unsupported": [
+    {
+      "id": "r10",
+      "obligation": "required",
+      "reason": "The strand and mates depict suspension; physical hanging is not verified."
+    },
+    {
+      "id": "r11",
+      "obligation": "required",
+      "reason": "Emission is not supported; the warm color only suggests a glow."
+    }
+  ],
+  "blocking_unsupported": [
+    {
+      "id": "r10",
+      "obligation": "required",
+      "reason": "The strand and mates depict suspension; physical hanging is not verified."
+    },
+    {
+      "id": "r11",
+      "obligation": "required",
+      "reason": "Emission is not supported; the warm color only suggests a glow."
+    }
+  ],
+  "residual_checks": [
+    {
+      "id": "r6",
+      "check": "visual realization remains unassessed"
+    },
+    {
+      "id": "r7",
+      "check": "visual realization remains unassessed"
+    },
+    {
+      "id": "r8",
+      "check": "visual realization remains unassessed"
+    }
+  ],
+  "semantic_extraction_complete": "unassessed",
+  "scope": "typed requirement-ID coverage before geometry; not proof of request interpretation or physical realization"
+}

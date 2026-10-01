@@ -1,0 +1,483 @@
+{
+  "declared_relations_passed": false,
+  "checks": [
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "housing"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "guide"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "drive"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "cutter"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "crank"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "drawer"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "clearance",
+      "relation": {
+        "a": "guide",
+        "b": "cutter",
+        "minimum": 0.015
+      },
+      "passed": true,
+      "measurement": {
+        "gap_m": 0.016,
+        "intersection_volume_m3": 0.0
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "housing_guide_bore",
+        "part": "housing"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": -3.970466940254533e-23,
+        "obstructed_exterior_m3": 7.961613395822891e-24,
+        "scope": "declared finite cylindrical interval"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "guide_outer",
+        "part": "guide"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 1.04638347487958e-22,
+        "obstructed_exterior_m3": -1.9025154088719637e-23,
+        "scope": "declared finite cylindrical interval"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "housing_drive_bore",
+        "part": "housing"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 1.137373342260413e-24,
+        "scope": "declared finite cylindrical interval"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "drive_outer",
+        "part": "drive"
+      },
+      "passed": false,
+      "measurement": {
+        "missing_surface_band_m3": -8.561319339923836e-23,
+        "obstructed_exterior_m3": 1.993941923469908e-09,
+        "scope": "declared finite cylindrical interval"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "drive_front",
+        "part": "drive"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "cutter_back",
+        "part": "cutter"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "drive_back",
+        "part": "drive"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "crank_hub_back",
+        "part": "crank"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 1.388741348568975e-28,
+        "obstructed_exterior_m3": -1.8105331544486077e-26,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "housing_drawer_boss",
+        "part": "housing"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "drawer_post_top",
+        "part": "drawer"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "id": "guide_mount",
+        "a": "housing_guide_bore",
+        "b": "guide_outer",
+        "kind": "coaxial",
+        "offset": -0.00425,
+        "twist": 0,
+        "minimum_clearance": 0.001,
+        "minimum_overlap": 0.006
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0,
+        "radial_clearance_m": 0.0015000000000000013,
+        "axial_overlap_m": 0.0065
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "id": "drive_mount",
+        "a": "housing_drive_bore",
+        "b": "drive_outer",
+        "kind": "coaxial",
+        "offset": -0.01,
+        "twist": 0,
+        "minimum_clearance": 0.001,
+        "minimum_overlap": 0.006
+      },
+      "passed": false,
+      "measurement": {
+        "frame_max_error": 0.0,
+        "radial_clearance_m": 0.002,
+        "axial_overlap_m": 0.0035499999999999985
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "id": "cutter_mount",
+        "a": "drive_front",
+        "b": "cutter_back",
+        "kind": "face",
+        "offset": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "minimum_overlap": 0
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "id": "crank_mount",
+        "a": "drive_back",
+        "b": "crank_hub_back",
+        "kind": "face",
+        "offset": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "minimum_overlap": 0
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "id": "drawer_mount",
+        "a": "housing_drawer_boss",
+        "b": "drawer_post_top",
+        "kind": "face",
+        "offset": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "minimum_overlap": 0
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "housing",
+        "b": "guide"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 6.196127939754347e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "housing",
+        "b": "drive"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "housing",
+        "b": "cutter"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "housing",
+        "b": "crank"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "housing",
+        "b": "drawer"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "guide",
+        "b": "drive"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 6.196127939754347e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "guide",
+        "b": "cutter"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 6.196127939754347e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "guide",
+        "b": "crank"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 6.196127939754347e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "guide",
+        "b": "drawer"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 6.196127939754347e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "drive",
+        "b": "cutter"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 8.691858780342361e-24,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "drive",
+        "b": "crank"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "drive",
+        "b": "drawer"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "cutter",
+        "b": "crank"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "cutter",
+        "b": "drawer"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "crank",
+        "b": "drawer"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    }
+  ],
+  "semantic_completeness": "not_assessed",
+  "global_collisions": "all pairs static positive-volume interference checked; no swept motion",
+  "engineering_correctness": "not_assessed",
+  "native_generation_goal_passed": false,
+  "requirement_coverage": "not_assessed; solver cannot prove omitted functional connections",
+  "locked_requirements_sha256": "1adbbf72f5c412fd0ec6e94fc56dffdbdd21163992d4fe8433e4bdaaf45734f8"
+}

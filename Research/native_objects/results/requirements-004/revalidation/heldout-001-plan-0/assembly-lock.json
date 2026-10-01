@@ -1,0 +1,147 @@
+{
+  "clearances": [
+    {
+      "a": "guide",
+      "b": "cutter",
+      "minimum": 0.015
+    }
+  ],
+  "containments": [],
+  "mates": [
+    {
+      "a": "drive_back",
+      "b": "crank_hub_back",
+      "id": "crank_mount",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "drive_front",
+      "b": "cutter_back",
+      "id": "cutter_mount",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "housing_drawer_boss",
+      "b": "drawer_post_top",
+      "id": "drawer_mount",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "housing_drive_bore",
+      "b": "drive_outer",
+      "id": "drive_mount",
+      "kind": "coaxial",
+      "minimum_clearance": 0.001,
+      "minimum_overlap": 0.006,
+      "offset": -0.01,
+      "twist": 0
+    },
+    {
+      "a": "housing_guide_bore",
+      "b": "guide_outer",
+      "id": "guide_mount",
+      "kind": "coaxial",
+      "minimum_clearance": 0.001,
+      "minimum_overlap": 0.006,
+      "offset": -0.00425,
+      "twist": 0
+    }
+  ],
+  "parts": [
+    [
+      "crank",
+      "Crank handle",
+      "drive"
+    ],
+    [
+      "cutter",
+      "Helical cutter assembly",
+      "drive"
+    ],
+    [
+      "drawer",
+      "Shavings drawer",
+      "housing"
+    ],
+    [
+      "drive",
+      "Drive mechanism",
+      "housing"
+    ],
+    [
+      "guide",
+      "Pencil guide",
+      "housing"
+    ],
+    [
+      "housing",
+      "Outer housing",
+      ""
+    ]
+  ],
+  "ports": [
+    [
+      "crank_hub_back",
+      "crank",
+      "face"
+    ],
+    [
+      "cutter_back",
+      "cutter",
+      "face"
+    ],
+    [
+      "drawer_post_top",
+      "drawer",
+      "face"
+    ],
+    [
+      "drive_back",
+      "drive",
+      "face"
+    ],
+    [
+      "drive_front",
+      "drive",
+      "face"
+    ],
+    [
+      "drive_outer",
+      "drive",
+      "outer_axis"
+    ],
+    [
+      "guide_outer",
+      "guide",
+      "outer_axis"
+    ],
+    [
+      "housing_drawer_boss",
+      "housing",
+      "face"
+    ],
+    [
+      "housing_drive_bore",
+      "housing",
+      "bore_axis"
+    ],
+    [
+      "housing_guide_bore",
+      "housing",
+      "bore_axis"
+    ]
+  ],
+  "symmetries": []
+}

@@ -1,0 +1,15 @@
+{
+  "coverage_complete": true,
+  "geometry_allowed": true,
+  "errors": [],
+  "unsupported": [],
+  "blocking_unsupported": [],
+  "residual_checks": [
+    {
+      "id": "r10",
+      "check": "visual realization remains unassessed"
+    }
+  ],
+  "semantic_extraction_complete": "unassessed",
+  "scope": "typed requirement-ID coverage before geometry; not proof of request interpretation or physical realization"
+}

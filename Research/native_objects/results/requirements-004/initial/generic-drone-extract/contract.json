@@ -1,0 +1,170 @@
+{
+  "source_request": "Show me a generic quadcopter drone I can explore and take apart into its major components.",
+  "source_sha256": "758052f52045deda757beff0b2d5b27eab1c171dad7dee0d1b320fad2ab0c99a",
+  "inventory": {
+    "entities": [
+      {
+        "id": "frame",
+        "role": "Central frame"
+      },
+      {
+        "id": "arms",
+        "role": "Four arms"
+      },
+      {
+        "id": "motors",
+        "role": "Four motors"
+      },
+      {
+        "id": "props",
+        "role": "Four propellers"
+      },
+      {
+        "id": "battery",
+        "role": "Battery"
+      },
+      {
+        "id": "controller",
+        "role": "Flight controller"
+      },
+      {
+        "id": "escs",
+        "role": "Electronic speed controllers"
+      }
+    ],
+    "requirements": [
+      {
+        "id": "r01",
+        "obligation": "design_choice",
+        "kind": "entity",
+        "subject": "frame",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "quote": ""
+      },
+      {
+        "id": "r02",
+        "obligation": "design_choice",
+        "kind": "entity",
+        "subject": "arms",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "quote": ""
+      },
+      {
+        "id": "r03",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "motors",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "quote": "quadcopter drone"
+      },
+      {
+        "id": "r04",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "props",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "quote": "quadcopter drone"
+      },
+      {
+        "id": "r05",
+        "obligation": "design_choice",
+        "kind": "entity",
+        "subject": "battery",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "quote": ""
+      },
+      {
+        "id": "r06",
+        "obligation": "design_choice",
+        "kind": "entity",
+        "subject": "controller",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "quote": ""
+      },
+      {
+        "id": "r07",
+        "obligation": "design_choice",
+        "kind": "entity",
+        "subject": "escs",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "quote": ""
+      },
+      {
+        "id": "r08",
+        "obligation": "design_choice",
+        "kind": "constraint",
+        "subject": "arms",
+        "target": "",
+        "predicate": "count",
+        "value": "4",
+        "quote": ""
+      },
+      {
+        "id": "r09",
+        "obligation": "required",
+        "kind": "constraint",
+        "subject": "motors",
+        "target": "",
+        "predicate": "count",
+        "value": "4",
+        "quote": "quadcopter"
+      },
+      {
+        "id": "r10",
+        "obligation": "required",
+        "kind": "constraint",
+        "subject": "props",
+        "target": "",
+        "predicate": "count",
+        "value": "4",
+        "quote": "quadcopter"
+      },
+      {
+        "id": "r11",
+        "obligation": "required",
+        "kind": "visual",
+        "subject": "object",
+        "target": "",
+        "predicate": "appearance",
+        "value": "generic quadcopter drone",
+        "quote": "generic quadcopter drone"
+      },
+      {
+        "id": "r12",
+        "obligation": "required",
+        "kind": "behavior",
+        "subject": "object",
+        "target": "",
+        "predicate": "capability",
+        "value": "inspect",
+        "quote": "I can explore"
+      },
+      {
+        "id": "r13",
+        "obligation": "required",
+        "kind": "behavior",
+        "subject": "object",
+        "target": "",
+        "predicate": "capability",
+        "value": "geometric_explode",
+        "quote": "take apart into its major components"
+      }
+    ]
+  },
+  "inventory_sha256": "084b0bf4e746d8b51c7a19caa4a37f6daf30e75c6befd21961ad212362d74e76",
+  "extraction_completeness": "unassessed; ID coverage is not natural-language entailment"
+}

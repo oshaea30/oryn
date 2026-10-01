@@ -49,6 +49,17 @@ an external geometry model; no GPU run was dispatched. It identified the gap bet
 role-group proposals and spatial construction. The following procedural experiment
 tests that gap without changing the failed Cube/PartCrafter decisions.
 
+## Completed request-to-requirements experiment
+
+[Intent result 004](REQUIREMENTS_RESULT.md) records stable requirement IDs and a
+pre-build deterministic coverage gate over the unchanged geometry executor. All
+four plans account for their extracted IDs; lamp construction stops on explicit
+unsupported requirements. Drone passes declared geometry; speaker passes after
+repair; sharpener fails connection checks and its repair is budget-blocked.
+Source interpretation and visual/functional meaning remain only partially captured.
+Estimated API cost $0.3953575; no token-limit increase, model reviewer or geometry expansion.
+[Protocol](REQUIREMENTS_EXPERIMENT.md) · [Evidence](results/requirements-004.json).
+
 ## Completed executable-connection experiment
 
 [Connections result 003](CONNECTION_RESULT.md): geometry-backed placement and locked

@@ -1,0 +1,168 @@
+{
+  "source_request": "Generate a generic portable Bluetooth speaker I can take apart to understand its main systems.",
+  "source_sha256": "0704dddcc5417ce763512c88c13481d77a2a6b005398458eb8d7b8d52cb0fb14",
+  "inventory": {
+    "entities": [
+      {
+        "id": "e1",
+        "role": "Separable enclosure sections"
+      },
+      {
+        "id": "e2",
+        "role": "Front grille"
+      },
+      {
+        "id": "e3",
+        "role": "Full-range speaker driver"
+      },
+      {
+        "id": "e4",
+        "role": "Passive radiator"
+      },
+      {
+        "id": "e5",
+        "role": "Rechargeable battery pack"
+      },
+      {
+        "id": "e6",
+        "role": "Bluetooth and control board"
+      },
+      {
+        "id": "e7",
+        "role": "Audio amplifier board"
+      },
+      {
+        "id": "e8",
+        "role": "Charging port"
+      },
+      {
+        "id": "e9",
+        "role": "Control buttons"
+      }
+    ],
+    "requirements": [
+      {
+        "id": "r1",
+        "obligation": "design_choice",
+        "kind": "entity",
+        "subject": "e1",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "quote": ""
+      },
+      {
+        "id": "r2",
+        "obligation": "design_choice",
+        "kind": "entity",
+        "subject": "e2",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "quote": ""
+      },
+      {
+        "id": "r3",
+        "obligation": "design_choice",
+        "kind": "entity",
+        "subject": "e3",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "quote": ""
+      },
+      {
+        "id": "r4",
+        "obligation": "design_choice",
+        "kind": "entity",
+        "subject": "e4",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "quote": ""
+      },
+      {
+        "id": "r5",
+        "obligation": "design_choice",
+        "kind": "entity",
+        "subject": "e5",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "quote": ""
+      },
+      {
+        "id": "r6",
+        "obligation": "design_choice",
+        "kind": "entity",
+        "subject": "e6",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "quote": ""
+      },
+      {
+        "id": "r7",
+        "obligation": "design_choice",
+        "kind": "entity",
+        "subject": "e7",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "quote": ""
+      },
+      {
+        "id": "r8",
+        "obligation": "design_choice",
+        "kind": "entity",
+        "subject": "e8",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "quote": ""
+      },
+      {
+        "id": "r9",
+        "obligation": "design_choice",
+        "kind": "entity",
+        "subject": "e9",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "quote": ""
+      },
+      {
+        "id": "r10",
+        "obligation": "required",
+        "kind": "visual",
+        "subject": "object",
+        "target": "",
+        "predicate": "appearance",
+        "value": "generic portable Bluetooth speaker",
+        "quote": "generic portable Bluetooth speaker"
+      },
+      {
+        "id": "r11",
+        "obligation": "required",
+        "kind": "behavior",
+        "subject": "object",
+        "target": "",
+        "predicate": "capability",
+        "value": "geometric_explode",
+        "quote": "I can take apart"
+      },
+      {
+        "id": "r12",
+        "obligation": "required",
+        "kind": "behavior",
+        "subject": "object",
+        "target": "",
+        "predicate": "capability",
+        "value": "inspect",
+        "quote": "to understand its main systems"
+      }
+    ]
+  },
+  "inventory_sha256": "c032ef2d6015b633a0b4c4585ebed8ee864d118d4249afd06346ee79a3cc6b79",
+  "extraction_completeness": "unassessed; ID coverage is not natural-language entailment"
+}

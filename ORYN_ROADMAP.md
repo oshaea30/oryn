@@ -122,6 +122,19 @@ A post-run precision fix was audited against unchanged saved geometry; verdicts
 were unchanged. Requirement coverage and response limits remain unresolved. No
 unfamiliar-case, Quest or finished-generator success is claimed.
 
+The [request-to-requirements experiment](Research/native_objects/REQUIREMENTS_RESULT.md)
+adds frozen source requirements and deterministic typed bindings before unchanged
+geometry execution. All four plans account for their extracted IDs. The lamp's
+inside/suspended/glowing intent survives; unsupported suspension/emission blocks
+construction. Drone and automatically repaired speaker pass declared checks;
+sharpener fails two connection checks and its repair cannot be reserved under the
+remaining budget. All responses complete at the unchanged construction token limit.
+Estimated cost $0.3953575. A general uppercase-ID validator defect was corrected by
+revalidating the unchanged saved extraction, with the initial failure preserved.
+Coverage does not prove correct extraction: conceptual appearance, implied structure
+and engineering function still need better distinctions. Keep geometry frozen;
+no polished-object or generalization success is claimed.
+
 Generation research is the active track. The product remains stable; answering,
 voice and motion-inference expansion are paused. Research output does not enter
 production automatically. The existing $5 research ceiling includes the prior run.

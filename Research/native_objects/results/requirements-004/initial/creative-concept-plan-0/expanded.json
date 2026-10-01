@@ -1,0 +1,580 @@
+{
+  "assumptions": [
+    "Generic model design; requirement coverage does not verify semantics or engineering."
+  ],
+  "limitations": [
+    "Geometry executor unchanged; unsupported requirements are explicit."
+  ],
+  "parts": [
+    {
+      "id": "base",
+      "role": "Desk base",
+      "parent": "",
+      "position": [
+        0,
+        -1.005,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "rounded_box",
+          "size": [
+            0.5,
+            0.08,
+            0.42
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0.035,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.29,
+        0.31,
+        0.29
+      ]
+    },
+    {
+      "id": "stem",
+      "role": "Stem support",
+      "parent": "base",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.05,
+            0.55,
+            0.05
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.45,
+        0.48,
+        0.39
+      ]
+    },
+    {
+      "id": "leaf",
+      "role": "Curled leaf shade",
+      "parent": "stem",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "box_shell",
+          "size": [
+            0.86,
+            0.76,
+            0.48
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0.035,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.85,
+            0.042,
+            0.06
+          ],
+          "offset": [
+            0,
+            0.3,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.1,
+            0.07,
+            0.1
+          ],
+          "offset": [
+            0,
+            -0.395,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "loft",
+          "size": [
+            1,
+            1,
+            1
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [
+            [
+              0.35,
+              0.33,
+              -0.04,
+              0.075,
+              0.075
+            ],
+            [
+              0.4,
+              0.46,
+              -0.015,
+              0.065,
+              0.075
+            ],
+            [
+              0.31,
+              0.6,
+              0.02,
+              0.065,
+              0.06
+            ],
+            [
+              0.12,
+              0.69,
+              0.04,
+              0.015,
+              0.024
+            ]
+          ],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.3,
+        0.46,
+        0.34
+      ]
+    },
+    {
+      "id": "strand",
+      "role": "Seed suspension strand",
+      "parent": "leaf",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.018,
+            0.24,
+            0.018
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.65,
+        0.64,
+        0.49
+      ]
+    },
+    {
+      "id": "seed",
+      "role": "Glowing seed",
+      "parent": "strand",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.14,
+            0.18,
+            0.12
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.026,
+            0.045,
+            0.026
+          ],
+          "offset": [
+            0,
+            0.088,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.98,
+        0.76,
+        0.35
+      ]
+    }
+  ],
+  "mounts": [],
+  "passages": [],
+  "ports": [
+    {
+      "id": "base_top",
+      "part": "base",
+      "kind": "face",
+      "form": 0,
+      "face": "+y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "stem_bottom",
+      "part": "stem",
+      "kind": "face",
+      "form": 0,
+      "face": "-y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "stem_top",
+      "part": "stem",
+      "kind": "face",
+      "form": 0,
+      "face": "+y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "leaf_bottom",
+      "part": "leaf",
+      "kind": "face",
+      "form": 2,
+      "face": "-y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "leaf_bridge_bottom",
+      "part": "leaf",
+      "kind": "face",
+      "form": 1,
+      "face": "-y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "strand_top",
+      "part": "strand",
+      "kind": "face",
+      "form": 0,
+      "face": "+y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "strand_bottom",
+      "part": "strand",
+      "kind": "face",
+      "form": 0,
+      "face": "-y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "seed_top",
+      "part": "seed",
+      "kind": "face",
+      "form": 1,
+      "face": "+y",
+      "span": [
+        0,
+        1
+      ]
+    }
+  ],
+  "mates": [
+    {
+      "id": "base_stem",
+      "a": "base_top",
+      "b": "stem_bottom",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "stem_leaf",
+      "a": "stem_top",
+      "b": "leaf_bottom",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "leaf_strand",
+      "a": "leaf_bridge_bottom",
+      "b": "strand_top",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "strand_seed",
+      "a": "strand_bottom",
+      "b": "seed_top",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    }
+  ],
+  "containments": [
+    {
+      "outer": "leaf",
+      "inner": "seed",
+      "clearance": 0.04
+    }
+  ],
+  "clearances": [],
+  "symmetries": []
+}

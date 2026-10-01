@@ -1,0 +1,1041 @@
+{
+  "experiment": "requirements-004",
+  "frozen_commit": "13d0d4c",
+  "local_validation_amendment_commit": "a6f4357",
+  "geometry_executor_unchanged": true,
+  "geometry_sha256": {
+    "assembly_connections.py": "995b3fd6382a29206397537de4544d4cb57a9193a2f17f1f9de1fbb2ed484c4a",
+    "construction_solid.py": "9e0c192b8e2171adce174970fa436809ab7dfd58b683deaa746e787f637343d1",
+    "construction.py": "b21918b18d8176907d873a9be4cd925f5d112ca20875e8a486d044e98415b0c7"
+  },
+  "native_generation_goal_passed": false,
+  "coverage_scope": "All extracted IDs accounted for; not a proof of source completeness, visual correctness or engineering.",
+  "new_uncertain_reservations": 0,
+  "calculated_cost_nanos": 395357500,
+  "provider_invoice_cost_nanos": null,
+  "budget_nanos": 500000000,
+  "case_records": [
+    {
+      "case": "creative-concept",
+      "request": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside. Let me inspect its main pieces; it does not need to be a buildable electrical product.",
+      "attempts": [
+        {
+          "attempt": 0,
+          "status": "unsupported_required",
+          "geometry_executed": false,
+          "planning_seconds": 64.37022554199211,
+          "billing": {
+            "operation_id": "09f61e2e6f4bd6f5c1e23eba634a5443",
+            "calculated_cost_nanos": 59462500,
+            "output_tokens": 4990,
+            "reasoning_tokens": 3624
+          },
+          "blocking": [
+            {
+              "id": "r10",
+              "obligation": "required",
+              "reason": "The strand and mates depict suspension; physical hanging is not verified."
+            },
+            {
+              "id": "r11",
+              "obligation": "required",
+              "reason": "Emission is not supported; the warm color only suggests a glow."
+            }
+          ],
+          "attempt_elapsed_seconds": 64.37767908291426
+        }
+      ],
+      "geometry_executed": false,
+      "status": "unsupported_required",
+      "extraction_billing": {
+        "operation_id": "56255dd1131e1e980c5568a7067b3b05",
+        "calculated_cost_nanos": 9330000,
+        "output_tokens": 737,
+        "reasoning_tokens": 233
+      },
+      "contract": {
+        "source_request": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside. Let me inspect its main pieces; it does not need to be a buildable electrical product.",
+        "source_sha256": "5532a73f6e85abad2f8cf8e507e36c075a21b34ce6b6bc69122e0266309a6c03",
+        "inventory": {
+          "entities": [
+            {
+              "id": "e1",
+              "role": "Curled leaf shade"
+            },
+            {
+              "id": "e2",
+              "role": "Glowing seed"
+            },
+            {
+              "id": "e3",
+              "role": "Seed suspension strand"
+            },
+            {
+              "id": "e4",
+              "role": "Stem support"
+            },
+            {
+              "id": "e5",
+              "role": "Desk base"
+            }
+          ],
+          "requirements": [
+            {
+              "id": "r1",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e1",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": "shaped like a curled leaf"
+            },
+            {
+              "id": "r2",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e2",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": "a glowing seed"
+            },
+            {
+              "id": "r3",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "e3",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "r4",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "e4",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "r5",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "e5",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "r6",
+              "obligation": "required",
+              "kind": "visual",
+              "subject": "object",
+              "target": "",
+              "predicate": "appearance",
+              "value": "desk lamp shaped like a curled leaf",
+              "quote": "desk lamp shaped like a curled leaf"
+            },
+            {
+              "id": "r7",
+              "obligation": "required",
+              "kind": "visual",
+              "subject": "e1",
+              "target": "",
+              "predicate": "appearance",
+              "value": "curled leaf shape",
+              "quote": "curled leaf"
+            },
+            {
+              "id": "r8",
+              "obligation": "required",
+              "kind": "visual",
+              "subject": "e2",
+              "target": "",
+              "predicate": "appearance",
+              "value": "seed shape",
+              "quote": "seed"
+            },
+            {
+              "id": "r9",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e2",
+              "target": "e1",
+              "predicate": "inside",
+              "value": "",
+              "quote": "seed suspended inside"
+            },
+            {
+              "id": "r10",
+              "obligation": "required",
+              "kind": "constraint",
+              "subject": "e2",
+              "target": "",
+              "predicate": "other",
+              "value": "suspended",
+              "quote": "seed suspended inside"
+            },
+            {
+              "id": "r11",
+              "obligation": "required",
+              "kind": "behavior",
+              "subject": "e2",
+              "target": "",
+              "predicate": "capability",
+              "value": "emission",
+              "quote": "glowing seed"
+            },
+            {
+              "id": "r12",
+              "obligation": "required",
+              "kind": "behavior",
+              "subject": "object",
+              "target": "",
+              "predicate": "capability",
+              "value": "inspect",
+              "quote": "Let me inspect its main pieces"
+            }
+          ]
+        },
+        "inventory_sha256": "2de3cceecc444d4bacb656d88936a49d489b68fdf38a732a6f1bb6bf0532e00c",
+        "extraction_completeness": "unassessed; ID coverage is not natural-language entailment"
+      },
+      "extraction_seconds": 9.238147416035645
+    },
+    {
+      "case": "generic-drone",
+      "request": "Show me a generic quadcopter drone I can explore and take apart into its major components.",
+      "attempts": [
+        {
+          "attempt": 0,
+          "status": "structural_candidate",
+          "geometry_executed": true,
+          "planning_seconds": 68.06458262505475,
+          "billing": {
+            "operation_id": "e83623fc23f95a04953dbad623b2de3f",
+            "calculated_cost_nanos": 83917500,
+            "output_tokens": 7428,
+            "reasoning_tokens": 2041
+          },
+          "geometry_and_validation_seconds": 0.06052662502042949,
+          "declared_numeric_pass": true,
+          "coverage_complete": true,
+          "feedback": {
+            "failed_geometry_checks": []
+          },
+          "parts": 19,
+          "attempt_elapsed_seconds": 69.3086825000355
+        }
+      ],
+      "geometry_executed": true,
+      "status": "structural_candidate",
+      "extraction_billing": {
+        "operation_id": "8e98db0f0eb74f22e8d9a6e39c217be5",
+        "calculated_cost_nanos": 12380000,
+        "output_tokens": 1045,
+        "reasoning_tokens": 516
+      },
+      "contract": {
+        "source_request": "Show me a generic quadcopter drone I can explore and take apart into its major components.",
+        "source_sha256": "758052f52045deda757beff0b2d5b27eab1c171dad7dee0d1b320fad2ab0c99a",
+        "inventory": {
+          "entities": [
+            {
+              "id": "frame",
+              "role": "Central frame"
+            },
+            {
+              "id": "arms",
+              "role": "Four arms"
+            },
+            {
+              "id": "motors",
+              "role": "Four motors"
+            },
+            {
+              "id": "props",
+              "role": "Four propellers"
+            },
+            {
+              "id": "battery",
+              "role": "Battery"
+            },
+            {
+              "id": "controller",
+              "role": "Flight controller"
+            },
+            {
+              "id": "escs",
+              "role": "Electronic speed controllers"
+            }
+          ],
+          "requirements": [
+            {
+              "id": "r01",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "frame",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "r02",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "arms",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "r03",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "motors",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": "quadcopter drone"
+            },
+            {
+              "id": "r04",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "props",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": "quadcopter drone"
+            },
+            {
+              "id": "r05",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "battery",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "r06",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "controller",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "r07",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "escs",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "r08",
+              "obligation": "design_choice",
+              "kind": "constraint",
+              "subject": "arms",
+              "target": "",
+              "predicate": "count",
+              "value": "4",
+              "quote": ""
+            },
+            {
+              "id": "r09",
+              "obligation": "required",
+              "kind": "constraint",
+              "subject": "motors",
+              "target": "",
+              "predicate": "count",
+              "value": "4",
+              "quote": "quadcopter"
+            },
+            {
+              "id": "r10",
+              "obligation": "required",
+              "kind": "constraint",
+              "subject": "props",
+              "target": "",
+              "predicate": "count",
+              "value": "4",
+              "quote": "quadcopter"
+            },
+            {
+              "id": "r11",
+              "obligation": "required",
+              "kind": "visual",
+              "subject": "object",
+              "target": "",
+              "predicate": "appearance",
+              "value": "generic quadcopter drone",
+              "quote": "generic quadcopter drone"
+            },
+            {
+              "id": "r12",
+              "obligation": "required",
+              "kind": "behavior",
+              "subject": "object",
+              "target": "",
+              "predicate": "capability",
+              "value": "inspect",
+              "quote": "I can explore"
+            },
+            {
+              "id": "r13",
+              "obligation": "required",
+              "kind": "behavior",
+              "subject": "object",
+              "target": "",
+              "predicate": "capability",
+              "value": "geometric_explode",
+              "quote": "take apart into its major components"
+            }
+          ]
+        },
+        "inventory_sha256": "084b0bf4e746d8b51c7a19caa4a37f6daf30e75c6befd21961ad212362d74e76",
+        "extraction_completeness": "unassessed; ID coverage is not natural-language entailment"
+      },
+      "extraction_seconds": 12.910211667069234
+    },
+    {
+      "case": "generic-speaker",
+      "request": "Generate a generic portable Bluetooth speaker I can take apart to understand its main systems.",
+      "attempts": [
+        {
+          "attempt": 0,
+          "status": "geometry_failed",
+          "geometry_executed": true,
+          "planning_seconds": 83.21734341594856,
+          "billing": {
+            "operation_id": "adbbfcf3cf7f6c464a49b87f1e5e91a2",
+            "calculated_cost_nanos": 86602500,
+            "output_tokens": 7702,
+            "reasoning_tokens": 4436
+          },
+          "geometry_and_validation_seconds": 0.08566812507342547,
+          "declared_numeric_pass": false,
+          "coverage_complete": true,
+          "feedback": {
+            "failed_geometry_checks": [
+              {
+                "kind": "connected_component",
+                "relation": {
+                  "part": "speaker_driver"
+                },
+                "passed": false,
+                "measurement": {
+                  "solid_islands": 2
+                }
+              }
+            ]
+          },
+          "parts": 11,
+          "attempt_elapsed_seconds": 84.17967454099562
+        },
+        {
+          "attempt": 1,
+          "status": "structural_candidate",
+          "geometry_executed": true,
+          "planning_seconds": 25.516929624951445,
+          "billing": {
+            "operation_id": "d240cfbabd844de8a95cd78defee704d",
+            "calculated_cost_nanos": 57415000,
+            "output_tokens": 3330,
+            "reasoning_tokens": 299
+          },
+          "geometry_and_validation_seconds": 0.08808683301322162,
+          "declared_numeric_pass": true,
+          "coverage_complete": true,
+          "feedback": {
+            "failed_geometry_checks": []
+          },
+          "parts": 11,
+          "attempt_elapsed_seconds": 26.479951916961
+        }
+      ],
+      "geometry_executed": true,
+      "status": "structural_candidate",
+      "extraction_billing": {
+        "operation_id": "6d0be040d19fbce5619d3763f9e35edd",
+        "calculated_cost_nanos": 11122500,
+        "output_tokens": 916,
+        "reasoning_tokens": 393
+      },
+      "contract": {
+        "source_request": "Generate a generic portable Bluetooth speaker I can take apart to understand its main systems.",
+        "source_sha256": "0704dddcc5417ce763512c88c13481d77a2a6b005398458eb8d7b8d52cb0fb14",
+        "inventory": {
+          "entities": [
+            {
+              "id": "e1",
+              "role": "Separable enclosure sections"
+            },
+            {
+              "id": "e2",
+              "role": "Front grille"
+            },
+            {
+              "id": "e3",
+              "role": "Full-range speaker driver"
+            },
+            {
+              "id": "e4",
+              "role": "Passive radiator"
+            },
+            {
+              "id": "e5",
+              "role": "Rechargeable battery pack"
+            },
+            {
+              "id": "e6",
+              "role": "Bluetooth and control board"
+            },
+            {
+              "id": "e7",
+              "role": "Audio amplifier board"
+            },
+            {
+              "id": "e8",
+              "role": "Charging port"
+            },
+            {
+              "id": "e9",
+              "role": "Control buttons"
+            }
+          ],
+          "requirements": [
+            {
+              "id": "r1",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "e1",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "r2",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "e2",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "r3",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "e3",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "r4",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "e4",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "r5",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "e5",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "r6",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "e6",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "r7",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "e7",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "r8",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "e8",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "r9",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "e9",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "r10",
+              "obligation": "required",
+              "kind": "visual",
+              "subject": "object",
+              "target": "",
+              "predicate": "appearance",
+              "value": "generic portable Bluetooth speaker",
+              "quote": "generic portable Bluetooth speaker"
+            },
+            {
+              "id": "r11",
+              "obligation": "required",
+              "kind": "behavior",
+              "subject": "object",
+              "target": "",
+              "predicate": "capability",
+              "value": "geometric_explode",
+              "quote": "I can take apart"
+            },
+            {
+              "id": "r12",
+              "obligation": "required",
+              "kind": "behavior",
+              "subject": "object",
+              "target": "",
+              "predicate": "capability",
+              "value": "inspect",
+              "quote": "to understand its main systems"
+            }
+          ]
+        },
+        "inventory_sha256": "c032ef2d6015b633a0b4c4585ebed8ee864d118d4249afd06346ee79a3cc6b79",
+        "extraction_completeness": "unassessed; ID coverage is not natural-language entailment"
+      },
+      "extraction_seconds": 10.664726666989736
+    },
+    {
+      "case": "heldout-001",
+      "request": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces.",
+      "attempts": [
+        {
+          "attempt": 0,
+          "status": "geometry_failed",
+          "geometry_executed": true,
+          "planning_seconds": 66.00246754195541,
+          "billing": {
+            "operation_id": "0d6923725ff79c3444656b1b6038dfd7",
+            "calculated_cost_nanos": 64837500,
+            "output_tokens": 5569,
+            "reasoning_tokens": 3624
+          },
+          "geometry_and_validation_seconds": 0.04534895799588412,
+          "declared_numeric_pass": false,
+          "coverage_complete": true,
+          "feedback": {
+            "failed_geometry_checks": [
+              {
+                "kind": "port_geometry",
+                "relation": {
+                  "port": "drive_outer",
+                  "part": "drive"
+                },
+                "passed": false,
+                "measurement": {
+                  "missing_surface_band_m3": -8.561319339923836e-23,
+                  "obstructed_exterior_m3": 1.993941923469908e-09,
+                  "scope": "declared finite cylindrical interval"
+                }
+              },
+              {
+                "kind": "executable_mate",
+                "relation": {
+                  "id": "drive_mount",
+                  "a": "housing_drive_bore",
+                  "b": "drive_outer",
+                  "kind": "coaxial",
+                  "offset": -0.01,
+                  "twist": 0,
+                  "minimum_clearance": 0.001,
+                  "minimum_overlap": 0.006
+                },
+                "passed": false,
+                "measurement": {
+                  "frame_max_error": 0.0,
+                  "radial_clearance_m": 0.002,
+                  "axial_overlap_m": 0.0035499999999999985
+                }
+              }
+            ]
+          },
+          "parts": 6,
+          "attempt_elapsed_seconds": 66.74022520903964
+        },
+        {
+          "attempt": 1,
+          "status": "request_failed",
+          "geometry_executed": false,
+          "error": "Research spending ceiling reached",
+          "attempt_elapsed_seconds": 0.33723641699180007
+        }
+      ],
+      "geometry_executed": true,
+      "status": "request_failed",
+      "extraction_billing": {
+        "replayed": true,
+        "new_cost_nanos": 0,
+        "original_operation_id": "92b8d097eea0fe88d1acdc602eb7dc45"
+      },
+      "contract": {
+        "source_request": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces.",
+        "source_sha256": "28761f62da3ac4403ac1104980f43f43857aabe4d3d994e5ead83069e35843e8",
+        "inventory": {
+          "entities": [
+            {
+              "id": "E1",
+              "role": "Outer housing"
+            },
+            {
+              "id": "E2",
+              "role": "Pencil guide"
+            },
+            {
+              "id": "E3",
+              "role": "Crank handle"
+            },
+            {
+              "id": "E4",
+              "role": "Drive mechanism"
+            },
+            {
+              "id": "E5",
+              "role": "Helical cutter assembly"
+            },
+            {
+              "id": "E6",
+              "role": "Shavings drawer"
+            }
+          ],
+          "requirements": [
+            {
+              "id": "R1",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "E1",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "R2",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "E2",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "R3",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "E3",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": "hand-cranked pencil sharpener"
+            },
+            {
+              "id": "R4",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "E4",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "R5",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "E5",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "R6",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "E6",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "R7",
+              "obligation": "required",
+              "kind": "visual",
+              "subject": "object",
+              "target": "",
+              "predicate": "appearance",
+              "value": "generic hand-cranked pencil sharpener",
+              "quote": "generic hand-cranked pencil sharpener"
+            },
+            {
+              "id": "R8",
+              "obligation": "required",
+              "kind": "behavior",
+              "subject": "object",
+              "target": "",
+              "predicate": "capability",
+              "value": "geometric_explode",
+              "quote": "I can take apart"
+            },
+            {
+              "id": "R9",
+              "obligation": "required",
+              "kind": "behavior",
+              "subject": "object",
+              "target": "",
+              "predicate": "capability",
+              "value": "inspect",
+              "quote": "understand its main pieces"
+            }
+          ]
+        },
+        "inventory_sha256": "fbb1cb3baed64939896c721b52ff0f922e403955166bf57b3a5515c2bdb6ade1",
+        "extraction_completeness": "unassessed; ID coverage is not natural-language entailment"
+      },
+      "extraction_seconds": 0.0010569170117378235
+    },
+    {
+      "case": "exact-product",
+      "status": "blocked_evidence",
+      "geometry_executed": false
+    }
+  ],
+  "calls": [
+    {
+      "case_stage": "heldout-001-extract",
+      "status": "completed",
+      "incomplete_details": null,
+      "usage": {
+        "input_tokens": 772,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 836,
+        "output_tokens_details": {
+          "reasoning_tokens": 433
+        },
+        "total_tokens": 1608
+      },
+      "operation_id": "92b8d097eea0fe88d1acdc602eb7dc45",
+      "calculated_cost_nanos": 10290000,
+      "dispatch_seconds": 10.03072695794981
+    },
+    {
+      "case_stage": "generic-drone-extract",
+      "status": "completed",
+      "incomplete_details": null,
+      "usage": {
+        "input_tokens": 772,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1045,
+        "output_tokens_details": {
+          "reasoning_tokens": 516
+        },
+        "total_tokens": 1817
+      },
+      "operation_id": "8e98db0f0eb74f22e8d9a6e39c217be5",
+      "calculated_cost_nanos": 12380000,
+      "dispatch_seconds": 12.677145499968901
+    },
+    {
+      "case_stage": "generic-speaker-extract",
+      "status": "completed",
+      "incomplete_details": null,
+      "usage": {
+        "input_tokens": 785,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 916,
+        "output_tokens_details": {
+          "reasoning_tokens": 393
+        },
+        "total_tokens": 1701
+      },
+      "operation_id": "6d0be040d19fbce5619d3763f9e35edd",
+      "calculated_cost_nanos": 11122500,
+      "dispatch_seconds": 10.470750915934332
+    },
+    {
+      "case_stage": "generic-speaker-plan-1",
+      "status": "completed",
+      "incomplete_details": null,
+      "usage": {
+        "input_tokens": 9646,
+        "input_tokens_details": {
+          "cache_write_tokens": 6613,
+          "cached_tokens": 3030
+        },
+        "output_tokens": 3330,
+        "output_tokens_details": {
+          "reasoning_tokens": 299
+        },
+        "total_tokens": 12976
+      },
+      "operation_id": "d240cfbabd844de8a95cd78defee704d",
+      "calculated_cost_nanos": 57415000,
+      "dispatch_seconds": 25.094862999976613
+    },
+    {
+      "case_stage": "generic-speaker-plan-0",
+      "status": "completed",
+      "incomplete_details": null,
+      "usage": {
+        "input_tokens": 3833,
+        "input_tokens_details": {
+          "cache_write_tokens": 800,
+          "cached_tokens": 3030
+        },
+        "output_tokens": 7702,
+        "output_tokens_details": {
+          "reasoning_tokens": 4436
+        },
+        "total_tokens": 11535
+      },
+      "operation_id": "adbbfcf3cf7f6c464a49b87f1e5e91a2",
+      "calculated_cost_nanos": 86602500,
+      "dispatch_seconds": 82.88542083301581
+    },
+    {
+      "case_stage": "generic-drone-plan-0",
+      "status": "completed",
+      "incomplete_details": null,
+      "usage": {
+        "input_tokens": 3855,
+        "input_tokens_details": {
+          "cache_write_tokens": 822,
+          "cached_tokens": 3030
+        },
+        "output_tokens": 7428,
+        "output_tokens_details": {
+          "reasoning_tokens": 2041
+        },
+        "total_tokens": 11283
+      },
+      "operation_id": "e83623fc23f95a04953dbad623b2de3f",
+      "calculated_cost_nanos": 83917500,
+      "dispatch_seconds": 67.70953837502748
+    },
+    {
+      "case_stage": "creative-concept-extract",
+      "status": "completed",
+      "incomplete_details": null,
+      "usage": {
+        "input_tokens": 784,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 737,
+        "output_tokens_details": {
+          "reasoning_tokens": 233
+        },
+        "total_tokens": 1521
+      },
+      "operation_id": "56255dd1131e1e980c5568a7067b3b05",
+      "calculated_cost_nanos": 9330000,
+      "dispatch_seconds": 8.502738167066127
+    },
+    {
+      "case_stage": "creative-concept-plan-0",
+      "status": "completed",
+      "incomplete_details": null,
+      "usage": {
+        "input_tokens": 3825,
+        "input_tokens_details": {
+          "cache_write_tokens": 3822,
+          "cached_tokens": 0
+        },
+        "output_tokens": 4990,
+        "output_tokens_details": {
+          "reasoning_tokens": 3624
+        },
+        "total_tokens": 8815
+      },
+      "operation_id": "09f61e2e6f4bd6f5c1e23eba634a5443",
+      "calculated_cost_nanos": 59462500,
+      "dispatch_seconds": 64.09363937494345
+    },
+    {
+      "case_stage": "heldout-001-plan-0",
+      "status": "completed",
+      "incomplete_details": null,
+      "usage": {
+        "input_tokens": 3659,
+        "input_tokens_details": {
+          "cache_write_tokens": 626,
+          "cached_tokens": 3030
+        },
+        "output_tokens": 5569,
+        "output_tokens_details": {
+          "reasoning_tokens": 3624
+        },
+        "total_tokens": 9228
+      },
+      "operation_id": "0d6923725ff79c3444656b1b6038dfd7",
+      "calculated_cost_nanos": 64837500,
+      "dispatch_seconds": 65.66943779110443
+    }
+  ],
+  "sharpener_revalidation": "Original completed extraction replayed unchanged after generic uppercase-ID validator correction; no second extraction charge.",
+  "sharpener_repair": "Not dispatched: remaining batch budget could not reserve maximum cost.",
+  "manual_output_repairs": 0,
+  "paid_model_review_calls": 0
+}

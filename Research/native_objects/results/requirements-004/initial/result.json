@@ -1,0 +1,651 @@
+{
+  "cases": [
+    {
+      "case": "creative-concept",
+      "request": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside. Let me inspect its main pieces; it does not need to be a buildable electrical product.",
+      "attempts": [
+        {
+          "attempt": 0,
+          "status": "unsupported_required",
+          "geometry_executed": false,
+          "planning_seconds": 64.37022554199211,
+          "billing": {
+            "operation_id": "09f61e2e6f4bd6f5c1e23eba634a5443",
+            "calculated_cost_nanos": 59462500,
+            "output_tokens": 4990,
+            "reasoning_tokens": 3624
+          },
+          "blocking": [
+            {
+              "id": "r10",
+              "obligation": "required",
+              "reason": "The strand and mates depict suspension; physical hanging is not verified."
+            },
+            {
+              "id": "r11",
+              "obligation": "required",
+              "reason": "Emission is not supported; the warm color only suggests a glow."
+            }
+          ],
+          "attempt_elapsed_seconds": 64.37767908291426
+        }
+      ],
+      "geometry_executed": false,
+      "status": "unsupported_required",
+      "extraction_billing": {
+        "operation_id": "56255dd1131e1e980c5568a7067b3b05",
+        "calculated_cost_nanos": 9330000,
+        "output_tokens": 737,
+        "reasoning_tokens": 233
+      },
+      "contract": {
+        "source_request": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside. Let me inspect its main pieces; it does not need to be a buildable electrical product.",
+        "source_sha256": "5532a73f6e85abad2f8cf8e507e36c075a21b34ce6b6bc69122e0266309a6c03",
+        "inventory": {
+          "entities": [
+            {
+              "id": "e1",
+              "role": "Curled leaf shade"
+            },
+            {
+              "id": "e2",
+              "role": "Glowing seed"
+            },
+            {
+              "id": "e3",
+              "role": "Seed suspension strand"
+            },
+            {
+              "id": "e4",
+              "role": "Stem support"
+            },
+            {
+              "id": "e5",
+              "role": "Desk base"
+            }
+          ],
+          "requirements": [
+            {
+              "id": "r1",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e1",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": "shaped like a curled leaf"
+            },
+            {
+              "id": "r2",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e2",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": "a glowing seed"
+            },
+            {
+              "id": "r3",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "e3",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "r4",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "e4",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "r5",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "e5",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "r6",
+              "obligation": "required",
+              "kind": "visual",
+              "subject": "object",
+              "target": "",
+              "predicate": "appearance",
+              "value": "desk lamp shaped like a curled leaf",
+              "quote": "desk lamp shaped like a curled leaf"
+            },
+            {
+              "id": "r7",
+              "obligation": "required",
+              "kind": "visual",
+              "subject": "e1",
+              "target": "",
+              "predicate": "appearance",
+              "value": "curled leaf shape",
+              "quote": "curled leaf"
+            },
+            {
+              "id": "r8",
+              "obligation": "required",
+              "kind": "visual",
+              "subject": "e2",
+              "target": "",
+              "predicate": "appearance",
+              "value": "seed shape",
+              "quote": "seed"
+            },
+            {
+              "id": "r9",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e2",
+              "target": "e1",
+              "predicate": "inside",
+              "value": "",
+              "quote": "seed suspended inside"
+            },
+            {
+              "id": "r10",
+              "obligation": "required",
+              "kind": "constraint",
+              "subject": "e2",
+              "target": "",
+              "predicate": "other",
+              "value": "suspended",
+              "quote": "seed suspended inside"
+            },
+            {
+              "id": "r11",
+              "obligation": "required",
+              "kind": "behavior",
+              "subject": "e2",
+              "target": "",
+              "predicate": "capability",
+              "value": "emission",
+              "quote": "glowing seed"
+            },
+            {
+              "id": "r12",
+              "obligation": "required",
+              "kind": "behavior",
+              "subject": "object",
+              "target": "",
+              "predicate": "capability",
+              "value": "inspect",
+              "quote": "Let me inspect its main pieces"
+            }
+          ]
+        },
+        "inventory_sha256": "2de3cceecc444d4bacb656d88936a49d489b68fdf38a732a6f1bb6bf0532e00c",
+        "extraction_completeness": "unassessed; ID coverage is not natural-language entailment"
+      },
+      "extraction_seconds": 9.238147416035645
+    },
+    {
+      "case": "generic-drone",
+      "request": "Show me a generic quadcopter drone I can explore and take apart into its major components.",
+      "attempts": [
+        {
+          "attempt": 0,
+          "status": "structural_candidate",
+          "geometry_executed": true,
+          "planning_seconds": 68.06458262505475,
+          "billing": {
+            "operation_id": "e83623fc23f95a04953dbad623b2de3f",
+            "calculated_cost_nanos": 83917500,
+            "output_tokens": 7428,
+            "reasoning_tokens": 2041
+          },
+          "geometry_and_validation_seconds": 0.06052662502042949,
+          "declared_numeric_pass": true,
+          "coverage_complete": true,
+          "feedback": {
+            "failed_geometry_checks": []
+          },
+          "parts": 19,
+          "attempt_elapsed_seconds": 69.3086825000355
+        }
+      ],
+      "geometry_executed": true,
+      "status": "structural_candidate",
+      "extraction_billing": {
+        "operation_id": "8e98db0f0eb74f22e8d9a6e39c217be5",
+        "calculated_cost_nanos": 12380000,
+        "output_tokens": 1045,
+        "reasoning_tokens": 516
+      },
+      "contract": {
+        "source_request": "Show me a generic quadcopter drone I can explore and take apart into its major components.",
+        "source_sha256": "758052f52045deda757beff0b2d5b27eab1c171dad7dee0d1b320fad2ab0c99a",
+        "inventory": {
+          "entities": [
+            {
+              "id": "frame",
+              "role": "Central frame"
+            },
+            {
+              "id": "arms",
+              "role": "Four arms"
+            },
+            {
+              "id": "motors",
+              "role": "Four motors"
+            },
+            {
+              "id": "props",
+              "role": "Four propellers"
+            },
+            {
+              "id": "battery",
+              "role": "Battery"
+            },
+            {
+              "id": "controller",
+              "role": "Flight controller"
+            },
+            {
+              "id": "escs",
+              "role": "Electronic speed controllers"
+            }
+          ],
+          "requirements": [
+            {
+              "id": "r01",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "frame",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "r02",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "arms",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "r03",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "motors",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": "quadcopter drone"
+            },
+            {
+              "id": "r04",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "props",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": "quadcopter drone"
+            },
+            {
+              "id": "r05",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "battery",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "r06",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "controller",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "r07",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "escs",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "r08",
+              "obligation": "design_choice",
+              "kind": "constraint",
+              "subject": "arms",
+              "target": "",
+              "predicate": "count",
+              "value": "4",
+              "quote": ""
+            },
+            {
+              "id": "r09",
+              "obligation": "required",
+              "kind": "constraint",
+              "subject": "motors",
+              "target": "",
+              "predicate": "count",
+              "value": "4",
+              "quote": "quadcopter"
+            },
+            {
+              "id": "r10",
+              "obligation": "required",
+              "kind": "constraint",
+              "subject": "props",
+              "target": "",
+              "predicate": "count",
+              "value": "4",
+              "quote": "quadcopter"
+            },
+            {
+              "id": "r11",
+              "obligation": "required",
+              "kind": "visual",
+              "subject": "object",
+              "target": "",
+              "predicate": "appearance",
+              "value": "generic quadcopter drone",
+              "quote": "generic quadcopter drone"
+            },
+            {
+              "id": "r12",
+              "obligation": "required",
+              "kind": "behavior",
+              "subject": "object",
+              "target": "",
+              "predicate": "capability",
+              "value": "inspect",
+              "quote": "I can explore"
+            },
+            {
+              "id": "r13",
+              "obligation": "required",
+              "kind": "behavior",
+              "subject": "object",
+              "target": "",
+              "predicate": "capability",
+              "value": "geometric_explode",
+              "quote": "take apart into its major components"
+            }
+          ]
+        },
+        "inventory_sha256": "084b0bf4e746d8b51c7a19caa4a37f6daf30e75c6befd21961ad212362d74e76",
+        "extraction_completeness": "unassessed; ID coverage is not natural-language entailment"
+      },
+      "extraction_seconds": 12.910211667069234
+    },
+    {
+      "case": "generic-speaker",
+      "request": "Generate a generic portable Bluetooth speaker I can take apart to understand its main systems.",
+      "attempts": [
+        {
+          "attempt": 0,
+          "status": "geometry_failed",
+          "geometry_executed": true,
+          "planning_seconds": 83.21734341594856,
+          "billing": {
+            "operation_id": "adbbfcf3cf7f6c464a49b87f1e5e91a2",
+            "calculated_cost_nanos": 86602500,
+            "output_tokens": 7702,
+            "reasoning_tokens": 4436
+          },
+          "geometry_and_validation_seconds": 0.08566812507342547,
+          "declared_numeric_pass": false,
+          "coverage_complete": true,
+          "feedback": {
+            "failed_geometry_checks": [
+              {
+                "kind": "connected_component",
+                "relation": {
+                  "part": "speaker_driver"
+                },
+                "passed": false,
+                "measurement": {
+                  "solid_islands": 2
+                }
+              }
+            ]
+          },
+          "parts": 11,
+          "attempt_elapsed_seconds": 84.17967454099562
+        },
+        {
+          "attempt": 1,
+          "status": "structural_candidate",
+          "geometry_executed": true,
+          "planning_seconds": 25.516929624951445,
+          "billing": {
+            "operation_id": "d240cfbabd844de8a95cd78defee704d",
+            "calculated_cost_nanos": 57415000,
+            "output_tokens": 3330,
+            "reasoning_tokens": 299
+          },
+          "geometry_and_validation_seconds": 0.08808683301322162,
+          "declared_numeric_pass": true,
+          "coverage_complete": true,
+          "feedback": {
+            "failed_geometry_checks": []
+          },
+          "parts": 11,
+          "attempt_elapsed_seconds": 26.479951916961
+        }
+      ],
+      "geometry_executed": true,
+      "status": "structural_candidate",
+      "extraction_billing": {
+        "operation_id": "6d0be040d19fbce5619d3763f9e35edd",
+        "calculated_cost_nanos": 11122500,
+        "output_tokens": 916,
+        "reasoning_tokens": 393
+      },
+      "contract": {
+        "source_request": "Generate a generic portable Bluetooth speaker I can take apart to understand its main systems.",
+        "source_sha256": "0704dddcc5417ce763512c88c13481d77a2a6b005398458eb8d7b8d52cb0fb14",
+        "inventory": {
+          "entities": [
+            {
+              "id": "e1",
+              "role": "Separable enclosure sections"
+            },
+            {
+              "id": "e2",
+              "role": "Front grille"
+            },
+            {
+              "id": "e3",
+              "role": "Full-range speaker driver"
+            },
+            {
+              "id": "e4",
+              "role": "Passive radiator"
+            },
+            {
+              "id": "e5",
+              "role": "Rechargeable battery pack"
+            },
+            {
+              "id": "e6",
+              "role": "Bluetooth and control board"
+            },
+            {
+              "id": "e7",
+              "role": "Audio amplifier board"
+            },
+            {
+              "id": "e8",
+              "role": "Charging port"
+            },
+            {
+              "id": "e9",
+              "role": "Control buttons"
+            }
+          ],
+          "requirements": [
+            {
+              "id": "r1",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "e1",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "r2",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "e2",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "r3",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "e3",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "r4",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "e4",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "r5",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "e5",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "r6",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "e6",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "r7",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "e7",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "r8",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "e8",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "r9",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "e9",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "quote": ""
+            },
+            {
+              "id": "r10",
+              "obligation": "required",
+              "kind": "visual",
+              "subject": "object",
+              "target": "",
+              "predicate": "appearance",
+              "value": "generic portable Bluetooth speaker",
+              "quote": "generic portable Bluetooth speaker"
+            },
+            {
+              "id": "r11",
+              "obligation": "required",
+              "kind": "behavior",
+              "subject": "object",
+              "target": "",
+              "predicate": "capability",
+              "value": "geometric_explode",
+              "quote": "I can take apart"
+            },
+            {
+              "id": "r12",
+              "obligation": "required",
+              "kind": "behavior",
+              "subject": "object",
+              "target": "",
+              "predicate": "capability",
+              "value": "inspect",
+              "quote": "to understand its main systems"
+            }
+          ]
+        },
+        "inventory_sha256": "c032ef2d6015b633a0b4c4585ebed8ee864d118d4249afd06346ee79a3cc6b79",
+        "extraction_completeness": "unassessed; ID coverage is not natural-language entailment"
+      },
+      "extraction_seconds": 10.664726666989736
+    },
+    {
+      "case": "heldout-001",
+      "request": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces.",
+      "attempts": [],
+      "geometry_executed": false,
+      "status": "extraction_failed",
+      "error": "Invalid entity identity",
+      "extraction_seconds": 10.24083037499804
+    },
+    {
+      "case": "exact-product",
+      "status": "blocked_evidence",
+      "geometry_executed": false
+    }
+  ],
+  "native_generation_goal_passed": false,
+  "elapsed_seconds": 287.4136616670294
+}

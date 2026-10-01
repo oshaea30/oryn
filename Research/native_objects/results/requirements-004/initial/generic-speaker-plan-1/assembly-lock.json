@@ -1,0 +1,272 @@
+{
+  "clearances": [],
+  "containments": [],
+  "mates": [
+    {
+      "a": "h_amplifier",
+      "b": "a_mount",
+      "id": "m_amplifier",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "h_battery",
+      "b": "b_mount",
+      "id": "m_battery",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "h_button_center",
+      "b": "center_mount",
+      "id": "m_button_center",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "h_button_left",
+      "b": "left_mount",
+      "id": "m_button_left",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "h_button_right",
+      "b": "right_mount",
+      "id": "m_button_right",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "h_charging",
+      "b": "p_mount",
+      "id": "m_charging",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "h_control",
+      "b": "c_mount",
+      "id": "m_control",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "h_driver",
+      "b": "d_mount",
+      "id": "m_driver",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "h_grille",
+      "b": "g_mount",
+      "id": "m_grille",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "h_radiator",
+      "b": "r_mount",
+      "id": "m_radiator",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    }
+  ],
+  "parts": [
+    [
+      "amplifier_board",
+      "Audio amplifier board",
+      "rear_housing"
+    ],
+    [
+      "battery_pack",
+      "Rechargeable battery pack",
+      "rear_housing"
+    ],
+    [
+      "button_center",
+      "Control buttons",
+      "rear_housing"
+    ],
+    [
+      "button_left",
+      "Control buttons",
+      "rear_housing"
+    ],
+    [
+      "button_right",
+      "Control buttons",
+      "rear_housing"
+    ],
+    [
+      "charging_port",
+      "Charging port",
+      "rear_housing"
+    ],
+    [
+      "control_board",
+      "Bluetooth and control board",
+      "rear_housing"
+    ],
+    [
+      "front_grille",
+      "Front grille",
+      "rear_housing"
+    ],
+    [
+      "passive_radiator",
+      "Passive radiator",
+      "rear_housing"
+    ],
+    [
+      "rear_housing",
+      "Separable enclosure sections",
+      ""
+    ],
+    [
+      "speaker_driver",
+      "Full-range speaker driver",
+      "rear_housing"
+    ]
+  ],
+  "ports": [
+    [
+      "a_mount",
+      "amplifier_board",
+      "face"
+    ],
+    [
+      "b_mount",
+      "battery_pack",
+      "face"
+    ],
+    [
+      "c_mount",
+      "control_board",
+      "face"
+    ],
+    [
+      "center_mount",
+      "button_center",
+      "face"
+    ],
+    [
+      "d_mount",
+      "speaker_driver",
+      "face"
+    ],
+    [
+      "g_mount",
+      "front_grille",
+      "face"
+    ],
+    [
+      "h_amplifier",
+      "rear_housing",
+      "face"
+    ],
+    [
+      "h_battery",
+      "rear_housing",
+      "face"
+    ],
+    [
+      "h_button_center",
+      "rear_housing",
+      "face"
+    ],
+    [
+      "h_button_left",
+      "rear_housing",
+      "face"
+    ],
+    [
+      "h_button_right",
+      "rear_housing",
+      "face"
+    ],
+    [
+      "h_charging",
+      "rear_housing",
+      "face"
+    ],
+    [
+      "h_control",
+      "rear_housing",
+      "face"
+    ],
+    [
+      "h_driver",
+      "rear_housing",
+      "face"
+    ],
+    [
+      "h_grille",
+      "rear_housing",
+      "face"
+    ],
+    [
+      "h_radiator",
+      "rear_housing",
+      "face"
+    ],
+    [
+      "left_mount",
+      "button_left",
+      "face"
+    ],
+    [
+      "p_mount",
+      "charging_port",
+      "face"
+    ],
+    [
+      "r_mount",
+      "passive_radiator",
+      "face"
+    ],
+    [
+      "right_mount",
+      "button_right",
+      "face"
+    ]
+  ],
+  "symmetries": [
+    {
+      "a": "button_left",
+      "axis": "x",
+      "b": "button_right"
+    }
+  ]
+}

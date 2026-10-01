@@ -1,0 +1,19 @@
+{
+  "status": "completed",
+  "incomplete_details": null,
+  "usage": {
+    "input_tokens": 9646,
+    "input_tokens_details": {
+      "cache_write_tokens": 6613,
+      "cached_tokens": 3030
+    },
+    "output_tokens": 3330,
+    "output_tokens_details": {
+      "reasoning_tokens": 299
+    },
+    "total_tokens": 12976
+  },
+  "operation_id": "d240cfbabd844de8a95cd78defee704d",
+  "calculated_cost_nanos": 57415000,
+  "dispatch_seconds": 25.094862999976613
+}

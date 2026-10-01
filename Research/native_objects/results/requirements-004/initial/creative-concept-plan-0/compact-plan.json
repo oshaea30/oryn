@@ -1,0 +1,495 @@
+{
+  "shapes": [
+    {
+      "id": "base_shape",
+      "forms": [
+        {
+          "kind": "rounded_box",
+          "size": [
+            0.5,
+            0.08,
+            0.42
+          ],
+          "at": [],
+          "rotate": [],
+          "op": "add",
+          "detail": [
+            {
+              "key": "radius",
+              "values": [
+                0.035
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stem_shape",
+      "forms": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.05,
+            0.55,
+            0.05
+          ],
+          "at": [],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        }
+      ]
+    },
+    {
+      "id": "leaf_shape",
+      "forms": [
+        {
+          "kind": "box_shell",
+          "size": [
+            0.86,
+            0.76,
+            0.48
+          ],
+          "at": [],
+          "rotate": [],
+          "op": "add",
+          "detail": [
+            {
+              "key": "wall",
+              "values": [
+                0.035
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.85,
+            0.042,
+            0.06
+          ],
+          "at": [
+            0,
+            0.3,
+            0
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.1,
+            0.07,
+            0.1
+          ],
+          "at": [
+            0,
+            -0.395,
+            0
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "loft",
+          "size": [
+            1,
+            1,
+            1
+          ],
+          "at": [],
+          "rotate": [],
+          "op": "add",
+          "detail": [
+            {
+              "key": "sections",
+              "values": [
+                0.35,
+                0.33,
+                -0.04,
+                0.075,
+                0.075,
+                0.4,
+                0.46,
+                -0.015,
+                0.065,
+                0.075,
+                0.31,
+                0.6,
+                0.02,
+                0.065,
+                0.06,
+                0.12,
+                0.69,
+                0.04,
+                0.015,
+                0.024
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "strand_shape",
+      "forms": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.018,
+            0.24,
+            0.018
+          ],
+          "at": [],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        }
+      ]
+    },
+    {
+      "id": "seed_shape",
+      "forms": [
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.14,
+            0.18,
+            0.12
+          ],
+          "at": [],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.026,
+            0.045,
+            0.026
+          ],
+          "at": [
+            0,
+            0.088,
+            0
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        }
+      ]
+    }
+  ],
+  "parts": [
+    {
+      "id": "base",
+      "entity": "e5",
+      "parent": "",
+      "shape": "base_shape",
+      "color": [
+        0.29,
+        0.31,
+        0.29
+      ]
+    },
+    {
+      "id": "stem",
+      "entity": "e4",
+      "parent": "base",
+      "shape": "stem_shape",
+      "color": [
+        0.45,
+        0.48,
+        0.39
+      ]
+    },
+    {
+      "id": "leaf",
+      "entity": "e1",
+      "parent": "stem",
+      "shape": "leaf_shape",
+      "color": [
+        0.3,
+        0.46,
+        0.34
+      ]
+    },
+    {
+      "id": "strand",
+      "entity": "e3",
+      "parent": "leaf",
+      "shape": "strand_shape",
+      "color": [
+        0.65,
+        0.64,
+        0.49
+      ]
+    },
+    {
+      "id": "seed",
+      "entity": "e2",
+      "parent": "strand",
+      "shape": "seed_shape",
+      "color": [
+        0.98,
+        0.76,
+        0.35
+      ]
+    }
+  ],
+  "root_position": [
+    0,
+    -1.005,
+    0
+  ],
+  "root_rotation": [
+    0,
+    0,
+    0
+  ],
+  "ports": [
+    {
+      "id": "base_top",
+      "part": "base",
+      "kind": "face",
+      "form": 0,
+      "face": "+y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "stem_bottom",
+      "part": "stem",
+      "kind": "face",
+      "form": 0,
+      "face": "-y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "stem_top",
+      "part": "stem",
+      "kind": "face",
+      "form": 0,
+      "face": "+y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "leaf_bottom",
+      "part": "leaf",
+      "kind": "face",
+      "form": 2,
+      "face": "-y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "leaf_bridge_bottom",
+      "part": "leaf",
+      "kind": "face",
+      "form": 1,
+      "face": "-y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "strand_top",
+      "part": "strand",
+      "kind": "face",
+      "form": 0,
+      "face": "+y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "strand_bottom",
+      "part": "strand",
+      "kind": "face",
+      "form": 0,
+      "face": "-y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "seed_top",
+      "part": "seed",
+      "kind": "face",
+      "form": 1,
+      "face": "+y",
+      "span": [
+        0,
+        1
+      ]
+    }
+  ],
+  "mates": [
+    {
+      "id": "base_stem",
+      "a": "base_top",
+      "b": "stem_bottom",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "stem_leaf",
+      "a": "stem_top",
+      "b": "leaf_bottom",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "leaf_strand",
+      "a": "leaf_bridge_bottom",
+      "b": "strand_top",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "strand_seed",
+      "a": "strand_bottom",
+      "b": "seed_top",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    }
+  ],
+  "containments": [
+    {
+      "outer": "leaf",
+      "inner": "seed",
+      "clearance": 0.04
+    }
+  ],
+  "clearances": [],
+  "symmetries": [],
+  "bindings": [
+    {
+      "id": "r1",
+      "kind": "components",
+      "refs": [
+        "part:leaf"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r2",
+      "kind": "components",
+      "refs": [
+        "part:seed"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r3",
+      "kind": "components",
+      "refs": [
+        "part:strand"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r4",
+      "kind": "components",
+      "refs": [
+        "part:stem"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r5",
+      "kind": "components",
+      "refs": [
+        "part:base"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r6",
+      "kind": "components",
+      "refs": [
+        "part:base",
+        "part:stem",
+        "part:leaf",
+        "part:strand",
+        "part:seed"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r7",
+      "kind": "components",
+      "refs": [
+        "part:leaf"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r8",
+      "kind": "components",
+      "refs": [
+        "part:seed"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r9",
+      "kind": "relations",
+      "refs": [
+        "containment:0"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r10",
+      "kind": "unsupported",
+      "refs": [],
+      "note": "The strand and mates depict suspension; physical hanging is not verified."
+    },
+    {
+      "id": "r11",
+      "kind": "unsupported",
+      "refs": [],
+      "note": "Emission is not supported; the warm color only suggests a glow."
+    },
+    {
+      "id": "r12",
+      "kind": "capability",
+      "refs": [
+        "capability:inspect"
+      ],
+      "note": ""
+    }
+  ]
+}

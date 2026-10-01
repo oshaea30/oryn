@@ -1,0 +1,1332 @@
+{
+  "assumptions": [
+    "Generic model design; requirement coverage does not verify semantics or engineering."
+  ],
+  "limitations": [
+    "Geometry executor unchanged; unsupported requirements are explicit."
+  ],
+  "parts": [
+    {
+      "id": "rear_housing",
+      "role": "Separable enclosure sections",
+      "parent": "",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": [
+        90.0,
+        0.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "box_shell",
+          "size": [
+            0.24,
+            0.09,
+            0.13
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0.004,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.012,
+            0.004,
+            0.012
+          ],
+          "offset": [
+            -0.061,
+            -0.039,
+            -0.019
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.012,
+            0.004,
+            0.012
+          ],
+          "offset": [
+            0.062,
+            -0.039,
+            0.022
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.012,
+            0.004,
+            0.012
+          ],
+          "offset": [
+            -0.061,
+            -0.039,
+            0.042
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.008,
+            0.004,
+            0.008
+          ],
+          "offset": [
+            0.002,
+            -0.039,
+            -0.042
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.008,
+            0.004,
+            0.008
+          ],
+          "offset": [
+            0.077,
+            -0.039,
+            -0.04
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.01,
+            0.087,
+            0.01
+          ],
+          "offset": [
+            0.105,
+            0.0015,
+            0.052
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.01,
+            0.014,
+            0.018
+          ],
+          "offset": [
+            0.124,
+            0.012,
+            -0.036
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.012,
+            0.01,
+            0.012
+          ],
+          "offset": [
+            -0.028,
+            0.016,
+            -0.067
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.012,
+            0.01,
+            0.012
+          ],
+          "offset": [
+            0,
+            0.016,
+            -0.067
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.012,
+            0.01,
+            0.012
+          ],
+          "offset": [
+            0.028,
+            0.016,
+            -0.067
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.19,
+        0.22,
+        0.24
+      ]
+    },
+    {
+      "id": "front_grille",
+      "role": "Front grille",
+      "parent": "rear_housing",
+      "position": [
+        0.0,
+        1.1021821192326178e-18,
+        0.05099999999999999
+      ],
+      "rotation": [
+        89.99999999999999,
+        -0.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "rounded_box",
+          "size": [
+            0.226,
+            0.004,
+            0.116
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0.0015,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.006,
+            0.012,
+            0.006
+          ],
+          "offset": [
+            -0.09,
+            0,
+            -0.041
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "subtract",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            11,
+            1,
+            5
+          ],
+          "step": [
+            0.018,
+            0,
+            0.0205
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.01,
+            0.004,
+            0.01
+          ],
+          "offset": [
+            0.105,
+            -0.004,
+            0.052
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.34,
+        0.38,
+        0.39
+      ]
+    },
+    {
+      "id": "speaker_driver",
+      "role": "Full-range speaker driver",
+      "parent": "rear_housing",
+      "position": [
+        -0.061,
+        0.019,
+        -0.016999999999999998
+      ],
+      "rotation": [
+        89.99999999999999,
+        -0.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.075,
+            0.028,
+            0.075
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.012,
+            0.006,
+            0.012
+          ],
+          "offset": [
+            0,
+            -0.017,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.16,
+        0.17,
+        0.18
+      ]
+    },
+    {
+      "id": "passive_radiator",
+      "role": "Passive radiator",
+      "parent": "rear_housing",
+      "position": [
+        0.062,
+        -0.022,
+        -0.027499999999999997
+      ],
+      "rotation": [
+        89.99999999999999,
+        -0.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.065,
+            0.011,
+            0.065
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.01,
+            0.004,
+            0.01
+          ],
+          "offset": [
+            0,
+            -0.0075,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.23,
+        0.25,
+        0.26
+      ]
+    },
+    {
+      "id": "battery_pack",
+      "role": "Rechargeable battery pack",
+      "parent": "rear_housing",
+      "position": [
+        -0.061,
+        -0.042,
+        -0.026
+      ],
+      "rotation": [
+        89.99999999999999,
+        -0.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "rounded_box",
+          "size": [
+            0.064,
+            0.017,
+            0.02
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0.003,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.012,
+            0.004,
+            0.012
+          ],
+          "offset": [
+            0,
+            -0.009,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.38,
+        0.39,
+        0.35
+      ]
+    },
+    {
+      "id": "control_board",
+      "role": "Bluetooth and control board",
+      "parent": "rear_housing",
+      "position": [
+        0.002,
+        0.042,
+        -0.032
+      ],
+      "rotation": [
+        89.99999999999999,
+        -0.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.037,
+            0.003,
+            0.023
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.008,
+            0.004,
+            0.008
+          ],
+          "offset": [
+            0,
+            -0.003,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.12,
+        0.32,
+        0.24
+      ]
+    },
+    {
+      "id": "amplifier_board",
+      "role": "Audio amplifier board",
+      "parent": "rear_housing",
+      "position": [
+        0.077,
+        0.04,
+        -0.032
+      ],
+      "rotation": [
+        89.99999999999999,
+        -0.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.037,
+            0.003,
+            0.019
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.008,
+            0.004,
+            0.008
+          ],
+          "offset": [
+            0,
+            -0.003,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.15,
+        0.29,
+        0.23
+      ]
+    },
+    {
+      "id": "charging_port",
+      "role": "Charging port",
+      "parent": "rear_housing",
+      "position": [
+        0.136,
+        0.036,
+        0.011999999999999999
+      ],
+      "rotation": [
+        90.0,
+        -4.296495291499103e-31,
+        -7.016709298534876e-15
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.014,
+            0.012,
+            0.016
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.006,
+            0.006,
+            0.009
+          ],
+          "offset": [
+            0.0055,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "subtract",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.45,
+        0.46,
+        0.44
+      ]
+    },
+    {
+      "id": "button_left",
+      "role": "Control buttons",
+      "parent": "rear_housing",
+      "position": [
+        -0.028,
+        0.07600000000000001,
+        0.015999999999999997
+      ],
+      "rotation": [
+        89.99999999999999,
+        -0.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "rounded_box",
+          "size": [
+            0.014,
+            0.01,
+            0.006
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0.002,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.29,
+        0.32,
+        0.32
+      ]
+    },
+    {
+      "id": "button_center",
+      "role": "Control buttons",
+      "parent": "rear_housing",
+      "position": [
+        0.0,
+        0.07600000000000001,
+        0.015999999999999997
+      ],
+      "rotation": [
+        89.99999999999999,
+        -0.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "rounded_box",
+          "size": [
+            0.014,
+            0.01,
+            0.006
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0.002,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.29,
+        0.32,
+        0.32
+      ]
+    },
+    {
+      "id": "button_right",
+      "role": "Control buttons",
+      "parent": "rear_housing",
+      "position": [
+        0.028,
+        0.07600000000000001,
+        0.015999999999999997
+      ],
+      "rotation": [
+        89.99999999999999,
+        -0.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "rounded_box",
+          "size": [
+            0.014,
+            0.01,
+            0.006
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0.002,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.29,
+        0.32,
+        0.32
+      ]
+    }
+  ],
+  "mounts": [
+    {
+      "a": "rear_housing",
+      "b": "front_grille",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "rear_housing",
+      "b": "speaker_driver",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "rear_housing",
+      "b": "passive_radiator",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "rear_housing",
+      "b": "battery_pack",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "rear_housing",
+      "b": "control_board",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "rear_housing",
+      "b": "amplifier_board",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "rear_housing",
+      "b": "charging_port",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "rear_housing",
+      "b": "button_left",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "rear_housing",
+      "b": "button_center",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "rear_housing",
+      "b": "button_right",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "passages": [],
+  "containments": [],
+  "clearances": [],
+  "symmetries": [
+    {
+      "a": "button_left",
+      "b": "button_right",
+      "axis": "x"
+    }
+  ]
+}

@@ -1,0 +1,659 @@
+{
+  "shapes": [
+    {
+      "id": "housing_shape",
+      "forms": [
+        {
+          "kind": "box_shell",
+          "size": [
+            0.14,
+            0.12,
+            0.14
+          ],
+          "at": [],
+          "rotate": [],
+          "op": "add",
+          "detail": [
+            {
+              "key": "wall",
+              "values": [
+                0.008
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.022,
+            0.004,
+            0.022
+          ],
+          "at": [
+            0,
+            -0.062,
+            0
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.025,
+            0.025,
+            0.025
+          ],
+          "at": [
+            0,
+            0.012,
+            -0.066
+          ],
+          "rotate": [
+            90,
+            0,
+            0
+          ],
+          "op": "subtract",
+          "detail": []
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.02,
+            0.025,
+            0.02
+          ],
+          "at": [
+            0,
+            0.012,
+            0.066
+          ],
+          "rotate": [
+            90,
+            0,
+            0
+          ],
+          "op": "subtract",
+          "detail": []
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.03,
+            0.018,
+            0.03
+          ],
+          "at": [
+            0.037,
+            -0.056,
+            0
+          ],
+          "rotate": [],
+          "op": "subtract",
+          "detail": []
+        }
+      ]
+    },
+    {
+      "id": "guide_shape",
+      "forms": [
+        {
+          "kind": "tube",
+          "size": [
+            0.022,
+            0.035,
+            0.022
+          ],
+          "at": [],
+          "rotate": [
+            90,
+            0,
+            0
+          ],
+          "op": "add",
+          "detail": [
+            {
+              "key": "wall",
+              "values": [
+                0.003
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "drive_shape",
+      "forms": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.016,
+            0.098,
+            0.016
+          ],
+          "at": [],
+          "rotate": [
+            90,
+            0,
+            0
+          ],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.042,
+            0.01,
+            0.042
+          ],
+          "at": [
+            0,
+            0,
+            -0.014
+          ],
+          "rotate": [
+            90,
+            0,
+            0
+          ],
+          "op": "add",
+          "detail": []
+        }
+      ]
+    },
+    {
+      "id": "cutter_shape",
+      "forms": [
+        {
+          "kind": "loft",
+          "size": [
+            1,
+            1,
+            1
+          ],
+          "at": [],
+          "rotate": [],
+          "op": "add",
+          "detail": [
+            {
+              "key": "sections",
+              "values": [
+                0,
+                -0.023,
+                0,
+                0.004,
+                0.004,
+                0,
+                -0.012,
+                0,
+                0.007,
+                0.007,
+                0,
+                0.004,
+                0,
+                0.01,
+                0.01,
+                0,
+                0.016,
+                0,
+                0.01,
+                0.01
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.02,
+            0.008,
+            0.02
+          ],
+          "at": [
+            0,
+            0.019,
+            0
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        }
+      ]
+    },
+    {
+      "id": "crank_shape",
+      "forms": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.024,
+            0.01,
+            0.024
+          ],
+          "at": [
+            0,
+            0,
+            0.005
+          ],
+          "rotate": [
+            90,
+            0,
+            0
+          ],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.064,
+            0.012,
+            0.008
+          ],
+          "at": [
+            0.032,
+            0,
+            0.011
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.016,
+            0.026,
+            0.016
+          ],
+          "at": [
+            0.058,
+            0,
+            0.026
+          ],
+          "rotate": [
+            90,
+            0,
+            0
+          ],
+          "op": "add",
+          "detail": []
+        }
+      ]
+    },
+    {
+      "id": "drawer_shape",
+      "forms": [
+        {
+          "kind": "box_shell",
+          "size": [
+            0.11,
+            0.026,
+            0.11
+          ],
+          "at": [],
+          "rotate": [],
+          "op": "add",
+          "detail": [
+            {
+              "key": "wall",
+              "values": [
+                0.003
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.022,
+            0.023,
+            0.022
+          ],
+          "at": [
+            0,
+            0.0015,
+            0
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        }
+      ]
+    }
+  ],
+  "parts": [
+    {
+      "id": "housing",
+      "entity": "E1",
+      "parent": "",
+      "shape": "housing_shape",
+      "color": [
+        0.29,
+        0.34,
+        0.38
+      ]
+    },
+    {
+      "id": "guide",
+      "entity": "E2",
+      "parent": "housing",
+      "shape": "guide_shape",
+      "color": [
+        0.68,
+        0.69,
+        0.65
+      ]
+    },
+    {
+      "id": "drive",
+      "entity": "E4",
+      "parent": "housing",
+      "shape": "drive_shape",
+      "color": [
+        0.56,
+        0.59,
+        0.6
+      ]
+    },
+    {
+      "id": "cutter",
+      "entity": "E5",
+      "parent": "drive",
+      "shape": "cutter_shape",
+      "color": [
+        0.72,
+        0.73,
+        0.7
+      ]
+    },
+    {
+      "id": "crank",
+      "entity": "E3",
+      "parent": "drive",
+      "shape": "crank_shape",
+      "color": [
+        0.37,
+        0.39,
+        0.4
+      ]
+    },
+    {
+      "id": "drawer",
+      "entity": "E6",
+      "parent": "housing",
+      "shape": "drawer_shape",
+      "color": [
+        0.43,
+        0.46,
+        0.47
+      ]
+    }
+  ],
+  "root_position": [
+    0,
+    0,
+    0
+  ],
+  "root_rotation": [
+    0,
+    0,
+    0
+  ],
+  "ports": [
+    {
+      "id": "housing_guide_bore",
+      "part": "housing",
+      "kind": "bore_axis",
+      "form": 2,
+      "face": "+y",
+      "span": [
+        0.35,
+        0.65
+      ]
+    },
+    {
+      "id": "guide_outer",
+      "part": "guide",
+      "kind": "outer_axis",
+      "form": 0,
+      "face": "+y",
+      "span": [
+        0.55,
+        0.95
+      ]
+    },
+    {
+      "id": "housing_drive_bore",
+      "part": "housing",
+      "kind": "bore_axis",
+      "form": 3,
+      "face": "+y",
+      "span": [
+        0.35,
+        0.65
+      ]
+    },
+    {
+      "id": "drive_outer",
+      "part": "drive",
+      "kind": "outer_axis",
+      "form": 0,
+      "face": "+y",
+      "span": [
+        0.4,
+        0.6
+      ]
+    },
+    {
+      "id": "drive_front",
+      "part": "drive",
+      "kind": "face",
+      "form": 0,
+      "face": "-y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "cutter_back",
+      "part": "cutter",
+      "kind": "face",
+      "form": 1,
+      "face": "+y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "drive_back",
+      "part": "drive",
+      "kind": "face",
+      "form": 0,
+      "face": "+y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "crank_hub_back",
+      "part": "crank",
+      "kind": "face",
+      "form": 0,
+      "face": "-y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "housing_drawer_boss",
+      "part": "housing",
+      "kind": "face",
+      "form": 1,
+      "face": "-y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "drawer_post_top",
+      "part": "drawer",
+      "kind": "face",
+      "form": 1,
+      "face": "+y",
+      "span": [
+        0,
+        1
+      ]
+    }
+  ],
+  "mates": [
+    {
+      "id": "guide_mount",
+      "a": "housing_guide_bore",
+      "b": "guide_outer",
+      "kind": "coaxial",
+      "offset": -0.00425,
+      "twist": 0,
+      "minimum_clearance": 0.001,
+      "minimum_overlap": 0.006
+    },
+    {
+      "id": "drive_mount",
+      "a": "housing_drive_bore",
+      "b": "drive_outer",
+      "kind": "coaxial",
+      "offset": -0.01,
+      "twist": 0,
+      "minimum_clearance": 0.001,
+      "minimum_overlap": 0.006
+    },
+    {
+      "id": "cutter_mount",
+      "a": "drive_front",
+      "b": "cutter_back",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "crank_mount",
+      "a": "drive_back",
+      "b": "crank_hub_back",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "drawer_mount",
+      "a": "housing_drawer_boss",
+      "b": "drawer_post_top",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    }
+  ],
+  "containments": [],
+  "clearances": [
+    {
+      "a": "guide",
+      "b": "cutter",
+      "minimum": 0.015
+    }
+  ],
+  "symmetries": [],
+  "bindings": [
+    {
+      "id": "R1",
+      "kind": "components",
+      "refs": [
+        "part:housing"
+      ],
+      "note": ""
+    },
+    {
+      "id": "R2",
+      "kind": "components",
+      "refs": [
+        "part:guide"
+      ],
+      "note": ""
+    },
+    {
+      "id": "R3",
+      "kind": "components",
+      "refs": [
+        "part:crank"
+      ],
+      "note": ""
+    },
+    {
+      "id": "R4",
+      "kind": "components",
+      "refs": [
+        "part:drive"
+      ],
+      "note": ""
+    },
+    {
+      "id": "R5",
+      "kind": "components",
+      "refs": [
+        "part:cutter"
+      ],
+      "note": ""
+    },
+    {
+      "id": "R6",
+      "kind": "components",
+      "refs": [
+        "part:drawer"
+      ],
+      "note": ""
+    },
+    {
+      "id": "R7",
+      "kind": "components",
+      "refs": [
+        "part:housing",
+        "part:guide",
+        "part:drive",
+        "part:cutter",
+        "part:crank",
+        "part:drawer"
+      ],
+      "note": ""
+    },
+    {
+      "id": "R8",
+      "kind": "capability",
+      "refs": [
+        "capability:geometric_explode"
+      ],
+      "note": ""
+    },
+    {
+      "id": "R9",
+      "kind": "capability",
+      "refs": [
+        "capability:inspect"
+      ],
+      "note": ""
+    }
+  ]
+}

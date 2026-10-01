@@ -1,0 +1,152 @@
+{
+  "source_request": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside. Let me inspect its main pieces; it does not need to be a buildable electrical product.",
+  "source_sha256": "5532a73f6e85abad2f8cf8e507e36c075a21b34ce6b6bc69122e0266309a6c03",
+  "inventory": {
+    "entities": [
+      {
+        "id": "e1",
+        "role": "Curled leaf shade"
+      },
+      {
+        "id": "e2",
+        "role": "Glowing seed"
+      },
+      {
+        "id": "e3",
+        "role": "Seed suspension strand"
+      },
+      {
+        "id": "e4",
+        "role": "Stem support"
+      },
+      {
+        "id": "e5",
+        "role": "Desk base"
+      }
+    ],
+    "requirements": [
+      {
+        "id": "r1",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "e1",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "quote": "shaped like a curled leaf"
+      },
+      {
+        "id": "r2",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "e2",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "quote": "a glowing seed"
+      },
+      {
+        "id": "r3",
+        "obligation": "design_choice",
+        "kind": "entity",
+        "subject": "e3",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "quote": ""
+      },
+      {
+        "id": "r4",
+        "obligation": "design_choice",
+        "kind": "entity",
+        "subject": "e4",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "quote": ""
+      },
+      {
+        "id": "r5",
+        "obligation": "design_choice",
+        "kind": "entity",
+        "subject": "e5",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "quote": ""
+      },
+      {
+        "id": "r6",
+        "obligation": "required",
+        "kind": "visual",
+        "subject": "object",
+        "target": "",
+        "predicate": "appearance",
+        "value": "desk lamp shaped like a curled leaf",
+        "quote": "desk lamp shaped like a curled leaf"
+      },
+      {
+        "id": "r7",
+        "obligation": "required",
+        "kind": "visual",
+        "subject": "e1",
+        "target": "",
+        "predicate": "appearance",
+        "value": "curled leaf shape",
+        "quote": "curled leaf"
+      },
+      {
+        "id": "r8",
+        "obligation": "required",
+        "kind": "visual",
+        "subject": "e2",
+        "target": "",
+        "predicate": "appearance",
+        "value": "seed shape",
+        "quote": "seed"
+      },
+      {
+        "id": "r9",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "e2",
+        "target": "e1",
+        "predicate": "inside",
+        "value": "",
+        "quote": "seed suspended inside"
+      },
+      {
+        "id": "r10",
+        "obligation": "required",
+        "kind": "constraint",
+        "subject": "e2",
+        "target": "",
+        "predicate": "other",
+        "value": "suspended",
+        "quote": "seed suspended inside"
+      },
+      {
+        "id": "r11",
+        "obligation": "required",
+        "kind": "behavior",
+        "subject": "e2",
+        "target": "",
+        "predicate": "capability",
+        "value": "emission",
+        "quote": "glowing seed"
+      },
+      {
+        "id": "r12",
+        "obligation": "required",
+        "kind": "behavior",
+        "subject": "object",
+        "target": "",
+        "predicate": "capability",
+        "value": "inspect",
+        "quote": "Let me inspect its main pieces"
+      }
+    ]
+  },
+  "inventory_sha256": "2de3cceecc444d4bacb656d88936a49d489b68fdf38a732a6f1bb6bf0532e00c",
+  "extraction_completeness": "unassessed; ID coverage is not natural-language entailment"
+}

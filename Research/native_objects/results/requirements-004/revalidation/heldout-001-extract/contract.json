@@ -1,0 +1,126 @@
+{
+  "source_request": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces.",
+  "source_sha256": "28761f62da3ac4403ac1104980f43f43857aabe4d3d994e5ead83069e35843e8",
+  "inventory": {
+    "entities": [
+      {
+        "id": "E1",
+        "role": "Outer housing"
+      },
+      {
+        "id": "E2",
+        "role": "Pencil guide"
+      },
+      {
+        "id": "E3",
+        "role": "Crank handle"
+      },
+      {
+        "id": "E4",
+        "role": "Drive mechanism"
+      },
+      {
+        "id": "E5",
+        "role": "Helical cutter assembly"
+      },
+      {
+        "id": "E6",
+        "role": "Shavings drawer"
+      }
+    ],
+    "requirements": [
+      {
+        "id": "R1",
+        "obligation": "design_choice",
+        "kind": "entity",
+        "subject": "E1",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "quote": ""
+      },
+      {
+        "id": "R2",
+        "obligation": "design_choice",
+        "kind": "entity",
+        "subject": "E2",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "quote": ""
+      },
+      {
+        "id": "R3",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "E3",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "quote": "hand-cranked pencil sharpener"
+      },
+      {
+        "id": "R4",
+        "obligation": "design_choice",
+        "kind": "entity",
+        "subject": "E4",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "quote": ""
+      },
+      {
+        "id": "R5",
+        "obligation": "design_choice",
+        "kind": "entity",
+        "subject": "E5",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "quote": ""
+      },
+      {
+        "id": "R6",
+        "obligation": "design_choice",
+        "kind": "entity",
+        "subject": "E6",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "quote": ""
+      },
+      {
+        "id": "R7",
+        "obligation": "required",
+        "kind": "visual",
+        "subject": "object",
+        "target": "",
+        "predicate": "appearance",
+        "value": "generic hand-cranked pencil sharpener",
+        "quote": "generic hand-cranked pencil sharpener"
+      },
+      {
+        "id": "R8",
+        "obligation": "required",
+        "kind": "behavior",
+        "subject": "object",
+        "target": "",
+        "predicate": "capability",
+        "value": "geometric_explode",
+        "quote": "I can take apart"
+      },
+      {
+        "id": "R9",
+        "obligation": "required",
+        "kind": "behavior",
+        "subject": "object",
+        "target": "",
+        "predicate": "capability",
+        "value": "inspect",
+        "quote": "understand its main pieces"
+      }
+    ]
+  },
+  "inventory_sha256": "fbb1cb3baed64939896c721b52ff0f922e403955166bf57b3a5515c2bdb6ade1",
+  "extraction_completeness": "unassessed; ID coverage is not natural-language entailment"
+}

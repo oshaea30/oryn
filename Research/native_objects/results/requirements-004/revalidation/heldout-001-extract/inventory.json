@@ -1,0 +1,120 @@
+{
+  "entities": [
+    {
+      "id": "E1",
+      "role": "Outer housing"
+    },
+    {
+      "id": "E2",
+      "role": "Pencil guide"
+    },
+    {
+      "id": "E3",
+      "role": "Crank handle"
+    },
+    {
+      "id": "E4",
+      "role": "Drive mechanism"
+    },
+    {
+      "id": "E5",
+      "role": "Helical cutter assembly"
+    },
+    {
+      "id": "E6",
+      "role": "Shavings drawer"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "R1",
+      "obligation": "design_choice",
+      "kind": "entity",
+      "subject": "E1",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "quote": ""
+    },
+    {
+      "id": "R2",
+      "obligation": "design_choice",
+      "kind": "entity",
+      "subject": "E2",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "quote": ""
+    },
+    {
+      "id": "R3",
+      "obligation": "required",
+      "kind": "entity",
+      "subject": "E3",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "quote": "hand-cranked pencil sharpener"
+    },
+    {
+      "id": "R4",
+      "obligation": "design_choice",
+      "kind": "entity",
+      "subject": "E4",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "quote": ""
+    },
+    {
+      "id": "R5",
+      "obligation": "design_choice",
+      "kind": "entity",
+      "subject": "E5",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "quote": ""
+    },
+    {
+      "id": "R6",
+      "obligation": "design_choice",
+      "kind": "entity",
+      "subject": "E6",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "quote": ""
+    },
+    {
+      "id": "R7",
+      "obligation": "required",
+      "kind": "visual",
+      "subject": "object",
+      "target": "",
+      "predicate": "appearance",
+      "value": "generic hand-cranked pencil sharpener",
+      "quote": "generic hand-cranked pencil sharpener"
+    },
+    {
+      "id": "R8",
+      "obligation": "required",
+      "kind": "behavior",
+      "subject": "object",
+      "target": "",
+      "predicate": "capability",
+      "value": "geometric_explode",
+      "quote": "I can take apart"
+    },
+    {
+      "id": "R9",
+      "obligation": "required",
+      "kind": "behavior",
+      "subject": "object",
+      "target": "",
+      "predicate": "capability",
+      "value": "inspect",
+      "quote": "understand its main pieces"
+    }
+  ]
+}

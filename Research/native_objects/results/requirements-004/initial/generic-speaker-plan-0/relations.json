@@ -1,0 +1,1224 @@
+{
+  "declared_relations_passed": false,
+  "checks": [
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "button_left",
+        "b": "button_right",
+        "axis": "x"
+      },
+      "passed": true,
+      "measurement": {
+        "maximum_bound_error_m": 0.0,
+        "scope": "bounds only, not full shape symmetry"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "rear_housing"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "front_grille"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "speaker_driver"
+      },
+      "passed": false,
+      "measurement": {
+        "solid_islands": 2
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "passive_radiator"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "battery_pack"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "control_board"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "amplifier_board"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "charging_port"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "button_left"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "button_center"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "button_right"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "h_grille",
+        "part": "rear_housing"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "g_mount",
+        "part": "front_grille"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "h_driver",
+        "part": "rear_housing"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "d_mount",
+        "part": "speaker_driver"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "h_radiator",
+        "part": "rear_housing"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "r_mount",
+        "part": "passive_radiator"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "h_battery",
+        "part": "rear_housing"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "b_mount",
+        "part": "battery_pack"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "h_control",
+        "part": "rear_housing"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "c_mount",
+        "part": "control_board"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "h_amplifier",
+        "part": "rear_housing"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "a_mount",
+        "part": "amplifier_board"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "h_charging",
+        "part": "rear_housing"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "p_mount",
+        "part": "charging_port"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "h_button_left",
+        "part": "rear_housing"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "left_mount",
+        "part": "button_left"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "h_button_center",
+        "part": "rear_housing"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "center_mount",
+        "part": "button_center"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "h_button_right",
+        "part": "rear_housing"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "right_mount",
+        "part": "button_right"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "id": "m_grille",
+        "a": "h_grille",
+        "b": "g_mount",
+        "kind": "face",
+        "offset": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "minimum_overlap": 0
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "id": "m_driver",
+        "a": "h_driver",
+        "b": "d_mount",
+        "kind": "face",
+        "offset": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "minimum_overlap": 0
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "id": "m_radiator",
+        "a": "h_radiator",
+        "b": "r_mount",
+        "kind": "face",
+        "offset": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "minimum_overlap": 0
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "id": "m_battery",
+        "a": "h_battery",
+        "b": "b_mount",
+        "kind": "face",
+        "offset": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "minimum_overlap": 0
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "id": "m_control",
+        "a": "h_control",
+        "b": "c_mount",
+        "kind": "face",
+        "offset": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "minimum_overlap": 0
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "id": "m_amplifier",
+        "a": "h_amplifier",
+        "b": "a_mount",
+        "kind": "face",
+        "offset": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "minimum_overlap": 0
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "id": "m_charging",
+        "a": "h_charging",
+        "b": "p_mount",
+        "kind": "face",
+        "offset": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "minimum_overlap": 0
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "id": "m_button_left",
+        "a": "h_button_left",
+        "b": "left_mount",
+        "kind": "face",
+        "offset": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "minimum_overlap": 0
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "id": "m_button_center",
+        "a": "h_button_center",
+        "b": "center_mount",
+        "kind": "face",
+        "offset": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "minimum_overlap": 0
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "id": "m_button_right",
+        "a": "h_button_right",
+        "b": "right_mount",
+        "kind": "face",
+        "offset": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "minimum_overlap": 0
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "rear_housing",
+        "b": "front_grille"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "rear_housing",
+        "b": "speaker_driver"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "rear_housing",
+        "b": "passive_radiator"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "rear_housing",
+        "b": "battery_pack"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "rear_housing",
+        "b": "control_board"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 2.7769999999999997e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "rear_housing",
+        "b": "amplifier_board"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 2.333e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "rear_housing",
+        "b": "charging_port"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 2.445000000000004e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "rear_housing",
+        "b": "button_left"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.326188021535174e-14
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "rear_housing",
+        "b": "button_center"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.326188021535174e-14
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "rear_housing",
+        "b": "button_right"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.326188021535174e-14
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "front_grille",
+        "b": "speaker_driver"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "front_grille",
+        "b": "passive_radiator"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "front_grille",
+        "b": "battery_pack"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "front_grille",
+        "b": "control_board"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 2.7769999999999997e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "front_grille",
+        "b": "amplifier_board"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 2.333e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "front_grille",
+        "b": "charging_port"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 2.445000000000004e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "front_grille",
+        "b": "button_left"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.326188021535174e-14
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "front_grille",
+        "b": "button_center"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.326188021535174e-14
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "front_grille",
+        "b": "button_right"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.326188021535174e-14
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "speaker_driver",
+        "b": "passive_radiator"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "speaker_driver",
+        "b": "battery_pack"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "speaker_driver",
+        "b": "control_board"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 2.7769999999999997e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "speaker_driver",
+        "b": "amplifier_board"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 2.333e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "speaker_driver",
+        "b": "charging_port"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 2.445000000000004e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "speaker_driver",
+        "b": "button_left"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.326188021535174e-14
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "speaker_driver",
+        "b": "button_center"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.326188021535174e-14
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "speaker_driver",
+        "b": "button_right"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.326188021535174e-14
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "passive_radiator",
+        "b": "battery_pack"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "passive_radiator",
+        "b": "control_board"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 2.7769999999999997e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "passive_radiator",
+        "b": "amplifier_board"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 2.333e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "passive_radiator",
+        "b": "charging_port"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 2.445000000000004e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "passive_radiator",
+        "b": "button_left"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.326188021535174e-14
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "passive_radiator",
+        "b": "button_center"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.326188021535174e-14
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "passive_radiator",
+        "b": "button_right"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.326188021535174e-14
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery_pack",
+        "b": "control_board"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 2.7769999999999997e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery_pack",
+        "b": "amplifier_board"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 2.333e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery_pack",
+        "b": "charging_port"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 2.445000000000004e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery_pack",
+        "b": "button_left"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.326188021535174e-14
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery_pack",
+        "b": "button_center"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.326188021535174e-14
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery_pack",
+        "b": "button_right"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.326188021535174e-14
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "control_board",
+        "b": "amplifier_board"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 2.333e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "control_board",
+        "b": "charging_port"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 2.445000000000004e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "control_board",
+        "b": "button_left"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.326188021535174e-14
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "control_board",
+        "b": "button_center"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.326188021535174e-14
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "control_board",
+        "b": "button_right"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.326188021535174e-14
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "amplifier_board",
+        "b": "charging_port"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 2.333e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "amplifier_board",
+        "b": "button_left"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.326188021535174e-14
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "amplifier_board",
+        "b": "button_center"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.326188021535174e-14
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "amplifier_board",
+        "b": "button_right"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.326188021535174e-14
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "charging_port",
+        "b": "button_left"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.326188021535174e-14
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "charging_port",
+        "b": "button_center"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.326188021535174e-14
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "charging_port",
+        "b": "button_right"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.326188021535174e-14
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "button_left",
+        "b": "button_center"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.326188021535174e-14
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "button_left",
+        "b": "button_right"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.326188021535174e-14
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "button_center",
+        "b": "button_right"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.326188021535174e-14
+      }
+    }
+  ],
+  "semantic_completeness": "not_assessed",
+  "global_collisions": "all pairs static positive-volume interference checked; no swept motion",
+  "engineering_correctness": "not_assessed",
+  "native_generation_goal_passed": false,
+  "requirement_coverage": "not_assessed; solver cannot prove omitted functional connections",
+  "locked_requirements_sha256": "f5601c33c5a725398da48b111880df5e63d8f69133005befbd4a90dd42b371da"
+}

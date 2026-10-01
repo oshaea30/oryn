@@ -47,6 +47,18 @@ class SpatialTests(unittest.TestCase):
         if mutate:mutate(compiled)
         return spatial.measurements(c,p,b,compiled),report
 
+    def test_schema_rejects_observed_invalid_spatial_parameters(self):
+        variants=spatial.schema('An object.',['Center','Member'])['properties']['spatial']['items']['anyOf']
+        def admits(op,reference,axis):
+            values={'operator':op,'reference':reference,'axis':axis}
+            return any(all(v in branch['properties'][k]['enum'] for k,v in values.items()) for branch in variants)
+        self.assertFalse(admits('radial_outward','',''))
+        self.assertFalse(admits('on_top','e0',''))
+        self.assertFalse(admits('outer_end','',''))
+        self.assertTrue(admits('radial_outward','','y'))
+        self.assertTrue(admits('on_top','',''))
+        self.assertTrue(admits('outer_end','e0',''))
+
     def test_on_top_measures_pose_not_attachment_label(self):
         c=contract(['host','child'],'on_top');p=fixture()
         checks,report=self.check(c,p,['mate:connection']);self.assertTrue(checks[0]['passed']);self.assertTrue(report['declared_relations_passed'])

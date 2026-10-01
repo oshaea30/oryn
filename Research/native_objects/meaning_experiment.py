@@ -77,7 +77,8 @@ def request(case,folder,ledger,key):
     return dispatch(ident,p,body,folder,ledger,key)
 
 
-def dispatch(ident,p,body,folder,ledger,key,batch=None):
+def dispatch(ident,p,body,folder,ledger,key,batch=None,timeout=120):
+    if timeout not in (120,240):raise prior.CommandError('Unreviewed request deadline')
     batch=batch or DEFAULT_BATCH
     allowed={batch.operation_id(c) for c in batch.cases}
     if ident not in allowed:raise prior.CommandError('Operation outside frozen bounds')
@@ -95,7 +96,7 @@ def dispatch(ident,p,body,folder,ledger,key,batch=None):
     start=time.perf_counter()
     try:
         opener=urllib.request.build_opener(urllib.request.ProxyHandler({}),NoRedirect())
-        with opener.open(req,timeout=120) as reply:raw=reply.read(262145)
+        with opener.open(req,timeout=timeout) as reply:raw=reply.read(262145)
         if len(raw)>262144:raise ValueError('Oversized response')
         response=json.loads(raw)
     except Exception as error:

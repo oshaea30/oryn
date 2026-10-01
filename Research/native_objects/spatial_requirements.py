@@ -62,9 +62,12 @@ Spatial admission is not visual or functional approval. Inferred axes/features r
 
 def schema(request,roles):
     out=meaning.bound_source_schema(request,roles);ids=[e['id'] for e in meaning.entity_catalog(roles)]
-    out['properties']['spatial']=geometry.base.arr(geometry.base.object_schema({
-        'id':geometry.base.TEXT,'operator':{'type':'string','enum':list(OPERATORS)},
-        'reference':{'type':'string','enum':['']+ids},'axis':{'type':'string','enum':['','x','y','z']}}))
+    ordinary=geometry.base.object_schema({'id':geometry.base.TEXT,
+        'operator':{'type':'string','enum':['on_top','axis_aligned','parallel_axes']},
+        'reference':{'type':'string','enum':['']},'axis':{'type':'string','enum':['']}})
+    radial=deepcopy(ordinary);radial['properties']['operator']['enum']=['radial_outward'];radial['properties']['axis']['enum']=['x','y','z']
+    outer=deepcopy(ordinary);outer['properties']['operator']['enum']=['outer_end'];outer['properties']['reference']['enum']=ids
+    out['properties']['spatial']=geometry.base.arr({'anyOf':[ordinary,radial,outer]})
     out['required'].append('spatial');return out
 
 

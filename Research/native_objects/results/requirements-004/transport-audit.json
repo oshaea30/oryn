@@ -1,0 +1,23 @@
+{
+  "scope": "Offline serialization audit of previous outputs, never included in live prompts. Bytes are not tokens; new binding overhead excluded.",
+  "results": [
+    {
+      "case": "creative-concept-0",
+      "identical_geometry": true,
+      "original_json_bytes": 4940,
+      "compact_json_bytes_without_new_bindings": 3769
+    },
+    {
+      "case": "generic-drone-0",
+      "identical_geometry": true,
+      "original_json_bytes": 17571,
+      "compact_json_bytes_without_new_bindings": 10813
+    },
+    {
+      "case": "generic-drone-1",
+      "identical_geometry": true,
+      "original_json_bytes": 17576,
+      "compact_json_bytes_without_new_bindings": 10813
+    }
+  ]
+}

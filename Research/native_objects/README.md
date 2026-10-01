@@ -19,7 +19,25 @@ keeps GLB as a possible geometry carrier within a future intelligent object pack
 It authorizes no new format, schema rewrite, packaging system or `.oryn` implementation;
 missing broader concepts do not expand the immediate experiment's acceptance criteria.
 
-## Current local step: request planning
+## Current step: stronger-model comparison, funding-blocked
+
+[Strong-model 014](STRONG_MODEL_RESULT.md) uses Astra xhigh with 32,768 output tokens
+under the unchanged geometry executor and acceptance gates. The user raised the batch
+ceiling to $10 and shared daily/aggregate research ceilings to $15 on 2026-10-01.
+The fresh 19-part drone passes all six global arrangement checks but fails four local
+feature/mate checks. Its completed request costs an estimated $1.03215 and takes
+367.60 seconds, without hitting the output or deadline limits. It is recognizable
+but remains a simplified, rejected candidate.
+
+The subsequent repair returned `credit_balance_exhausted`, with no usage or model output.
+Its $1.8896375 reservation remains held. Speaker and fan calls are undispatched; the
+benchmark is incomplete. Reload OpenAI API credit, review the failed-job accounting,
+and preflight a frozen continuation of unfinished operations before further calls.
+Do not repeat the completed plan or silently exceed the $10 batch cap. All earlier
+holds survive. Use $7.40 as conservative prior allowance for a new budget, including
+this interrupted batch. Eighteen desktop browser checks pass; Quest is unassessed.
+
+## Earlier planning step
 
 [Planning experiment 001](PLANNING_EXPERIMENT.md) tests one application-owned policy
 across four different requests before another geometry investment. It reuses the
@@ -63,7 +81,7 @@ This is not proof of lossless understanding or working general objects. Static-p
 representation still varies, and the drone retains spatial requirements with no
 checkable adapter. The spatial bridge below now tests this boundary with the geometry
 executor unchanged. That confirmation passed 196 targeted test executions. Additional API estimate $0.152625, no new uncertain reservations or
-GPU spend. User-authorized shared daily limit $6; aggregate research ceiling $5.
+GPU spend. Limits at that stage were $6/day and $5 aggregate; current limits are above.
 [Earlier interpretation failures](MEANING_RESULT.md) remain retained.
 
 ## Assembly arrangement and repair results
@@ -85,10 +103,11 @@ retaining all 275 passing facts. The input cap, model, geometry and tolerances s
 Local geometry/checks take 0.12–0.17 seconds versus 25–99 seconds for model requests;
 local edits have not yet demonstrated faster or cheaper planning.
 
-Keep these protections. The next question is incorporating declared global axes into
+Keep these protections. The recommendation after 013 was incorporating declared global axes into
 pose solving, with explicit conflict handling and tests across unrelated arrangements,
-before another paid rotation-repair loop. Do not add primitives, case recipes or product
-promotion. Treat speaker surface/embedding support as a separate boundary. 149 targeted
+before another paid rotation-repair loop. The user then authorized the stronger-model
+comparison above; its outcome must inform that decision. Do not add primitives, case
+recipes or product promotion. Treat speaker surface/embedding support separately. 149 targeted
 tests and 36 desktop browser checks pass. Combined conservative API estimate $0.261955;
 no funding error or GPU spending. [Earlier 011 failures](ASSEMBLY_FOLLOWUP_RESULT.md),
 including its unknown $0.1405625 timeout hold, remain retained and accounted for.

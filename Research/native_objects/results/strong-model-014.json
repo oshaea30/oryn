@@ -1,0 +1,4220 @@
+{
+  "cases": [
+    {
+      "case": "generic-drone",
+      "request": "Show me a generic quadcopter drone I can explore and take apart into its major components.",
+      "status": "geometry_failed",
+      "attempts": [
+        {
+          "attempt": 0,
+          "status": "geometry_failed",
+          "geometry_executed": true,
+          "geometry_and_validation_seconds": 0.590553916990757,
+          "declared_numeric_pass": false,
+          "coverage_complete": true,
+          "feedback": {
+            "failed_geometry_checks": [
+              {
+                "kind": "port_geometry",
+                "relation": {
+                  "port": "controller_nx",
+                  "part": "controller"
+                },
+                "passed": false,
+                "measurement": {
+                  "missing_surface_band_m3": 0.0,
+                  "obstructed_exterior_m3": 5.1282853428343265e-12,
+                  "scope": "finite central face patch"
+                }
+              },
+              {
+                "kind": "executable_mate",
+                "relation": {
+                  "a": "controller_nx",
+                  "id": "controller_esc_nx",
+                  "kind": "face",
+                  "offset": 0,
+                  "minimum_overlap": 0,
+                  "twist": 0,
+                  "minimum_clearance": 0,
+                  "b": "esc_nx_input"
+                },
+                "passed": false,
+                "measurement": {
+                  "frame_max_error": 2.0
+                }
+              },
+              {
+                "kind": "executable_mate",
+                "relation": {
+                  "a": "controller_pz",
+                  "id": "controller_esc_pz",
+                  "kind": "face",
+                  "offset": 0,
+                  "minimum_overlap": 0,
+                  "twist": 0,
+                  "minimum_clearance": 0,
+                  "b": "esc_pz_input"
+                },
+                "passed": false,
+                "measurement": {
+                  "frame_max_error": 1.0000000000000002
+                }
+              },
+              {
+                "kind": "executable_mate",
+                "relation": {
+                  "a": "controller_nz",
+                  "id": "controller_esc_nz",
+                  "kind": "face",
+                  "offset": 0,
+                  "minimum_overlap": 0,
+                  "twist": 0,
+                  "minimum_clearance": 0,
+                  "b": "esc_nz_input"
+                },
+                "passed": false,
+                "measurement": {
+                  "frame_max_error": 1.0
+                }
+              }
+            ],
+            "preserve": {
+              "baseline_sha256": "7d62183e0e9989f41264513af3340db25e8fcc88f39e9b43c0d3bc0b417ce73a",
+              "facts": [
+                {
+                  "kind": "assembly_arrangement",
+                  "requirement_id": "r13",
+                  "assembly_id": "a0",
+                  "aspect": "orientation"
+                },
+                {
+                  "kind": "assembly_arrangement",
+                  "requirement_id": "r15",
+                  "assembly_id": "a1",
+                  "aspect": "orientation",
+                  "facet": "member_relation",
+                  "part": "motor_nx",
+                  "port": "motor_nx_axis"
+                },
+                {
+                  "kind": "assembly_arrangement",
+                  "requirement_id": "r15",
+                  "assembly_id": "a1",
+                  "aspect": "orientation",
+                  "facet": "member_relation",
+                  "part": "motor_nz",
+                  "port": "motor_nz_axis"
+                },
+                {
+                  "kind": "assembly_arrangement",
+                  "requirement_id": "r15",
+                  "assembly_id": "a1",
+                  "aspect": "orientation",
+                  "facet": "member_relation",
+                  "part": "motor_px",
+                  "port": "motor_px_axis"
+                },
+                {
+                  "kind": "assembly_arrangement",
+                  "requirement_id": "r15",
+                  "assembly_id": "a1",
+                  "aspect": "orientation",
+                  "facet": "member_relation",
+                  "part": "motor_pz",
+                  "port": "motor_pz_axis"
+                },
+                {
+                  "kind": "assembly_arrangement",
+                  "requirement_id": "r15",
+                  "assembly_id": "a1",
+                  "aspect": "orientation"
+                },
+                {
+                  "kind": "assembly_arrangement",
+                  "requirement_id": "r17",
+                  "assembly_id": "a2",
+                  "aspect": "orientation",
+                  "facet": "member_relation",
+                  "part": "prop_nx",
+                  "port": "prop_nx_axis"
+                },
+                {
+                  "kind": "assembly_arrangement",
+                  "requirement_id": "r17",
+                  "assembly_id": "a2",
+                  "aspect": "orientation",
+                  "facet": "member_relation",
+                  "part": "prop_nz",
+                  "port": "prop_nz_axis"
+                },
+                {
+                  "kind": "assembly_arrangement",
+                  "requirement_id": "r17",
+                  "assembly_id": "a2",
+                  "aspect": "orientation",
+                  "facet": "member_relation",
+                  "part": "prop_px",
+                  "port": "prop_px_axis"
+                },
+                {
+                  "kind": "assembly_arrangement",
+                  "requirement_id": "r17",
+                  "assembly_id": "a2",
+                  "aspect": "orientation",
+                  "facet": "member_relation",
+                  "part": "prop_pz",
+                  "port": "prop_pz_axis"
+                },
+                {
+                  "kind": "assembly_arrangement",
+                  "requirement_id": "r17",
+                  "assembly_id": "a2",
+                  "aspect": "orientation"
+                },
+                {
+                  "kind": "assembly_arrangement",
+                  "requirement_id": "r12",
+                  "assembly_id": "a0",
+                  "aspect": "placement",
+                  "facet": "member_relation",
+                  "part": "arm_nx",
+                  "port": "arm_nx_root"
+                },
+                {
+                  "kind": "assembly_arrangement",
+                  "requirement_id": "r12",
+                  "assembly_id": "a0",
+                  "aspect": "placement",
+                  "facet": "member_relation",
+                  "part": "arm_nz",
+                  "port": "arm_nz_root"
+                },
+                {
+                  "kind": "assembly_arrangement",
+                  "requirement_id": "r12",
+                  "assembly_id": "a0",
+                  "aspect": "placement",
+                  "facet": "member_relation",
+                  "part": "arm_px",
+                  "port": "arm_px_root"
+                },
+                {
+                  "kind": "assembly_arrangement",
+                  "requirement_id": "r12",
+                  "assembly_id": "a0",
+                  "aspect": "placement",
+                  "facet": "member_relation",
+                  "part": "arm_pz",
+                  "port": "arm_pz_root"
+                },
+                {
+                  "kind": "assembly_arrangement",
+                  "requirement_id": "r12",
+                  "assembly_id": "a0",
+                  "aspect": "placement"
+                },
+                {
+                  "kind": "assembly_arrangement",
+                  "requirement_id": "r14",
+                  "assembly_id": "a1",
+                  "aspect": "placement",
+                  "facet": "member_relation",
+                  "part": "motor_nx",
+                  "port": "motor_nx_axis"
+                },
+                {
+                  "kind": "assembly_arrangement",
+                  "requirement_id": "r14",
+                  "assembly_id": "a1",
+                  "aspect": "placement",
+                  "facet": "member_relation",
+                  "part": "motor_nz",
+                  "port": "motor_nz_axis"
+                },
+                {
+                  "kind": "assembly_arrangement",
+                  "requirement_id": "r14",
+                  "assembly_id": "a1",
+                  "aspect": "placement",
+                  "facet": "member_relation",
+                  "part": "motor_px",
+                  "port": "motor_px_axis"
+                },
+                {
+                  "kind": "assembly_arrangement",
+                  "requirement_id": "r14",
+                  "assembly_id": "a1",
+                  "aspect": "placement",
+                  "facet": "member_relation",
+                  "part": "motor_pz",
+                  "port": "motor_pz_axis"
+                },
+                {
+                  "kind": "assembly_arrangement",
+                  "requirement_id": "r14",
+                  "assembly_id": "a1",
+                  "aspect": "placement"
+                },
+                {
+                  "kind": "assembly_arrangement",
+                  "requirement_id": "r16",
+                  "assembly_id": "a2",
+                  "aspect": "placement",
+                  "facet": "member_relation",
+                  "part": "prop_nx",
+                  "port": "prop_nx_axis"
+                },
+                {
+                  "kind": "assembly_arrangement",
+                  "requirement_id": "r16",
+                  "assembly_id": "a2",
+                  "aspect": "placement",
+                  "facet": "member_relation",
+                  "part": "prop_nz",
+                  "port": "prop_nz_axis"
+                },
+                {
+                  "kind": "assembly_arrangement",
+                  "requirement_id": "r16",
+                  "assembly_id": "a2",
+                  "aspect": "placement",
+                  "facet": "member_relation",
+                  "part": "prop_px",
+                  "port": "prop_px_axis"
+                },
+                {
+                  "kind": "assembly_arrangement",
+                  "requirement_id": "r16",
+                  "assembly_id": "a2",
+                  "aspect": "placement",
+                  "facet": "member_relation",
+                  "part": "prop_pz",
+                  "port": "prop_pz_axis"
+                },
+                {
+                  "kind": "assembly_arrangement",
+                  "requirement_id": "r16",
+                  "assembly_id": "a2",
+                  "aspect": "placement"
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_nx",
+                    "b": "arm_nz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_nx",
+                    "b": "arm_px"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_nx",
+                    "b": "arm_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_nx",
+                    "b": "battery"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_nx",
+                    "b": "controller"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_nx",
+                    "b": "esc_nx"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_nx",
+                    "b": "esc_nz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_nx",
+                    "b": "esc_px"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_nx",
+                    "b": "esc_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_nx",
+                    "b": "frame"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_nx",
+                    "b": "motor_nx"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_nx",
+                    "b": "motor_nz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_nx",
+                    "b": "motor_px"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_nx",
+                    "b": "motor_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_nx",
+                    "b": "prop_nx"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_nx",
+                    "b": "prop_nz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_nx",
+                    "b": "prop_px"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_nx",
+                    "b": "prop_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_nz",
+                    "b": "arm_px"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_nz",
+                    "b": "arm_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_nz",
+                    "b": "battery"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_nz",
+                    "b": "controller"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_nz",
+                    "b": "esc_nx"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_nz",
+                    "b": "esc_nz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_nz",
+                    "b": "esc_px"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_nz",
+                    "b": "esc_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_nz",
+                    "b": "frame"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_nz",
+                    "b": "motor_nx"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_nz",
+                    "b": "motor_nz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_nz",
+                    "b": "motor_px"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_nz",
+                    "b": "motor_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_nz",
+                    "b": "prop_nx"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_nz",
+                    "b": "prop_nz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_nz",
+                    "b": "prop_px"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_nz",
+                    "b": "prop_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_px",
+                    "b": "arm_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_px",
+                    "b": "battery"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_px",
+                    "b": "controller"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_px",
+                    "b": "esc_nx"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_px",
+                    "b": "esc_nz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_px",
+                    "b": "esc_px"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_px",
+                    "b": "esc_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_px",
+                    "b": "frame"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_px",
+                    "b": "motor_nx"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_px",
+                    "b": "motor_nz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_px",
+                    "b": "motor_px"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_px",
+                    "b": "motor_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_px",
+                    "b": "prop_nx"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_px",
+                    "b": "prop_nz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_px",
+                    "b": "prop_px"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_px",
+                    "b": "prop_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_pz",
+                    "b": "battery"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_pz",
+                    "b": "controller"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_pz",
+                    "b": "esc_nx"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_pz",
+                    "b": "esc_nz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_pz",
+                    "b": "esc_px"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_pz",
+                    "b": "esc_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_pz",
+                    "b": "frame"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_pz",
+                    "b": "motor_nx"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_pz",
+                    "b": "motor_nz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_pz",
+                    "b": "motor_px"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_pz",
+                    "b": "motor_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_pz",
+                    "b": "prop_nx"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_pz",
+                    "b": "prop_nz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_pz",
+                    "b": "prop_px"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "arm_pz",
+                    "b": "prop_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "battery",
+                    "b": "controller"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "battery",
+                    "b": "esc_nx"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "battery",
+                    "b": "esc_nz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "battery",
+                    "b": "esc_px"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "battery",
+                    "b": "esc_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "battery",
+                    "b": "frame"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "battery",
+                    "b": "motor_nx"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "battery",
+                    "b": "motor_nz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "battery",
+                    "b": "motor_px"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "battery",
+                    "b": "motor_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "battery",
+                    "b": "prop_nx"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "battery",
+                    "b": "prop_nz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "battery",
+                    "b": "prop_px"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "battery",
+                    "b": "prop_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "controller",
+                    "b": "esc_nx"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "controller",
+                    "b": "esc_nz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "controller",
+                    "b": "esc_px"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "controller",
+                    "b": "esc_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "controller",
+                    "b": "frame"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "controller",
+                    "b": "motor_nx"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "controller",
+                    "b": "motor_nz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "controller",
+                    "b": "motor_px"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "controller",
+                    "b": "motor_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "controller",
+                    "b": "prop_nx"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "controller",
+                    "b": "prop_nz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "controller",
+                    "b": "prop_px"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "controller",
+                    "b": "prop_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "esc_nx",
+                    "b": "esc_nz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "esc_nx",
+                    "b": "esc_px"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "esc_nx",
+                    "b": "esc_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "esc_nx",
+                    "b": "frame"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "esc_nx",
+                    "b": "motor_nx"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "esc_nx",
+                    "b": "motor_nz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "esc_nx",
+                    "b": "motor_px"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "esc_nx",
+                    "b": "motor_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "esc_nx",
+                    "b": "prop_nx"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "esc_nx",
+                    "b": "prop_nz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "esc_nx",
+                    "b": "prop_px"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "esc_nx",
+                    "b": "prop_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "esc_nz",
+                    "b": "esc_px"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "esc_nz",
+                    "b": "esc_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "esc_nz",
+                    "b": "frame"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "esc_nz",
+                    "b": "motor_nx"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "esc_nz",
+                    "b": "motor_nz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "esc_nz",
+                    "b": "motor_px"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "esc_nz",
+                    "b": "motor_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "esc_nz",
+                    "b": "prop_nx"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "esc_nz",
+                    "b": "prop_nz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "esc_nz",
+                    "b": "prop_px"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "esc_nz",
+                    "b": "prop_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "esc_px",
+                    "b": "esc_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "esc_px",
+                    "b": "frame"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "esc_px",
+                    "b": "motor_nx"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "esc_px",
+                    "b": "motor_nz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "esc_px",
+                    "b": "motor_px"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "esc_px",
+                    "b": "motor_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "esc_px",
+                    "b": "prop_nx"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "esc_px",
+                    "b": "prop_nz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "esc_px",
+                    "b": "prop_px"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "esc_px",
+                    "b": "prop_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "esc_pz",
+                    "b": "frame"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "esc_pz",
+                    "b": "motor_nx"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "esc_pz",
+                    "b": "motor_nz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "esc_pz",
+                    "b": "motor_px"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "esc_pz",
+                    "b": "motor_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "esc_pz",
+                    "b": "prop_nx"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "esc_pz",
+                    "b": "prop_nz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "esc_pz",
+                    "b": "prop_px"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "esc_pz",
+                    "b": "prop_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "frame",
+                    "b": "motor_nx"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "frame",
+                    "b": "motor_nz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "frame",
+                    "b": "motor_px"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "frame",
+                    "b": "motor_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "frame",
+                    "b": "prop_nx"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "frame",
+                    "b": "prop_nz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "frame",
+                    "b": "prop_px"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "frame",
+                    "b": "prop_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "motor_nx",
+                    "b": "motor_nz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "motor_nx",
+                    "b": "motor_px"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "motor_nx",
+                    "b": "motor_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "motor_nx",
+                    "b": "prop_nx"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "motor_nx",
+                    "b": "prop_nz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "motor_nx",
+                    "b": "prop_px"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "motor_nx",
+                    "b": "prop_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "motor_nz",
+                    "b": "motor_px"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "motor_nz",
+                    "b": "motor_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "motor_nz",
+                    "b": "prop_nx"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "motor_nz",
+                    "b": "prop_nz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "motor_nz",
+                    "b": "prop_px"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "motor_nz",
+                    "b": "prop_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "motor_px",
+                    "b": "motor_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "motor_px",
+                    "b": "prop_nx"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "motor_px",
+                    "b": "prop_nz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "motor_px",
+                    "b": "prop_px"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "motor_px",
+                    "b": "prop_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "motor_pz",
+                    "b": "prop_nx"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "motor_pz",
+                    "b": "prop_nz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "motor_pz",
+                    "b": "prop_px"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "motor_pz",
+                    "b": "prop_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "prop_nx",
+                    "b": "prop_nz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "prop_nx",
+                    "b": "prop_px"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "prop_nx",
+                    "b": "prop_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "prop_nz",
+                    "b": "prop_px"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "prop_nz",
+                    "b": "prop_pz"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "prop_px",
+                    "b": "prop_pz"
+                  }
+                },
+                {
+                  "kind": "clearance",
+                  "relation": {
+                    "minimum": 0.02,
+                    "a": "prop_nx",
+                    "b": "prop_nz"
+                  }
+                },
+                {
+                  "kind": "clearance",
+                  "relation": {
+                    "minimum": 0.02,
+                    "a": "prop_nz",
+                    "b": "prop_px"
+                  }
+                },
+                {
+                  "kind": "clearance",
+                  "relation": {
+                    "minimum": 0.02,
+                    "a": "prop_px",
+                    "b": "prop_pz"
+                  }
+                },
+                {
+                  "kind": "clearance",
+                  "relation": {
+                    "minimum": 0.02,
+                    "a": "prop_pz",
+                    "b": "prop_nx"
+                  }
+                },
+                {
+                  "kind": "connected_component",
+                  "relation": {
+                    "part": "arm_nx"
+                  }
+                },
+                {
+                  "kind": "connected_component",
+                  "relation": {
+                    "part": "arm_nz"
+                  }
+                },
+                {
+                  "kind": "connected_component",
+                  "relation": {
+                    "part": "arm_px"
+                  }
+                },
+                {
+                  "kind": "connected_component",
+                  "relation": {
+                    "part": "arm_pz"
+                  }
+                },
+                {
+                  "kind": "connected_component",
+                  "relation": {
+                    "part": "battery"
+                  }
+                },
+                {
+                  "kind": "connected_component",
+                  "relation": {
+                    "part": "controller"
+                  }
+                },
+                {
+                  "kind": "connected_component",
+                  "relation": {
+                    "part": "esc_nx"
+                  }
+                },
+                {
+                  "kind": "connected_component",
+                  "relation": {
+                    "part": "esc_nz"
+                  }
+                },
+                {
+                  "kind": "connected_component",
+                  "relation": {
+                    "part": "esc_px"
+                  }
+                },
+                {
+                  "kind": "connected_component",
+                  "relation": {
+                    "part": "esc_pz"
+                  }
+                },
+                {
+                  "kind": "connected_component",
+                  "relation": {
+                    "part": "frame"
+                  }
+                },
+                {
+                  "kind": "connected_component",
+                  "relation": {
+                    "part": "motor_nx"
+                  }
+                },
+                {
+                  "kind": "connected_component",
+                  "relation": {
+                    "part": "motor_nz"
+                  }
+                },
+                {
+                  "kind": "connected_component",
+                  "relation": {
+                    "part": "motor_px"
+                  }
+                },
+                {
+                  "kind": "connected_component",
+                  "relation": {
+                    "part": "motor_pz"
+                  }
+                },
+                {
+                  "kind": "connected_component",
+                  "relation": {
+                    "part": "prop_nx"
+                  }
+                },
+                {
+                  "kind": "connected_component",
+                  "relation": {
+                    "part": "prop_nz"
+                  }
+                },
+                {
+                  "kind": "connected_component",
+                  "relation": {
+                    "part": "prop_px"
+                  }
+                },
+                {
+                  "kind": "connected_component",
+                  "relation": {
+                    "part": "prop_pz"
+                  }
+                },
+                {
+                  "kind": "executable_mate",
+                  "relation": {
+                    "a": "arm_nx_end",
+                    "id": "arm_motor_nx",
+                    "kind": "face",
+                    "offset": 0,
+                    "minimum_overlap": 0,
+                    "twist": 0,
+                    "minimum_clearance": 0,
+                    "b": "motor_nx_mount"
+                  }
+                },
+                {
+                  "kind": "executable_mate",
+                  "relation": {
+                    "a": "arm_nx_top",
+                    "id": "arm_esc_nx",
+                    "kind": "face",
+                    "offset": 0,
+                    "minimum_overlap": 0,
+                    "twist": 0,
+                    "minimum_clearance": 0,
+                    "b": "esc_nx_mount"
+                  }
+                },
+                {
+                  "kind": "executable_mate",
+                  "relation": {
+                    "a": "arm_nz_end",
+                    "id": "arm_motor_nz",
+                    "kind": "face",
+                    "offset": 0,
+                    "minimum_overlap": 0,
+                    "twist": 0,
+                    "minimum_clearance": 0,
+                    "b": "motor_nz_mount"
+                  }
+                },
+                {
+                  "kind": "executable_mate",
+                  "relation": {
+                    "a": "arm_nz_top",
+                    "id": "arm_esc_nz",
+                    "kind": "face",
+                    "offset": 0,
+                    "minimum_overlap": 0,
+                    "twist": 0,
+                    "minimum_clearance": 0,
+                    "b": "esc_nz_mount"
+                  }
+                },
+                {
+                  "kind": "executable_mate",
+                  "relation": {
+                    "a": "arm_px_end",
+                    "id": "arm_motor_px",
+                    "kind": "face",
+                    "offset": 0,
+                    "minimum_overlap": 0,
+                    "twist": 0,
+                    "minimum_clearance": 0,
+                    "b": "motor_px_mount"
+                  }
+                },
+                {
+                  "kind": "executable_mate",
+                  "relation": {
+                    "a": "arm_px_top",
+                    "id": "arm_esc_px",
+                    "kind": "face",
+                    "offset": 0,
+                    "minimum_overlap": 0,
+                    "twist": 0,
+                    "minimum_clearance": 0,
+                    "b": "esc_px_mount"
+                  }
+                },
+                {
+                  "kind": "executable_mate",
+                  "relation": {
+                    "a": "arm_pz_end",
+                    "id": "arm_motor_pz",
+                    "kind": "face",
+                    "offset": 0,
+                    "minimum_overlap": 0,
+                    "twist": 0,
+                    "minimum_clearance": 0,
+                    "b": "motor_pz_mount"
+                  }
+                },
+                {
+                  "kind": "executable_mate",
+                  "relation": {
+                    "a": "arm_pz_top",
+                    "id": "arm_esc_pz",
+                    "kind": "face",
+                    "offset": 0,
+                    "minimum_overlap": 0,
+                    "twist": 0,
+                    "minimum_clearance": 0,
+                    "b": "esc_pz_mount"
+                  }
+                },
+                {
+                  "kind": "executable_mate",
+                  "relation": {
+                    "a": "battery_lead",
+                    "id": "battery_controller",
+                    "kind": "face",
+                    "offset": 0,
+                    "minimum_overlap": 0,
+                    "twist": 0,
+                    "minimum_clearance": 0,
+                    "b": "controller_power"
+                  }
+                },
+                {
+                  "kind": "executable_mate",
+                  "relation": {
+                    "a": "controller_px",
+                    "id": "controller_esc_px",
+                    "kind": "face",
+                    "offset": 0,
+                    "minimum_overlap": 0,
+                    "twist": 0,
+                    "minimum_clearance": 0,
+                    "b": "esc_px_input"
+                  }
+                },
+                {
+                  "kind": "executable_mate",
+                  "relation": {
+                    "a": "esc_nx_output",
+                    "id": "esc_motor_nx",
+                    "kind": "face",
+                    "offset": 0,
+                    "minimum_overlap": 0,
+                    "twist": 0,
+                    "minimum_clearance": 0,
+                    "b": "motor_nx_input"
+                  }
+                },
+                {
+                  "kind": "executable_mate",
+                  "relation": {
+                    "a": "esc_nz_output",
+                    "id": "esc_motor_nz",
+                    "kind": "face",
+                    "offset": 0,
+                    "minimum_overlap": 0,
+                    "twist": 0,
+                    "minimum_clearance": 0,
+                    "b": "motor_nz_input"
+                  }
+                },
+                {
+                  "kind": "executable_mate",
+                  "relation": {
+                    "a": "esc_px_output",
+                    "id": "esc_motor_px",
+                    "kind": "face",
+                    "offset": 0,
+                    "minimum_overlap": 0,
+                    "twist": 0,
+                    "minimum_clearance": 0,
+                    "b": "motor_px_input"
+                  }
+                },
+                {
+                  "kind": "executable_mate",
+                  "relation": {
+                    "a": "esc_pz_output",
+                    "id": "esc_motor_pz",
+                    "kind": "face",
+                    "offset": 0,
+                    "minimum_overlap": 0,
+                    "twist": 0,
+                    "minimum_clearance": 0,
+                    "b": "motor_pz_input"
+                  }
+                },
+                {
+                  "kind": "executable_mate",
+                  "relation": {
+                    "a": "frame_battery",
+                    "id": "frame_battery_mount",
+                    "kind": "face",
+                    "offset": 0,
+                    "minimum_overlap": 0,
+                    "twist": 0,
+                    "minimum_clearance": 0,
+                    "b": "battery_mount"
+                  }
+                },
+                {
+                  "kind": "executable_mate",
+                  "relation": {
+                    "a": "frame_controller",
+                    "id": "frame_controller_mount",
+                    "kind": "face",
+                    "offset": 0,
+                    "minimum_overlap": 0,
+                    "twist": 0,
+                    "minimum_clearance": 0,
+                    "b": "controller_mount"
+                  }
+                },
+                {
+                  "kind": "executable_mate",
+                  "relation": {
+                    "a": "frame_nx",
+                    "id": "frame_arm_nx",
+                    "kind": "face",
+                    "offset": 0,
+                    "minimum_overlap": 0,
+                    "twist": 0,
+                    "minimum_clearance": 0,
+                    "b": "arm_nx_root"
+                  }
+                },
+                {
+                  "kind": "executable_mate",
+                  "relation": {
+                    "a": "frame_nz",
+                    "id": "frame_arm_nz",
+                    "kind": "face",
+                    "offset": 0,
+                    "minimum_overlap": 0,
+                    "twist": 0,
+                    "minimum_clearance": 0,
+                    "b": "arm_nz_root"
+                  }
+                },
+                {
+                  "kind": "executable_mate",
+                  "relation": {
+                    "a": "frame_px",
+                    "id": "frame_arm_px",
+                    "kind": "face",
+                    "offset": 0,
+                    "minimum_overlap": 0,
+                    "twist": 0,
+                    "minimum_clearance": 0,
+                    "b": "arm_px_root"
+                  }
+                },
+                {
+                  "kind": "executable_mate",
+                  "relation": {
+                    "a": "frame_pz",
+                    "id": "frame_arm_pz",
+                    "kind": "face",
+                    "offset": 0,
+                    "minimum_overlap": 0,
+                    "twist": 0,
+                    "minimum_clearance": 0,
+                    "b": "arm_pz_root"
+                  }
+                },
+                {
+                  "kind": "executable_mate",
+                  "relation": {
+                    "a": "motor_nx_axis",
+                    "id": "motor_prop_nx",
+                    "kind": "coaxial",
+                    "offset": 0,
+                    "minimum_overlap": 0.007,
+                    "twist": 0,
+                    "minimum_clearance": 0.0004,
+                    "b": "prop_nx_axis"
+                  }
+                },
+                {
+                  "kind": "executable_mate",
+                  "relation": {
+                    "a": "motor_nz_axis",
+                    "id": "motor_prop_nz",
+                    "kind": "coaxial",
+                    "offset": 0,
+                    "minimum_overlap": 0.007,
+                    "twist": 0,
+                    "minimum_clearance": 0.0004,
+                    "b": "prop_nz_axis"
+                  }
+                },
+                {
+                  "kind": "executable_mate",
+                  "relation": {
+                    "a": "motor_px_axis",
+                    "id": "motor_prop_px",
+                    "kind": "coaxial",
+                    "offset": 0,
+                    "minimum_overlap": 0.007,
+                    "twist": 0,
+                    "minimum_clearance": 0.0004,
+                    "b": "prop_px_axis"
+                  }
+                },
+                {
+                  "kind": "executable_mate",
+                  "relation": {
+                    "a": "motor_pz_axis",
+                    "id": "motor_prop_pz",
+                    "kind": "coaxial",
+                    "offset": 0,
+                    "minimum_overlap": 0.007,
+                    "twist": 0,
+                    "minimum_clearance": 0.0004,
+                    "b": "prop_pz_axis"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "arm_nx_end",
+                    "part": "arm_nx"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "arm_nx_root",
+                    "part": "arm_nx"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "arm_nx_top",
+                    "part": "arm_nx"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "arm_nz_end",
+                    "part": "arm_nz"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "arm_nz_root",
+                    "part": "arm_nz"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "arm_nz_top",
+                    "part": "arm_nz"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "arm_px_end",
+                    "part": "arm_px"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "arm_px_root",
+                    "part": "arm_px"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "arm_px_top",
+                    "part": "arm_px"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "arm_pz_end",
+                    "part": "arm_pz"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "arm_pz_root",
+                    "part": "arm_pz"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "arm_pz_top",
+                    "part": "arm_pz"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "battery_lead",
+                    "part": "battery"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "battery_mount",
+                    "part": "battery"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "controller_mount",
+                    "part": "controller"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "controller_nz",
+                    "part": "controller"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "controller_power",
+                    "part": "controller"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "controller_px",
+                    "part": "controller"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "controller_pz",
+                    "part": "controller"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "esc_nx_input",
+                    "part": "esc_nx"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "esc_nx_mount",
+                    "part": "esc_nx"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "esc_nx_output",
+                    "part": "esc_nx"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "esc_nz_input",
+                    "part": "esc_nz"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "esc_nz_mount",
+                    "part": "esc_nz"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "esc_nz_output",
+                    "part": "esc_nz"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "esc_px_input",
+                    "part": "esc_px"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "esc_px_mount",
+                    "part": "esc_px"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "esc_px_output",
+                    "part": "esc_px"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "esc_pz_input",
+                    "part": "esc_pz"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "esc_pz_mount",
+                    "part": "esc_pz"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "esc_pz_output",
+                    "part": "esc_pz"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "frame_battery",
+                    "part": "frame"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "frame_controller",
+                    "part": "frame"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "frame_nx",
+                    "part": "frame"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "frame_nz",
+                    "part": "frame"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "frame_px",
+                    "part": "frame"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "frame_pz",
+                    "part": "frame"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "motor_nx_axis",
+                    "part": "motor_nx"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "motor_nx_input",
+                    "part": "motor_nx"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "motor_nx_mount",
+                    "part": "motor_nx"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "motor_nz_axis",
+                    "part": "motor_nz"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "motor_nz_input",
+                    "part": "motor_nz"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "motor_nz_mount",
+                    "part": "motor_nz"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "motor_px_axis",
+                    "part": "motor_px"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "motor_px_input",
+                    "part": "motor_px"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "motor_px_mount",
+                    "part": "motor_px"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "motor_pz_axis",
+                    "part": "motor_pz"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "motor_pz_input",
+                    "part": "motor_pz"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "motor_pz_mount",
+                    "part": "motor_pz"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "prop_nx_axis",
+                    "part": "prop_nx"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "prop_nz_axis",
+                    "part": "prop_nz"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "prop_px_axis",
+                    "part": "prop_px"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "prop_pz_axis",
+                    "part": "prop_pz"
+                  }
+                },
+                {
+                  "kind": "spatial_requirement",
+                  "requirement_id": "r13"
+                },
+                {
+                  "kind": "spatial_requirement",
+                  "requirement_id": "r21"
+                },
+                {
+                  "kind": "spatial_requirement",
+                  "requirement_id": "r23"
+                },
+                {
+                  "kind": "symmetry_bounds",
+                  "relation": {
+                    "a": "arm_px",
+                    "axis": "x",
+                    "b": "arm_nx"
+                  }
+                },
+                {
+                  "kind": "symmetry_bounds",
+                  "relation": {
+                    "a": "arm_pz",
+                    "axis": "z",
+                    "b": "arm_nz"
+                  }
+                },
+                {
+                  "kind": "symmetry_bounds",
+                  "relation": {
+                    "a": "esc_px",
+                    "axis": "x",
+                    "b": "esc_nx"
+                  }
+                },
+                {
+                  "kind": "symmetry_bounds",
+                  "relation": {
+                    "a": "esc_pz",
+                    "axis": "z",
+                    "b": "esc_nz"
+                  }
+                },
+                {
+                  "kind": "symmetry_bounds",
+                  "relation": {
+                    "a": "motor_px",
+                    "axis": "x",
+                    "b": "motor_nx"
+                  }
+                },
+                {
+                  "kind": "symmetry_bounds",
+                  "relation": {
+                    "a": "motor_pz",
+                    "axis": "z",
+                    "b": "motor_nz"
+                  }
+                },
+                {
+                  "kind": "symmetry_bounds",
+                  "relation": {
+                    "a": "prop_px",
+                    "axis": "x",
+                    "b": "prop_nx"
+                  }
+                },
+                {
+                  "kind": "symmetry_bounds",
+                  "relation": {
+                    "a": "prop_pz",
+                    "axis": "z",
+                    "b": "prop_nz"
+                  }
+                }
+              ],
+              "scope": "Previously true measured predicates. Poses and dimensions are not frozen."
+            }
+          },
+          "repair_preservation": {
+            "baseline_sha256": "7d62183e0e9989f41264513af3340db25e8fcc88f39e9b43c0d3bc0b417ce73a",
+            "preserved_fact_count": 308,
+            "passed": true,
+            "regressions": []
+          },
+          "parts": 19
+        }
+      ],
+      "geometry_executed": true,
+      "trace": [
+        {
+          "stage": "requirements",
+          "replayed": true,
+          "model_calls": 0,
+          "new_cost_nanos": 0,
+          "source": "Research/native_objects/results/assembly-011/generic-drone-extract"
+        },
+        {
+          "stage": "plan",
+          "attempt": 0,
+          "model_seconds": 367.59759306907654,
+          "usage": {
+            "input_tokens": 7072,
+            "input_tokens_details": {
+              "cache_write_tokens": 7069,
+              "cached_tokens": 0
+            },
+            "output_tokens": 18875,
+            "output_tokens_details": {
+              "reasoning_tokens": 11376
+            },
+            "total_tokens": 25947
+          },
+          "model": "gpt-6-astra",
+          "effort": "xhigh",
+          "calculated_cost_nanos": 1032150000
+        },
+        {
+          "stage": "build_and_validate",
+          "attempt": 0,
+          "seconds_including_render": 2.180359334102832,
+          "geometry_executed": true,
+          "geometry_and_validation_seconds": 0.590553916990757,
+          "full_assembly_validation": true,
+          "planned_parts": 19,
+          "planned_forms": 38,
+          "validation_failures": 4,
+          "failed_requirement_ids": []
+        }
+      ],
+      "contract": {
+        "source_request": "Show me a generic quadcopter drone I can explore and take apart into its major components.",
+        "source_sha256": "758052f52045deda757beff0b2d5b27eab1c171dad7dee0d1b320fad2ab0c99a",
+        "inventory": {
+          "entities": [
+            {
+              "id": "e0",
+              "role": "Central frame"
+            },
+            {
+              "id": "e1",
+              "role": "Four arms"
+            },
+            {
+              "id": "e2",
+              "role": "Four motors"
+            },
+            {
+              "id": "e3",
+              "role": "Four propellers"
+            },
+            {
+              "id": "e4",
+              "role": "Battery"
+            },
+            {
+              "id": "e5",
+              "role": "Flight controller"
+            },
+            {
+              "id": "e6",
+              "role": "Electronic speed controllers"
+            }
+          ],
+          "requirements": [
+            {
+              "id": "r0",
+              "obligation": "required",
+              "kind": "visual",
+              "subject": "object",
+              "target": "",
+              "predicate": "appearance",
+              "value": "generic quadcopter drone",
+              "mode": "appearance",
+              "basis": "explicit",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r1",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e0",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r2",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e1",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r3",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e2",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r4",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e3",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r5",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e4",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r6",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e5",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r7",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e6",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r8",
+              "obligation": "required",
+              "kind": "constraint",
+              "subject": "e1",
+              "target": "",
+              "predicate": "count",
+              "value": "4",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r9",
+              "obligation": "required",
+              "kind": "constraint",
+              "subject": "e2",
+              "target": "",
+              "predicate": "count",
+              "value": "4",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r10",
+              "obligation": "required",
+              "kind": "constraint",
+              "subject": "e3",
+              "target": "",
+              "predicate": "count",
+              "value": "4",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r11",
+              "obligation": "design_choice",
+              "kind": "constraint",
+              "subject": "e6",
+              "target": "",
+              "predicate": "count",
+              "value": "4",
+              "mode": "structure",
+              "basis": "design_choice",
+              "quote": ""
+            },
+            {
+              "id": "r12",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e1",
+              "target": "e0",
+              "predicate": "other",
+              "value": "evenly spaced around frame in a horizontal circle",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r13",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e1",
+              "target": "e0",
+              "predicate": "other",
+              "value": "arms point radially outward in horizontal plane",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r14",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e2",
+              "target": "e0",
+              "predicate": "other",
+              "value": "evenly spaced around frame in a horizontal circle",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r15",
+              "obligation": "required",
+              "kind": "constraint",
+              "subject": "e2",
+              "target": "",
+              "predicate": "other",
+              "value": "motor shaft axes point upward",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r16",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e3",
+              "target": "e0",
+              "predicate": "other",
+              "value": "evenly spaced around frame in a horizontal circle",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r17",
+              "obligation": "required",
+              "kind": "constraint",
+              "subject": "e3",
+              "target": "",
+              "predicate": "other",
+              "value": "propeller axes point upward",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r18",
+              "obligation": "design_choice",
+              "kind": "constraint",
+              "subject": "e6",
+              "target": "",
+              "predicate": "other",
+              "value": "one controller along each arm",
+              "mode": "structure",
+              "basis": "design_choice",
+              "quote": ""
+            },
+            {
+              "id": "r19",
+              "obligation": "design_choice",
+              "kind": "constraint",
+              "subject": "e6",
+              "target": "",
+              "predicate": "other",
+              "value": "each controller follows its corresponding arm",
+              "mode": "structure",
+              "basis": "design_choice",
+              "quote": ""
+            },
+            {
+              "id": "r20",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e1",
+              "target": "e0",
+              "predicate": "attached",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r21",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e2",
+              "target": "e1",
+              "predicate": "other",
+              "value": "one motor at the outward end of each arm",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r22",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e2",
+              "target": "e1",
+              "predicate": "attached",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r23",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e3",
+              "target": "e2",
+              "predicate": "other",
+              "value": "one propeller axis coincident with each motor axis",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r24",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e3",
+              "target": "e2",
+              "predicate": "attached",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r25",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e4",
+              "target": "e0",
+              "predicate": "attached",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r26",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e5",
+              "target": "e0",
+              "predicate": "attached",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r27",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e4",
+              "target": "e5",
+              "predicate": "connected",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r28",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e5",
+              "target": "e6",
+              "predicate": "connected",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r29",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e6",
+              "target": "e2",
+              "predicate": "connected",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r30",
+              "obligation": "design_choice",
+              "kind": "relation",
+              "subject": "e6",
+              "target": "e1",
+              "predicate": "attached",
+              "value": "",
+              "mode": "structure",
+              "basis": "design_choice",
+              "quote": ""
+            },
+            {
+              "id": "r31",
+              "obligation": "required",
+              "kind": "behavior",
+              "subject": "object",
+              "target": "",
+              "predicate": "capability",
+              "value": "inspect",
+              "mode": "behavior",
+              "basis": "explicit",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r32",
+              "obligation": "required",
+              "kind": "behavior",
+              "subject": "object",
+              "target": "",
+              "predicate": "capability",
+              "value": "geometric_explode",
+              "mode": "behavior",
+              "basis": "explicit",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r33",
+              "obligation": "required",
+              "kind": "behavior",
+              "subject": "object",
+              "target": "",
+              "predicate": "capability",
+              "value": "reassemble",
+              "mode": "behavior",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            }
+          ],
+          "exclusions": []
+        },
+        "inventory_sha256": "b3ee9dc291510e82998e9dc579e5ef72621af446158e4018046aa17df0799eb1",
+        "interpretation_version": 2,
+        "extraction_completeness": "unassessed; consistency is not natural-language entailment",
+        "source_grounding": {
+          "units": [
+            {
+              "id": "s0",
+              "start": 0,
+              "end": 90,
+              "text": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            }
+          ],
+          "bindings": {
+            "r0": "s0",
+            "r1": "s0",
+            "r2": "s0",
+            "r3": "s0",
+            "r4": "s0",
+            "r5": "s0",
+            "r6": "s0",
+            "r7": "s0",
+            "r8": "s0",
+            "r9": "s0",
+            "r10": "s0",
+            "r11": "",
+            "r12": "s0",
+            "r13": "s0",
+            "r14": "s0",
+            "r15": "s0",
+            "r16": "s0",
+            "r17": "s0",
+            "r18": "",
+            "r19": "",
+            "r20": "s0",
+            "r21": "s0",
+            "r22": "s0",
+            "r23": "s0",
+            "r24": "s0",
+            "r25": "s0",
+            "r26": "s0",
+            "r27": "s0",
+            "r28": "s0",
+            "r29": "s0",
+            "r30": "",
+            "r31": "s0",
+            "r32": "s0",
+            "r33": "s0"
+          }
+        },
+        "source_grounding_sha256": "ed17ac34636a41272efe8ac3e5042c61d82d8351ea76b19232ad9a72934533c2",
+        "spatial_rules": [
+          {
+            "id": "r13",
+            "operator": "radial_outward",
+            "reference": "",
+            "axis": "y"
+          },
+          {
+            "id": "r21",
+            "operator": "outer_end",
+            "reference": "e0",
+            "axis": ""
+          },
+          {
+            "id": "r23",
+            "operator": "axis_aligned",
+            "reference": "",
+            "axis": ""
+          }
+        ],
+        "spatial_rules_sha256": "48b67655a8f30cafc59446096649643b950c3bd0fce66998eb1943a20817ce82",
+        "spatial_policy_sha256": "abf21c243b7b133dc13ba5221866c9eabeff1f2f5a6ac127b3f15e6ace8bde33",
+        "assemblies": [
+          {
+            "id": "a0",
+            "members": [
+              "e1"
+            ],
+            "placement": {
+              "id": "r12",
+              "pattern": "radial",
+              "reference": "e0",
+              "axis": "y"
+            },
+            "orientation": {
+              "id": "r13",
+              "direction": "spatial"
+            }
+          },
+          {
+            "id": "a1",
+            "members": [
+              "e2"
+            ],
+            "placement": {
+              "id": "r14",
+              "pattern": "radial",
+              "reference": "e0",
+              "axis": "y"
+            },
+            "orientation": {
+              "id": "r15",
+              "direction": "+y"
+            }
+          },
+          {
+            "id": "a2",
+            "members": [
+              "e3"
+            ],
+            "placement": {
+              "id": "r16",
+              "pattern": "radial",
+              "reference": "e0",
+              "axis": "y"
+            },
+            "orientation": {
+              "id": "r17",
+              "direction": "+y"
+            }
+          },
+          {
+            "id": "a3",
+            "members": [
+              "e6"
+            ],
+            "placement": {
+              "id": "r18",
+              "pattern": "unsupported",
+              "reference": "",
+              "axis": ""
+            },
+            "orientation": {
+              "id": "r19",
+              "direction": "unsupported"
+            }
+          }
+        ],
+        "assemblies_sha256": "4c5915f9e2e4b5f48a4dbe3e67701ac077e5f2a1e3b7f135d08126c192094c76",
+        "arrangement_policy_sha256": "4a4bf140b11ad32d852c1161f2d9000e1a4f457c0142990424643c49c2816ca5"
+      },
+      "admission": {
+        "planning_allowed": true,
+        "unsupported": [
+          {
+            "id": "r18",
+            "obligation": "design_choice",
+            "mode": "structure",
+            "basis": "design_choice",
+            "reason": "No deterministic adapter implements this requirement."
+          },
+          {
+            "id": "r19",
+            "obligation": "design_choice",
+            "mode": "structure",
+            "basis": "design_choice",
+            "reason": "No deterministic adapter implements this requirement."
+          }
+        ],
+        "blocking": [],
+        "interpretation_correct": "unassessed",
+        "detail": "Registered spatial checks permit planning only; binding and actual geometry must still pass.",
+        "pending_spatial_checks": [
+          "r13",
+          "r21",
+          "r23"
+        ],
+        "pending_arrangement_checks": [
+          "r12",
+          "r13",
+          "r14",
+          "r15",
+          "r16",
+          "r17"
+        ]
+      }
+    },
+    {
+      "case": "cooling-fan-row",
+      "request": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward. Let me inspect and separate the main parts. Keep it static; no airflow simulation is needed.",
+      "status": "geometry_failed",
+      "attempts": [
+        {
+          "attempt": 0,
+          "status": "geometry_failed",
+          "geometry_executed": true,
+          "geometry_and_validation_seconds": 0.12919512495864183,
+          "declared_numeric_pass": false,
+          "coverage_complete": true,
+          "feedback": {
+            "failed_geometry_checks": [
+              {
+                "kind": "symmetry_bounds",
+                "relation": {
+                  "a": "frame_left",
+                  "b": "frame_right",
+                  "axis": "x"
+                },
+                "passed": false,
+                "measurement": {
+                  "maximum_bound_error_m": 0.00299999862909317,
+                  "scope": "bounds only, not full shape symmetry"
+                }
+              },
+              {
+                "kind": "symmetry_bounds",
+                "relation": {
+                  "a": "rotor_left",
+                  "b": "rotor_right",
+                  "axis": "x"
+                },
+                "passed": false,
+                "measurement": {
+                  "maximum_bound_error_m": 0.010357700288295746,
+                  "scope": "bounds only, not full shape symmetry"
+                }
+              },
+              {
+                "kind": "port_geometry",
+                "relation": {
+                  "port": "frame_left_bore",
+                  "part": "frame_left"
+                },
+                "passed": false,
+                "measurement": {
+                  "missing_surface_band_m3": -6.352747104407253e-22,
+                  "obstructed_exterior_m3": 5.3170278789075375e-09,
+                  "scope": "declared finite cylindrical interval"
+                }
+              },
+              {
+                "kind": "port_geometry",
+                "relation": {
+                  "port": "frame_center_bore",
+                  "part": "frame_center"
+                },
+                "passed": false,
+                "measurement": {
+                  "missing_surface_band_m3": -6.352747104407253e-22,
+                  "obstructed_exterior_m3": 5.3170278789075375e-09,
+                  "scope": "declared finite cylindrical interval"
+                }
+              },
+              {
+                "kind": "port_geometry",
+                "relation": {
+                  "port": "frame_right_bore",
+                  "part": "frame_right"
+                },
+                "passed": false,
+                "measurement": {
+                  "missing_surface_band_m3": -6.352747104407253e-22,
+                  "obstructed_exterior_m3": 5.3170278789075375e-09,
+                  "scope": "declared finite cylindrical interval"
+                }
+              },
+              {
+                "kind": "port_geometry",
+                "relation": {
+                  "port": "rotor_left_axis",
+                  "part": "rotor_left"
+                },
+                "passed": false,
+                "measurement": {
+                  "missing_surface_band_m3": -1.4197388457639462e-23,
+                  "obstructed_exterior_m3": 3.825443945234012e-09,
+                  "scope": "declared finite cylindrical interval"
+                }
+              },
+              {
+                "kind": "port_geometry",
+                "relation": {
+                  "port": "rotor_center_axis",
+                  "part": "rotor_center"
+                },
+                "passed": false,
+                "measurement": {
+                  "missing_surface_band_m3": -1.4197388457639462e-23,
+                  "obstructed_exterior_m3": 3.825443945234012e-09,
+                  "scope": "declared finite cylindrical interval"
+                }
+              },
+              {
+                "kind": "port_geometry",
+                "relation": {
+                  "port": "rotor_right_axis",
+                  "part": "rotor_right"
+                },
+                "passed": false,
+                "measurement": {
+                  "missing_surface_band_m3": -1.4197388457639462e-23,
+                  "obstructed_exterior_m3": 3.825443945234012e-09,
+                  "scope": "declared finite cylindrical interval"
+                }
+              },
+              {
+                "kind": "assembly_arrangement",
+                "assembly_id": "a01",
+                "requirement_id": "r08",
+                "aspect": "placement",
+                "passed": false,
+                "failure_classes": [
+                  "feature_geometry"
+                ],
+                "measurement": {
+                  "members": [
+                    {
+                      "part": "frame_center",
+                      "port": "frame_center_bore",
+                      "relation_passed": true,
+                      "feature_geometry_passed": false,
+                      "line_error_m": 0.0,
+                      "spacing_error_m": 3.700743415417188e-17,
+                      "passed": false
+                    },
+                    {
+                      "part": "frame_left",
+                      "port": "frame_left_bore",
+                      "relation_passed": true,
+                      "feature_geometry_passed": false,
+                      "line_error_m": 0.0,
+                      "spacing_error_m": 0.0,
+                      "passed": false
+                    },
+                    {
+                      "part": "frame_right",
+                      "port": "frame_right_bore",
+                      "relation_passed": true,
+                      "feature_geometry_passed": false,
+                      "line_error_m": 0.0,
+                      "spacing_error_m": 0.0,
+                      "passed": false
+                    }
+                  ],
+                  "pitch_m": 0.16999999999999998,
+                  "minimum_gap_m": 0.16999999999999998,
+                  "distance_tolerance_m": 0.008499999999999999
+                },
+                "scope": "Solved declared feature geometry; interpretation and feature meaning remain unverified."
+              },
+              {
+                "kind": "assembly_arrangement",
+                "assembly_id": "a01",
+                "requirement_id": "r09",
+                "aspect": "orientation",
+                "passed": false,
+                "failure_classes": [
+                  "feature_geometry"
+                ],
+                "measurement": {
+                  "members": [
+                    {
+                      "part": "frame_center",
+                      "port": "frame_center_bore",
+                      "axis_alignment": 1.0,
+                      "relation_passed": true,
+                      "feature_geometry_passed": false,
+                      "passed": false
+                    },
+                    {
+                      "part": "frame_left",
+                      "port": "frame_left_bore",
+                      "axis_alignment": 1.0,
+                      "relation_passed": true,
+                      "feature_geometry_passed": false,
+                      "passed": false
+                    },
+                    {
+                      "part": "frame_right",
+                      "port": "frame_right_bore",
+                      "axis_alignment": 1.0,
+                      "relation_passed": true,
+                      "feature_geometry_passed": false,
+                      "passed": false
+                    }
+                  ],
+                  "direction": "+z",
+                  "minimum_alignment": 1.0
+                },
+                "scope": "Solved declared feature geometry; interpretation and feature meaning remain unverified."
+              },
+              {
+                "kind": "assembly_arrangement",
+                "assembly_id": "a02",
+                "requirement_id": "r10",
+                "aspect": "placement",
+                "passed": false,
+                "failure_classes": [
+                  "feature_geometry"
+                ],
+                "measurement": {
+                  "members": [
+                    {
+                      "part": "rotor_center",
+                      "port": "rotor_center_axis",
+                      "relation_passed": true,
+                      "feature_geometry_passed": false,
+                      "line_error_m": 0.0,
+                      "spacing_error_m": 3.700743415417188e-17,
+                      "passed": false
+                    },
+                    {
+                      "part": "rotor_left",
+                      "port": "rotor_left_axis",
+                      "relation_passed": true,
+                      "feature_geometry_passed": false,
+                      "line_error_m": 0.0,
+                      "spacing_error_m": 0.0,
+                      "passed": false
+                    },
+                    {
+                      "part": "rotor_right",
+                      "port": "rotor_right_axis",
+                      "relation_passed": true,
+                      "feature_geometry_passed": false,
+                      "line_error_m": 0.0,
+                      "spacing_error_m": 0.0,
+                      "passed": false
+                    }
+                  ],
+                  "pitch_m": 0.16999999999999998,
+                  "minimum_gap_m": 0.16999999999999998,
+                  "distance_tolerance_m": 0.008499999999999999
+                },
+                "scope": "Solved declared feature geometry; interpretation and feature meaning remain unverified."
+              },
+              {
+                "kind": "assembly_arrangement",
+                "assembly_id": "a02",
+                "requirement_id": "r11",
+                "aspect": "orientation",
+                "passed": false,
+                "failure_classes": [
+                  "feature_geometry"
+                ],
+                "measurement": {
+                  "members": [
+                    {
+                      "part": "rotor_center",
+                      "port": "rotor_center_axis",
+                      "axis_alignment": 1.0,
+                      "relation_passed": true,
+                      "feature_geometry_passed": false,
+                      "passed": false
+                    },
+                    {
+                      "part": "rotor_left",
+                      "port": "rotor_left_axis",
+                      "axis_alignment": 1.0,
+                      "relation_passed": true,
+                      "feature_geometry_passed": false,
+                      "passed": false
+                    },
+                    {
+                      "part": "rotor_right",
+                      "port": "rotor_right_axis",
+                      "axis_alignment": 1.0,
+                      "relation_passed": true,
+                      "feature_geometry_passed": false,
+                      "passed": false
+                    }
+                  ],
+                  "direction": "+z",
+                  "minimum_alignment": 1.0
+                },
+                "scope": "Solved declared feature geometry; interpretation and feature meaning remain unverified."
+              }
+            ],
+            "preserve": {
+              "baseline_sha256": "7e663f2ca54d9ca4957ae8ed2b38e7a03083984c32cbe611620c9308863df5da",
+              "facts": [
+                {
+                  "kind": "assembly_arrangement",
+                  "requirement_id": "r09",
+                  "assembly_id": "a01",
+                  "aspect": "orientation",
+                  "facet": "member_relation",
+                  "part": "frame_center",
+                  "port": "frame_center_bore"
+                },
+                {
+                  "kind": "assembly_arrangement",
+                  "requirement_id": "r09",
+                  "assembly_id": "a01",
+                  "aspect": "orientation",
+                  "facet": "member_relation",
+                  "part": "frame_left",
+                  "port": "frame_left_bore"
+                },
+                {
+                  "kind": "assembly_arrangement",
+                  "requirement_id": "r09",
+                  "assembly_id": "a01",
+                  "aspect": "orientation",
+                  "facet": "member_relation",
+                  "part": "frame_right",
+                  "port": "frame_right_bore"
+                },
+                {
+                  "kind": "assembly_arrangement",
+                  "requirement_id": "r11",
+                  "assembly_id": "a02",
+                  "aspect": "orientation",
+                  "facet": "member_relation",
+                  "part": "rotor_center",
+                  "port": "rotor_center_axis"
+                },
+                {
+                  "kind": "assembly_arrangement",
+                  "requirement_id": "r11",
+                  "assembly_id": "a02",
+                  "aspect": "orientation",
+                  "facet": "member_relation",
+                  "part": "rotor_left",
+                  "port": "rotor_left_axis"
+                },
+                {
+                  "kind": "assembly_arrangement",
+                  "requirement_id": "r11",
+                  "assembly_id": "a02",
+                  "aspect": "orientation",
+                  "facet": "member_relation",
+                  "part": "rotor_right",
+                  "port": "rotor_right_axis"
+                },
+                {
+                  "kind": "assembly_arrangement",
+                  "requirement_id": "r08",
+                  "assembly_id": "a01",
+                  "aspect": "placement",
+                  "facet": "member_relation",
+                  "part": "frame_center",
+                  "port": "frame_center_bore"
+                },
+                {
+                  "kind": "assembly_arrangement",
+                  "requirement_id": "r08",
+                  "assembly_id": "a01",
+                  "aspect": "placement",
+                  "facet": "member_relation",
+                  "part": "frame_left",
+                  "port": "frame_left_bore"
+                },
+                {
+                  "kind": "assembly_arrangement",
+                  "requirement_id": "r08",
+                  "assembly_id": "a01",
+                  "aspect": "placement",
+                  "facet": "member_relation",
+                  "part": "frame_right",
+                  "port": "frame_right_bore"
+                },
+                {
+                  "kind": "assembly_arrangement",
+                  "requirement_id": "r10",
+                  "assembly_id": "a02",
+                  "aspect": "placement",
+                  "facet": "member_relation",
+                  "part": "rotor_center",
+                  "port": "rotor_center_axis"
+                },
+                {
+                  "kind": "assembly_arrangement",
+                  "requirement_id": "r10",
+                  "assembly_id": "a02",
+                  "aspect": "placement",
+                  "facet": "member_relation",
+                  "part": "rotor_left",
+                  "port": "rotor_left_axis"
+                },
+                {
+                  "kind": "assembly_arrangement",
+                  "requirement_id": "r10",
+                  "assembly_id": "a02",
+                  "aspect": "placement",
+                  "facet": "member_relation",
+                  "part": "rotor_right",
+                  "port": "rotor_right_axis"
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "frame_center",
+                    "b": "frame_left"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "frame_center",
+                    "b": "frame_right"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "frame_center",
+                    "b": "panel"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "frame_center",
+                    "b": "rotor_center"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "frame_center",
+                    "b": "rotor_left"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "frame_center",
+                    "b": "rotor_right"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "frame_left",
+                    "b": "frame_right"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "frame_left",
+                    "b": "panel"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "frame_left",
+                    "b": "rotor_center"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "frame_left",
+                    "b": "rotor_left"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "frame_left",
+                    "b": "rotor_right"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "frame_right",
+                    "b": "panel"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "frame_right",
+                    "b": "rotor_center"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "frame_right",
+                    "b": "rotor_left"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "frame_right",
+                    "b": "rotor_right"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "panel",
+                    "b": "rotor_center"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "panel",
+                    "b": "rotor_left"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "panel",
+                    "b": "rotor_right"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "rotor_center",
+                    "b": "rotor_left"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "rotor_center",
+                    "b": "rotor_right"
+                  }
+                },
+                {
+                  "kind": "assembly_interference",
+                  "relation": {
+                    "a": "rotor_left",
+                    "b": "rotor_right"
+                  }
+                },
+                {
+                  "kind": "connected_component",
+                  "relation": {
+                    "part": "frame_center"
+                  }
+                },
+                {
+                  "kind": "connected_component",
+                  "relation": {
+                    "part": "frame_left"
+                  }
+                },
+                {
+                  "kind": "connected_component",
+                  "relation": {
+                    "part": "frame_right"
+                  }
+                },
+                {
+                  "kind": "connected_component",
+                  "relation": {
+                    "part": "panel"
+                  }
+                },
+                {
+                  "kind": "connected_component",
+                  "relation": {
+                    "part": "rotor_center"
+                  }
+                },
+                {
+                  "kind": "connected_component",
+                  "relation": {
+                    "part": "rotor_left"
+                  }
+                },
+                {
+                  "kind": "connected_component",
+                  "relation": {
+                    "part": "rotor_right"
+                  }
+                },
+                {
+                  "kind": "containment",
+                  "relation": {
+                    "outer": "frame_center",
+                    "inner": "rotor_center",
+                    "clearance": 0.003
+                  }
+                },
+                {
+                  "kind": "containment",
+                  "relation": {
+                    "outer": "frame_left",
+                    "inner": "rotor_left",
+                    "clearance": 0.003
+                  }
+                },
+                {
+                  "kind": "containment",
+                  "relation": {
+                    "outer": "frame_right",
+                    "inner": "rotor_right",
+                    "clearance": 0.003
+                  }
+                },
+                {
+                  "kind": "executable_mate",
+                  "relation": {
+                    "id": "seat_center",
+                    "a": "frame_center_bore",
+                    "b": "rotor_center_axis",
+                    "kind": "coaxial",
+                    "offset": 0,
+                    "twist": 0,
+                    "minimum_clearance": 0.003,
+                    "minimum_overlap": 0.008
+                  }
+                },
+                {
+                  "kind": "executable_mate",
+                  "relation": {
+                    "id": "seat_left",
+                    "a": "frame_left_bore",
+                    "b": "rotor_left_axis",
+                    "kind": "coaxial",
+                    "offset": 0,
+                    "twist": 0,
+                    "minimum_clearance": 0.003,
+                    "minimum_overlap": 0.008
+                  }
+                },
+                {
+                  "kind": "executable_mate",
+                  "relation": {
+                    "id": "seat_right",
+                    "a": "frame_right_bore",
+                    "b": "rotor_right_axis",
+                    "kind": "coaxial",
+                    "offset": 0,
+                    "twist": 0,
+                    "minimum_clearance": 0.003,
+                    "minimum_overlap": 0.008
+                  }
+                },
+                {
+                  "kind": "executable_mate",
+                  "relation": {
+                    "id": "mount_center",
+                    "a": "panel_center",
+                    "b": "frame_center_mount",
+                    "kind": "face",
+                    "offset": 0,
+                    "twist": 0,
+                    "minimum_clearance": 0,
+                    "minimum_overlap": 0
+                  }
+                },
+                {
+                  "kind": "executable_mate",
+                  "relation": {
+                    "id": "mount_left",
+                    "a": "panel_left",
+                    "b": "frame_left_mount",
+                    "kind": "face",
+                    "offset": 0,
+                    "twist": 0,
+                    "minimum_clearance": 0,
+                    "minimum_overlap": 0
+                  }
+                },
+                {
+                  "kind": "executable_mate",
+                  "relation": {
+                    "id": "mount_right",
+                    "a": "panel_right",
+                    "b": "frame_right_mount",
+                    "kind": "face",
+                    "offset": 0,
+                    "twist": 0,
+                    "minimum_clearance": 0,
+                    "minimum_overlap": 0
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "frame_center_mount",
+                    "part": "frame_center"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "frame_left_mount",
+                    "part": "frame_left"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "frame_right_mount",
+                    "part": "frame_right"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "panel_center",
+                    "part": "panel"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "panel_left",
+                    "part": "panel"
+                  }
+                },
+                {
+                  "kind": "port_geometry",
+                  "relation": {
+                    "port": "panel_right",
+                    "part": "panel"
+                  }
+                }
+              ],
+              "scope": "Previously true measured predicates. Poses and dimensions are not frozen."
+            }
+          },
+          "repair_preservation": {
+            "baseline_sha256": "7e663f2ca54d9ca4957ae8ed2b38e7a03083984c32cbe611620c9308863df5da",
+            "preserved_fact_count": 55,
+            "passed": true,
+            "regressions": []
+          },
+          "parts": 7,
+          "replayed": true
+        }
+      ],
+      "geometry_executed": true,
+      "trace": [
+        {
+          "stage": "requirements",
+          "replayed": true,
+          "model_calls": 0,
+          "new_cost_nanos": 0,
+          "source": "Research/native_objects/results/assembly-010/cooling-fan-row-extract"
+        },
+        {
+          "stage": "build_and_validate",
+          "replayed": true,
+          "seconds": 1.3033654589671642,
+          "geometry_and_validation_seconds": 0.12919512495864183,
+          "source_experiment": "assembly-010",
+          "source_attempt": 0
+        }
+      ],
+      "contract": {
+        "source_request": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward. Let me inspect and separate the main parts. Keep it static; no airflow simulation is needed.",
+        "source_sha256": "724a3089941b51484e769f2112a723bc475ee9e70505591195f6ad0161a85229",
+        "inventory": {
+          "entities": [
+            {
+              "id": "e0",
+              "role": "Mounting panel"
+            },
+            {
+              "id": "e1",
+              "role": "Three fan frames"
+            },
+            {
+              "id": "e2",
+              "role": "Three fan rotors"
+            }
+          ],
+          "requirements": [
+            {
+              "id": "r01",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e0",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "explicit",
+              "quote": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward."
+            },
+            {
+              "id": "r02",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e1",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward."
+            },
+            {
+              "id": "r03",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e2",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward."
+            },
+            {
+              "id": "r04",
+              "obligation": "required",
+              "kind": "constraint",
+              "subject": "e1",
+              "target": "",
+              "predicate": "count",
+              "value": "3",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward."
+            },
+            {
+              "id": "r05",
+              "obligation": "required",
+              "kind": "constraint",
+              "subject": "e2",
+              "target": "",
+              "predicate": "count",
+              "value": "3",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward."
+            },
+            {
+              "id": "r06",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e1",
+              "target": "e0",
+              "predicate": "attached",
+              "value": "all frames share the panel",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward."
+            },
+            {
+              "id": "r07",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e2",
+              "target": "e1",
+              "predicate": "inside",
+              "value": "one rotor per frame",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward."
+            },
+            {
+              "id": "r08",
+              "obligation": "required",
+              "kind": "constraint",
+              "subject": "e1",
+              "target": "",
+              "predicate": "other",
+              "value": "evenly spaced horizontal row along x",
+              "mode": "structure",
+              "basis": "explicit",
+              "quote": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward."
+            },
+            {
+              "id": "r09",
+              "obligation": "required",
+              "kind": "constraint",
+              "subject": "e1",
+              "target": "",
+              "predicate": "other",
+              "value": "fan fronts face +z",
+              "mode": "structure",
+              "basis": "explicit",
+              "quote": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward."
+            },
+            {
+              "id": "r10",
+              "obligation": "required",
+              "kind": "constraint",
+              "subject": "e2",
+              "target": "",
+              "predicate": "other",
+              "value": "corresponding evenly spaced row along x",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward."
+            },
+            {
+              "id": "r11",
+              "obligation": "required",
+              "kind": "constraint",
+              "subject": "e2",
+              "target": "",
+              "predicate": "other",
+              "value": "rotor fronts face +z",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward."
+            },
+            {
+              "id": "r12",
+              "obligation": "required",
+              "kind": "behavior",
+              "subject": "object",
+              "target": "",
+              "predicate": "capability",
+              "value": "inspect",
+              "mode": "behavior",
+              "basis": "explicit",
+              "quote": "Let me inspect and separate the main parts."
+            },
+            {
+              "id": "r13",
+              "obligation": "required",
+              "kind": "behavior",
+              "subject": "object",
+              "target": "",
+              "predicate": "capability",
+              "value": "geometric_explode",
+              "mode": "behavior",
+              "basis": "explicit",
+              "quote": "Let me inspect and separate the main parts."
+            },
+            {
+              "id": "r14",
+              "obligation": "required",
+              "kind": "visual",
+              "subject": "e2",
+              "target": "",
+              "predicate": "appearance",
+              "value": "cooling-fan rotors",
+              "mode": "appearance",
+              "basis": "inferred",
+              "quote": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward."
+            }
+          ],
+          "exclusions": [
+            {
+              "id": "x01",
+              "subject": "object",
+              "domain": "motion",
+              "quote": "Keep it static;"
+            },
+            {
+              "id": "x02",
+              "subject": "object",
+              "domain": "physical_verification",
+              "quote": "no airflow simulation is needed."
+            }
+          ]
+        },
+        "inventory_sha256": "97ba6e59d49733455b9ac9b738d56ececcac1c1dc9c252f60baee6e69e1fc7b5",
+        "interpretation_version": 2,
+        "extraction_completeness": "unassessed; consistency is not natural-language entailment",
+        "source_grounding": {
+          "units": [
+            {
+              "id": "s0",
+              "start": 0,
+              "end": 133,
+              "text": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward."
+            },
+            {
+              "id": "s1",
+              "start": 134,
+              "end": 177,
+              "text": "Let me inspect and separate the main parts."
+            },
+            {
+              "id": "s2",
+              "start": 178,
+              "end": 193,
+              "text": "Keep it static;"
+            },
+            {
+              "id": "s3",
+              "start": 194,
+              "end": 226,
+              "text": "no airflow simulation is needed."
+            }
+          ],
+          "bindings": {
+            "r01": "s0",
+            "r02": "s0",
+            "r03": "s0",
+            "r04": "s0",
+            "r05": "s0",
+            "r06": "s0",
+            "r07": "s0",
+            "r08": "s0",
+            "r09": "s0",
+            "r10": "s0",
+            "r11": "s0",
+            "r12": "s1",
+            "r13": "s1",
+            "r14": "s0",
+            "x01": "s2",
+            "x02": "s3"
+          }
+        },
+        "source_grounding_sha256": "9fc125afbbe35ab847cc1861aeddea22a855fd47e82d4abeb7bd239710891830",
+        "spatial_rules": [],
+        "spatial_rules_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "spatial_policy_sha256": "abf21c243b7b133dc13ba5221866c9eabeff1f2f5a6ac127b3f15e6ace8bde33",
+        "assemblies": [
+          {
+            "id": "a01",
+            "members": [
+              "e1"
+            ],
+            "placement": {
+              "id": "r08",
+              "pattern": "linear",
+              "reference": "",
+              "axis": "x"
+            },
+            "orientation": {
+              "id": "r09",
+              "direction": "+z"
+            }
+          },
+          {
+            "id": "a02",
+            "members": [
+              "e2"
+            ],
+            "placement": {
+              "id": "r10",
+              "pattern": "linear",
+              "reference": "",
+              "axis": "x"
+            },
+            "orientation": {
+              "id": "r11",
+              "direction": "+z"
+            }
+          }
+        ],
+        "assemblies_sha256": "2b03362cfdff8d3e95584a38ee4fdc30fe1718368c63de18414127595de1dc14",
+        "arrangement_policy_sha256": "4a4bf140b11ad32d852c1161f2d9000e1a4f457c0142990424643c49c2816ca5"
+      },
+      "admission": {
+        "planning_allowed": true,
+        "unsupported": [],
+        "blocking": [],
+        "interpretation_correct": "unassessed",
+        "detail": "Registered spatial checks permit planning only; binding and actual geometry must still pass.",
+        "pending_spatial_checks": [],
+        "pending_arrangement_checks": [
+          "r08",
+          "r09",
+          "r10",
+          "r11"
+        ]
+      }
+    },
+    {
+      "case": "two-driver-speaker",
+      "request": "Show me a tabletop speaker with two matching loudspeaker drivers side by side in its front face, both facing forward. I want to inspect and take apart its main components. It does not need to play sound or animate.",
+      "status": "needs_requirements",
+      "attempts": [],
+      "geometry_executed": false,
+      "trace": []
+    }
+  ],
+  "operations": {
+    "generic-drone/plan/0": {
+      "status": "done",
+      "case": "generic-drone",
+      "stage": "plan",
+      "attempt": 0,
+      "comparison": {
+        "source": "Builds/NativeObjects/repair-run-012/generic-drone-plan-call-0/request.json",
+        "old_body_sha256": "66a1953f2296b021eb661616ad7b7ba6b6fd1b244bb8ddc3e9144d4f1ba10408",
+        "new_body_sha256": "ac82967dcfbd16a82c04ef3eaece27ac0ec71004f21be6e95ef7cc8a3aebbc93",
+        "changed_fields": [
+          "model",
+          "max_output_tokens",
+          "reasoning"
+        ],
+        "input_identical": true,
+        "output_schema_identical": true,
+        "interpretation": "combined model/effort/output allowance comparison, not isolated model-only causality"
+      },
+      "body_sha256": "ac82967dcfbd16a82c04ef3eaece27ac0ec71004f21be6e95ef7cc8a3aebbc93",
+      "billing": {
+        "operation_id": "ebb73aecfa489b763960049b378b7f60",
+        "response_id": "resp_0f64baa25dedc7e0006abeb22835a887d288abb5042f4bf0cb",
+        "status": "completed",
+        "incomplete_details": null,
+        "usage": {
+          "input_tokens": 7072,
+          "input_tokens_details": {
+            "cache_write_tokens": 7069,
+            "cached_tokens": 0
+          },
+          "output_tokens": 18875,
+          "output_tokens_details": {
+            "reasoning_tokens": 11376
+          },
+          "total_tokens": 25947
+        },
+        "calculated_cost_nanos": 1032150000,
+        "dispatch_seconds": 367.59759306907654,
+        "creation_calls": 1,
+        "poll_calls": 67,
+        "cancel_calls": 0,
+        "background": true
+      }
+    },
+    "generic-drone/patch/1": {
+      "status": "halted",
+      "case": "generic-drone",
+      "stage": "patch",
+      "attempt": 1,
+      "body_sha256": "f3a22815456c75c1c5dd2fdc9a4a78b3833eab5a385aea5fad4e3f9207994e44",
+      "error": "Usage/model/tier could not be reconciled against the quote. Reservation retained; paid calls halted for review."
+    }
+  },
+  "native_generation_goal_passed": false
+}

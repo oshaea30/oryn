@@ -1,0 +1,708 @@
+{
+  "clearances": [
+    {
+      "a": "prop_nx",
+      "b": "prop_nz",
+      "minimum": 0.02
+    },
+    {
+      "a": "prop_nz",
+      "b": "prop_px",
+      "minimum": 0.02
+    },
+    {
+      "a": "prop_px",
+      "b": "prop_pz",
+      "minimum": 0.02
+    },
+    {
+      "a": "prop_pz",
+      "b": "prop_nx",
+      "minimum": 0.02
+    }
+  ],
+  "containments": [],
+  "mates": [
+    {
+      "a": "arm_nx_end",
+      "b": "motor_nx_mount",
+      "id": "arm_motor_nx",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "arm_nx_top",
+      "b": "esc_nx_mount",
+      "id": "arm_esc_nx",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "arm_nz_end",
+      "b": "motor_nz_mount",
+      "id": "arm_motor_nz",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "arm_nz_top",
+      "b": "esc_nz_mount",
+      "id": "arm_esc_nz",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "arm_px_end",
+      "b": "motor_px_mount",
+      "id": "arm_motor_px",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "arm_px_top",
+      "b": "esc_px_mount",
+      "id": "arm_esc_px",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "arm_pz_end",
+      "b": "motor_pz_mount",
+      "id": "arm_motor_pz",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "arm_pz_top",
+      "b": "esc_pz_mount",
+      "id": "arm_esc_pz",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "battery_lead",
+      "b": "controller_power",
+      "id": "battery_controller",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "controller_nx",
+      "b": "esc_nx_input",
+      "id": "controller_esc_nx",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "controller_nz",
+      "b": "esc_nz_input",
+      "id": "controller_esc_nz",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "controller_px",
+      "b": "esc_px_input",
+      "id": "controller_esc_px",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "controller_pz",
+      "b": "esc_pz_input",
+      "id": "controller_esc_pz",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "esc_nx_output",
+      "b": "motor_nx_input",
+      "id": "esc_motor_nx",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "esc_nz_output",
+      "b": "motor_nz_input",
+      "id": "esc_motor_nz",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "esc_px_output",
+      "b": "motor_px_input",
+      "id": "esc_motor_px",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "esc_pz_output",
+      "b": "motor_pz_input",
+      "id": "esc_motor_pz",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "frame_battery",
+      "b": "battery_mount",
+      "id": "frame_battery_mount",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "frame_controller",
+      "b": "controller_mount",
+      "id": "frame_controller_mount",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "frame_nx",
+      "b": "arm_nx_root",
+      "id": "frame_arm_nx",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "frame_nz",
+      "b": "arm_nz_root",
+      "id": "frame_arm_nz",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "frame_px",
+      "b": "arm_px_root",
+      "id": "frame_arm_px",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "frame_pz",
+      "b": "arm_pz_root",
+      "id": "frame_arm_pz",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "motor_nx_axis",
+      "b": "prop_nx_axis",
+      "id": "motor_prop_nx",
+      "kind": "coaxial",
+      "minimum_clearance": 0.0004,
+      "minimum_overlap": 0.007,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "motor_nz_axis",
+      "b": "prop_nz_axis",
+      "id": "motor_prop_nz",
+      "kind": "coaxial",
+      "minimum_clearance": 0.0004,
+      "minimum_overlap": 0.007,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "motor_px_axis",
+      "b": "prop_px_axis",
+      "id": "motor_prop_px",
+      "kind": "coaxial",
+      "minimum_clearance": 0.0004,
+      "minimum_overlap": 0.007,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "motor_pz_axis",
+      "b": "prop_pz_axis",
+      "id": "motor_prop_pz",
+      "kind": "coaxial",
+      "minimum_clearance": 0.0004,
+      "minimum_overlap": 0.007,
+      "offset": 0,
+      "twist": 0
+    }
+  ],
+  "parts": [
+    [
+      "arm_nx",
+      "Four arms",
+      "frame"
+    ],
+    [
+      "arm_nz",
+      "Four arms",
+      "frame"
+    ],
+    [
+      "arm_px",
+      "Four arms",
+      "frame"
+    ],
+    [
+      "arm_pz",
+      "Four arms",
+      "frame"
+    ],
+    [
+      "battery",
+      "Battery",
+      "frame"
+    ],
+    [
+      "controller",
+      "Flight controller",
+      "frame"
+    ],
+    [
+      "esc_nx",
+      "Electronic speed controllers",
+      "arm_nx"
+    ],
+    [
+      "esc_nz",
+      "Electronic speed controllers",
+      "arm_nz"
+    ],
+    [
+      "esc_px",
+      "Electronic speed controllers",
+      "arm_px"
+    ],
+    [
+      "esc_pz",
+      "Electronic speed controllers",
+      "arm_pz"
+    ],
+    [
+      "frame",
+      "Central frame",
+      ""
+    ],
+    [
+      "motor_nx",
+      "Four motors",
+      "arm_nx"
+    ],
+    [
+      "motor_nz",
+      "Four motors",
+      "arm_nz"
+    ],
+    [
+      "motor_px",
+      "Four motors",
+      "arm_px"
+    ],
+    [
+      "motor_pz",
+      "Four motors",
+      "arm_pz"
+    ],
+    [
+      "prop_nx",
+      "Four propellers",
+      "motor_nx"
+    ],
+    [
+      "prop_nz",
+      "Four propellers",
+      "motor_nz"
+    ],
+    [
+      "prop_px",
+      "Four propellers",
+      "motor_px"
+    ],
+    [
+      "prop_pz",
+      "Four propellers",
+      "motor_pz"
+    ]
+  ],
+  "ports": [
+    [
+      "arm_nx_end",
+      "arm_nx",
+      "face"
+    ],
+    [
+      "arm_nx_root",
+      "arm_nx",
+      "face"
+    ],
+    [
+      "arm_nx_top",
+      "arm_nx",
+      "face"
+    ],
+    [
+      "arm_nz_end",
+      "arm_nz",
+      "face"
+    ],
+    [
+      "arm_nz_root",
+      "arm_nz",
+      "face"
+    ],
+    [
+      "arm_nz_top",
+      "arm_nz",
+      "face"
+    ],
+    [
+      "arm_px_end",
+      "arm_px",
+      "face"
+    ],
+    [
+      "arm_px_root",
+      "arm_px",
+      "face"
+    ],
+    [
+      "arm_px_top",
+      "arm_px",
+      "face"
+    ],
+    [
+      "arm_pz_end",
+      "arm_pz",
+      "face"
+    ],
+    [
+      "arm_pz_root",
+      "arm_pz",
+      "face"
+    ],
+    [
+      "arm_pz_top",
+      "arm_pz",
+      "face"
+    ],
+    [
+      "battery_lead",
+      "battery",
+      "face"
+    ],
+    [
+      "battery_mount",
+      "battery",
+      "face"
+    ],
+    [
+      "controller_mount",
+      "controller",
+      "face"
+    ],
+    [
+      "controller_nx",
+      "controller",
+      "face"
+    ],
+    [
+      "controller_nz",
+      "controller",
+      "face"
+    ],
+    [
+      "controller_power",
+      "controller",
+      "face"
+    ],
+    [
+      "controller_px",
+      "controller",
+      "face"
+    ],
+    [
+      "controller_pz",
+      "controller",
+      "face"
+    ],
+    [
+      "esc_nx_input",
+      "esc_nx",
+      "face"
+    ],
+    [
+      "esc_nx_mount",
+      "esc_nx",
+      "face"
+    ],
+    [
+      "esc_nx_output",
+      "esc_nx",
+      "face"
+    ],
+    [
+      "esc_nz_input",
+      "esc_nz",
+      "face"
+    ],
+    [
+      "esc_nz_mount",
+      "esc_nz",
+      "face"
+    ],
+    [
+      "esc_nz_output",
+      "esc_nz",
+      "face"
+    ],
+    [
+      "esc_px_input",
+      "esc_px",
+      "face"
+    ],
+    [
+      "esc_px_mount",
+      "esc_px",
+      "face"
+    ],
+    [
+      "esc_px_output",
+      "esc_px",
+      "face"
+    ],
+    [
+      "esc_pz_input",
+      "esc_pz",
+      "face"
+    ],
+    [
+      "esc_pz_mount",
+      "esc_pz",
+      "face"
+    ],
+    [
+      "esc_pz_output",
+      "esc_pz",
+      "face"
+    ],
+    [
+      "frame_battery",
+      "frame",
+      "face"
+    ],
+    [
+      "frame_controller",
+      "frame",
+      "face"
+    ],
+    [
+      "frame_nx",
+      "frame",
+      "face"
+    ],
+    [
+      "frame_nz",
+      "frame",
+      "face"
+    ],
+    [
+      "frame_px",
+      "frame",
+      "face"
+    ],
+    [
+      "frame_pz",
+      "frame",
+      "face"
+    ],
+    [
+      "motor_nx_axis",
+      "motor_nx",
+      "outer_axis"
+    ],
+    [
+      "motor_nx_input",
+      "motor_nx",
+      "face"
+    ],
+    [
+      "motor_nx_mount",
+      "motor_nx",
+      "face"
+    ],
+    [
+      "motor_nz_axis",
+      "motor_nz",
+      "outer_axis"
+    ],
+    [
+      "motor_nz_input",
+      "motor_nz",
+      "face"
+    ],
+    [
+      "motor_nz_mount",
+      "motor_nz",
+      "face"
+    ],
+    [
+      "motor_px_axis",
+      "motor_px",
+      "outer_axis"
+    ],
+    [
+      "motor_px_input",
+      "motor_px",
+      "face"
+    ],
+    [
+      "motor_px_mount",
+      "motor_px",
+      "face"
+    ],
+    [
+      "motor_pz_axis",
+      "motor_pz",
+      "outer_axis"
+    ],
+    [
+      "motor_pz_input",
+      "motor_pz",
+      "face"
+    ],
+    [
+      "motor_pz_mount",
+      "motor_pz",
+      "face"
+    ],
+    [
+      "prop_nx_axis",
+      "prop_nx",
+      "bore_axis"
+    ],
+    [
+      "prop_nz_axis",
+      "prop_nz",
+      "bore_axis"
+    ],
+    [
+      "prop_px_axis",
+      "prop_px",
+      "bore_axis"
+    ],
+    [
+      "prop_pz_axis",
+      "prop_pz",
+      "bore_axis"
+    ]
+  ],
+  "symmetries": [
+    {
+      "a": "arm_px",
+      "axis": "x",
+      "b": "arm_nx"
+    },
+    {
+      "a": "arm_pz",
+      "axis": "z",
+      "b": "arm_nz"
+    },
+    {
+      "a": "esc_px",
+      "axis": "x",
+      "b": "esc_nx"
+    },
+    {
+      "a": "esc_pz",
+      "axis": "z",
+      "b": "esc_nz"
+    },
+    {
+      "a": "motor_px",
+      "axis": "x",
+      "b": "motor_nx"
+    },
+    {
+      "a": "motor_pz",
+      "axis": "z",
+      "b": "motor_nz"
+    },
+    {
+      "a": "prop_px",
+      "axis": "x",
+      "b": "prop_nx"
+    },
+    {
+      "a": "prop_pz",
+      "axis": "z",
+      "b": "prop_nz"
+    }
+  ]
+}

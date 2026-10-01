@@ -1,0 +1,20 @@
+{
+  "method": "Direct inspection of assembled/exploded browser images, isolated-part inspection sheet, and a closer camera view; no geometry or material edits",
+  "case": "generic-drone-plan-0",
+  "visual_coherence": "partial",
+  "observations": [
+    "Recognizable quadcopter with four consistently oriented motor/propeller assemblies",
+    "Body, battery, controller, arms, motors, propellers and simplified ESC/lead shapes remain independently represented",
+    "Still a basic technical model with simple geometry and subdued materials; not a polished finished object",
+    "Four measured feature/mate failures remain, so visual recognizability does not admit this candidate"
+  ],
+  "part_count": 19,
+  "triangles": 9480,
+  "structural_acceptance": "fail",
+  "manual_repairs": 0,
+  "quest_performance": "unassessed",
+  "engineering_completeness": "unassessed",
+  "motion": "absent",
+  "browser_detail": "Camera zoom changed to 2.7 for closer inspection only; generated geometry unchanged",
+  "fan": "Previously saved 010 baseline only; no new Astra fan repair completed"
+}

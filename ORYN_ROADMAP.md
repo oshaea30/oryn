@@ -150,7 +150,8 @@ Spatial intent survived but lacked checkable adapters, and static-pose represent
 varied between requests. This motivated the spatial bridge measured below, while
 preserving unsupported requirements.
 Additional API estimate $0.152625; zero new uncertain reservations. The user tripled
-the shared daily API cap to $6 on 2026-10-01; the $5 aggregate research cap remains.
+the shared daily API cap to $6 on 2026-10-01; both that cap and the former $5 aggregate
+research cap were superseded by the $15 limits authorized for 014 below.
 
 The [spatial bridge experiment](Research/native_objects/SPATIAL_RESULT.md) now runs
 registered spatial checks on solved geometry. The static hanging-sphere concept is
@@ -183,17 +184,30 @@ front-face placement is unsupported, so no geometry is built. No general generat
 Local repair scope, preserved checks and lossless feedback tables work as protections.
 The latter reduces a blocked 24,456-token input to 15,987 with all 275 facts intact.
 Geometry/full checks remain around 0.12–0.17 seconds; model requests take 25–99 seconds.
-No latency win is claimed. Test whether global assembly axes can guide pose solving
-instead of only post-build validation, with explicit conflicts and unrelated local cases,
-before another paid rotation-repair loop. Keep surface embedding as a separate boundary.
-No new geometry primitives, stronger model, GPU use, manual output repair or product
-promotion. 149 targeted tests and 36 browser checks pass. Combined API estimate $0.261955,
-no new uncertain holds or funding errors; earlier holds remain. Use $4.47 as the minimum
-conservative prior allowance for subsequent work under the $5 research ceiling.
+No latency win was claimed. The recommendation after 013 was to investigate global
+axes during pose solving. The user then authorized a stronger-model comparison first.
+The original 149 targeted tests and 36 browser checks pass; the $0.261955 estimate and
+older uncertain holds remain recorded.
+
+The [014 Astra xhigh comparison](Research/native_objects/STRONG_MODEL_RESULT.md) raises
+output capacity to 32,768 tokens with a 900-second deadline, $10 batch ceiling and $15
+shared daily/aggregate research ceilings. All geometry, requests and acceptance checks
+remain fixed. Its fresh 19-part drone passes global arrangements but fails four local
+feature/mate checks. The completed plan takes 367.60 seconds and an estimated $1.03215,
+without hitting a resource cap. It remains a simplified, rejected object.
+
+The repair job returned `credit_balance_exhausted` with no usage/model output. Retain its
+$1.8896375 accounting hold; speaker and fan calls are undispatched. This is an incomplete
+comparison, funding-blocked at OpenAI API billing, not a completed negative result.
+Restore funding and review accounting before a frozen continuation of unfinished work;
+keep the completed plan and failed job intact, and recheck the whole remaining budget.
+The remaining local allowance is not provider credit. Carry $7.40 conservative prior
+allowance into a new budget, including unresolved holds. Eighteen desktop checks pass;
+Quest, mechanical function and product readiness remain unassessed.
 
 Generation research is the active track. The product remains stable; answering,
 voice and motion-inference expansion are paused. Research output does not enter
-production automatically. The existing $5 research ceiling includes the prior run.
+production automatically. The current $15 research ceiling includes prior runs and holds.
 
 Local work now separates object structure/quality, application-owned behavioral
 judgment, and optional validated animation. Missing animation does not fail object
@@ -310,7 +324,8 @@ completed in 18.052 seconds: islands 001/002 received “Cylinder-bank upper cov
 not established mechanical identities. No Quest build or runtime capability changed.
 The conservative vision usage estimate was $0.01309; total with earlier text
 research is $0.0196625 of the cumulative $0.05 object allowance. Actual invoice cost
-is not asserted. Shared $6/day admission (user increased it on 2026-10-01) and no-retry behavior remain enforced.
+is not asserted. Shared admission is now capped at $15/day (user increased it for 014
+on 2026-10-01); existing routine per-request limits and no-retry behavior remain enforced.
 The service runs explicitly requested episodes only, not all 200 V8 pieces or all
 new generations. Next: reference-backed assessment of candidates, preserving the
 original episode and rejected/corrected hypotheses. No new key was required.

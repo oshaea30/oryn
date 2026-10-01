@@ -1,0 +1,12 @@
+{
+  "charged_and_held_nanos": 2921787500,
+  "batch_ceiling_nanos": 10000000000,
+  "prior_upper_bound_nanos": 4470000000,
+  "aggregate_limit_nanos": 15000000000,
+  "daily_limit_nanos": 15000000000,
+  "daily_remaining_nanos": 8809877500,
+  "stopped": [
+    "Usage/model/tier could not be reconciled against the quote. Reservation retained; paid calls halted for review."
+  ],
+  "actual_invoiced_cost": null
+}

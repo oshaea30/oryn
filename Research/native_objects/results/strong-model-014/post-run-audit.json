@@ -1,0 +1,173 @@
+{
+  "live_freeze_commit": "695d786",
+  "all_frozen_sources_unchanged": true,
+  "geometry_executor_changed": false,
+  "acceptance_changed": false,
+  "manual_geometry_repairs": 0,
+  "combined_configuration_comparison": "Astra xhigh with 32,768 output tokens vs Sol medium with 12,288 on the fixed drone planning request; no model-only causal claim",
+  "batch_complete": false,
+  "stop_category": "provider_funding_required",
+  "provider_error": {
+    "code": "credit_balance_exhausted",
+    "message": "You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+  },
+  "failed_response_usage": null,
+  "completed_model_calls": 1,
+  "funding_failed_jobs": 1,
+  "cancelled_jobs": 0,
+  "completed_call_estimate_nanos": 1032150000,
+  "new_uncertain_hold_nanos": 1889637500,
+  "charged_and_held_nanos": 2921787500,
+  "actual_invoice_cost": null,
+  "ledger_records": [
+    {
+      "request_id": "ebb73aecfa489b763960049b378b7f60",
+      "status": "completed",
+      "outcome": "completed",
+      "input_tokens": 7072,
+      "reserved_nanos": 1726800000,
+      "charged_nanos": 1032150000,
+      "calculated_cost_nanos": 1032150000,
+      "actual_cost_nanos": null
+    },
+    {
+      "request_id": "cbf70b94da3f917b234d68131faf9caf",
+      "status": "uncertain",
+      "outcome": "usage_unconfirmed",
+      "input_tokens": 20099,
+      "reserved_nanos": 1889637500,
+      "charged_nanos": 1889637500,
+      "calculated_cost_nanos": null,
+      "actual_cost_nanos": null
+    }
+  ],
+  "ledger_halted": true,
+  "earlier_uncertain_holds_retained": true,
+  "daily_ceiling_nanos": 15000000000,
+  "aggregate_research_ceiling_nanos": 15000000000,
+  "batch_ceiling_nanos": 10000000000,
+  "next_conservative_prior_allowance_nanos": 7400000000,
+  "completed_plan_hit_output_limit": false,
+  "completed_plan_hit_deadline": false,
+  "plan_check_count": 292,
+  "plan_failed_checks": [
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "controller_nx",
+        "part": "controller"
+      },
+      "passed": false,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 5.1282853428343265e-12,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "controller_nx",
+        "id": "controller_esc_nx",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "esc_nx_input"
+      },
+      "passed": false,
+      "measurement": {
+        "frame_max_error": 2.0
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "controller_pz",
+        "id": "controller_esc_pz",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "esc_pz_input"
+      },
+      "passed": false,
+      "measurement": {
+        "frame_max_error": 1.0000000000000002
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "controller_nz",
+        "id": "controller_esc_nz",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "esc_nz_input"
+      },
+      "passed": false,
+      "measurement": {
+        "frame_max_error": 1.0
+      }
+    }
+  ],
+  "global_arrangement_checks": [
+    {
+      "assembly_id": "a0",
+      "requirement_id": "r12",
+      "aspect": "placement",
+      "passed": true
+    },
+    {
+      "assembly_id": "a0",
+      "requirement_id": "r13",
+      "aspect": "orientation",
+      "passed": true
+    },
+    {
+      "assembly_id": "a1",
+      "requirement_id": "r14",
+      "aspect": "placement",
+      "passed": true
+    },
+    {
+      "assembly_id": "a1",
+      "requirement_id": "r15",
+      "aspect": "orientation",
+      "passed": true
+    },
+    {
+      "assembly_id": "a2",
+      "requirement_id": "r16",
+      "aspect": "placement",
+      "passed": true
+    },
+    {
+      "assembly_id": "a2",
+      "requirement_id": "r17",
+      "aspect": "orientation",
+      "passed": true
+    }
+  ],
+  "unperformed_operations": [
+    "generic-drone/patch/1 (failed before any model output)",
+    "two-driver-speaker/extract/0",
+    "two-driver-speaker/plan/0 (conditional)",
+    "cooling-fan-row/patch/1"
+  ],
+  "fan_geometry_in_viewer": "Unchanged replayed 010 baseline; not an Astra result",
+  "gpu_cost_nanos": 0,
+  "browser_checks": 18,
+  "resume_requirements": [
+    "Restore OpenAI API credit; no purchase was made",
+    "Review credit-exhausted job and reconcile or conservatively retain its hold before restoring ledger admission",
+    "Freeze continuation for unfinished operations only; retain old failed job and completed plan, no duplicate creation",
+    "Recompute complete remaining worst-case cost including unresolved holds; do not silently exceed the $10 batch ceiling"
+  ],
+  "native_generation_goal_passed": false
+}

@@ -1,0 +1,285 @@
+{
+  "operation_id": "ebb73aecfa489b763960049b378b7f60",
+  "body_sha256": "905746573ebcfc5a920c9a8e827a74989772932ba8ea5dc4e49f1dc1c6d50dc4",
+  "started": 1790882344.0198028,
+  "deadline": 1790883244.0198028,
+  "response_id": "resp_0f64baa25dedc7e0006abeb22835a887d288abb5042f4bf0cb",
+  "status": "completed",
+  "events": [
+    {
+      "elapsed_seconds": 2.4990463256835938,
+      "event": "queued"
+    },
+    {
+      "elapsed_seconds": 8.108590126037598,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 13.956693410873413,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 19.668168306350708,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 24.85179328918457,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 30.49421739578247,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 36.145148277282715,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 41.994203090667725,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 47.599982261657715,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 52.79443621635437,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 57.96914029121399,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 63.7786910533905,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 68.94032621383667,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 74.44964027404785,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 79.98563623428345,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 85.18767714500427,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 90.76811623573303,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 95.94062614440918,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 101.11371111869812,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 106.65581011772156,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 112.34113311767578,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 117.69485831260681,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 123.27732706069946,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 128.4305431842804,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 134.11515736579895,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 139.31660628318787,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 145.0428810119629,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 151.07307529449463,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 156.6175663471222,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 161.7781002521515,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 166.95915913581848,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 172.1293339729309,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 177.31503105163574,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 182.5164611339569,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 188.21290636062622,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 193.44422125816345,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 198.6264193058014,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 204.26756405830383,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 209.85803413391113,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 215.53883743286133,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 220.71561217308044,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 226.0016212463379,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 231.18845415115356,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 236.88894820213318,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 242.49198532104492,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 248.08166217803955,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 253.7293131351471,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 259.17703914642334,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 264.3594391345978,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 270.07278203964233,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 275.71928906440735,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 281.19940304756165,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 286.767165184021,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 291.94556427001953,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 297.1373372077942,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 302.5854504108429,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 308.24003624916077,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 313.69000911712646,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 319.2449152469635,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 324.41143226623535,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 329.59368538856506,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 334.83549523353577,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 340.0550332069397,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 345.2248303890228,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 350.3913064002991,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 356.01509499549866,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 361.7174291610718,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 367.59759306907654,
+      "event": "completed"
+    }
+  ],
+  "creation_calls": 1,
+  "poll_calls": 67,
+  "cancel_calls": 0
+}

@@ -13,8 +13,8 @@ from Research.native_objects import solid_experiment as prior
 from Research.native_objects.construction_experiment import NoRedirect
 
 EXPERIMENT='meaning-005'
-HOME=Path(__file__).parent
-CASES=json.loads((HOME/'meaning_cases_005.json').read_text())
+SOURCE_DIR=Path(__file__).parent
+CASES=json.loads((SOURCE_DIR/'meaning_cases_005.json').read_text())
 BUDGET=130_000_000
 PRIOR_UPPER_BOUND=2_600_000_000
 AGGREGATE_LIMIT=5_000_000_000
@@ -27,7 +27,10 @@ def selected():
 def operation_id(case):return prior.digest({'experiment':EXPERIMENT,'case':case})[:32]
 
 
-def spent(ledger):return sum((ledger.get(operation_id(c['id'])) or {}).get('charged_nanos',0) for c in CASES)
+FOLLOWUP_ID='source-reference-followup'
+FOLLOWUP_CASES=('contrast_motion','original_drone')
+
+def spent(ledger):return sum((ledger.get(operation_id(c)) or {}).get('charged_nanos',0) for c in [c['id'] for c in CASES]+[FOLLOWUP_ID])
 
 
 def request(case,folder,ledger,key):
@@ -36,6 +39,14 @@ def request(case,folder,ledger,key):
     ident=operation_id(case['id'])
     if ledger.get(ident):raise prior.CommandError('Already attempted; no retry')
     p=selected();body=prior.body(p,meaning.INSTRUCTIONS,json.dumps({'request':case['request'],'proposed_role_groups':case['roles']}),meaning.SCHEMA,'oryn_interpreted_requirements')
+    return dispatch(ident,p,body,folder,ledger,key)
+
+
+def dispatch(ident,p,body,folder,ledger,key):
+    allowed={operation_id(c['id']) for c in CASES}|{operation_id(FOLLOWUP_ID)}
+    if ident not in allowed:raise prior.CommandError('Operation outside frozen bounds')
+    if ledger.get(ident):raise prior.CommandError('Already attempted; no retry')
+    if ledger.summary()['halted']:raise prior.CommandError('Shared ledger halted')
     prior.write(folder/'request.json',{'body':body,'body_sha256':prior.digest(body)})
     tokens=prior.count_input(key,body);cost=prior.quote_cost(p,tokens);now=int(time.time())
     if spent(ledger)+cost>BUDGET or PRIOR_UPPER_BOUND+spent(ledger)+cost>AGGREGATE_LIMIT:raise prior.CommandError('Research spending ceiling reached')
@@ -100,18 +111,53 @@ def execute(output,model):
     return records
 
 
+
+def followup_spec():
+    chosen=[c for c in CASES if c['id'] in FOLLOWUP_CASES]
+    policy=selected();policy['max_output_tokens']=2560
+    schema=meaning.construction.object_schema({c['id']:meaning.source_schema(c['request']) for c in chosen})
+    content={'cases':[{k:c[k] for k in ('id','request','roles')}|{'source_units':meaning.source_units(c['request'])} for c in chosen]}
+    body=prior.body(policy,meaning.SOURCE_INSTRUCTIONS,json.dumps(content),schema,'oryn_source_bound_interpretation')
+    return chosen,policy,body
+
+
+def execute_followup(output,model):
+    chosen,_,_=followup_spec();records=[]
+    try:
+        raw,meta=model();prior.write(output/'batch-output.json',raw)
+    except (prior.CommandError,ValueError,KeyError,TypeError) as e:
+        result={'status':'stopped','error':str(e),'geometry_executed':False};prior.write(output/'result.json',result);return result
+    for case in chosen:
+        folder=output/case['id'];folder.mkdir();record={'case':case['id'],'geometry_executed':False};records.append(record)
+        try:
+            original=raw[case['id']];prior.write(folder/'inventory.json',original)
+            contract=meaning.validate_source_output(original,case['request'],case['roles']);prior.write(folder/'contract.json',contract)
+            admission=meaning.preflight(contract);prior.write(folder/'admission.json',admission)
+            assessment=assess(case,contract,admission);prior.write(folder/'assessment.json',assessment)
+            record.update(status='interpreted',planning_allowed=admission['planning_allowed'],predeclared_checks_passed=assessment['predeclared_checks_passed'],blocking=admission['blocking'])
+        except (ValueError,KeyError,TypeError) as e:record.update(status='stopped',error=str(e))
+    result={'cases':records,'billing':meta,'native_generation_goal_passed':False,'paired_followup':True};prior.write(output/'result.json',result);return result
+
+
 def main():
-    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--output',type=Path,required=True);parser.add_argument('--execute',action='store_true');args=parser.parse_args()
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--output',type=Path,required=True);parser.add_argument('--execute',action='store_true');parser.add_argument('--source-followup',action='store_true');args=parser.parse_args()
     args.output.mkdir(parents=True,exist_ok=False)
-    hashes={n:hashlib.sha256((HOME/n).read_bytes()).hexdigest() for n in ('assembly_connections.py','construction_solid.py','construction.py','requirement_meaning.py','meaning_cases_005.json')}
-    prior.write(args.output/'protocol.json',{'experiment':EXPERIMENT,'budget_nanos':BUDGET,'prior_upper_bound_nanos':PRIOR_UPPER_BOUND,'aggregate_limit_nanos':AGGREGATE_LIMIT,'policy':selected(),'files_sha256':hashes,'instructions_sha256':prior.digest(meaning.INSTRUCTIONS),'schema_sha256':prior.digest(meaning.SCHEMA),'cases':CASES,'execute':args.execute})
+    hashes={n:hashlib.sha256((SOURCE_DIR/n).read_bytes()).hexdigest() for n in ('assembly_connections.py','construction_solid.py','construction.py','requirement_meaning.py','meaning_cases_005.json','intent_requirements.py','meaning_experiment.py')}
+    prior.write(args.output/'protocol.json',{'experiment':EXPERIMENT,'budget_nanos':BUDGET,'prior_upper_bound_nanos':PRIOR_UPPER_BOUND,'aggregate_limit_nanos':AGGREGATE_LIMIT,'policy':selected(),'files_sha256':hashes,'instructions_sha256':prior.digest(meaning.INSTRUCTIONS),'schema_sha256':prior.digest(meaning.SCHEMA),'cases':CASES,'execute':args.execute,'source_followup':args.source_followup,'followup_spec':followup_spec()[1:] if args.source_followup else None})
     if not args.execute:return
     lock=open(prior.ROOT/'.oryn-usage'/(EXPERIMENT+'.lock'),'a');fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
     ledger=prior.UsageLedger();key=prior.MacKeychain(account=b'openai-api-key').load()
     if not key:raise prior.CommandError('Model connection unavailable')
     def model(case,folder):
-        if any(hashlib.sha256((HOME/n).read_bytes()).hexdigest()!=h for n,h in hashes.items()):raise prior.CommandError('Frozen experiment file changed')
+        if any(hashlib.sha256((SOURCE_DIR/n).read_bytes()).hexdigest()!=h for n,h in hashes.items()):raise prior.CommandError('Frozen experiment file changed')
         return request(case,folder,ledger,key)
-    execute(args.output,model);print(json.dumps({'charged_and_held_usd':spent(ledger)/1e9}))
+    if args.source_followup:
+        _,p,body=followup_spec()
+        def followup():
+            if any(hashlib.sha256((SOURCE_DIR/n).read_bytes()).hexdigest()!=h for n,h in hashes.items()):raise prior.CommandError('Frozen experiment changed')
+            return dispatch(operation_id(FOLLOWUP_ID),p,body,args.output,ledger,key)
+        execute_followup(args.output,followup)
+    else:execute(args.output,model)
+    print(json.dumps({'charged_and_held_usd':spent(ledger)/1e9}))
 
 if __name__=='__main__':main()

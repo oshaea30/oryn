@@ -45,3 +45,28 @@ policy, not individual outputs. First use free local failure tests and preserve 
 failures. If distinctions hold, retain this admission layer; that does not establish
 visual quality or complete generation. Implied constraints without an executable
 adapter remain visible limitations, not permission to expand geometry automatically.
+
+## Recorded follow-up after observed failures
+
+Initial run: four of seven cases validate and meet the frozen assertions. Motion
+uses a capability label with qualifiers and an unsupported capability-target field;
+drone/controller copy role names as quotes not present in the request. All seven
+responses completed and cost $0.0991275. Original outputs are retained unchanged.
+
+General correction: the compiler selects application-assigned source-segment IDs;
+code resolves exact text and rejects unaccounted segments. This is segment coverage,
+not proof every phrase was understood. Canonical capability names/empty targets are
+constrained with nested schema alternatives; dynamic relational constraints use
+explicit unsupported behavior requirements with entity targets. Unknown operations
+remain unsupported. No geometry or answer is injected to rescue a case. The
+[documented Structured Outputs subset](https://developers.openai.com/api/docs/guides/structured-outputs)
+supports these nested alternatives; schema conformance still does not prove meaning.
+
+One paired follow-up covers the failed motion/drone requests with the SAME frozen
+assertions and original role inputs. Medium reasoning, 2,560 output tokens, no
+reviewer. Retain initial failures. Pairing and changed schema/prompt prevent a clean
+causal attribution; the controller is not independently rerun. Cumulative initial
+plus follow-up cost/reservations must remain under the SAME $0.13 cap and shared
+limits. No additional attempt follows an ambiguous or incomplete response. This is
+an explicit bounded protocol amendment after observed failures, not a claim that
+the first frozen seven-case run passed.

@@ -86,7 +86,7 @@ def validate_inventory(raw,request,roles):
         if r['obligation']!='design_choice' and not r['quote']:raise ValueError('User requirement lacks source quote')
         predicate=r['predicate']
         if predicate in ('inside','attached','connected','clearance') and (r['subject']=='object' or not r['target'] or r['target']==r['subject']):raise ValueError('Invalid relation endpoints')
-        if predicate not in ('inside','attached','connected','clearance') and r['target']:raise ValueError('Unexpected requirement target')
+        if predicate not in ('inside','attached','connected','clearance','other') and r['target']:raise ValueError('Unexpected requirement target')
         if predicate=='exists':
             if r['subject']=='object' or r['kind']!='entity' or r['value']:raise ValueError('Invalid entity requirement')
             if r['subject'] in exists:raise ValueError('Duplicate entity existence requirement')

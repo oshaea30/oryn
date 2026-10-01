@@ -4,6 +4,7 @@ The model proposes meaning. Deterministic code checks its consistency and what t
 current runtime can attempt. Neither check proves natural-language entailment.
 """
 from copy import deepcopy
+import re
 from Research.native_objects import intent_requirements as base
 from Research.native_objects import construction as construction
 
@@ -87,7 +88,7 @@ def validate(raw,request,roles):
         expected={'exists':'structure','count':'structure','inside':'structure','attached':'structure','connected':'structure','clearance':'structure','appearance':'appearance','exact_identity':'identity'}
         if p in expected and mode!=expected[p]:raise ValueError('Predicate cannot substitute a different realization mode')
         if p=='capability' and mode!=('appearance' if r['value']=='emission' else 'behavior'):raise ValueError('Capability realization mismatch')
-        if p=='other' and mode not in ('structure','physical_verification'):raise ValueError('Unexpressible requirement mode mismatch')
+        if p=='other' and mode not in ('structure','behavior','physical_verification'):raise ValueError('Unexpressible requirement mode mismatch')
         projected['requirements'].append({k:v for k,v in r.items() if k not in ('mode','basis')})
     base.validate_inventory(projected,request,roles)
     ids={r['id'] for r in raw['requirements']};entities={e['id'] for e in raw['entities']}|{'object'}
@@ -108,6 +109,11 @@ def validate(raw,request,roles):
 def preflight(contract):
     raw=contract['inventory']
     if base.digest(raw)!=contract['inventory_sha256'] or base.digest(contract['source_request'])!=contract['source_sha256']:raise ValueError('Requirement contract changed')
+    if 'source_grounding' in contract:
+        grounding=contract['source_grounding']
+        if base.digest(grounding)!=contract['source_grounding_sha256'] or grounding['units']!=source_units(contract['source_request']):raise ValueError('Source references changed')
+        units={u['id']:u['text'] for u in grounding['units']};units['']=''
+        if any(units.get(grounding['bindings'].get(r['id']))!=r['quote'] for r in raw['requirements']+raw['exclusions']):raise ValueError('Source binding changed')
     unsupported=[]
     for r in raw['requirements']:
         reason=None
@@ -131,3 +137,73 @@ def coverage(contract,plan,bindings):
     gate['geometry_allowed']=gate['coverage_complete'] and not gate['blocking_unsupported'] and admission['planning_allowed']
     gate['meaning_admission']=admission
     return gate
+
+
+CANONICAL_CAPABILITIES=sorted(base.CAPABILITIES|{'animate','emission','audio_output'})
+SOURCE_INSTRUCTIONS=INSTRUCTIONS+'''
+SOURCE-BOUND OUTPUT (overrides quote fields above):
+The application supplies source_units containing exact segments of the ORIGINAL request. Select a
+source ID for every requirement/exclusion, rather than copying a quotation. The application resolves
+that reference verbatim. Use source='' only for a design_choice without direct request provenance.
+Every supplied source unit must be accounted for by at least one requirement or exclusion. This
+establishes source coverage only, not proof of your interpretation. Never cite proposed role names
+as if the user wrote them. A proposed component absent from the request is inferred or design_choice,
+not explicit merely because it appears in proposed_role_groups.
+
+Capability values are EXACT schema-enumerated names, without qualifiers. Preserve qualifiers and
+relationships during action as separate predicate other, mode behavior requirements; other may
+reference a target entity. Unknown actions likewise use other/behavior and remain unsupported.
+Describe only relationships essential to the request; repeated prose is unnecessary.'''
+
+
+def source_units(request):
+    if not isinstance(request,str) or not request.strip() or len(request)>6000:raise ValueError('Request size limit')
+    units=[];start=0
+    for stop in [m.start() for m in re.finditer(r'(?<=[.!?;])\s+',request)]+[len(request)]:
+        while start<stop:
+            while start<stop and request[start].isspace():start+=1
+            if start==stop:break
+            end=min(stop,start+180)
+            if end<stop:
+                space=request.rfind(' ',start,end)
+                if space>start:end=space
+            while end>start and request[end-1].isspace():end-=1
+            units.append({'id':'s'+str(len(units)),'start':start,'end':end,'text':request[start:end]});start=end
+        start=stop
+    return units
+
+
+def source_schema(request):
+    schema=deepcopy(SCHEMA);source_ids=[u['id'] for u in source_units(request)]
+    requirement=schema['properties']['requirements']['items']
+    requirement['properties'].pop('quote');requirement['properties']['source']={'type':'string','enum':source_ids+['']}
+    requirement['required']=[k if k!='quote' else 'source' for k in requirement['required']]
+    ordinary=deepcopy(requirement);ordinary['properties']['predicate']['enum'].remove('capability')
+    action=deepcopy(requirement);action['properties']['predicate']['enum']=['capability'];action['properties']['mode']['enum']=['behavior']
+    action['properties']['value']={'type':'string','enum':[c for c in CANONICAL_CAPABILITIES if c!='emission']};action['properties']['target']={'type':'string','enum':['']}
+    emission=deepcopy(action);emission['properties']['value']['enum']=['emission'];emission['properties']['mode']['enum']=['appearance']
+    schema['properties']['requirements']['items']={'anyOf':[ordinary,action,emission]}
+    exclusion=schema['properties']['exclusions']['items'];exclusion['properties'].pop('quote');exclusion['properties']['source']={'type':'string','enum':source_ids}
+    exclusion['required']=[k if k!='quote' else 'source' for k in exclusion['required']]
+    return schema
+
+
+def validate_source_output(raw,request,roles):
+    if not isinstance(raw,dict) or set(raw)!=set(SCHEMA['required']):raise ValueError('Invalid source-bound fields')
+    units=source_units(request);lookup={u['id']:u['text'] for u in units};projected=deepcopy(raw);bindings={};used=set()
+    for kind in ('requirements','exclusions'):
+        if not isinstance(projected[kind],list):raise ValueError('Invalid source-bound collection')
+        for r in projected[kind]:
+            if not isinstance(r,dict) or 'source' not in r or 'quote' in r:raise ValueError('Source reference required, no free quote')
+            source=r.pop('source')
+            if source=='' and kind=='requirements' and r.get('basis')=='design_choice':r['quote']=''
+            elif source not in lookup:raise ValueError('Unknown source reference')
+            else:r['quote']=lookup[source];used.add(source)
+            if r.get('id') in bindings:raise ValueError('Duplicate source binding')
+            bindings[r.get('id')]=source
+            if kind=='requirements' and r.get('predicate')=='capability':
+                if r.get('value') not in CANONICAL_CAPABILITIES or r.get('target'):raise ValueError('Use a canonical capability and separate behavioral constraints')
+    if used!=set(lookup):raise ValueError('Unaccounted original source unit')
+    contract=validate(projected,request,roles);grounding={'units':units,'bindings':bindings}
+    contract.update(source_grounding=grounding,source_grounding_sha256=base.digest(grounding),interpretation_version=2)
+    return contract

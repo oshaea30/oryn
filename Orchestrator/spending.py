@@ -5,7 +5,7 @@ from datetime import datetime, timezone
 from cognition import CommandError
 
 USD = 1_000_000_000
-DAILY_LIMIT = 6 * USD  # User-authorized increase, 2026-10-01.
+DAILY_LIMIT = 15 * USD  # User-authorized stronger-model benchmark, 2026-10-01.
 MAX_OUTPUT = 1024
 PRICE_VERSION = 'openai-standard-text-2026-09-27-v1'
 # Explicit review expiry, not silently refreshed at startup. No auto pricing downloads.
@@ -25,6 +25,7 @@ PROFILES = {
     'planning': ('gpt-6-sol', 'medium', 50_000_000),
     'benchmark': ('gpt-6-astra', 'medium', 100_000_000),
     'benchmark_high': ('gpt-6-astra', 'high', 100_000_000),
+    'research_astra_xhigh': ('gpt-6-astra', 'xhigh', 2_100_000_000),
 }
 
 
@@ -39,13 +40,14 @@ def policy(provider, profile, now):
         raise CommandError('Pricing review expired or clock invalid. Paid requests are blocked until prices are reviewed.')
     model, effort, ceiling = PROFILES[profile]
     return {'provider': provider, 'profile': profile, 'model': model, 'effort': effort,
-            'ceiling_nanos': ceiling, 'max_output_tokens': {'vision':2048,'assessment':1536,'planning':2048}.get(profile,MAX_OUTPUT), 'price_version': PRICE_VERSION,
+            'ceiling_nanos': ceiling, 'max_output_tokens': {'vision':2048,'assessment':1536,'planning':2048,'research_astra_xhigh':32768}.get(profile,MAX_OUTPUT), 'price_version': PRICE_VERSION,
             'rates': MODELS[model], 'price_expires': PRICE_EXPIRES, 'service_tier': 'default'}
 
 
 def quote_cost(selected_policy, input_tokens):
-    if type(input_tokens) is not int or not 1 <= input_tokens <= 16000:
-        raise CommandError('Exact input count missing or exceeds the 16,000-token development limit.')
+    input_limit = 32768 if selected_policy.get('profile') == 'research_astra_xhigh' else 16000
+    if type(input_tokens) is not int or not 1 <= input_tokens <= input_limit:
+        raise CommandError(f'Exact input count missing or exceeds the {input_limit:,}-token development limit.')
     rates = selected_policy['rates']
     # Assume the most expensive input category for EVERY token; no cache discount assumptions.
     cost = input_tokens * max(rates['input'], rates['cache_write']) + selected_policy['max_output_tokens'] * rates['output']

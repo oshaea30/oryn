@@ -44,7 +44,8 @@ def exchange(method,suffix,key,body=None):
 def dispatch(ident,p,body,folder,ledger,key,batch,*,sender=exchange,counter=None,clock=time.time,
              sleeper=time.sleep,wait_seconds=360,poll_seconds=5):
     if ident not in {batch.operation_id(c) for c in batch.cases}:raise prior.CommandError('Operation outside frozen background batch')
-    if wait_seconds!=360 or not 1<=poll_seconds<=10:raise prior.CommandError('Unreviewed background wait policy')
+    reviewed_deadline=900 if p.get('profile')=='research_astra_xhigh' else 360
+    if wait_seconds!=reviewed_deadline or not 1<=poll_seconds<=10:raise prior.CommandError('Unreviewed background wait policy')
     count_body=deepcopy(body)  # Background/metadata do not alter model input; retain the existing strict count adapter.
     body=deepcopy(body);body.update(background=True,store=False,metadata={'oryn_operation':ident})
     fingerprint=prior.digest(body);folder.mkdir(parents=True,exist_ok=True)

@@ -12,6 +12,7 @@ import urllib.request
 from Research.native_objects import intent_requirements as intent
 from Research.native_objects import requirement_meaning as meaning
 from Research.native_objects import spatial_requirements as spatial
+from Research.native_objects import assembly_arrangements as arrangements
 from Research.native_objects import compact_construction as compact
 from Research.native_objects import assembly_connections as geometry
 from Research.native_objects import solid_experiment as prior
@@ -79,9 +80,17 @@ def request_model(case,stage,attempt,context,folder,ledger,key):
     return prior.parse(result),{'operation_id':ident,'calculated_cost_nanos':calculated,'output_tokens':outgoing,'reasoning_tokens':reasoning}
 
 
-def evaluate_candidate(raw,contract,folder,case,locked=None,builder=geometry.build,renderer=prior.render):
+def requirement_adapter(contract):
+    return arrangements if 'assemblies' in contract else spatial if 'spatial_rules' in contract else meaning if contract.get('interpretation_version') else intent
+
+
+def evaluate_candidate(raw,contract,folder,case,locked=None,builder=geometry.build,renderer=prior.render,locked_bindings=None):
     plan=compact.expand(raw,contract)
-    gate=(spatial.coverage if 'spatial_rules' in contract else meaning.coverage if contract.get('interpretation_version') else intent.coverage)(contract,plan,raw['bindings']);prior.write(folder/'coverage.json',gate)
+    gate=requirement_adapter(contract).coverage(contract,plan,raw['bindings'])
+    if 'assemblies' in contract and locked_bindings is not None and arrangements.binding_lock(contract,raw['bindings'])!=locked_bindings:
+        gate['errors'].append({'id':'assembly_bindings','reason':'Repair changed locked arrangement feature bindings'})
+        gate['coverage_complete']=gate['geometry_allowed']=False
+    prior.write(folder/'coverage.json',gate)
     prior.write(folder/'expanded.json',plan)
     if not gate['coverage_complete']:
         return {'status':'coverage_failed','geometry_executed':False,'feedback':{'coverage_errors':gate['errors']}},locked
@@ -91,12 +100,17 @@ def evaluate_candidate(raw,contract,folder,case,locked=None,builder=geometry.bui
     if not plan['parts']:raise ValueError('No executable assembly remains')
     frozen=locked or geometry.freeze(plan,roles)
     prior.write(folder/'assembly-lock.json',json.loads(frozen))
+    if 'assemblies' in contract:prior.write(folder/'arrangement-bindings.json',arrangements.binding_lock(contract,raw['bindings']))
     prior.write(folder/'execution-started.json',{'coverage_complete':True,'geometry_allowed':True})
     before=time.perf_counter();pkg,report,compiled=builder(plan,roles,case,frozen)
     if 'spatial_rules' in contract:
         report['checks']+=spatial.measurements(contract,plan,raw['bindings'],compiled)
         report['declared_relations_passed']=all(c['passed'] for c in report['checks'])
         report['spatial_policy_sha256']=contract['spatial_policy_sha256']
+    if 'assemblies' in contract:
+        report['checks']+=arrangements.measurements(contract,plan,raw['bindings'],compiled)
+        report['declared_relations_passed']=all(c['passed'] for c in report['checks'])
+        report['arrangement_policy_sha256']=contract['arrangement_policy_sha256']
     seconds=time.perf_counter()-before
     prior.write(folder/'relations.json',report);prior.write(folder/'compiled.json',compiled)
     # Existing inspectors consume the expanded proposal, not compact transport.
@@ -118,6 +132,9 @@ def write_inspection_report(folder,geometry_report):
     spatial_checks=[c for c in geometry_report['checks'] if c['kind']=='spatial_requirement']
     report['checks']['spatial_requirements']={'status':('pass' if all(c['passed'] for c in spatial_checks) else 'fail') if spatial_checks else 'not_assessed',
         'detail':str(len(spatial_checks))+' typed spatial requirements measured on solved geometry; feature meaning remains unverified.'}
+    arrangement_checks=[c for c in geometry_report['checks'] if c['kind']=='assembly_arrangement']
+    report['checks']['assembly_arrangements']={'status':('pass' if all(c['passed'] for c in arrangement_checks) else 'fail') if arrangement_checks else 'not_assessed',
+        'detail':str(len(arrangement_checks))+' group placement/orientation checks on solved features; inferred intent remains unverified.'}
     if failed:
         report['structural_checks_passed']=False
         layer=report['layers']['object'];layer['structural_checks_passed']=False
@@ -144,10 +161,11 @@ def execute(items,output,model,renderer=prior.render,case_ids=CASES):
                 if any('source' in r for r in raw.get('requirements',[])):
                     validator=meaning.validate_source_output if 'entities' in raw else meaning.validate_bound_source_output
             if 'spatial' in raw:validator=spatial.validate
+            if 'assemblies' in raw:validator=arrangements.validate
             contract=validator(raw,item['request'],[c['name'] for c in p['components']]);prior.write(folder/'contract.json',contract)
             state.update(status='requirements_ready',extraction_billing=bill,contract=contract)
             if contract.get('interpretation_version'):
-                admission=(spatial.preflight if 'spatial_rules' in contract else meaning.preflight)(contract);prior.write(folder/'admission.json',admission);state['admission']=admission
+                admission=requirement_adapter(contract).preflight(contract);prior.write(folder/'admission.json',admission);state['admission']=admission
                 if not admission['planning_allowed']:state['status']='unsupported_before_planning'
         except (prior.CommandError,ValueError,KeyError,TypeError) as e:state.update(status='extraction_failed',error=str(e))
         finally:state['extraction_seconds']=time.perf_counter()-before;save()
@@ -161,11 +179,14 @@ def execute(items,output,model,renderer=prior.render,case_ids=CASES):
                      'requirement_hash':state['contract']['inventory_sha256']}
             if 'spatial_rules' in state['contract']:
                 context.update(spatial_rules=state['contract']['spatial_rules'],spatial_policy=spatial.POLICY)
+            if 'assemblies' in state['contract']:
+                context.update(assemblies=state['contract']['assemblies'],arrangement_policy=arrangements.POLICY)
+                if attempt:context['locked_arrangement_bindings']=state.get('locked_bindings')
             if attempt:context.update(previous_compact_plan=state.get('previous'),application_feedback=state.get('feedback'),locked_assembly=state.get('locked'))
             try:
                 raw,bill=model(case,'plan',attempt,context,folder);record.update(planning_seconds=time.perf_counter()-before,billing=bill)
                 prior.write(folder/'compact-plan.json',raw);state['previous']=raw
-                result,locked=evaluate_candidate(raw,state['contract'],folder,case,state.get('locked'),renderer=renderer)
+                result,locked=evaluate_candidate(raw,state['contract'],folder,case,state.get('locked'),renderer=renderer,locked_bindings=state.get('locked_bindings'))
                 record.update(result);state.update(status=result['status'],feedback=result.get('feedback'),locked=locked)
                 state['geometry_executed']=state['geometry_executed'] or result['geometry_executed']
             except prior.CommandError as e:record.update(status='request_failed',error=str(e));state['status']='request_failed'
@@ -177,10 +198,11 @@ def execute(items,output,model,renderer=prior.render,case_ids=CASES):
                 record['geometry_executed']=(folder/'execution-started.json').exists()
                 state['geometry_executed']=state['geometry_executed'] or record['geometry_executed']
                 if (folder/'assembly-lock.json').exists():state['locked']=(folder/'assembly-lock.json').read_text()
+                if (folder/'arrangement-bindings.json').exists():state['locked_bindings']=json.loads((folder/'arrangement-bindings.json').read_text())
                 record['attempt_elapsed_seconds']=time.perf_counter()-before;save()
     # Keep large revision context local; result file still retains immutable contracts and all measurements.
     for state in states.values():
-        for key in ('previous','feedback','locked'):state.pop(key,None)
+        for key in ('previous','feedback','locked','locked_bindings'):state.pop(key,None)
     if 'exact-product' in order:states['exact-product']={'case':'exact-product','status':'blocked_evidence','geometry_executed':False}
     save()
     entries=[{'name':f.name} for f in output.iterdir() if f.is_dir() and (f/'package.json').exists()]

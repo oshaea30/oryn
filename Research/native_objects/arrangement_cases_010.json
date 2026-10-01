@@ -1,0 +1,32 @@
+[
+  {
+    "id": "generic-drone",
+    "request": "Show me a generic quadcopter drone I can explore and take apart into its major components.",
+    "roles": ["Central frame", "Four arms", "Four motors", "Four propellers", "Battery", "Flight controller", "Electronic speed controllers"],
+    "fidelity": "generic_design",
+    "expect": [
+      {"role": "Four arms", "count": 4, "pattern": "radial", "axis": "y", "reference": "Central frame", "directions": ["spatial"]},
+      {"role": "Four motors", "count": 4, "pattern": "radial", "axis": "y", "reference": "Central frame", "directions": ["+y", "-y"]},
+      {"role": "Four propellers", "count": 4, "pattern": "radial", "axis": "y", "reference": "Central frame", "directions": ["+y", "-y"]}
+    ]
+  },
+  {
+    "id": "cooling-fan-row",
+    "request": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward. Let me inspect and separate the main parts. Keep it static; no airflow simulation is needed.",
+    "roles": ["Mounting panel", "Three fan frames", "Three fan rotors"],
+    "fidelity": "generic_design",
+    "expect": [
+      {"role": "Three fan frames", "count": 3, "pattern": "linear", "axis": "x", "reference": "", "directions": ["+z"]},
+      {"role": "Three fan rotors", "count": 3, "pattern": "linear", "axis": "x", "reference": "", "directions": ["+z"]}
+    ]
+  },
+  {
+    "id": "two-driver-speaker",
+    "request": "Show me a tabletop speaker with two matching loudspeaker drivers side by side in its front face, both facing forward. I want to inspect and take apart its main components. It does not need to play sound or animate.",
+    "roles": ["Enclosure", "Two loudspeaker drivers", "Amplifier board", "Rear cover"],
+    "fidelity": "generic_design",
+    "expect": [
+      {"role": "Two loudspeaker drivers", "count": 2, "pattern": "linear", "axis": "x", "reference": "", "directions": ["+z"]}
+    ]
+  }
+]

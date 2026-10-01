@@ -112,6 +112,16 @@ not failed. Completed usage estimate $0.4415 plus $0.25535 held for uncertain ca
 No GPU or Quest run. This frozen batch is stopped; response diagnostics and interface
 observability precede further paid comparisons. No finished generator is established.
 
+The [executable-connection experiment](Research/native_objects/CONNECTION_RESULT.md)
+now derives placement from geometry-backed faces/axes and locks requirements across
+repair. The drone corrected four disconnected motor solids and passed declared
+checks. The lamp passed its checks while omitting the requested seed-inside-leaf
+relationship, so request coverage fails. Speaker and sharpener exhausted their
+response-token allowances; geometry is unassessed. Estimated API cost $0.578555.
+A post-run precision fix was audited against unchanged saved geometry; verdicts
+were unchanged. Requirement coverage and response limits remain unresolved. No
+unfamiliar-case, Quest or finished-generator success is claimed.
+
 Generation research is the active track. The product remains stable; answering,
 voice and motion-inference expansion are paused. Research output does not enter
 production automatically. The existing $5 research ceiling includes the prior run.

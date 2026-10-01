@@ -98,6 +98,22 @@ class ConnectionTests(unittest.TestCase):
         with self.assertRaises(ValueError):self.build(p)
         p=fixture();p['mates'][0]['offset']=float('nan')
         with self.assertRaises(ValueError):self.build(p)
+    def test_submillimetre_cut_face_cannot_pass_absolute_volume_floor(self):
+        p=fixture()
+        for part in p['parts']:part['forms'][0]['size']=[.0002,.0002,.0002]
+        p['parts'][0]['forms'].append(operation('cylinder',[.0001,.0004,.0001],op='subtract'))
+        _,report,_=self.build(p)
+        self.assertFalse(next(c['passed'] for c in report['checks'] if c['kind']=='port_geometry' and c['relation']['port']=='host_port'))
+    def test_small_interference_uses_component_relative_tolerance(self):
+        p=fixture()
+        for part in p['parts']:part['forms'][0]['size']=[x*.001 for x in part['forms'][0]['size']]
+        p['parts'][1]['forms'].append(operation('box',[.0001,.0002,.0001],[0,-.00015,0]))
+        _,report,_=self.build(p)
+        self.assertTrue(any(c['kind']=='assembly_interference' and not c['passed'] for c in report['checks']))
+    def test_equal_numeric_requirements_are_not_false_rejections(self):
+        p=fixture();locked=assembly.freeze(p,['host','child'])
+        p['mates'][0]['offset']=0.0
+        _,report,_=self.build(p,locked);self.assertTrue(report['declared_relations_passed'])
     def test_roundtrip_rotations(self):
         for angles in ([30,20,-40],[40,90,60],[15,-90,32],[0,0,180]):
             original=np.asarray(assembly.base.matrix(angles));actual=assembly.base.matrix(assembly._euler(original))

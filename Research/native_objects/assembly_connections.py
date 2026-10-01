@@ -100,7 +100,7 @@ def _tube(r0,r1,length):
 def _place(shape,frame): return shape.transform(frame[:3,:].tolist())
 
 
-def _vol_ok(value,probe): return value<=max(1e-13,probe.volume()*1e-5)
+def _vol_ok(value,probe): return value<=max(1e-20,probe.volume()*1e-5)
 
 
 def validate(plan,roles):
@@ -151,7 +151,7 @@ def freeze(plan,roles):
 
 
 def check_locked(plan,locked):
-    if json.dumps(requirements(plan),sort_keys=True,separators=(',',':'))!=locked:
+    if json.loads(json.dumps(requirements(plan)))!=json.loads(locked):
         raise ValueError('Repair changed locked assembly requirements')
 
 
@@ -249,8 +249,9 @@ def build(plan,roles,ident,locked):
     for i,a in enumerate(ids):
         for b in ids[i+1:]:
             overlap=(bodies[a]^bodies[b]).volume()
+            tolerance=max(1e-20,min(1e-12,min(bodies[a].volume(),bodies[b].volume())*1e-7))
             report['checks'].append({'kind':'assembly_interference','relation':{'a':a,'b':b},
-                                     'passed':overlap<=1e-12,'measurement':{'intersection_volume_m3':overlap}})
+                                     'passed':overlap<=tolerance,'measurement':{'intersection_volume_m3':overlap,'tolerance_m3':tolerance}})
     report['declared_relations_passed']=all(c['passed'] for c in report['checks'])
     report['global_collisions']='all pairs static positive-volume interference checked; no swept motion'
     report['requirement_coverage']='not_assessed; solver cannot prove omitted functional connections'

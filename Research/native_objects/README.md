@@ -49,6 +49,14 @@ an external geometry model; no GPU run was dispatched. It identified the gap bet
 role-group proposals and spatial construction. The following procedural experiment
 tests that gap without changing the failed Cube/PartCrafter decisions.
 
+## Completed executable-connection experiment
+
+[Connections result 003](CONNECTION_RESULT.md): geometry-backed placement and locked
+repairs work on a limited drone example. The lamp omits an explicit request despite
+passing declared checks; two other responses reached their output-token limits.
+[Protocol](CONNECTION_EXPERIMENT.md) · [Evidence](results/connections-003.json).
+No output repairs, Astra calls, GPU rental or product promotion.
+
 ## Completed solid construction and feedback experiment
 
 [Solid result 002](SOLID_RESULT.md) records two automatic numeric corrections, two

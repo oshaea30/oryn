@@ -1,0 +1,24 @@
+{
+  "records": [
+    {
+      "entry": "creative-concept-0",
+      "parts": 5,
+      "selection_and_separation": true,
+      "motion_disabled": true
+    },
+    {
+      "entry": "generic-drone-1",
+      "parts": 19,
+      "selection_and_separation": true,
+      "motion_disabled": true
+    },
+    {
+      "entry": "generic-drone-0",
+      "parts": 19,
+      "selection_and_separation": true,
+      "motion_disabled": true
+    }
+  ],
+  "errors": [],
+  "reset": true
+}

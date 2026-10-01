@@ -1,0 +1,50 @@
+{
+  "id": "connections-003",
+  "budget_nanos": 900000000,
+  "prior_research_upper_bound_nanos": 1600000000,
+  "aggregate_limit_nanos": 5000000000,
+  "max_attempts": 2,
+  "policy": {
+    "provider": "openai",
+    "profile": "solid_research_construct",
+    "model": "gpt-6-sol",
+    "effort": "high",
+    "ceiling_nanos": 160000000,
+    "max_output_tokens": 12288,
+    "price_version": "openai-standard-text-2026-09-27-v1",
+    "rates": {
+      "input": 2000,
+      "cached": 200,
+      "cache_write": 2500,
+      "output": 10000
+    },
+    "price_expires": 1791072000,
+    "service_tier": "default"
+  },
+  "timeout_seconds": 240,
+  "instructions_sha256": "e30ea9073a4ca5ab67bfed4f23d24e59ec7a01f90b8f1647acac34c0a1bd95ab",
+  "schema_sha256": "65689cfe6f3e5f7b8d7762f5a15f8e6789348a6fd2b11e8c6e2969a4c87065d5",
+  "requests": [
+    {
+      "case_id": "generic-drone",
+      "request": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+    },
+    {
+      "case_id": "generic-speaker",
+      "request": "Generate a generic portable Bluetooth speaker I can take apart to understand its main systems."
+    },
+    {
+      "case_id": "exact-product",
+      "request": "Show me the internal assembly of a JBL Flip 7, including how the battery is mounted."
+    },
+    {
+      "case_id": "creative-concept",
+      "request": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside. Let me inspect its main pieces; it does not need to be a buildable electrical product."
+    },
+    {
+      "case_id": "heldout-001",
+      "request": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces."
+    }
+  ],
+  "execute": true
+}

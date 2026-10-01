@@ -1,0 +1,385 @@
+{
+  "output": "creative-concept-0",
+  "geometry_unchanged": true,
+  "original_declared_pass": true,
+  "stricter_declared_pass": true,
+  "report": {
+    "declared_relations_passed": true,
+    "checks": [
+      {
+        "kind": "connected_component",
+        "relation": {
+          "part": "desk_base"
+        },
+        "passed": true,
+        "measurement": {
+          "solid_islands": 1
+        }
+      },
+      {
+        "kind": "connected_component",
+        "relation": {
+          "part": "stem_support"
+        },
+        "passed": true,
+        "measurement": {
+          "solid_islands": 1
+        }
+      },
+      {
+        "kind": "connected_component",
+        "relation": {
+          "part": "curled_leaf_shade"
+        },
+        "passed": true,
+        "measurement": {
+          "solid_islands": 1
+        }
+      },
+      {
+        "kind": "connected_component",
+        "relation": {
+          "part": "seed_suspension_strand"
+        },
+        "passed": true,
+        "measurement": {
+          "solid_islands": 1
+        }
+      },
+      {
+        "kind": "connected_component",
+        "relation": {
+          "part": "glowing_seed"
+        },
+        "passed": true,
+        "measurement": {
+          "solid_islands": 1
+        }
+      },
+      {
+        "kind": "clearance",
+        "relation": {
+          "a": "desk_base",
+          "b": "curled_leaf_shade",
+          "minimum": 0.28
+        },
+        "passed": true,
+        "measurement": {
+          "gap_m": 0.281,
+          "intersection_volume_m3": 0.0
+        }
+      },
+      {
+        "kind": "clearance",
+        "relation": {
+          "a": "desk_base",
+          "b": "glowing_seed",
+          "minimum": 0.35
+        },
+        "passed": true,
+        "measurement": {
+          "gap_m": 0.351,
+          "intersection_volume_m3": 0.0
+        }
+      },
+      {
+        "kind": "port_geometry",
+        "relation": {
+          "port": "base_top",
+          "part": "desk_base"
+        },
+        "passed": true,
+        "measurement": {
+          "missing_surface_band_m3": 0.0,
+          "obstructed_exterior_m3": 0.0,
+          "scope": "finite central face patch"
+        }
+      },
+      {
+        "kind": "port_geometry",
+        "relation": {
+          "port": "stem_bottom",
+          "part": "stem_support"
+        },
+        "passed": true,
+        "measurement": {
+          "missing_surface_band_m3": 0.0,
+          "obstructed_exterior_m3": 0.0,
+          "scope": "finite central face patch"
+        }
+      },
+      {
+        "kind": "port_geometry",
+        "relation": {
+          "port": "stem_top",
+          "part": "stem_support"
+        },
+        "passed": true,
+        "measurement": {
+          "missing_surface_band_m3": 0.0,
+          "obstructed_exterior_m3": 0.0,
+          "scope": "finite central face patch"
+        }
+      },
+      {
+        "kind": "port_geometry",
+        "relation": {
+          "port": "leaf_root",
+          "part": "curled_leaf_shade"
+        },
+        "passed": true,
+        "measurement": {
+          "missing_surface_band_m3": 0.0,
+          "obstructed_exterior_m3": 0.0,
+          "scope": "finite central face patch"
+        }
+      },
+      {
+        "kind": "port_geometry",
+        "relation": {
+          "port": "leaf_strand_pad",
+          "part": "curled_leaf_shade"
+        },
+        "passed": true,
+        "measurement": {
+          "missing_surface_band_m3": 0.0,
+          "obstructed_exterior_m3": 0.0,
+          "scope": "finite central face patch"
+        }
+      },
+      {
+        "kind": "port_geometry",
+        "relation": {
+          "port": "strand_top",
+          "part": "seed_suspension_strand"
+        },
+        "passed": true,
+        "measurement": {
+          "missing_surface_band_m3": 0.0,
+          "obstructed_exterior_m3": 0.0,
+          "scope": "finite central face patch"
+        }
+      },
+      {
+        "kind": "port_geometry",
+        "relation": {
+          "port": "strand_bottom",
+          "part": "seed_suspension_strand"
+        },
+        "passed": true,
+        "measurement": {
+          "missing_surface_band_m3": 0.0,
+          "obstructed_exterior_m3": 0.0,
+          "scope": "finite central face patch"
+        }
+      },
+      {
+        "kind": "port_geometry",
+        "relation": {
+          "port": "seed_tip",
+          "part": "glowing_seed"
+        },
+        "passed": true,
+        "measurement": {
+          "missing_surface_band_m3": 0.0,
+          "obstructed_exterior_m3": 0.0,
+          "scope": "finite central face patch"
+        }
+      },
+      {
+        "kind": "executable_mate",
+        "relation": {
+          "id": "base_to_stem",
+          "a": "base_top",
+          "b": "stem_bottom",
+          "kind": "face",
+          "offset": 0,
+          "twist": 0,
+          "minimum_clearance": 0,
+          "minimum_overlap": 0
+        },
+        "passed": true,
+        "measurement": {
+          "frame_max_error": 0.0
+        }
+      },
+      {
+        "kind": "executable_mate",
+        "relation": {
+          "id": "stem_to_leaf",
+          "a": "stem_top",
+          "b": "leaf_root",
+          "kind": "face",
+          "offset": 0,
+          "twist": 0,
+          "minimum_clearance": 0,
+          "minimum_overlap": 0
+        },
+        "passed": true,
+        "measurement": {
+          "frame_max_error": 0.0
+        }
+      },
+      {
+        "kind": "executable_mate",
+        "relation": {
+          "id": "leaf_to_strand",
+          "a": "leaf_strand_pad",
+          "b": "strand_top",
+          "kind": "face",
+          "offset": 0,
+          "twist": 0,
+          "minimum_clearance": 0,
+          "minimum_overlap": 0
+        },
+        "passed": true,
+        "measurement": {
+          "frame_max_error": 0.0
+        }
+      },
+      {
+        "kind": "executable_mate",
+        "relation": {
+          "id": "strand_to_seed",
+          "a": "strand_bottom",
+          "b": "seed_tip",
+          "kind": "face",
+          "offset": 0,
+          "twist": 0,
+          "minimum_clearance": 0,
+          "minimum_overlap": 0
+        },
+        "passed": true,
+        "measurement": {
+          "frame_max_error": 0.0
+        }
+      },
+      {
+        "kind": "assembly_interference",
+        "relation": {
+          "a": "desk_base",
+          "b": "stem_support"
+        },
+        "passed": true,
+        "measurement": {
+          "intersection_volume_m3": 0.0,
+          "tolerance_m3": 1e-12
+        }
+      },
+      {
+        "kind": "assembly_interference",
+        "relation": {
+          "a": "desk_base",
+          "b": "curled_leaf_shade"
+        },
+        "passed": true,
+        "measurement": {
+          "intersection_volume_m3": 0.0,
+          "tolerance_m3": 1e-12
+        }
+      },
+      {
+        "kind": "assembly_interference",
+        "relation": {
+          "a": "desk_base",
+          "b": "seed_suspension_strand"
+        },
+        "passed": true,
+        "measurement": {
+          "intersection_volume_m3": 0.0,
+          "tolerance_m3": 4.946031951909171e-13
+        }
+      },
+      {
+        "kind": "assembly_interference",
+        "relation": {
+          "a": "desk_base",
+          "b": "glowing_seed"
+        },
+        "passed": true,
+        "measurement": {
+          "intersection_volume_m3": 0.0,
+          "tolerance_m3": 1e-12
+        }
+      },
+      {
+        "kind": "assembly_interference",
+        "relation": {
+          "a": "stem_support",
+          "b": "curled_leaf_shade"
+        },
+        "passed": true,
+        "measurement": {
+          "intersection_volume_m3": 0.0,
+          "tolerance_m3": 1e-12
+        }
+      },
+      {
+        "kind": "assembly_interference",
+        "relation": {
+          "a": "stem_support",
+          "b": "seed_suspension_strand"
+        },
+        "passed": true,
+        "measurement": {
+          "intersection_volume_m3": 0.0,
+          "tolerance_m3": 4.946031951909171e-13
+        }
+      },
+      {
+        "kind": "assembly_interference",
+        "relation": {
+          "a": "stem_support",
+          "b": "glowing_seed"
+        },
+        "passed": true,
+        "measurement": {
+          "intersection_volume_m3": 0.0,
+          "tolerance_m3": 1e-12
+        }
+      },
+      {
+        "kind": "assembly_interference",
+        "relation": {
+          "a": "curled_leaf_shade",
+          "b": "seed_suspension_strand"
+        },
+        "passed": true,
+        "measurement": {
+          "intersection_volume_m3": 0.0,
+          "tolerance_m3": 4.946031951909171e-13
+        }
+      },
+      {
+        "kind": "assembly_interference",
+        "relation": {
+          "a": "curled_leaf_shade",
+          "b": "glowing_seed"
+        },
+        "passed": true,
+        "measurement": {
+          "intersection_volume_m3": 0.0,
+          "tolerance_m3": 1e-12
+        }
+      },
+      {
+        "kind": "assembly_interference",
+        "relation": {
+          "a": "seed_suspension_strand",
+          "b": "glowing_seed"
+        },
+        "passed": true,
+        "measurement": {
+          "intersection_volume_m3": 0.0,
+          "tolerance_m3": 4.946031951909171e-13
+        }
+      }
+    ],
+    "semantic_completeness": "not_assessed",
+    "global_collisions": "all pairs static positive-volume interference checked; no swept motion",
+    "engineering_correctness": "not_assessed",
+    "native_generation_goal_passed": false,
+    "requirement_coverage": "not_assessed; solver cannot prove omitted functional connections",
+    "locked_requirements_sha256": "8edf079fbdd23d84085addf35144151194a3c13b26bea5586b902fad326eb186"
+  }
+}

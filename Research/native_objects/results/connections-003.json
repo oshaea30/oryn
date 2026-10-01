@@ -1,0 +1,209 @@
+{
+  "experiment": "connections-003",
+  "frozen_commit": "67f7d80",
+  "native_generation_goal_passed": false,
+  "manual_output_repairs": 0,
+  "transport_retries": 0,
+  "cases": [
+    {
+      "case": "generic-drone",
+      "attempts": [
+        {
+          "attempt": 0,
+          "status": "structural_failure",
+          "planning_request_seconds": 117.20211874996312,
+          "billing": {
+            "operation_id": "c03eece5d44031643846bfa9f5d38b8a",
+            "calculated_cost_nanos": 126457500
+          },
+          "connection_compile_seconds": 0.03110295906662941,
+          "build_and_validation_seconds": 0.06598279194440693,
+          "declared_numeric_pass": false,
+          "render_ready_seconds_since_case_start": 118.19745125004556,
+          "semantic_coverage": "unassessed",
+          "visual_quality": "unassessed",
+          "parts": 19
+        },
+        {
+          "attempt": 1,
+          "status": "structural_candidate",
+          "planning_request_seconds": 45.497744958032854,
+          "billing": {
+            "operation_id": "f224f661f1b038df4c61344e53d7ec8d",
+            "calculated_cost_nanos": 102540000
+          },
+          "connection_compile_seconds": 0.0346956659341231,
+          "build_and_validation_seconds": 0.07097925001289696,
+          "declared_numeric_pass": true,
+          "render_ready_seconds_since_case_start": 164.67568345798645,
+          "semantic_coverage": "unassessed",
+          "visual_quality": "unassessed",
+          "parts": 19
+        }
+      ],
+      "elapsed_seconds": 164.67607595806476,
+      "native_generation_goal_passed": false,
+      "manual_repairs": 0
+    },
+    {
+      "case": "generic-speaker",
+      "attempts": [
+        {
+          "attempt": 0,
+          "status": "rejected",
+          "error": "Incomplete generation"
+        }
+      ],
+      "elapsed_seconds": 159.49134962505195,
+      "native_generation_goal_passed": false,
+      "manual_repairs": 0
+    },
+    {
+      "case": "exact-product",
+      "status": "blocked_evidence"
+    },
+    {
+      "case": "creative-concept",
+      "attempts": [
+        {
+          "attempt": 0,
+          "status": "structural_candidate",
+          "planning_request_seconds": 97.49433524999768,
+          "billing": {
+            "operation_id": "e78e175ec5b4b4e4a0e8471e5c22e967",
+            "calculated_cost_nanos": 90527500
+          },
+          "connection_compile_seconds": 0.014976124977692962,
+          "build_and_validation_seconds": 0.032220249995589256,
+          "declared_numeric_pass": true,
+          "render_ready_seconds_since_case_start": 98.37886741710827,
+          "semantic_coverage": "unassessed",
+          "visual_quality": "unassessed",
+          "parts": 5
+        }
+      ],
+      "elapsed_seconds": 98.37933587504085,
+      "native_generation_goal_passed": false,
+      "manual_repairs": 0
+    },
+    {
+      "case": "heldout-001",
+      "attempts": [
+        {
+          "attempt": 0,
+          "status": "rejected",
+          "error": "Incomplete generation"
+        }
+      ],
+      "elapsed_seconds": 133.33005291596055,
+      "native_generation_goal_passed": false,
+      "manual_repairs": 0
+    }
+  ],
+  "ledger": [
+    {
+      "case": "generic-drone",
+      "attempt": 0,
+      "status": "completed",
+      "charged_nanos": 126457500,
+      "calculated_cost_nanos": 126457500,
+      "created": 1790829044,
+      "finished": 1790829160
+    },
+    {
+      "case": "generic-drone",
+      "attempt": 1,
+      "status": "completed",
+      "charged_nanos": 102540000,
+      "calculated_cost_nanos": 102540000,
+      "created": 1790829162,
+      "finished": 1790829207
+    },
+    {
+      "case": "generic-speaker",
+      "attempt": 0,
+      "status": "completed",
+      "charged_nanos": 129547500,
+      "calculated_cost_nanos": 129547500,
+      "created": 1790829208,
+      "finished": 1790829367
+    },
+    {
+      "case": "creative-concept",
+      "attempt": 0,
+      "status": "completed",
+      "charged_nanos": 90527500,
+      "calculated_cost_nanos": 90527500,
+      "created": 1790829368,
+      "finished": 1790829465
+    },
+    {
+      "case": "heldout-001",
+      "attempt": 0,
+      "status": "completed",
+      "charged_nanos": 129482500,
+      "calculated_cost_nanos": 129482500,
+      "created": 1790829466,
+      "finished": 1790829599
+    }
+  ],
+  "calculated_cost_nanos": 578555000,
+  "charged_and_held_nanos": 578555000,
+  "invoice_cost": null,
+  "precision_audits": [
+    {
+      "output": "creative-concept-0",
+      "geometry_unchanged": true,
+      "original_declared_pass": true,
+      "stricter_declared_pass": true
+    },
+    {
+      "output": "generic-drone-0",
+      "geometry_unchanged": true,
+      "original_declared_pass": false,
+      "stricter_declared_pass": false
+    },
+    {
+      "output": "generic-drone-1",
+      "geometry_unchanged": true,
+      "original_declared_pass": true,
+      "stricter_declared_pass": true
+    }
+  ],
+  "artifact_sha256": {
+    "creative-concept-0/request.json": "309c8446a81e316870d35ec7b8b45a00a282dd561ce09cff8f6210d735cca57e",
+    "creative-concept-0/relations.json": "5f0a2169b770ffc429b75645d52f11e8343b68c07d0c7b2b6f3317cf2b669f33",
+    "creative-concept-0/inspection.png": "038496662247a223025bf31a5ab6e2ff2c0ee2c92d0740bde82c1771427cb385",
+    "creative-concept-0/report.json": "b6cfcc04e31f32f7e48fd8aa9d0c72bc230403c502a85b3cc4e711d1264724be",
+    "creative-concept-0/compiled.json": "e2bca7eb35c4ecd416574b60841dbae68a804a443adb117f01ecf1d281cde4d6",
+    "creative-concept-0/package.json": "c2f8679f164da39223c9cc60d417e91d44188602d354f205c4bb84dddf12a408",
+    "creative-concept-0/response.json": "e3fa1b9b8d62b06eba1987afa8d4121a30a72179e192f25310df53c6d446e112",
+    "creative-concept-0/proposal.json": "7610968ee065e3d9f7d12d0446cf34fc6cca91723ae1ebea4ac2f75c7e5952c4",
+    "generic-drone-0/request.json": "351c5adab331dea25d9438ba3f3c2cbdcd47f15458d47e068a409c6cf77e6b48",
+    "generic-drone-0/relations.json": "2dc42059f19289a9092b9bac759fcc4560b25c586e270a831e04113009c0bf51",
+    "generic-drone-0/inspection.png": "d7c80ee432a91347dfebbc64e72f727b853db935501777add2cb492bbc040344",
+    "generic-drone-0/report.json": "15a435dfca83090904f59252f03305564fd2edae257e0285190acadf980e456e",
+    "generic-drone-0/compiled.json": "d6361a325165cedc298528f0f37c7d3e75e9436658a086baf762f99064bca759",
+    "generic-drone-0/package.json": "42b17fcdaea4587de0ab63f48fb86c902cfbe59a5029843c1824bbcaed54d0d8",
+    "generic-drone-0/response.json": "c3b6d736242e7766e0ecc44a4173224f272225e3703ee39db338df82d63a2942",
+    "generic-drone-0/proposal.json": "468f36c397eab2a5701767ca92e7959f0c5b60d8a19c7717cbb72611df7deb8d",
+    "generic-drone-1/request.json": "9e27fd4fb15d8ac20c25ff005ae1c76f2bf70ed79ddeba3f094db1c1df711de7",
+    "generic-drone-1/relations.json": "a09bbd503b407a7750a8e612f3779dc1c3aaa976e2cc80e80f86402afbff356e",
+    "generic-drone-1/inspection.png": "4af88405752748868a77e40d0b09544452b12724b51b9c039a30a7a3f6fcc921",
+    "generic-drone-1/report.json": "170e344957b9b8a8bad764fc3f87ccaecf034e8e36f98c22fa797dc58e08e82a",
+    "generic-drone-1/compiled.json": "87e88aeeb6d0dbba39e314f31c731127b0919ba64c5bac90c21bce0e926c0ddc",
+    "generic-drone-1/package.json": "b6ed24329aa2d94eadb748da5c60f39109da170a56a1879e929a5a799264fd9b",
+    "generic-drone-1/response.json": "aa45abac72f8753e90b80694743b0a9ad99c15727561ff102861c461b6b783c8",
+    "generic-drone-1/proposal.json": "3271f6b57c7031e63463686cebb27ea536aa70338f86567ebfc22df7ab07272e",
+    "generic-speaker-0/request.json": "045b71c37b8c3e9808cc474e0d2cff0730be117442b8d8f08dcf2b842088449e",
+    "generic-speaker-0/response.json": "e5a493d81aafea048ed335fde2f518e83616f2d8d896c975291818a108c49994",
+    "heldout-001-0/request.json": "3e94ec78b93fac1e292c45e210b099ac4a052b45d3f8615f6ba490a9f54f5c40",
+    "heldout-001-0/response.json": "15cc40c7f4a1560992c0acf0047e6644e3bf283201e13deea0a7c2c87448ce68"
+  },
+  "independent_assessment": {
+    "generic-drone": "Partial structural success; crude technical geometry, role fidelity and product quality unproven.",
+    "creative-concept": "Request failure: solid leaf with seed outside; no containment requirement, despite the request saying inside.",
+    "generic-speaker": "Incomplete response: max_output_tokens. No geometry-quality judgment.",
+    "heldout-001": "Incomplete response: max_output_tokens. No geometry-quality judgment."
+  }
+}

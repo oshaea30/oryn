@@ -1,0 +1,127 @@
+{
+  "clearances": [
+    {
+      "a": "desk_base",
+      "b": "curled_leaf_shade",
+      "minimum": 0.28
+    },
+    {
+      "a": "desk_base",
+      "b": "glowing_seed",
+      "minimum": 0.35
+    }
+  ],
+  "containments": [],
+  "mates": [
+    {
+      "a": "base_top",
+      "b": "stem_bottom",
+      "id": "base_to_stem",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "leaf_strand_pad",
+      "b": "strand_top",
+      "id": "leaf_to_strand",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "stem_top",
+      "b": "leaf_root",
+      "id": "stem_to_leaf",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "strand_bottom",
+      "b": "seed_tip",
+      "id": "strand_to_seed",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    }
+  ],
+  "parts": [
+    [
+      "curled_leaf_shade",
+      "Curled leaf shade",
+      "stem_support"
+    ],
+    [
+      "desk_base",
+      "Desk base",
+      ""
+    ],
+    [
+      "glowing_seed",
+      "Glowing seed",
+      "seed_suspension_strand"
+    ],
+    [
+      "seed_suspension_strand",
+      "Seed suspension strand",
+      "curled_leaf_shade"
+    ],
+    [
+      "stem_support",
+      "Stem support",
+      "desk_base"
+    ]
+  ],
+  "ports": [
+    [
+      "base_top",
+      "desk_base",
+      "face"
+    ],
+    [
+      "leaf_root",
+      "curled_leaf_shade",
+      "face"
+    ],
+    [
+      "leaf_strand_pad",
+      "curled_leaf_shade",
+      "face"
+    ],
+    [
+      "seed_tip",
+      "glowing_seed",
+      "face"
+    ],
+    [
+      "stem_bottom",
+      "stem_support",
+      "face"
+    ],
+    [
+      "stem_top",
+      "stem_support",
+      "face"
+    ],
+    [
+      "strand_bottom",
+      "seed_suspension_strand",
+      "face"
+    ],
+    [
+      "strand_top",
+      "seed_suspension_strand",
+      "face"
+    ]
+  ],
+  "symmetries": []
+}

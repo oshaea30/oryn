@@ -1,0 +1,19 @@
+{
+  "model": "gpt-6-sol",
+  "status": "incomplete",
+  "incomplete_details": {
+    "reason": "max_output_tokens"
+  },
+  "usage": {
+    "input_tokens": 2667,
+    "input_tokens_details": {
+      "cache_write_tokens": 122,
+      "cached_tokens": 2542
+    },
+    "output_tokens": 12288,
+    "output_tokens_details": {
+      "reasoning_tokens": 10438
+    },
+    "total_tokens": 14955
+  }
+}

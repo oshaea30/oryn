@@ -58,6 +58,15 @@ class PipelineTests(unittest.TestCase):
             self.assertEqual(attempt,0);raise ValueError('Incomplete provider response')
         states=run.execute(self.items(),self.folder,model,renderer=lambda _:None)
         self.assertTrue(all(s['status']=='response_invalid' and not s['geometry_executed'] and len(s['attempts'])==1 for s in states.values()))
+    def test_saved_extraction_revalidation_preserves_response(self):
+        c=inventory();case=run.CASES[0];folder=self.folder/(case+'-extract');folder.mkdir()
+        response={'status':'completed','output':[{'type':'message','content':[{'type':'output_text','text':json.dumps(c['inventory'])}]}]}
+        for name,data in [('response.json',response),('inventory.json',c['inventory']),('response-metadata.json',{'operation_id':'original'})]:run.prior.write(folder/name,data)
+        run.prior.write(self.folder/'result.json',{'cases':[{'case':case,'status':'extraction_failed','attempts':[],'request':REQUEST,'error':'Invalid identity'}]})
+        replay=run.saved_extractions(self.folder)[case]
+        self.assertEqual(replay['raw'],c['inventory']);self.assertEqual(replay['billing']['new_cost_nanos'],0)
+        run.prior.write(folder/'inventory.json',{})
+        with self.assertRaises(ValueError):run.saved_extractions(self.folder)
     def test_invalid_extraction_stops_before_plan(self):
         def model(case,stage,attempt,context,folder):
             self.assertEqual(stage,'extract');return {},{}

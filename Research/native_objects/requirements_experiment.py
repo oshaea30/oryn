@@ -100,11 +100,12 @@ def evaluate_candidate(raw,contract,folder,case,locked=None,builder=geometry.bui
             'feedback':{'failed_geometry_checks':[c for c in report['checks'] if not c['passed']]},'parts':len(pkg['parts'])},frozen
 
 
-def execute(items,output,model,renderer=prior.render):
+def execute(items,output,model,renderer=prior.render,case_ids=CASES):
+    if len(set(case_ids))!=len(case_ids) or any(c not in CASES for c in case_ids):raise ValueError("Invalid case subset")
     states={};order={i['case_id']:i for i in items};started=time.perf_counter()
     def save():prior.write(output/'result.json',{'cases':list(states.values()),'native_generation_goal_passed':False,'elapsed_seconds':time.perf_counter()-started})
     # All initial attempts precede repairs; one difficult case cannot consume the whole budget first.
-    for case in CASES:
+    for case in case_ids:
         item=order[case];p=item['candidate']['plan'];state={'case':case,'request':item['request'],'attempts':[],'geometry_executed':False};states[case]=state
         if p['fidelity'] not in ('generic_design','creative_concept') or p['retrieval']!='none' or p['next_step']!='propose_geometry':state['status']='blocked_evidence';save();continue
         folder=output/(case+'-extract');folder.mkdir();before=time.perf_counter();state['status']='extracting';save();print('Requirements '+case,flush=True)
@@ -116,7 +117,7 @@ def execute(items,output,model,renderer=prior.render):
         except (prior.CommandError,ValueError,KeyError,TypeError) as e:state.update(status='extraction_failed',error=str(e))
         finally:state['extraction_seconds']=time.perf_counter()-before;save()
     for attempt in range(MAX_ATTEMPTS):
-        for case in CASES:
+        for case in case_ids:
             state=states[case]
             if state['status'] not in ('requirements_ready','coverage_failed','geometry_failed','planning_rejected'):continue
             folder=output/(case+'-plan-'+str(attempt));folder.mkdir();before=time.perf_counter();record={'attempt':attempt,'status':'planning','geometry_executed':False};state['attempts'].append(record);save()
@@ -150,17 +151,38 @@ def execute(items,output,model,renderer=prior.render):
     return states
 
 
+def saved_extractions(source):
+    """Recover only never-planned cases from unchanged completed provider responses."""
+    states=json.loads((source/'result.json').read_text())['cases'];replayed={}
+    if any(s['status']=='extracting' or any(a['status']=='planning' for a in s.get('attempts',[])) for s in states):
+        raise ValueError('Source experiment is still running')
+    for state in states:
+        if state['status']!='extraction_failed' or state.get('attempts'):continue
+        case=state['case'];folder=source/(case+'-extract')
+        if case not in CASES or not (folder/'inventory.json').exists():continue
+        response=json.loads((folder/'response.json').read_text());raw=prior.parse(response)
+        if raw!=json.loads((folder/'inventory.json').read_text()):raise ValueError('Saved extraction changed')
+        meta=json.loads((folder/'response-metadata.json').read_text())
+        replayed[case]={'raw':raw,'request':state['request'],'response_sha256':hashlib.sha256((folder/'response.json').read_bytes()).hexdigest(),
+                       'original_error':state['error'],'billing':{'replayed':True,'new_cost_nanos':0,'original_operation_id':meta['operation_id']}}
+    if not replayed:raise ValueError('No completed, never-planned extraction to revalidate')
+    return replayed
+
+
 def main():
-    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--output',type=Path,required=True);parser.add_argument('--execute',action='store_true');args=parser.parse_args()
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--output',type=Path,required=True);parser.add_argument('--execute',action='store_true');parser.add_argument('--revalidate-from',type=Path);args=parser.parse_args()
     args.output.mkdir(parents=True,exist_ok=False)
     home=Path(__file__).parent;items=json.loads((home/'results/planning-001.json').read_text())['items']
     items.append(json.loads((home/'results/construction-001/heldout-plan.json').read_text())['items'][0])
+    replayed=saved_extractions(args.revalidate_from) if args.revalidate_from else {}
+    for item in items:
+        if item['case_id'] in replayed and item['request']!=replayed[item['case_id']]['request']:raise ValueError('Original request changed')
     hashes={name:hashlib.sha256((home/name).read_bytes()).hexdigest() for name in ('assembly_connections.py','construction_solid.py','construction.py')}
     prior.write(args.output/'protocol.json',{'id':EXPERIMENT,'budget_nanos':BUDGET,'prior_research_upper_bound_nanos':PRIOR_RESEARCH_UPPER_BOUND,
        'aggregate_limit_nanos':AGGREGATE_LIMIT,'policies':{s:selected(s) for s in ('extract','plan')},'geometry_sha256':hashes,
        'extract_instructions_sha256':prior.digest(intent.EXTRACT_INSTRUCTIONS),'plan_instructions_sha256':prior.digest(compact.INSTRUCTIONS),
        'requirement_schema_sha256':prior.digest(intent.REQUIREMENTS_SCHEMA),'plan_schema_sha256':prior.digest(compact.SCHEMA),
-       'max_plan_attempts':2,'execute':args.execute,'requests':[{k:i[k] for k in ('case_id','request')} for i in items]})
+       'max_plan_attempts':2,'execute':args.execute,'revalidated_extractions':replayed,'requests':[{k:i[k] for k in ('case_id','request')} for i in items]})
     if not args.execute:return
     lock=open(prior.ROOT/'.oryn-usage'/(EXPERIMENT+'.lock'),'a');fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
     ledger=prior.UsageLedger();key=prior.MacKeychain(account=b'openai-api-key').load()
@@ -169,8 +191,9 @@ def main():
         if ledger.summary()['halted']:raise prior.CommandError('Shared ledger halted')
         for name,expected in hashes.items():
             if hashlib.sha256((home/name).read_bytes()).hexdigest()!=expected:raise prior.CommandError('Frozen geometry executor changed')
+        if stage=='extract' and case in replayed:return deepcopy(replayed[case]['raw']),replayed[case]['billing']
         return request_model(case,stage,attempt,context,folder,ledger,key)
-    execute(items,args.output,model)
+    execute(items,args.output,model,case_ids=tuple(replayed) if replayed else CASES)
     print(json.dumps({'charged_and_held_usd':spent(ledger)/1e9}))
 
 if __name__=='__main__':main()

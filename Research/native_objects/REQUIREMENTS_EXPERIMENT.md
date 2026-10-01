@@ -85,3 +85,17 @@ If coverage fails, address binding/planning reliability. If complete plans canno
 realize required geometry, report that specific downstream limitation. Do not
 expand the executor, raise token limits, launch new providers or add more paid
 experiments automatically. Preserve every attempt and the frozen protocol.
+
+## Local validation correction after initial execution
+
+The initial sharpener extraction returned uppercase entity/requirement IDs. The
+prompt/schema did not prohibit them; the lowercase-only local validator rejected
+otherwise stable identifiers. Accept ASCII upper/lowercase IDs without rewriting
+or normalizing them. Preserve the original failed result. Revalidate that exact
+saved completed response and continue only its previously unattempted planning
+calls under the SAME operation IDs, batch cap and remaining budget. No paid
+extraction retry, altered inventory, new geometry capability or semantic correction.
+The recovery output records the source response hash and original error. Other
+completed cases are not replayed. This is a separately recorded local validation
+amendment, not an uninterrupted frozen-run success. The deferred initial plan runs
+after the speaker repair because the validator prevented its original scheduling.

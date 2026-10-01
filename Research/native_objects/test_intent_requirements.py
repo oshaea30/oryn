@@ -56,6 +56,17 @@ class RequirementTests(unittest.TestCase):
     def test_evidence_cannot_be_replaced_by_geometry(self):
         c=inventory([req('exact','exact_identity',value='named product',kind='visual',obligation='evidence_required')]);b=bindings()+[{'id':'exact','kind':'components','refs':['part:child'],'note':''}]
         self.assertFalse(ir.coverage(c,proposal(),b)['geometry_allowed'])
+    def test_uppercase_ids_are_preserved_not_normalized(self):
+        raw=inventory()['inventory'];raw['entities'][0]['id']='HOST'
+        for r in raw['requirements']:
+            r['id']=r['id'].upper()
+            if r['subject']=='host':r['subject']='HOST'
+            if r['target']=='host':r['target']='HOST'
+        c=ir.validate_inventory(raw,REQUEST,['host','child'])
+        b=bindings()
+        for x in b:x['id']=x['id'].upper()
+        self.assertEqual(c['inventory'],raw)
+        self.assertTrue(ir.coverage(c,proposal(),b)['geometry_allowed'])
     def test_negative_reference_is_invalid(self):
         b=bindings();b[-1]['refs']=['containment:-1'];self.assertFalse(ir.coverage(inventory(),proposal(),b)['coverage_complete'])
     def test_compact_roundtrip_preserves_geometry(self):

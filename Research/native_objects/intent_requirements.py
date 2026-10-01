@@ -59,7 +59,7 @@ Keep 1..48 requirements, short IDs, and each quote/value <=240 characters. No mo
 '''
 
 
-def ident(x):return isinstance(x,str) and bool(re.fullmatch('[a-z][a-z0-9_]{0,47}',x))
+def ident(x):return isinstance(x,str) and bool(re.fullmatch('[A-Za-z][A-Za-z0-9_]{0,47}',x))
 
 def digest(x):return hashlib.sha256(json.dumps(x,sort_keys=True,separators=(',',':')).encode()).hexdigest()
 

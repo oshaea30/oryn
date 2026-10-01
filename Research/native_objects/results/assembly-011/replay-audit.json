@@ -1,0 +1,16 @@
+{
+  "source_experiment": "assembly-010",
+  "case": "cooling-fan-row",
+  "source_attempt": 0,
+  "source_files_sha256": {
+    "cooling-fan-row-extract/inventory.json": "78ff9f8bb63af8bb01033e40f0388f3b0a45ab2174968e5591fbf71463565471",
+    "cooling-fan-row-extract/contract.json": "a3725364b250e4177132ae1462107d365908ed7a6f6b0a63df8e81e6ccb1bf6e",
+    "cooling-fan-row-plan-0/compact-plan.json": "0c96bfd422b257a71b0178e032cf2c3ba323c63b850ddc7bbda24b83d94b267b",
+    "cooling-fan-row-plan-0/compiled.json": "40b52db62ba2d1d525f13263feda21946e0fb2b678d2b9ad4f291487a4ac1419",
+    "cooling-fan-row-plan-0/assembly-lock.json": "89f72b155eab1be7a1030a31a008f4b74934a75c5ff6140c552e94a0865e8ebc",
+    "cooling-fan-row-plan-0/arrangement-bindings.json": "6171280cba2506291a8a6ecbf4b9fda569cffe63f5aae923142c8f47aed2a2af"
+  },
+  "solved_geometry_identical": true,
+  "no_new_generation_cost": true,
+  "compiled_sha256": "af8b6bb681fcc73f8e267758c1baefd650898aee663b71b53cd51a8f8484e71b"
+}

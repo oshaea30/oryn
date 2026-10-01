@@ -1,0 +1,154 @@
+{
+  "baseline_sha256": "7e663f2ca54d9ca4957ae8ed2b38e7a03083984c32cbe611620c9308863df5da",
+  "preserved_fact_count": 55,
+  "passed": false,
+  "regressions": [
+    {
+      "identity": {
+        "kind": "assembly_arrangement",
+        "requirement_id": "r09",
+        "assembly_id": "a01",
+        "aspect": "orientation",
+        "facet": "member_relation",
+        "part": "frame_center",
+        "port": "frame_center_bore"
+      },
+      "reason": "previously_passing_fact_failed"
+    },
+    {
+      "identity": {
+        "kind": "assembly_arrangement",
+        "requirement_id": "r09",
+        "assembly_id": "a01",
+        "aspect": "orientation",
+        "facet": "member_relation",
+        "part": "frame_left",
+        "port": "frame_left_bore"
+      },
+      "reason": "previously_passing_fact_failed"
+    },
+    {
+      "identity": {
+        "kind": "assembly_arrangement",
+        "requirement_id": "r09",
+        "assembly_id": "a01",
+        "aspect": "orientation",
+        "facet": "member_relation",
+        "part": "frame_right",
+        "port": "frame_right_bore"
+      },
+      "reason": "previously_passing_fact_failed"
+    },
+    {
+      "identity": {
+        "kind": "assembly_arrangement",
+        "requirement_id": "r11",
+        "assembly_id": "a02",
+        "aspect": "orientation",
+        "facet": "member_relation",
+        "part": "rotor_center",
+        "port": "rotor_center_axis"
+      },
+      "reason": "previously_passing_fact_failed"
+    },
+    {
+      "identity": {
+        "kind": "assembly_arrangement",
+        "requirement_id": "r11",
+        "assembly_id": "a02",
+        "aspect": "orientation",
+        "facet": "member_relation",
+        "part": "rotor_left",
+        "port": "rotor_left_axis"
+      },
+      "reason": "previously_passing_fact_failed"
+    },
+    {
+      "identity": {
+        "kind": "assembly_arrangement",
+        "requirement_id": "r11",
+        "assembly_id": "a02",
+        "aspect": "orientation",
+        "facet": "member_relation",
+        "part": "rotor_right",
+        "port": "rotor_right_axis"
+      },
+      "reason": "previously_passing_fact_failed"
+    },
+    {
+      "identity": {
+        "kind": "connected_component",
+        "relation": {
+          "part": "frame_center"
+        }
+      },
+      "reason": "previously_passing_fact_failed"
+    },
+    {
+      "identity": {
+        "kind": "connected_component",
+        "relation": {
+          "part": "frame_left"
+        }
+      },
+      "reason": "previously_passing_fact_failed"
+    },
+    {
+      "identity": {
+        "kind": "connected_component",
+        "relation": {
+          "part": "frame_right"
+        }
+      },
+      "reason": "previously_passing_fact_failed"
+    },
+    {
+      "identity": {
+        "kind": "executable_mate",
+        "relation": {
+          "id": "seat_center",
+          "a": "frame_center_bore",
+          "b": "rotor_center_axis",
+          "kind": "coaxial",
+          "offset": 0,
+          "twist": 0,
+          "minimum_clearance": 0.003,
+          "minimum_overlap": 0.008
+        }
+      },
+      "reason": "previously_passing_fact_failed"
+    },
+    {
+      "identity": {
+        "kind": "executable_mate",
+        "relation": {
+          "id": "seat_left",
+          "a": "frame_left_bore",
+          "b": "rotor_left_axis",
+          "kind": "coaxial",
+          "offset": 0,
+          "twist": 0,
+          "minimum_clearance": 0.003,
+          "minimum_overlap": 0.008
+        }
+      },
+      "reason": "previously_passing_fact_failed"
+    },
+    {
+      "identity": {
+        "kind": "executable_mate",
+        "relation": {
+          "id": "seat_right",
+          "a": "frame_right_bore",
+          "b": "rotor_right_axis",
+          "kind": "coaxial",
+          "offset": 0,
+          "twist": 0,
+          "minimum_clearance": 0.003,
+          "minimum_overlap": 0.008
+        }
+      },
+      "reason": "previously_passing_fact_failed"
+    }
+  ]
+}

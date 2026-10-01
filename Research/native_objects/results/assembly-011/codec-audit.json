@@ -1,0 +1,18 @@
+[
+  {
+    "case": "cooling-fan-row",
+    "lossless_roundtrip": true,
+    "named_json_characters": 3041,
+    "compact_json_characters": 1743,
+    "character_reduction_fraction": 0.4268332785268004,
+    "token_reduction": "not measured; character counts are not token counts"
+  },
+  {
+    "case": "two-driver-speaker",
+    "lossless_roundtrip": true,
+    "named_json_characters": 3336,
+    "compact_json_characters": 1862,
+    "character_reduction_fraction": 0.4418465227817746,
+    "token_reduction": "not measured; character counts are not token counts"
+  }
+]

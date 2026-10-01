@@ -66,21 +66,27 @@ executor unchanged. That confirmation passed 196 targeted test executions. Addit
 GPU spend. User-authorized shared daily limit $6; aggregate research ceiling $5.
 [Earlier interpretation failures](MEANING_RESULT.md) remain retained.
 
-## Assembly arrangement result
+## Assembly arrangement and repair results
 
-[Assembly 010](ASSEMBLY_RESULT.md) adds explicit placement/orientation decisions for
-repeated groups and measures them in the object frame. The fan and speaker preserve
-the tested group intent. The fan's seven-part geometry still fails: its one repair
-reverses every requested axis and leaves disconnected frames/insufficient overlap.
-The speaker remains blocked on front-face placement; the drone inventory exhausts
-its response allowance. Cross-family generation has **not** passed.
+[Assembly 011](ASSEMBLY_FOLLOWUP_RESULT.md) produces a complete 34-record drone
+inventory within the same response allowance, preserving the tested radial groups and
+shared axes. Construction then times out at 240 seconds; the batch stops. The speaker
+returns an invalid exclusion category and no front-surface translation. No new object
+or alternative fan repair completed. General generation remains unproven.
 
-Group decisions, coverage, real-feature checks and binding locks remain useful. Next
-work must address the separate output-capacity, surface-placement and repair failures;
-do not add object recipes, relax checks or declare interpretation generally solved.
-152 targeted test executions and nine browser checks pass. API estimate $0.2022;
-no new uncertain reservations, funding errors or GPU spending. Original failures and
-an unchanged-geometry diagnostic replay are retained.
+Generic exterior-surface contact checks and measured repair-preservation feedback are
+implemented. Free replay of the unchanged [010 fan outputs](ASSEMBLY_RESULT.md) names
+12 regressions in the old repair. That proves detection, not improved live repair.
+An alternate compact typed format preserves schema enums and is prepared/tested locally,
+but not dispatched. Resolve surface interpretation and uncertain construction outcomes
+before more paid trials; no geometry expansion, case recipes or production promotion.
+
+166 relevant tests and 18 browser checks pass; the browser checks use old diagnostic
+geometry. Completed API-call estimates total $0.0509725, plus $0.1405625 held for the
+unknown timeout outcome ($0.191535 consumed/held). No funding error or GPU spending.
+The earlier [010 result](ASSEMBLY_RESULT.md) remains retained: fan and speaker group
+intent survives, but fan geometry fails, speaker front-face placement is unsupported,
+and the original drone inventory truncates. Its API estimate was $0.2022.
 
 ## Spatial bridge result
 

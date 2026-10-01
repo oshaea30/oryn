@@ -1,0 +1,499 @@
+{
+  "requirements": [
+    [
+      "r0",
+      "required",
+      "visual",
+      "object",
+      "",
+      "appearance",
+      "generic quadcopter drone",
+      "appearance",
+      "explicit",
+      "s0"
+    ],
+    [
+      "r1",
+      "required",
+      "entity",
+      "e0",
+      "",
+      "exists",
+      "",
+      "structure",
+      "inferred",
+      "s0"
+    ],
+    [
+      "r2",
+      "required",
+      "entity",
+      "e1",
+      "",
+      "exists",
+      "",
+      "structure",
+      "inferred",
+      "s0"
+    ],
+    [
+      "r3",
+      "required",
+      "entity",
+      "e2",
+      "",
+      "exists",
+      "",
+      "structure",
+      "inferred",
+      "s0"
+    ],
+    [
+      "r4",
+      "required",
+      "entity",
+      "e3",
+      "",
+      "exists",
+      "",
+      "structure",
+      "inferred",
+      "s0"
+    ],
+    [
+      "r5",
+      "required",
+      "entity",
+      "e4",
+      "",
+      "exists",
+      "",
+      "structure",
+      "inferred",
+      "s0"
+    ],
+    [
+      "r6",
+      "required",
+      "entity",
+      "e5",
+      "",
+      "exists",
+      "",
+      "structure",
+      "inferred",
+      "s0"
+    ],
+    [
+      "r7",
+      "required",
+      "entity",
+      "e6",
+      "",
+      "exists",
+      "",
+      "structure",
+      "inferred",
+      "s0"
+    ],
+    [
+      "r8",
+      "required",
+      "constraint",
+      "e1",
+      "",
+      "count",
+      "4",
+      "structure",
+      "inferred",
+      "s0"
+    ],
+    [
+      "r9",
+      "required",
+      "constraint",
+      "e2",
+      "",
+      "count",
+      "4",
+      "structure",
+      "inferred",
+      "s0"
+    ],
+    [
+      "r10",
+      "required",
+      "constraint",
+      "e3",
+      "",
+      "count",
+      "4",
+      "structure",
+      "inferred",
+      "s0"
+    ],
+    [
+      "r11",
+      "design_choice",
+      "constraint",
+      "e6",
+      "",
+      "count",
+      "4",
+      "structure",
+      "design_choice",
+      ""
+    ],
+    [
+      "r12",
+      "required",
+      "relation",
+      "e1",
+      "e0",
+      "other",
+      "evenly spaced around frame in a horizontal circle",
+      "structure",
+      "inferred",
+      "s0"
+    ],
+    [
+      "r13",
+      "required",
+      "relation",
+      "e1",
+      "e0",
+      "other",
+      "arms point radially outward in horizontal plane",
+      "structure",
+      "inferred",
+      "s0"
+    ],
+    [
+      "r14",
+      "required",
+      "relation",
+      "e2",
+      "e0",
+      "other",
+      "evenly spaced around frame in a horizontal circle",
+      "structure",
+      "inferred",
+      "s0"
+    ],
+    [
+      "r15",
+      "required",
+      "constraint",
+      "e2",
+      "",
+      "other",
+      "motor shaft axes point upward",
+      "structure",
+      "inferred",
+      "s0"
+    ],
+    [
+      "r16",
+      "required",
+      "relation",
+      "e3",
+      "e0",
+      "other",
+      "evenly spaced around frame in a horizontal circle",
+      "structure",
+      "inferred",
+      "s0"
+    ],
+    [
+      "r17",
+      "required",
+      "constraint",
+      "e3",
+      "",
+      "other",
+      "propeller axes point upward",
+      "structure",
+      "inferred",
+      "s0"
+    ],
+    [
+      "r18",
+      "design_choice",
+      "constraint",
+      "e6",
+      "",
+      "other",
+      "one controller along each arm",
+      "structure",
+      "design_choice",
+      ""
+    ],
+    [
+      "r19",
+      "design_choice",
+      "constraint",
+      "e6",
+      "",
+      "other",
+      "each controller follows its corresponding arm",
+      "structure",
+      "design_choice",
+      ""
+    ],
+    [
+      "r20",
+      "required",
+      "relation",
+      "e1",
+      "e0",
+      "attached",
+      "",
+      "structure",
+      "inferred",
+      "s0"
+    ],
+    [
+      "r21",
+      "required",
+      "relation",
+      "e2",
+      "e1",
+      "other",
+      "one motor at the outward end of each arm",
+      "structure",
+      "inferred",
+      "s0"
+    ],
+    [
+      "r22",
+      "required",
+      "relation",
+      "e2",
+      "e1",
+      "attached",
+      "",
+      "structure",
+      "inferred",
+      "s0"
+    ],
+    [
+      "r23",
+      "required",
+      "relation",
+      "e3",
+      "e2",
+      "other",
+      "one propeller axis coincident with each motor axis",
+      "structure",
+      "inferred",
+      "s0"
+    ],
+    [
+      "r24",
+      "required",
+      "relation",
+      "e3",
+      "e2",
+      "attached",
+      "",
+      "structure",
+      "inferred",
+      "s0"
+    ],
+    [
+      "r25",
+      "required",
+      "relation",
+      "e4",
+      "e0",
+      "attached",
+      "",
+      "structure",
+      "inferred",
+      "s0"
+    ],
+    [
+      "r26",
+      "required",
+      "relation",
+      "e5",
+      "e0",
+      "attached",
+      "",
+      "structure",
+      "inferred",
+      "s0"
+    ],
+    [
+      "r27",
+      "required",
+      "relation",
+      "e4",
+      "e5",
+      "connected",
+      "",
+      "structure",
+      "inferred",
+      "s0"
+    ],
+    [
+      "r28",
+      "required",
+      "relation",
+      "e5",
+      "e6",
+      "connected",
+      "",
+      "structure",
+      "inferred",
+      "s0"
+    ],
+    [
+      "r29",
+      "required",
+      "relation",
+      "e6",
+      "e2",
+      "connected",
+      "",
+      "structure",
+      "inferred",
+      "s0"
+    ],
+    [
+      "r30",
+      "design_choice",
+      "relation",
+      "e6",
+      "e1",
+      "attached",
+      "",
+      "structure",
+      "design_choice",
+      ""
+    ],
+    [
+      "r31",
+      "required",
+      "behavior",
+      "object",
+      "",
+      "capability",
+      "inspect",
+      "behavior",
+      "explicit",
+      "s0"
+    ],
+    [
+      "r32",
+      "required",
+      "behavior",
+      "object",
+      "",
+      "capability",
+      "geometric_explode",
+      "behavior",
+      "explicit",
+      "s0"
+    ],
+    [
+      "r33",
+      "required",
+      "behavior",
+      "object",
+      "",
+      "capability",
+      "reassemble",
+      "behavior",
+      "inferred",
+      "s0"
+    ]
+  ],
+  "exclusions": [],
+  "spatial": [
+    {
+      "id": "r13",
+      "operator": "radial_outward",
+      "reference": "",
+      "axis": "y"
+    },
+    {
+      "id": "r21",
+      "operator": "outer_end",
+      "reference": "e0",
+      "axis": ""
+    },
+    {
+      "id": "r23",
+      "operator": "axis_aligned",
+      "reference": "",
+      "axis": ""
+    }
+  ],
+  "assemblies": [
+    {
+      "id": "a0",
+      "members": [
+        "e1"
+      ],
+      "placement": {
+        "id": "r12",
+        "pattern": "radial",
+        "reference": "e0",
+        "axis": "y"
+      },
+      "orientation": {
+        "id": "r13",
+        "direction": "spatial"
+      }
+    },
+    {
+      "id": "a1",
+      "members": [
+        "e2"
+      ],
+      "placement": {
+        "id": "r14",
+        "pattern": "radial",
+        "reference": "e0",
+        "axis": "y"
+      },
+      "orientation": {
+        "id": "r15",
+        "direction": "+y"
+      }
+    },
+    {
+      "id": "a2",
+      "members": [
+        "e3"
+      ],
+      "placement": {
+        "id": "r16",
+        "pattern": "radial",
+        "reference": "e0",
+        "axis": "y"
+      },
+      "orientation": {
+        "id": "r17",
+        "direction": "+y"
+      }
+    },
+    {
+      "id": "a3",
+      "members": [
+        "e6"
+      ],
+      "placement": {
+        "id": "r18",
+        "pattern": "unsupported",
+        "reference": "",
+        "axis": ""
+      },
+      "orientation": {
+        "id": "r19",
+        "direction": "unsupported"
+      }
+    }
+  ]
+}

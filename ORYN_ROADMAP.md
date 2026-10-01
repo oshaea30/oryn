@@ -168,17 +168,21 @@ test executions and seven browser checks pass. This is a narrow simple-concept s
 not a general-object or visual-quality breakthrough.
 
 The [assembly arrangement experiment](Research/native_objects/ASSEMBLY_RESULT.md)
-now requires group placement and orientation decisions and checks solved geometry in
-the object frame. Fan and speaker group intent survives. The fan's seven parts fail
-construction after one repair reverses every declared axis and leaves disconnected
-frames/insufficient overlap. The speaker blocks on unsupported front-face placement;
-the drone exhausts its interpretation response allowance. No cross-family pass.
+requires repeated-group placement/orientation decisions and measures solved geometry.
+Its [011 follow-up](Research/native_objects/ASSEMBLY_FOLLOWUP_RESULT.md) now gets a
+complete 34-record drone inventory under the same API output allowance, preserving
+the tested radial groups and shared axes. Construction times out at 240 seconds with
+unknown billing/outcome; the batch stops without new geometry or a new fan repair.
+The speaker fails an exclusion category and leaves front-surface placement untranslated.
+There is still no cross-family generation pass.
 
-Keep the group checks. Resolve response capacity, generic surface placement and repair
-regressions as separate failures before widening layout scope. No geometry-executor
-change, handwritten output repair, GPU use or production promotion. 152 targeted test
-executions and nine browser checks pass; API estimate $0.2022 with no new uncertain
-reservations or funding errors. The diagnostic replay preserves original verdicts.
+Generic exterior-surface checks and measured repair-preservation feedback are implemented.
+Free replay of unchanged 010 fan geometry names 12 repair regressions; it does not prove
+better live repair. A compact typed transport retains schema enums and is locally tested,
+but not dispatched. Keep the executor unchanged; resolve interpretation/transport failures
+before widening scope. No authored output repair, GPU work or production promotion.
+166 relevant tests and 18 browser checks pass (old replay geometry). Completed API
+estimates are $0.0509725 plus a $0.1405625 timeout reservation. No funding error.
 
 Generation research is the active track. The product remains stable; answering,
 voice and motion-inference expansion are paused. Research output does not enter

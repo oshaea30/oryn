@@ -1,0 +1,93 @@
+[
+  {
+    "case": "generic-drone",
+    "status": "request_failed",
+    "geometry_executed": false,
+    "predeclared_checks_passed": true,
+    "checks": [
+      {
+        "kind": "declared_group",
+        "role": "Four arms",
+        "count_preserved": true,
+        "placement_and_orientation_preserved": true,
+        "passed": true
+      },
+      {
+        "kind": "declared_group",
+        "role": "Four motors",
+        "count_preserved": true,
+        "placement_and_orientation_preserved": true,
+        "passed": true
+      },
+      {
+        "kind": "declared_group",
+        "role": "Four propellers",
+        "count_preserved": true,
+        "placement_and_orientation_preserved": true,
+        "passed": true
+      },
+      {
+        "kind": "inspection_capability",
+        "value": "inspect",
+        "passed": true
+      },
+      {
+        "kind": "inspection_capability",
+        "value": "geometric_explode",
+        "passed": true
+      },
+      {
+        "kind": "no_unrequested_effect_or_physics",
+        "passed": true
+      }
+    ],
+    "interpretation_complete": "unassessed",
+    "scope": "Specific conventional arrangements and supplied role catalogs; not proof of arbitrary understanding.",
+    "attempts": []
+  },
+  {
+    "case": "cooling-fan-row",
+    "status": "request_failed",
+    "geometry_executed": false,
+    "predeclared_checks_passed": true,
+    "checks": [
+      {
+        "kind": "declared_group",
+        "role": "Three fan frames",
+        "count_preserved": true,
+        "placement_and_orientation_preserved": true,
+        "passed": true
+      },
+      {
+        "kind": "declared_group",
+        "role": "Three fan rotors",
+        "count_preserved": true,
+        "placement_and_orientation_preserved": true,
+        "passed": true
+      },
+      {
+        "kind": "inspection_capability",
+        "value": "inspect",
+        "passed": true
+      },
+      {
+        "kind": "inspection_capability",
+        "value": "geometric_explode",
+        "passed": true
+      },
+      {
+        "kind": "no_unrequested_effect_or_physics",
+        "passed": true
+      }
+    ],
+    "interpretation_complete": "unassessed",
+    "scope": "Specific conventional arrangements and supplied role catalogs; not proof of arbitrary understanding.",
+    "attempts": []
+  },
+  {
+    "case": "two-driver-speaker",
+    "status": "extraction_failed",
+    "geometry_executed": false,
+    "attempts": []
+  }
+]

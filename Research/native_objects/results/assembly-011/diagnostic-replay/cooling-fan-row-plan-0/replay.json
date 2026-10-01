@@ -1,0 +1,17 @@
+{
+  "case": "cooling-fan-row-plan-0",
+  "source_experiment": "assembly-010",
+  "replayed_source_attempt": 0,
+  "new_generation": false,
+  "new_cost_nanos": 0,
+  "solved_geometry_identical": true,
+  "source_plan_sha256": "0c96bfd422b257a71b0178e032cf2c3ba323c63b850ddc7bbda24b83d94b267b",
+  "source_compiled_sha256": "40b52db62ba2d1d525f13263feda21946e0fb2b678d2b9ad4f291487a4ac1419",
+  "status": "geometry_failed",
+  "repair_preservation": {
+    "baseline_sha256": "7e663f2ca54d9ca4957ae8ed2b38e7a03083984c32cbe611620c9308863df5da",
+    "preserved_fact_count": 55,
+    "passed": true,
+    "regressions": []
+  }
+}

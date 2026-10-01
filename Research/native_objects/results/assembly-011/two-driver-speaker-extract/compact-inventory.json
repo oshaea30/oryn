@@ -1,0 +1,229 @@
+{
+  "requirements": [
+    [
+      "r0",
+      "required",
+      "entity",
+      "e0",
+      "",
+      "exists",
+      "",
+      "structure",
+      "explicit",
+      "s0"
+    ],
+    [
+      "r1",
+      "required",
+      "entity",
+      "e1",
+      "",
+      "exists",
+      "",
+      "structure",
+      "explicit",
+      "s0"
+    ],
+    [
+      "r2",
+      "design_choice",
+      "entity",
+      "e2",
+      "",
+      "exists",
+      "",
+      "structure",
+      "design_choice",
+      ""
+    ],
+    [
+      "r3",
+      "design_choice",
+      "entity",
+      "e3",
+      "",
+      "exists",
+      "",
+      "structure",
+      "design_choice",
+      ""
+    ],
+    [
+      "r4",
+      "required",
+      "entity",
+      "e1",
+      "",
+      "count",
+      "2",
+      "structure",
+      "explicit",
+      "s0"
+    ],
+    [
+      "r5",
+      "required",
+      "visual",
+      "object",
+      "",
+      "appearance",
+      "tabletop speaker",
+      "appearance",
+      "explicit",
+      "s0"
+    ],
+    [
+      "r6",
+      "required",
+      "visual",
+      "e1",
+      "",
+      "appearance",
+      "matching drivers",
+      "appearance",
+      "explicit",
+      "s0"
+    ],
+    [
+      "r7",
+      "required",
+      "relation",
+      "e1",
+      "e0",
+      "other",
+      "in enclosure front face",
+      "structure",
+      "explicit",
+      "s0"
+    ],
+    [
+      "r8",
+      "required",
+      "relation",
+      "e1",
+      "e0",
+      "attached",
+      "",
+      "structure",
+      "inferred",
+      "s0"
+    ],
+    [
+      "r9",
+      "required",
+      "constraint",
+      "e1",
+      "",
+      "other",
+      "side-by-side row",
+      "structure",
+      "explicit",
+      "s0"
+    ],
+    [
+      "r10",
+      "required",
+      "constraint",
+      "e1",
+      "",
+      "other",
+      "both face forward",
+      "structure",
+      "explicit",
+      "s0"
+    ],
+    [
+      "r11",
+      "required",
+      "behavior",
+      "object",
+      "",
+      "capability",
+      "inspect",
+      "behavior",
+      "explicit",
+      "s1"
+    ],
+    [
+      "r12",
+      "required",
+      "behavior",
+      "object",
+      "",
+      "capability",
+      "geometric_explode",
+      "behavior",
+      "explicit",
+      "s1"
+    ],
+    [
+      "r13",
+      "design_choice",
+      "relation",
+      "e2",
+      "e0",
+      "inside",
+      "",
+      "structure",
+      "design_choice",
+      ""
+    ],
+    [
+      "r14",
+      "design_choice",
+      "relation",
+      "e3",
+      "e0",
+      "attached",
+      "",
+      "structure",
+      "design_choice",
+      ""
+    ],
+    [
+      "r15",
+      "design_choice",
+      "constraint",
+      "e3",
+      "e0",
+      "other",
+      "at enclosure rear",
+      "structure",
+      "design_choice",
+      ""
+    ]
+  ],
+  "exclusions": [
+    [
+      "x0",
+      "object",
+      "audio_output",
+      "s2"
+    ],
+    [
+      "x1",
+      "object",
+      "animate",
+      "s2"
+    ]
+  ],
+  "spatial": [],
+  "assemblies": [
+    {
+      "id": "a0",
+      "members": [
+        "e1"
+      ],
+      "placement": {
+        "id": "r9",
+        "pattern": "linear",
+        "reference": "",
+        "axis": "x"
+      },
+      "orientation": {
+        "id": "r10",
+        "direction": "+z"
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "charged_and_held_nanos": 191535000,
+  "daily_limit_nanos": 6000000000,
+  "daily_remaining_nanos": 2993620000,
+  "actual_invoiced_cost": null,
+  "stopped": [
+    "Response unavailable; reservation held"
+  ]
+}

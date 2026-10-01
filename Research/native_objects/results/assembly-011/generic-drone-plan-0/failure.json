@@ -1,0 +1,5 @@
+{
+  "category": "timeout",
+  "reservation_held": true,
+  "automatic_retry": false
+}

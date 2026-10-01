@@ -1,0 +1,30 @@
+{
+  "live_freeze_commit": "9bb9bbc",
+  "completed_call_estimate_nanos": 50972500,
+  "new_uncertain_hold_nanos": 140562500,
+  "charged_and_held_nanos": 191535000,
+  "new_paid_geometry_completed": false,
+  "provider_funding_error": false,
+  "new_gpu_cost_nanos": 0,
+  "speaker_exclusion_error": {
+    "id": "x1",
+    "actual_domain": "animate",
+    "expected_domain_registry": [
+      "motion",
+      "physical_verification",
+      "audio_output",
+      "manufacturing",
+      "exact_identity"
+    ],
+    "normalized_or_retried": false
+  },
+  "speaker_front_face": {
+    "requirement_id": "r7",
+    "value": "in enclosure front face",
+    "spatial_binding_emitted": false
+  },
+  "fan_alternative_repair_dispatched": false,
+  "replay_is_old_geometry": true,
+  "post_batch_typed_transport_live_tested": false,
+  "drone_requirement_record_count": 34
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "case": "cooling-fan-row",
+    "exact_roundtrip": true,
+    "canonical_json_characters": 3041,
+    "typed_json_characters": 2335,
+    "all_schema_constraints_preserved": true,
+    "live_tested": false
+  },
+  {
+    "case": "two-driver-speaker",
+    "exact_roundtrip": true,
+    "canonical_json_characters": 3336,
+    "typed_json_characters": 2534,
+    "all_schema_constraints_preserved": true,
+    "live_tested": false
+  }
+]

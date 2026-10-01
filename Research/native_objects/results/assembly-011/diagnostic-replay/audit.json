@@ -1,0 +1,184 @@
+[
+  {
+    "case": "cooling-fan-row-plan-0",
+    "source_experiment": "assembly-010",
+    "replayed_source_attempt": 0,
+    "new_generation": false,
+    "new_cost_nanos": 0,
+    "solved_geometry_identical": true,
+    "source_plan_sha256": "0c96bfd422b257a71b0178e032cf2c3ba323c63b850ddc7bbda24b83d94b267b",
+    "source_compiled_sha256": "40b52db62ba2d1d525f13263feda21946e0fb2b678d2b9ad4f291487a4ac1419",
+    "status": "geometry_failed",
+    "repair_preservation": {
+      "baseline_sha256": "7e663f2ca54d9ca4957ae8ed2b38e7a03083984c32cbe611620c9308863df5da",
+      "preserved_fact_count": 55,
+      "passed": true,
+      "regressions": []
+    }
+  },
+  {
+    "case": "cooling-fan-row-plan-1",
+    "source_experiment": "assembly-010",
+    "replayed_source_attempt": 1,
+    "new_generation": false,
+    "new_cost_nanos": 0,
+    "solved_geometry_identical": true,
+    "source_plan_sha256": "d1e8b0fb5c49d79152c4b3faa065108a38f7d3c97827e5f9eaa0573aaa7d13e2",
+    "source_compiled_sha256": "a18757ca22b43ce7b71baf5bc93319f923713caa18b8401f1dddb1826767c77b",
+    "status": "geometry_failed",
+    "repair_preservation": {
+      "baseline_sha256": "7e663f2ca54d9ca4957ae8ed2b38e7a03083984c32cbe611620c9308863df5da",
+      "preserved_fact_count": 55,
+      "passed": false,
+      "regressions": [
+        {
+          "identity": {
+            "kind": "assembly_arrangement",
+            "requirement_id": "r09",
+            "assembly_id": "a01",
+            "aspect": "orientation",
+            "facet": "member_relation",
+            "part": "frame_center",
+            "port": "frame_center_bore"
+          },
+          "reason": "previously_passing_fact_failed"
+        },
+        {
+          "identity": {
+            "kind": "assembly_arrangement",
+            "requirement_id": "r09",
+            "assembly_id": "a01",
+            "aspect": "orientation",
+            "facet": "member_relation",
+            "part": "frame_left",
+            "port": "frame_left_bore"
+          },
+          "reason": "previously_passing_fact_failed"
+        },
+        {
+          "identity": {
+            "kind": "assembly_arrangement",
+            "requirement_id": "r09",
+            "assembly_id": "a01",
+            "aspect": "orientation",
+            "facet": "member_relation",
+            "part": "frame_right",
+            "port": "frame_right_bore"
+          },
+          "reason": "previously_passing_fact_failed"
+        },
+        {
+          "identity": {
+            "kind": "assembly_arrangement",
+            "requirement_id": "r11",
+            "assembly_id": "a02",
+            "aspect": "orientation",
+            "facet": "member_relation",
+            "part": "rotor_center",
+            "port": "rotor_center_axis"
+          },
+          "reason": "previously_passing_fact_failed"
+        },
+        {
+          "identity": {
+            "kind": "assembly_arrangement",
+            "requirement_id": "r11",
+            "assembly_id": "a02",
+            "aspect": "orientation",
+            "facet": "member_relation",
+            "part": "rotor_left",
+            "port": "rotor_left_axis"
+          },
+          "reason": "previously_passing_fact_failed"
+        },
+        {
+          "identity": {
+            "kind": "assembly_arrangement",
+            "requirement_id": "r11",
+            "assembly_id": "a02",
+            "aspect": "orientation",
+            "facet": "member_relation",
+            "part": "rotor_right",
+            "port": "rotor_right_axis"
+          },
+          "reason": "previously_passing_fact_failed"
+        },
+        {
+          "identity": {
+            "kind": "connected_component",
+            "relation": {
+              "part": "frame_center"
+            }
+          },
+          "reason": "previously_passing_fact_failed"
+        },
+        {
+          "identity": {
+            "kind": "connected_component",
+            "relation": {
+              "part": "frame_left"
+            }
+          },
+          "reason": "previously_passing_fact_failed"
+        },
+        {
+          "identity": {
+            "kind": "connected_component",
+            "relation": {
+              "part": "frame_right"
+            }
+          },
+          "reason": "previously_passing_fact_failed"
+        },
+        {
+          "identity": {
+            "kind": "executable_mate",
+            "relation": {
+              "id": "seat_center",
+              "a": "frame_center_bore",
+              "b": "rotor_center_axis",
+              "kind": "coaxial",
+              "offset": 0,
+              "twist": 0,
+              "minimum_clearance": 0.003,
+              "minimum_overlap": 0.008
+            }
+          },
+          "reason": "previously_passing_fact_failed"
+        },
+        {
+          "identity": {
+            "kind": "executable_mate",
+            "relation": {
+              "id": "seat_left",
+              "a": "frame_left_bore",
+              "b": "rotor_left_axis",
+              "kind": "coaxial",
+              "offset": 0,
+              "twist": 0,
+              "minimum_clearance": 0.003,
+              "minimum_overlap": 0.008
+            }
+          },
+          "reason": "previously_passing_fact_failed"
+        },
+        {
+          "identity": {
+            "kind": "executable_mate",
+            "relation": {
+              "id": "seat_right",
+              "a": "frame_right_bore",
+              "b": "rotor_right_axis",
+              "kind": "coaxial",
+              "offset": 0,
+              "twist": 0,
+              "minimum_clearance": 0.003,
+              "minimum_overlap": 0.008
+            }
+          },
+          "reason": "previously_passing_fact_failed"
+        }
+      ]
+    }
+  }
+]

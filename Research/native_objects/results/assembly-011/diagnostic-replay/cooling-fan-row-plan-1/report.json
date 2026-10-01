@@ -1,0 +1,121 @@
+{
+  "id": "cooling-fan-row",
+  "origins": {
+    "geometry": "model_generated",
+    "semantics": "model_generated",
+    "hierarchy": "model_generated",
+    "motion": "unknown"
+  },
+  "components": 7,
+  "triangles": 4968,
+  "structural_checks_passed": false,
+  "native_generation_goal_passed": false,
+  "manual_repair_count": 0,
+  "checks": {
+    "package_version": {
+      "status": "pass",
+      "detail": "Research contract v1"
+    },
+    "provenance": {
+      "status": "pass",
+      "detail": "Geometry, semantics and hierarchy identify origin; repairs remain explicit"
+    },
+    "unique_components": {
+      "status": "pass",
+      "detail": "Exact geometry/component binding"
+    },
+    "usable_geometry": {
+      "status": "pass",
+      "detail": "Invalid/empty/all-degenerate components: []"
+    },
+    "assembly_references": {
+      "status": "pass",
+      "detail": "Assembly references exist and parent graph is acyclic"
+    },
+    "motion_provenance": {
+      "status": "pass",
+      "detail": "Motion origin is explicit, including unknown"
+    },
+    "motion_references": {
+      "status": "pass",
+      "detail": "Motion drivers exist and driver graph is acyclic"
+    },
+    "motion_parameters": {
+      "status": "missing",
+      "detail": "No predicted or supplied motion"
+    },
+    "runtime_motion_agreement": {
+      "status": "not_assessed",
+      "detail": "Requires usable joints and independently exported runtime frames"
+    },
+    "semantic_correctness": {
+      "status": "not_assessed",
+      "detail": "Part names/count alone cannot establish meaning; independent review required"
+    },
+    "attachment_fit": {
+      "status": "not_assessed",
+      "detail": "No attachment interfaces/ground truth established; parent graph alone is insufficient"
+    },
+    "motion_clearance": {
+      "status": "not_assessed",
+      "detail": "No triangle collision sweep implemented; valid axes do not establish clearance"
+    },
+    "visual_quality": {
+      "status": "not_assessed",
+      "detail": "Requires user review of original materials and geometry in Quest"
+    },
+    "quest_performance": {
+      "status": "not_assessed",
+      "detail": "No runtime import or frame-time measurement in this experiment"
+    },
+    "physical_validity": {
+      "status": "not_assessed",
+      "detail": "Kinematic motion is not physical feasibility"
+    },
+    "declared_assembly_geometry": {
+      "status": "fail",
+      "detail": "Measured construction checks: 55. Failures: connected_component, connected_component, connected_component, executable_mate, executable_mate, executable_mate, assembly_arrangement (r09), assembly_arrangement (r11). This does not establish visual quality or semantic completeness."
+    },
+    "spatial_requirements": {
+      "status": "not_assessed",
+      "detail": "0 typed spatial requirements measured on solved geometry; feature meaning remains unverified."
+    },
+    "assembly_arrangements": {
+      "status": "fail",
+      "detail": "4 group placement/orientation checks on solved features; inferred intent remains unverified."
+    },
+    "repair_preservation": {
+      "status": "fail",
+      "detail": "12 regressions against 55 previously true measured predicates."
+    }
+  },
+  "layers": {
+    "object": {
+      "structural_checks_passed": false,
+      "failed_checks": [
+        "declared_assembly_geometry"
+      ],
+      "missing_output_facets": [],
+      "quality_status": "not_assessed",
+      "detail": "Geometry and assembly checks only; semantic meaning, materials, fit and Quest quality need evaluation."
+    },
+    "behavior_decision": {
+      "status": "not_assessed",
+      "detail": "No application-owned model decision recorded for this object and request. Missing motion does not mean animation is unnecessary."
+    },
+    "motion": {
+      "status": "absent",
+      "failed_checks": [],
+      "detail": "Optional motion on this geometry. Sampled agreement does not prove appropriate behavior, clearance or physical validity."
+    },
+    "runtime_viability": {
+      "status": "not_assessed",
+      "failed_static_preflight_files": [],
+      "detail": "Original static preflight retained. Offline research preview is not runtime acceptance; Quest remains untested."
+    }
+  },
+  "missing_output_facets": [
+    "motion"
+  ],
+  "verdict": "Control/evidence only; complete native generation is not demonstrated."
+}

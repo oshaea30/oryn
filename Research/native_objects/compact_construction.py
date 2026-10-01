@@ -31,6 +31,11 @@ options in detail, each at most once. wall/radius have one number; repeat/step t
 sections flattens the existing five-number loft rows into one numeric array. No new operations.
 Do not repeat explanations or unused default options. Keep output compact; reuse shared shapes.
 
+If the inventory includes mode/basis/exclusions, preserve these distinctions. Appearance denotes
+visual realization, structure denotes static relationships, behavior denotes a runtime effect.
+Physical-verification and exact-identity claims need matching evidence, not an attractive model.
+An inferred relationship is a proposed requirement, never an externally verified fact. Exclusions
+waive only their named scope; they do not erase other requirements. Do not reclassify any requirement.
 The frozen inventory is authoritative for coverage. Preserve every requirement ID exactly once in
 bindings. Never rewrite, omit or downgrade requirements. original request remains authoritative for
 meaning; preserve important intent beyond mere labels. Each binding has id, kind, refs, note.

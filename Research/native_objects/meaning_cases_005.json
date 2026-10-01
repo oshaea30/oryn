@@ -1,0 +1,252 @@
+[
+  {
+    "id": "contrast_static",
+    "request": "Create a visual concept of a small sphere hanging from a cord inside an open ring on a base. Keep it static. Do not claim its supports are physically verified.",
+    "roles": [
+      "Open ring",
+      "Sphere",
+      "Suspension cord",
+      "Base"
+    ],
+    "expect": {
+      "must": [
+        {
+          "predicate": "inside",
+          "subject_role": "Sphere",
+          "target_role": "Open ring",
+          "mode": "structure"
+        },
+        {
+          "predicate": "appearance",
+          "value_pattern": "hang|suspend|dangl"
+        }
+      ],
+      "forbid": [
+        {
+          "mode": "physical_verification"
+        },
+        {
+          "predicate": "capability",
+          "value": "animate"
+        }
+      ],
+      "exclusions": [
+        "motion",
+        "physical_verification"
+      ],
+      "planning_allowed": true
+    }
+  },
+  {
+    "id": "contrast_motion",
+    "request": "Create a visual concept of a small sphere hanging from a cord inside an open ring on a base. Animate the sphere swinging while the cord stays attached. Do not claim its supports are physically verified.",
+    "roles": [
+      "Open ring",
+      "Sphere",
+      "Suspension cord",
+      "Base"
+    ],
+    "expect": {
+      "must": [
+        {
+          "predicate": "inside",
+          "subject_role": "Sphere",
+          "target_role": "Open ring",
+          "mode": "structure"
+        },
+        {
+          "predicate": "capability",
+          "value": "animate",
+          "mode": "behavior"
+        }
+      ],
+      "forbid": [
+        {
+          "mode": "physical_verification"
+        }
+      ],
+      "exclusions": [
+        "physical_verification"
+      ],
+      "planning_allowed": false
+    }
+  },
+  {
+    "id": "contrast_verification",
+    "request": "Create a visual concept of a small sphere hanging from a cord inside an open ring on a base. Verify that the cord safely supports a 0.5 kg sphere. Keep it static.",
+    "roles": [
+      "Open ring",
+      "Sphere",
+      "Suspension cord",
+      "Base"
+    ],
+    "expect": {
+      "must": [
+        {
+          "mode": "physical_verification",
+          "obligation": "evidence_required"
+        },
+        {
+          "predicate": "inside",
+          "subject_role": "Sphere",
+          "target_role": "Open ring"
+        }
+      ],
+      "forbid": [
+        {
+          "predicate": "capability",
+          "value": "animate"
+        }
+      ],
+      "exclusions": [
+        "motion"
+      ],
+      "planning_allowed": false
+    }
+  },
+  {
+    "id": "original_lamp",
+    "request": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside. Let me inspect its main pieces; it does not need to be a buildable electrical product.",
+    "roles": [
+      "Curled leaf shade",
+      "Glowing seed",
+      "Seed suspension strand",
+      "Stem support",
+      "Desk base"
+    ],
+    "expect": {
+      "must": [
+        {
+          "predicate": "inside",
+          "mode": "structure"
+        },
+        {
+          "predicate": "appearance",
+          "value_pattern": "hang|suspend|dangl"
+        },
+        {
+          "predicate": "capability",
+          "value": "emission",
+          "mode": "appearance"
+        }
+      ],
+      "forbid": [
+        {
+          "mode": "physical_verification"
+        }
+      ],
+      "exclusions": [
+        "physical_verification"
+      ],
+      "planning_allowed": false
+    }
+  },
+  {
+    "id": "original_drone",
+    "request": "Show me a generic quadcopter drone I can explore and take apart into its major components.",
+    "roles": [
+      "Central frame",
+      "Four arms",
+      "Four motors",
+      "Four propellers",
+      "Battery",
+      "Flight controller",
+      "Electronic speed controllers"
+    ],
+    "expect": {
+      "must": [
+        {
+          "mode": "structure",
+          "basis": "inferred",
+          "predicate_any": [
+            "attached",
+            "connected",
+            "other"
+          ]
+        },
+        {
+          "predicate": "count",
+          "value": "4"
+        },
+        {
+          "predicate": "capability",
+          "value": "geometric_explode"
+        }
+      ],
+      "forbid": [
+        {
+          "mode": "physical_verification"
+        },
+        {
+          "predicate": "capability",
+          "value": "animate"
+        }
+      ],
+      "exclusions": [],
+      "planning_allowed": null
+    }
+  },
+  {
+    "id": "static_controller",
+    "request": "Show me a generic video game controller I can take apart into its main components. Keep its sticks and buttons static.",
+    "roles": [
+      "Shell",
+      "Buttons",
+      "Thumbsticks",
+      "Circuit board",
+      "Battery"
+    ],
+    "expect": {
+      "must": [
+        {
+          "predicate": "capability",
+          "value": "geometric_explode"
+        },
+        {
+          "mode": "structure",
+          "basis": "inferred",
+          "predicate_any": [
+            "inside",
+            "attached",
+            "connected",
+            "other"
+          ]
+        }
+      ],
+      "forbid": [
+        {
+          "mode": "physical_verification"
+        },
+        {
+          "predicate": "capability",
+          "value": "animate"
+        }
+      ],
+      "exclusions": [
+        "motion"
+      ],
+      "planning_allowed": null
+    }
+  },
+  {
+    "id": "exact_identity",
+    "request": "Recreate the internal assembly of a JBL Flip 7 exactly, including its battery mounting. Show which details are verified.",
+    "roles": [
+      "Enclosure",
+      "Battery",
+      "Battery mount"
+    ],
+    "expect": {
+      "must": [
+        {
+          "mode": "identity",
+          "predicate": "exact_identity",
+          "obligation": "evidence_required"
+        }
+      ],
+      "forbid": [],
+      "exclusions": [],
+      "planning_allowed": false
+    }
+  }
+]

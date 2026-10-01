@@ -10,6 +10,7 @@ import subprocess
 import urllib.error
 import urllib.request
 from Research.native_objects import intent_requirements as intent
+from Research.native_objects import requirement_meaning as meaning
 from Research.native_objects import compact_construction as compact
 from Research.native_objects import assembly_connections as geometry
 from Research.native_objects import solid_experiment as prior
@@ -78,7 +79,7 @@ def request_model(case,stage,attempt,context,folder,ledger,key):
 
 def evaluate_candidate(raw,contract,folder,case,locked=None,builder=geometry.build,renderer=prior.render):
     plan=compact.expand(raw,contract)
-    gate=intent.coverage(contract,plan,raw['bindings']);prior.write(folder/'coverage.json',gate)
+    gate=(meaning.coverage if contract.get('interpretation_version') else intent.coverage)(contract,plan,raw['bindings']);prior.write(folder/'coverage.json',gate)
     prior.write(folder/'expanded.json',plan)
     if not gate['coverage_complete']:
         return {'status':'coverage_failed','geometry_executed':False,'feedback':{'coverage_errors':gate['errors']}},locked
@@ -112,8 +113,12 @@ def execute(items,output,model,renderer=prior.render,case_ids=CASES):
         try:
             raw,bill=model(case,'extract',0,{'original_request':item['request'],'proposed_role_groups':[c['name'] for c in p['components']]},folder)
             prior.write(folder/'inventory.json',raw)
-            contract=intent.validate_inventory(raw,item['request'],[c['name'] for c in p['components']]);prior.write(folder/'contract.json',contract)
+            validator=meaning.validate if 'exclusions' in raw else intent.validate_inventory
+            contract=validator(raw,item['request'],[c['name'] for c in p['components']]);prior.write(folder/'contract.json',contract)
             state.update(status='requirements_ready',extraction_billing=bill,contract=contract)
+            if contract.get('interpretation_version'):
+                admission=meaning.preflight(contract);prior.write(folder/'admission.json',admission);state['admission']=admission
+                if not admission['planning_allowed']:state['status']='unsupported_before_planning'
         except (prior.CommandError,ValueError,KeyError,TypeError) as e:state.update(status='extraction_failed',error=str(e))
         finally:state['extraction_seconds']=time.perf_counter()-before;save()
     for attempt in range(MAX_ATTEMPTS):

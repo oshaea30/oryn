@@ -1,0 +1,8 @@
+{
+  "fact_count": 275,
+  "table_count": 13,
+  "exact_roundtrip": true,
+  "uncompressed_sha256": "afd9d8bf5ad6df24361ab2bd4029a8781a91dd906593e0b1084193372d5b6a9b",
+  "decoded_sha256": "afd9d8bf5ad6df24361ab2bd4029a8781a91dd906593e0b1084193372d5b6a9b",
+  "all_failures_and_passed_facts_retained": true
+}

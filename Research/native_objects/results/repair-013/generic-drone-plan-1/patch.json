@@ -1,0 +1,160 @@
+{
+  "base_sha256": "cabaa14c2b13caa6ef01b48fb189e0a07aa49533436671aa20d27d4ae44726f3",
+  "shapes": [
+    {
+      "forms": [
+        {
+          "at": [
+            0.021,
+            0,
+            0
+          ],
+          "detail": [],
+          "kind": "cylinder",
+          "size": [
+            0.034,
+            0.02,
+            0.034
+          ],
+          "op": "add",
+          "rotate": []
+        },
+        {
+          "at": [
+            0.007,
+            -0.003,
+            0
+          ],
+          "detail": [],
+          "kind": "box",
+          "size": [
+            0.014,
+            0.012,
+            0.012
+          ],
+          "op": "add",
+          "rotate": []
+        },
+        {
+          "at": [
+            0.021,
+            -0.003,
+            -0.0105
+          ],
+          "detail": [],
+          "kind": "box",
+          "size": [
+            0.012,
+            0.012,
+            0.021
+          ],
+          "op": "add",
+          "rotate": []
+        },
+        {
+          "at": [
+            0.021,
+            -0.003,
+            0.0105
+          ],
+          "detail": [],
+          "kind": "box",
+          "size": [
+            0.012,
+            0.012,
+            0.021
+          ],
+          "op": "add",
+          "rotate": []
+        },
+        {
+          "at": [
+            0.021,
+            0,
+            0
+          ],
+          "detail": [],
+          "kind": "cylinder",
+          "size": [
+            0.008,
+            0.032,
+            0.008
+          ],
+          "op": "subtract",
+          "rotate": []
+        }
+      ],
+      "id": "motor_shape"
+    }
+  ],
+  "ports": [
+    {
+      "face": "+y",
+      "form": 4,
+      "id": "mxn_bore",
+      "kind": "bore_axis",
+      "part": "mxn",
+      "span": [
+        0.35,
+        0.65
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 4,
+      "id": "mxp_bore",
+      "kind": "bore_axis",
+      "part": "mxp",
+      "span": [
+        0.35,
+        0.65
+      ]
+    },
+    {
+      "face": "-z",
+      "form": 2,
+      "id": "mzn_mount",
+      "kind": "face",
+      "part": "mzn",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 4,
+      "id": "mzn_bore",
+      "kind": "bore_axis",
+      "part": "mzn",
+      "span": [
+        0.35,
+        0.65
+      ]
+    },
+    {
+      "face": "-z",
+      "form": 2,
+      "id": "mzp_mount",
+      "kind": "face",
+      "part": "mzp",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 4,
+      "id": "mzp_bore",
+      "kind": "bore_axis",
+      "part": "mzp",
+      "span": [
+        0.35,
+        0.65
+      ]
+    }
+  ],
+  "reason": "",
+  "status": "patch"
+}

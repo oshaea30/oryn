@@ -1,0 +1,9 @@
+{
+  "charged_and_held_nanos": 187987500,
+  "daily_remaining_nanos": 2805632500,
+  "daily_limit_nanos": 6000000000,
+  "stopped": [
+    "Exact input count missing or exceeds the 16,000-token development limit."
+  ],
+  "actual_invoiced_cost": null
+}

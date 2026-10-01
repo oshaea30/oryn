@@ -68,25 +68,30 @@ GPU spend. User-authorized shared daily limit $6; aggregate research ceiling $5.
 
 ## Assembly arrangement and repair results
 
-[Assembly 011](ASSEMBLY_FOLLOWUP_RESULT.md) produces a complete 34-record drone
-inventory within the same response allowance, preserving the tested radial groups and
-shared axes. Construction then times out at 240 seconds; the batch stops. The speaker
-returns an invalid exclusion category and no front-surface translation. No new object
-or alternative fan repair completed. General generation remains unproven.
+[Repair 012–013](LOCAL_REPAIR_RESULT.md) completes the bounded comparison. The saved
+fan receives one model-authored local patch: all 55 checks pass, all 55 prior passing
+facts survive, and its unrelated mounting panel stays unchanged. The result is a
+recognizable but simplified fan row, not a polished or mechanically complete object.
 
-Generic exterior-surface contact checks and measured repair-preservation feedback are
-implemented. Free replay of the unchanged [010 fan outputs](ASSEMBLY_RESULT.md) names
-12 regressions in the old repair. That proves detection, not improved live repair.
-An alternate compact typed format preserves schema enums and is prepared/tested locally,
-but not dispatched. Resolve surface interpretation and uncertain construction outcomes
-before more paid trials; no geometry expansion, case recipes or production promotion.
+The new 19-part drone plan completes in 98.68 seconds. Two motor/propeller pairs point
+sideways. Its one permitted patch corrects one pair, inverts the other, and breaks two
+symmetry checks; full validation rejects it. The speaker now emits valid typed output
+but retains an unsupported front-face relationship and stops before geometry.
+General generation and reliable repair remain unproven.
 
-166 relevant tests and 18 browser checks pass; the browser checks use old diagnostic
-geometry. Completed API-call estimates total $0.0509725, plus $0.1405625 held for the
-unknown timeout outcome ($0.191535 consumed/held). No funding error or GPU spending.
-The earlier [010 result](ASSEMBLY_RESULT.md) remains retained: fan and speaker group
-intent survives, but fan geometry fails, speaker front-face placement is unsupported,
-and the original drone inventory truncates. Its API estimate was $0.2022.
+Background requests retain IDs for safe retrieval, with no new uncertain holds. A
+lossless input transport reduces the blocked drone repair from 24,456 to 15,987 tokens,
+retaining all 275 passing facts. The input cap, model, geometry and tolerances stay fixed.
+Local geometry/checks take 0.12–0.17 seconds versus 25–99 seconds for model requests;
+local edits have not yet demonstrated faster or cheaper planning.
+
+Keep these protections. The next question is incorporating declared global axes into
+pose solving, with explicit conflict handling and tests across unrelated arrangements,
+before another paid rotation-repair loop. Do not add primitives, case recipes or product
+promotion. Treat speaker surface/embedding support as a separate boundary. 149 targeted
+tests and 36 desktop browser checks pass. Combined conservative API estimate $0.261955;
+no funding error or GPU spending. [Earlier 011 failures](ASSEMBLY_FOLLOWUP_RESULT.md),
+including its unknown $0.1405625 timeout hold, remain retained and accounted for.
 
 ## Spatial bridge result
 

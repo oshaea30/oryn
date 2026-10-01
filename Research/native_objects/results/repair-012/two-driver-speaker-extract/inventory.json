@@ -1,0 +1,229 @@
+{
+  "assemblies": [
+    {
+      "members": [
+        "e1"
+      ],
+      "placement": {
+        "pattern": "linear",
+        "axis": "x",
+        "id": "r7",
+        "reference": ""
+      },
+      "id": "a0",
+      "orientation": {
+        "direction": "+z",
+        "id": "r8"
+      }
+    }
+  ],
+  "spatial": [],
+  "exclusions": [
+    {
+      "domain": "audio_output",
+      "subject": "object",
+      "id": "x0",
+      "source": "s2"
+    },
+    {
+      "domain": "motion",
+      "subject": "object",
+      "id": "x1",
+      "source": "s2"
+    }
+  ],
+  "requirements": [
+    {
+      "basis": "inferred",
+      "subject": "e0",
+      "value": "",
+      "source": "s0",
+      "predicate": "exists",
+      "obligation": "required",
+      "mode": "structure",
+      "target": "",
+      "kind": "entity",
+      "id": "r0"
+    },
+    {
+      "basis": "explicit",
+      "subject": "e1",
+      "value": "",
+      "source": "s0",
+      "predicate": "exists",
+      "obligation": "required",
+      "mode": "structure",
+      "target": "",
+      "kind": "entity",
+      "id": "r1"
+    },
+    {
+      "basis": "design_choice",
+      "subject": "e2",
+      "value": "",
+      "source": "",
+      "predicate": "exists",
+      "obligation": "design_choice",
+      "mode": "structure",
+      "target": "",
+      "kind": "entity",
+      "id": "r2"
+    },
+    {
+      "basis": "design_choice",
+      "subject": "e3",
+      "value": "",
+      "source": "",
+      "predicate": "exists",
+      "obligation": "design_choice",
+      "mode": "structure",
+      "target": "",
+      "kind": "entity",
+      "id": "r3"
+    },
+    {
+      "basis": "explicit",
+      "subject": "object",
+      "value": "tabletop speaker",
+      "source": "s0",
+      "predicate": "appearance",
+      "obligation": "required",
+      "mode": "appearance",
+      "target": "",
+      "kind": "visual",
+      "id": "r4"
+    },
+    {
+      "basis": "explicit",
+      "subject": "e1",
+      "value": "2",
+      "source": "s0",
+      "predicate": "count",
+      "obligation": "required",
+      "mode": "structure",
+      "target": "",
+      "kind": "constraint",
+      "id": "r5"
+    },
+    {
+      "basis": "explicit",
+      "subject": "e1",
+      "value": "matching",
+      "source": "s0",
+      "predicate": "appearance",
+      "obligation": "required",
+      "mode": "appearance",
+      "target": "",
+      "kind": "visual",
+      "id": "r6"
+    },
+    {
+      "basis": "explicit",
+      "subject": "e1",
+      "value": "side by side in a straight row",
+      "source": "s0",
+      "predicate": "other",
+      "obligation": "required",
+      "mode": "structure",
+      "target": "",
+      "kind": "relation",
+      "id": "r7"
+    },
+    {
+      "basis": "explicit",
+      "subject": "e1",
+      "value": "both facing forward",
+      "source": "s0",
+      "predicate": "other",
+      "obligation": "required",
+      "mode": "structure",
+      "target": "",
+      "kind": "constraint",
+      "id": "r8"
+    },
+    {
+      "basis": "explicit",
+      "subject": "e1",
+      "value": "in enclosure front face",
+      "source": "s0",
+      "predicate": "other",
+      "obligation": "required",
+      "mode": "structure",
+      "target": "e0",
+      "kind": "relation",
+      "id": "r9"
+    },
+    {
+      "basis": "inferred",
+      "subject": "e1",
+      "value": "",
+      "source": "s0",
+      "predicate": "attached",
+      "obligation": "required",
+      "mode": "structure",
+      "target": "e0",
+      "kind": "relation",
+      "id": "r10"
+    },
+    {
+      "basis": "design_choice",
+      "subject": "e2",
+      "value": "",
+      "source": "",
+      "predicate": "inside",
+      "obligation": "design_choice",
+      "mode": "structure",
+      "target": "e0",
+      "kind": "relation",
+      "id": "r11"
+    },
+    {
+      "basis": "design_choice",
+      "subject": "e3",
+      "value": "",
+      "source": "",
+      "predicate": "attached",
+      "obligation": "design_choice",
+      "mode": "structure",
+      "target": "e0",
+      "kind": "relation",
+      "id": "r12"
+    },
+    {
+      "basis": "design_choice",
+      "subject": "e3",
+      "value": "at enclosure rear",
+      "source": "",
+      "predicate": "other",
+      "obligation": "design_choice",
+      "mode": "structure",
+      "target": "e0",
+      "kind": "relation",
+      "id": "r13"
+    },
+    {
+      "basis": "explicit",
+      "subject": "object",
+      "value": "inspect",
+      "source": "s1",
+      "predicate": "capability",
+      "obligation": "required",
+      "mode": "behavior",
+      "target": "",
+      "kind": "behavior",
+      "id": "r14"
+    },
+    {
+      "basis": "explicit",
+      "subject": "object",
+      "value": "geometric_explode",
+      "source": "s1",
+      "predicate": "capability",
+      "obligation": "required",
+      "mode": "behavior",
+      "target": "",
+      "kind": "behavior",
+      "id": "r15"
+    }
+  ]
+}

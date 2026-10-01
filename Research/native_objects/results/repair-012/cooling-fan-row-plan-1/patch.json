@@ -1,0 +1,204 @@
+{
+  "base_sha256": "5f77599e5a9d6e98d2a5edccd8336ec211b088d16c62ac3c62a74f9e3c0613cb",
+  "shapes": [
+    {
+      "forms": [
+        {
+          "at": [],
+          "detail": [
+            {
+              "key": "wall",
+              "values": [
+                0.012
+              ]
+            }
+          ],
+          "kind": "tube",
+          "size": [
+            0.15,
+            0.036,
+            0.15
+          ],
+          "op": "add",
+          "rotate": [
+            90,
+            0,
+            0
+          ]
+        },
+        {
+          "at": [
+            0.07,
+            0,
+            -0.013
+          ],
+          "detail": [],
+          "kind": "box",
+          "size": [
+            0.01,
+            0.016,
+            0.012
+          ],
+          "op": "add",
+          "rotate": []
+        }
+      ],
+      "id": "frame_shape"
+    },
+    {
+      "forms": [
+        {
+          "at": [],
+          "detail": [],
+          "kind": "cylinder",
+          "size": [
+            0.022,
+            0.016,
+            0.022
+          ],
+          "op": "add",
+          "rotate": [
+            90,
+            0,
+            0
+          ]
+        },
+        {
+          "at": [
+            0.032,
+            0,
+            0.0085
+          ],
+          "detail": [],
+          "kind": "ellipsoid",
+          "size": [
+            0.05,
+            0.016,
+            0.005
+          ],
+          "op": "add",
+          "rotate": []
+        },
+        {
+          "at": [
+            -0.032,
+            0,
+            0.0085
+          ],
+          "detail": [],
+          "kind": "ellipsoid",
+          "size": [
+            0.05,
+            0.016,
+            0.005
+          ],
+          "op": "add",
+          "rotate": []
+        },
+        {
+          "at": [
+            0,
+            0.032,
+            0.0085
+          ],
+          "detail": [],
+          "kind": "ellipsoid",
+          "size": [
+            0.016,
+            0.05,
+            0.005
+          ],
+          "op": "add",
+          "rotate": []
+        },
+        {
+          "at": [
+            0,
+            -0.032,
+            0.0085
+          ],
+          "detail": [],
+          "kind": "ellipsoid",
+          "size": [
+            0.016,
+            0.05,
+            0.005
+          ],
+          "op": "add",
+          "rotate": []
+        }
+      ],
+      "id": "rotor_shape"
+    }
+  ],
+  "ports": [
+    {
+      "face": "+y",
+      "form": 0,
+      "id": "frame_left_bore",
+      "kind": "bore_axis",
+      "part": "frame_left",
+      "span": [
+        0.25,
+        0.75
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 0,
+      "id": "frame_center_bore",
+      "kind": "bore_axis",
+      "part": "frame_center",
+      "span": [
+        0.25,
+        0.75
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 0,
+      "id": "frame_right_bore",
+      "kind": "bore_axis",
+      "part": "frame_right",
+      "span": [
+        0.25,
+        0.75
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 0,
+      "id": "rotor_left_axis",
+      "kind": "outer_axis",
+      "part": "rotor_left",
+      "span": [
+        0.05,
+        0.55
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 0,
+      "id": "rotor_center_axis",
+      "kind": "outer_axis",
+      "part": "rotor_center",
+      "span": [
+        0.05,
+        0.55
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 0,
+      "id": "rotor_right_axis",
+      "kind": "outer_axis",
+      "part": "rotor_right",
+      "span": [
+        0.05,
+        0.55
+      ]
+    }
+  ],
+  "reason": "",
+  "status": "patch"
+}

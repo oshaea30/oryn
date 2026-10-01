@@ -1,0 +1,52 @@
+{
+  "results": [
+    {
+      "case": "cooling-fan-row-plan-0",
+      "parts": 7,
+      "checks": [
+        "case URL loads requested candidate",
+        "every component independently selectable",
+        "measured pass/failure displayed honestly",
+        "assembly checks displayed",
+        "repair preservation displayed",
+        "separation changes the rendered image",
+        "component isolation changes the rendered image",
+        "reset restores full assembly",
+        "static output has no claimed animation"
+      ]
+    },
+    {
+      "case": "cooling-fan-row-plan-1",
+      "parts": 7,
+      "checks": [
+        "case URL loads requested candidate",
+        "every component independently selectable",
+        "measured pass/failure displayed honestly",
+        "assembly checks displayed",
+        "repair preservation displayed",
+        "separation changes the rendered image",
+        "component isolation changes the rendered image",
+        "reset restores full assembly",
+        "static output has no claimed animation"
+      ]
+    },
+    {
+      "case": "generic-drone-plan-0",
+      "parts": 19,
+      "checks": [
+        "case URL loads requested candidate",
+        "every component independently selectable",
+        "measured pass/failure displayed honestly",
+        "assembly checks displayed",
+        "repair preservation displayed",
+        "separation changes the rendered image",
+        "component isolation changes the rendered image",
+        "reset restores full assembly",
+        "static output has no claimed animation"
+      ]
+    }
+  ],
+  "page_errors": [],
+  "check_count": 27,
+  "quest_performance": "not assessed"
+}

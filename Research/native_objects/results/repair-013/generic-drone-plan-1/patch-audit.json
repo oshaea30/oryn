@@ -1,0 +1,33 @@
+{
+  "status": "proposed",
+  "changed": {
+    "shapes": [
+      "motor_shape"
+    ],
+    "ports": [
+      "mxn_bore",
+      "mxp_bore",
+      "mzn_bore",
+      "mzn_mount",
+      "mzp_bore",
+      "mzp_mount"
+    ]
+  },
+  "protected_parts": [
+    "frame",
+    "axp",
+    "axn",
+    "azp",
+    "azn",
+    "battery",
+    "controller",
+    "exp",
+    "exn",
+    "ezp",
+    "ezn"
+  ],
+  "protected_geometry_unchanged": true,
+  "base_sha256": "cabaa14c2b13caa6ef01b48fb189e0a07aa49533436671aa20d27d4ae44726f3",
+  "result_sha256": "19b8724bbb9a31366c9f074f5a49f999db58d6b4115090c5f02cb490d365649b",
+  "validation_scope": "full assembly; patch admission alone is not success"
+}

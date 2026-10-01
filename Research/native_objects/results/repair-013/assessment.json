@@ -1,0 +1,181 @@
+[
+  {
+    "case": "generic-drone",
+    "status": "geometry_failed",
+    "geometry_executed": true,
+    "predeclared_checks_passed": true,
+    "checks": [
+      {
+        "kind": "declared_group",
+        "role": "Four arms",
+        "count_preserved": true,
+        "placement_and_orientation_preserved": true,
+        "passed": true
+      },
+      {
+        "kind": "declared_group",
+        "role": "Four motors",
+        "count_preserved": true,
+        "placement_and_orientation_preserved": true,
+        "passed": true
+      },
+      {
+        "kind": "declared_group",
+        "role": "Four propellers",
+        "count_preserved": true,
+        "placement_and_orientation_preserved": true,
+        "passed": true
+      },
+      {
+        "kind": "inspection_capability",
+        "value": "inspect",
+        "passed": true
+      },
+      {
+        "kind": "inspection_capability",
+        "value": "geometric_explode",
+        "passed": true
+      },
+      {
+        "kind": "no_unrequested_effect_or_physics",
+        "passed": true
+      }
+    ],
+    "interpretation_complete": "unassessed",
+    "scope": "Specific conventional arrangements and supplied role catalogs; not proof of arbitrary understanding.",
+    "attempts": [
+      {
+        "attempt": 1,
+        "arrangements_pass": false,
+        "component_connectivity_pass": true,
+        "all_declared_geometry_pass": false,
+        "failed_checks": [
+          {
+            "kind": "symmetry_bounds",
+            "relation": {
+              "a": "mzp",
+              "axis": "z",
+              "b": "mzn"
+            },
+            "passed": false,
+            "measurement": {
+              "maximum_bound_error_m": 0.006000000052154064,
+              "scope": "bounds only, not full shape symmetry"
+            }
+          },
+          {
+            "kind": "symmetry_bounds",
+            "relation": {
+              "a": "pzp",
+              "axis": "z",
+              "b": "pzn"
+            },
+            "passed": false,
+            "measurement": {
+              "maximum_bound_error_m": 0.025000000838190317,
+              "scope": "bounds only, not full shape symmetry"
+            }
+          },
+          {
+            "kind": "assembly_arrangement",
+            "assembly_id": "a1",
+            "requirement_id": "r15",
+            "aspect": "orientation",
+            "passed": false,
+            "failure_classes": [
+              "group_orientation"
+            ],
+            "measurement": {
+              "members": [
+                {
+                  "part": "mxn",
+                  "port": "mxn_bore",
+                  "axis_alignment": 1.0,
+                  "relation_passed": true,
+                  "feature_geometry_passed": true,
+                  "passed": true
+                },
+                {
+                  "part": "mxp",
+                  "port": "mxp_bore",
+                  "axis_alignment": 1.0,
+                  "relation_passed": true,
+                  "feature_geometry_passed": true,
+                  "passed": true
+                },
+                {
+                  "part": "mzn",
+                  "port": "mzn_bore",
+                  "axis_alignment": -1.0,
+                  "relation_passed": false,
+                  "feature_geometry_passed": true,
+                  "passed": false
+                },
+                {
+                  "part": "mzp",
+                  "port": "mzp_bore",
+                  "axis_alignment": 1.0,
+                  "relation_passed": true,
+                  "feature_geometry_passed": true,
+                  "passed": true
+                }
+              ],
+              "direction": "+y",
+              "minimum_alignment": -1.0
+            },
+            "scope": "Solved declared feature geometry; interpretation and feature meaning remain unverified."
+          },
+          {
+            "kind": "assembly_arrangement",
+            "assembly_id": "a2",
+            "requirement_id": "r17",
+            "aspect": "orientation",
+            "passed": false,
+            "failure_classes": [
+              "group_orientation"
+            ],
+            "measurement": {
+              "members": [
+                {
+                  "part": "pxn",
+                  "port": "pxn_shaft",
+                  "axis_alignment": 1.0,
+                  "relation_passed": true,
+                  "feature_geometry_passed": true,
+                  "passed": true
+                },
+                {
+                  "part": "pxp",
+                  "port": "pxp_shaft",
+                  "axis_alignment": 1.0,
+                  "relation_passed": true,
+                  "feature_geometry_passed": true,
+                  "passed": true
+                },
+                {
+                  "part": "pzn",
+                  "port": "pzn_shaft",
+                  "axis_alignment": -1.0,
+                  "relation_passed": false,
+                  "feature_geometry_passed": true,
+                  "passed": false
+                },
+                {
+                  "part": "pzp",
+                  "port": "pzp_shaft",
+                  "axis_alignment": 1.0,
+                  "relation_passed": true,
+                  "feature_geometry_passed": true,
+                  "passed": true
+                }
+              ],
+              "direction": "+y",
+              "minimum_alignment": -1.0
+            },
+            "scope": "Solved declared feature geometry; interpretation and feature meaning remain unverified."
+          }
+        ]
+      }
+    ]
+  }
+]

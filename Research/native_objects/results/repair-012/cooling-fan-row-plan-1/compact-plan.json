@@ -1,0 +1,686 @@
+{
+  "shapes": [
+    {
+      "id": "panel_shape",
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.55,
+            0.2,
+            0.008
+          ],
+          "at": [],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.116,
+            0.02,
+            0.116
+          ],
+          "at": [
+            -0.17,
+            0,
+            0
+          ],
+          "rotate": [
+            90,
+            0,
+            0
+          ],
+          "op": "subtract",
+          "detail": [
+            {
+              "key": "repeat",
+              "values": [
+                3,
+                1,
+                1
+              ]
+            },
+            {
+              "key": "step",
+              "values": [
+                0.17,
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.016,
+            0.016,
+            0.006
+          ],
+          "at": [
+            -0.1,
+            0,
+            0.007
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.016,
+            0.016,
+            0.006
+          ],
+          "at": [
+            0.07,
+            0,
+            0.007
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.016,
+            0.016,
+            0.006
+          ],
+          "at": [
+            0.24,
+            0,
+            0.007
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        }
+      ]
+    },
+    {
+      "forms": [
+        {
+          "at": [],
+          "detail": [
+            {
+              "key": "wall",
+              "values": [
+                0.012
+              ]
+            }
+          ],
+          "kind": "tube",
+          "size": [
+            0.15,
+            0.036,
+            0.15
+          ],
+          "op": "add",
+          "rotate": [
+            90,
+            0,
+            0
+          ]
+        },
+        {
+          "at": [
+            0.07,
+            0,
+            -0.013
+          ],
+          "detail": [],
+          "kind": "box",
+          "size": [
+            0.01,
+            0.016,
+            0.012
+          ],
+          "op": "add",
+          "rotate": []
+        }
+      ],
+      "id": "frame_shape"
+    },
+    {
+      "forms": [
+        {
+          "at": [],
+          "detail": [],
+          "kind": "cylinder",
+          "size": [
+            0.022,
+            0.016,
+            0.022
+          ],
+          "op": "add",
+          "rotate": [
+            90,
+            0,
+            0
+          ]
+        },
+        {
+          "at": [
+            0.032,
+            0,
+            0.0085
+          ],
+          "detail": [],
+          "kind": "ellipsoid",
+          "size": [
+            0.05,
+            0.016,
+            0.005
+          ],
+          "op": "add",
+          "rotate": []
+        },
+        {
+          "at": [
+            -0.032,
+            0,
+            0.0085
+          ],
+          "detail": [],
+          "kind": "ellipsoid",
+          "size": [
+            0.05,
+            0.016,
+            0.005
+          ],
+          "op": "add",
+          "rotate": []
+        },
+        {
+          "at": [
+            0,
+            0.032,
+            0.0085
+          ],
+          "detail": [],
+          "kind": "ellipsoid",
+          "size": [
+            0.016,
+            0.05,
+            0.005
+          ],
+          "op": "add",
+          "rotate": []
+        },
+        {
+          "at": [
+            0,
+            -0.032,
+            0.0085
+          ],
+          "detail": [],
+          "kind": "ellipsoid",
+          "size": [
+            0.016,
+            0.05,
+            0.005
+          ],
+          "op": "add",
+          "rotate": []
+        }
+      ],
+      "id": "rotor_shape"
+    }
+  ],
+  "parts": [
+    {
+      "id": "panel",
+      "entity": "e0",
+      "parent": "",
+      "shape": "panel_shape",
+      "color": [
+        0.36,
+        0.4,
+        0.44
+      ]
+    },
+    {
+      "id": "frame_left",
+      "entity": "e1",
+      "parent": "panel",
+      "shape": "frame_shape",
+      "color": [
+        0.2,
+        0.23,
+        0.26
+      ]
+    },
+    {
+      "id": "frame_center",
+      "entity": "e1",
+      "parent": "panel",
+      "shape": "frame_shape",
+      "color": [
+        0.2,
+        0.23,
+        0.26
+      ]
+    },
+    {
+      "id": "frame_right",
+      "entity": "e1",
+      "parent": "panel",
+      "shape": "frame_shape",
+      "color": [
+        0.2,
+        0.23,
+        0.26
+      ]
+    },
+    {
+      "id": "rotor_left",
+      "entity": "e2",
+      "parent": "frame_left",
+      "shape": "rotor_shape",
+      "color": [
+        0.53,
+        0.57,
+        0.59
+      ]
+    },
+    {
+      "id": "rotor_center",
+      "entity": "e2",
+      "parent": "frame_center",
+      "shape": "rotor_shape",
+      "color": [
+        0.53,
+        0.57,
+        0.59
+      ]
+    },
+    {
+      "id": "rotor_right",
+      "entity": "e2",
+      "parent": "frame_right",
+      "shape": "rotor_shape",
+      "color": [
+        0.53,
+        0.57,
+        0.59
+      ]
+    }
+  ],
+  "root_position": [
+    0,
+    0,
+    0
+  ],
+  "root_rotation": [
+    0,
+    0,
+    0
+  ],
+  "ports": [
+    {
+      "id": "panel_left",
+      "part": "panel",
+      "kind": "face",
+      "form": 2,
+      "face": "+z",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "panel_center",
+      "part": "panel",
+      "kind": "face",
+      "form": 3,
+      "face": "+z",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "panel_right",
+      "part": "panel",
+      "kind": "face",
+      "form": 4,
+      "face": "+z",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "frame_left_mount",
+      "part": "frame_left",
+      "kind": "face",
+      "form": 1,
+      "face": "-z",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "frame_center_mount",
+      "part": "frame_center",
+      "kind": "face",
+      "form": 1,
+      "face": "-z",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "frame_right_mount",
+      "part": "frame_right",
+      "kind": "face",
+      "form": 1,
+      "face": "-z",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 0,
+      "id": "frame_left_bore",
+      "kind": "bore_axis",
+      "part": "frame_left",
+      "span": [
+        0.25,
+        0.75
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 0,
+      "id": "frame_center_bore",
+      "kind": "bore_axis",
+      "part": "frame_center",
+      "span": [
+        0.25,
+        0.75
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 0,
+      "id": "frame_right_bore",
+      "kind": "bore_axis",
+      "part": "frame_right",
+      "span": [
+        0.25,
+        0.75
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 0,
+      "id": "rotor_left_axis",
+      "kind": "outer_axis",
+      "part": "rotor_left",
+      "span": [
+        0.05,
+        0.55
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 0,
+      "id": "rotor_center_axis",
+      "kind": "outer_axis",
+      "part": "rotor_center",
+      "span": [
+        0.05,
+        0.55
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 0,
+      "id": "rotor_right_axis",
+      "kind": "outer_axis",
+      "part": "rotor_right",
+      "span": [
+        0.05,
+        0.55
+      ]
+    }
+  ],
+  "mates": [
+    {
+      "id": "mount_left",
+      "a": "panel_left",
+      "b": "frame_left_mount",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "mount_center",
+      "a": "panel_center",
+      "b": "frame_center_mount",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "mount_right",
+      "a": "panel_right",
+      "b": "frame_right_mount",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "seat_left",
+      "a": "frame_left_bore",
+      "b": "rotor_left_axis",
+      "kind": "coaxial",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0.003,
+      "minimum_overlap": 0.008
+    },
+    {
+      "id": "seat_center",
+      "a": "frame_center_bore",
+      "b": "rotor_center_axis",
+      "kind": "coaxial",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0.003,
+      "minimum_overlap": 0.008
+    },
+    {
+      "id": "seat_right",
+      "a": "frame_right_bore",
+      "b": "rotor_right_axis",
+      "kind": "coaxial",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0.003,
+      "minimum_overlap": 0.008
+    }
+  ],
+  "containments": [
+    {
+      "outer": "frame_left",
+      "inner": "rotor_left",
+      "clearance": 0.003
+    },
+    {
+      "outer": "frame_center",
+      "inner": "rotor_center",
+      "clearance": 0.003
+    },
+    {
+      "outer": "frame_right",
+      "inner": "rotor_right",
+      "clearance": 0.003
+    }
+  ],
+  "clearances": [],
+  "symmetries": [
+    {
+      "a": "frame_left",
+      "b": "frame_right",
+      "axis": "x"
+    },
+    {
+      "a": "rotor_left",
+      "b": "rotor_right",
+      "axis": "x"
+    }
+  ],
+  "bindings": [
+    {
+      "id": "r01",
+      "kind": "components",
+      "refs": [
+        "part:panel"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r02",
+      "kind": "components",
+      "refs": [
+        "part:frame_left",
+        "part:frame_center",
+        "part:frame_right"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r03",
+      "kind": "components",
+      "refs": [
+        "part:rotor_left",
+        "part:rotor_center",
+        "part:rotor_right"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r04",
+      "kind": "components",
+      "refs": [
+        "part:frame_left",
+        "part:frame_center",
+        "part:frame_right"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r05",
+      "kind": "components",
+      "refs": [
+        "part:rotor_left",
+        "part:rotor_center",
+        "part:rotor_right"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r06",
+      "kind": "relations",
+      "refs": [
+        "mate:mount_left",
+        "mate:mount_center",
+        "mate:mount_right"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r07",
+      "kind": "relations",
+      "refs": [
+        "containment:0",
+        "containment:1",
+        "containment:2"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r08",
+      "kind": "constraint",
+      "refs": [
+        "port:frame_left_bore",
+        "port:frame_center_bore",
+        "port:frame_right_bore"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r09",
+      "kind": "constraint",
+      "refs": [
+        "port:frame_left_bore",
+        "port:frame_center_bore",
+        "port:frame_right_bore"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r10",
+      "kind": "constraint",
+      "refs": [
+        "port:rotor_left_axis",
+        "port:rotor_center_axis",
+        "port:rotor_right_axis"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r11",
+      "kind": "constraint",
+      "refs": [
+        "port:rotor_left_axis",
+        "port:rotor_center_axis",
+        "port:rotor_right_axis"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r12",
+      "kind": "capability",
+      "refs": [
+        "capability:inspect"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r13",
+      "kind": "capability",
+      "refs": [
+        "capability:geometric_explode"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r14",
+      "kind": "components",
+      "refs": [
+        "part:rotor_left",
+        "part:rotor_center",
+        "part:rotor_right"
+      ],
+      "note": ""
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "status": "proposed",
+  "changed": {
+    "shapes": [
+      "frame_shape",
+      "rotor_shape"
+    ],
+    "ports": [
+      "frame_center_bore",
+      "frame_left_bore",
+      "frame_right_bore",
+      "rotor_center_axis",
+      "rotor_left_axis",
+      "rotor_right_axis"
+    ]
+  },
+  "protected_parts": [
+    "panel"
+  ],
+  "protected_geometry_unchanged": true,
+  "base_sha256": "5f77599e5a9d6e98d2a5edccd8336ec211b088d16c62ac3c62a74f9e3c0613cb",
+  "result_sha256": "a5a7fad13729508213887749da314262924d71ab9ce4a30d2b7edda9d9819620",
+  "validation_scope": "full assembly; patch admission alone is not success"
+}

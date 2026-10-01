@@ -168,21 +168,28 @@ test executions and seven browser checks pass. This is a narrow simple-concept s
 not a general-object or visual-quality breakthrough.
 
 The [assembly arrangement experiment](Research/native_objects/ASSEMBLY_RESULT.md)
-requires repeated-group placement/orientation decisions and measures solved geometry.
-Its [011 follow-up](Research/native_objects/ASSEMBLY_FOLLOWUP_RESULT.md) now gets a
-complete 34-record drone inventory under the same API output allowance, preserving
-the tested radial groups and shared axes. Construction times out at 240 seconds with
-unknown billing/outcome; the batch stops without new geometry or a new fan repair.
-The speaker fails an exclusion category and leaves front-surface placement untranslated.
-There is still no cross-family generation pass.
+and [011 follow-up](Research/native_objects/ASSEMBLY_FOLLOWUP_RESULT.md) retain the
+complete 34-requirement drone interpretation and the old unknown construction timeout.
+The [012–013 bounded repair comparison](Research/native_objects/LOCAL_REPAIR_RESULT.md)
+now completes through durable background requests. One fan patch passes all 55 checks
+and preserves 55 previously passing facts. Its panel remains unchanged; the visual
+result is coherent but simplified and mechanically incomplete.
 
-Generic exterior-surface checks and measured repair-preservation feedback are implemented.
-Free replay of unchanged 010 fan geometry names 12 repair regressions; it does not prove
-better live repair. A compact typed transport retains schema enums and is locally tested,
-but not dispatched. Keep the executor unchanged; resolve interpretation/transport failures
-before widening scope. No authored output repair, GPU work or production promotion.
-166 relevant tests and 18 browser checks pass (old replay geometry). Completed API
-estimates are $0.0509725 plus a $0.1405625 timeout reservation. No funding error.
+The new 19-part drone completes its initial plan in 98.68 seconds, but two motor/propeller
+pairs face sideways. One local patch leaves a pair inverted and introduces two symmetry
+regressions; it is rejected. The speaker produces valid typed requirements but its
+front-face placement is unsupported, so no geometry is built. No general generation pass.
+
+Local repair scope, preserved checks and lossless feedback tables work as protections.
+The latter reduces a blocked 24,456-token input to 15,987 with all 275 facts intact.
+Geometry/full checks remain around 0.12–0.17 seconds; model requests take 25–99 seconds.
+No latency win is claimed. Test whether global assembly axes can guide pose solving
+instead of only post-build validation, with explicit conflicts and unrelated local cases,
+before another paid rotation-repair loop. Keep surface embedding as a separate boundary.
+No new geometry primitives, stronger model, GPU use, manual output repair or product
+promotion. 149 targeted tests and 36 browser checks pass. Combined API estimate $0.261955,
+no new uncertain holds or funding errors; earlier holds remain. Use $4.47 as the minimum
+conservative prior allowance for subsequent work under the $5 research ceiling.
 
 Generation research is the active track. The product remains stable; answering,
 voice and motion-inference expansion are paused. Research output does not enter

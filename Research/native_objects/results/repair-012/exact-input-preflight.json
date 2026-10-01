@@ -1,0 +1,23 @@
+[
+  {
+    "operation": "cooling-fan-row/patch/1",
+    "input_tokens": 13371,
+    "max_output_tokens": 6144,
+    "maximum_usd": 0.0948675,
+    "admitted": true
+  },
+  {
+    "operation": "two-driver-speaker/extract/0",
+    "input_tokens": 3913,
+    "max_output_tokens": 3072,
+    "maximum_usd": 0.0405025,
+    "admitted": true
+  },
+  {
+    "operation": "generic-drone/plan/0",
+    "input_tokens": 7072,
+    "max_output_tokens": 12288,
+    "maximum_usd": 0.14056,
+    "admitted": true
+  }
+]

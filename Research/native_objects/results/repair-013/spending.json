@@ -1,0 +1,8 @@
+{
+  "charged_and_held_nanos": 73967500,
+  "parent_charge_nanos": 187987500,
+  "combined_nanos": 261955000,
+  "combined_ceiling_nanos": 780000000,
+  "daily_remaining_nanos": 2731665000,
+  "actual_invoiced_cost": null
+}

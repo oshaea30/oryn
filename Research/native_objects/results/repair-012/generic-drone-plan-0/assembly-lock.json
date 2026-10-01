@@ -1,0 +1,507 @@
+{
+  "clearances": [],
+  "containments": [],
+  "mates": [
+    {
+      "a": "axn_tip",
+      "b": "mxn_mount",
+      "id": "axn_motor",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "axn_top",
+      "b": "exn_bottom",
+      "id": "axn_esc",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "axp_tip",
+      "b": "mxp_mount",
+      "id": "axp_motor",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "axp_top",
+      "b": "exp_bottom",
+      "id": "axp_esc",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "azn_tip",
+      "b": "mzn_mount",
+      "id": "azn_motor",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "azn_top",
+      "b": "ezn_bottom",
+      "id": "azn_esc",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "azp_tip",
+      "b": "mzp_mount",
+      "id": "azp_motor",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "azp_top",
+      "b": "ezp_bottom",
+      "id": "azp_esc",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "frame_bottom",
+      "b": "battery_top",
+      "id": "frame_battery",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "frame_nx",
+      "b": "axn_inner",
+      "id": "frame_arm_xn",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "frame_nz",
+      "b": "azn_inner",
+      "id": "frame_arm_zn",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "frame_px",
+      "b": "axp_inner",
+      "id": "frame_arm_xp",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "frame_pz",
+      "b": "azp_inner",
+      "id": "frame_arm_zp",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "frame_top",
+      "b": "controller_bottom",
+      "id": "frame_controller",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "mxn_bore",
+      "b": "pxn_shaft",
+      "id": "mxn_prop",
+      "kind": "coaxial",
+      "minimum_clearance": 0.0005,
+      "minimum_overlap": 0.004,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "mxp_bore",
+      "b": "pxp_shaft",
+      "id": "mxp_prop",
+      "kind": "coaxial",
+      "minimum_clearance": 0.0005,
+      "minimum_overlap": 0.004,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "mzn_bore",
+      "b": "pzn_shaft",
+      "id": "mzn_prop",
+      "kind": "coaxial",
+      "minimum_clearance": 0.0005,
+      "minimum_overlap": 0.004,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "mzp_bore",
+      "b": "pzp_shaft",
+      "id": "mzp_prop",
+      "kind": "coaxial",
+      "minimum_clearance": 0.0005,
+      "minimum_overlap": 0.004,
+      "offset": 0,
+      "twist": 0
+    }
+  ],
+  "parts": [
+    [
+      "axn",
+      "Four arms",
+      "frame"
+    ],
+    [
+      "axp",
+      "Four arms",
+      "frame"
+    ],
+    [
+      "azn",
+      "Four arms",
+      "frame"
+    ],
+    [
+      "azp",
+      "Four arms",
+      "frame"
+    ],
+    [
+      "battery",
+      "Battery",
+      "frame"
+    ],
+    [
+      "controller",
+      "Flight controller",
+      "frame"
+    ],
+    [
+      "exn",
+      "Electronic speed controllers",
+      "axn"
+    ],
+    [
+      "exp",
+      "Electronic speed controllers",
+      "axp"
+    ],
+    [
+      "ezn",
+      "Electronic speed controllers",
+      "azn"
+    ],
+    [
+      "ezp",
+      "Electronic speed controllers",
+      "azp"
+    ],
+    [
+      "frame",
+      "Central frame",
+      ""
+    ],
+    [
+      "mxn",
+      "Four motors",
+      "axn"
+    ],
+    [
+      "mxp",
+      "Four motors",
+      "axp"
+    ],
+    [
+      "mzn",
+      "Four motors",
+      "azn"
+    ],
+    [
+      "mzp",
+      "Four motors",
+      "azp"
+    ],
+    [
+      "pxn",
+      "Four propellers",
+      "mxn"
+    ],
+    [
+      "pxp",
+      "Four propellers",
+      "mxp"
+    ],
+    [
+      "pzn",
+      "Four propellers",
+      "mzn"
+    ],
+    [
+      "pzp",
+      "Four propellers",
+      "mzp"
+    ]
+  ],
+  "ports": [
+    [
+      "axn_inner",
+      "axn",
+      "face"
+    ],
+    [
+      "axn_tip",
+      "axn",
+      "face"
+    ],
+    [
+      "axn_top",
+      "axn",
+      "face"
+    ],
+    [
+      "axp_inner",
+      "axp",
+      "face"
+    ],
+    [
+      "axp_tip",
+      "axp",
+      "face"
+    ],
+    [
+      "axp_top",
+      "axp",
+      "face"
+    ],
+    [
+      "azn_inner",
+      "azn",
+      "face"
+    ],
+    [
+      "azn_tip",
+      "azn",
+      "face"
+    ],
+    [
+      "azn_top",
+      "azn",
+      "face"
+    ],
+    [
+      "azp_inner",
+      "azp",
+      "face"
+    ],
+    [
+      "azp_tip",
+      "azp",
+      "face"
+    ],
+    [
+      "azp_top",
+      "azp",
+      "face"
+    ],
+    [
+      "battery_top",
+      "battery",
+      "face"
+    ],
+    [
+      "controller_bottom",
+      "controller",
+      "face"
+    ],
+    [
+      "exn_bottom",
+      "exn",
+      "face"
+    ],
+    [
+      "exp_bottom",
+      "exp",
+      "face"
+    ],
+    [
+      "ezn_bottom",
+      "ezn",
+      "face"
+    ],
+    [
+      "ezp_bottom",
+      "ezp",
+      "face"
+    ],
+    [
+      "frame_bottom",
+      "frame",
+      "face"
+    ],
+    [
+      "frame_nx",
+      "frame",
+      "face"
+    ],
+    [
+      "frame_nz",
+      "frame",
+      "face"
+    ],
+    [
+      "frame_px",
+      "frame",
+      "face"
+    ],
+    [
+      "frame_pz",
+      "frame",
+      "face"
+    ],
+    [
+      "frame_top",
+      "frame",
+      "face"
+    ],
+    [
+      "mxn_bore",
+      "mxn",
+      "bore_axis"
+    ],
+    [
+      "mxn_mount",
+      "mxn",
+      "face"
+    ],
+    [
+      "mxp_bore",
+      "mxp",
+      "bore_axis"
+    ],
+    [
+      "mxp_mount",
+      "mxp",
+      "face"
+    ],
+    [
+      "mzn_bore",
+      "mzn",
+      "bore_axis"
+    ],
+    [
+      "mzn_mount",
+      "mzn",
+      "face"
+    ],
+    [
+      "mzp_bore",
+      "mzp",
+      "bore_axis"
+    ],
+    [
+      "mzp_mount",
+      "mzp",
+      "face"
+    ],
+    [
+      "pxn_shaft",
+      "pxn",
+      "outer_axis"
+    ],
+    [
+      "pxp_shaft",
+      "pxp",
+      "outer_axis"
+    ],
+    [
+      "pzn_shaft",
+      "pzn",
+      "outer_axis"
+    ],
+    [
+      "pzp_shaft",
+      "pzp",
+      "outer_axis"
+    ]
+  ],
+  "symmetries": [
+    {
+      "a": "axp",
+      "axis": "x",
+      "b": "axn"
+    },
+    {
+      "a": "azp",
+      "axis": "z",
+      "b": "azn"
+    },
+    {
+      "a": "exp",
+      "axis": "x",
+      "b": "exn"
+    },
+    {
+      "a": "ezp",
+      "axis": "z",
+      "b": "ezn"
+    },
+    {
+      "a": "mxp",
+      "axis": "x",
+      "b": "mxn"
+    },
+    {
+      "a": "mzp",
+      "axis": "z",
+      "b": "mzn"
+    },
+    {
+      "a": "pxp",
+      "axis": "x",
+      "b": "pxn"
+    },
+    {
+      "a": "pzp",
+      "axis": "z",
+      "b": "pzn"
+    }
+  ]
+}

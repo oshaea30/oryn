@@ -1,0 +1,34 @@
+{
+  "r08": {
+    "kind": "constraint",
+    "refs": [
+      "port:frame_center_bore",
+      "port:frame_left_bore",
+      "port:frame_right_bore"
+    ]
+  },
+  "r09": {
+    "kind": "constraint",
+    "refs": [
+      "port:frame_center_bore",
+      "port:frame_left_bore",
+      "port:frame_right_bore"
+    ]
+  },
+  "r10": {
+    "kind": "constraint",
+    "refs": [
+      "port:rotor_center_axis",
+      "port:rotor_left_axis",
+      "port:rotor_right_axis"
+    ]
+  },
+  "r11": {
+    "kind": "constraint",
+    "refs": [
+      "port:rotor_center_axis",
+      "port:rotor_left_axis",
+      "port:rotor_right_axis"
+    ]
+  }
+}

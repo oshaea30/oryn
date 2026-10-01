@@ -1,0 +1,22 @@
+{
+  "results": [
+    {
+      "case": "generic-drone-plan-1",
+      "parts": 19,
+      "checks": [
+        "case URL loads requested candidate",
+        "every component independently selectable",
+        "measured pass/failure displayed honestly",
+        "assembly checks displayed",
+        "repair preservation displayed",
+        "separation changes the rendered image",
+        "component isolation changes the rendered image",
+        "reset restores full assembly",
+        "static output has no claimed animation"
+      ]
+    }
+  ],
+  "page_errors": [],
+  "check_count": 9,
+  "quest_performance": "not assessed"
+}

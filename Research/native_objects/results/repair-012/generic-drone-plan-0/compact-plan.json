@@ -1,0 +1,1439 @@
+{
+  "mates": [
+    {
+      "a": "frame_px",
+      "id": "frame_arm_xp",
+      "kind": "face",
+      "offset": 0,
+      "minimum_overlap": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "b": "axp_inner"
+    },
+    {
+      "a": "frame_nx",
+      "id": "frame_arm_xn",
+      "kind": "face",
+      "offset": 0,
+      "minimum_overlap": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "b": "axn_inner"
+    },
+    {
+      "a": "frame_pz",
+      "id": "frame_arm_zp",
+      "kind": "face",
+      "offset": 0,
+      "minimum_overlap": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "b": "azp_inner"
+    },
+    {
+      "a": "frame_nz",
+      "id": "frame_arm_zn",
+      "kind": "face",
+      "offset": 0,
+      "minimum_overlap": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "b": "azn_inner"
+    },
+    {
+      "a": "axp_tip",
+      "id": "axp_motor",
+      "kind": "face",
+      "offset": 0,
+      "minimum_overlap": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "b": "mxp_mount"
+    },
+    {
+      "a": "axn_tip",
+      "id": "axn_motor",
+      "kind": "face",
+      "offset": 0,
+      "minimum_overlap": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "b": "mxn_mount"
+    },
+    {
+      "a": "azp_tip",
+      "id": "azp_motor",
+      "kind": "face",
+      "offset": 0,
+      "minimum_overlap": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "b": "mzp_mount"
+    },
+    {
+      "a": "azn_tip",
+      "id": "azn_motor",
+      "kind": "face",
+      "offset": 0,
+      "minimum_overlap": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "b": "mzn_mount"
+    },
+    {
+      "a": "mxp_bore",
+      "id": "mxp_prop",
+      "kind": "coaxial",
+      "offset": 0,
+      "minimum_overlap": 0.004,
+      "twist": 0,
+      "minimum_clearance": 0.0005,
+      "b": "pxp_shaft"
+    },
+    {
+      "a": "mxn_bore",
+      "id": "mxn_prop",
+      "kind": "coaxial",
+      "offset": 0,
+      "minimum_overlap": 0.004,
+      "twist": 0,
+      "minimum_clearance": 0.0005,
+      "b": "pxn_shaft"
+    },
+    {
+      "a": "mzp_bore",
+      "id": "mzp_prop",
+      "kind": "coaxial",
+      "offset": 0,
+      "minimum_overlap": 0.004,
+      "twist": 0,
+      "minimum_clearance": 0.0005,
+      "b": "pzp_shaft"
+    },
+    {
+      "a": "mzn_bore",
+      "id": "mzn_prop",
+      "kind": "coaxial",
+      "offset": 0,
+      "minimum_overlap": 0.004,
+      "twist": 0,
+      "minimum_clearance": 0.0005,
+      "b": "pzn_shaft"
+    },
+    {
+      "a": "axp_top",
+      "id": "axp_esc",
+      "kind": "face",
+      "offset": 0,
+      "minimum_overlap": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "b": "exp_bottom"
+    },
+    {
+      "a": "axn_top",
+      "id": "axn_esc",
+      "kind": "face",
+      "offset": 0,
+      "minimum_overlap": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "b": "exn_bottom"
+    },
+    {
+      "a": "azp_top",
+      "id": "azp_esc",
+      "kind": "face",
+      "offset": 0,
+      "minimum_overlap": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "b": "ezp_bottom"
+    },
+    {
+      "a": "azn_top",
+      "id": "azn_esc",
+      "kind": "face",
+      "offset": 0,
+      "minimum_overlap": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "b": "ezn_bottom"
+    },
+    {
+      "a": "frame_bottom",
+      "id": "frame_battery",
+      "kind": "face",
+      "offset": 0,
+      "minimum_overlap": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "b": "battery_top"
+    },
+    {
+      "a": "frame_top",
+      "id": "frame_controller",
+      "kind": "face",
+      "offset": 0,
+      "minimum_overlap": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "b": "controller_bottom"
+    }
+  ],
+  "bindings": [
+    {
+      "id": "r0",
+      "kind": "components",
+      "refs": [
+        "part:frame",
+        "part:axp",
+        "part:axn",
+        "part:azp",
+        "part:azn",
+        "part:mxp",
+        "part:mxn",
+        "part:mzp",
+        "part:mzn",
+        "part:pxp",
+        "part:pxn",
+        "part:pzp",
+        "part:pzn",
+        "part:battery",
+        "part:controller",
+        "part:exp",
+        "part:exn",
+        "part:ezp",
+        "part:ezn"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r1",
+      "kind": "components",
+      "refs": [
+        "part:frame"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r2",
+      "kind": "components",
+      "refs": [
+        "part:axp",
+        "part:axn",
+        "part:azp",
+        "part:azn"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r3",
+      "kind": "components",
+      "refs": [
+        "part:mxp",
+        "part:mxn",
+        "part:mzp",
+        "part:mzn"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r4",
+      "kind": "components",
+      "refs": [
+        "part:pxp",
+        "part:pxn",
+        "part:pzp",
+        "part:pzn"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r5",
+      "kind": "components",
+      "refs": [
+        "part:battery"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r6",
+      "kind": "components",
+      "refs": [
+        "part:controller"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r7",
+      "kind": "components",
+      "refs": [
+        "part:exp",
+        "part:exn",
+        "part:ezp",
+        "part:ezn"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r8",
+      "kind": "components",
+      "refs": [
+        "part:axp",
+        "part:axn",
+        "part:azp",
+        "part:azn"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r9",
+      "kind": "components",
+      "refs": [
+        "part:mxp",
+        "part:mxn",
+        "part:mzp",
+        "part:mzn"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r10",
+      "kind": "components",
+      "refs": [
+        "part:pxp",
+        "part:pxn",
+        "part:pzp",
+        "part:pzn"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r11",
+      "kind": "components",
+      "refs": [
+        "part:exp",
+        "part:exn",
+        "part:ezp",
+        "part:ezn"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r12",
+      "kind": "constraint",
+      "refs": [
+        "port:axp_inner",
+        "port:axn_inner",
+        "port:azp_inner",
+        "port:azn_inner",
+        "part:frame"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r13",
+      "kind": "constraint",
+      "refs": [
+        "part:axp",
+        "part:axn",
+        "part:azp",
+        "part:azn",
+        "part:frame"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r14",
+      "kind": "constraint",
+      "refs": [
+        "port:mxp_bore",
+        "port:mxn_bore",
+        "port:mzp_bore",
+        "port:mzn_bore",
+        "part:frame"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r15",
+      "kind": "constraint",
+      "refs": [
+        "port:mxp_bore",
+        "port:mxn_bore",
+        "port:mzp_bore",
+        "port:mzn_bore"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r16",
+      "kind": "constraint",
+      "refs": [
+        "port:pxp_shaft",
+        "port:pxn_shaft",
+        "port:pzp_shaft",
+        "port:pzn_shaft",
+        "part:frame"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r17",
+      "kind": "constraint",
+      "refs": [
+        "port:pxp_shaft",
+        "port:pxn_shaft",
+        "port:pzp_shaft",
+        "port:pzn_shaft"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r18",
+      "kind": "unsupported",
+      "refs": [],
+      "note": "The frozen arrangement marks controller placement unsupported; one is nevertheless proposed on each arm."
+    },
+    {
+      "id": "r19",
+      "kind": "unsupported",
+      "refs": [],
+      "note": "The frozen arrangement marks controller-following orientation unsupported; no orientation verification is claimed."
+    },
+    {
+      "id": "r20",
+      "kind": "relations",
+      "refs": [
+        "mate:frame_arm_xp",
+        "mate:frame_arm_xn",
+        "mate:frame_arm_zp",
+        "mate:frame_arm_zn"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r21",
+      "kind": "constraint",
+      "refs": [
+        "mate:axp_motor",
+        "mate:axn_motor",
+        "mate:azp_motor",
+        "mate:azn_motor"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r22",
+      "kind": "relations",
+      "refs": [
+        "mate:axp_motor",
+        "mate:axn_motor",
+        "mate:azp_motor",
+        "mate:azn_motor"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r23",
+      "kind": "constraint",
+      "refs": [
+        "mate:mxp_prop",
+        "mate:mxn_prop",
+        "mate:mzp_prop",
+        "mate:mzn_prop"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r24",
+      "kind": "relations",
+      "refs": [
+        "mate:mxp_prop",
+        "mate:mxn_prop",
+        "mate:mzp_prop",
+        "mate:mzn_prop"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r25",
+      "kind": "relations",
+      "refs": [
+        "mate:frame_battery"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r26",
+      "kind": "relations",
+      "refs": [
+        "mate:frame_controller"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r27",
+      "kind": "relations",
+      "refs": [
+        "mate:frame_battery",
+        "mate:frame_controller"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r28",
+      "kind": "relations",
+      "refs": [
+        "mate:frame_controller",
+        "mate:frame_arm_xp",
+        "mate:frame_arm_xn",
+        "mate:frame_arm_zp",
+        "mate:frame_arm_zn",
+        "mate:axp_esc",
+        "mate:axn_esc",
+        "mate:azp_esc",
+        "mate:azn_esc"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r29",
+      "kind": "relations",
+      "refs": [
+        "mate:axp_esc",
+        "mate:axp_motor",
+        "mate:axn_esc",
+        "mate:axn_motor",
+        "mate:azp_esc",
+        "mate:azp_motor",
+        "mate:azn_esc",
+        "mate:azn_motor"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r30",
+      "kind": "relations",
+      "refs": [
+        "mate:axp_esc",
+        "mate:axn_esc",
+        "mate:azp_esc",
+        "mate:azn_esc"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r31",
+      "kind": "capability",
+      "refs": [
+        "capability:inspect"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r32",
+      "kind": "capability",
+      "refs": [
+        "capability:geometric_explode"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r33",
+      "kind": "capability",
+      "refs": [
+        "capability:reassemble"
+      ],
+      "note": ""
+    }
+  ],
+  "clearances": [],
+  "containments": [],
+  "shapes": [
+    {
+      "forms": [
+        {
+          "at": [],
+          "detail": [
+            {
+              "key": "radius",
+              "values": [
+                0.003
+              ]
+            }
+          ],
+          "kind": "rounded_box",
+          "size": [
+            0.12,
+            0.018,
+            0.12
+          ],
+          "op": "add",
+          "rotate": []
+        }
+      ],
+      "id": "frame_shape"
+    },
+    {
+      "forms": [
+        {
+          "at": [],
+          "detail": [],
+          "kind": "box",
+          "size": [
+            0.22,
+            0.014,
+            0.024
+          ],
+          "op": "add",
+          "rotate": []
+        }
+      ],
+      "id": "arm_shape"
+    },
+    {
+      "forms": [
+        {
+          "at": [
+            0.021,
+            0,
+            0
+          ],
+          "detail": [],
+          "kind": "cylinder",
+          "size": [
+            0.034,
+            0.02,
+            0.034
+          ],
+          "op": "add",
+          "rotate": []
+        },
+        {
+          "at": [
+            0.007,
+            -0.003,
+            0
+          ],
+          "detail": [],
+          "kind": "box",
+          "size": [
+            0.014,
+            0.012,
+            0.012
+          ],
+          "op": "add",
+          "rotate": []
+        },
+        {
+          "at": [
+            0.021,
+            0,
+            0
+          ],
+          "detail": [],
+          "kind": "cylinder",
+          "size": [
+            0.008,
+            0.032,
+            0.008
+          ],
+          "op": "subtract",
+          "rotate": []
+        }
+      ],
+      "id": "motor_shape"
+    },
+    {
+      "forms": [
+        {
+          "at": [],
+          "detail": [],
+          "kind": "cylinder",
+          "size": [
+            0.007,
+            0.024,
+            0.007
+          ],
+          "op": "add",
+          "rotate": []
+        },
+        {
+          "at": [
+            0,
+            0.014,
+            0
+          ],
+          "detail": [],
+          "kind": "cylinder",
+          "size": [
+            0.016,
+            0.01,
+            0.016
+          ],
+          "op": "add",
+          "rotate": []
+        },
+        {
+          "at": [
+            0,
+            0.016,
+            0
+          ],
+          "detail": [
+            {
+              "key": "radius",
+              "values": [
+                0.001
+              ]
+            }
+          ],
+          "kind": "rounded_box",
+          "size": [
+            0.126,
+            0.003,
+            0.015
+          ],
+          "op": "add",
+          "rotate": []
+        }
+      ],
+      "id": "prop_shape"
+    },
+    {
+      "forms": [
+        {
+          "at": [],
+          "detail": [
+            {
+              "key": "radius",
+              "values": [
+                0.003
+              ]
+            }
+          ],
+          "kind": "rounded_box",
+          "size": [
+            0.085,
+            0.024,
+            0.085
+          ],
+          "op": "add",
+          "rotate": []
+        }
+      ],
+      "id": "battery_shape"
+    },
+    {
+      "forms": [
+        {
+          "at": [],
+          "detail": [
+            {
+              "key": "radius",
+              "values": [
+                0.001
+              ]
+            }
+          ],
+          "kind": "rounded_box",
+          "size": [
+            0.06,
+            0.007,
+            0.06
+          ],
+          "op": "add",
+          "rotate": []
+        }
+      ],
+      "id": "controller_shape"
+    },
+    {
+      "forms": [
+        {
+          "at": [],
+          "detail": [
+            {
+              "key": "radius",
+              "values": [
+                0.001
+              ]
+            }
+          ],
+          "kind": "rounded_box",
+          "size": [
+            0.052,
+            0.006,
+            0.019
+          ],
+          "op": "add",
+          "rotate": []
+        }
+      ],
+      "id": "esc_shape"
+    }
+  ],
+  "parts": [
+    {
+      "color": [
+        0.19,
+        0.23,
+        0.27
+      ],
+      "parent": "",
+      "id": "frame",
+      "entity": "e0",
+      "shape": "frame_shape"
+    },
+    {
+      "color": [
+        0.25,
+        0.29,
+        0.32
+      ],
+      "parent": "frame",
+      "id": "axp",
+      "entity": "e1",
+      "shape": "arm_shape"
+    },
+    {
+      "color": [
+        0.25,
+        0.29,
+        0.32
+      ],
+      "parent": "frame",
+      "id": "axn",
+      "entity": "e1",
+      "shape": "arm_shape"
+    },
+    {
+      "color": [
+        0.25,
+        0.29,
+        0.32
+      ],
+      "parent": "frame",
+      "id": "azp",
+      "entity": "e1",
+      "shape": "arm_shape"
+    },
+    {
+      "color": [
+        0.25,
+        0.29,
+        0.32
+      ],
+      "parent": "frame",
+      "id": "azn",
+      "entity": "e1",
+      "shape": "arm_shape"
+    },
+    {
+      "color": [
+        0.38,
+        0.4,
+        0.43
+      ],
+      "parent": "axp",
+      "id": "mxp",
+      "entity": "e2",
+      "shape": "motor_shape"
+    },
+    {
+      "color": [
+        0.38,
+        0.4,
+        0.43
+      ],
+      "parent": "axn",
+      "id": "mxn",
+      "entity": "e2",
+      "shape": "motor_shape"
+    },
+    {
+      "color": [
+        0.38,
+        0.4,
+        0.43
+      ],
+      "parent": "azp",
+      "id": "mzp",
+      "entity": "e2",
+      "shape": "motor_shape"
+    },
+    {
+      "color": [
+        0.38,
+        0.4,
+        0.43
+      ],
+      "parent": "azn",
+      "id": "mzn",
+      "entity": "e2",
+      "shape": "motor_shape"
+    },
+    {
+      "color": [
+        0.18,
+        0.21,
+        0.24
+      ],
+      "parent": "mxp",
+      "id": "pxp",
+      "entity": "e3",
+      "shape": "prop_shape"
+    },
+    {
+      "color": [
+        0.18,
+        0.21,
+        0.24
+      ],
+      "parent": "mxn",
+      "id": "pxn",
+      "entity": "e3",
+      "shape": "prop_shape"
+    },
+    {
+      "color": [
+        0.18,
+        0.21,
+        0.24
+      ],
+      "parent": "mzp",
+      "id": "pzp",
+      "entity": "e3",
+      "shape": "prop_shape"
+    },
+    {
+      "color": [
+        0.18,
+        0.21,
+        0.24
+      ],
+      "parent": "mzn",
+      "id": "pzn",
+      "entity": "e3",
+      "shape": "prop_shape"
+    },
+    {
+      "color": [
+        0.3,
+        0.34,
+        0.38
+      ],
+      "parent": "frame",
+      "id": "battery",
+      "entity": "e4",
+      "shape": "battery_shape"
+    },
+    {
+      "color": [
+        0.15,
+        0.35,
+        0.32
+      ],
+      "parent": "frame",
+      "id": "controller",
+      "entity": "e5",
+      "shape": "controller_shape"
+    },
+    {
+      "color": [
+        0.16,
+        0.33,
+        0.31
+      ],
+      "parent": "axp",
+      "id": "exp",
+      "entity": "e6",
+      "shape": "esc_shape"
+    },
+    {
+      "color": [
+        0.16,
+        0.33,
+        0.31
+      ],
+      "parent": "axn",
+      "id": "exn",
+      "entity": "e6",
+      "shape": "esc_shape"
+    },
+    {
+      "color": [
+        0.16,
+        0.33,
+        0.31
+      ],
+      "parent": "azp",
+      "id": "ezp",
+      "entity": "e6",
+      "shape": "esc_shape"
+    },
+    {
+      "color": [
+        0.16,
+        0.33,
+        0.31
+      ],
+      "parent": "azn",
+      "id": "ezn",
+      "entity": "e6",
+      "shape": "esc_shape"
+    }
+  ],
+  "root_rotation": [
+    0,
+    0,
+    0
+  ],
+  "symmetries": [
+    {
+      "a": "axp",
+      "axis": "x",
+      "b": "axn"
+    },
+    {
+      "a": "azp",
+      "axis": "z",
+      "b": "azn"
+    },
+    {
+      "a": "mxp",
+      "axis": "x",
+      "b": "mxn"
+    },
+    {
+      "a": "mzp",
+      "axis": "z",
+      "b": "mzn"
+    },
+    {
+      "a": "pxp",
+      "axis": "x",
+      "b": "pxn"
+    },
+    {
+      "a": "pzp",
+      "axis": "z",
+      "b": "pzn"
+    },
+    {
+      "a": "exp",
+      "axis": "x",
+      "b": "exn"
+    },
+    {
+      "a": "ezp",
+      "axis": "z",
+      "b": "ezn"
+    }
+  ],
+  "ports": [
+    {
+      "face": "+x",
+      "form": 0,
+      "id": "frame_px",
+      "kind": "face",
+      "part": "frame",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "-x",
+      "form": 0,
+      "id": "frame_nx",
+      "kind": "face",
+      "part": "frame",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+z",
+      "form": 0,
+      "id": "frame_pz",
+      "kind": "face",
+      "part": "frame",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "-z",
+      "form": 0,
+      "id": "frame_nz",
+      "kind": "face",
+      "part": "frame",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "-y",
+      "form": 0,
+      "id": "frame_bottom",
+      "kind": "face",
+      "part": "frame",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 0,
+      "id": "frame_top",
+      "kind": "face",
+      "part": "frame",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "-x",
+      "form": 0,
+      "id": "axp_inner",
+      "kind": "face",
+      "part": "axp",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+x",
+      "form": 0,
+      "id": "axp_tip",
+      "kind": "face",
+      "part": "axp",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 0,
+      "id": "axp_top",
+      "kind": "face",
+      "part": "axp",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "-x",
+      "form": 0,
+      "id": "axn_inner",
+      "kind": "face",
+      "part": "axn",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+x",
+      "form": 0,
+      "id": "axn_tip",
+      "kind": "face",
+      "part": "axn",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 0,
+      "id": "axn_top",
+      "kind": "face",
+      "part": "axn",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "-x",
+      "form": 0,
+      "id": "azp_inner",
+      "kind": "face",
+      "part": "azp",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+x",
+      "form": 0,
+      "id": "azp_tip",
+      "kind": "face",
+      "part": "azp",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 0,
+      "id": "azp_top",
+      "kind": "face",
+      "part": "azp",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "-x",
+      "form": 0,
+      "id": "azn_inner",
+      "kind": "face",
+      "part": "azn",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+x",
+      "form": 0,
+      "id": "azn_tip",
+      "kind": "face",
+      "part": "azn",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 0,
+      "id": "azn_top",
+      "kind": "face",
+      "part": "azn",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "-x",
+      "form": 1,
+      "id": "mxp_mount",
+      "kind": "face",
+      "part": "mxp",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 2,
+      "id": "mxp_bore",
+      "kind": "bore_axis",
+      "part": "mxp",
+      "span": [
+        0.35,
+        0.65
+      ]
+    },
+    {
+      "face": "-x",
+      "form": 1,
+      "id": "mxn_mount",
+      "kind": "face",
+      "part": "mxn",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 2,
+      "id": "mxn_bore",
+      "kind": "bore_axis",
+      "part": "mxn",
+      "span": [
+        0.35,
+        0.65
+      ]
+    },
+    {
+      "face": "-x",
+      "form": 1,
+      "id": "mzp_mount",
+      "kind": "face",
+      "part": "mzp",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 2,
+      "id": "mzp_bore",
+      "kind": "bore_axis",
+      "part": "mzp",
+      "span": [
+        0.35,
+        0.65
+      ]
+    },
+    {
+      "face": "-x",
+      "form": 1,
+      "id": "mzn_mount",
+      "kind": "face",
+      "part": "mzn",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 2,
+      "id": "mzn_bore",
+      "kind": "bore_axis",
+      "part": "mzn",
+      "span": [
+        0.35,
+        0.65
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 0,
+      "id": "pxp_shaft",
+      "kind": "outer_axis",
+      "part": "pxp",
+      "span": [
+        0,
+        0.5
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 0,
+      "id": "pxn_shaft",
+      "kind": "outer_axis",
+      "part": "pxn",
+      "span": [
+        0,
+        0.5
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 0,
+      "id": "pzp_shaft",
+      "kind": "outer_axis",
+      "part": "pzp",
+      "span": [
+        0,
+        0.5
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 0,
+      "id": "pzn_shaft",
+      "kind": "outer_axis",
+      "part": "pzn",
+      "span": [
+        0,
+        0.5
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 0,
+      "id": "battery_top",
+      "kind": "face",
+      "part": "battery",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "-y",
+      "form": 0,
+      "id": "controller_bottom",
+      "kind": "face",
+      "part": "controller",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "-y",
+      "form": 0,
+      "id": "exp_bottom",
+      "kind": "face",
+      "part": "exp",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "-y",
+      "form": 0,
+      "id": "exn_bottom",
+      "kind": "face",
+      "part": "exn",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "-y",
+      "form": 0,
+      "id": "ezp_bottom",
+      "kind": "face",
+      "part": "ezp",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "-y",
+      "form": 0,
+      "id": "ezn_bottom",
+      "kind": "face",
+      "part": "ezn",
+      "span": [
+        0,
+        1
+      ]
+    }
+  ],
+  "root_position": [
+    0,
+    0,
+    0
+  ]
+}

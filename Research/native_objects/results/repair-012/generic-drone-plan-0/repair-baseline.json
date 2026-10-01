@@ -1,0 +1,2047 @@
+{
+  "version": 1,
+  "passed_facts": [
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r13",
+      "assembly_id": "a0",
+      "aspect": "orientation"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r15",
+      "assembly_id": "a1",
+      "aspect": "orientation",
+      "facet": "member_relation",
+      "part": "mxn",
+      "port": "mxn_bore"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r15",
+      "assembly_id": "a1",
+      "aspect": "orientation",
+      "facet": "member_relation",
+      "part": "mxp",
+      "port": "mxp_bore"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r17",
+      "assembly_id": "a2",
+      "aspect": "orientation",
+      "facet": "member_relation",
+      "part": "pxn",
+      "port": "pxn_shaft"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r17",
+      "assembly_id": "a2",
+      "aspect": "orientation",
+      "facet": "member_relation",
+      "part": "pxp",
+      "port": "pxp_shaft"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r12",
+      "assembly_id": "a0",
+      "aspect": "placement",
+      "facet": "member_relation",
+      "part": "axn",
+      "port": "axn_inner"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r12",
+      "assembly_id": "a0",
+      "aspect": "placement",
+      "facet": "member_relation",
+      "part": "axp",
+      "port": "axp_inner"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r12",
+      "assembly_id": "a0",
+      "aspect": "placement",
+      "facet": "member_relation",
+      "part": "azn",
+      "port": "azn_inner"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r12",
+      "assembly_id": "a0",
+      "aspect": "placement",
+      "facet": "member_relation",
+      "part": "azp",
+      "port": "azp_inner"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r12",
+      "assembly_id": "a0",
+      "aspect": "placement"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r14",
+      "assembly_id": "a1",
+      "aspect": "placement",
+      "facet": "member_relation",
+      "part": "mxn",
+      "port": "mxn_bore"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r14",
+      "assembly_id": "a1",
+      "aspect": "placement",
+      "facet": "member_relation",
+      "part": "mxp",
+      "port": "mxp_bore"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r14",
+      "assembly_id": "a1",
+      "aspect": "placement",
+      "facet": "member_relation",
+      "part": "mzn",
+      "port": "mzn_bore"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r14",
+      "assembly_id": "a1",
+      "aspect": "placement",
+      "facet": "member_relation",
+      "part": "mzp",
+      "port": "mzp_bore"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r14",
+      "assembly_id": "a1",
+      "aspect": "placement"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r16",
+      "assembly_id": "a2",
+      "aspect": "placement",
+      "facet": "member_relation",
+      "part": "pxn",
+      "port": "pxn_shaft"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r16",
+      "assembly_id": "a2",
+      "aspect": "placement",
+      "facet": "member_relation",
+      "part": "pxp",
+      "port": "pxp_shaft"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r16",
+      "assembly_id": "a2",
+      "aspect": "placement",
+      "facet": "member_relation",
+      "part": "pzn",
+      "port": "pzn_shaft"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r16",
+      "assembly_id": "a2",
+      "aspect": "placement",
+      "facet": "member_relation",
+      "part": "pzp",
+      "port": "pzp_shaft"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r16",
+      "assembly_id": "a2",
+      "aspect": "placement"
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axn",
+        "b": "axp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axn",
+        "b": "azn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axn",
+        "b": "azp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axn",
+        "b": "battery"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axn",
+        "b": "controller"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axn",
+        "b": "exn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axn",
+        "b": "exp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axn",
+        "b": "ezn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axn",
+        "b": "ezp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axn",
+        "b": "frame"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axn",
+        "b": "mxn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axn",
+        "b": "mxp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axn",
+        "b": "mzn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axn",
+        "b": "mzp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axn",
+        "b": "pxn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axn",
+        "b": "pxp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axn",
+        "b": "pzn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axn",
+        "b": "pzp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axp",
+        "b": "azn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axp",
+        "b": "azp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axp",
+        "b": "battery"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axp",
+        "b": "controller"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axp",
+        "b": "exn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axp",
+        "b": "exp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axp",
+        "b": "ezn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axp",
+        "b": "ezp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axp",
+        "b": "frame"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axp",
+        "b": "mxn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axp",
+        "b": "mxp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axp",
+        "b": "mzn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axp",
+        "b": "mzp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axp",
+        "b": "pxn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axp",
+        "b": "pxp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axp",
+        "b": "pzn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axp",
+        "b": "pzp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azn",
+        "b": "azp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azn",
+        "b": "battery"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azn",
+        "b": "controller"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azn",
+        "b": "exn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azn",
+        "b": "exp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azn",
+        "b": "ezn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azn",
+        "b": "ezp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azn",
+        "b": "frame"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azn",
+        "b": "mxn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azn",
+        "b": "mxp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azn",
+        "b": "mzn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azn",
+        "b": "mzp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azn",
+        "b": "pxn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azn",
+        "b": "pxp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azn",
+        "b": "pzn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azn",
+        "b": "pzp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azp",
+        "b": "battery"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azp",
+        "b": "controller"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azp",
+        "b": "exn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azp",
+        "b": "exp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azp",
+        "b": "ezn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azp",
+        "b": "ezp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azp",
+        "b": "frame"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azp",
+        "b": "mxn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azp",
+        "b": "mxp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azp",
+        "b": "mzn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azp",
+        "b": "mzp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azp",
+        "b": "pxn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azp",
+        "b": "pxp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azp",
+        "b": "pzn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azp",
+        "b": "pzp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery",
+        "b": "controller"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery",
+        "b": "exn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery",
+        "b": "exp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery",
+        "b": "ezn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery",
+        "b": "ezp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery",
+        "b": "frame"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery",
+        "b": "mxn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery",
+        "b": "mxp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery",
+        "b": "mzn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery",
+        "b": "mzp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery",
+        "b": "pxn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery",
+        "b": "pxp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery",
+        "b": "pzn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery",
+        "b": "pzp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "controller",
+        "b": "exn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "controller",
+        "b": "exp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "controller",
+        "b": "ezn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "controller",
+        "b": "ezp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "controller",
+        "b": "frame"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "controller",
+        "b": "mxn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "controller",
+        "b": "mxp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "controller",
+        "b": "mzn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "controller",
+        "b": "mzp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "controller",
+        "b": "pxn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "controller",
+        "b": "pxp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "controller",
+        "b": "pzn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "controller",
+        "b": "pzp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "exn",
+        "b": "exp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "exn",
+        "b": "ezn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "exn",
+        "b": "ezp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "exn",
+        "b": "frame"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "exn",
+        "b": "mxn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "exn",
+        "b": "mxp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "exn",
+        "b": "mzn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "exn",
+        "b": "mzp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "exn",
+        "b": "pxn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "exn",
+        "b": "pxp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "exn",
+        "b": "pzn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "exn",
+        "b": "pzp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "exp",
+        "b": "ezn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "exp",
+        "b": "ezp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "exp",
+        "b": "frame"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "exp",
+        "b": "mxn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "exp",
+        "b": "mxp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "exp",
+        "b": "mzn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "exp",
+        "b": "mzp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "exp",
+        "b": "pxn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "exp",
+        "b": "pxp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "exp",
+        "b": "pzn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "exp",
+        "b": "pzp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "ezn",
+        "b": "ezp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "ezn",
+        "b": "frame"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "ezn",
+        "b": "mxn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "ezn",
+        "b": "mxp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "ezn",
+        "b": "mzn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "ezn",
+        "b": "mzp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "ezn",
+        "b": "pxn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "ezn",
+        "b": "pxp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "ezn",
+        "b": "pzn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "ezn",
+        "b": "pzp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "ezp",
+        "b": "frame"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "ezp",
+        "b": "mxn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "ezp",
+        "b": "mxp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "ezp",
+        "b": "mzn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "ezp",
+        "b": "mzp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "ezp",
+        "b": "pxn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "ezp",
+        "b": "pxp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "ezp",
+        "b": "pzn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "ezp",
+        "b": "pzp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "mxn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "mxp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "mzn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "mzp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "pxn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "pxp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "pzn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "pzp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mxn",
+        "b": "mxp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mxn",
+        "b": "mzn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mxn",
+        "b": "mzp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mxn",
+        "b": "pxn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mxn",
+        "b": "pxp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mxn",
+        "b": "pzn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mxn",
+        "b": "pzp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mxp",
+        "b": "mzn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mxp",
+        "b": "mzp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mxp",
+        "b": "pxn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mxp",
+        "b": "pxp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mxp",
+        "b": "pzn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mxp",
+        "b": "pzp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mzn",
+        "b": "mzp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mzn",
+        "b": "pxn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mzn",
+        "b": "pxp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mzn",
+        "b": "pzn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mzn",
+        "b": "pzp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mzp",
+        "b": "pxn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mzp",
+        "b": "pxp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mzp",
+        "b": "pzn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mzp",
+        "b": "pzp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "pxn",
+        "b": "pxp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "pxn",
+        "b": "pzn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "pxn",
+        "b": "pzp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "pxp",
+        "b": "pzn"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "pxp",
+        "b": "pzp"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "pzn",
+        "b": "pzp"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "axn"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "axp"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "azn"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "azp"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "battery"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "controller"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "exn"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "exp"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "ezn"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "ezp"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "frame"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "mxn"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "mxp"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "mzn"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "mzp"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "pxn"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "pxp"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "pzn"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "pzp"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "axn_tip",
+        "id": "axn_motor",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "mxn_mount"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "axn_top",
+        "id": "axn_esc",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "exn_bottom"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "axp_tip",
+        "id": "axp_motor",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "mxp_mount"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "axp_top",
+        "id": "axp_esc",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "exp_bottom"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "azn_tip",
+        "id": "azn_motor",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "mzn_mount"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "azn_top",
+        "id": "azn_esc",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "ezn_bottom"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "azp_tip",
+        "id": "azp_motor",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "mzp_mount"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "azp_top",
+        "id": "azp_esc",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "ezp_bottom"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "frame_bottom",
+        "id": "frame_battery",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "battery_top"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "frame_nx",
+        "id": "frame_arm_xn",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "axn_inner"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "frame_nz",
+        "id": "frame_arm_zn",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "azn_inner"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "frame_px",
+        "id": "frame_arm_xp",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "axp_inner"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "frame_pz",
+        "id": "frame_arm_zp",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "azp_inner"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "frame_top",
+        "id": "frame_controller",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "controller_bottom"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "mxn_bore",
+        "id": "mxn_prop",
+        "kind": "coaxial",
+        "offset": 0,
+        "minimum_overlap": 0.004,
+        "twist": 0,
+        "minimum_clearance": 0.0005,
+        "b": "pxn_shaft"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "mxp_bore",
+        "id": "mxp_prop",
+        "kind": "coaxial",
+        "offset": 0,
+        "minimum_overlap": 0.004,
+        "twist": 0,
+        "minimum_clearance": 0.0005,
+        "b": "pxp_shaft"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "mzn_bore",
+        "id": "mzn_prop",
+        "kind": "coaxial",
+        "offset": 0,
+        "minimum_overlap": 0.004,
+        "twist": 0,
+        "minimum_clearance": 0.0005,
+        "b": "pzn_shaft"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "mzp_bore",
+        "id": "mzp_prop",
+        "kind": "coaxial",
+        "offset": 0,
+        "minimum_overlap": 0.004,
+        "twist": 0,
+        "minimum_clearance": 0.0005,
+        "b": "pzp_shaft"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "axn_inner",
+        "part": "axn"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "axn_tip",
+        "part": "axn"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "axn_top",
+        "part": "axn"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "axp_inner",
+        "part": "axp"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "axp_tip",
+        "part": "axp"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "axp_top",
+        "part": "axp"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "azn_inner",
+        "part": "azn"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "azn_tip",
+        "part": "azn"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "azn_top",
+        "part": "azn"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "azp_inner",
+        "part": "azp"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "azp_tip",
+        "part": "azp"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "azp_top",
+        "part": "azp"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "battery_top",
+        "part": "battery"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "controller_bottom",
+        "part": "controller"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "exn_bottom",
+        "part": "exn"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "exp_bottom",
+        "part": "exp"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "ezn_bottom",
+        "part": "ezn"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "ezp_bottom",
+        "part": "ezp"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "frame_bottom",
+        "part": "frame"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "frame_nx",
+        "part": "frame"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "frame_nz",
+        "part": "frame"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "frame_px",
+        "part": "frame"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "frame_pz",
+        "part": "frame"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "frame_top",
+        "part": "frame"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "mxn_bore",
+        "part": "mxn"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "mxn_mount",
+        "part": "mxn"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "mxp_bore",
+        "part": "mxp"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "mxp_mount",
+        "part": "mxp"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "mzn_bore",
+        "part": "mzn"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "mzn_mount",
+        "part": "mzn"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "mzp_bore",
+        "part": "mzp"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "mzp_mount",
+        "part": "mzp"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "pxn_shaft",
+        "part": "pxn"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "pxp_shaft",
+        "part": "pxp"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "pzn_shaft",
+        "part": "pzn"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "pzp_shaft",
+        "part": "pzp"
+      }
+    },
+    {
+      "kind": "spatial_requirement",
+      "requirement_id": "r13"
+    },
+    {
+      "kind": "spatial_requirement",
+      "requirement_id": "r21"
+    },
+    {
+      "kind": "spatial_requirement",
+      "requirement_id": "r23"
+    },
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "axp",
+        "axis": "x",
+        "b": "axn"
+      }
+    },
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "azp",
+        "axis": "z",
+        "b": "azn"
+      }
+    },
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "exp",
+        "axis": "x",
+        "b": "exn"
+      }
+    },
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "ezp",
+        "axis": "z",
+        "b": "ezn"
+      }
+    },
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "mxp",
+        "axis": "x",
+        "b": "mxn"
+      }
+    },
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "mzp",
+        "axis": "z",
+        "b": "mzn"
+      }
+    },
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "pxp",
+        "axis": "x",
+        "b": "pxn"
+      }
+    },
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "pzp",
+        "axis": "z",
+        "b": "pzn"
+      }
+    }
+  ],
+  "sha256": "347a5ca405d8536df8f0be18b70cdb88f03883cf94519c942a34bade62fe9df3"
+}

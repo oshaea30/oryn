@@ -1,0 +1,35 @@
+{
+  "planning_allowed": false,
+  "unsupported": [
+    {
+      "id": "r9",
+      "obligation": "required",
+      "mode": "structure",
+      "basis": "explicit",
+      "reason": "No deterministic adapter implements this requirement."
+    },
+    {
+      "id": "r13",
+      "obligation": "design_choice",
+      "mode": "structure",
+      "basis": "design_choice",
+      "reason": "No deterministic adapter implements this requirement."
+    }
+  ],
+  "blocking": [
+    {
+      "id": "r9",
+      "obligation": "required",
+      "mode": "structure",
+      "basis": "explicit",
+      "reason": "No deterministic adapter implements this requirement."
+    }
+  ],
+  "interpretation_correct": "unassessed",
+  "detail": "Registered spatial checks permit planning only; binding and actual geometry must still pass.",
+  "pending_spatial_checks": [],
+  "pending_arrangement_checks": [
+    "r7",
+    "r8"
+  ]
+}

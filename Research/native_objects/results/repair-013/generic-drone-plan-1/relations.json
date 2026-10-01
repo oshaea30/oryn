@@ -1,0 +1,3617 @@
+{
+  "declared_relations_passed": false,
+  "checks": [
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "axp",
+        "axis": "x",
+        "b": "axn"
+      },
+      "passed": true,
+      "measurement": {
+        "maximum_bound_error_m": 0.0,
+        "scope": "bounds only, not full shape symmetry"
+      }
+    },
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "azp",
+        "axis": "z",
+        "b": "azn"
+      },
+      "passed": true,
+      "measurement": {
+        "maximum_bound_error_m": 0.0,
+        "scope": "bounds only, not full shape symmetry"
+      }
+    },
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "mxp",
+        "axis": "x",
+        "b": "mxn"
+      },
+      "passed": true,
+      "measurement": {
+        "maximum_bound_error_m": 0.0,
+        "scope": "bounds only, not full shape symmetry"
+      }
+    },
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "mzp",
+        "axis": "z",
+        "b": "mzn"
+      },
+      "passed": false,
+      "measurement": {
+        "maximum_bound_error_m": 0.006000000052154064,
+        "scope": "bounds only, not full shape symmetry"
+      }
+    },
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "pxp",
+        "axis": "x",
+        "b": "pxn"
+      },
+      "passed": true,
+      "measurement": {
+        "maximum_bound_error_m": 0.0,
+        "scope": "bounds only, not full shape symmetry"
+      }
+    },
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "pzp",
+        "axis": "z",
+        "b": "pzn"
+      },
+      "passed": false,
+      "measurement": {
+        "maximum_bound_error_m": 0.025000000838190317,
+        "scope": "bounds only, not full shape symmetry"
+      }
+    },
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "exp",
+        "axis": "x",
+        "b": "exn"
+      },
+      "passed": true,
+      "measurement": {
+        "maximum_bound_error_m": 0.0,
+        "scope": "bounds only, not full shape symmetry"
+      }
+    },
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "ezp",
+        "axis": "z",
+        "b": "ezn"
+      },
+      "passed": true,
+      "measurement": {
+        "maximum_bound_error_m": 0.0,
+        "scope": "bounds only, not full shape symmetry"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "frame"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "axp"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "axn"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "azp"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "azn"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "mxp"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "mxn"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "mzp"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "mzn"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "pxp"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "pxn"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "pzp"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "pzn"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "battery"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "controller"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "exp"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "exn"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "ezp"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "ezn"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "frame_px",
+        "part": "frame"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "frame_nx",
+        "part": "frame"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "frame_pz",
+        "part": "frame"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "frame_nz",
+        "part": "frame"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "frame_bottom",
+        "part": "frame"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "frame_top",
+        "part": "frame"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "axp_inner",
+        "part": "axp"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "axp_tip",
+        "part": "axp"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "axp_top",
+        "part": "axp"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "axn_inner",
+        "part": "axn"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "axn_tip",
+        "part": "axn"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "axn_top",
+        "part": "axn"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "azp_inner",
+        "part": "azp"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "azp_tip",
+        "part": "azp"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "azp_top",
+        "part": "azp"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "azn_inner",
+        "part": "azn"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "azn_tip",
+        "part": "azn"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "azn_top",
+        "part": "azn"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "mxp_mount",
+        "part": "mxp"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "mxp_bore",
+        "part": "mxp"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "declared finite cylindrical interval"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "mxn_mount",
+        "part": "mxn"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "mxn_bore",
+        "part": "mxn"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "declared finite cylindrical interval"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "mzp_mount",
+        "part": "mzp"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "mzp_bore",
+        "part": "mzp"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "declared finite cylindrical interval"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "mzn_mount",
+        "part": "mzn"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "mzn_bore",
+        "part": "mzn"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "declared finite cylindrical interval"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "pxp_shaft",
+        "part": "pxp"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "declared finite cylindrical interval"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "pxn_shaft",
+        "part": "pxn"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "declared finite cylindrical interval"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "pzp_shaft",
+        "part": "pzp"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "declared finite cylindrical interval"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "pzn_shaft",
+        "part": "pzn"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "declared finite cylindrical interval"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "battery_top",
+        "part": "battery"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "controller_bottom",
+        "part": "controller"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "exp_bottom",
+        "part": "exp"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "exn_bottom",
+        "part": "exn"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "ezp_bottom",
+        "part": "ezp"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "ezn_bottom",
+        "part": "ezn"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "frame_px",
+        "id": "frame_arm_xp",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "axp_inner"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 1.3877787807814457e-17
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "frame_nx",
+        "id": "frame_arm_xn",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "axn_inner"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 1.3877787807814457e-17
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "frame_pz",
+        "id": "frame_arm_zp",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "azp_inner"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 1.3877787807814457e-17
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "frame_nz",
+        "id": "frame_arm_zn",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "azn_inner"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 1.3877787807814457e-17
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "axp_tip",
+        "id": "axp_motor",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "mxp_mount"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "axn_tip",
+        "id": "axn_motor",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "mxn_mount"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "azp_tip",
+        "id": "azp_motor",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "mzp_mount"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 6.638167910277391e-21
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "azn_tip",
+        "id": "azn_motor",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "mzn_mount"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 6.638167910277391e-21
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "mxp_bore",
+        "id": "mxp_prop",
+        "kind": "coaxial",
+        "offset": 0,
+        "minimum_overlap": 0.004,
+        "twist": 0,
+        "minimum_clearance": 0.0005,
+        "b": "pxp_shaft"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 8.673617379884035e-19,
+        "radial_clearance_m": 0.0005,
+        "axial_overlap_m": 0.009600000000000001
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "mxn_bore",
+        "id": "mxn_prop",
+        "kind": "coaxial",
+        "offset": 0,
+        "minimum_overlap": 0.004,
+        "twist": 0,
+        "minimum_clearance": 0.0005,
+        "b": "pxn_shaft"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 8.673617379884035e-19,
+        "radial_clearance_m": 0.0005,
+        "axial_overlap_m": 0.009600000000000001
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "mzp_bore",
+        "id": "mzp_prop",
+        "kind": "coaxial",
+        "offset": 0,
+        "minimum_overlap": 0.004,
+        "twist": 0,
+        "minimum_clearance": 0.0005,
+        "b": "pzp_shaft"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0,
+        "radial_clearance_m": 0.0005,
+        "axial_overlap_m": 0.009600000000000001
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "mzn_bore",
+        "id": "mzn_prop",
+        "kind": "coaxial",
+        "offset": 0,
+        "minimum_overlap": 0.004,
+        "twist": 0,
+        "minimum_clearance": 0.0005,
+        "b": "pzn_shaft"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0,
+        "radial_clearance_m": 0.0005,
+        "axial_overlap_m": 0.009600000000000001
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "axp_top",
+        "id": "axp_esc",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "exp_bottom"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "axn_top",
+        "id": "axn_esc",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "exn_bottom"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "azp_top",
+        "id": "azp_esc",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "ezp_bottom"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "azn_top",
+        "id": "azn_esc",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "ezn_bottom"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "frame_bottom",
+        "id": "frame_battery",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "battery_top"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 1.734723475976807e-18
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "frame_top",
+        "id": "frame_controller",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "controller_bottom"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "axp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": -2.964615315390051e-21,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "axn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": -2.964615315390051e-21,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "azp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": -6.352747104407253e-22,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "azn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": -2.117582368135751e-22,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "mxp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "mxn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "mzp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "mzn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "pxp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.734134993431117e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "pxn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.734134993431117e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "pzp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.73413499343112e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "pzn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.734134993431119e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "battery"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "controller"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "exp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "exn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "ezp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "ezn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axp",
+        "b": "axn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axp",
+        "b": "azp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axp",
+        "b": "azn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axp",
+        "b": "mxp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axp",
+        "b": "mxn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axp",
+        "b": "mzp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axp",
+        "b": "mzn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axp",
+        "b": "pxp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.734134993431117e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axp",
+        "b": "pxn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.734134993431117e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axp",
+        "b": "pzp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.73413499343112e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axp",
+        "b": "pzn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.734134993431119e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axp",
+        "b": "battery"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axp",
+        "b": "controller"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axp",
+        "b": "exp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axp",
+        "b": "exn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axp",
+        "b": "ezp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axp",
+        "b": "ezn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axn",
+        "b": "azp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axn",
+        "b": "azn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axn",
+        "b": "mxp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axn",
+        "b": "mxn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axn",
+        "b": "mzp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axn",
+        "b": "mzn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axn",
+        "b": "pxp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.734134993431117e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axn",
+        "b": "pxn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.734134993431117e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axn",
+        "b": "pzp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.73413499343112e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axn",
+        "b": "pzn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.734134993431119e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axn",
+        "b": "battery"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axn",
+        "b": "controller"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axn",
+        "b": "exp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axn",
+        "b": "exn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axn",
+        "b": "ezp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "axn",
+        "b": "ezn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azp",
+        "b": "azn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azp",
+        "b": "mxp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azp",
+        "b": "mxn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azp",
+        "b": "mzp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azp",
+        "b": "mzn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azp",
+        "b": "pxp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.734134993431117e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azp",
+        "b": "pxn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.734134993431117e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azp",
+        "b": "pzp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.73413499343112e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azp",
+        "b": "pzn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.734134993431119e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azp",
+        "b": "battery"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azp",
+        "b": "controller"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azp",
+        "b": "exp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azp",
+        "b": "exn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azp",
+        "b": "ezp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azp",
+        "b": "ezn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azn",
+        "b": "mxp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azn",
+        "b": "mxn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azn",
+        "b": "mzp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azn",
+        "b": "mzn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azn",
+        "b": "pxp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.734134993431117e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azn",
+        "b": "pxn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.734134993431117e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azn",
+        "b": "pzp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.73413499343112e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azn",
+        "b": "pzn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.734134993431119e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azn",
+        "b": "battery"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azn",
+        "b": "controller"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azn",
+        "b": "exp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azn",
+        "b": "exn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azn",
+        "b": "ezp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "azn",
+        "b": "ezn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mxp",
+        "b": "mxn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mxp",
+        "b": "mzp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mxp",
+        "b": "mzn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mxp",
+        "b": "pxp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.734134993431117e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mxp",
+        "b": "pxn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.734134993431117e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mxp",
+        "b": "pzp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.73413499343112e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mxp",
+        "b": "pzn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.734134993431119e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mxp",
+        "b": "battery"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mxp",
+        "b": "controller"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mxp",
+        "b": "exp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mxp",
+        "b": "exn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mxp",
+        "b": "ezp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mxp",
+        "b": "ezn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mxn",
+        "b": "mzp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mxn",
+        "b": "mzn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mxn",
+        "b": "pxp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.734134993431117e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mxn",
+        "b": "pxn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.734134993431117e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mxn",
+        "b": "pzp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.73413499343112e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mxn",
+        "b": "pzn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.734134993431119e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mxn",
+        "b": "battery"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mxn",
+        "b": "controller"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mxn",
+        "b": "exp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mxn",
+        "b": "exn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mxn",
+        "b": "ezp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mxn",
+        "b": "ezn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mzp",
+        "b": "mzn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mzp",
+        "b": "pxp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.734134993431117e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mzp",
+        "b": "pxn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.734134993431117e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mzp",
+        "b": "pzp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.73413499343112e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mzp",
+        "b": "pzn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.734134993431119e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mzp",
+        "b": "battery"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mzp",
+        "b": "controller"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mzp",
+        "b": "exp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mzp",
+        "b": "exn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mzp",
+        "b": "ezp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mzp",
+        "b": "ezn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mzn",
+        "b": "pxp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.734134993431117e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mzn",
+        "b": "pxn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.734134993431117e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mzn",
+        "b": "pzp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.73413499343112e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mzn",
+        "b": "pzn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.734134993431119e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mzn",
+        "b": "battery"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mzn",
+        "b": "controller"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mzn",
+        "b": "exp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mzn",
+        "b": "exn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mzn",
+        "b": "ezp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "mzn",
+        "b": "ezn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "pxp",
+        "b": "pxn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.734134993431117e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "pxp",
+        "b": "pzp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.734134993431117e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "pxp",
+        "b": "pzn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.734134993431117e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "pxp",
+        "b": "battery"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.734134993431117e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "pxp",
+        "b": "controller"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.734134993431117e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "pxp",
+        "b": "exp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "pxp",
+        "b": "exn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "pxp",
+        "b": "ezp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "pxp",
+        "b": "ezn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "pxn",
+        "b": "pzp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.734134993431117e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "pxn",
+        "b": "pzn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.734134993431117e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "pxn",
+        "b": "battery"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.734134993431117e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "pxn",
+        "b": "controller"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.734134993431117e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "pxn",
+        "b": "exp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "pxn",
+        "b": "exn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "pxn",
+        "b": "ezp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "pxn",
+        "b": "ezn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "pzp",
+        "b": "pzn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.734134993431119e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "pzp",
+        "b": "battery"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.73413499343112e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "pzp",
+        "b": "controller"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.73413499343112e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "pzp",
+        "b": "exp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "pzp",
+        "b": "exn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "pzp",
+        "b": "ezp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "pzp",
+        "b": "ezn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "pzn",
+        "b": "battery"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.734134993431119e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "pzn",
+        "b": "controller"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.734134993431119e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "pzn",
+        "b": "exp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "pzn",
+        "b": "exn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "pzn",
+        "b": "ezp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "pzn",
+        "b": "ezn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery",
+        "b": "controller"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery",
+        "b": "exp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery",
+        "b": "exn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery",
+        "b": "ezp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery",
+        "b": "ezn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "controller",
+        "b": "exp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "controller",
+        "b": "exn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "controller",
+        "b": "ezp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "controller",
+        "b": "ezn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "exp",
+        "b": "exn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "exp",
+        "b": "ezp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "exp",
+        "b": "ezn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "exn",
+        "b": "ezp"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "exn",
+        "b": "ezn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "ezp",
+        "b": "ezn"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 5.85257735026919e-13
+      }
+    },
+    {
+      "kind": "spatial_requirement",
+      "requirement_id": "r13",
+      "operator": "radial_outward",
+      "passed": true,
+      "measurement": {
+        "members": [
+          {
+            "part": "axn",
+            "radius_m": 0.1699999999254942,
+            "radial_axis_alignment": 1.0,
+            "elongation": 9.166666692536738
+          },
+          {
+            "part": "axp",
+            "radius_m": 0.1699999999254942,
+            "radial_axis_alignment": 1.0,
+            "elongation": 9.166666692536738
+          },
+          {
+            "part": "azn",
+            "radius_m": 0.1699999999254942,
+            "radial_axis_alignment": 1.0,
+            "elongation": 9.166666692536738
+          },
+          {
+            "part": "azp",
+            "radius_m": 0.1699999999254942,
+            "radial_axis_alignment": 1.0,
+            "elongation": 9.166666692536738
+          }
+        ],
+        "plane_spread_m": 0.0,
+        "plane_limit_m": 0.00849999999627471,
+        "max_bearing_gap_degrees": 90.0,
+        "min_bearing_gap_degrees": 90.0
+      },
+      "scope": "Measured declared geometry only; semantic feature selection and appearance are unverified."
+    },
+    {
+      "kind": "spatial_requirement",
+      "requirement_id": "r21",
+      "operator": "outer_end",
+      "passed": true,
+      "measurement": {
+        "pairs": [
+          {
+            "passed": true,
+            "subject": "mxp",
+            "target": "axp",
+            "mate": "axp_motor",
+            "end_error_m": 1.1920929243736111e-09,
+            "end_tolerance_m": 0.011000000126659871,
+            "reference": "frame"
+          },
+          {
+            "passed": true,
+            "subject": "mxn",
+            "target": "axn",
+            "mate": "axn_motor",
+            "end_error_m": 1.1920929243736111e-09,
+            "end_tolerance_m": 0.011000000126659871,
+            "reference": "frame"
+          },
+          {
+            "passed": true,
+            "subject": "mzp",
+            "target": "azp",
+            "mate": "azp_motor",
+            "end_error_m": 1.1920929243736111e-09,
+            "end_tolerance_m": 0.011000000126659871,
+            "reference": "frame"
+          },
+          {
+            "passed": true,
+            "subject": "mzn",
+            "target": "azn",
+            "mate": "azn_motor",
+            "end_error_m": 1.1920929243736111e-09,
+            "end_tolerance_m": 0.011000000126659871,
+            "reference": "frame"
+          }
+        ]
+      },
+      "scope": "Measured declared geometry only; semantic feature selection and appearance are unverified."
+    },
+    {
+      "kind": "spatial_requirement",
+      "requirement_id": "r23",
+      "operator": "axis_aligned",
+      "passed": true,
+      "measurement": {
+        "pairs": [
+          {
+            "passed": true,
+            "subject": "pxp",
+            "target": "mxp",
+            "mate": "mxp_prop",
+            "axis_alignment": 1.0,
+            "axis_distance_m": 0.0
+          },
+          {
+            "passed": true,
+            "subject": "pxn",
+            "target": "mxn",
+            "mate": "mxn_prop",
+            "axis_alignment": 1.0,
+            "axis_distance_m": 7.347880794884101e-19
+          },
+          {
+            "passed": true,
+            "subject": "pzp",
+            "target": "mzp",
+            "mate": "mzp_prop",
+            "axis_alignment": 1.0,
+            "axis_distance_m": 0.0
+          },
+          {
+            "passed": true,
+            "subject": "pzn",
+            "target": "mzn",
+            "mate": "mzn_prop",
+            "axis_alignment": 1.0,
+            "axis_distance_m": 0.0
+          }
+        ]
+      },
+      "scope": "Measured declared geometry only; semantic feature selection and appearance are unverified."
+    },
+    {
+      "kind": "assembly_arrangement",
+      "assembly_id": "a0",
+      "requirement_id": "r12",
+      "aspect": "placement",
+      "passed": true,
+      "failure_classes": [],
+      "measurement": {
+        "members": [
+          {
+            "part": "axn",
+            "port": "axn_inner",
+            "relation_passed": true,
+            "feature_geometry_passed": true,
+            "radius_m": 0.059999999999999984,
+            "radius_error_m": 0.0,
+            "height_error_m": 1.0103336092965663e-17,
+            "adjacent_gap_error_degrees": 1.2722218725854067e-14,
+            "passed": true
+          },
+          {
+            "part": "axp",
+            "port": "axp_inner",
+            "relation_passed": true,
+            "feature_geometry_passed": true,
+            "radius_m": 0.059999999999999984,
+            "radius_error_m": 0.0,
+            "height_error_m": 3.367778697655221e-18,
+            "adjacent_gap_error_degrees": 1.2722218725854067e-14,
+            "passed": true
+          },
+          {
+            "part": "azn",
+            "port": "azn_inner",
+            "relation_passed": true,
+            "feature_geometry_passed": true,
+            "radius_m": 0.059999999999999984,
+            "radius_error_m": 0.0,
+            "height_error_m": 1.0103336092965663e-17,
+            "adjacent_gap_error_degrees": 0.0,
+            "passed": true
+          },
+          {
+            "part": "azp",
+            "port": "azp_inner",
+            "relation_passed": true,
+            "feature_geometry_passed": true,
+            "radius_m": 0.059999999999999984,
+            "radius_error_m": 0.0,
+            "height_error_m": 1.6838893488276106e-17,
+            "adjacent_gap_error_degrees": 1.2722218725854067e-14,
+            "passed": true
+          }
+        ],
+        "radius_m": 0.059999999999999984,
+        "distance_tolerance_m": 0.002999999999999999,
+        "expected_gap_degrees": 90.0
+      },
+      "scope": "Solved declared feature geometry; interpretation and feature meaning remain unverified."
+    },
+    {
+      "kind": "assembly_arrangement",
+      "assembly_id": "a0",
+      "requirement_id": "r13",
+      "aspect": "orientation",
+      "passed": true,
+      "measurement": {
+        "members": [
+          {
+            "part": "axn",
+            "radius_m": 0.1699999999254942,
+            "radial_axis_alignment": 1.0,
+            "elongation": 9.166666692536738
+          },
+          {
+            "part": "axp",
+            "radius_m": 0.1699999999254942,
+            "radial_axis_alignment": 1.0,
+            "elongation": 9.166666692536738
+          },
+          {
+            "part": "azn",
+            "radius_m": 0.1699999999254942,
+            "radial_axis_alignment": 1.0,
+            "elongation": 9.166666692536738
+          },
+          {
+            "part": "azp",
+            "radius_m": 0.1699999999254942,
+            "radial_axis_alignment": 1.0,
+            "elongation": 9.166666692536738
+          }
+        ],
+        "plane_spread_m": 0.0,
+        "plane_limit_m": 0.00849999999627471,
+        "max_bearing_gap_degrees": 90.0,
+        "min_bearing_gap_degrees": 90.0
+      },
+      "scope": "Reused measured radial member orientation; semantic meaning remains unverified."
+    },
+    {
+      "kind": "assembly_arrangement",
+      "assembly_id": "a1",
+      "requirement_id": "r14",
+      "aspect": "placement",
+      "passed": true,
+      "failure_classes": [],
+      "measurement": {
+        "members": [
+          {
+            "part": "mxn",
+            "port": "mxn_bore",
+            "relation_passed": true,
+            "feature_geometry_passed": true,
+            "radius_m": 0.301,
+            "radius_error_m": 0.0,
+            "height_error_m": 0.001500000000000002,
+            "adjacent_gap_error_degrees": 1.2722218725854067e-14,
+            "passed": true
+          },
+          {
+            "part": "mxp",
+            "port": "mxp_bore",
+            "relation_passed": true,
+            "feature_geometry_passed": true,
+            "radius_m": 0.301,
+            "radius_error_m": 0.0,
+            "height_error_m": 0.0014999999999999994,
+            "adjacent_gap_error_degrees": 0.0,
+            "passed": true
+          },
+          {
+            "part": "mzn",
+            "port": "mzn_bore",
+            "relation_passed": true,
+            "feature_geometry_passed": true,
+            "radius_m": 0.301,
+            "radius_error_m": 0.0,
+            "height_error_m": 0.004500000000000033,
+            "adjacent_gap_error_degrees": 0.0,
+            "passed": true
+          },
+          {
+            "part": "mzp",
+            "port": "mzp_bore",
+            "relation_passed": true,
+            "feature_geometry_passed": true,
+            "radius_m": 0.301,
+            "radius_error_m": 0.0,
+            "height_error_m": 0.0015000000000000315,
+            "adjacent_gap_error_degrees": 1.2722218725854067e-14,
+            "passed": true
+          }
+        ],
+        "radius_m": 0.301,
+        "distance_tolerance_m": 0.015050000000000001,
+        "expected_gap_degrees": 90.0
+      },
+      "scope": "Solved declared feature geometry; interpretation and feature meaning remain unverified."
+    },
+    {
+      "kind": "assembly_arrangement",
+      "assembly_id": "a1",
+      "requirement_id": "r15",
+      "aspect": "orientation",
+      "passed": false,
+      "failure_classes": [
+        "group_orientation"
+      ],
+      "measurement": {
+        "members": [
+          {
+            "part": "mxn",
+            "port": "mxn_bore",
+            "axis_alignment": 1.0,
+            "relation_passed": true,
+            "feature_geometry_passed": true,
+            "passed": true
+          },
+          {
+            "part": "mxp",
+            "port": "mxp_bore",
+            "axis_alignment": 1.0,
+            "relation_passed": true,
+            "feature_geometry_passed": true,
+            "passed": true
+          },
+          {
+            "part": "mzn",
+            "port": "mzn_bore",
+            "axis_alignment": -1.0,
+            "relation_passed": false,
+            "feature_geometry_passed": true,
+            "passed": false
+          },
+          {
+            "part": "mzp",
+            "port": "mzp_bore",
+            "axis_alignment": 1.0,
+            "relation_passed": true,
+            "feature_geometry_passed": true,
+            "passed": true
+          }
+        ],
+        "direction": "+y",
+        "minimum_alignment": -1.0
+      },
+      "scope": "Solved declared feature geometry; interpretation and feature meaning remain unverified."
+    },
+    {
+      "kind": "assembly_arrangement",
+      "assembly_id": "a2",
+      "requirement_id": "r16",
+      "aspect": "placement",
+      "passed": true,
+      "failure_classes": [],
+      "measurement": {
+        "members": [
+          {
+            "part": "pxn",
+            "port": "pxn_shaft",
+            "relation_passed": true,
+            "feature_geometry_passed": true,
+            "radius_m": 0.301,
+            "radius_error_m": 0.0,
+            "height_error_m": 0.0015000000000000005,
+            "adjacent_gap_error_degrees": 1.2722218725854067e-14,
+            "passed": true
+          },
+          {
+            "part": "pxp",
+            "port": "pxp_shaft",
+            "relation_passed": true,
+            "feature_geometry_passed": true,
+            "radius_m": 0.301,
+            "radius_error_m": 0.0,
+            "height_error_m": 0.0015000000000000005,
+            "adjacent_gap_error_degrees": 0.0,
+            "passed": true
+          },
+          {
+            "part": "pzn",
+            "port": "pzn_shaft",
+            "relation_passed": true,
+            "feature_geometry_passed": true,
+            "radius_m": 0.301,
+            "radius_error_m": 0.0,
+            "height_error_m": 0.004500000000000033,
+            "adjacent_gap_error_degrees": 0.0,
+            "passed": true
+          },
+          {
+            "part": "pzp",
+            "port": "pzp_shaft",
+            "relation_passed": true,
+            "feature_geometry_passed": true,
+            "radius_m": 0.301,
+            "radius_error_m": 0.0,
+            "height_error_m": 0.0015000000000000317,
+            "adjacent_gap_error_degrees": 1.2722218725854067e-14,
+            "passed": true
+          }
+        ],
+        "radius_m": 0.301,
+        "distance_tolerance_m": 0.015050000000000001,
+        "expected_gap_degrees": 90.0
+      },
+      "scope": "Solved declared feature geometry; interpretation and feature meaning remain unverified."
+    },
+    {
+      "kind": "assembly_arrangement",
+      "assembly_id": "a2",
+      "requirement_id": "r17",
+      "aspect": "orientation",
+      "passed": false,
+      "failure_classes": [
+        "group_orientation"
+      ],
+      "measurement": {
+        "members": [
+          {
+            "part": "pxn",
+            "port": "pxn_shaft",
+            "axis_alignment": 1.0,
+            "relation_passed": true,
+            "feature_geometry_passed": true,
+            "passed": true
+          },
+          {
+            "part": "pxp",
+            "port": "pxp_shaft",
+            "axis_alignment": 1.0,
+            "relation_passed": true,
+            "feature_geometry_passed": true,
+            "passed": true
+          },
+          {
+            "part": "pzn",
+            "port": "pzn_shaft",
+            "axis_alignment": -1.0,
+            "relation_passed": false,
+            "feature_geometry_passed": true,
+            "passed": false
+          },
+          {
+            "part": "pzp",
+            "port": "pzp_shaft",
+            "axis_alignment": 1.0,
+            "relation_passed": true,
+            "feature_geometry_passed": true,
+            "passed": true
+          }
+        ],
+        "direction": "+y",
+        "minimum_alignment": -1.0
+      },
+      "scope": "Solved declared feature geometry; interpretation and feature meaning remain unverified."
+    }
+  ],
+  "semantic_completeness": "not_assessed",
+  "global_collisions": "all pairs static positive-volume interference checked; no swept motion",
+  "engineering_correctness": "not_assessed",
+  "native_generation_goal_passed": false,
+  "requirement_coverage": "not_assessed; solver cannot prove omitted functional connections",
+  "locked_requirements_sha256": "4ed16281c5afc8da098de3d6b4dad63ab628892232c72e2e47c5cf2eaa0b02dc",
+  "spatial_policy_sha256": "abf21c243b7b133dc13ba5221866c9eabeff1f2f5a6ac127b3f15e6ace8bde33",
+  "arrangement_policy_sha256": "4a4bf140b11ad32d852c1161f2d9000e1a4f457c0142990424643c49c2816ca5",
+  "repair_preservation": {
+    "baseline_sha256": "347a5ca405d8536df8f0be18b70cdb88f03883cf94519c942a34bade62fe9df3",
+    "preserved_fact_count": 275,
+    "passed": false,
+    "regressions": [
+      {
+        "identity": {
+          "kind": "symmetry_bounds",
+          "relation": {
+            "a": "mzp",
+            "axis": "z",
+            "b": "mzn"
+          }
+        },
+        "reason": "previously_passing_fact_failed"
+      },
+      {
+        "identity": {
+          "kind": "symmetry_bounds",
+          "relation": {
+            "a": "pzp",
+            "axis": "z",
+            "b": "pzn"
+          }
+        },
+        "reason": "previously_passing_fact_failed"
+      }
+    ]
+  }
+}

@@ -1,0 +1,221 @@
+{
+  "requirements": [
+    {
+      "id": "r01",
+      "obligation": "required",
+      "kind": "entity",
+      "subject": "e0",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "mode": "structure",
+      "basis": "explicit",
+      "source": "s0"
+    },
+    {
+      "id": "r02",
+      "obligation": "required",
+      "kind": "entity",
+      "subject": "e1",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "mode": "structure",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r03",
+      "obligation": "required",
+      "kind": "entity",
+      "subject": "e2",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "mode": "structure",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r04",
+      "obligation": "required",
+      "kind": "constraint",
+      "subject": "e1",
+      "target": "",
+      "predicate": "count",
+      "value": "3",
+      "mode": "structure",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r05",
+      "obligation": "required",
+      "kind": "constraint",
+      "subject": "e2",
+      "target": "",
+      "predicate": "count",
+      "value": "3",
+      "mode": "structure",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r06",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "e1",
+      "target": "e0",
+      "predicate": "attached",
+      "value": "all frames share the panel",
+      "mode": "structure",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r07",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "e2",
+      "target": "e1",
+      "predicate": "inside",
+      "value": "one rotor per frame",
+      "mode": "structure",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r08",
+      "obligation": "required",
+      "kind": "constraint",
+      "subject": "e1",
+      "target": "",
+      "predicate": "other",
+      "value": "evenly spaced horizontal row along x",
+      "mode": "structure",
+      "basis": "explicit",
+      "source": "s0"
+    },
+    {
+      "id": "r09",
+      "obligation": "required",
+      "kind": "constraint",
+      "subject": "e1",
+      "target": "",
+      "predicate": "other",
+      "value": "fan fronts face +z",
+      "mode": "structure",
+      "basis": "explicit",
+      "source": "s0"
+    },
+    {
+      "id": "r10",
+      "obligation": "required",
+      "kind": "constraint",
+      "subject": "e2",
+      "target": "",
+      "predicate": "other",
+      "value": "corresponding evenly spaced row along x",
+      "mode": "structure",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r11",
+      "obligation": "required",
+      "kind": "constraint",
+      "subject": "e2",
+      "target": "",
+      "predicate": "other",
+      "value": "rotor fronts face +z",
+      "mode": "structure",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r12",
+      "obligation": "required",
+      "kind": "behavior",
+      "subject": "object",
+      "target": "",
+      "predicate": "capability",
+      "value": "inspect",
+      "mode": "behavior",
+      "basis": "explicit",
+      "source": "s1"
+    },
+    {
+      "id": "r13",
+      "obligation": "required",
+      "kind": "behavior",
+      "subject": "object",
+      "target": "",
+      "predicate": "capability",
+      "value": "geometric_explode",
+      "mode": "behavior",
+      "basis": "explicit",
+      "source": "s1"
+    },
+    {
+      "id": "r14",
+      "obligation": "required",
+      "kind": "visual",
+      "subject": "e2",
+      "target": "",
+      "predicate": "appearance",
+      "value": "cooling-fan rotors",
+      "mode": "appearance",
+      "basis": "inferred",
+      "source": "s0"
+    }
+  ],
+  "exclusions": [
+    {
+      "id": "x01",
+      "subject": "object",
+      "domain": "motion",
+      "source": "s2"
+    },
+    {
+      "id": "x02",
+      "subject": "object",
+      "domain": "physical_verification",
+      "source": "s3"
+    }
+  ],
+  "spatial": [],
+  "assemblies": [
+    {
+      "id": "a01",
+      "members": [
+        "e1"
+      ],
+      "placement": {
+        "id": "r08",
+        "pattern": "linear",
+        "reference": "",
+        "axis": "x"
+      },
+      "orientation": {
+        "id": "r09",
+        "direction": "+z"
+      }
+    },
+    {
+      "id": "a02",
+      "members": [
+        "e2"
+      ],
+      "placement": {
+        "id": "r10",
+        "pattern": "linear",
+        "reference": "",
+        "axis": "x"
+      },
+      "orientation": {
+        "id": "r11",
+        "direction": "+z"
+      }
+    }
+  ]
+}

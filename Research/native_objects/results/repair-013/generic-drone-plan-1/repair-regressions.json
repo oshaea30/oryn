@@ -1,0 +1,29 @@
+{
+  "baseline_sha256": "347a5ca405d8536df8f0be18b70cdb88f03883cf94519c942a34bade62fe9df3",
+  "preserved_fact_count": 275,
+  "passed": false,
+  "regressions": [
+    {
+      "identity": {
+        "kind": "symmetry_bounds",
+        "relation": {
+          "a": "mzp",
+          "axis": "z",
+          "b": "mzn"
+        }
+      },
+      "reason": "previously_passing_fact_failed"
+    },
+    {
+      "identity": {
+        "kind": "symmetry_bounds",
+        "relation": {
+          "a": "pzp",
+          "axis": "z",
+          "b": "pzn"
+        }
+      },
+      "reason": "previously_passing_fact_failed"
+    }
+  ]
+}

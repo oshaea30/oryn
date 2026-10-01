@@ -1,0 +1,89 @@
+{
+  "operation_id": "80d07b8ea5227a80513757fb82f286d3",
+  "body_sha256": "51e71b2cb52c2e0e5f315eaca1930b52613bbc5b02c65de5842edab361c99dc4",
+  "started": 1790880615.575479,
+  "deadline": 1790880975.57548,
+  "response_id": "resp_0076e7000c7ea543006abeab67c2f087d2a5f640f3c3df65b5",
+  "status": "completed",
+  "events": [
+    {
+      "elapsed_seconds": 0.859407901763916,
+      "event": "queued"
+    },
+    {
+      "elapsed_seconds": 6.294406890869141,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 11.458673000335693,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 16.652585983276367,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 22.11445689201355,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 27.31375002861023,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 32.900227069854736,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 38.09475588798523,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 43.747411012649536,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 48.912975788116455,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 54.57231903076172,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 59.77442193031311,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 65.50820899009705,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 70.68444585800171,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 76.52436089515686,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 82.32371783256531,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 87.48214793205261,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 93.13482189178467,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 98.68290591239929,
+      "event": "completed"
+    }
+  ],
+  "creation_calls": 1,
+  "poll_calls": 18,
+  "cancel_calls": 0
+}

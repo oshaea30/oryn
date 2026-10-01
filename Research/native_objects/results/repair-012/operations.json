@@ -1,0 +1,107 @@
+{
+  "cooling-fan-row/patch/1": {
+    "status": "done",
+    "stage": "patch",
+    "case": "cooling-fan-row",
+    "attempt": 1,
+    "body_sha256": "a6fe350854349bc40cb39387a18151dd942d46ee31836566264ec0739094e65d",
+    "billing": {
+      "operation_id": "77d573ba8e880acca32ac1abd7131ffd",
+      "response_id": "resp_06e9f620438c261e006abeab0eec1487d2a7bea3206f05e382",
+      "status": "completed",
+      "incomplete_details": null,
+      "usage": {
+        "input_tokens": 13371,
+        "input_tokens_details": {
+          "cache_write_tokens": 13368,
+          "cached_tokens": 0
+        },
+        "output_tokens": 3499,
+        "output_tokens_details": {
+          "reasoning_tokens": 2887
+        },
+        "total_tokens": 16870
+      },
+      "calculated_cost_nanos": 68417500,
+      "dispatch_seconds": 62.08008289337158,
+      "creation_calls": 1,
+      "poll_calls": 11,
+      "cancel_calls": 0,
+      "background": true
+    }
+  },
+  "two-driver-speaker/extract/0": {
+    "status": "done",
+    "stage": "extract",
+    "case": "two-driver-speaker",
+    "attempt": 0,
+    "body_sha256": "77f9dde114a9e0797308d0c185de458d1d8fa806d00ee0f2d440fae0bcc3b268",
+    "billing": {
+      "operation_id": "db99efe1f8c038a97b23863aac8e9ac4",
+      "response_id": "resp_0113301a3efb5d9d006abeab4ead2487d294088ecc4e09f3ed",
+      "status": "completed",
+      "incomplete_details": null,
+      "usage": {
+        "input_tokens": 3912,
+        "input_tokens_details": {
+          "cache_write_tokens": 3909,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1298,
+        "output_tokens_details": {
+          "reasoning_tokens": 516
+        },
+        "total_tokens": 5210
+      },
+      "calculated_cost_nanos": 22760000,
+      "dispatch_seconds": 24.846487760543823,
+      "creation_calls": 1,
+      "poll_calls": 4,
+      "cancel_calls": 0,
+      "background": true
+    }
+  },
+  "generic-drone/plan/0": {
+    "status": "done",
+    "stage": "plan",
+    "case": "generic-drone",
+    "attempt": 0,
+    "body_sha256": "66a1953f2296b021eb661616ad7b7ba6b6fd1b244bb8ddc3e9144d4f1ba10408",
+    "billing": {
+      "operation_id": "80d07b8ea5227a80513757fb82f286d3",
+      "response_id": "resp_0076e7000c7ea543006abeab67c2f087d2a5f640f3c3df65b5",
+      "status": "completed",
+      "incomplete_details": null,
+      "usage": {
+        "input_tokens": 7072,
+        "input_tokens_details": {
+          "cache_write_tokens": 7069,
+          "cached_tokens": 0
+        },
+        "output_tokens": 7913,
+        "output_tokens_details": {
+          "reasoning_tokens": 3397
+        },
+        "total_tokens": 14985
+      },
+      "calculated_cost_nanos": 96810000,
+      "dispatch_seconds": 98.68290591239929,
+      "creation_calls": 1,
+      "poll_calls": 18,
+      "cancel_calls": 0,
+      "background": true
+    }
+  },
+  "two-driver-speaker/plan/0": {
+    "status": "skipped",
+    "reason": "unsupported_before_planning"
+  },
+  "generic-drone/patch/1": {
+    "status": "halted",
+    "stage": "patch",
+    "case": "generic-drone",
+    "attempt": 1,
+    "body_sha256": "1d1033813d613e00ea5bfb1e75f325717eb4a641f59ca1917999c1e2b3a1295c",
+    "error": "Exact input count missing or exceeds the 16,000-token development limit."
+  }
+}

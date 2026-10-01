@@ -1,0 +1,53 @@
+{
+  "live_freeze_commit": "4d4c72f",
+  "completed_call_estimate_nanos": 187987500,
+  "new_uncertain_hold_nanos": 0,
+  "provider_funding_error": false,
+  "gpu_cost_nanos": 0,
+  "manual_geometry_repairs": 0,
+  "fan_repair": {
+    "checks_before": 55,
+    "failures_before": 12,
+    "checks_after": 55,
+    "failures_after": 0,
+    "preserved_facts": 55,
+    "regressions": 0,
+    "panel_unchanged": true
+  },
+  "drone_initial": {
+    "parts": 19,
+    "checks": 261,
+    "failures": 2,
+    "failed_requirement_ids": [
+      "r15",
+      "r17"
+    ]
+  },
+  "speaker": {
+    "valid_typed_output": true,
+    "blocking_requirement": "r9",
+    "spatial_bindings": 0
+  },
+  "undispatched_drone_patch": {
+    "original_input_tokens": 24456,
+    "limit": 16000,
+    "reservation_created": false,
+    "generation_dispatched": false,
+    "continuation": "repair-013",
+    "transport_audit": {
+      "fact_count": 275,
+      "table_count": 13,
+      "exact_roundtrip": true,
+      "uncompressed_sha256": "afd9d8bf5ad6df24361ab2bd4029a8781a91dd906593e0b1084193372d5b6a9b",
+      "decoded_sha256": "afd9d8bf5ad6df24361ab2bd4029a8781a91dd906593e0b1084193372d5b6a9b",
+      "all_failures_and_passed_facts_retained": true,
+      "original_input_tokens": 24456,
+      "compacted_input_tokens": 15987,
+      "maximum_usd": 0.1014075
+    }
+  },
+  "browser_checks": 27,
+  "live_recovery_exercised": false,
+  "recovery_verified_offline": true,
+  "earlier_uncertain_holds_retained": true
+}

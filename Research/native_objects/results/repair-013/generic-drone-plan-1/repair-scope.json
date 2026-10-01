@@ -1,0 +1,40 @@
+{
+  "base_sha256": "cabaa14c2b13caa6ef01b48fb189e0a07aa49533436671aa20d27d4ae44726f3",
+  "direct_parts": [
+    "mzn",
+    "mzp",
+    "pzn",
+    "pzp"
+  ],
+  "allowed_parts": [
+    "mxn",
+    "mxp",
+    "mzn",
+    "mzp",
+    "pxn",
+    "pxp",
+    "pzn",
+    "pzp"
+  ],
+  "allowed_shapes": [
+    "motor_shape",
+    "prop_shape"
+  ],
+  "allowed_ports": [
+    "mxn_bore",
+    "mxn_mount",
+    "mxp_bore",
+    "mxp_mount",
+    "mzn_bore",
+    "mzn_mount",
+    "mzp_bore",
+    "mzp_mount",
+    "pxn_shaft",
+    "pxp_shaft",
+    "pzn_shaft",
+    "pzp_shaft"
+  ],
+  "unresolved_failures": [],
+  "dependency_rule": "shared shape consumers; solved poses and all constraints revalidated globally",
+  "scope_sha256": "1b7297cf3ecbe929af2455852ada5b3295805d3ce4a1e786053b57f069446b96"
+}

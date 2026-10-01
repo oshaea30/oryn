@@ -1,0 +1,61 @@
+{
+  "operation_id": "77d573ba8e880acca32ac1abd7131ffd",
+  "body_sha256": "4cd2821fbf1ebbe6e808463383f26459260b8d43f7ab35e9399f411e91da0e93",
+  "started": 1790880526.737867,
+  "deadline": 1790880886.737867,
+  "response_id": "resp_06e9f620438c261e006abeab0eec1487d2a7bea3206f05e382",
+  "status": "completed",
+  "events": [
+    {
+      "elapsed_seconds": 2.760986089706421,
+      "event": "queued"
+    },
+    {
+      "elapsed_seconds": 7.924048900604248,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 13.071530818939209,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 18.518739938735962,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 23.73307991027832,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 28.9787917137146,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 34.485326051712036,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 40.117055892944336,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 45.2766330242157,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 50.70059895515442,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 56.23866081237793,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 62.08008289337158,
+      "event": "completed"
+    }
+  ],
+  "creation_calls": 1,
+  "poll_calls": 11,
+  "cancel_calls": 0
+}

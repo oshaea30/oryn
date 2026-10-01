@@ -1,0 +1,1224 @@
+{
+  "assumptions": [
+    "Generic model design; requirement coverage does not verify semantics or engineering."
+  ],
+  "limitations": [
+    "Geometry executor unchanged; unsupported requirements are explicit."
+  ],
+  "parts": [
+    {
+      "id": "panel",
+      "role": "Mounting panel",
+      "parent": "",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.55,
+            0.2,
+            0.008
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.116,
+            0.02,
+            0.116
+          ],
+          "offset": [
+            -0.17,
+            0,
+            0
+          ],
+          "rotation": [
+            90,
+            0,
+            0
+          ],
+          "operation": "subtract",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            3,
+            1,
+            1
+          ],
+          "step": [
+            0.17,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.016,
+            0.016,
+            0.006
+          ],
+          "offset": [
+            -0.1,
+            0,
+            0.007
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.016,
+            0.016,
+            0.006
+          ],
+          "offset": [
+            0.07,
+            0,
+            0.007
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.016,
+            0.016,
+            0.006
+          ],
+          "offset": [
+            0.24,
+            0,
+            0.007
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.36,
+        0.4,
+        0.44
+      ]
+    },
+    {
+      "id": "frame_left",
+      "role": "Three fan frames",
+      "parent": "panel",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "tube",
+          "size": [
+            0.15,
+            0.036,
+            0.15
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            90,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0.012,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.01,
+            0.016,
+            0.012
+          ],
+          "offset": [
+            0.07,
+            0,
+            -0.013
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.2,
+        0.23,
+        0.26
+      ]
+    },
+    {
+      "id": "frame_center",
+      "role": "Three fan frames",
+      "parent": "panel",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "tube",
+          "size": [
+            0.15,
+            0.036,
+            0.15
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            90,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0.012,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.01,
+            0.016,
+            0.012
+          ],
+          "offset": [
+            0.07,
+            0,
+            -0.013
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.2,
+        0.23,
+        0.26
+      ]
+    },
+    {
+      "id": "frame_right",
+      "role": "Three fan frames",
+      "parent": "panel",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "tube",
+          "size": [
+            0.15,
+            0.036,
+            0.15
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            90,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0.012,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.01,
+            0.016,
+            0.012
+          ],
+          "offset": [
+            0.07,
+            0,
+            -0.013
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.2,
+        0.23,
+        0.26
+      ]
+    },
+    {
+      "id": "rotor_left",
+      "role": "Three fan rotors",
+      "parent": "frame_left",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.022,
+            0.016,
+            0.022
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            90,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.05,
+            0.016,
+            0.005
+          ],
+          "offset": [
+            0.032,
+            0,
+            0.0085
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.05,
+            0.016,
+            0.005
+          ],
+          "offset": [
+            -0.032,
+            0,
+            0.0085
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.016,
+            0.05,
+            0.005
+          ],
+          "offset": [
+            0,
+            0.032,
+            0.0085
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.016,
+            0.05,
+            0.005
+          ],
+          "offset": [
+            0,
+            -0.032,
+            0.0085
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.53,
+        0.57,
+        0.59
+      ]
+    },
+    {
+      "id": "rotor_center",
+      "role": "Three fan rotors",
+      "parent": "frame_center",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.022,
+            0.016,
+            0.022
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            90,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.05,
+            0.016,
+            0.005
+          ],
+          "offset": [
+            0.032,
+            0,
+            0.0085
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.05,
+            0.016,
+            0.005
+          ],
+          "offset": [
+            -0.032,
+            0,
+            0.0085
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.016,
+            0.05,
+            0.005
+          ],
+          "offset": [
+            0,
+            0.032,
+            0.0085
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.016,
+            0.05,
+            0.005
+          ],
+          "offset": [
+            0,
+            -0.032,
+            0.0085
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.53,
+        0.57,
+        0.59
+      ]
+    },
+    {
+      "id": "rotor_right",
+      "role": "Three fan rotors",
+      "parent": "frame_right",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.022,
+            0.016,
+            0.022
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            90,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.05,
+            0.016,
+            0.005
+          ],
+          "offset": [
+            0.032,
+            0,
+            0.0085
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.05,
+            0.016,
+            0.005
+          ],
+          "offset": [
+            -0.032,
+            0,
+            0.0085
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.016,
+            0.05,
+            0.005
+          ],
+          "offset": [
+            0,
+            0.032,
+            0.0085
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.016,
+            0.05,
+            0.005
+          ],
+          "offset": [
+            0,
+            -0.032,
+            0.0085
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.53,
+        0.57,
+        0.59
+      ]
+    }
+  ],
+  "mounts": [],
+  "passages": [],
+  "ports": [
+    {
+      "id": "panel_left",
+      "part": "panel",
+      "kind": "face",
+      "form": 2,
+      "face": "+z",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "panel_center",
+      "part": "panel",
+      "kind": "face",
+      "form": 3,
+      "face": "+z",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "panel_right",
+      "part": "panel",
+      "kind": "face",
+      "form": 4,
+      "face": "+z",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "frame_left_mount",
+      "part": "frame_left",
+      "kind": "face",
+      "form": 1,
+      "face": "-z",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "frame_center_mount",
+      "part": "frame_center",
+      "kind": "face",
+      "form": 1,
+      "face": "-z",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "frame_right_mount",
+      "part": "frame_right",
+      "kind": "face",
+      "form": 1,
+      "face": "-z",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 0,
+      "id": "frame_left_bore",
+      "kind": "bore_axis",
+      "part": "frame_left",
+      "span": [
+        0.25,
+        0.75
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 0,
+      "id": "frame_center_bore",
+      "kind": "bore_axis",
+      "part": "frame_center",
+      "span": [
+        0.25,
+        0.75
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 0,
+      "id": "frame_right_bore",
+      "kind": "bore_axis",
+      "part": "frame_right",
+      "span": [
+        0.25,
+        0.75
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 0,
+      "id": "rotor_left_axis",
+      "kind": "outer_axis",
+      "part": "rotor_left",
+      "span": [
+        0.05,
+        0.55
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 0,
+      "id": "rotor_center_axis",
+      "kind": "outer_axis",
+      "part": "rotor_center",
+      "span": [
+        0.05,
+        0.55
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 0,
+      "id": "rotor_right_axis",
+      "kind": "outer_axis",
+      "part": "rotor_right",
+      "span": [
+        0.05,
+        0.55
+      ]
+    }
+  ],
+  "mates": [
+    {
+      "id": "mount_left",
+      "a": "panel_left",
+      "b": "frame_left_mount",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "mount_center",
+      "a": "panel_center",
+      "b": "frame_center_mount",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "mount_right",
+      "a": "panel_right",
+      "b": "frame_right_mount",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "seat_left",
+      "a": "frame_left_bore",
+      "b": "rotor_left_axis",
+      "kind": "coaxial",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0.003,
+      "minimum_overlap": 0.008
+    },
+    {
+      "id": "seat_center",
+      "a": "frame_center_bore",
+      "b": "rotor_center_axis",
+      "kind": "coaxial",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0.003,
+      "minimum_overlap": 0.008
+    },
+    {
+      "id": "seat_right",
+      "a": "frame_right_bore",
+      "b": "rotor_right_axis",
+      "kind": "coaxial",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0.003,
+      "minimum_overlap": 0.008
+    }
+  ],
+  "containments": [
+    {
+      "outer": "frame_left",
+      "inner": "rotor_left",
+      "clearance": 0.003
+    },
+    {
+      "outer": "frame_center",
+      "inner": "rotor_center",
+      "clearance": 0.003
+    },
+    {
+      "outer": "frame_right",
+      "inner": "rotor_right",
+      "clearance": 0.003
+    }
+  ],
+  "clearances": [],
+  "symmetries": [
+    {
+      "a": "frame_left",
+      "b": "frame_right",
+      "axis": "x"
+    },
+    {
+      "a": "rotor_left",
+      "b": "rotor_right",
+      "axis": "x"
+    }
+  ]
+}

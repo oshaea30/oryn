@@ -1,0 +1,33 @@
+{
+  "operation_id": "db99efe1f8c038a97b23863aac8e9ac4",
+  "body_sha256": "6534398c0143d3cde0ebcae4d607c392a8830c9247987e934e9c66cf988d2624",
+  "started": 1790880590.4676301,
+  "deadline": 1790880950.4676301,
+  "response_id": "resp_0113301a3efb5d9d006abeab4ead2487d294088ecc4e09f3ed",
+  "status": "completed",
+  "events": [
+    {
+      "elapsed_seconds": 2.890302896499634,
+      "event": "queued"
+    },
+    {
+      "elapsed_seconds": 8.10272479057312,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 13.785862922668457,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 18.960236072540283,
+      "event": "in_progress"
+    },
+    {
+      "elapsed_seconds": 24.846487760543823,
+      "event": "completed"
+    }
+  ],
+  "creation_calls": 1,
+  "poll_calls": 4,
+  "cancel_calls": 0
+}

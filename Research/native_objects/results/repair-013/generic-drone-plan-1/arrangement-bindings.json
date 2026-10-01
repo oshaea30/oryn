@@ -1,0 +1,68 @@
+{
+  "r12": {
+    "kind": "constraint",
+    "refs": [
+      "part:frame",
+      "port:axn_inner",
+      "port:axp_inner",
+      "port:azn_inner",
+      "port:azp_inner"
+    ]
+  },
+  "r13": {
+    "kind": "constraint",
+    "refs": [
+      "part:axn",
+      "part:axp",
+      "part:azn",
+      "part:azp",
+      "part:frame"
+    ]
+  },
+  "r14": {
+    "kind": "constraint",
+    "refs": [
+      "part:frame",
+      "port:mxn_bore",
+      "port:mxp_bore",
+      "port:mzn_bore",
+      "port:mzp_bore"
+    ]
+  },
+  "r15": {
+    "kind": "constraint",
+    "refs": [
+      "port:mxn_bore",
+      "port:mxp_bore",
+      "port:mzn_bore",
+      "port:mzp_bore"
+    ]
+  },
+  "r16": {
+    "kind": "constraint",
+    "refs": [
+      "part:frame",
+      "port:pxn_shaft",
+      "port:pxp_shaft",
+      "port:pzn_shaft",
+      "port:pzp_shaft"
+    ]
+  },
+  "r17": {
+    "kind": "constraint",
+    "refs": [
+      "port:pxn_shaft",
+      "port:pxp_shaft",
+      "port:pzn_shaft",
+      "port:pzp_shaft"
+    ]
+  },
+  "r18": {
+    "kind": "unsupported",
+    "refs": []
+  },
+  "r19": {
+    "kind": "unsupported",
+    "refs": []
+  }
+}

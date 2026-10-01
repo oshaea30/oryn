@@ -1,0 +1,193 @@
+{
+  "clearances": [],
+  "containments": [
+    {
+      "clearance": 0.003,
+      "inner": "rotor_center",
+      "outer": "frame_center"
+    },
+    {
+      "clearance": 0.003,
+      "inner": "rotor_left",
+      "outer": "frame_left"
+    },
+    {
+      "clearance": 0.003,
+      "inner": "rotor_right",
+      "outer": "frame_right"
+    }
+  ],
+  "mates": [
+    {
+      "a": "frame_center_bore",
+      "b": "rotor_center_axis",
+      "id": "seat_center",
+      "kind": "coaxial",
+      "minimum_clearance": 0.003,
+      "minimum_overlap": 0.008,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "frame_left_bore",
+      "b": "rotor_left_axis",
+      "id": "seat_left",
+      "kind": "coaxial",
+      "minimum_clearance": 0.003,
+      "minimum_overlap": 0.008,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "frame_right_bore",
+      "b": "rotor_right_axis",
+      "id": "seat_right",
+      "kind": "coaxial",
+      "minimum_clearance": 0.003,
+      "minimum_overlap": 0.008,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "panel_center",
+      "b": "frame_center_mount",
+      "id": "mount_center",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "panel_left",
+      "b": "frame_left_mount",
+      "id": "mount_left",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "panel_right",
+      "b": "frame_right_mount",
+      "id": "mount_right",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    }
+  ],
+  "parts": [
+    [
+      "frame_center",
+      "Three fan frames",
+      "panel"
+    ],
+    [
+      "frame_left",
+      "Three fan frames",
+      "panel"
+    ],
+    [
+      "frame_right",
+      "Three fan frames",
+      "panel"
+    ],
+    [
+      "panel",
+      "Mounting panel",
+      ""
+    ],
+    [
+      "rotor_center",
+      "Three fan rotors",
+      "frame_center"
+    ],
+    [
+      "rotor_left",
+      "Three fan rotors",
+      "frame_left"
+    ],
+    [
+      "rotor_right",
+      "Three fan rotors",
+      "frame_right"
+    ]
+  ],
+  "ports": [
+    [
+      "frame_center_bore",
+      "frame_center",
+      "bore_axis"
+    ],
+    [
+      "frame_center_mount",
+      "frame_center",
+      "face"
+    ],
+    [
+      "frame_left_bore",
+      "frame_left",
+      "bore_axis"
+    ],
+    [
+      "frame_left_mount",
+      "frame_left",
+      "face"
+    ],
+    [
+      "frame_right_bore",
+      "frame_right",
+      "bore_axis"
+    ],
+    [
+      "frame_right_mount",
+      "frame_right",
+      "face"
+    ],
+    [
+      "panel_center",
+      "panel",
+      "face"
+    ],
+    [
+      "panel_left",
+      "panel",
+      "face"
+    ],
+    [
+      "panel_right",
+      "panel",
+      "face"
+    ],
+    [
+      "rotor_center_axis",
+      "rotor_center",
+      "outer_axis"
+    ],
+    [
+      "rotor_left_axis",
+      "rotor_left",
+      "outer_axis"
+    ],
+    [
+      "rotor_right_axis",
+      "rotor_right",
+      "outer_axis"
+    ]
+  ],
+  "symmetries": [
+    {
+      "a": "frame_left",
+      "axis": "x",
+      "b": "frame_right"
+    },
+    {
+      "a": "rotor_left",
+      "axis": "x",
+      "b": "rotor_right"
+    }
+  ]
+}

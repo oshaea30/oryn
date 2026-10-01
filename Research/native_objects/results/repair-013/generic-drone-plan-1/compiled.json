@@ -1,0 +1,2103 @@
+{
+  "assumptions": [
+    "Generic model design; requirement coverage does not verify semantics or engineering."
+  ],
+  "limitations": [
+    "Geometry executor unchanged; unsupported requirements are explicit."
+  ],
+  "parts": [
+    {
+      "id": "frame",
+      "role": "Central frame",
+      "parent": "",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "rounded_box",
+          "size": [
+            0.12,
+            0.018,
+            0.12
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0.003,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.19,
+        0.23,
+        0.27
+      ]
+    },
+    {
+      "id": "axp",
+      "role": "Four arms",
+      "parent": "frame",
+      "position": [
+        0.16999999999999998,
+        0.0,
+        1.3471114790620885e-17
+      ],
+      "rotation": [
+        0.0,
+        -7.016709298534876e-15,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.22,
+            0.014,
+            0.024
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.25,
+        0.29,
+        0.32
+      ]
+    },
+    {
+      "id": "axn",
+      "role": "Four arms",
+      "parent": "frame",
+      "position": [
+        -0.16999999999999998,
+        0.0,
+        -1.3471114790620885e-17
+      ],
+      "rotation": [
+        180.0,
+        7.016709298534876e-15,
+        180.0
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.22,
+            0.014,
+            0.024
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.25,
+        0.29,
+        0.32
+      ]
+    },
+    {
+      "id": "azp",
+      "role": "Four arms",
+      "parent": "frame",
+      "position": [
+        0.0,
+        1.3471114790620885e-17,
+        0.16999999999999998
+      ],
+      "rotation": [
+        -90.0,
+        -90.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.22,
+            0.014,
+            0.024
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.25,
+        0.29,
+        0.32
+      ]
+    },
+    {
+      "id": "azn",
+      "role": "Four arms",
+      "parent": "frame",
+      "position": [
+        0.0,
+        -1.3471114790620885e-17,
+        -0.16999999999999998
+      ],
+      "rotation": [
+        90.0,
+        90.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.22,
+            0.014,
+            0.024
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.25,
+        0.29,
+        0.32
+      ]
+    },
+    {
+      "id": "mxp",
+      "role": "Four motors",
+      "parent": "axp",
+      "position": [
+        0.27999999999999997,
+        0.003,
+        2.694222958124177e-17
+      ],
+      "rotation": [
+        0.0,
+        -1.4033418597069752e-14,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.034,
+            0.02,
+            0.034
+          ],
+          "offset": [
+            0.021,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.014,
+            0.012,
+            0.012
+          ],
+          "offset": [
+            0.007,
+            -0.003,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.012,
+            0.012,
+            0.021
+          ],
+          "offset": [
+            0.021,
+            -0.003,
+            -0.0105
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.012,
+            0.012,
+            0.021
+          ],
+          "offset": [
+            0.021,
+            -0.003,
+            0.0105
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.008,
+            0.032,
+            0.008
+          ],
+          "offset": [
+            0.021,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "subtract",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.38,
+        0.4,
+        0.43
+      ]
+    },
+    {
+      "id": "mxn",
+      "role": "Four motors",
+      "parent": "axn",
+      "position": [
+        -0.27999999999999997,
+        0.003,
+        -2.694222958124177e-17
+      ],
+      "rotation": [
+        180.0,
+        1.4033418597069752e-14,
+        180.0
+      ],
+      "forms": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.034,
+            0.02,
+            0.034
+          ],
+          "offset": [
+            0.021,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.014,
+            0.012,
+            0.012
+          ],
+          "offset": [
+            0.007,
+            -0.003,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.012,
+            0.012,
+            0.021
+          ],
+          "offset": [
+            0.021,
+            -0.003,
+            -0.0105
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.012,
+            0.012,
+            0.021
+          ],
+          "offset": [
+            0.021,
+            -0.003,
+            0.0105
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.008,
+            0.032,
+            0.008
+          ],
+          "offset": [
+            0.021,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "subtract",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.38,
+        0.4,
+        0.43
+      ]
+    },
+    {
+      "id": "mzp",
+      "role": "Four motors",
+      "parent": "azp",
+      "position": [
+        -0.021,
+        0.003000000000000032,
+        0.301
+      ],
+      "rotation": [
+        -1.4033418597069752e-14,
+        -0.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.034,
+            0.02,
+            0.034
+          ],
+          "offset": [
+            0.021,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.014,
+            0.012,
+            0.012
+          ],
+          "offset": [
+            0.007,
+            -0.003,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.012,
+            0.012,
+            0.021
+          ],
+          "offset": [
+            0.021,
+            -0.003,
+            -0.0105
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.012,
+            0.012,
+            0.021
+          ],
+          "offset": [
+            0.021,
+            -0.003,
+            0.0105
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.008,
+            0.032,
+            0.008
+          ],
+          "offset": [
+            0.021,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "subtract",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.38,
+        0.4,
+        0.43
+      ]
+    },
+    {
+      "id": "mzn",
+      "role": "Four motors",
+      "parent": "azn",
+      "position": [
+        -0.021,
+        -0.003000000000000032,
+        -0.301
+      ],
+      "rotation": [
+        180.0,
+        -0.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.034,
+            0.02,
+            0.034
+          ],
+          "offset": [
+            0.021,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.014,
+            0.012,
+            0.012
+          ],
+          "offset": [
+            0.007,
+            -0.003,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.012,
+            0.012,
+            0.021
+          ],
+          "offset": [
+            0.021,
+            -0.003,
+            -0.0105
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.012,
+            0.012,
+            0.021
+          ],
+          "offset": [
+            0.021,
+            -0.003,
+            0.0105
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.008,
+            0.032,
+            0.008
+          ],
+          "offset": [
+            0.021,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "subtract",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.38,
+        0.4,
+        0.43
+      ]
+    },
+    {
+      "id": "pxp",
+      "role": "Four propellers",
+      "parent": "mxp",
+      "position": [
+        0.301,
+        0.009000000000000001,
+        3.208574613766065e-17
+      ],
+      "rotation": [
+        0.0,
+        -1.4033418597069752e-14,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.007,
+            0.024,
+            0.007
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.016,
+            0.01,
+            0.016
+          ],
+          "offset": [
+            0,
+            0.014,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "rounded_box",
+          "size": [
+            0.126,
+            0.003,
+            0.015
+          ],
+          "offset": [
+            0,
+            0.016,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0.001,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.18,
+        0.21,
+        0.24
+      ]
+    },
+    {
+      "id": "pxn",
+      "role": "Four propellers",
+      "parent": "mxn",
+      "position": [
+        -0.301,
+        0.009000000000000001,
+        -3.208574613766065e-17
+      ],
+      "rotation": [
+        180.0,
+        1.4033418597069752e-14,
+        180.0
+      ],
+      "forms": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.007,
+            0.024,
+            0.007
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.016,
+            0.01,
+            0.016
+          ],
+          "offset": [
+            0,
+            0.014,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "rounded_box",
+          "size": [
+            0.126,
+            0.003,
+            0.015
+          ],
+          "offset": [
+            0,
+            0.016,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0.001,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.18,
+        0.21,
+        0.24
+      ]
+    },
+    {
+      "id": "pzp",
+      "role": "Four propellers",
+      "parent": "mzp",
+      "position": [
+        0.0,
+        0.009000000000000032,
+        0.301
+      ],
+      "rotation": [
+        -1.4033418597069752e-14,
+        -0.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.007,
+            0.024,
+            0.007
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.016,
+            0.01,
+            0.016
+          ],
+          "offset": [
+            0,
+            0.014,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "rounded_box",
+          "size": [
+            0.126,
+            0.003,
+            0.015
+          ],
+          "offset": [
+            0,
+            0.016,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0.001,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.18,
+        0.21,
+        0.24
+      ]
+    },
+    {
+      "id": "pzn",
+      "role": "Four propellers",
+      "parent": "mzn",
+      "position": [
+        0.0,
+        -0.009000000000000032,
+        -0.301
+      ],
+      "rotation": [
+        180.0,
+        -0.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.007,
+            0.024,
+            0.007
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.016,
+            0.01,
+            0.016
+          ],
+          "offset": [
+            0,
+            0.014,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "rounded_box",
+          "size": [
+            0.126,
+            0.003,
+            0.015
+          ],
+          "offset": [
+            0,
+            0.016,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0.001,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.18,
+        0.21,
+        0.24
+      ]
+    },
+    {
+      "id": "battery",
+      "role": "Battery",
+      "parent": "frame",
+      "position": [
+        0.0,
+        -0.020999999999999998,
+        1.4695761589768239e-18
+      ],
+      "rotation": [
+        -7.016709298534876e-15,
+        -0.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "rounded_box",
+          "size": [
+            0.085,
+            0.024,
+            0.085
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0.003,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.3,
+        0.34,
+        0.38
+      ]
+    },
+    {
+      "id": "controller",
+      "role": "Flight controller",
+      "parent": "frame",
+      "position": [
+        0.0,
+        0.012499999999999999,
+        -4.2862637970157364e-19
+      ],
+      "rotation": [
+        -7.016709298534876e-15,
+        -0.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "rounded_box",
+          "size": [
+            0.06,
+            0.007,
+            0.06
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0.001,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.15,
+        0.35,
+        0.32
+      ]
+    },
+    {
+      "id": "exp",
+      "role": "Electronic speed controllers",
+      "parent": "axp",
+      "position": [
+        0.16999999999999998,
+        0.01,
+        1.3103720750876678e-17
+      ],
+      "rotation": [
+        -7.016709298534876e-15,
+        -7.016709298534876e-15,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "rounded_box",
+          "size": [
+            0.052,
+            0.006,
+            0.019
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0.001,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.16,
+        0.33,
+        0.31
+      ]
+    },
+    {
+      "id": "exn",
+      "role": "Electronic speed controllers",
+      "parent": "axn",
+      "position": [
+        -0.16999999999999998,
+        0.01,
+        -1.3103720750876678e-17
+      ],
+      "rotation": [
+        180.0,
+        7.016709298534876e-15,
+        180.0
+      ],
+      "forms": [
+        {
+          "kind": "rounded_box",
+          "size": [
+            0.052,
+            0.006,
+            0.019
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0.001,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.16,
+        0.33,
+        0.31
+      ]
+    },
+    {
+      "id": "ezp",
+      "role": "Electronic speed controllers",
+      "parent": "azp",
+      "position": [
+        0.01,
+        1.3103720750876678e-17,
+        0.16999999999999998
+      ],
+      "rotation": [
+        -90.00000000000001,
+        -90.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "rounded_box",
+          "size": [
+            0.052,
+            0.006,
+            0.019
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0.001,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.16,
+        0.33,
+        0.31
+      ]
+    },
+    {
+      "id": "ezn",
+      "role": "Electronic speed controllers",
+      "parent": "azn",
+      "position": [
+        0.01,
+        -1.3103720750876678e-17,
+        -0.16999999999999998
+      ],
+      "rotation": [
+        90.0,
+        90.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "rounded_box",
+          "size": [
+            0.052,
+            0.006,
+            0.019
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0.001,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.16,
+        0.33,
+        0.31
+      ]
+    }
+  ],
+  "mounts": [
+    {
+      "a": "frame",
+      "b": "axp",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "frame",
+      "b": "axn",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "frame",
+      "b": "azp",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "frame",
+      "b": "azn",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "axp",
+      "b": "mxp",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "axn",
+      "b": "mxn",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "azp",
+      "b": "mzp",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "azn",
+      "b": "mzn",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "mxp",
+      "b": "pxp",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "mxn",
+      "b": "pxn",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "mzp",
+      "b": "pzp",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "mzn",
+      "b": "pzn",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "axp",
+      "b": "exp",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "axn",
+      "b": "exn",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "azp",
+      "b": "ezp",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "azn",
+      "b": "ezn",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "frame",
+      "b": "battery",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "frame",
+      "b": "controller",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "passages": [],
+  "containments": [],
+  "clearances": [],
+  "symmetries": [
+    {
+      "a": "axp",
+      "axis": "x",
+      "b": "axn"
+    },
+    {
+      "a": "azp",
+      "axis": "z",
+      "b": "azn"
+    },
+    {
+      "a": "mxp",
+      "axis": "x",
+      "b": "mxn"
+    },
+    {
+      "a": "mzp",
+      "axis": "z",
+      "b": "mzn"
+    },
+    {
+      "a": "pxp",
+      "axis": "x",
+      "b": "pxn"
+    },
+    {
+      "a": "pzp",
+      "axis": "z",
+      "b": "pzn"
+    },
+    {
+      "a": "exp",
+      "axis": "x",
+      "b": "exn"
+    },
+    {
+      "a": "ezp",
+      "axis": "z",
+      "b": "ezn"
+    }
+  ]
+}

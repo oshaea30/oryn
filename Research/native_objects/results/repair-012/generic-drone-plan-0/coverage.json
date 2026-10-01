@@ -1,0 +1,93 @@
+{
+  "coverage_complete": true,
+  "geometry_allowed": true,
+  "errors": [],
+  "unsupported": [
+    {
+      "id": "r18",
+      "obligation": "design_choice",
+      "reason": "The frozen arrangement marks controller placement unsupported; one is nevertheless proposed on each arm."
+    },
+    {
+      "id": "r19",
+      "obligation": "design_choice",
+      "reason": "The frozen arrangement marks controller-following orientation unsupported; no orientation verification is claimed."
+    }
+  ],
+  "blocking_unsupported": [],
+  "residual_checks": [
+    {
+      "id": "r0",
+      "check": "visual realization remains unassessed"
+    },
+    {
+      "id": "r13",
+      "check": "Pending measured spatial realization: radial_outward"
+    },
+    {
+      "id": "r21",
+      "check": "Pending measured spatial realization: outer_end"
+    },
+    {
+      "id": "r23",
+      "check": "Pending measured spatial realization: axis_aligned"
+    },
+    {
+      "id": "r12",
+      "check": "Pending measured assembly placement"
+    },
+    {
+      "id": "r14",
+      "check": "Pending measured assembly placement"
+    },
+    {
+      "id": "r15",
+      "check": "Pending measured assembly orientation"
+    },
+    {
+      "id": "r16",
+      "check": "Pending measured assembly placement"
+    },
+    {
+      "id": "r17",
+      "check": "Pending measured assembly orientation"
+    }
+  ],
+  "semantic_extraction_complete": "unassessed",
+  "scope": "typed requirement-ID coverage before geometry; not proof of request interpretation or physical realization",
+  "meaning_admission": {
+    "planning_allowed": true,
+    "unsupported": [
+      {
+        "id": "r18",
+        "obligation": "design_choice",
+        "mode": "structure",
+        "basis": "design_choice",
+        "reason": "No deterministic adapter implements this requirement."
+      },
+      {
+        "id": "r19",
+        "obligation": "design_choice",
+        "mode": "structure",
+        "basis": "design_choice",
+        "reason": "No deterministic adapter implements this requirement."
+      }
+    ],
+    "blocking": [],
+    "interpretation_correct": "unassessed",
+    "detail": "Registered spatial checks permit planning only; binding and actual geometry must still pass.",
+    "pending_spatial_checks": [
+      "r13",
+      "r21",
+      "r23"
+    ],
+    "pending_arrangement_checks": [
+      "r12",
+      "r13",
+      "r14",
+      "r15",
+      "r16",
+      "r17"
+    ]
+  }
+}

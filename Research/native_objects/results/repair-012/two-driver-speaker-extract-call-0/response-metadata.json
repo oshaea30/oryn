@@ -1,0 +1,24 @@
+{
+  "operation_id": "db99efe1f8c038a97b23863aac8e9ac4",
+  "response_id": "resp_0113301a3efb5d9d006abeab4ead2487d294088ecc4e09f3ed",
+  "status": "completed",
+  "incomplete_details": null,
+  "usage": {
+    "input_tokens": 3912,
+    "input_tokens_details": {
+      "cache_write_tokens": 3909,
+      "cached_tokens": 0
+    },
+    "output_tokens": 1298,
+    "output_tokens_details": {
+      "reasoning_tokens": 516
+    },
+    "total_tokens": 5210
+  },
+  "calculated_cost_nanos": 22760000,
+  "dispatch_seconds": 24.846487760543823,
+  "creation_calls": 1,
+  "poll_calls": 4,
+  "cancel_calls": 0,
+  "background": true
+}

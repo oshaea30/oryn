@@ -1,0 +1,229 @@
+{
+  "assemblies": [
+    {
+      "members": [
+        "e1"
+      ],
+      "placement": {
+        "pattern": "linear",
+        "axis": "x",
+        "id": "r7",
+        "reference": ""
+      },
+      "id": "a0",
+      "orientation": {
+        "direction": "+z",
+        "id": "r8"
+      }
+    }
+  ],
+  "spatial": [],
+  "exclusions": [
+    {
+      "d": "audio_output",
+      "s": "object",
+      "i": "x0",
+      "q": "s2"
+    },
+    {
+      "d": "motion",
+      "s": "object",
+      "i": "x1",
+      "q": "s2"
+    }
+  ],
+  "requirements": [
+    {
+      "b": "inferred",
+      "s": "e0",
+      "v": "",
+      "q": "s0",
+      "p": "exists",
+      "o": "required",
+      "m": "structure",
+      "t": "",
+      "k": "entity",
+      "i": "r0"
+    },
+    {
+      "b": "explicit",
+      "s": "e1",
+      "v": "",
+      "q": "s0",
+      "p": "exists",
+      "o": "required",
+      "m": "structure",
+      "t": "",
+      "k": "entity",
+      "i": "r1"
+    },
+    {
+      "b": "design_choice",
+      "s": "e2",
+      "v": "",
+      "q": "",
+      "p": "exists",
+      "o": "design_choice",
+      "m": "structure",
+      "t": "",
+      "k": "entity",
+      "i": "r2"
+    },
+    {
+      "b": "design_choice",
+      "s": "e3",
+      "v": "",
+      "q": "",
+      "p": "exists",
+      "o": "design_choice",
+      "m": "structure",
+      "t": "",
+      "k": "entity",
+      "i": "r3"
+    },
+    {
+      "b": "explicit",
+      "s": "object",
+      "v": "tabletop speaker",
+      "q": "s0",
+      "p": "appearance",
+      "o": "required",
+      "m": "appearance",
+      "t": "",
+      "k": "visual",
+      "i": "r4"
+    },
+    {
+      "b": "explicit",
+      "s": "e1",
+      "v": "2",
+      "q": "s0",
+      "p": "count",
+      "o": "required",
+      "m": "structure",
+      "t": "",
+      "k": "constraint",
+      "i": "r5"
+    },
+    {
+      "b": "explicit",
+      "s": "e1",
+      "v": "matching",
+      "q": "s0",
+      "p": "appearance",
+      "o": "required",
+      "m": "appearance",
+      "t": "",
+      "k": "visual",
+      "i": "r6"
+    },
+    {
+      "b": "explicit",
+      "s": "e1",
+      "v": "side by side in a straight row",
+      "q": "s0",
+      "p": "other",
+      "o": "required",
+      "m": "structure",
+      "t": "",
+      "k": "relation",
+      "i": "r7"
+    },
+    {
+      "b": "explicit",
+      "s": "e1",
+      "v": "both facing forward",
+      "q": "s0",
+      "p": "other",
+      "o": "required",
+      "m": "structure",
+      "t": "",
+      "k": "constraint",
+      "i": "r8"
+    },
+    {
+      "b": "explicit",
+      "s": "e1",
+      "v": "in enclosure front face",
+      "q": "s0",
+      "p": "other",
+      "o": "required",
+      "m": "structure",
+      "t": "e0",
+      "k": "relation",
+      "i": "r9"
+    },
+    {
+      "b": "inferred",
+      "s": "e1",
+      "v": "",
+      "q": "s0",
+      "p": "attached",
+      "o": "required",
+      "m": "structure",
+      "t": "e0",
+      "k": "relation",
+      "i": "r10"
+    },
+    {
+      "b": "design_choice",
+      "s": "e2",
+      "v": "",
+      "q": "",
+      "p": "inside",
+      "o": "design_choice",
+      "m": "structure",
+      "t": "e0",
+      "k": "relation",
+      "i": "r11"
+    },
+    {
+      "b": "design_choice",
+      "s": "e3",
+      "v": "",
+      "q": "",
+      "p": "attached",
+      "o": "design_choice",
+      "m": "structure",
+      "t": "e0",
+      "k": "relation",
+      "i": "r12"
+    },
+    {
+      "b": "design_choice",
+      "s": "e3",
+      "v": "at enclosure rear",
+      "q": "",
+      "p": "other",
+      "o": "design_choice",
+      "m": "structure",
+      "t": "e0",
+      "k": "relation",
+      "i": "r13"
+    },
+    {
+      "b": "explicit",
+      "s": "object",
+      "v": "inspect",
+      "q": "s1",
+      "p": "capability",
+      "o": "required",
+      "m": "behavior",
+      "t": "",
+      "k": "behavior",
+      "i": "r14"
+    },
+    {
+      "b": "explicit",
+      "s": "object",
+      "v": "geometric_explode",
+      "q": "s1",
+      "p": "capability",
+      "o": "required",
+      "m": "behavior",
+      "t": "",
+      "k": "behavior",
+      "i": "r15"
+    }
+  ]
+}

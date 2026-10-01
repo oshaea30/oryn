@@ -1,0 +1,44 @@
+{
+  "reviewer": "Codex visual inspection of retained renders and desktop viewer",
+  "manual_geometry_repairs": 0,
+  "cases": [
+    {
+      "case": "cooling-fan-row-plan-0",
+      "geometry_source": "replayed assembly-010 attempt 0",
+      "verdict": "failed",
+      "observations": [
+        "Recognizable row of three fan-like subassemblies.",
+        "Baseline geometry fails 12 declared measurements."
+      ]
+    },
+    {
+      "case": "cooling-fan-row-plan-1",
+      "geometry_source": "model-authored bounded patch over unchanged saved baseline",
+      "verdict": "partial; coherent simplified structural candidate",
+      "observations": [
+        "Three consistently arranged, recognizable fan-like rotors and separate housings.",
+        "Panel remains unchanged; independent selection and separation work.",
+        "Geometry remains simplified; no convincing center support or bearing construction is shown.",
+        "Visual polish, engineering completeness, physical motion and Quest performance are not established."
+      ]
+    },
+    {
+      "case": "generic-drone-plan-0",
+      "geometry_source": "new model-authored plan in repair-012",
+      "verdict": "failed",
+      "observations": [
+        "Recognizable cross-shaped frame with separate repeated parts.",
+        "Two motor/propeller pairs lie sideways, visibly contradicting the shared-up requirement.",
+        "Body, arms and electronics remain simple block geometry.",
+        "Passing most checks does not compensate for invalid whole-assembly orientation."
+      ]
+    },
+    {
+      "case": "two-driver-speaker",
+      "verdict": "no geometry; blocked before construction",
+      "observations": [
+        "Typed extraction retains front-face intent as r9; no executable spatial binding is supplied."
+      ]
+    }
+  ]
+}

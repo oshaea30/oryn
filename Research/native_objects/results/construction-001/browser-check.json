@@ -1,0 +1,54 @@
+{
+  "records": [
+    {
+      "case": "generic-drone",
+      "parts": 19,
+      "selection_preserved": true,
+      "spread_preserved": true,
+      "reset_passed": true,
+      "motion_disabled": true
+    },
+    {
+      "case": "generic-speaker",
+      "parts": 11,
+      "selection_preserved": true,
+      "spread_preserved": true,
+      "reset_passed": true,
+      "motion_disabled": true
+    },
+    {
+      "case": "creative-concept",
+      "parts": 5,
+      "selection_preserved": true,
+      "spread_preserved": true,
+      "reset_passed": true,
+      "motion_disabled": true
+    },
+    {
+      "case": "heldout-001",
+      "parts": 6,
+      "selection_preserved": true,
+      "spread_preserved": true,
+      "reset_passed": true,
+      "motion_disabled": true
+    }
+  ],
+  "errors": [],
+  "occlusion": {
+    "samples": [
+      [
+        20,
+        20,
+        228,
+        255
+      ],
+      [
+        20,
+        20,
+        228,
+        255
+      ]
+    ],
+    "error": 0
+  }
+}

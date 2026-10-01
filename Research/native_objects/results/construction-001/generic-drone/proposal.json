@@ -1,0 +1,1194 @@
+{
+  "assumptions": [
+    "Metres are used throughout. The four arms form an X in the horizontal XZ plane, with exposed propellers above the motors.",
+    "The battery is shown as a separate top-mounted component so it can be selected and taken apart from the assembly."
+  ],
+  "limitations": [
+    "This is a generic visual construction, not a verified engineering design or an exact-product reconstruction.",
+    "Mounts propose fixed contact points only. They do not establish a working motor, a moving propeller, a battery-release mechanism, or manufacturing fit."
+  ],
+  "parts": [
+    {
+      "id": "frame",
+      "role": "Central frame",
+      "parent": "",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.3,
+            0.06,
+            0.3
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        }
+      ]
+    },
+    {
+      "id": "arm_pp",
+      "role": "Four arms",
+      "parent": "frame",
+      "position": [
+        0.28,
+        0,
+        0.28
+      ],
+      "rotation": [
+        0,
+        -45,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.3676955262,
+            0.035,
+            0.06
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        }
+      ]
+    },
+    {
+      "id": "arm_pm",
+      "role": "Four arms",
+      "parent": "frame",
+      "position": [
+        0.28,
+        0,
+        -0.28
+      ],
+      "rotation": [
+        0,
+        45,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.3676955262,
+            0.035,
+            0.06
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        }
+      ]
+    },
+    {
+      "id": "arm_mp",
+      "role": "Four arms",
+      "parent": "frame",
+      "position": [
+        -0.28,
+        0,
+        0.28
+      ],
+      "rotation": [
+        0,
+        -135,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.3676955262,
+            0.035,
+            0.06
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        }
+      ]
+    },
+    {
+      "id": "arm_mm",
+      "role": "Four arms",
+      "parent": "frame",
+      "position": [
+        -0.28,
+        0,
+        -0.28
+      ],
+      "rotation": [
+        0,
+        135,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.3676955262,
+            0.035,
+            0.06
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        }
+      ]
+    },
+    {
+      "id": "motor_pp",
+      "role": "Four motors",
+      "parent": "arm_pp",
+      "position": [
+        0.41,
+        0.055,
+        0.41
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.085,
+            0.075,
+            0.085
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        }
+      ]
+    },
+    {
+      "id": "motor_pm",
+      "role": "Four motors",
+      "parent": "arm_pm",
+      "position": [
+        0.41,
+        0.055,
+        -0.41
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.085,
+            0.075,
+            0.085
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        }
+      ]
+    },
+    {
+      "id": "motor_mp",
+      "role": "Four motors",
+      "parent": "arm_mp",
+      "position": [
+        -0.41,
+        0.055,
+        0.41
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.085,
+            0.075,
+            0.085
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        }
+      ]
+    },
+    {
+      "id": "motor_mm",
+      "role": "Four motors",
+      "parent": "arm_mm",
+      "position": [
+        -0.41,
+        0.055,
+        -0.41
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.085,
+            0.075,
+            0.085
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        }
+      ]
+    },
+    {
+      "id": "prop_pp",
+      "role": "Four propellers",
+      "parent": "motor_pp",
+      "position": [
+        0.41,
+        0.0985,
+        0.41
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.29,
+            0.012,
+            0.048
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        },
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.048,
+            0.012,
+            0.29
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.032,
+            0.012,
+            0.032
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        }
+      ]
+    },
+    {
+      "id": "prop_pm",
+      "role": "Four propellers",
+      "parent": "motor_pm",
+      "position": [
+        0.41,
+        0.0985,
+        -0.41
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.29,
+            0.012,
+            0.048
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        },
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.048,
+            0.012,
+            0.29
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.032,
+            0.012,
+            0.032
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        }
+      ]
+    },
+    {
+      "id": "prop_mp",
+      "role": "Four propellers",
+      "parent": "motor_mp",
+      "position": [
+        -0.41,
+        0.0985,
+        0.41
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.29,
+            0.012,
+            0.048
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        },
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.048,
+            0.012,
+            0.29
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.032,
+            0.012,
+            0.032
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        }
+      ]
+    },
+    {
+      "id": "prop_mm",
+      "role": "Four propellers",
+      "parent": "motor_mm",
+      "position": [
+        -0.41,
+        0.0985,
+        -0.41
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.29,
+            0.012,
+            0.048
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        },
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.048,
+            0.012,
+            0.29
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.032,
+            0.012,
+            0.032
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        }
+      ]
+    },
+    {
+      "id": "battery",
+      "role": "Battery",
+      "parent": "frame",
+      "position": [
+        0,
+        0.055,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.16,
+            0.05,
+            0.1
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        }
+      ]
+    },
+    {
+      "id": "controller",
+      "role": "Flight controller",
+      "parent": "frame",
+      "position": [
+        0,
+        -0.047,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.12,
+            0.034,
+            0.1
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        }
+      ]
+    },
+    {
+      "id": "esc_pp",
+      "role": "Electronic speed controllers",
+      "parent": "arm_pp",
+      "position": [
+        0.28,
+        0.0245,
+        0.28
+      ],
+      "rotation": [
+        0,
+        -45,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.08,
+            0.014,
+            0.038
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        }
+      ]
+    },
+    {
+      "id": "esc_pm",
+      "role": "Electronic speed controllers",
+      "parent": "arm_pm",
+      "position": [
+        0.28,
+        0.0245,
+        -0.28
+      ],
+      "rotation": [
+        0,
+        45,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.08,
+            0.014,
+            0.038
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        }
+      ]
+    },
+    {
+      "id": "esc_mp",
+      "role": "Electronic speed controllers",
+      "parent": "arm_mp",
+      "position": [
+        -0.28,
+        0.0245,
+        0.28
+      ],
+      "rotation": [
+        0,
+        -135,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.08,
+            0.014,
+            0.038
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        }
+      ]
+    },
+    {
+      "id": "esc_mm",
+      "role": "Electronic speed controllers",
+      "parent": "arm_mm",
+      "position": [
+        -0.28,
+        0.0245,
+        -0.28
+      ],
+      "rotation": [
+        0,
+        135,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.08,
+            0.014,
+            0.038
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        }
+      ]
+    }
+  ],
+  "mounts": [
+    {
+      "a": "frame",
+      "b": "arm_pp",
+      "point_a": [
+        0.15,
+        0,
+        0.15
+      ],
+      "point_b": [
+        -0.1838477631,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "frame",
+      "b": "arm_pm",
+      "point_a": [
+        0.15,
+        0,
+        -0.15
+      ],
+      "point_b": [
+        -0.1838477631,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "frame",
+      "b": "arm_mp",
+      "point_a": [
+        -0.15,
+        0,
+        0.15
+      ],
+      "point_b": [
+        -0.1838477631,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "frame",
+      "b": "arm_mm",
+      "point_a": [
+        -0.15,
+        0,
+        -0.15
+      ],
+      "point_b": [
+        -0.1838477631,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "arm_pp",
+      "b": "motor_pp",
+      "point_a": [
+        0.1838477631,
+        0.0175,
+        0
+      ],
+      "point_b": [
+        0,
+        -0.0375,
+        0
+      ]
+    },
+    {
+      "a": "arm_pm",
+      "b": "motor_pm",
+      "point_a": [
+        0.1838477631,
+        0.0175,
+        0
+      ],
+      "point_b": [
+        0,
+        -0.0375,
+        0
+      ]
+    },
+    {
+      "a": "arm_mp",
+      "b": "motor_mp",
+      "point_a": [
+        0.1838477631,
+        0.0175,
+        0
+      ],
+      "point_b": [
+        0,
+        -0.0375,
+        0
+      ]
+    },
+    {
+      "a": "arm_mm",
+      "b": "motor_mm",
+      "point_a": [
+        0.1838477631,
+        0.0175,
+        0
+      ],
+      "point_b": [
+        0,
+        -0.0375,
+        0
+      ]
+    },
+    {
+      "a": "motor_pp",
+      "b": "prop_pp",
+      "point_a": [
+        0,
+        0.0375,
+        0
+      ],
+      "point_b": [
+        0,
+        -0.006,
+        0
+      ]
+    },
+    {
+      "a": "motor_pm",
+      "b": "prop_pm",
+      "point_a": [
+        0,
+        0.0375,
+        0
+      ],
+      "point_b": [
+        0,
+        -0.006,
+        0
+      ]
+    },
+    {
+      "a": "motor_mp",
+      "b": "prop_mp",
+      "point_a": [
+        0,
+        0.0375,
+        0
+      ],
+      "point_b": [
+        0,
+        -0.006,
+        0
+      ]
+    },
+    {
+      "a": "motor_mm",
+      "b": "prop_mm",
+      "point_a": [
+        0,
+        0.0375,
+        0
+      ],
+      "point_b": [
+        0,
+        -0.006,
+        0
+      ]
+    },
+    {
+      "a": "frame",
+      "b": "battery",
+      "point_a": [
+        0,
+        0.03,
+        0
+      ],
+      "point_b": [
+        0,
+        -0.025,
+        0
+      ]
+    },
+    {
+      "a": "frame",
+      "b": "controller",
+      "point_a": [
+        0,
+        -0.03,
+        0
+      ],
+      "point_b": [
+        0,
+        0.017,
+        0
+      ]
+    },
+    {
+      "a": "arm_pp",
+      "b": "esc_pp",
+      "point_a": [
+        0,
+        0.0175,
+        0
+      ],
+      "point_b": [
+        0,
+        -0.007,
+        0
+      ]
+    },
+    {
+      "a": "arm_pm",
+      "b": "esc_pm",
+      "point_a": [
+        0,
+        0.0175,
+        0
+      ],
+      "point_b": [
+        0,
+        -0.007,
+        0
+      ]
+    },
+    {
+      "a": "arm_mp",
+      "b": "esc_mp",
+      "point_a": [
+        0,
+        0.0175,
+        0
+      ],
+      "point_b": [
+        0,
+        -0.007,
+        0
+      ]
+    },
+    {
+      "a": "arm_mm",
+      "b": "esc_mm",
+      "point_a": [
+        0,
+        0.0175,
+        0
+      ],
+      "point_b": [
+        0,
+        -0.007,
+        0
+      ]
+    }
+  ],
+  "containments": [],
+  "clearances": [
+    {
+      "a": "prop_pp",
+      "b": "prop_pm",
+      "minimum": 0.5
+    },
+    {
+      "a": "prop_pp",
+      "b": "prop_mp",
+      "minimum": 0.5
+    },
+    {
+      "a": "prop_mm",
+      "b": "prop_pm",
+      "minimum": 0.5
+    },
+    {
+      "a": "prop_mm",
+      "b": "prop_mp",
+      "minimum": 0.5
+    }
+  ],
+  "symmetries": [
+    {
+      "a": "arm_pp",
+      "b": "arm_mp",
+      "axis": "x"
+    },
+    {
+      "a": "arm_pm",
+      "b": "arm_mm",
+      "axis": "x"
+    },
+    {
+      "a": "motor_pp",
+      "b": "motor_mp",
+      "axis": "x"
+    },
+    {
+      "a": "motor_pm",
+      "b": "motor_mm",
+      "axis": "x"
+    },
+    {
+      "a": "prop_pp",
+      "b": "prop_mp",
+      "axis": "x"
+    },
+    {
+      "a": "prop_pm",
+      "b": "prop_mm",
+      "axis": "x"
+    },
+    {
+      "a": "esc_pp",
+      "b": "esc_mp",
+      "axis": "x"
+    },
+    {
+      "a": "esc_pm",
+      "b": "esc_mm",
+      "axis": "x"
+    }
+  ]
+}

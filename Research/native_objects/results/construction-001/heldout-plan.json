@@ -1,0 +1,90 @@
+{
+  "experiment": "construction-001-heldout-plan",
+  "frozen_construction_commit": "442724d",
+  "request": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces.",
+  "status": "completed",
+  "selection": "Chosen after construction policy freeze; not used to implement or tune the builder.",
+  "elapsed_seconds": 6.710392832988873,
+  "items": [
+    {
+      "case_id": "heldout-001",
+      "request": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces.",
+      "candidate": {
+        "version": "oryn-planning-experiment-v1",
+        "context_token": "dcf7ad15ddf2f9ca83f3a2f24ca5101627d84e7b95c947da23a642ec08db14b5",
+        "status": "candidate",
+        "plan": {
+          "assumptions": [
+            "Educational, separable model rather than a fabrication-ready sharpener.",
+            "A helical cutter represents a common hand-cranked design."
+          ],
+          "components": [
+            {
+              "basis": "design_proposal",
+              "name": "Outer housing",
+              "source_ids": []
+            },
+            {
+              "basis": "design_proposal",
+              "name": "Pencil guide",
+              "source_ids": []
+            },
+            {
+              "basis": "design_proposal",
+              "name": "Crank handle",
+              "source_ids": []
+            },
+            {
+              "basis": "design_proposal",
+              "name": "Drive mechanism",
+              "source_ids": []
+            },
+            {
+              "basis": "design_proposal",
+              "name": "Helical cutter assembly",
+              "source_ids": []
+            },
+            {
+              "basis": "design_proposal",
+              "name": "Shavings drawer",
+              "source_ids": []
+            }
+          ],
+          "depth": "major_components",
+          "detail_reason": "Separates the main functional pieces for disassembly and inspection without expanding into small hardware.",
+          "fidelity": "generic_design",
+          "intent": "inspect",
+          "next_step": "propose_geometry",
+          "object": "Generic hand-cranked pencil sharpener",
+          "retrieval": "none",
+          "unknowns": [
+            "Exact cutter and drive arrangement",
+            "Fits and tolerances needed for a working assembly"
+          ]
+        },
+        "generation_allowed": false,
+        "execution_allowed": false,
+        "geometry_status": "not_generated",
+        "semantic_quality": "not_assessed",
+        "evidence_status": "citation_membership_checked_not_entailment",
+        "source_snapshots": [],
+        "limitations": [
+          "Model proposal, not a verified bill of materials.",
+          "Generator realization, fit, physical validity and Quest performance are untested."
+        ],
+        "derived_by": {
+          "provider": "openai",
+          "model": "gpt-6-sol",
+          "effort": "medium",
+          "instructions_sha256": "597e2b94ea650baf7edd3cc4edd0a9e4fed64bb437da1f079ab1aa4477833f88",
+          "body_sha256": "decb9221d3a54588a046311c4685fd240dcb435448fb73c5499f1083e95b8dc6"
+        },
+        "cost": {
+          "calculated_nanos": 6365000,
+          "actual_nanos": null,
+          "status": "usage_estimate"
+        }
+      }
+    }
+  ]
+}

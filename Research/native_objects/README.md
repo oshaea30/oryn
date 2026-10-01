@@ -40,14 +40,25 @@ Exact-product reconstruction remained evidence-blocked. Stop this configuration;
 no extra seeds or per-output repairs. Estimated rental cost was $0.4782; cleanup
 independently confirmed no pods or network volumes. Nothing was sent to Quest.
 
-## Current preflight: construction guidance and latency
+## Prior preflight: construction guidance and latency
 
 [Structure preflight 001](STRUCTURE_PREFLIGHT.md) records a bounded source audit,
 an executed CPU input-retention check, and predeclared quality/identity/latency
-gates. No candidate has yet established the complete unchanged-request input path;
-no GPU run was dispatched. The existing planner proposes role groups, not spatial
-construction. Next establish a concrete plan-to-geometry input path without manual
-object-specific guidance. Preserve the failed Cube/PartCrafter decisions.
+gates. That audit did not establish a complete unchanged-request input path through
+an external geometry model; no GPU run was dispatched. It identified the gap between
+role-group proposals and spatial construction. The following procedural experiment
+tests that gap without changing the failed Cube/PartCrafter decisions.
+
+## Completed procedural construction experiment
+
+[Construction 001](CONSTRUCTION_RESULT.md) ran one application-owned geometry policy
+on drone, speaker, creative lamp and a post-freeze pencil-sharpener request. All four
+produced separate parts and passed their declared numerical relationships; missing
+interfaces and proxy shapes still fail the visual gate. The sharpener also fails
+semantic connection coverage. Geometry was never manually corrected. File-ready
+latency was 30.82–55.04 seconds, excluding prior role planning and client delivery.
+Estimated cost $0.19322; no GPU rental. This is partial structural evidence, not a
+finished-object generator or demonstrated generative refinement.
 
 ## Minimum output and evaluation
 

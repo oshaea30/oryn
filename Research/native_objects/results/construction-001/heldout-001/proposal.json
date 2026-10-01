@@ -1,0 +1,375 @@
+{
+  "assumptions": [
+    "This is an educational, separable representation of a hand-cranked pencil sharpener, not a fabrication-ready design.",
+    "The curved strip on the cutter drum represents a helical cutting feature."
+  ],
+  "limitations": [
+    "The pencil guide does not pass through the housing wall; no opening can be cut with the available geometry.",
+    "Attachments describe proposed contact points, not working joints or a verified drive train.",
+    "Drawer removal, cutting action, and manufacturing fit are not verified."
+  ],
+  "parts": [
+    {
+      "id": "housing",
+      "role": "Outer housing",
+      "parent": "",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "box_shell",
+          "size": [
+            0.3,
+            0.26,
+            0.24
+          ],
+          "wall": 0.012,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        }
+      ]
+    },
+    {
+      "id": "guide",
+      "role": "Pencil guide",
+      "parent": "housing",
+      "position": [
+        0,
+        0.055,
+        -0.145
+      ],
+      "rotation": [
+        90,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "tube",
+          "size": [
+            0.06,
+            0.05,
+            0.06
+          ],
+          "wall": 0.008,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        }
+      ]
+    },
+    {
+      "id": "drive",
+      "role": "Drive mechanism",
+      "parent": "housing",
+      "position": [
+        0.185,
+        0.035,
+        0.025
+      ],
+      "rotation": [
+        0,
+        0,
+        -90
+      ],
+      "forms": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.045,
+            0.07,
+            0.045
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        }
+      ]
+    },
+    {
+      "id": "crank",
+      "role": "Crank handle",
+      "parent": "drive",
+      "position": [
+        0.226,
+        0.09,
+        0.025
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.012,
+            0.11,
+            0.018
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.023,
+            0.042,
+            0.023
+          ],
+          "wall": 0,
+          "offset": [
+            0.027,
+            0.05,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            -90
+          ],
+          "sections": []
+        }
+      ]
+    },
+    {
+      "id": "cutter",
+      "role": "Helical cutter assembly",
+      "parent": "housing",
+      "position": [
+        0,
+        0.052,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.064,
+            0.072,
+            0.064
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        },
+        {
+          "kind": "loft",
+          "size": [
+            1,
+            1,
+            1
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": [
+            [
+              0.025,
+              -0.036,
+              0.002,
+              0.011,
+              0.01
+            ],
+            [
+              0.01,
+              -0.018,
+              0.025,
+              0.011,
+              0.01
+            ],
+            [
+              -0.023,
+              0,
+              0.017,
+              0.011,
+              0.01
+            ],
+            [
+              -0.022,
+              0.018,
+              -0.017,
+              0.011,
+              0.01
+            ],
+            [
+              0.016,
+              0.036,
+              -0.023,
+              0.011,
+              0.01
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "drawer",
+      "role": "Shavings drawer",
+      "parent": "housing",
+      "position": [
+        0,
+        -0.065,
+        0.018
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "box_shell",
+          "size": [
+            0.22,
+            0.09,
+            0.16
+          ],
+          "wall": 0.008,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        }
+      ]
+    }
+  ],
+  "mounts": [
+    {
+      "a": "housing",
+      "b": "guide",
+      "point_a": [
+        0.03,
+        0.055,
+        -0.12
+      ],
+      "point_b": [
+        0.03,
+        0.025,
+        0
+      ]
+    },
+    {
+      "a": "housing",
+      "b": "drive",
+      "point_a": [
+        0.15,
+        0.035,
+        0.025
+      ],
+      "point_b": [
+        0,
+        -0.035,
+        0
+      ]
+    },
+    {
+      "a": "drive",
+      "b": "crank",
+      "point_a": [
+        0,
+        0.035,
+        0
+      ],
+      "point_b": [
+        -0.006,
+        -0.055,
+        0
+      ]
+    }
+  ],
+  "containments": [
+    {
+      "outer": "housing",
+      "inner": "cutter",
+      "clearance": 0.008
+    },
+    {
+      "outer": "housing",
+      "inner": "drawer",
+      "clearance": 0.008
+    }
+  ],
+  "clearances": [
+    {
+      "a": "drawer",
+      "b": "cutter",
+      "minimum": 0.02
+    }
+  ],
+  "symmetries": []
+}

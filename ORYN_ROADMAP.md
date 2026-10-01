@@ -83,15 +83,25 @@ cleanup confirmed zero pods and network volumes. No Quest import was attempted.
 Stop both tested configurations without buying more seeds. The bounded
 [construction-guidance preflight](Research/native_objects/STRUCTURE_PREFLIGHT.md)
 checked four candidates and reproduced loss of a small part label in OmniPart's
-input downsampling, without model inference or GPU spend. No candidate yet has an
-established input path covering all unchanged requests. The existing planner supplies
-role groups, not dimensions, instance placement or connections. Next establish a
-concrete application-owned plan-to-geometry path before another paid run. The
+input downsampling, without model inference or GPU spend. That audit established no
+complete external-generator input path covering all unchanged requests. It identified
+the gap between existing role-group proposals and spatial construction. The following
+procedural experiment addresses that gap. The
 predeclared gates require useful components, identity preserved through refinement,
 and measured cold/resident-model latency; 30 seconds to useful assembly and 120 to
 refinement are research targets, not demonstrated capabilities. A good exterior or
 part label is insufficient. These few trials do not establish every model's ceiling
 or justify training. Product changes, answering and motion expansion remain paused.
+
+The [procedural construction experiment](Research/native_objects/CONSTRUCTION_RESULT.md)
+now connects one application-owned policy to a deterministic geometry builder. Four
+requests produced 19/11/5/6 separate instances with no manual numerical rescue. All
+declared spatial measurements passed, but proxy geometry and missing interfaces
+failed the visual gate. The unfamiliar sharpener's absent guide opening and disconnected
+drive/cutter fail semantic coverage. Cost estimate $0.19322; file-ready 30.82–55.04
+seconds with role plans replayed. No GPU rental or Quest import. Preserve this partial
+structural-control evidence; the next unresolved decision concerns general interface
+geometry and omitted essential connections, not another successful-generator claim.
 
 Generation research is the active track. The product remains stable; answering,
 voice and motion-inference expansion are paused. Research output does not enter

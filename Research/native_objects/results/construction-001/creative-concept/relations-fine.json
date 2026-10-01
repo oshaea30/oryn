@@ -1,0 +1,139 @@
+{
+  "declared_relations_passed": true,
+  "checks": [
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "desk_base",
+        "b": "stem_support",
+        "point_a": [
+          0,
+          0.02,
+          0
+        ],
+        "point_b": [
+          0,
+          0.04,
+          0
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 0.0,
+        "surface_distances_m": [
+          0.0,
+          0.0
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "stem_support",
+        "b": "curled_leaf_shade",
+        "point_a": [
+          0.18,
+          0.6,
+          0
+        ],
+        "point_b": [
+          0.18,
+          0.6,
+          0
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 0.0,
+        "surface_distances_m": [
+          0.0,
+          0.0
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "curled_leaf_shade",
+        "b": "seed_suspension_strand",
+        "point_a": [
+          0.25,
+          0.8,
+          0.05
+        ],
+        "point_b": [
+          0,
+          0.065,
+          0
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 0.0,
+        "surface_distances_m": [
+          0.0,
+          0.0
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "seed_suspension_strand",
+        "b": "glowing_seed",
+        "point_a": [
+          0,
+          -0.065,
+          0
+        ],
+        "point_b": [
+          0,
+          0.05,
+          0
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 1.1102230246251565e-16,
+        "surface_distances_m": [
+          0.0,
+          0.0
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "clearance",
+      "relation": {
+        "a": "glowing_seed",
+        "b": "stem_support",
+        "minimum": 0.01
+      },
+      "passed": true,
+      "measurement": {
+        "aabb_distance_lower_bound_m": 0.012747548783981974,
+        "scope": "overlapping bounds cannot certify a positive gap"
+      }
+    },
+    {
+      "kind": "clearance",
+      "relation": {
+        "a": "glowing_seed",
+        "b": "desk_base",
+        "minimum": 0.5
+      },
+      "passed": true,
+      "measurement": {
+        "aabb_distance_lower_bound_m": 0.5309955272881307,
+        "scope": "overlapping bounds cannot certify a positive gap"
+      }
+    }
+  ],
+  "semantic_completeness": "not_assessed",
+  "global_collisions": "not_assessed",
+  "engineering_correctness": "not_assessed",
+  "native_generation_goal_passed": false
+}

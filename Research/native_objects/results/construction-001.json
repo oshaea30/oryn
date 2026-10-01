@@ -1,0 +1,272 @@
+{
+  "id": "construction-001",
+  "date": "2026-09-30",
+  "frozen_implementation_commit": "442724d",
+  "verdict": "partial_structural_control_visual_gate_failed",
+  "native_generation_goal_passed": false,
+  "inference_calls": {
+    "construction": 4,
+    "heldout_role_planning": 1
+  },
+  "retries": 0,
+  "manual_output_repairs": 0,
+  "gpu_rentals": 0,
+  "estimated_cost_usd": 0.19322,
+  "invoice_cost_usd": null,
+  "experiment_ceiling_usd": 0.53,
+  "reviewer": "Codex qualitative review; not independent human acceptance",
+  "visual_score_order": [
+    "concept",
+    "coherence",
+    "role_coverage",
+    "separation",
+    "assembly"
+  ],
+  "source_plans_sha256": "83eb9a6ba24e8c9de611d34fc1c4e7e88c235cae666f2bb9dcc0c85ad0a0d09a",
+  "heldout_plan_sha256": "ab35866be9353382f0469b06ceca3d04a3bb10c0d60997a84041a447cfd908ed",
+  "test_results": {
+    "python_checks": 35,
+    "construction_browser_cases": 4,
+    "selection_and_spread_preserved": true,
+    "depth_occlusion_control": "pass",
+    "existing_authored_motion_and_saved_geometry_browser": "pass"
+  },
+  "limitations": [
+    "Numeric pass concerns declared constraints only; semantic omissions can invalidate the assembly.",
+    "Construction timings replay prior role plans and exclude initial planning and actual client delivery; hosted warm/cold state unknown.",
+    "Angular tessellation uses the same proposal, not learned refinement; no polished-refinement timing.",
+    "No Quest import, physical operation, broad generalization, material fidelity or collision safety demonstrated."
+  ],
+  "implementation_events": [
+    "Before live execution, a unit test caught an invalid ledger outcome; corrected and all tests passed before dispatch.",
+    "Post-freeze inspector changes preserve selection across the same object ID and replace painter sorting with depth testing; original proposal and package geometry unchanged."
+  ],
+  "items": [
+    {
+      "case_id": "generic-drone",
+      "request": "Show me a generic quadcopter drone I can explore and take apart into its major components.",
+      "planning_source_replayed": true,
+      "status": "completed",
+      "manual_repairs": 0,
+      "retry_count": 0,
+      "geometry_quality": "reviewed_separately_failed_visual_gate",
+      "billing": {
+        "operation_id": "b1fa001f98f07d9f61feb63e1e24ecab",
+        "calculated_cost_nanos": 64292500,
+        "invoice_cost_nanos": null,
+        "body_sha256": "9b4832b881fb96c95fb2041bc09b595fafa3bc669562403e42bb722b0c477989"
+      },
+      "construction_request_seconds": 54.998982916004024,
+      "coarse_build_validate_export_seconds": 0.04034204198978841,
+      "coarse_file_ready_seconds": 55.040396707947366,
+      "fine_build_validate_export_seconds": 0.0672212919453159,
+      "fine_file_ready_seconds": 55.10761950002052,
+      "parts": 19,
+      "declared_relations_passed": true,
+      "first_useful_seconds": null,
+      "client_ready_seconds": null,
+      "refinement_kind": "deterministic_tessellation_only_not_generative_polish",
+      "generative_refinement_seconds": null,
+      "native_generation_goal_passed": false,
+      "review": {
+        "structural_control": "partial",
+        "visual_scores": [
+          2,
+          2,
+          1,
+          2,
+          2
+        ],
+        "observations": [
+          "Four separately selectable motors and propellers; nineteen instances preserve all seven role groups.",
+          "All declared attachments, gaps and symmetry bounds pass.",
+          "Frame, controller and ESCs remain simple solid proxies; blades are crossed ellipsoids. This is not the desired finished drone."
+        ],
+        "visual_pass": false
+      },
+      "raw_response_sha256": "1422dec3b5c75566b5b90f804a35f90b62dd95a68064e10b255290203f05d68b",
+      "proposal_sha256": "b40f3a19b2641d1cc347615b8a6da99c488efb80d11b25572a41901a06edcb8d",
+      "package_sha256": {
+        "coarse": "f4613a8c279714697e41bd95c6de272101a669f434bdff77b65b0028326dc42d",
+        "fine": "c6c21924691d3317160a958f928431acecd4ba2178b04f85a94ea80b0effa467"
+      },
+      "deterministic_binding_preserved": true,
+      "triangles": {
+        "coarse": 2628,
+        "fine": 9732
+      }
+    },
+    {
+      "case_id": "generic-speaker",
+      "request": "Generate a generic portable Bluetooth speaker I can take apart to understand its main systems.",
+      "planning_source_replayed": true,
+      "status": "completed",
+      "manual_repairs": 0,
+      "retry_count": 0,
+      "geometry_quality": "reviewed_separately_failed_visual_gate",
+      "billing": {
+        "operation_id": "13935a28145d3966da97acde3b0c793f",
+        "calculated_cost_nanos": 51702500,
+        "invoice_cost_nanos": null,
+        "body_sha256": "434adb1a6ba044dff165ad15186120beb76270314df0fc6b29806f3a15abfccc"
+      },
+      "construction_request_seconds": 51.12822716590017,
+      "coarse_build_validate_export_seconds": 0.011511792079545557,
+      "coarse_file_ready_seconds": 51.140469749923795,
+      "fine_build_validate_export_seconds": 0.010670583928003907,
+      "fine_file_ready_seconds": 51.151141999987885,
+      "parts": 11,
+      "declared_relations_passed": true,
+      "first_useful_seconds": null,
+      "client_ready_seconds": null,
+      "refinement_kind": "deterministic_tessellation_only_not_generative_polish",
+      "generative_refinement_seconds": null,
+      "native_generation_goal_passed": false,
+      "review": {
+        "structural_control": "partial",
+        "visual_scores": [
+          1,
+          2,
+          1,
+          2,
+          1
+        ],
+        "observations": [
+          "All nine role groups are represented across eleven instances, including three contained internal parts.",
+          "Declared mounts, cavity containment and gaps pass.",
+          "Grille and charging port are solid proxies; enclosure has no matching charging opening. Driver and radiator are solid discs. Important interface shape remains absent."
+        ],
+        "visual_pass": false
+      },
+      "raw_response_sha256": "732321180db7e57054c468ac4ce86c66fb0eaeeeb3f3be5b0cce96965591e80d",
+      "proposal_sha256": "8166bcdc8486986e1899a1850014a0cae27656fd7d51caf896a034a8d1b067f1",
+      "package_sha256": {
+        "coarse": "0be5bc2cdeb3fca94c0186259913f61fd6c22ca2594cf27deb9165e9fcf39e73",
+        "fine": "86c03aefc09c087846dc5ad312cccbd797a904d71cbbaa58324d3358bb24d482"
+      },
+      "deterministic_binding_preserved": true,
+      "triangles": {
+        "coarse": 288,
+        "fine": 384
+      }
+    },
+    {
+      "case_id": "exact-product",
+      "request": "Show me the internal assembly of a JBL Flip 7, including how the battery is mounted.",
+      "planning_source_replayed": true,
+      "status": "blocked_evidence",
+      "manual_repairs": 0,
+      "retry_count": 0,
+      "geometry_quality": "not_assessed",
+      "reason": "Existing exact-product/evidence gate retained."
+    },
+    {
+      "case_id": "creative-concept",
+      "request": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside. Let me inspect its main pieces; it does not need to be a buildable electrical product.",
+      "planning_source_replayed": true,
+      "status": "completed",
+      "manual_repairs": 0,
+      "retry_count": 0,
+      "geometry_quality": "reviewed_separately_failed_visual_gate",
+      "billing": {
+        "operation_id": "92de818dcb0270a4e963dc23f307b9dd",
+        "calculated_cost_nanos": 32242500,
+        "invoice_cost_nanos": null,
+        "body_sha256": "8856252bfcb2bcefda76ff42fe1b2677a303bb15233c4b587e757d2995c9e51c"
+      },
+      "construction_request_seconds": 30.806912541971542,
+      "coarse_build_validate_export_seconds": 0.0159512918908149,
+      "coarse_file_ready_seconds": 30.82355929201003,
+      "fine_build_validate_export_seconds": 0.02405708294827491,
+      "fine_file_ready_seconds": 30.847617625026032,
+      "parts": 5,
+      "declared_relations_passed": true,
+      "first_useful_seconds": null,
+      "client_ready_seconds": null,
+      "refinement_kind": "deterministic_tessellation_only_not_generative_polish",
+      "generative_refinement_seconds": null,
+      "native_generation_goal_passed": false,
+      "review": {
+        "structural_control": "partial",
+        "visual_scores": [
+          1,
+          2,
+          1,
+          2,
+          2
+        ],
+        "observations": [
+          "Five components form a consistent base/stem/shade/strand/seed chain.",
+          "All declared attachment and gap measurements pass.",
+          "Seed hangs below the solid leaf-like wedge, rather than inside the requested curl. No glow/material implementation. Creative intent is only partially realized."
+        ],
+        "visual_pass": false
+      },
+      "raw_response_sha256": "4eb241fecef85d6db8e7cca571cee8693d02c5e71e6270cb0b045d86f2436082",
+      "proposal_sha256": "b8f7be48090bdc63c287659bcabe50979f9ec847846cc509ce04f6b617cfd848",
+      "package_sha256": {
+        "coarse": "2dc43f95a35f34833859c4c751d6b1205d73d27a45f8c04be1595d6819428298",
+        "fine": "e4710a5048d33ad74aa825a0bcb43f2c33f2fc5e2e18858950f6f88db6c081d0"
+      },
+      "deterministic_binding_preserved": true,
+      "triangles": {
+        "coarse": 600,
+        "fine": 1776
+      }
+    },
+    {
+      "case_id": "heldout-001",
+      "request": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces.",
+      "planning_source_replayed": true,
+      "status": "completed",
+      "manual_repairs": 0,
+      "retry_count": 0,
+      "geometry_quality": "reviewed_separately_failed_visual_gate",
+      "billing": {
+        "operation_id": "faa36f1b4bdd7fea46daf8aea0f6fc8c",
+        "calculated_cost_nanos": 38617500,
+        "invoice_cost_nanos": null,
+        "body_sha256": "1e712d44806f306e1b24980b0e1382c724663f885603cf0011832dc3553679de"
+      },
+      "construction_request_seconds": 39.74681395792868,
+      "coarse_build_validate_export_seconds": 0.011488875024951994,
+      "coarse_file_ready_seconds": 39.75911570794415,
+      "fine_build_validate_export_seconds": 0.012700209044851363,
+      "fine_file_ready_seconds": 39.77181779197417,
+      "parts": 6,
+      "declared_relations_passed": true,
+      "first_useful_seconds": null,
+      "client_ready_seconds": null,
+      "refinement_kind": "deterministic_tessellation_only_not_generative_polish",
+      "generative_refinement_seconds": null,
+      "native_generation_goal_passed": false,
+      "review": {
+        "structural_control": "fail_semantic_connections",
+        "visual_scores": [
+          1,
+          1,
+          1,
+          2,
+          0
+        ],
+        "observations": [
+          "Six separately bound role instances passed all declared numeric relationships.",
+          "The guide terminates at the closed housing wall. The drive does not connect to the cutter; cutter and drawer are only contained, with no supporting mounts.",
+          "Containment alone does not establish a mechanically connected assembly. This case fails the semantic coverage gate despite numeric passes."
+        ],
+        "visual_pass": false
+      },
+      "raw_response_sha256": "02f26786692f605f9ad8d0268e9ac70427bc7e5c61f67d711fcd977660897bb6",
+      "proposal_sha256": "30eaf4acfeabaaa2cf7178581137831048af2aa1b5cca750d0fa7a24f294d0d1",
+      "package_sha256": {
+        "coarse": "aeea4c1f927b065b9834c28851804cd444517e8bb729b8a539e39749000205ee",
+        "fine": "69816f4a88889e686816f662a0cec1657adaedc119633824bde4e3dd9506bd9a"
+      },
+      "deterministic_binding_preserved": true,
+      "triangles": {
+        "coarse": 492,
+        "fine": 852
+      }
+    }
+  ]
+}

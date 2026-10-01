@@ -1,0 +1,633 @@
+{
+  "declared_relations_passed": true,
+  "checks": [
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "frame",
+        "b": "arm_pp",
+        "point_a": [
+          0.15,
+          0,
+          0.15
+        ],
+        "point_b": [
+          -0.1838477631,
+          0,
+          0
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 8.502384308442764e-12,
+        "surface_distances_m": [
+          0.0,
+          0.0
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "frame",
+        "b": "arm_pm",
+        "point_a": [
+          0.15,
+          0,
+          -0.15
+        ],
+        "point_b": [
+          -0.1838477631,
+          0,
+          0
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 8.502384308442764e-12,
+        "surface_distances_m": [
+          0.0,
+          0.0
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "frame",
+        "b": "arm_mp",
+        "point_a": [
+          -0.15,
+          0,
+          0.15
+        ],
+        "point_b": [
+          -0.1838477631,
+          0,
+          0
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 8.502384308442764e-12,
+        "surface_distances_m": [
+          0.0,
+          0.0
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "frame",
+        "b": "arm_mm",
+        "point_a": [
+          -0.15,
+          0,
+          -0.15
+        ],
+        "point_b": [
+          -0.1838477631,
+          0,
+          0
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 8.502384308442764e-12,
+        "surface_distances_m": [
+          0.0,
+          0.0
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "arm_pp",
+        "b": "motor_pp",
+        "point_a": [
+          0.1838477631,
+          0.0175,
+          0
+        ],
+        "point_b": [
+          0,
+          -0.0375,
+          0
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 8.502286177641445e-12,
+        "surface_distances_m": [
+          0.0,
+          0.0
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "arm_pm",
+        "b": "motor_pm",
+        "point_a": [
+          0.1838477631,
+          0.0175,
+          0
+        ],
+        "point_b": [
+          0,
+          -0.0375,
+          0
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 8.502286177641445e-12,
+        "surface_distances_m": [
+          0.0,
+          0.0
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "arm_mp",
+        "b": "motor_mp",
+        "point_a": [
+          0.1838477631,
+          0.0175,
+          0
+        ],
+        "point_b": [
+          0,
+          -0.0375,
+          0
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 8.502286177641445e-12,
+        "surface_distances_m": [
+          0.0,
+          0.0
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "arm_mm",
+        "b": "motor_mm",
+        "point_a": [
+          0.1838477631,
+          0.0175,
+          0
+        ],
+        "point_b": [
+          0,
+          -0.0375,
+          0
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 8.502286177641445e-12,
+        "surface_distances_m": [
+          0.0,
+          0.0
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "motor_pp",
+        "b": "prop_pp",
+        "point_a": [
+          0,
+          0.0375,
+          0
+        ],
+        "point_b": [
+          0,
+          -0.006,
+          0
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 0.0,
+        "surface_distances_m": [
+          0.0,
+          0.0
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "motor_pm",
+        "b": "prop_pm",
+        "point_a": [
+          0,
+          0.0375,
+          0
+        ],
+        "point_b": [
+          0,
+          -0.006,
+          0
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 0.0,
+        "surface_distances_m": [
+          0.0,
+          0.0
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "motor_mp",
+        "b": "prop_mp",
+        "point_a": [
+          0,
+          0.0375,
+          0
+        ],
+        "point_b": [
+          0,
+          -0.006,
+          0
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 0.0,
+        "surface_distances_m": [
+          0.0,
+          0.0
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "motor_mm",
+        "b": "prop_mm",
+        "point_a": [
+          0,
+          0.0375,
+          0
+        ],
+        "point_b": [
+          0,
+          -0.006,
+          0
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 0.0,
+        "surface_distances_m": [
+          0.0,
+          0.0
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "frame",
+        "b": "battery",
+        "point_a": [
+          0,
+          0.03,
+          0
+        ],
+        "point_b": [
+          0,
+          -0.025,
+          0
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 0.0,
+        "surface_distances_m": [
+          0.0,
+          0.0
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "frame",
+        "b": "controller",
+        "point_a": [
+          0,
+          -0.03,
+          0
+        ],
+        "point_b": [
+          0,
+          0.017,
+          0
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 0.0,
+        "surface_distances_m": [
+          0.0,
+          0.0
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "arm_pp",
+        "b": "esc_pp",
+        "point_a": [
+          0,
+          0.0175,
+          0
+        ],
+        "point_b": [
+          0,
+          -0.007,
+          0
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 0.0,
+        "surface_distances_m": [
+          0.0,
+          0.0
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "arm_pm",
+        "b": "esc_pm",
+        "point_a": [
+          0,
+          0.0175,
+          0
+        ],
+        "point_b": [
+          0,
+          -0.007,
+          0
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 0.0,
+        "surface_distances_m": [
+          0.0,
+          0.0
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "arm_mp",
+        "b": "esc_mp",
+        "point_a": [
+          0,
+          0.0175,
+          0
+        ],
+        "point_b": [
+          0,
+          -0.007,
+          0
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 0.0,
+        "surface_distances_m": [
+          0.0,
+          0.0
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "arm_mm",
+        "b": "esc_mm",
+        "point_a": [
+          0,
+          0.0175,
+          0
+        ],
+        "point_b": [
+          0,
+          -0.007,
+          0
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 0.0,
+        "surface_distances_m": [
+          0.0,
+          0.0
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "clearance",
+      "relation": {
+        "a": "prop_pp",
+        "b": "prop_pm",
+        "minimum": 0.5
+      },
+      "passed": true,
+      "measurement": {
+        "aabb_distance_lower_bound_m": 0.53,
+        "scope": "overlapping bounds cannot certify a positive gap"
+      }
+    },
+    {
+      "kind": "clearance",
+      "relation": {
+        "a": "prop_pp",
+        "b": "prop_mp",
+        "minimum": 0.5
+      },
+      "passed": true,
+      "measurement": {
+        "aabb_distance_lower_bound_m": 0.53,
+        "scope": "overlapping bounds cannot certify a positive gap"
+      }
+    },
+    {
+      "kind": "clearance",
+      "relation": {
+        "a": "prop_mm",
+        "b": "prop_pm",
+        "minimum": 0.5
+      },
+      "passed": true,
+      "measurement": {
+        "aabb_distance_lower_bound_m": 0.53,
+        "scope": "overlapping bounds cannot certify a positive gap"
+      }
+    },
+    {
+      "kind": "clearance",
+      "relation": {
+        "a": "prop_mm",
+        "b": "prop_mp",
+        "minimum": 0.5
+      },
+      "passed": true,
+      "measurement": {
+        "aabb_distance_lower_bound_m": 0.53,
+        "scope": "overlapping bounds cannot certify a positive gap"
+      }
+    },
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "arm_pp",
+        "b": "arm_mp",
+        "axis": "x"
+      },
+      "passed": true,
+      "measurement": {
+        "maximum_bound_error_m": 5.551115123125783e-17,
+        "scope": "bounds only, not full shape symmetry"
+      }
+    },
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "arm_pm",
+        "b": "arm_mm",
+        "axis": "x"
+      },
+      "passed": true,
+      "measurement": {
+        "maximum_bound_error_m": 5.551115123125783e-17,
+        "scope": "bounds only, not full shape symmetry"
+      }
+    },
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "motor_pp",
+        "b": "motor_mp",
+        "axis": "x"
+      },
+      "passed": true,
+      "measurement": {
+        "maximum_bound_error_m": 0.0,
+        "scope": "bounds only, not full shape symmetry"
+      }
+    },
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "motor_pm",
+        "b": "motor_mm",
+        "axis": "x"
+      },
+      "passed": true,
+      "measurement": {
+        "maximum_bound_error_m": 0.0,
+        "scope": "bounds only, not full shape symmetry"
+      }
+    },
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "prop_pp",
+        "b": "prop_mp",
+        "axis": "x"
+      },
+      "passed": true,
+      "measurement": {
+        "maximum_bound_error_m": 0.0,
+        "scope": "bounds only, not full shape symmetry"
+      }
+    },
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "prop_pm",
+        "b": "prop_mm",
+        "axis": "x"
+      },
+      "passed": true,
+      "measurement": {
+        "maximum_bound_error_m": 0.0,
+        "scope": "bounds only, not full shape symmetry"
+      }
+    },
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "esc_pp",
+        "b": "esc_mp",
+        "axis": "x"
+      },
+      "passed": true,
+      "measurement": {
+        "maximum_bound_error_m": 0.0,
+        "scope": "bounds only, not full shape symmetry"
+      }
+    },
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "esc_pm",
+        "b": "esc_mm",
+        "axis": "x"
+      },
+      "passed": true,
+      "measurement": {
+        "maximum_bound_error_m": 0.0,
+        "scope": "bounds only, not full shape symmetry"
+      }
+    }
+  ],
+  "semantic_completeness": "not_assessed",
+  "global_collisions": "not_assessed",
+  "engineering_correctness": "not_assessed",
+  "native_generation_goal_passed": false
+}

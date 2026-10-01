@@ -1,0 +1,669 @@
+{
+  "assumptions": [
+    "This is a conceptual, non-product-specific portable speaker layout.",
+    "The single full-range driver and passive radiator are proposed design choices.",
+    "The front bezel and rear housing represent separable enclosure sections; the grille and internal components are separately selectable."
+  ],
+  "limitations": [
+    "This is generic creative geometry, not verified engineering or an exact-product reconstruction.",
+    "The grille and charging port are solid proxies: the available forms cannot create perforations or a port opening.",
+    "Mounts propose fixed contact locations only; they do not establish fasteners, electrical connections, physical operation, or manufacturing fit."
+  ],
+  "parts": [
+    {
+      "id": "rear_housing",
+      "role": "Separable enclosure sections",
+      "parent": "",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        90,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "box_shell",
+          "size": [
+            0.3,
+            0.18,
+            0.12
+          ],
+          "wall": 0.006,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        }
+      ]
+    },
+    {
+      "id": "front_bezel",
+      "role": "Separable enclosure sections",
+      "parent": "rear_housing",
+      "position": [
+        0,
+        0,
+        0.096
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.012,
+            0.12,
+            0.012
+          ],
+          "wall": 0,
+          "offset": [
+            -0.144,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.012,
+            0.12,
+            0.012
+          ],
+          "wall": 0,
+          "offset": [
+            0.144,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.276,
+            0.012,
+            0.012
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            -0.054,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.276,
+            0.012,
+            0.012
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0.054,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        }
+      ]
+    },
+    {
+      "id": "front_grille",
+      "role": "Front grille",
+      "parent": "front_bezel",
+      "position": [
+        0,
+        0,
+        0.104
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.276,
+            0.108,
+            0.004
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        }
+      ]
+    },
+    {
+      "id": "main_driver",
+      "role": "Full-range speaker driver",
+      "parent": "front_grille",
+      "position": [
+        -0.075,
+        0,
+        0.087
+      ],
+      "rotation": [
+        90,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.074,
+            0.03,
+            0.074
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        }
+      ]
+    },
+    {
+      "id": "passive_radiator",
+      "role": "Passive radiator",
+      "parent": "front_grille",
+      "position": [
+        0.075,
+        0,
+        0.091
+      ],
+      "rotation": [
+        90,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.078,
+            0.022,
+            0.078
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        }
+      ]
+    },
+    {
+      "id": "battery",
+      "role": "Rechargeable battery pack",
+      "parent": "rear_housing",
+      "position": [
+        0,
+        -0.027,
+        -0.064
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.065,
+            0.036,
+            0.04
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        }
+      ]
+    },
+    {
+      "id": "bluetooth_board",
+      "role": "Bluetooth and control board",
+      "parent": "rear_housing",
+      "position": [
+        -0.08,
+        0.031,
+        -0.066
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.055,
+            0.03,
+            0.036
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        }
+      ]
+    },
+    {
+      "id": "amplifier_board",
+      "role": "Audio amplifier board",
+      "parent": "rear_housing",
+      "position": [
+        0.08,
+        0.031,
+        -0.066
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.055,
+            0.03,
+            0.036
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        }
+      ]
+    },
+    {
+      "id": "charging_port",
+      "role": "Charging port",
+      "parent": "rear_housing",
+      "position": [
+        0.153,
+        -0.025,
+        -0.025
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.006,
+            0.015,
+            0.025
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        }
+      ]
+    },
+    {
+      "id": "left_button",
+      "role": "Control buttons",
+      "parent": "front_grille",
+      "position": [
+        -0.045,
+        0.042,
+        0.108
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.012,
+            0.008,
+            0.004
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        }
+      ]
+    },
+    {
+      "id": "right_button",
+      "role": "Control buttons",
+      "parent": "front_grille",
+      "position": [
+        0.045,
+        0.042,
+        0.108
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.012,
+            0.008,
+            0.004
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": []
+        }
+      ]
+    }
+  ],
+  "mounts": [
+    {
+      "a": "rear_housing",
+      "b": "front_bezel",
+      "point_a": [
+        0.147,
+        0.09,
+        0
+      ],
+      "point_b": [
+        0.147,
+        0,
+        -0.006
+      ]
+    },
+    {
+      "a": "front_bezel",
+      "b": "front_grille",
+      "point_a": [
+        0,
+        0.054,
+        0.006
+      ],
+      "point_b": [
+        0,
+        0.054,
+        -0.002
+      ]
+    },
+    {
+      "a": "front_grille",
+      "b": "main_driver",
+      "point_a": [
+        -0.075,
+        0,
+        -0.002
+      ],
+      "point_b": [
+        0,
+        0.015,
+        0
+      ]
+    },
+    {
+      "a": "front_grille",
+      "b": "passive_radiator",
+      "point_a": [
+        0.075,
+        0,
+        -0.002
+      ],
+      "point_b": [
+        0,
+        0.011,
+        0
+      ]
+    },
+    {
+      "a": "rear_housing",
+      "b": "battery",
+      "point_a": [
+        0,
+        -0.084,
+        0.027
+      ],
+      "point_b": [
+        0,
+        0,
+        -0.02
+      ]
+    },
+    {
+      "a": "rear_housing",
+      "b": "bluetooth_board",
+      "point_a": [
+        -0.08,
+        -0.084,
+        -0.031
+      ],
+      "point_b": [
+        0,
+        0,
+        -0.018
+      ]
+    },
+    {
+      "a": "rear_housing",
+      "b": "amplifier_board",
+      "point_a": [
+        0.08,
+        -0.084,
+        -0.031
+      ],
+      "point_b": [
+        0,
+        0,
+        -0.018
+      ]
+    },
+    {
+      "a": "rear_housing",
+      "b": "charging_port",
+      "point_a": [
+        0.15,
+        -0.025,
+        0.025
+      ],
+      "point_b": [
+        -0.003,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "front_grille",
+      "b": "left_button",
+      "point_a": [
+        -0.045,
+        0.042,
+        0.002
+      ],
+      "point_b": [
+        0,
+        0,
+        -0.002
+      ]
+    },
+    {
+      "a": "front_grille",
+      "b": "right_button",
+      "point_a": [
+        0.045,
+        0.042,
+        0.002
+      ],
+      "point_b": [
+        0,
+        0,
+        -0.002
+      ]
+    }
+  ],
+  "containments": [
+    {
+      "outer": "rear_housing",
+      "inner": "battery",
+      "clearance": 0
+    },
+    {
+      "outer": "rear_housing",
+      "inner": "bluetooth_board",
+      "clearance": 0
+    },
+    {
+      "outer": "rear_housing",
+      "inner": "amplifier_board",
+      "clearance": 0
+    }
+  ],
+  "clearances": [
+    {
+      "a": "battery",
+      "b": "bluetooth_board",
+      "minimum": 0.015
+    },
+    {
+      "a": "battery",
+      "b": "amplifier_board",
+      "minimum": 0.015
+    },
+    {
+      "a": "main_driver",
+      "b": "passive_radiator",
+      "minimum": 0.05
+    }
+  ],
+  "symmetries": [
+    {
+      "a": "bluetooth_board",
+      "b": "amplifier_board",
+      "axis": "x"
+    },
+    {
+      "a": "left_button",
+      "b": "right_button",
+      "axis": "x"
+    }
+  ]
+}

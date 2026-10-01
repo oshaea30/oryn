@@ -1,0 +1,126 @@
+{
+  "declared_relations_passed": true,
+  "checks": [
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "housing",
+        "b": "guide",
+        "point_a": [
+          0.03,
+          0.055,
+          -0.12
+        ],
+        "point_b": [
+          0.03,
+          0.025,
+          0
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 0.0,
+        "surface_distances_m": [
+          0.0,
+          0.0
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "housing",
+        "b": "drive",
+        "point_a": [
+          0.15,
+          0.035,
+          0.025
+        ],
+        "point_b": [
+          0,
+          -0.035,
+          0
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 0.0,
+        "surface_distances_m": [
+          0.0,
+          0.0
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "drive",
+        "b": "crank",
+        "point_a": [
+          0,
+          0.035,
+          0
+        ],
+        "point_b": [
+          -0.006,
+          -0.055,
+          0
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 6.938893903907228e-18,
+        "surface_distances_m": [
+          0.0,
+          0.0
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "containment",
+      "relation": {
+        "outer": "housing",
+        "inner": "cutter",
+        "clearance": 0.008
+      },
+      "passed": true,
+      "measurement": {
+        "vertices_outside_conservative_cavity": 0,
+        "scope": "convex cavity containment; no load/engineering validation"
+      }
+    },
+    {
+      "kind": "containment",
+      "relation": {
+        "outer": "housing",
+        "inner": "drawer",
+        "clearance": 0.008
+      },
+      "passed": true,
+      "measurement": {
+        "vertices_outside_conservative_cavity": 0,
+        "scope": "convex cavity containment; no load/engineering validation"
+      }
+    },
+    {
+      "kind": "clearance",
+      "relation": {
+        "a": "drawer",
+        "b": "cutter",
+        "minimum": 0.02
+      },
+      "passed": true,
+      "measurement": {
+        "aabb_distance_lower_bound_m": 0.036000000000000004,
+        "scope": "overlapping bounds cannot certify a positive gap"
+      }
+    }
+  ],
+  "semantic_completeness": "not_assessed",
+  "global_collisions": "not_assessed",
+  "engineering_correctness": "not_assessed",
+  "native_generation_goal_passed": false
+}

@@ -1,0 +1,34 @@
+{
+  "experiment": "construction-001",
+  "plans_sha256": "83eb9a6ba24e8c9de611d34fc1c4e7e88c235cae666f2bb9dcc0c85ad0a0d09a",
+  "instructions_sha256": "99584d3036ee1e5cf558ff2ab1d1cacf0a2d331be624aac42f55545c5c971c1f",
+  "schema_sha256": "23df8811a212599369d7f8988fc046f054c1e50f69321539b2cdc8d7433afe0c",
+  "policy": {
+    "provider": "openai",
+    "profile": "construction_research",
+    "model": "gpt-6-sol",
+    "effort": "medium",
+    "ceiling_nanos": 120000000,
+    "max_output_tokens": 8192,
+    "price_version": "openai-standard-text-2026-09-27-v1",
+    "rates": {
+      "input": 2000,
+      "cached": 200,
+      "cache_write": 2500,
+      "output": 10000
+    },
+    "price_expires": 1791072000,
+    "service_tier": "default"
+  },
+  "max_construction_calls_total": 4,
+  "max_construction_cost_usd": 0.48,
+  "case_ids": [
+    "generic-drone",
+    "generic-speaker",
+    "exact-product",
+    "creative-concept"
+  ],
+  "execute": true,
+  "production_route": false,
+  "gpu_rental": false
+}

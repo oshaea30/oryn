@@ -1,0 +1,373 @@
+{
+  "declared_relations_passed": true,
+  "checks": [
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "rear_housing",
+        "b": "front_bezel",
+        "point_a": [
+          0.147,
+          0.09,
+          0
+        ],
+        "point_b": [
+          0.147,
+          0,
+          -0.006
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 5.5109105961630896e-18,
+        "surface_distances_m": [
+          1.4279833077441388e-18,
+          0.0
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "front_bezel",
+        "b": "front_grille",
+        "point_a": [
+          0,
+          0.054,
+          0.006
+        ],
+        "point_b": [
+          0,
+          0.054,
+          -0.002
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 1.3877787807814457e-17,
+        "surface_distances_m": [
+          0.0,
+          0.0
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "front_grille",
+        "b": "main_driver",
+        "point_a": [
+          -0.075,
+          0,
+          -0.002
+        ],
+        "point_b": [
+          0,
+          0.015,
+          0
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 9.184850993605148e-19,
+        "surface_distances_m": [
+          0.0,
+          0.0
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "front_grille",
+        "b": "passive_radiator",
+        "point_a": [
+          0.075,
+          0,
+          -0.002
+        ],
+        "point_b": [
+          0,
+          0.011,
+          0
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 6.735557395310442e-19,
+        "surface_distances_m": [
+          0.0,
+          0.0
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "rear_housing",
+        "b": "battery",
+        "point_a": [
+          0,
+          -0.084,
+          0.027
+        ],
+        "point_b": [
+          0,
+          0,
+          -0.02
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 3.469446951953614e-18,
+        "surface_distances_m": [
+          1.3877787807814457e-17,
+          0.0
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "rear_housing",
+        "b": "bluetooth_board",
+        "point_a": [
+          -0.08,
+          -0.084,
+          -0.031
+        ],
+        "point_b": [
+          0,
+          0,
+          -0.018
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 3.469446951953614e-18,
+        "surface_distances_m": [
+          1.3877787807814457e-17,
+          0.0
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "rear_housing",
+        "b": "amplifier_board",
+        "point_a": [
+          0.08,
+          -0.084,
+          -0.031
+        ],
+        "point_b": [
+          0,
+          0,
+          -0.018
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 3.469446951953614e-18,
+        "surface_distances_m": [
+          1.3877787807814457e-17,
+          0.0
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "rear_housing",
+        "b": "charging_port",
+        "point_a": [
+          0.15,
+          -0.025,
+          0.025
+        ],
+        "point_b": [
+          -0.003,
+          0,
+          0
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 0.0,
+        "surface_distances_m": [
+          0.0,
+          0.0
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "front_grille",
+        "b": "left_button",
+        "point_a": [
+          -0.045,
+          0.042,
+          0.002
+        ],
+        "point_b": [
+          0,
+          0,
+          -0.002
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 0.0,
+        "surface_distances_m": [
+          0.0,
+          0.0
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "front_grille",
+        "b": "right_button",
+        "point_a": [
+          0.045,
+          0.042,
+          0.002
+        ],
+        "point_b": [
+          0,
+          0,
+          -0.002
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 0.0,
+        "surface_distances_m": [
+          0.0,
+          0.0
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "containment",
+      "relation": {
+        "outer": "rear_housing",
+        "inner": "battery",
+        "clearance": 0
+      },
+      "passed": true,
+      "measurement": {
+        "vertices_outside_conservative_cavity": 0,
+        "scope": "convex cavity containment; no load/engineering validation"
+      }
+    },
+    {
+      "kind": "containment",
+      "relation": {
+        "outer": "rear_housing",
+        "inner": "bluetooth_board",
+        "clearance": 0
+      },
+      "passed": true,
+      "measurement": {
+        "vertices_outside_conservative_cavity": 0,
+        "scope": "convex cavity containment; no load/engineering validation"
+      }
+    },
+    {
+      "kind": "containment",
+      "relation": {
+        "outer": "rear_housing",
+        "inner": "amplifier_board",
+        "clearance": 0
+      },
+      "passed": true,
+      "measurement": {
+        "vertices_outside_conservative_cavity": 0,
+        "scope": "convex cavity containment; no load/engineering validation"
+      }
+    },
+    {
+      "kind": "clearance",
+      "relation": {
+        "a": "battery",
+        "b": "bluetooth_board",
+        "minimum": 0.015
+      },
+      "passed": true,
+      "measurement": {
+        "aabb_distance_lower_bound_m": 0.03201562118716425,
+        "scope": "overlapping bounds cannot certify a positive gap"
+      }
+    },
+    {
+      "kind": "clearance",
+      "relation": {
+        "a": "battery",
+        "b": "amplifier_board",
+        "minimum": 0.015
+      },
+      "passed": true,
+      "measurement": {
+        "aabb_distance_lower_bound_m": 0.03201562118716425,
+        "scope": "overlapping bounds cannot certify a positive gap"
+      }
+    },
+    {
+      "kind": "clearance",
+      "relation": {
+        "a": "main_driver",
+        "b": "passive_radiator",
+        "minimum": 0.05
+      },
+      "passed": true,
+      "measurement": {
+        "aabb_distance_lower_bound_m": 0.074,
+        "scope": "overlapping bounds cannot certify a positive gap"
+      }
+    },
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "bluetooth_board",
+        "b": "amplifier_board",
+        "axis": "x"
+      },
+      "passed": true,
+      "measurement": {
+        "maximum_bound_error_m": 0.0,
+        "scope": "bounds only, not full shape symmetry"
+      }
+    },
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "left_button",
+        "b": "right_button",
+        "axis": "x"
+      },
+      "passed": true,
+      "measurement": {
+        "maximum_bound_error_m": 0.0,
+        "scope": "bounds only, not full shape symmetry"
+      }
+    }
+  ],
+  "semantic_completeness": "not_assessed",
+  "global_collisions": "not_assessed",
+  "engineering_correctness": "not_assessed",
+  "native_generation_goal_passed": false
+}

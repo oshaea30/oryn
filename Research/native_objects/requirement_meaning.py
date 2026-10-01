@@ -28,7 +28,7 @@ Give every supplied role one entity ID and preserve each role string exactly. Ro
 verified facts. Reserved subject 'object' denotes the assembly, not an entity. Each entity needs one
 exists requirement. Each other important property/relation/behavior needs a separate stable ID.
 An entity may have multiple instances. IDs stay unchanged downstream; ASCII letters/digits/underscore.
-Keep <=32 requirements; short values and exact contiguous source quotes <=180 characters.
+Keep <=48 requirements; short values and exact contiguous source quotes <=180 characters.
 
 Obligation: required, optional, design_choice, evidence_required. Unsupported is a later capability
 result, never an excuse to erase intent or downgrade requiredness. Each requirement also has:
@@ -77,7 +77,7 @@ will check support; faithfully retain unsupported effects. Never claim simulatio
 def validate(raw,request,roles):
     if not isinstance(raw,dict) or set(raw)!=set(SCHEMA['required']):raise ValueError('Invalid interpreted inventory fields')
     projected={'entities':deepcopy(raw['entities']),'requirements':[]}
-    if not isinstance(raw['requirements'],list) or len(raw['requirements'])>32:raise ValueError('Interpreted requirement count limit')
+    if not isinstance(raw['requirements'],list) or len(raw['requirements'])>48:raise ValueError('Interpreted requirement count limit')
     for r in raw['requirements']:
         if not isinstance(r,dict) or set(r)!=set(item['required']):raise ValueError('Invalid interpreted requirement fields')
         if r['mode'] not in MODES or r['basis'] not in BASES:raise ValueError('Invalid meaning mode/basis')

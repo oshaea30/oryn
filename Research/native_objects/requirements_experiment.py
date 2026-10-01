@@ -14,6 +14,7 @@ from Research.native_objects import requirement_meaning as meaning
 from Research.native_objects import spatial_requirements as spatial
 from Research.native_objects import assembly_arrangements as arrangements
 from Research.native_objects import compact_construction as compact
+from Research.native_objects import repair_feedback as repair
 from Research.native_objects import assembly_connections as geometry
 from Research.native_objects import solid_experiment as prior
 from Research.native_objects.construction_experiment import NoRedirect
@@ -84,7 +85,7 @@ def requirement_adapter(contract):
     return arrangements if 'assemblies' in contract else spatial if 'spatial_rules' in contract else meaning if contract.get('interpretation_version') else intent
 
 
-def evaluate_candidate(raw,contract,folder,case,locked=None,builder=geometry.build,renderer=prior.render,locked_bindings=None):
+def evaluate_candidate(raw,contract,folder,case,locked=None,builder=geometry.build,renderer=prior.render,locked_bindings=None,preservation=None,preserve_passes=False):
     plan=compact.expand(raw,contract)
     gate=requirement_adapter(contract).coverage(contract,plan,raw['bindings'])
     if 'assemblies' in contract and locked_bindings is not None and arrangements.binding_lock(contract,raw['bindings'])!=locked_bindings:
@@ -111,6 +112,14 @@ def evaluate_candidate(raw,contract,folder,case,locked=None,builder=geometry.bui
         report['checks']+=arrangements.measurements(contract,plan,raw['bindings'],compiled)
         report['declared_relations_passed']=all(c['passed'] for c in report['checks'])
         report['arrangement_policy_sha256']=contract['arrangement_policy_sha256']
+    regression=None
+    if preserve_passes:
+        preservation=preservation if preservation is not None else repair.snapshot(report)
+        regression=repair.regressions(preservation,report)
+        prior.write(folder/'repair-baseline.json',preservation)
+        prior.write(folder/'repair-regressions.json',regression)
+        report['repair_preservation']=regression
+        report['declared_relations_passed']=report['declared_relations_passed'] and regression['passed']
     seconds=time.perf_counter()-before
     prior.write(folder/'relations.json',report);prior.write(folder/'compiled.json',compiled)
     # Existing inspectors consume the expanded proposal, not compact transport.
@@ -118,7 +127,8 @@ def evaluate_candidate(raw,contract,folder,case,locked=None,builder=geometry.bui
     status='structural_candidate' if report['declared_relations_passed'] else 'geometry_failed'
     return {'status':status,'geometry_executed':True,'geometry_and_validation_seconds':seconds,
             'declared_numeric_pass':report['declared_relations_passed'],'coverage_complete':True,
-            'feedback':{'failed_geometry_checks':[c for c in report['checks'] if not c['passed']]},'parts':len(pkg['parts'])},frozen
+            'feedback':repair.feedback(report,preservation) if preserve_passes else {'failed_geometry_checks':[c for c in report['checks'] if not c['passed']]},
+            'repair_preservation':regression,'parts':len(pkg['parts'])},frozen
 
 
 def write_inspection_report(folder,geometry_report):
@@ -135,14 +145,18 @@ def write_inspection_report(folder,geometry_report):
     arrangement_checks=[c for c in geometry_report['checks'] if c['kind']=='assembly_arrangement']
     report['checks']['assembly_arrangements']={'status':('pass' if all(c['passed'] for c in arrangement_checks) else 'fail') if arrangement_checks else 'not_assessed',
         'detail':str(len(arrangement_checks))+' group placement/orientation checks on solved features; inferred intent remains unverified.'}
-    if failed:
+    preservation=geometry_report.get('repair_preservation')
+    if preservation is not None:
+        report['checks']['repair_preservation']={'status':'pass' if preservation['passed'] else 'fail',
+            'detail':str(len(preservation['regressions']))+' regressions against '+str(preservation['preserved_fact_count'])+' previously true measured predicates.'}
+    if failed or preservation is not None and not preservation['passed']:
         report['structural_checks_passed']=False
         layer=report['layers']['object'];layer['structural_checks_passed']=False
         if 'declared_assembly_geometry' not in layer['failed_checks']:layer['failed_checks'].append('declared_assembly_geometry')
     prior.write(folder/'report.json',report)
 
 
-def execute(items,output,model,renderer=prior.render,case_ids=CASES):
+def execute(items,output,model,renderer=prior.render,case_ids=CASES,preserve_passes=False):
     order={i['case_id']:i for i in items}
     if len(set(case_ids))!=len(case_ids) or any(c not in order for c in case_ids):raise ValueError("Invalid case subset")
     states={};started=time.perf_counter()
@@ -186,7 +200,7 @@ def execute(items,output,model,renderer=prior.render,case_ids=CASES):
             try:
                 raw,bill=model(case,'plan',attempt,context,folder);record.update(planning_seconds=time.perf_counter()-before,billing=bill)
                 prior.write(folder/'compact-plan.json',raw);state['previous']=raw
-                result,locked=evaluate_candidate(raw,state['contract'],folder,case,state.get('locked'),renderer=renderer,locked_bindings=state.get('locked_bindings'))
+                result,locked=evaluate_candidate(raw,state['contract'],folder,case,state.get('locked'),renderer=renderer,locked_bindings=state.get('locked_bindings'),preservation=state.get('preservation'),preserve_passes=preserve_passes)
                 record.update(result);state.update(status=result['status'],feedback=result.get('feedback'),locked=locked)
                 state['geometry_executed']=state['geometry_executed'] or result['geometry_executed']
             except prior.CommandError as e:record.update(status='request_failed',error=str(e));state['status']='request_failed'
@@ -199,10 +213,11 @@ def execute(items,output,model,renderer=prior.render,case_ids=CASES):
                 state['geometry_executed']=state['geometry_executed'] or record['geometry_executed']
                 if (folder/'assembly-lock.json').exists():state['locked']=(folder/'assembly-lock.json').read_text()
                 if (folder/'arrangement-bindings.json').exists():state['locked_bindings']=json.loads((folder/'arrangement-bindings.json').read_text())
+                if (folder/'repair-baseline.json').exists():state['preservation']=json.loads((folder/'repair-baseline.json').read_text())
                 record['attempt_elapsed_seconds']=time.perf_counter()-before;save()
     # Keep large revision context local; result file still retains immutable contracts and all measurements.
     for state in states.values():
-        for key in ('previous','feedback','locked','locked_bindings'):state.pop(key,None)
+        for key in ('previous','feedback','locked','locked_bindings','preservation'):state.pop(key,None)
     if 'exact-product' in order:states['exact-product']={'case':'exact-product','status':'blocked_evidence','geometry_executed':False}
     save()
     entries=[{'name':f.name} for f in output.iterdir() if f.is_dir() and (f/'package.json').exists()]

@@ -10,7 +10,7 @@ from Research.native_objects import requirement_meaning as meaning
 from Research.native_objects import intent_requirements as intent
 from Research.native_objects import assembly_connections as geometry
 
-OPERATORS=('on_top','radial_outward','outer_end','axis_aligned','parallel_axes')
+OPERATORS=('on_surface','on_top','radial_outward','outer_end','axis_aligned','parallel_axes')
 POLICY={'position_tolerance_m':0.0005,'angle_tolerance_degrees':10.,
         'outer_end_fraction':0.05,'radial_plane_fraction':0.05,'minimum_elongation':1.5,
         'scope':'research visualization tolerances, not manufacturing or physical verification'}
@@ -25,6 +25,11 @@ Preserve static pose separately from attachment: 'on top of' includes position, 
 Spatial entries contain id, operator, reference, axis; reference/axis must be '' unless specified.
 - on_top: subject seated on target's upward-facing surface, measured along the object's +Y.
   A direct face contact is required; this does not verify load capacity.
+- on_surface: subject mounted in direct face contact on the target's named exterior side.
+  axis is signed +x/-x/+y/-y/+z/-z in the OBJECT frame (+Y up, +Z front). The target
+  feature must face that direction and lie at that side's outermost solid extent. Reference=''.
+  This supports planar exterior faces; curved/inset/unspecified surfaces remain unsupported.
+  Facing forward alone, containment, or an arbitrary internal face cannot prove surface contact.
 - radial_outward: >=2 elongated subject members distributed around one target center, their long
   geometric axes pointing radially. axis x/y/z specifies the normal of the radial plane in the
   object's root frame. It does not require equal lengths/radii or perfect angular spacing.
@@ -43,10 +48,13 @@ SPATIAL REQUIREMENT BINDINGS:
 spatial_rules are frozen typed translations of specific other/structure requirements. For those
 IDs use kind constraint and the following refs, unless honestly unsupported. Do not change any
 requirement, rule, reference entity, or operator to repair a failed candidate.
-on_top / outer_end / axis_aligned: refs ['mate:ID',...]. Cover every subject directly to a target.
+on_surface / on_top / outer_end / axis_aligned: refs ['mate:ID',...]. Cover every subject directly to a target.
 outer_end and axis_aligned require an exact one-to-one correspondence covering ALL targets too.
 on_top uses face mates at zero separation and upward target / downward subject normals in the
-root frame. outer_end locates the target-side port on the actual outward geometric extremum
+root frame. on_surface uses the signed axis in the rule: target outward and subject opposing
+normals, zero face separation, and target contact at its actual outermost extent along that axis.
+A driver can extend into an opening, but its mounting face must meet the declared exterior side.
+outer_end locates the target-side port on the actual outward geometric extremum
 relative to the reference entity center. axis_aligned uses coaxial mates with real bore/shaft ports.
 radial_outward: refs ['part:ID',...] for ALL subject parts plus the single target center part.
 parallel_axes: refs ['port:ID',...] with exactly one cylindrical axis port for EACH subject/target
@@ -67,7 +75,8 @@ def schema(request,roles):
         'reference':{'type':'string','enum':['']},'axis':{'type':'string','enum':['']}})
     radial=deepcopy(ordinary);radial['properties']['operator']['enum']=['radial_outward'];radial['properties']['axis']['enum']=['x','y','z']
     outer=deepcopy(ordinary);outer['properties']['operator']['enum']=['outer_end'];outer['properties']['reference']['enum']=ids
-    out['properties']['spatial']=geometry.base.arr({'anyOf':[ordinary,radial,outer]})
+    surface=deepcopy(ordinary);surface['properties']['operator']['enum']=['on_surface'];surface['properties']['axis']['enum']=['+x','-x','+y','-y','+z','-z']
+    out['properties']['spatial']=geometry.base.arr({'anyOf':[ordinary,radial,outer,surface]})
     out['required'].append('spatial');return out
 
 
@@ -100,6 +109,8 @@ def rules(contract):
         elif rule['reference']!='':raise ValueError('Unexpected spatial reference')
         if rule['operator']=='radial_outward':
             if rule['axis'] not in ('x','y','z'):raise ValueError('Radial plane axis required')
+        elif rule['operator']=='on_surface':
+            if rule['axis'] not in ('+x','-x','+y','-y','+z','-z'):raise ValueError('Signed object surface axis required')
         elif rule['axis']!='':raise ValueError('Unexpected spatial axis')
     return {r['id']:r for r in entries}
 
@@ -140,7 +151,7 @@ def binding(rule,requirement,b,plan,group):
         a,z=ports[m['a']],ports[m['b']]
         if a['part'] in targets and z['part'] in subjects:a,z=z,a
         if a['part'] not in subjects or z['part'] not in targets:raise ValueError('Spatial mate endpoints do not match requirement')
-        if op=='on_top' and m['kind']!='face' or op=='axis_aligned' and m['kind']!='coaxial':raise ValueError('Wrong mate type for spatial operator')
+        if op in ('on_top','on_surface') and m['kind']!='face' or op=='axis_aligned' and m['kind']!='coaxial':raise ValueError('Wrong mate type for spatial operator')
         pairs.append((a,z,m))
     if len(pairs)!=len(subjects) or {a['part'] for a,z,m in pairs}!=subjects:raise ValueError('Every spatial subject needs exactly one direct target mate')
     if op in ('outer_end','axis_aligned') and (len(pairs)!=len(targets) or {z['part'] for a,z,m in pairs}!=targets):raise ValueError('Spatial relation needs a bijection; target missing or reused')
@@ -224,7 +235,16 @@ def measurements(contract,plan,bindings,compiled):
                 outcomes=[]
                 for subject,target,mate in resolved:
                     a,z=features[subject['id']],features[target['id']];fa,fz=a['frame'],z['frame'];ok=a['passed'] and z['passed'];measurement={'subject':subject['part'],'target':target['part'],'mate':mate['id']}
-                    if op=='on_top':
+                    if op=='on_surface':
+                        direction=frame[:,'xyz'.index(rule['axis'][1])]*(1 if rule['axis'][0]=='+' else -1)
+                        outward=float(np.dot(fz[:3,2],direction));opposing=float(np.dot(fa[:3,2],-direction))
+                        gap=float(np.linalg.norm(fa[:3,3]-fz[:3,3]))
+                        outermost=float(np.max(vertices[target['part']]@direction));actual=float(np.dot(fz[:3,3],direction))
+                        extent_error=abs(outermost-actual)
+                        ok=ok and outward>=alignment and opposing>=alignment and gap<=tol and extent_error<=tol
+                        measurement.update(target_normal_alignment=outward,subject_normal_alignment=opposing,
+                            contact_gap_m=gap,surface_extent_error_m=extent_error,object_side=rule['axis'])
+                    elif op=='on_top':
                         upward=float(np.dot(fz[:3,2],frame[:,1]));downward=float(np.dot(fa[:3,2],-frame[:,1]));gap=float(np.linalg.norm(fa[:3,3]-fz[:3,3]))
                         ok=ok and upward>=alignment and downward>=alignment and gap<=tol
                         measurement.update(target_up_alignment=upward,subject_down_alignment=downward,contact_gap_m=gap)

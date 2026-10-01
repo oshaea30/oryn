@@ -32,7 +32,7 @@ placement and orientation each reference a DIFFERENT existing other/structure re
 field id. Use kind constraint/relation and subject=the member entity for one role, or object for
 multiple roles. placement target=reference (or '' for linear/unsupported); orientation target='' except direction spatial retains its original radial target.
 Only orientation direction spatial may reuse a spatial ID, as specified below. Keep placement and orientation meaning in their short
-requirement values; do not add geometry or coordinates here. Keep the 32-requirement limit.
+requirement values; do not add geometry or coordinates here. Keep the underlying 48-requirement limit.
 - placement pattern radial: all member feature centers evenly spaced on one circle around the
   reference entity's center, with a common height. axis x/y/z is the normal of that circle in the
   OBJECT frame. reference must be one separate entity with one instance. Phase and height are free.

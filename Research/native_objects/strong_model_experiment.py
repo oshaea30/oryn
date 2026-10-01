@@ -91,12 +91,12 @@ def preflight(output,states,key,ledger):
     prior.write(output/'preflight.json',result);return result
 
 
-def run(output,states,protocol,ledger,key):
+def run(output,states,protocol,ledger,key,*,batch=BATCH,operation_order=OPERATIONS,snapshot=frozen_sources):
     operations=baseline._read(output,'operations.json') if (output/'operations.json').exists() else {};stopped=[]
     def persist():
         prior.write(output/'operations.json',operations)
         prior.write(output/'result.json',{'cases':list(states.values()),'operations':operations,'native_generation_goal_passed':False})
-    for op in OPERATIONS:
+    for op in operation_order:
         if operations.get(op,{}).get('status') in ('done','skipped','rejected'):continue
         case,stage,num=op.split('/');attempt=int(num);state=states[case]
         if stage=='plan' and state['status']!='requirements_ready' or stage=='patch' and state['status']!='geometry_failed':
@@ -109,13 +109,13 @@ def run(output,states,protocol,ledger,key):
                 spec=next(s for s in baseline.SPECS if s['id']==case);context={'original_request':spec['request'],'proposed_role_groups':spec['roles']}
             else:context=baseline.context_for(state)
             p,body,transport_audit=body_for(stage,context,raw,scope,compact_feedback=op=='generic-drone/patch/1')
-            if frozen_sources()!=protocol['files_sha256']:raise prior.CommandError('Frozen stronger-model experiment changed')
+            if snapshot()!=protocol['files_sha256']:raise prior.CommandError('Frozen stronger-model experiment changed')
             if op in REFERENCES:record['comparison']=comparison_audit(op,body)
             callfolder=output/(case+'-'+stage+'-call-'+num);callfolder.mkdir(exist_ok=True)
             if transport_audit:prior.write(callfolder/'transport-audit.json',transport_audit)
             record.update(status='waiting',body_sha256=prior.digest(body));persist()
             print('Running '+op+' with Astra xhigh',flush=True)
-            result,bill=baseline.background.dispatch(BATCH.operation_id(op),p,body,callfolder,ledger,key,BATCH,wait_seconds=900)
+            result,bill=baseline.background.dispatch(batch.operation_id(op),p,body,callfolder,ledger,key,batch,wait_seconds=900)
             prior.write(callfolder/'model-output.json',result);record.update(status='model_completed',billing=bill);persist()
             state['trace'].append({'stage':stage,'attempt':attempt,'model_seconds':bill['dispatch_seconds'],'usage':bill['usage'],
                 'model':p['model'],'effort':p['effort'],'calculated_cost_nanos':bill['calculated_cost_nanos']})
@@ -138,12 +138,12 @@ def run(output,states,protocol,ledger,key):
         except (ValueError,KeyError,TypeError) as error:
             record.update(status='rejected',error=str(error));state.update(status=stage+'_rejected',error=str(error));persist()
     prior.write(output/'assessment.json',baseline.previous.assess(states,output))
-    summary=ledger.summary();prior.write(output/'spending.json',{'charged_and_held_nanos':BATCH.spent(ledger),'batch_ceiling_nanos':BATCH.budget,
-        'prior_upper_bound_nanos':BATCH.prior_upper_bound,'aggregate_limit_nanos':BATCH.aggregate_limit,
+    summary=ledger.summary();prior.write(output/'spending.json',{'charged_and_held_nanos':batch.spent(ledger),'batch_ceiling_nanos':batch.budget,
+        'prior_upper_bound_nanos':batch.prior_upper_bound,'aggregate_limit_nanos':batch.aggregate_limit,
         'daily_limit_nanos':summary['daily_limit_nanos'],'daily_remaining_nanos':summary['remaining_nanos'],'stopped':stopped,'actual_invoiced_cost':None})
     prior.write(output/'index.json',[{'name':p.name} for p in sorted(output.iterdir()) if p.is_dir() and (p/'package.json').exists()])
     (output/'index.html').write_text((SOURCE/'viewer.html').read_text());persist()
-    print(json.dumps({'status':stopped or 'finished','charged_and_held_usd':BATCH.spent(ledger)/1e9,
+    print(json.dumps({'status':stopped or 'finished','charged_and_held_usd':batch.spent(ledger)/1e9,
         'cases':[{k:s[k] for k in ('case','status','geometry_executed')} for s in states.values()]}),flush=True)
 
 

@@ -41,8 +41,8 @@ def body_for(stage,context):
                  'source_units':spatial.meaning.source_units(request)}
         schema=spatial.schema(request,roles);instructions=spatial.EXTRACT_INSTRUCTIONS
     else:
-        content=context;schema=pipeline.compact.SCHEMA
-        instructions=pipeline.compact.INSTRUCTIONS+spatial.PLAN_INSTRUCTIONS
+        content=pipeline.compact.planner_context(context);schema=pipeline.compact.SCHEMA
+        instructions=pipeline.compact.INSTRUCTIONS+spatial.PLAN_INSTRUCTIONS+pipeline.compact.PLANNER_CONTEXT_INSTRUCTIONS
     return p,prior.body(p,instructions,json.dumps(content),schema,'oryn_spatial_'+stage)
 
 

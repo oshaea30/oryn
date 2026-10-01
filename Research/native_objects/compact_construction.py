@@ -126,3 +126,47 @@ def pack(plan,contract,bindings):
     root=next(p for p in plan['parts'] if not p['parent'])
     return {'shapes':shapes,'parts':parts,'root_position':deepcopy(root['position']),'root_rotation':deepcopy(root['rotation']),
             **{k:deepcopy(plan[k]) for k in ('ports','mates','containments','clearances','symmetries')},'bindings':deepcopy(bindings)}
+
+
+PLANNER_CONTEXT_INSTRUCTIONS='''
+LOSSLESS INPUT COMPACTION:
+When source_quotes is present, requirement/exclusion quote_ref is an index into that exact quote
+table. The original request and all IDs, obligations, modes, bases, predicates, values and spatial
+rules are unchanged. locked_assembly is a structured object with the same immutable assembly
+requirements. These transport changes do not authorize dropping or changing any constraint.
+'''
+
+
+def restore_planner_context(context):
+    out=deepcopy(context)
+    if 'source_quotes' not in out:return out
+    quotes=out.pop('source_quotes')
+    if not isinstance(quotes,list) or any(not isinstance(q,str) for q in quotes):raise ValueError('Invalid source quote table')
+    inventory=out['requirements']
+    for name in ('requirements','exclusions'):
+        for r in inventory.get(name,[]):
+            ref=r.pop('quote_ref',None)
+            if type(ref) is not int or not 0<=ref<len(quotes):raise ValueError('Invalid source quote reference')
+            r['quote']=quotes[ref]
+    return out
+
+
+def planner_context(context):
+    """Deduplicate exact quotes and remove JSON-inside-JSON escaping; no intent is lost."""
+    out=deepcopy(context)
+    if 'source_quotes' in out:raise ValueError('Context is already compacted')
+    if isinstance(out.get('locked_assembly'),str):out['locked_assembly']=json.loads(out['locked_assembly'])
+    original=deepcopy(out)
+    if 'requirements' in out:
+        inventory=out['requirements']
+        if intent.digest(inventory)!=out.get('requirement_hash'):raise ValueError('Planner requirement hash mismatch')
+        quotes=[]
+        for name in ('requirements','exclusions'):
+            for r in inventory.get(name,[]):
+                if 'quote_ref' in r or not isinstance(r.get('quote'),str):raise ValueError('Invalid original quote')
+                quote=r.pop('quote')
+                if quote not in quotes:quotes.append(quote)
+                r['quote_ref']=quotes.index(quote)
+        out['source_quotes']=quotes
+    if restore_planner_context(out)!=original:raise ValueError('Planner transport lost original context')
+    return out

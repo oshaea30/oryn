@@ -45,6 +45,7 @@ def request_model(case,stage,attempt,context,folder,ledger,key):
     ident=operation_id(case,stage,attempt)
     if ledger.get(ident):raise prior.CommandError('Already attempted; no transport retry')
     p=selected(stage);instructions,schema=(intent.EXTRACT_INSTRUCTIONS,intent.REQUIREMENTS_SCHEMA) if stage=='extract' else (compact.INSTRUCTIONS,compact.SCHEMA)
+    if stage=='plan':context=compact.planner_context(context);instructions+=compact.PLANNER_CONTEXT_INSTRUCTIONS
     body=prior.body(p,instructions,json.dumps(context),schema,'oryn_'+stage+'_requirements')
     prior.write(folder/'request.json',{'body':body,'body_sha256':prior.digest(body)})
     tokens=prior.count_input(key,body);cost=prior.quote_cost(p,tokens);now=int(time.time())
@@ -99,11 +100,29 @@ def evaluate_candidate(raw,contract,folder,case,locked=None,builder=geometry.bui
     seconds=time.perf_counter()-before
     prior.write(folder/'relations.json',report);prior.write(folder/'compiled.json',compiled)
     # Existing inspectors consume the expanded proposal, not compact transport.
-    prior.write(folder/'proposal.json',plan);prior.write_case(folder,pkg);renderer(folder)
+    prior.write(folder/'proposal.json',plan);prior.write_case(folder,pkg);write_inspection_report(folder,report);renderer(folder)
     status='structural_candidate' if report['declared_relations_passed'] else 'geometry_failed'
     return {'status':status,'geometry_executed':True,'geometry_and_validation_seconds':seconds,
             'declared_numeric_pass':report['declared_relations_passed'],'coverage_complete':True,
             'feedback':{'failed_geometry_checks':[c for c in report['checks'] if not c['passed']]},'parts':len(pkg['parts'])},frozen
+
+
+def write_inspection_report(folder,geometry_report):
+    """The viewer must show measured geometry results, not only package validity."""
+    report=json.loads((folder/'report.json').read_text())
+    failed=[c for c in geometry_report['checks'] if not c['passed']]
+    report['checks']['declared_assembly_geometry']={'status':'fail' if failed else 'pass',
+        'detail':'Measured construction checks: '+str(len(geometry_report['checks']))+'. Failures: '+
+            (', '.join(c['kind']+(' ('+c['requirement_id']+')' if 'requirement_id' in c else '') for c in failed) or 'none')+
+            '. This does not establish visual quality or semantic completeness.'}
+    spatial_checks=[c for c in geometry_report['checks'] if c['kind']=='spatial_requirement']
+    report['checks']['spatial_requirements']={'status':('pass' if all(c['passed'] for c in spatial_checks) else 'fail') if spatial_checks else 'not_assessed',
+        'detail':str(len(spatial_checks))+' typed spatial requirements measured on solved geometry; feature meaning remains unverified.'}
+    if failed:
+        report['structural_checks_passed']=False
+        layer=report['layers']['object'];layer['structural_checks_passed']=False
+        if 'declared_assembly_geometry' not in layer['failed_checks']:layer['failed_checks'].append('declared_assembly_geometry')
+    prior.write(folder/'report.json',report)
 
 
 def execute(items,output,model,renderer=prior.render,case_ids=CASES):

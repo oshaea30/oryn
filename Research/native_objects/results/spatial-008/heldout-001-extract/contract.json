@@ -1,0 +1,288 @@
+{
+  "source_request": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces.",
+  "source_sha256": "28761f62da3ac4403ac1104980f43f43857aabe4d3d994e5ead83069e35843e8",
+  "inventory": {
+    "entities": [
+      {
+        "id": "e0",
+        "role": "Outer housing"
+      },
+      {
+        "id": "e1",
+        "role": "Pencil guide"
+      },
+      {
+        "id": "e2",
+        "role": "Crank handle"
+      },
+      {
+        "id": "e3",
+        "role": "Drive mechanism"
+      },
+      {
+        "id": "e4",
+        "role": "Helical cutter assembly"
+      },
+      {
+        "id": "e5",
+        "role": "Shavings drawer"
+      }
+    ],
+    "requirements": [
+      {
+        "id": "r01",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "e0",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces."
+      },
+      {
+        "id": "r02",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "e1",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces."
+      },
+      {
+        "id": "r03",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "e2",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces."
+      },
+      {
+        "id": "r04",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "e3",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces."
+      },
+      {
+        "id": "r05",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "e4",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces."
+      },
+      {
+        "id": "r06",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "e5",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces."
+      },
+      {
+        "id": "r07",
+        "obligation": "required",
+        "kind": "visual",
+        "subject": "object",
+        "target": "",
+        "predicate": "appearance",
+        "value": "generic hand-cranked pencil sharpener",
+        "mode": "appearance",
+        "basis": "explicit",
+        "quote": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces."
+      },
+      {
+        "id": "r08",
+        "obligation": "required",
+        "kind": "behavior",
+        "subject": "object",
+        "target": "",
+        "predicate": "capability",
+        "value": "inspect",
+        "mode": "behavior",
+        "basis": "explicit",
+        "quote": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces."
+      },
+      {
+        "id": "r09",
+        "obligation": "required",
+        "kind": "behavior",
+        "subject": "object",
+        "target": "",
+        "predicate": "capability",
+        "value": "geometric_explode",
+        "mode": "behavior",
+        "basis": "explicit",
+        "quote": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces."
+      },
+      {
+        "id": "r10",
+        "obligation": "required",
+        "kind": "behavior",
+        "subject": "object",
+        "target": "",
+        "predicate": "capability",
+        "value": "reassemble",
+        "mode": "behavior",
+        "basis": "inferred",
+        "quote": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces."
+      },
+      {
+        "id": "r11",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "e1",
+        "target": "e0",
+        "predicate": "attached",
+        "value": "pencil entrance at housing",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces."
+      },
+      {
+        "id": "r12",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "e2",
+        "target": "e3",
+        "predicate": "connected",
+        "value": "crank-to-drive path",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces."
+      },
+      {
+        "id": "r13",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "e3",
+        "target": "e4",
+        "predicate": "connected",
+        "value": "drive-to-cutter path",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces."
+      },
+      {
+        "id": "r14",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "e3",
+        "target": "e0",
+        "predicate": "inside",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces."
+      },
+      {
+        "id": "r15",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "e4",
+        "target": "e0",
+        "predicate": "inside",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces."
+      },
+      {
+        "id": "r16",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "e5",
+        "target": "e0",
+        "predicate": "inside",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces."
+      },
+      {
+        "id": "r17",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "e1",
+        "target": "e4",
+        "predicate": "other",
+        "value": "pencil feed path meets cutting region",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces."
+      },
+      {
+        "id": "r18",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "e5",
+        "target": "e4",
+        "predicate": "other",
+        "value": "drawer positioned to receive shavings",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces."
+      }
+    ],
+    "exclusions": []
+  },
+  "inventory_sha256": "6b1f440057cd7d6cab32827fa1c553bba956c6998fcb74ca6cb7c3f952fc2f5b",
+  "interpretation_version": 2,
+  "extraction_completeness": "unassessed; consistency is not natural-language entailment",
+  "source_grounding": {
+    "units": [
+      {
+        "id": "s0",
+        "start": 0,
+        "end": 94,
+        "text": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces."
+      }
+    ],
+    "bindings": {
+      "r01": "s0",
+      "r02": "s0",
+      "r03": "s0",
+      "r04": "s0",
+      "r05": "s0",
+      "r06": "s0",
+      "r07": "s0",
+      "r08": "s0",
+      "r09": "s0",
+      "r10": "s0",
+      "r11": "s0",
+      "r12": "s0",
+      "r13": "s0",
+      "r14": "s0",
+      "r15": "s0",
+      "r16": "s0",
+      "r17": "s0",
+      "r18": "s0"
+    }
+  },
+  "source_grounding_sha256": "6fb4e2ba2622c2b6adf3e82f96bdc9df103d0f7c30e0d82202d6f40ac1683ba1",
+  "spatial_rules": [],
+  "spatial_rules_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "spatial_policy_sha256": "abf21c243b7b133dc13ba5221866c9eabeff1f2f5a6ac127b3f15e6ace8bde33"
+}

@@ -1,0 +1,33 @@
+{
+  "coverage_complete": true,
+  "geometry_allowed": true,
+  "errors": [],
+  "unsupported": [],
+  "blocking_unsupported": [],
+  "residual_checks": [
+    {
+      "id": "r4",
+      "check": "visual realization remains unassessed"
+    },
+    {
+      "id": "r5",
+      "check": "visual realization remains unassessed"
+    },
+    {
+      "id": "r9",
+      "check": "Pending measured spatial realization: on_top"
+    }
+  ],
+  "semantic_extraction_complete": "unassessed",
+  "scope": "typed requirement-ID coverage before geometry; not proof of request interpretation or physical realization",
+  "meaning_admission": {
+    "planning_allowed": true,
+    "unsupported": [],
+    "blocking": [],
+    "interpretation_correct": "unassessed",
+    "detail": "Registered spatial checks permit planning only; binding and actual geometry must still pass.",
+    "pending_spatial_checks": [
+      "r9"
+    ]
+  }
+}

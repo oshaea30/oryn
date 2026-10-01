@@ -1,0 +1,376 @@
+{
+  "assumptions": [
+    "Generic model design; requirement coverage does not verify semantics or engineering."
+  ],
+  "limitations": [
+    "Geometry executor unchanged; unsupported requirements are explicit."
+  ],
+  "parts": [
+    {
+      "id": "base",
+      "role": "Base",
+      "parent": "",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "rounded_box",
+          "size": [
+            0.6,
+            0.12,
+            0.4
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0.025,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.24,
+        0.27,
+        0.29
+      ]
+    },
+    {
+      "id": "ring",
+      "role": "Open ring",
+      "parent": "base",
+      "position": [
+        0.0,
+        0.31,
+        -3.061616997868383e-17
+      ],
+      "rotation": [
+        -7.016709298534876e-15,
+        -0.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "tube",
+          "size": [
+            0.5,
+            0.15,
+            0.5
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            90,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0.025,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.07,
+            0.025,
+            0.15
+          ],
+          "offset": [
+            0,
+            -0.2375,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.04,
+            0.025,
+            0.025
+          ],
+          "offset": [
+            0,
+            0.2275,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.57,
+        0.61,
+        0.63
+      ]
+    },
+    {
+      "id": "cord",
+      "role": "Suspension cord",
+      "parent": "ring",
+      "position": [
+        0.0,
+        0.45,
+        -3.8576374173141627e-17
+      ],
+      "rotation": [
+        -1.4033418597069752e-14,
+        -0.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.012,
+            0.15,
+            0.012
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.35,
+        0.38,
+        0.4
+      ]
+    },
+    {
+      "id": "sphere",
+      "role": "Sphere",
+      "parent": "cord",
+      "position": [
+        0.0,
+        0.31,
+        3.673940397442058e-18
+      ],
+      "rotation": [
+        -2.1050127895604626e-14,
+        -0.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.11,
+            0.11,
+            0.11
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.012,
+            0.02,
+            0.012
+          ],
+          "offset": [
+            0,
+            0.055,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.72,
+        0.53,
+        0.32
+      ]
+    }
+  ],
+  "mounts": [
+    {
+      "a": "base",
+      "b": "ring",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "ring",
+      "b": "cord",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "cord",
+      "b": "sphere",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "passages": [],
+  "containments": [
+    {
+      "outer": "ring",
+      "inner": "sphere",
+      "clearance": 0.005
+    }
+  ],
+  "clearances": [],
+  "symmetries": []
+}

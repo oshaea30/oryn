@@ -1,0 +1,402 @@
+{
+  "source_request": "Show me a generic quadcopter drone I can explore and take apart into its major components.",
+  "source_sha256": "758052f52045deda757beff0b2d5b27eab1c171dad7dee0d1b320fad2ab0c99a",
+  "inventory": {
+    "entities": [
+      {
+        "id": "e0",
+        "role": "Central frame"
+      },
+      {
+        "id": "e1",
+        "role": "Four arms"
+      },
+      {
+        "id": "e2",
+        "role": "Four motors"
+      },
+      {
+        "id": "e3",
+        "role": "Four propellers"
+      },
+      {
+        "id": "e4",
+        "role": "Battery"
+      },
+      {
+        "id": "e5",
+        "role": "Flight controller"
+      },
+      {
+        "id": "e6",
+        "role": "Electronic speed controllers"
+      }
+    ],
+    "requirements": [
+      {
+        "id": "r01",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "e0",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+      },
+      {
+        "id": "r02",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "e1",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+      },
+      {
+        "id": "r03",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "e2",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+      },
+      {
+        "id": "r04",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "e3",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+      },
+      {
+        "id": "r05",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "e4",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+      },
+      {
+        "id": "r06",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "e5",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+      },
+      {
+        "id": "r07",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "e6",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+      },
+      {
+        "id": "r08",
+        "obligation": "required",
+        "kind": "visual",
+        "subject": "object",
+        "target": "",
+        "predicate": "appearance",
+        "value": "generic quadcopter drone",
+        "mode": "appearance",
+        "basis": "explicit",
+        "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+      },
+      {
+        "id": "r09",
+        "obligation": "required",
+        "kind": "constraint",
+        "subject": "e1",
+        "target": "",
+        "predicate": "count",
+        "value": "4",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+      },
+      {
+        "id": "r10",
+        "obligation": "required",
+        "kind": "constraint",
+        "subject": "e2",
+        "target": "",
+        "predicate": "count",
+        "value": "4",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+      },
+      {
+        "id": "r11",
+        "obligation": "required",
+        "kind": "constraint",
+        "subject": "e3",
+        "target": "",
+        "predicate": "count",
+        "value": "4",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+      },
+      {
+        "id": "r12",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "e1",
+        "target": "e0",
+        "predicate": "other",
+        "value": "arms extend radially outward from central frame",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+      },
+      {
+        "id": "r13",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "e1",
+        "target": "e0",
+        "predicate": "attached",
+        "value": "arms attach to frame",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+      },
+      {
+        "id": "r14",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "e2",
+        "target": "e1",
+        "predicate": "other",
+        "value": "one motor at outward end of each arm",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+      },
+      {
+        "id": "r15",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "e3",
+        "target": "e2",
+        "predicate": "other",
+        "value": "one propeller axis aligned with each motor axis",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+      },
+      {
+        "id": "r16",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "e3",
+        "target": "e2",
+        "predicate": "attached",
+        "value": "propellers attach to motors",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+      },
+      {
+        "id": "r17",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "e4",
+        "target": "e0",
+        "predicate": "attached",
+        "value": "battery mounted to frame",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+      },
+      {
+        "id": "r18",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "e5",
+        "target": "e0",
+        "predicate": "attached",
+        "value": "flight controller mounted to frame",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+      },
+      {
+        "id": "r19",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "e6",
+        "target": "e0",
+        "predicate": "attached",
+        "value": "speed controllers mounted to frame",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+      },
+      {
+        "id": "r20",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "e6",
+        "target": "e2",
+        "predicate": "connected",
+        "value": "speed controllers connected to motors",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+      },
+      {
+        "id": "r21",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "e5",
+        "target": "e6",
+        "predicate": "connected",
+        "value": "flight controller connected to speed controllers",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+      },
+      {
+        "id": "r22",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "e4",
+        "target": "e6",
+        "predicate": "connected",
+        "value": "battery connected to speed controllers",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+      },
+      {
+        "id": "r23",
+        "obligation": "required",
+        "kind": "behavior",
+        "subject": "object",
+        "target": "",
+        "predicate": "capability",
+        "value": "inspect",
+        "mode": "behavior",
+        "basis": "explicit",
+        "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+      },
+      {
+        "id": "r24",
+        "obligation": "required",
+        "kind": "behavior",
+        "subject": "object",
+        "target": "",
+        "predicate": "capability",
+        "value": "geometric_explode",
+        "mode": "behavior",
+        "basis": "explicit",
+        "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+      },
+      {
+        "id": "r25",
+        "obligation": "required",
+        "kind": "behavior",
+        "subject": "object",
+        "target": "",
+        "predicate": "capability",
+        "value": "reassemble",
+        "mode": "behavior",
+        "basis": "inferred",
+        "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+      }
+    ],
+    "exclusions": []
+  },
+  "inventory_sha256": "e07aa3aa78ab2671e69ffbe497eccdfbb6a73e75eb9ec61079e41e18f56f6c0e",
+  "interpretation_version": 2,
+  "extraction_completeness": "unassessed; consistency is not natural-language entailment",
+  "source_grounding": {
+    "units": [
+      {
+        "id": "s0",
+        "start": 0,
+        "end": 90,
+        "text": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+      }
+    ],
+    "bindings": {
+      "r01": "s0",
+      "r02": "s0",
+      "r03": "s0",
+      "r04": "s0",
+      "r05": "s0",
+      "r06": "s0",
+      "r07": "s0",
+      "r08": "s0",
+      "r09": "s0",
+      "r10": "s0",
+      "r11": "s0",
+      "r12": "s0",
+      "r13": "s0",
+      "r14": "s0",
+      "r15": "s0",
+      "r16": "s0",
+      "r17": "s0",
+      "r18": "s0",
+      "r19": "s0",
+      "r20": "s0",
+      "r21": "s0",
+      "r22": "s0",
+      "r23": "s0",
+      "r24": "s0",
+      "r25": "s0"
+    }
+  },
+  "source_grounding_sha256": "5a24a119f3215f7cd7b19f365aaa386148f4c44cd3fb2d5edc8e560529967bc0",
+  "spatial_rules": [
+    {
+      "id": "r12",
+      "operator": "radial_outward",
+      "reference": "",
+      "axis": "y"
+    },
+    {
+      "id": "r14",
+      "operator": "outer_end",
+      "reference": "e0",
+      "axis": ""
+    },
+    {
+      "id": "r15",
+      "operator": "axis_aligned",
+      "reference": "",
+      "axis": ""
+    }
+  ],
+  "spatial_rules_sha256": "fd80b828ee7c34c8f8ef10e2aace734234d34a2b16b3574e464b84cfc966c9bf",
+  "spatial_policy_sha256": "abf21c243b7b133dc13ba5221866c9eabeff1f2f5a6ac127b3f15e6ace8bde33"
+}

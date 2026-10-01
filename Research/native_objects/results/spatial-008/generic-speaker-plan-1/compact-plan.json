@@ -1,0 +1,1329 @@
+{
+  "shapes": [
+    {
+      "id": "housing",
+      "forms": [
+        {
+          "kind": "box_shell",
+          "size": [
+            0.3,
+            0.16,
+            0.14
+          ],
+          "at": [],
+          "rotate": [],
+          "op": "add",
+          "detail": [
+            {
+              "key": "wall",
+              "values": [
+                0.005
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.09,
+            0.025,
+            0.09
+          ],
+          "at": [
+            0.07,
+            -0.008,
+            0.068
+          ],
+          "rotate": [
+            90,
+            0,
+            0
+          ],
+          "op": "subtract",
+          "detail": []
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.05,
+            0.025,
+            0.05
+          ],
+          "at": [
+            0.075,
+            0.025,
+            -0.068
+          ],
+          "rotate": [
+            90,
+            0,
+            0
+          ],
+          "op": "subtract",
+          "detail": []
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.055,
+            0.015,
+            0.04
+          ],
+          "at": [
+            -0.0925,
+            -0.0675,
+            0
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.005,
+            0.005,
+            0.01
+          ],
+          "at": [
+            -0.1475,
+            0.0775,
+            0.055
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.01,
+            0.01,
+            0.003
+          ],
+          "at": [
+            0.125,
+            0.04,
+            0.0715
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.01,
+            0.01,
+            0.006
+          ],
+          "at": [
+            0.13,
+            0.06,
+            -0.073
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.02,
+            0.015,
+            0.04
+          ],
+          "at": [
+            0.04,
+            -0.0675,
+            0
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.0075,
+            0.04,
+            0.006
+          ],
+          "at": [
+            -0.07875,
+            -0.052,
+            -0.05
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.0075,
+            0.006,
+            0.006
+          ],
+          "at": [
+            -0.07875,
+            -0.052,
+            -0.027
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.099,
+            0.006,
+            0.012
+          ],
+          "at": [
+            -0.0955,
+            0.024,
+            0
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        }
+      ]
+    },
+    {
+      "id": "lid_shape",
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.3,
+            0.006,
+            0.14
+          ],
+          "at": [
+            0,
+            0.085,
+            0
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.005,
+            0.004,
+            0.01
+          ],
+          "at": [
+            -0.1475,
+            0.082,
+            0.055
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.016,
+            0.025,
+            0.016
+          ],
+          "at": [
+            -0.04,
+            0.085,
+            0
+          ],
+          "rotate": [],
+          "op": "subtract",
+          "detail": []
+        }
+      ]
+    },
+    {
+      "id": "grille_shape",
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.12,
+            0.12,
+            0.003
+          ],
+          "at": [
+            0.07,
+            -0.008,
+            0.0745
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.01,
+            0.01,
+            0.001
+          ],
+          "at": [
+            0.125,
+            0.04,
+            0.0735
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.006,
+            0.012,
+            0.006
+          ],
+          "at": [
+            0.03,
+            -0.048,
+            0.075
+          ],
+          "rotate": [
+            90,
+            0,
+            0
+          ],
+          "op": "subtract",
+          "detail": [
+            {
+              "key": "repeat",
+              "values": [
+                5,
+                5,
+                1
+              ]
+            },
+            {
+              "key": "step",
+              "values": [
+                0.02,
+                0.02,
+                0
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "driver_shape",
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.03,
+            0.016,
+            0.04
+          ],
+          "at": [
+            0.04,
+            -0.052,
+            0
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.03,
+            0.016,
+            0.014
+          ],
+          "at": [
+            0.065,
+            -0.04,
+            0.015
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.066,
+            0.032,
+            0.066
+          ],
+          "at": [
+            0.07,
+            -0.008,
+            0.034
+          ],
+          "rotate": [
+            90,
+            0,
+            0
+          ],
+          "op": "add",
+          "detail": []
+        }
+      ]
+    },
+    {
+      "id": "radiator_shape",
+      "forms": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.044,
+            0.008,
+            0.044
+          ],
+          "at": [
+            0.075,
+            0.025,
+            -0.08
+          ],
+          "rotate": [
+            90,
+            0,
+            0
+          ],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.055,
+            0.04,
+            0.004
+          ],
+          "at": [
+            0.1025,
+            0.04,
+            -0.078
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.01,
+            0.01,
+            0.004
+          ],
+          "at": [
+            0.13,
+            0.06,
+            -0.078
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        }
+      ]
+    },
+    {
+      "id": "battery_shape",
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.055,
+            0.016,
+            0.04
+          ],
+          "at": [
+            -0.0925,
+            -0.052,
+            0
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        }
+      ]
+    },
+    {
+      "id": "bluetooth_shape",
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.05,
+            0.016,
+            0.04
+          ],
+          "at": [
+            -0.04,
+            -0.052,
+            0
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        }
+      ]
+    },
+    {
+      "id": "amplifier_shape",
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.04,
+            0.016,
+            0.04
+          ],
+          "at": [
+            0.005,
+            -0.052,
+            0
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        }
+      ]
+    },
+    {
+      "id": "charging_shape",
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.02,
+            0.012,
+            0.014
+          ],
+          "at": [
+            -0.0925,
+            -0.052,
+            -0.027
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.012,
+            0.005,
+            0.019
+          ],
+          "at": [
+            -0.0925,
+            -0.052,
+            -0.0365
+          ],
+          "rotate": [],
+          "op": "subtract",
+          "detail": []
+        }
+      ]
+    },
+    {
+      "id": "button_shape",
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.012,
+            0.136,
+            0.012
+          ],
+          "at": [
+            -0.04,
+            0.024,
+            0
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.025,
+            0.006,
+            0.025
+          ],
+          "at": [
+            -0.04,
+            0.095,
+            0
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        }
+      ]
+    }
+  ],
+  "parts": [
+    {
+      "id": "housing",
+      "entity": "e0",
+      "parent": "",
+      "shape": "housing",
+      "color": [
+        0.19,
+        0.22,
+        0.25
+      ]
+    },
+    {
+      "id": "lid",
+      "entity": "e0",
+      "parent": "housing",
+      "shape": "lid_shape",
+      "color": [
+        0.23,
+        0.26,
+        0.29
+      ]
+    },
+    {
+      "id": "grille",
+      "entity": "e1",
+      "parent": "housing",
+      "shape": "grille_shape",
+      "color": [
+        0.34,
+        0.37,
+        0.39
+      ]
+    },
+    {
+      "id": "driver",
+      "entity": "e2",
+      "parent": "amplifier",
+      "shape": "driver_shape",
+      "color": [
+        0.16,
+        0.18,
+        0.2
+      ]
+    },
+    {
+      "id": "radiator",
+      "entity": "e3",
+      "parent": "housing",
+      "shape": "radiator_shape",
+      "color": [
+        0.24,
+        0.25,
+        0.25
+      ]
+    },
+    {
+      "id": "battery",
+      "entity": "e4",
+      "parent": "housing",
+      "shape": "battery_shape",
+      "color": [
+        0.36,
+        0.39,
+        0.4
+      ]
+    },
+    {
+      "id": "bluetooth_board",
+      "entity": "e5",
+      "parent": "battery",
+      "shape": "bluetooth_shape",
+      "color": [
+        0.14,
+        0.32,
+        0.28
+      ]
+    },
+    {
+      "id": "amplifier",
+      "entity": "e6",
+      "parent": "bluetooth_board",
+      "shape": "amplifier_shape",
+      "color": [
+        0.17,
+        0.3,
+        0.27
+      ]
+    },
+    {
+      "id": "charging_port",
+      "entity": "e7",
+      "parent": "battery",
+      "shape": "charging_shape",
+      "color": [
+        0.56,
+        0.57,
+        0.54
+      ]
+    },
+    {
+      "id": "button",
+      "entity": "e8",
+      "parent": "bluetooth_board",
+      "shape": "button_shape",
+      "color": [
+        0.4,
+        0.43,
+        0.45
+      ]
+    }
+  ],
+  "root_position": [
+    0,
+    0,
+    0
+  ],
+  "root_rotation": [
+    0,
+    0,
+    0
+  ],
+  "ports": [
+    {
+      "id": "housing_battery",
+      "part": "housing",
+      "kind": "face",
+      "form": 3,
+      "face": "+y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "battery_bottom",
+      "part": "battery",
+      "kind": "face",
+      "form": 0,
+      "face": "-y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "battery_board",
+      "part": "battery",
+      "kind": "face",
+      "form": 0,
+      "face": "+x",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "board_battery",
+      "part": "bluetooth_board",
+      "kind": "face",
+      "form": 0,
+      "face": "-x",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "board_amp",
+      "part": "bluetooth_board",
+      "kind": "face",
+      "form": 0,
+      "face": "+x",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "amp_board",
+      "part": "amplifier",
+      "kind": "face",
+      "form": 0,
+      "face": "-x",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "amp_driver",
+      "part": "amplifier",
+      "kind": "face",
+      "form": 0,
+      "face": "+x",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "driver_amp",
+      "part": "driver",
+      "kind": "face",
+      "form": 0,
+      "face": "-x",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "housing_lid",
+      "part": "housing",
+      "kind": "face",
+      "form": 4,
+      "face": "+y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "lid_housing",
+      "part": "lid",
+      "kind": "face",
+      "form": 1,
+      "face": "-y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "housing_grille",
+      "part": "housing",
+      "kind": "face",
+      "form": 5,
+      "face": "+z",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "grille_housing",
+      "part": "grille",
+      "kind": "face",
+      "form": 1,
+      "face": "-z",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "housing_radiator",
+      "part": "housing",
+      "kind": "face",
+      "form": 6,
+      "face": "-z",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "radiator_housing",
+      "part": "radiator",
+      "kind": "face",
+      "form": 2,
+      "face": "+z",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "battery_charge",
+      "part": "battery",
+      "kind": "face",
+      "form": 0,
+      "face": "-z",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "charge_battery",
+      "part": "charging_port",
+      "kind": "face",
+      "form": 0,
+      "face": "+z",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "board_button",
+      "part": "bluetooth_board",
+      "kind": "face",
+      "form": 0,
+      "face": "+y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "button_board",
+      "part": "button",
+      "kind": "face",
+      "form": 0,
+      "face": "-y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "housing_driver_direct",
+      "part": "housing",
+      "kind": "face",
+      "form": 7,
+      "face": "+y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "driver_housing_direct",
+      "part": "driver",
+      "kind": "face",
+      "form": 0,
+      "face": "-y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "housing_charge_direct",
+      "part": "housing",
+      "kind": "face",
+      "form": 9,
+      "face": "-x",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "charge_housing_direct",
+      "part": "charging_port",
+      "kind": "face",
+      "form": 0,
+      "face": "+x",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "housing_button_direct",
+      "part": "housing",
+      "kind": "face",
+      "form": 10,
+      "face": "+x",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "button_housing_direct",
+      "part": "button",
+      "kind": "face",
+      "form": 0,
+      "face": "-x",
+      "span": [
+        0,
+        1
+      ]
+    }
+  ],
+  "mates": [
+    {
+      "id": "m_battery",
+      "a": "housing_battery",
+      "b": "battery_bottom",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "m_board",
+      "a": "battery_board",
+      "b": "board_battery",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "m_amp",
+      "a": "board_amp",
+      "b": "amp_board",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "m_driver",
+      "a": "amp_driver",
+      "b": "driver_amp",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "m_lid",
+      "a": "housing_lid",
+      "b": "lid_housing",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "m_grille",
+      "a": "housing_grille",
+      "b": "grille_housing",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "m_radiator",
+      "a": "housing_radiator",
+      "b": "radiator_housing",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "m_charge",
+      "a": "battery_charge",
+      "b": "charge_battery",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "m_button",
+      "a": "board_button",
+      "b": "button_board",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "m_driver_housing",
+      "a": "housing_driver_direct",
+      "b": "driver_housing_direct",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "m_charge_housing",
+      "a": "housing_charge_direct",
+      "b": "charge_housing_direct",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "m_button_housing",
+      "a": "housing_button_direct",
+      "b": "button_housing_direct",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    }
+  ],
+  "containments": [
+    {
+      "outer": "housing",
+      "inner": "battery",
+      "clearance": 0
+    },
+    {
+      "outer": "housing",
+      "inner": "bluetooth_board",
+      "clearance": 0
+    },
+    {
+      "outer": "housing",
+      "inner": "amplifier",
+      "clearance": 0
+    }
+  ],
+  "clearances": [],
+  "symmetries": [],
+  "bindings": [
+    {
+      "id": "r00",
+      "kind": "components",
+      "refs": [
+        "part:housing",
+        "part:lid"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r01",
+      "kind": "components",
+      "refs": [
+        "part:grille"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r02",
+      "kind": "components",
+      "refs": [
+        "part:driver"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r03",
+      "kind": "components",
+      "refs": [
+        "part:radiator"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r04",
+      "kind": "components",
+      "refs": [
+        "part:battery"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r05",
+      "kind": "components",
+      "refs": [
+        "part:bluetooth_board"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r06",
+      "kind": "components",
+      "refs": [
+        "part:amplifier"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r07",
+      "kind": "components",
+      "refs": [
+        "part:charging_port"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r08",
+      "kind": "components",
+      "refs": [
+        "part:button"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r09",
+      "kind": "capability",
+      "refs": [
+        "capability:inspect"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r10",
+      "kind": "capability",
+      "refs": [
+        "capability:geometric_explode"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r11",
+      "kind": "capability",
+      "refs": [
+        "capability:reassemble"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r12",
+      "kind": "components",
+      "refs": [
+        "part:housing",
+        "part:lid",
+        "part:grille",
+        "part:driver",
+        "part:radiator",
+        "part:battery",
+        "part:bluetooth_board",
+        "part:amplifier",
+        "part:charging_port",
+        "part:button"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r13",
+      "kind": "relations",
+      "refs": [
+        "mate:m_grille"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r14",
+      "kind": "relations",
+      "refs": [
+        "mate:m_driver_housing"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r15",
+      "kind": "relations",
+      "refs": [
+        "mate:m_radiator"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r16",
+      "kind": "relations",
+      "refs": [
+        "containment:0"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r17",
+      "kind": "relations",
+      "refs": [
+        "containment:1"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r18",
+      "kind": "relations",
+      "refs": [
+        "containment:2"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r19",
+      "kind": "relations",
+      "refs": [
+        "mate:m_charge_housing"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r20",
+      "kind": "relations",
+      "refs": [
+        "mate:m_button_housing"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r21",
+      "kind": "unsupported",
+      "refs": [],
+      "note": "Proposed grille position ahead of driver is not independently verified by a supported binding."
+    },
+    {
+      "id": "r22",
+      "kind": "relations",
+      "refs": [
+        "mate:m_board"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r23",
+      "kind": "relations",
+      "refs": [
+        "mate:m_amp"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r24",
+      "kind": "relations",
+      "refs": [
+        "mate:m_driver"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r25",
+      "kind": "relations",
+      "refs": [
+        "mate:m_charge"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r26",
+      "kind": "relations",
+      "refs": [
+        "mate:m_button"
+      ],
+      "note": ""
+    }
+  ]
+}

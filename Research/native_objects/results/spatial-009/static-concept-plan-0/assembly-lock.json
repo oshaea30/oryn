@@ -1,0 +1,97 @@
+{
+  "clearances": [],
+  "containments": [
+    {
+      "clearance": 0.005,
+      "inner": "sphere",
+      "outer": "ring"
+    }
+  ],
+  "mates": [
+    {
+      "a": "base_top",
+      "b": "ring_foot",
+      "id": "m_base_ring",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "cord_bottom",
+      "b": "sphere_stem",
+      "id": "m_cord_sphere",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "ring_hanger",
+      "b": "cord_top",
+      "id": "m_ring_cord",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    }
+  ],
+  "parts": [
+    [
+      "base",
+      "Base",
+      ""
+    ],
+    [
+      "cord",
+      "Suspension cord",
+      "ring"
+    ],
+    [
+      "ring",
+      "Open ring",
+      "base"
+    ],
+    [
+      "sphere",
+      "Sphere",
+      "cord"
+    ]
+  ],
+  "ports": [
+    [
+      "base_top",
+      "base",
+      "face"
+    ],
+    [
+      "cord_bottom",
+      "cord",
+      "face"
+    ],
+    [
+      "cord_top",
+      "cord",
+      "face"
+    ],
+    [
+      "ring_foot",
+      "ring",
+      "face"
+    ],
+    [
+      "ring_hanger",
+      "ring",
+      "face"
+    ],
+    [
+      "sphere_stem",
+      "sphere",
+      "face"
+    ]
+  ],
+  "symmetries": []
+}

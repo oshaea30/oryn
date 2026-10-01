@@ -1,0 +1,288 @@
+{
+  "declared_relations_passed": true,
+  "checks": [
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "base"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "ring"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "cord"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "sphere"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "containment",
+      "relation": {
+        "outer": "ring",
+        "inner": "sphere",
+        "clearance": 0.005
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "outside_convex_envelope_m3": 0.0,
+        "minimum_surface_gap_m": 0.006,
+        "scope": "convex envelope and solid intersection, not semantic containment"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "base_top",
+        "part": "base"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "ring_foot",
+        "part": "ring"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "ring_hanger",
+        "part": "ring"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "cord_top",
+        "part": "cord"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "cord_bottom",
+        "part": "cord"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "sphere_stem",
+        "part": "sphere"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "id": "m_base_ring",
+        "a": "base_top",
+        "b": "ring_foot",
+        "kind": "face",
+        "offset": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "minimum_overlap": 0
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "id": "m_ring_cord",
+        "a": "ring_hanger",
+        "b": "cord_top",
+        "kind": "face",
+        "offset": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "minimum_overlap": 0
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "id": "m_cord_sphere",
+        "a": "cord_bottom",
+        "b": "sphere_stem",
+        "kind": "face",
+        "offset": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "minimum_overlap": 0
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "base",
+        "b": "ring"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "base",
+        "b": "cord"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "base",
+        "b": "sphere"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "ring",
+        "b": "cord"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "ring",
+        "b": "sphere"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "cord",
+        "b": "sphere"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "spatial_requirement",
+      "requirement_id": "r9",
+      "operator": "on_top",
+      "passed": true,
+      "measurement": {
+        "pairs": [
+          {
+            "passed": true,
+            "subject": "ring",
+            "target": "base",
+            "mate": "m_base_ring",
+            "target_up_alignment": 1.0,
+            "subject_down_alignment": 1.0,
+            "contact_gap_m": 0.0
+          }
+        ]
+      },
+      "scope": "Measured declared geometry only; semantic feature selection and appearance are unverified."
+    }
+  ],
+  "semantic_completeness": "not_assessed",
+  "global_collisions": "all pairs static positive-volume interference checked; no swept motion",
+  "engineering_correctness": "not_assessed",
+  "native_generation_goal_passed": false,
+  "requirement_coverage": "not_assessed; solver cannot prove omitted functional connections",
+  "locked_requirements_sha256": "b52e184cb09fb1ae8718bec93fd947ba71217b1d825e8b5fc40a0f0d2d2f121d",
+  "spatial_policy_sha256": "abf21c243b7b133dc13ba5221866c9eabeff1f2f5a6ac127b3f15e6ace8bde33"
+}

@@ -145,12 +145,27 @@ motion and verified claims remain distinct. The corrected inventory enters the
 existing planning gate, with unchanged live lamp/drone outputs blocking unsupported
 work before planning. 196 targeted test executions pass; geometry remains unchanged.
 
-This does not prove lossless interpretation or general object generation. Spatial
-intent survives but lacks checkable adapters, and static-pose representation still
-varies between requests. The next bounded step is a cross-object spatial-intent
-bridge to the existing planner/executor, without hiding unsupported requirements.
+That confirmation did not prove lossless interpretation or general object generation.
+Spatial intent survived but lacked checkable adapters, and static-pose representation
+varied between requests. This motivated the spatial bridge measured below, while
+preserving unsupported requirements.
 Additional API estimate $0.152625; zero new uncertain reservations. The user tripled
 the shared daily API cap to $6 on 2026-10-01; the $5 aggregate research cap remains.
+
+The [spatial bridge experiment](Research/native_objects/SPATIAL_RESULT.md) now runs
+registered spatial checks on solved geometry. The static hanging-sphere concept is
+coherent with four selectable/separable parts and passing checks. The drone passes
+its pairwise spatial rules but omits shared orientation across its motors/propellers;
+one ESC symmetry also fails. The speaker repairs missing connection bindings and
+then fails housing connectivity. Lamp emission and sharpener feed/collection paths
+remain unsupported. No geometry executor change or production promotion occurred.
+
+Next: require explicit arrangement/axis relationships across repeated component
+groups before construction, without an object-specific recipe or another symmetry-only
+repair. Additional API estimate $0.46642. A lossless context change fixes the blocked
+repair quote without increasing limits or dispatching another generation. 248 targeted
+test executions and seven browser checks pass. This is a narrow simple-concept success,
+not a general-object or visual-quality breakthrough.
 
 Generation research is the active track. The product remains stable; answering,
 voice and motion-inference expansion are paused. Research output does not enter

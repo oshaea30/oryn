@@ -26,3 +26,8 @@ matching the older construction harness, because the completed 008 speaker plans
 96 and 77 seconds. This increases waiting room, not output tokens or spending limits.
 Extraction remains 120 seconds. No retry of incomplete/uncertain calls. No paid judge,
 GPU, hand repair or automatic product promotion. Keep every measured failure.
+
+## Result
+
+Completed; see the [measured result and limitations](SPATIAL_RESULT.md).
+The frozen rules above remain unchanged.

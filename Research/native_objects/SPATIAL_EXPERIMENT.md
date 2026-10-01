@@ -54,3 +54,8 @@ actual failed measurements; do not loosen requirements. If extraction leaves a u
 relation unsupported, retain it and identify the vocabulary gap. If semantics/visuals
 fail despite numeric success, do not promote the object. Do not repeat seeds seeking
 one success. No GPU, new provider, answering, simulation or automatic motion inference.
+
+## Result
+
+Completed; see the [measured result and limitations](SPATIAL_RESULT.md).
+The frozen rules above remain unchanged.

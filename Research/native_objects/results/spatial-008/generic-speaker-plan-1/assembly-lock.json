@@ -1,0 +1,317 @@
+{
+  "clearances": [],
+  "containments": [
+    {
+      "clearance": 0,
+      "inner": "amplifier",
+      "outer": "housing"
+    },
+    {
+      "clearance": 0,
+      "inner": "battery",
+      "outer": "housing"
+    },
+    {
+      "clearance": 0,
+      "inner": "bluetooth_board",
+      "outer": "housing"
+    }
+  ],
+  "mates": [
+    {
+      "a": "amp_driver",
+      "b": "driver_amp",
+      "id": "m_driver",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "battery_board",
+      "b": "board_battery",
+      "id": "m_board",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "battery_charge",
+      "b": "charge_battery",
+      "id": "m_charge",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "board_amp",
+      "b": "amp_board",
+      "id": "m_amp",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "board_button",
+      "b": "button_board",
+      "id": "m_button",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "housing_battery",
+      "b": "battery_bottom",
+      "id": "m_battery",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "housing_button_direct",
+      "b": "button_housing_direct",
+      "id": "m_button_housing",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "housing_charge_direct",
+      "b": "charge_housing_direct",
+      "id": "m_charge_housing",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "housing_driver_direct",
+      "b": "driver_housing_direct",
+      "id": "m_driver_housing",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "housing_grille",
+      "b": "grille_housing",
+      "id": "m_grille",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "housing_lid",
+      "b": "lid_housing",
+      "id": "m_lid",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    },
+    {
+      "a": "housing_radiator",
+      "b": "radiator_housing",
+      "id": "m_radiator",
+      "kind": "face",
+      "minimum_clearance": 0,
+      "minimum_overlap": 0,
+      "offset": 0,
+      "twist": 0
+    }
+  ],
+  "parts": [
+    [
+      "amplifier",
+      "Audio amplifier board",
+      "bluetooth_board"
+    ],
+    [
+      "battery",
+      "Rechargeable battery pack",
+      "housing"
+    ],
+    [
+      "bluetooth_board",
+      "Bluetooth and control board",
+      "battery"
+    ],
+    [
+      "button",
+      "Control buttons",
+      "bluetooth_board"
+    ],
+    [
+      "charging_port",
+      "Charging port",
+      "battery"
+    ],
+    [
+      "driver",
+      "Full-range speaker driver",
+      "amplifier"
+    ],
+    [
+      "grille",
+      "Front grille",
+      "housing"
+    ],
+    [
+      "housing",
+      "Separable enclosure sections",
+      ""
+    ],
+    [
+      "lid",
+      "Separable enclosure sections",
+      "housing"
+    ],
+    [
+      "radiator",
+      "Passive radiator",
+      "housing"
+    ]
+  ],
+  "ports": [
+    [
+      "amp_board",
+      "amplifier",
+      "face"
+    ],
+    [
+      "amp_driver",
+      "amplifier",
+      "face"
+    ],
+    [
+      "battery_board",
+      "battery",
+      "face"
+    ],
+    [
+      "battery_bottom",
+      "battery",
+      "face"
+    ],
+    [
+      "battery_charge",
+      "battery",
+      "face"
+    ],
+    [
+      "board_amp",
+      "bluetooth_board",
+      "face"
+    ],
+    [
+      "board_battery",
+      "bluetooth_board",
+      "face"
+    ],
+    [
+      "board_button",
+      "bluetooth_board",
+      "face"
+    ],
+    [
+      "button_board",
+      "button",
+      "face"
+    ],
+    [
+      "button_housing_direct",
+      "button",
+      "face"
+    ],
+    [
+      "charge_battery",
+      "charging_port",
+      "face"
+    ],
+    [
+      "charge_housing_direct",
+      "charging_port",
+      "face"
+    ],
+    [
+      "driver_amp",
+      "driver",
+      "face"
+    ],
+    [
+      "driver_housing_direct",
+      "driver",
+      "face"
+    ],
+    [
+      "grille_housing",
+      "grille",
+      "face"
+    ],
+    [
+      "housing_battery",
+      "housing",
+      "face"
+    ],
+    [
+      "housing_button_direct",
+      "housing",
+      "face"
+    ],
+    [
+      "housing_charge_direct",
+      "housing",
+      "face"
+    ],
+    [
+      "housing_driver_direct",
+      "housing",
+      "face"
+    ],
+    [
+      "housing_grille",
+      "housing",
+      "face"
+    ],
+    [
+      "housing_lid",
+      "housing",
+      "face"
+    ],
+    [
+      "housing_radiator",
+      "housing",
+      "face"
+    ],
+    [
+      "lid_housing",
+      "lid",
+      "face"
+    ],
+    [
+      "radiator_housing",
+      "radiator",
+      "face"
+    ]
+  ],
+  "symmetries": []
+}

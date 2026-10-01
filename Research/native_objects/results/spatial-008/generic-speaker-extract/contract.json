@@ -1,0 +1,417 @@
+{
+  "source_request": "Generate a generic portable Bluetooth speaker I can take apart to understand its main systems.",
+  "source_sha256": "0704dddcc5417ce763512c88c13481d77a2a6b005398458eb8d7b8d52cb0fb14",
+  "inventory": {
+    "entities": [
+      {
+        "id": "e0",
+        "role": "Separable enclosure sections"
+      },
+      {
+        "id": "e1",
+        "role": "Front grille"
+      },
+      {
+        "id": "e2",
+        "role": "Full-range speaker driver"
+      },
+      {
+        "id": "e3",
+        "role": "Passive radiator"
+      },
+      {
+        "id": "e4",
+        "role": "Rechargeable battery pack"
+      },
+      {
+        "id": "e5",
+        "role": "Bluetooth and control board"
+      },
+      {
+        "id": "e6",
+        "role": "Audio amplifier board"
+      },
+      {
+        "id": "e7",
+        "role": "Charging port"
+      },
+      {
+        "id": "e8",
+        "role": "Control buttons"
+      }
+    ],
+    "requirements": [
+      {
+        "id": "r00",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "e0",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Generate a generic portable Bluetooth speaker I can take apart to understand its main systems."
+      },
+      {
+        "id": "r01",
+        "obligation": "design_choice",
+        "kind": "entity",
+        "subject": "e1",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "mode": "structure",
+        "basis": "design_choice",
+        "quote": ""
+      },
+      {
+        "id": "r02",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "e2",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Generate a generic portable Bluetooth speaker I can take apart to understand its main systems."
+      },
+      {
+        "id": "r03",
+        "obligation": "design_choice",
+        "kind": "entity",
+        "subject": "e3",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "mode": "structure",
+        "basis": "design_choice",
+        "quote": ""
+      },
+      {
+        "id": "r04",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "e4",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Generate a generic portable Bluetooth speaker I can take apart to understand its main systems."
+      },
+      {
+        "id": "r05",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "e5",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Generate a generic portable Bluetooth speaker I can take apart to understand its main systems."
+      },
+      {
+        "id": "r06",
+        "obligation": "design_choice",
+        "kind": "entity",
+        "subject": "e6",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "mode": "structure",
+        "basis": "design_choice",
+        "quote": ""
+      },
+      {
+        "id": "r07",
+        "obligation": "design_choice",
+        "kind": "entity",
+        "subject": "e7",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "mode": "structure",
+        "basis": "design_choice",
+        "quote": ""
+      },
+      {
+        "id": "r08",
+        "obligation": "design_choice",
+        "kind": "entity",
+        "subject": "e8",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "mode": "structure",
+        "basis": "design_choice",
+        "quote": ""
+      },
+      {
+        "id": "r09",
+        "obligation": "required",
+        "kind": "behavior",
+        "subject": "object",
+        "target": "",
+        "predicate": "capability",
+        "value": "inspect",
+        "mode": "behavior",
+        "basis": "explicit",
+        "quote": "Generate a generic portable Bluetooth speaker I can take apart to understand its main systems."
+      },
+      {
+        "id": "r10",
+        "obligation": "required",
+        "kind": "behavior",
+        "subject": "object",
+        "target": "",
+        "predicate": "capability",
+        "value": "geometric_explode",
+        "mode": "behavior",
+        "basis": "explicit",
+        "quote": "Generate a generic portable Bluetooth speaker I can take apart to understand its main systems."
+      },
+      {
+        "id": "r11",
+        "obligation": "required",
+        "kind": "behavior",
+        "subject": "object",
+        "target": "",
+        "predicate": "capability",
+        "value": "reassemble",
+        "mode": "behavior",
+        "basis": "inferred",
+        "quote": "Generate a generic portable Bluetooth speaker I can take apart to understand its main systems."
+      },
+      {
+        "id": "r12",
+        "obligation": "required",
+        "kind": "visual",
+        "subject": "object",
+        "target": "",
+        "predicate": "appearance",
+        "value": "generic portable speaker form",
+        "mode": "appearance",
+        "basis": "explicit",
+        "quote": "Generate a generic portable Bluetooth speaker I can take apart to understand its main systems."
+      },
+      {
+        "id": "r13",
+        "obligation": "design_choice",
+        "kind": "relation",
+        "subject": "e1",
+        "target": "e0",
+        "predicate": "attached",
+        "value": "",
+        "mode": "structure",
+        "basis": "design_choice",
+        "quote": ""
+      },
+      {
+        "id": "r14",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "e2",
+        "target": "e0",
+        "predicate": "attached",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Generate a generic portable Bluetooth speaker I can take apart to understand its main systems."
+      },
+      {
+        "id": "r15",
+        "obligation": "design_choice",
+        "kind": "relation",
+        "subject": "e3",
+        "target": "e0",
+        "predicate": "attached",
+        "value": "",
+        "mode": "structure",
+        "basis": "design_choice",
+        "quote": ""
+      },
+      {
+        "id": "r16",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "e4",
+        "target": "e0",
+        "predicate": "inside",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Generate a generic portable Bluetooth speaker I can take apart to understand its main systems."
+      },
+      {
+        "id": "r17",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "e5",
+        "target": "e0",
+        "predicate": "inside",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Generate a generic portable Bluetooth speaker I can take apart to understand its main systems."
+      },
+      {
+        "id": "r18",
+        "obligation": "design_choice",
+        "kind": "relation",
+        "subject": "e6",
+        "target": "e0",
+        "predicate": "inside",
+        "value": "",
+        "mode": "structure",
+        "basis": "design_choice",
+        "quote": ""
+      },
+      {
+        "id": "r19",
+        "obligation": "design_choice",
+        "kind": "relation",
+        "subject": "e7",
+        "target": "e0",
+        "predicate": "attached",
+        "value": "",
+        "mode": "structure",
+        "basis": "design_choice",
+        "quote": ""
+      },
+      {
+        "id": "r20",
+        "obligation": "design_choice",
+        "kind": "relation",
+        "subject": "e8",
+        "target": "e0",
+        "predicate": "attached",
+        "value": "",
+        "mode": "structure",
+        "basis": "design_choice",
+        "quote": ""
+      },
+      {
+        "id": "r21",
+        "obligation": "design_choice",
+        "kind": "relation",
+        "subject": "e1",
+        "target": "e2",
+        "predicate": "other",
+        "value": "in front of driver",
+        "mode": "structure",
+        "basis": "design_choice",
+        "quote": ""
+      },
+      {
+        "id": "r22",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "e4",
+        "target": "e5",
+        "predicate": "connected",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Generate a generic portable Bluetooth speaker I can take apart to understand its main systems."
+      },
+      {
+        "id": "r23",
+        "obligation": "design_choice",
+        "kind": "relation",
+        "subject": "e5",
+        "target": "e6",
+        "predicate": "connected",
+        "value": "",
+        "mode": "structure",
+        "basis": "design_choice",
+        "quote": ""
+      },
+      {
+        "id": "r24",
+        "obligation": "design_choice",
+        "kind": "relation",
+        "subject": "e6",
+        "target": "e2",
+        "predicate": "connected",
+        "value": "",
+        "mode": "structure",
+        "basis": "design_choice",
+        "quote": ""
+      },
+      {
+        "id": "r25",
+        "obligation": "design_choice",
+        "kind": "relation",
+        "subject": "e7",
+        "target": "e4",
+        "predicate": "connected",
+        "value": "",
+        "mode": "structure",
+        "basis": "design_choice",
+        "quote": ""
+      },
+      {
+        "id": "r26",
+        "obligation": "design_choice",
+        "kind": "relation",
+        "subject": "e8",
+        "target": "e5",
+        "predicate": "connected",
+        "value": "",
+        "mode": "structure",
+        "basis": "design_choice",
+        "quote": ""
+      }
+    ],
+    "exclusions": []
+  },
+  "inventory_sha256": "71e22d533349b022adb02e90bedba8da3d9e0026a58d11d10649121a02da7081",
+  "interpretation_version": 2,
+  "extraction_completeness": "unassessed; consistency is not natural-language entailment",
+  "source_grounding": {
+    "units": [
+      {
+        "id": "s0",
+        "start": 0,
+        "end": 94,
+        "text": "Generate a generic portable Bluetooth speaker I can take apart to understand its main systems."
+      }
+    ],
+    "bindings": {
+      "r00": "s0",
+      "r01": "",
+      "r02": "s0",
+      "r03": "",
+      "r04": "s0",
+      "r05": "s0",
+      "r06": "",
+      "r07": "",
+      "r08": "",
+      "r09": "s0",
+      "r10": "s0",
+      "r11": "s0",
+      "r12": "s0",
+      "r13": "",
+      "r14": "s0",
+      "r15": "",
+      "r16": "s0",
+      "r17": "s0",
+      "r18": "",
+      "r19": "",
+      "r20": "",
+      "r21": "",
+      "r22": "s0",
+      "r23": "",
+      "r24": "",
+      "r25": "",
+      "r26": ""
+    }
+  },
+  "source_grounding_sha256": "cac0c42b3baffe1298aecd7b422e98b960befb066459b72d08fcc0276fceae3d",
+  "spatial_rules": [],
+  "spatial_rules_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "spatial_policy_sha256": "abf21c243b7b133dc13ba5221866c9eabeff1f2f5a6ac127b3f15e6ace8bde33"
+}

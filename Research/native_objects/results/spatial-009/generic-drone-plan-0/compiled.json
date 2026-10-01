@@ -1,0 +1,1975 @@
+{
+  "assumptions": [
+    "Generic model design; requirement coverage does not verify semantics or engineering."
+  ],
+  "limitations": [
+    "Geometry executor unchanged; unsupported requirements are explicit."
+  ],
+  "parts": [
+    {
+      "id": "frame",
+      "role": "Central frame",
+      "parent": "",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.2,
+            0.025,
+            0.2
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.045,
+            0.01,
+            0.035
+          ],
+          "offset": [
+            -0.065,
+            0.0175,
+            -0.065
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.045,
+            0.01,
+            0.035
+          ],
+          "offset": [
+            0.065,
+            0.0175,
+            -0.065
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.045,
+            0.01,
+            0.035
+          ],
+          "offset": [
+            -0.065,
+            0.0175,
+            0.065
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.045,
+            0.01,
+            0.035
+          ],
+          "offset": [
+            0.065,
+            0.0175,
+            0.065
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.22,
+        0.25,
+        0.28
+      ]
+    },
+    {
+      "id": "arm_xp",
+      "role": "Four arms",
+      "parent": "frame",
+      "position": [
+        0.25,
+        0.0,
+        1.8369701987210297e-17
+      ],
+      "rotation": [
+        0.0,
+        -7.016709298534876e-15,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.3,
+            0.018,
+            0.032
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.024,
+            0.012,
+            0.024
+          ],
+          "offset": [
+            0.15,
+            0.015,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.29,
+        0.32,
+        0.34
+      ]
+    },
+    {
+      "id": "arm_xn",
+      "role": "Four arms",
+      "parent": "frame",
+      "position": [
+        -0.25,
+        0.0,
+        -1.8369701987210297e-17
+      ],
+      "rotation": [
+        180.0,
+        7.016709298534876e-15,
+        180.0
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.3,
+            0.018,
+            0.032
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.024,
+            0.012,
+            0.024
+          ],
+          "offset": [
+            0.15,
+            0.015,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.29,
+        0.32,
+        0.34
+      ]
+    },
+    {
+      "id": "arm_zp",
+      "role": "Four arms",
+      "parent": "frame",
+      "position": [
+        0.0,
+        1.8369701987210297e-17,
+        0.25
+      ],
+      "rotation": [
+        -90.0,
+        -90.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.3,
+            0.018,
+            0.032
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.024,
+            0.012,
+            0.024
+          ],
+          "offset": [
+            0.15,
+            0.015,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.29,
+        0.32,
+        0.34
+      ]
+    },
+    {
+      "id": "arm_zn",
+      "role": "Four arms",
+      "parent": "frame",
+      "position": [
+        0.0,
+        -1.8369701987210297e-17,
+        -0.25
+      ],
+      "rotation": [
+        90.0,
+        90.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.3,
+            0.018,
+            0.032
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.024,
+            0.012,
+            0.024
+          ],
+          "offset": [
+            0.15,
+            0.015,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.29,
+        0.32,
+        0.34
+      ]
+    },
+    {
+      "id": "motor_xp",
+      "role": "Four motors",
+      "parent": "arm_xp",
+      "position": [
+        0.4,
+        0.034999999999999996,
+        3.50248984556143e-17
+      ],
+      "rotation": [
+        -7.016709298534876e-15,
+        -7.016709298534876e-15,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.042,
+            0.028,
+            0.042
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.012,
+            0.019,
+            0.012
+          ],
+          "offset": [
+            0,
+            0.02,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.46,
+        0.48,
+        0.49
+      ]
+    },
+    {
+      "id": "motor_xn",
+      "role": "Four motors",
+      "parent": "arm_xn",
+      "position": [
+        -0.4,
+        0.034999999999999996,
+        -3.50248984556143e-17
+      ],
+      "rotation": [
+        180.0,
+        7.016709298534876e-15,
+        180.0
+      ],
+      "forms": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.042,
+            0.028,
+            0.042
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.012,
+            0.019,
+            0.012
+          ],
+          "offset": [
+            0,
+            0.02,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.46,
+        0.48,
+        0.49
+      ]
+    },
+    {
+      "id": "motor_zp",
+      "role": "Four motors",
+      "parent": "arm_zp",
+      "position": [
+        0.034999999999999996,
+        3.50248984556143e-17,
+        0.4
+      ],
+      "rotation": [
+        -90.00000000000001,
+        -90.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.042,
+            0.028,
+            0.042
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.012,
+            0.019,
+            0.012
+          ],
+          "offset": [
+            0,
+            0.02,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.46,
+        0.48,
+        0.49
+      ]
+    },
+    {
+      "id": "motor_zn",
+      "role": "Four motors",
+      "parent": "arm_zn",
+      "position": [
+        0.034999999999999996,
+        -3.50248984556143e-17,
+        -0.4
+      ],
+      "rotation": [
+        90.0,
+        90.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.042,
+            0.028,
+            0.042
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.012,
+            0.019,
+            0.012
+          ],
+          "offset": [
+            0,
+            0.02,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.46,
+        0.48,
+        0.49
+      ]
+    },
+    {
+      "id": "prop_xp",
+      "role": "Four propellers",
+      "parent": "motor_xp",
+      "position": [
+        0.4,
+        0.0646,
+        3.139994393013813e-17
+      ],
+      "rotation": [
+        -7.016709298534876e-15,
+        -7.016709298534876e-15,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "tube",
+          "size": [
+            0.026,
+            0.012,
+            0.026
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0.005,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.12,
+            0.006,
+            0.024
+          ],
+          "offset": [
+            0.063,
+            0.0055,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.12,
+            0.006,
+            0.024
+          ],
+          "offset": [
+            -0.063,
+            0.0055,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.14,
+        0.17,
+        0.19
+      ]
+    },
+    {
+      "id": "prop_xn",
+      "role": "Four propellers",
+      "parent": "motor_xn",
+      "position": [
+        -0.4,
+        0.0646,
+        -3.139994393013813e-17
+      ],
+      "rotation": [
+        180.0,
+        7.016709298534876e-15,
+        180.0
+      ],
+      "forms": [
+        {
+          "kind": "tube",
+          "size": [
+            0.026,
+            0.012,
+            0.026
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0.005,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.12,
+            0.006,
+            0.024
+          ],
+          "offset": [
+            0.063,
+            0.0055,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.12,
+            0.006,
+            0.024
+          ],
+          "offset": [
+            -0.063,
+            0.0055,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.14,
+        0.17,
+        0.19
+      ]
+    },
+    {
+      "id": "prop_zp",
+      "role": "Four propellers",
+      "parent": "motor_zp",
+      "position": [
+        0.0646,
+        3.139994393013813e-17,
+        0.4
+      ],
+      "rotation": [
+        -90.00000000000001,
+        -90.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "tube",
+          "size": [
+            0.026,
+            0.012,
+            0.026
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0.005,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.12,
+            0.006,
+            0.024
+          ],
+          "offset": [
+            0.063,
+            0.0055,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.12,
+            0.006,
+            0.024
+          ],
+          "offset": [
+            -0.063,
+            0.0055,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.14,
+        0.17,
+        0.19
+      ]
+    },
+    {
+      "id": "prop_zn",
+      "role": "Four propellers",
+      "parent": "motor_zn",
+      "position": [
+        0.0646,
+        -3.139994393013813e-17,
+        -0.4
+      ],
+      "rotation": [
+        90.0,
+        90.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "tube",
+          "size": [
+            0.026,
+            0.012,
+            0.026
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0.005,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.12,
+            0.006,
+            0.024
+          ],
+          "offset": [
+            0.063,
+            0.0055,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.12,
+            0.006,
+            0.024
+          ],
+          "offset": [
+            -0.063,
+            0.0055,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.14,
+        0.17,
+        0.19
+      ]
+    },
+    {
+      "id": "battery",
+      "role": "Battery",
+      "parent": "frame",
+      "position": [
+        0.0,
+        -0.0285,
+        1.959434878635765e-18
+      ],
+      "rotation": [
+        -7.016709298534876e-15,
+        -0.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "rounded_box",
+          "size": [
+            0.12,
+            0.032,
+            0.085
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0.005,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.33,
+        0.36,
+        0.37
+      ]
+    },
+    {
+      "id": "controller",
+      "role": "Flight controller",
+      "parent": "frame",
+      "position": [
+        0.0,
+        0.018000000000000002,
+        -6.735557395310442e-19
+      ],
+      "rotation": [
+        -7.016709298534876e-15,
+        -0.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.075,
+            0.011,
+            0.075
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.16,
+        0.36,
+        0.3
+      ]
+    },
+    {
+      "id": "esc_xp",
+      "role": "Electronic speed controllers",
+      "parent": "frame",
+      "position": [
+        0.065,
+        0.026000000000000002,
+        0.065
+      ],
+      "rotation": [
+        -7.016709298534876e-15,
+        -0.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.037,
+            0.007,
+            0.025
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.19,
+        0.31,
+        0.32
+      ]
+    },
+    {
+      "id": "esc_xn",
+      "role": "Electronic speed controllers",
+      "parent": "frame",
+      "position": [
+        -0.065,
+        0.026000000000000002,
+        0.065
+      ],
+      "rotation": [
+        -7.016709298534876e-15,
+        -0.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.037,
+            0.007,
+            0.025
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.19,
+        0.31,
+        0.32
+      ]
+    },
+    {
+      "id": "esc_zp",
+      "role": "Electronic speed controllers",
+      "parent": "frame",
+      "position": [
+        0.065,
+        0.026000000000000002,
+        -0.065
+      ],
+      "rotation": [
+        -7.016709298534876e-15,
+        -0.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.037,
+            0.007,
+            0.025
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.19,
+        0.31,
+        0.32
+      ]
+    },
+    {
+      "id": "esc_zn",
+      "role": "Electronic speed controllers",
+      "parent": "frame",
+      "position": [
+        -0.065,
+        0.026000000000000002,
+        -0.065
+      ],
+      "rotation": [
+        -7.016709298534876e-15,
+        -0.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.037,
+            0.007,
+            0.025
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.19,
+        0.31,
+        0.32
+      ]
+    }
+  ],
+  "mounts": [
+    {
+      "a": "frame",
+      "b": "arm_xp",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "frame",
+      "b": "arm_xn",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "frame",
+      "b": "arm_zp",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "frame",
+      "b": "arm_zn",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "arm_xp",
+      "b": "motor_xp",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "arm_xn",
+      "b": "motor_xn",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "arm_zp",
+      "b": "motor_zp",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "arm_zn",
+      "b": "motor_zn",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "motor_xp",
+      "b": "prop_xp",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "motor_xn",
+      "b": "prop_xn",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "motor_zp",
+      "b": "prop_zp",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "motor_zn",
+      "b": "prop_zn",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "frame",
+      "b": "battery",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "frame",
+      "b": "controller",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "frame",
+      "b": "esc_xp",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "frame",
+      "b": "esc_xn",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "frame",
+      "b": "esc_zp",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "frame",
+      "b": "esc_zn",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "passages": [],
+  "containments": [],
+  "clearances": [],
+  "symmetries": [
+    {
+      "a": "arm_xp",
+      "b": "arm_xn",
+      "axis": "x"
+    },
+    {
+      "a": "arm_zp",
+      "b": "arm_zn",
+      "axis": "z"
+    },
+    {
+      "a": "motor_xp",
+      "b": "motor_xn",
+      "axis": "x"
+    },
+    {
+      "a": "motor_zp",
+      "b": "motor_zn",
+      "axis": "z"
+    },
+    {
+      "a": "prop_xp",
+      "b": "prop_xn",
+      "axis": "x"
+    },
+    {
+      "a": "prop_zp",
+      "b": "prop_zn",
+      "axis": "z"
+    },
+    {
+      "a": "esc_xp",
+      "b": "esc_xn",
+      "axis": "x"
+    },
+    {
+      "a": "esc_zp",
+      "b": "esc_zn",
+      "axis": "z"
+    }
+  ]
+}

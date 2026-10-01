@@ -1,0 +1,76 @@
+[
+  {
+    "case": "creative-concept",
+    "rules": [],
+    "meaning_complete": "unassessed",
+    "status": "unsupported_before_planning",
+    "geometry_executed": false,
+    "original_assertions": {
+      "predeclared_checks_passed": true,
+      "checks": [
+        {
+          "kind": "required_interpretation",
+          "selector": {
+            "predicate": "inside",
+            "mode": "structure"
+          },
+          "passed": true
+        },
+        {
+          "kind": "required_interpretation",
+          "selector": {
+            "predicate": "appearance",
+            "value_pattern": "hang|suspend|dangl"
+          },
+          "passed": true
+        },
+        {
+          "kind": "required_interpretation",
+          "selector": {
+            "predicate": "capability",
+            "value": "emission",
+            "mode": "appearance"
+          },
+          "passed": true
+        },
+        {
+          "kind": "forbidden_interpretation",
+          "selector": {
+            "mode": "physical_verification"
+          },
+          "passed": true
+        },
+        {
+          "kind": "waiver_preserved",
+          "domain": "physical_verification",
+          "passed": true
+        },
+        {
+          "kind": "expected_admission",
+          "expected": false,
+          "passed": true
+        }
+      ],
+      "meaning_fully_correct": "unassessed",
+      "scope": "Limited benchmark checks plus separate source review, not a semantic proof."
+    }
+  },
+  {
+    "case": "generic-speaker",
+    "rules": [],
+    "meaning_complete": "unassessed",
+    "status": "geometry_failed",
+    "geometry_executed": true,
+    "no_unrequested_effect": true,
+    "explode_preserved": true
+  },
+  {
+    "case": "heldout-001",
+    "rules": [],
+    "meaning_complete": "unassessed",
+    "status": "unsupported_before_planning",
+    "geometry_executed": false,
+    "no_unrequested_effect": true,
+    "explode_preserved": true
+  }
+]

@@ -1,0 +1,1263 @@
+{
+  "cases": [
+    {
+      "case": "creative-concept",
+      "request": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside. Let me inspect its main pieces; it does not need to be a buildable electrical product.",
+      "attempts": [],
+      "geometry_executed": false,
+      "status": "unsupported_before_planning",
+      "extraction_billing": {
+        "operation_id": "d53587cb2ad620f8d783be0e2e1187ad",
+        "status": "completed",
+        "incomplete_details": null,
+        "usage": {
+          "input_tokens": 2577,
+          "input_tokens_details": {
+            "cache_write_tokens": 2574,
+            "cached_tokens": 0
+          },
+          "output_tokens": 1238,
+          "output_tokens_details": {
+            "reasoning_tokens": 545
+          },
+          "total_tokens": 3815
+        },
+        "calculated_cost_nanos": 18822500,
+        "dispatch_seconds": 14.879468083032407
+      },
+      "contract": {
+        "source_request": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside. Let me inspect its main pieces; it does not need to be a buildable electrical product.",
+        "source_sha256": "5532a73f6e85abad2f8cf8e507e36c075a21b34ce6b6bc69122e0266309a6c03",
+        "inventory": {
+          "entities": [
+            {
+              "id": "e0",
+              "role": "Curled leaf shade"
+            },
+            {
+              "id": "e1",
+              "role": "Glowing seed"
+            },
+            {
+              "id": "e2",
+              "role": "Seed suspension strand"
+            },
+            {
+              "id": "e3",
+              "role": "Stem support"
+            },
+            {
+              "id": "e4",
+              "role": "Desk base"
+            }
+          ],
+          "requirements": [
+            {
+              "id": "r0",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e0",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "explicit",
+              "quote": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside."
+            },
+            {
+              "id": "r1",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e1",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "explicit",
+              "quote": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside."
+            },
+            {
+              "id": "r2",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e2",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside."
+            },
+            {
+              "id": "r3",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e3",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside."
+            },
+            {
+              "id": "r4",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e4",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside."
+            },
+            {
+              "id": "r5",
+              "obligation": "required",
+              "kind": "visual",
+              "subject": "e0",
+              "target": "",
+              "predicate": "appearance",
+              "value": "curled leaf-shaped shade",
+              "mode": "appearance",
+              "basis": "explicit",
+              "quote": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside."
+            },
+            {
+              "id": "r6",
+              "obligation": "required",
+              "kind": "visual",
+              "subject": "e1",
+              "target": "",
+              "predicate": "appearance",
+              "value": "seed-shaped, visibly suspended",
+              "mode": "appearance",
+              "basis": "explicit",
+              "quote": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside."
+            },
+            {
+              "id": "r7",
+              "obligation": "required",
+              "kind": "behavior",
+              "subject": "e1",
+              "target": "",
+              "predicate": "capability",
+              "value": "emission",
+              "mode": "appearance",
+              "basis": "explicit",
+              "quote": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside."
+            },
+            {
+              "id": "r8",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e1",
+              "target": "e0",
+              "predicate": "inside",
+              "value": "suspended within the shade",
+              "mode": "structure",
+              "basis": "explicit",
+              "quote": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside."
+            },
+            {
+              "id": "r9",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e1",
+              "target": "e2",
+              "predicate": "attached",
+              "value": "held by suspension strand",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside."
+            },
+            {
+              "id": "r10",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e2",
+              "target": "e0",
+              "predicate": "attached",
+              "value": "strand anchored to shade",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside."
+            },
+            {
+              "id": "r11",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e0",
+              "target": "e3",
+              "predicate": "attached",
+              "value": "shade joined to stem",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside."
+            },
+            {
+              "id": "r12",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e3",
+              "target": "e4",
+              "predicate": "attached",
+              "value": "stem joined to desk base",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside."
+            },
+            {
+              "id": "r13",
+              "obligation": "required",
+              "kind": "behavior",
+              "subject": "object",
+              "target": "",
+              "predicate": "capability",
+              "value": "inspect",
+              "mode": "behavior",
+              "basis": "explicit",
+              "quote": "Let me inspect its main pieces;"
+            }
+          ],
+          "exclusions": [
+            {
+              "id": "x0",
+              "subject": "object",
+              "domain": "manufacturing",
+              "quote": "it does not need to be a buildable electrical product."
+            },
+            {
+              "id": "x1",
+              "subject": "object",
+              "domain": "physical_verification",
+              "quote": "it does not need to be a buildable electrical product."
+            }
+          ]
+        },
+        "inventory_sha256": "1afd7ebe21cdaa6259417d6a9601d4b8268af1e89595adf8c1aa5e8b142317ec",
+        "interpretation_version": 2,
+        "extraction_completeness": "unassessed; consistency is not natural-language entailment",
+        "source_grounding": {
+          "units": [
+            {
+              "id": "s0",
+              "start": 0,
+              "end": 83,
+              "text": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside."
+            },
+            {
+              "id": "s1",
+              "start": 84,
+              "end": 115,
+              "text": "Let me inspect its main pieces;"
+            },
+            {
+              "id": "s2",
+              "start": 116,
+              "end": 170,
+              "text": "it does not need to be a buildable electrical product."
+            }
+          ],
+          "bindings": {
+            "r0": "s0",
+            "r1": "s0",
+            "r2": "s0",
+            "r3": "s0",
+            "r4": "s0",
+            "r5": "s0",
+            "r6": "s0",
+            "r7": "s0",
+            "r8": "s0",
+            "r9": "s0",
+            "r10": "s0",
+            "r11": "s0",
+            "r12": "s0",
+            "r13": "s1",
+            "x0": "s2",
+            "x1": "s2"
+          }
+        },
+        "source_grounding_sha256": "1a8e6e883716a9ce056efcad6db20e0fc1f089e2fa8a1da48af854c24ff85fe6",
+        "spatial_rules": [],
+        "spatial_rules_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "spatial_policy_sha256": "abf21c243b7b133dc13ba5221866c9eabeff1f2f5a6ac127b3f15e6ace8bde33"
+      },
+      "admission": {
+        "planning_allowed": false,
+        "unsupported": [
+          {
+            "id": "r7",
+            "obligation": "required",
+            "mode": "appearance",
+            "basis": "explicit",
+            "reason": "Runtime capability is not implemented: emission"
+          }
+        ],
+        "blocking": [
+          {
+            "id": "r7",
+            "obligation": "required",
+            "mode": "appearance",
+            "basis": "explicit",
+            "reason": "Runtime capability is not implemented: emission"
+          }
+        ],
+        "interpretation_correct": "unassessed",
+        "detail": "Registered spatial checks permit planning only; binding and actual geometry must still pass.",
+        "pending_spatial_checks": []
+      },
+      "extraction_seconds": 15.779174832976423
+    },
+    {
+      "case": "generic-drone",
+      "request": "Show me a generic quadcopter drone I can explore and take apart into its major components.",
+      "attempts": [],
+      "geometry_executed": false,
+      "status": "extraction_failed",
+      "error": "Radial plane axis required",
+      "extraction_seconds": 16.96749329206068
+    },
+    {
+      "case": "generic-speaker",
+      "request": "Generate a generic portable Bluetooth speaker I can take apart to understand its main systems.",
+      "attempts": [
+        {
+          "attempt": 0,
+          "status": "coverage_failed",
+          "geometry_executed": false,
+          "planning_seconds": 96.48630479094572,
+          "billing": {
+            "operation_id": "3a5cc19509d27f1db767b857016261f1",
+            "status": "completed",
+            "incomplete_details": null,
+            "usage": {
+              "input_tokens": 5618,
+              "input_tokens_details": {
+                "cache_write_tokens": 5615,
+                "cached_tokens": 0
+              },
+              "output_tokens": 8431,
+              "output_tokens_details": {
+                "reasoning_tokens": 5167
+              },
+              "total_tokens": 14049
+            },
+            "calculated_cost_nanos": 98355000,
+            "dispatch_seconds": 96.19445449998602
+          },
+          "feedback": {
+            "coverage_errors": [
+              {
+                "id": "r14",
+                "reason": "Connection does not reach the required target"
+              },
+              {
+                "id": "r19",
+                "reason": "Connection does not reach the required target"
+              },
+              {
+                "id": "r20",
+                "reason": "Connection does not reach the required target"
+              }
+            ]
+          },
+          "attempt_elapsed_seconds": 96.49563949997537
+        },
+        {
+          "attempt": 1,
+          "status": "geometry_failed",
+          "geometry_executed": true,
+          "planning_seconds": 77.75909633294214,
+          "billing": {
+            "operation_id": "96c7444d42a70cdd5cf73f3f8e57d5c7",
+            "status": "completed",
+            "incomplete_details": null,
+            "usage": {
+              "input_tokens": 10036,
+              "input_tokens_details": {
+                "cache_write_tokens": 6576,
+                "cached_tokens": 3457
+              },
+              "output_tokens": 6689,
+              "output_tokens_details": {
+                "reasoning_tokens": 2965
+              },
+              "total_tokens": 16725
+            },
+            "calculated_cost_nanos": 91980000,
+            "dispatch_seconds": 77.36222908296622
+          },
+          "geometry_and_validation_seconds": 0.08195754105690867,
+          "declared_numeric_pass": false,
+          "coverage_complete": true,
+          "feedback": {
+            "failed_geometry_checks": [
+              {
+                "kind": "connected_component",
+                "relation": {
+                  "part": "housing"
+                },
+                "passed": false,
+                "measurement": {
+                  "solid_islands": 3
+                }
+              }
+            ]
+          },
+          "parts": 10,
+          "attempt_elapsed_seconds": 78.98875145800412
+        }
+      ],
+      "geometry_executed": true,
+      "status": "geometry_failed",
+      "extraction_billing": {
+        "operation_id": "89f727b1c13bfa3deb86119bae45cbaa",
+        "status": "completed",
+        "incomplete_details": null,
+        "usage": {
+          "input_tokens": 2598,
+          "input_tokens_details": {
+            "cache_write_tokens": 2595,
+            "cached_tokens": 0
+          },
+          "output_tokens": 1945,
+          "output_tokens_details": {
+            "reasoning_tokens": 754
+          },
+          "total_tokens": 4543
+        },
+        "calculated_cost_nanos": 25945000,
+        "dispatch_seconds": 19.921599375084043
+      },
+      "contract": {
+        "source_request": "Generate a generic portable Bluetooth speaker I can take apart to understand its main systems.",
+        "source_sha256": "0704dddcc5417ce763512c88c13481d77a2a6b005398458eb8d7b8d52cb0fb14",
+        "inventory": {
+          "entities": [
+            {
+              "id": "e0",
+              "role": "Separable enclosure sections"
+            },
+            {
+              "id": "e1",
+              "role": "Front grille"
+            },
+            {
+              "id": "e2",
+              "role": "Full-range speaker driver"
+            },
+            {
+              "id": "e3",
+              "role": "Passive radiator"
+            },
+            {
+              "id": "e4",
+              "role": "Rechargeable battery pack"
+            },
+            {
+              "id": "e5",
+              "role": "Bluetooth and control board"
+            },
+            {
+              "id": "e6",
+              "role": "Audio amplifier board"
+            },
+            {
+              "id": "e7",
+              "role": "Charging port"
+            },
+            {
+              "id": "e8",
+              "role": "Control buttons"
+            }
+          ],
+          "requirements": [
+            {
+              "id": "r00",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e0",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Generate a generic portable Bluetooth speaker I can take apart to understand its main systems."
+            },
+            {
+              "id": "r01",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "e1",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "design_choice",
+              "quote": ""
+            },
+            {
+              "id": "r02",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e2",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Generate a generic portable Bluetooth speaker I can take apart to understand its main systems."
+            },
+            {
+              "id": "r03",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "e3",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "design_choice",
+              "quote": ""
+            },
+            {
+              "id": "r04",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e4",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Generate a generic portable Bluetooth speaker I can take apart to understand its main systems."
+            },
+            {
+              "id": "r05",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e5",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Generate a generic portable Bluetooth speaker I can take apart to understand its main systems."
+            },
+            {
+              "id": "r06",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "e6",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "design_choice",
+              "quote": ""
+            },
+            {
+              "id": "r07",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "e7",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "design_choice",
+              "quote": ""
+            },
+            {
+              "id": "r08",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "e8",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "design_choice",
+              "quote": ""
+            },
+            {
+              "id": "r09",
+              "obligation": "required",
+              "kind": "behavior",
+              "subject": "object",
+              "target": "",
+              "predicate": "capability",
+              "value": "inspect",
+              "mode": "behavior",
+              "basis": "explicit",
+              "quote": "Generate a generic portable Bluetooth speaker I can take apart to understand its main systems."
+            },
+            {
+              "id": "r10",
+              "obligation": "required",
+              "kind": "behavior",
+              "subject": "object",
+              "target": "",
+              "predicate": "capability",
+              "value": "geometric_explode",
+              "mode": "behavior",
+              "basis": "explicit",
+              "quote": "Generate a generic portable Bluetooth speaker I can take apart to understand its main systems."
+            },
+            {
+              "id": "r11",
+              "obligation": "required",
+              "kind": "behavior",
+              "subject": "object",
+              "target": "",
+              "predicate": "capability",
+              "value": "reassemble",
+              "mode": "behavior",
+              "basis": "inferred",
+              "quote": "Generate a generic portable Bluetooth speaker I can take apart to understand its main systems."
+            },
+            {
+              "id": "r12",
+              "obligation": "required",
+              "kind": "visual",
+              "subject": "object",
+              "target": "",
+              "predicate": "appearance",
+              "value": "generic portable speaker form",
+              "mode": "appearance",
+              "basis": "explicit",
+              "quote": "Generate a generic portable Bluetooth speaker I can take apart to understand its main systems."
+            },
+            {
+              "id": "r13",
+              "obligation": "design_choice",
+              "kind": "relation",
+              "subject": "e1",
+              "target": "e0",
+              "predicate": "attached",
+              "value": "",
+              "mode": "structure",
+              "basis": "design_choice",
+              "quote": ""
+            },
+            {
+              "id": "r14",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e2",
+              "target": "e0",
+              "predicate": "attached",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Generate a generic portable Bluetooth speaker I can take apart to understand its main systems."
+            },
+            {
+              "id": "r15",
+              "obligation": "design_choice",
+              "kind": "relation",
+              "subject": "e3",
+              "target": "e0",
+              "predicate": "attached",
+              "value": "",
+              "mode": "structure",
+              "basis": "design_choice",
+              "quote": ""
+            },
+            {
+              "id": "r16",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e4",
+              "target": "e0",
+              "predicate": "inside",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Generate a generic portable Bluetooth speaker I can take apart to understand its main systems."
+            },
+            {
+              "id": "r17",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e5",
+              "target": "e0",
+              "predicate": "inside",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Generate a generic portable Bluetooth speaker I can take apart to understand its main systems."
+            },
+            {
+              "id": "r18",
+              "obligation": "design_choice",
+              "kind": "relation",
+              "subject": "e6",
+              "target": "e0",
+              "predicate": "inside",
+              "value": "",
+              "mode": "structure",
+              "basis": "design_choice",
+              "quote": ""
+            },
+            {
+              "id": "r19",
+              "obligation": "design_choice",
+              "kind": "relation",
+              "subject": "e7",
+              "target": "e0",
+              "predicate": "attached",
+              "value": "",
+              "mode": "structure",
+              "basis": "design_choice",
+              "quote": ""
+            },
+            {
+              "id": "r20",
+              "obligation": "design_choice",
+              "kind": "relation",
+              "subject": "e8",
+              "target": "e0",
+              "predicate": "attached",
+              "value": "",
+              "mode": "structure",
+              "basis": "design_choice",
+              "quote": ""
+            },
+            {
+              "id": "r21",
+              "obligation": "design_choice",
+              "kind": "relation",
+              "subject": "e1",
+              "target": "e2",
+              "predicate": "other",
+              "value": "in front of driver",
+              "mode": "structure",
+              "basis": "design_choice",
+              "quote": ""
+            },
+            {
+              "id": "r22",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e4",
+              "target": "e5",
+              "predicate": "connected",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Generate a generic portable Bluetooth speaker I can take apart to understand its main systems."
+            },
+            {
+              "id": "r23",
+              "obligation": "design_choice",
+              "kind": "relation",
+              "subject": "e5",
+              "target": "e6",
+              "predicate": "connected",
+              "value": "",
+              "mode": "structure",
+              "basis": "design_choice",
+              "quote": ""
+            },
+            {
+              "id": "r24",
+              "obligation": "design_choice",
+              "kind": "relation",
+              "subject": "e6",
+              "target": "e2",
+              "predicate": "connected",
+              "value": "",
+              "mode": "structure",
+              "basis": "design_choice",
+              "quote": ""
+            },
+            {
+              "id": "r25",
+              "obligation": "design_choice",
+              "kind": "relation",
+              "subject": "e7",
+              "target": "e4",
+              "predicate": "connected",
+              "value": "",
+              "mode": "structure",
+              "basis": "design_choice",
+              "quote": ""
+            },
+            {
+              "id": "r26",
+              "obligation": "design_choice",
+              "kind": "relation",
+              "subject": "e8",
+              "target": "e5",
+              "predicate": "connected",
+              "value": "",
+              "mode": "structure",
+              "basis": "design_choice",
+              "quote": ""
+            }
+          ],
+          "exclusions": []
+        },
+        "inventory_sha256": "71e22d533349b022adb02e90bedba8da3d9e0026a58d11d10649121a02da7081",
+        "interpretation_version": 2,
+        "extraction_completeness": "unassessed; consistency is not natural-language entailment",
+        "source_grounding": {
+          "units": [
+            {
+              "id": "s0",
+              "start": 0,
+              "end": 94,
+              "text": "Generate a generic portable Bluetooth speaker I can take apart to understand its main systems."
+            }
+          ],
+          "bindings": {
+            "r00": "s0",
+            "r01": "",
+            "r02": "s0",
+            "r03": "",
+            "r04": "s0",
+            "r05": "s0",
+            "r06": "",
+            "r07": "",
+            "r08": "",
+            "r09": "s0",
+            "r10": "s0",
+            "r11": "s0",
+            "r12": "s0",
+            "r13": "",
+            "r14": "s0",
+            "r15": "",
+            "r16": "s0",
+            "r17": "s0",
+            "r18": "",
+            "r19": "",
+            "r20": "",
+            "r21": "",
+            "r22": "s0",
+            "r23": "",
+            "r24": "",
+            "r25": "",
+            "r26": ""
+          }
+        },
+        "source_grounding_sha256": "cac0c42b3baffe1298aecd7b422e98b960befb066459b72d08fcc0276fceae3d",
+        "spatial_rules": [],
+        "spatial_rules_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "spatial_policy_sha256": "abf21c243b7b133dc13ba5221866c9eabeff1f2f5a6ac127b3f15e6ace8bde33"
+      },
+      "admission": {
+        "planning_allowed": true,
+        "unsupported": [
+          {
+            "id": "r21",
+            "obligation": "design_choice",
+            "mode": "structure",
+            "basis": "design_choice",
+            "reason": "No deterministic adapter implements this requirement."
+          }
+        ],
+        "blocking": [],
+        "interpretation_correct": "unassessed",
+        "detail": "Registered spatial checks permit planning only; binding and actual geometry must still pass.",
+        "pending_spatial_checks": []
+      },
+      "extraction_seconds": 20.43618541606702
+    },
+    {
+      "case": "heldout-001",
+      "request": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces.",
+      "attempts": [],
+      "geometry_executed": false,
+      "status": "unsupported_before_planning",
+      "extraction_billing": {
+        "operation_id": "4b4d7d054542a101af0ef21497354af0",
+        "status": "completed",
+        "incomplete_details": null,
+        "usage": {
+          "input_tokens": 2504,
+          "input_tokens_details": {
+            "cache_write_tokens": 2501,
+            "cached_tokens": 0
+          },
+          "output_tokens": 1287,
+          "output_tokens_details": {
+            "reasoning_tokens": 452
+          },
+          "total_tokens": 3791
+        },
+        "calculated_cost_nanos": 19130000,
+        "dispatch_seconds": 13.788003584020771
+      },
+      "contract": {
+        "source_request": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces.",
+        "source_sha256": "28761f62da3ac4403ac1104980f43f43857aabe4d3d994e5ead83069e35843e8",
+        "inventory": {
+          "entities": [
+            {
+              "id": "e0",
+              "role": "Outer housing"
+            },
+            {
+              "id": "e1",
+              "role": "Pencil guide"
+            },
+            {
+              "id": "e2",
+              "role": "Crank handle"
+            },
+            {
+              "id": "e3",
+              "role": "Drive mechanism"
+            },
+            {
+              "id": "e4",
+              "role": "Helical cutter assembly"
+            },
+            {
+              "id": "e5",
+              "role": "Shavings drawer"
+            }
+          ],
+          "requirements": [
+            {
+              "id": "r01",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e0",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces."
+            },
+            {
+              "id": "r02",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e1",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces."
+            },
+            {
+              "id": "r03",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e2",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces."
+            },
+            {
+              "id": "r04",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e3",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces."
+            },
+            {
+              "id": "r05",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e4",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces."
+            },
+            {
+              "id": "r06",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e5",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces."
+            },
+            {
+              "id": "r07",
+              "obligation": "required",
+              "kind": "visual",
+              "subject": "object",
+              "target": "",
+              "predicate": "appearance",
+              "value": "generic hand-cranked pencil sharpener",
+              "mode": "appearance",
+              "basis": "explicit",
+              "quote": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces."
+            },
+            {
+              "id": "r08",
+              "obligation": "required",
+              "kind": "behavior",
+              "subject": "object",
+              "target": "",
+              "predicate": "capability",
+              "value": "inspect",
+              "mode": "behavior",
+              "basis": "explicit",
+              "quote": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces."
+            },
+            {
+              "id": "r09",
+              "obligation": "required",
+              "kind": "behavior",
+              "subject": "object",
+              "target": "",
+              "predicate": "capability",
+              "value": "geometric_explode",
+              "mode": "behavior",
+              "basis": "explicit",
+              "quote": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces."
+            },
+            {
+              "id": "r10",
+              "obligation": "required",
+              "kind": "behavior",
+              "subject": "object",
+              "target": "",
+              "predicate": "capability",
+              "value": "reassemble",
+              "mode": "behavior",
+              "basis": "inferred",
+              "quote": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces."
+            },
+            {
+              "id": "r11",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e1",
+              "target": "e0",
+              "predicate": "attached",
+              "value": "pencil entrance at housing",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces."
+            },
+            {
+              "id": "r12",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e2",
+              "target": "e3",
+              "predicate": "connected",
+              "value": "crank-to-drive path",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces."
+            },
+            {
+              "id": "r13",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e3",
+              "target": "e4",
+              "predicate": "connected",
+              "value": "drive-to-cutter path",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces."
+            },
+            {
+              "id": "r14",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e3",
+              "target": "e0",
+              "predicate": "inside",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces."
+            },
+            {
+              "id": "r15",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e4",
+              "target": "e0",
+              "predicate": "inside",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces."
+            },
+            {
+              "id": "r16",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e5",
+              "target": "e0",
+              "predicate": "inside",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces."
+            },
+            {
+              "id": "r17",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e1",
+              "target": "e4",
+              "predicate": "other",
+              "value": "pencil feed path meets cutting region",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces."
+            },
+            {
+              "id": "r18",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e5",
+              "target": "e4",
+              "predicate": "other",
+              "value": "drawer positioned to receive shavings",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces."
+            }
+          ],
+          "exclusions": []
+        },
+        "inventory_sha256": "6b1f440057cd7d6cab32827fa1c553bba956c6998fcb74ca6cb7c3f952fc2f5b",
+        "interpretation_version": 2,
+        "extraction_completeness": "unassessed; consistency is not natural-language entailment",
+        "source_grounding": {
+          "units": [
+            {
+              "id": "s0",
+              "start": 0,
+              "end": 94,
+              "text": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces."
+            }
+          ],
+          "bindings": {
+            "r01": "s0",
+            "r02": "s0",
+            "r03": "s0",
+            "r04": "s0",
+            "r05": "s0",
+            "r06": "s0",
+            "r07": "s0",
+            "r08": "s0",
+            "r09": "s0",
+            "r10": "s0",
+            "r11": "s0",
+            "r12": "s0",
+            "r13": "s0",
+            "r14": "s0",
+            "r15": "s0",
+            "r16": "s0",
+            "r17": "s0",
+            "r18": "s0"
+          }
+        },
+        "source_grounding_sha256": "6fb4e2ba2622c2b6adf3e82f96bdc9df103d0f7c30e0d82202d6f40ac1683ba1",
+        "spatial_rules": [],
+        "spatial_rules_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "spatial_policy_sha256": "abf21c243b7b133dc13ba5221866c9eabeff1f2f5a6ac127b3f15e6ace8bde33"
+      },
+      "admission": {
+        "planning_allowed": false,
+        "unsupported": [
+          {
+            "id": "r17",
+            "obligation": "required",
+            "mode": "structure",
+            "basis": "inferred",
+            "reason": "No deterministic adapter implements this requirement."
+          },
+          {
+            "id": "r18",
+            "obligation": "required",
+            "mode": "structure",
+            "basis": "inferred",
+            "reason": "No deterministic adapter implements this requirement."
+          }
+        ],
+        "blocking": [
+          {
+            "id": "r17",
+            "obligation": "required",
+            "mode": "structure",
+            "basis": "inferred",
+            "reason": "No deterministic adapter implements this requirement."
+          },
+          {
+            "id": "r18",
+            "obligation": "required",
+            "mode": "structure",
+            "basis": "inferred",
+            "reason": "No deterministic adapter implements this requirement."
+          }
+        ],
+        "interpretation_correct": "unassessed",
+        "detail": "Registered spatial checks permit planning only; binding and actual geometry must still pass.",
+        "pending_spatial_checks": []
+      },
+      "extraction_seconds": 13.999782208004035
+    },
+    {
+      "case": "static-concept",
+      "request": "Create a visual concept of a small sphere hanging from a cord inside an open ring on a base. Keep it static. Do not claim its supports are physically verified.",
+      "attempts": [],
+      "geometry_executed": false,
+      "status": "extraction_failed",
+      "error": "Unexpected spatial reference",
+      "extraction_seconds": 12.18891570798587
+    },
+    {
+      "case": "exact-product",
+      "status": "blocked_evidence",
+      "geometry_executed": false
+    }
+  ],
+  "native_generation_goal_passed": false,
+  "elapsed_seconds": 254.8689241670072,
+  "experiment": "spatial-008",
+  "charged_and_held_nanos": 292867500,
+  "new_uncertain_reservations": 0,
+  "decision": "No product pass. Two completed translations rejected; two capabilities/relationships unsupported; speaker coverage repaired but geometry failed.",
+  "visual_review": {
+    "generic-speaker-plan-1": {
+      "status": "fail",
+      "observations": [
+        "Housing has three solid islands (numeric failure).",
+        "Driver/radiator and electronics are crude geometric proxies.",
+        "Exterior reads as a basic box enclosure but is not a polished technical object."
+      ],
+      "image": "spatial-008/generic-speaker-plan-1/inspection.png"
+    }
+  },
+  "followup": {
+    "experiment": "spatial-009",
+    "cases": [
+      "generic-drone",
+      "static-concept"
+    ],
+    "reason": "General operator-specific schema correction; original failed outputs retained."
+  },
+  "code_freeze": "bfd375f"
+}

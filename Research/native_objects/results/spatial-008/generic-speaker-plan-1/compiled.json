@@ -1,0 +1,1380 @@
+{
+  "assumptions": [
+    "Generic model design; requirement coverage does not verify semantics or engineering."
+  ],
+  "limitations": [
+    "Geometry executor unchanged; unsupported requirements are explicit."
+  ],
+  "parts": [
+    {
+      "id": "housing",
+      "role": "Separable enclosure sections",
+      "parent": "",
+      "position": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "box_shell",
+          "size": [
+            0.3,
+            0.16,
+            0.14
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0.005,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.09,
+            0.025,
+            0.09
+          ],
+          "offset": [
+            0.07,
+            -0.008,
+            0.068
+          ],
+          "rotation": [
+            90,
+            0,
+            0
+          ],
+          "operation": "subtract",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.05,
+            0.025,
+            0.05
+          ],
+          "offset": [
+            0.075,
+            0.025,
+            -0.068
+          ],
+          "rotation": [
+            90,
+            0,
+            0
+          ],
+          "operation": "subtract",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.055,
+            0.015,
+            0.04
+          ],
+          "offset": [
+            -0.0925,
+            -0.0675,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.005,
+            0.005,
+            0.01
+          ],
+          "offset": [
+            -0.1475,
+            0.0775,
+            0.055
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.01,
+            0.01,
+            0.003
+          ],
+          "offset": [
+            0.125,
+            0.04,
+            0.0715
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.01,
+            0.01,
+            0.006
+          ],
+          "offset": [
+            0.13,
+            0.06,
+            -0.073
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.02,
+            0.015,
+            0.04
+          ],
+          "offset": [
+            0.04,
+            -0.0675,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.0075,
+            0.04,
+            0.006
+          ],
+          "offset": [
+            -0.07875,
+            -0.052,
+            -0.05
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.0075,
+            0.006,
+            0.006
+          ],
+          "offset": [
+            -0.07875,
+            -0.052,
+            -0.027
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.099,
+            0.006,
+            0.012
+          ],
+          "offset": [
+            -0.0955,
+            0.024,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.19,
+        0.22,
+        0.25
+      ]
+    },
+    {
+      "id": "lid",
+      "role": "Separable enclosure sections",
+      "parent": "housing",
+      "position": [
+        0.0,
+        0.0,
+        9.797174393178826e-18
+      ],
+      "rotation": [
+        -7.016709298534876e-15,
+        -0.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.3,
+            0.006,
+            0.14
+          ],
+          "offset": [
+            0,
+            0.085,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.005,
+            0.004,
+            0.01
+          ],
+          "offset": [
+            -0.1475,
+            0.082,
+            0.055
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.016,
+            0.025,
+            0.016
+          ],
+          "offset": [
+            -0.04,
+            0.085,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "subtract",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.23,
+        0.26,
+        0.29
+      ]
+    },
+    {
+      "id": "grille",
+      "role": "Front grille",
+      "parent": "housing",
+      "position": [
+        0.0,
+        -8.939921633775677e-18,
+        0.0
+      ],
+      "rotation": [
+        -7.016709298534876e-15,
+        -0.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.12,
+            0.12,
+            0.003
+          ],
+          "offset": [
+            0.07,
+            -0.008,
+            0.0745
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.01,
+            0.01,
+            0.001
+          ],
+          "offset": [
+            0.125,
+            0.04,
+            0.0735
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.006,
+            0.012,
+            0.006
+          ],
+          "offset": [
+            0.03,
+            -0.048,
+            0.075
+          ],
+          "rotation": [
+            90,
+            0,
+            0
+          ],
+          "operation": "subtract",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            5,
+            5,
+            1
+          ],
+          "step": [
+            0.02,
+            0.02,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.34,
+        0.37,
+        0.39
+      ]
+    },
+    {
+      "id": "driver",
+      "role": "Full-range speaker driver",
+      "parent": "amplifier",
+      "position": [
+        0.0,
+        -6.938893903907228e-18,
+        -6.123233995736722e-19
+      ],
+      "rotation": [
+        -7.016709298534876e-15,
+        -2.1050127895604626e-14,
+        2.5778971748994617e-30
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.03,
+            0.016,
+            0.04
+          ],
+          "offset": [
+            0.04,
+            -0.052,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.03,
+            0.016,
+            0.014
+          ],
+          "offset": [
+            0.065,
+            -0.04,
+            0.015
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.066,
+            0.032,
+            0.066
+          ],
+          "offset": [
+            0.07,
+            -0.008,
+            0.034
+          ],
+          "rotation": [
+            90,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.16,
+        0.18,
+        0.2
+      ]
+    },
+    {
+      "id": "radiator",
+      "role": "Passive radiator",
+      "parent": "housing",
+      "position": [
+        0.0,
+        9.307315673519884e-18,
+        1.3877787807814457e-17
+      ],
+      "rotation": [
+        -7.016709298534876e-15,
+        -0.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.044,
+            0.008,
+            0.044
+          ],
+          "offset": [
+            0.075,
+            0.025,
+            -0.08
+          ],
+          "rotation": [
+            90,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.055,
+            0.04,
+            0.004
+          ],
+          "offset": [
+            0.1025,
+            0.04,
+            -0.078
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.01,
+            0.01,
+            0.004
+          ],
+          "offset": [
+            0.13,
+            0.06,
+            -0.078
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.24,
+        0.25,
+        0.25
+      ]
+    },
+    {
+      "id": "battery",
+      "role": "Rechargeable battery pack",
+      "parent": "housing",
+      "position": [
+        0.0,
+        -6.938893903907228e-18,
+        -7.347880794884118e-18
+      ],
+      "rotation": [
+        -7.016709298534876e-15,
+        -0.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.055,
+            0.016,
+            0.04
+          ],
+          "offset": [
+            -0.0925,
+            -0.052,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.36,
+        0.39,
+        0.4
+      ]
+    },
+    {
+      "id": "bluetooth_board",
+      "role": "Bluetooth and control board",
+      "parent": "battery",
+      "position": [
+        0.0,
+        -6.938893903907228e-18,
+        6.1232339957367775e-19
+      ],
+      "rotation": [
+        -7.016709298534876e-15,
+        -7.016709298534876e-15,
+        8.592990582998206e-31
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.05,
+            0.016,
+            0.04
+          ],
+          "offset": [
+            -0.04,
+            -0.052,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.14,
+        0.32,
+        0.28
+      ]
+    },
+    {
+      "id": "amplifier",
+      "role": "Audio amplifier board",
+      "parent": "bluetooth_board",
+      "position": [
+        0.0,
+        -6.938893903907228e-18,
+        2.4492935982947083e-18
+      ],
+      "rotation": [
+        -7.016709298534876e-15,
+        -1.4033418597069752e-14,
+        1.718598116599641e-30
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.04,
+            0.016,
+            0.04
+          ],
+          "offset": [
+            0.005,
+            -0.052,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.17,
+        0.3,
+        0.27
+      ]
+    },
+    {
+      "id": "charging_port",
+      "role": "Charging port",
+      "parent": "battery",
+      "position": [
+        0.0,
+        -2.0403067073178156e-18,
+        -1.3877787807814457e-17
+      ],
+      "rotation": [
+        -1.4033418597069752e-14,
+        -0.0,
+        0.0
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.02,
+            0.012,
+            0.014
+          ],
+          "offset": [
+            -0.0925,
+            -0.052,
+            -0.027
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.012,
+            0.005,
+            0.019
+          ],
+          "offset": [
+            -0.0925,
+            -0.052,
+            -0.0365
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "subtract",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.56,
+        0.57,
+        0.54
+      ]
+    },
+    {
+      "id": "button",
+      "role": "Control buttons",
+      "parent": "bluetooth_board",
+      "position": [
+        0.0,
+        0.0,
+        -4.776122516674678e-18
+      ],
+      "rotation": [
+        -1.4033418597069752e-14,
+        -7.016709298534876e-15,
+        8.592990582998206e-31
+      ],
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.012,
+            0.136,
+            0.012
+          ],
+          "offset": [
+            -0.04,
+            0.024,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.025,
+            0.006,
+            0.025
+          ],
+          "offset": [
+            -0.04,
+            0.095,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "operation": "add",
+          "wall": 0,
+          "radius": 0,
+          "sections": [],
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.4,
+        0.43,
+        0.45
+      ]
+    }
+  ],
+  "mounts": [
+    {
+      "a": "housing",
+      "b": "battery",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "battery",
+      "b": "bluetooth_board",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "bluetooth_board",
+      "b": "amplifier",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "amplifier",
+      "b": "driver",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "housing",
+      "b": "lid",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "housing",
+      "b": "grille",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "housing",
+      "b": "radiator",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "battery",
+      "b": "charging_port",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "bluetooth_board",
+      "b": "button",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "housing",
+      "b": "driver",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "housing",
+      "b": "charging_port",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "a": "housing",
+      "b": "button",
+      "point_a": [
+        0,
+        0,
+        0
+      ],
+      "point_b": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "passages": [],
+  "containments": [
+    {
+      "outer": "housing",
+      "inner": "battery",
+      "clearance": 0
+    },
+    {
+      "outer": "housing",
+      "inner": "bluetooth_board",
+      "clearance": 0
+    },
+    {
+      "outer": "housing",
+      "inner": "amplifier",
+      "clearance": 0
+    }
+  ],
+  "clearances": [],
+  "symmetries": []
+}

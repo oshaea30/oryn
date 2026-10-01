@@ -1,0 +1,158 @@
+[
+  {
+    "case": "generic-drone",
+    "rules": [
+      {
+        "id": "r12",
+        "operator": "radial_outward",
+        "reference": "",
+        "axis": "y",
+        "subject_role": "Four arms",
+        "target_role": "Central frame"
+      },
+      {
+        "id": "r14",
+        "operator": "outer_end",
+        "reference": "e0",
+        "axis": "",
+        "subject_role": "Four motors",
+        "target_role": "Four arms"
+      },
+      {
+        "id": "r15",
+        "operator": "axis_aligned",
+        "reference": "",
+        "axis": "",
+        "subject_role": "Four propellers",
+        "target_role": "Four motors"
+      }
+    ],
+    "meaning_complete": "unassessed",
+    "status": "request_failed",
+    "geometry_executed": true,
+    "original_assertions": {
+      "predeclared_checks_passed": true,
+      "checks": [
+        {
+          "kind": "required_interpretation",
+          "selector": {
+            "mode": "structure",
+            "basis": "inferred",
+            "predicate_any": [
+              "attached",
+              "connected",
+              "other"
+            ]
+          },
+          "passed": true
+        },
+        {
+          "kind": "required_interpretation",
+          "selector": {
+            "predicate": "count",
+            "value": "4"
+          },
+          "passed": true
+        },
+        {
+          "kind": "required_interpretation",
+          "selector": {
+            "predicate": "capability",
+            "value": "geometric_explode"
+          },
+          "passed": true
+        },
+        {
+          "kind": "forbidden_interpretation",
+          "selector": {
+            "mode": "physical_verification"
+          },
+          "passed": true
+        },
+        {
+          "kind": "forbidden_interpretation",
+          "selector": {
+            "predicate": "capability",
+            "value": "animate"
+          },
+          "passed": true
+        }
+      ],
+      "meaning_fully_correct": "unassessed",
+      "scope": "Limited benchmark checks plus separate source review, not a semantic proof."
+    },
+    "spatial_intent_checks_passed": true
+  },
+  {
+    "case": "static-concept",
+    "rules": [
+      {
+        "id": "r9",
+        "operator": "on_top",
+        "reference": "",
+        "axis": "",
+        "subject_role": "Open ring",
+        "target_role": "Base"
+      }
+    ],
+    "meaning_complete": "unassessed",
+    "status": "structural_candidate",
+    "geometry_executed": true,
+    "original_assertions": {
+      "predeclared_checks_passed": true,
+      "checks": [
+        {
+          "kind": "required_interpretation",
+          "selector": {
+            "predicate": "inside",
+            "subject_role": "Sphere",
+            "target_role": "Open ring",
+            "mode": "structure"
+          },
+          "passed": true
+        },
+        {
+          "kind": "required_interpretation",
+          "selector": {
+            "predicate": "appearance",
+            "value_pattern": "hang|suspend|dangl"
+          },
+          "passed": true
+        },
+        {
+          "kind": "forbidden_interpretation",
+          "selector": {
+            "mode": "physical_verification"
+          },
+          "passed": true
+        },
+        {
+          "kind": "forbidden_interpretation",
+          "selector": {
+            "predicate": "capability",
+            "value": "animate"
+          },
+          "passed": true
+        },
+        {
+          "kind": "waiver_preserved",
+          "domain": "motion",
+          "passed": true
+        },
+        {
+          "kind": "waiver_preserved",
+          "domain": "physical_verification",
+          "passed": true
+        },
+        {
+          "kind": "expected_admission",
+          "expected": true,
+          "passed": true
+        }
+      ],
+      "meaning_fully_correct": "unassessed",
+      "scope": "Limited benchmark checks plus separate source review, not a semantic proof."
+    },
+    "spatial_intent_checks_passed": true
+  }
+]

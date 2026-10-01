@@ -160,6 +160,10 @@ class SpatialTests(unittest.TestCase):
         raw=pipeline.compact.pack(p,c,bindings(c,p,['mate:connection']))
         with tempfile.TemporaryDirectory() as folder:
             result,_=pipeline.evaluate_candidate(raw,c,Path(folder),'test',renderer=lambda _:None)
+            import json
+            report=json.loads((Path(folder)/'report.json').read_text())
+            self.assertFalse(report['layers']['object']['structural_checks_passed'])
+            self.assertEqual(report['checks']['spatial_requirements']['status'],'fail')
         self.assertTrue(result['geometry_executed']);self.assertEqual(result['status'],'geometry_failed')
         self.assertTrue(any(x['kind']=='spatial_requirement' for x in result['feedback']['failed_geometry_checks']))
 

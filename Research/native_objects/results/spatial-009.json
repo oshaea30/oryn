@@ -1,0 +1,843 @@
+{
+  "cases": [
+    {
+      "case": "generic-drone",
+      "request": "Show me a generic quadcopter drone I can explore and take apart into its major components.",
+      "attempts": [
+        {
+          "attempt": 0,
+          "status": "geometry_failed",
+          "geometry_executed": true,
+          "planning_seconds": 71.30102641705889,
+          "billing": {
+            "operation_id": "443ebb666e8eae12e437e34791880477",
+            "status": "completed",
+            "incomplete_details": null,
+            "usage": {
+              "input_tokens": 5881,
+              "input_tokens_details": {
+                "cache_write_tokens": 2421,
+                "cached_tokens": 3457
+              },
+              "output_tokens": 7511,
+              "output_tokens_details": {
+                "reasoning_tokens": 2741
+              },
+              "total_tokens": 13392
+            },
+            "calculated_cost_nanos": 89812500,
+            "dispatch_seconds": 71.03534308297094
+          },
+          "geometry_and_validation_seconds": 0.10322291601914912,
+          "declared_numeric_pass": false,
+          "coverage_complete": true,
+          "feedback": {
+            "failed_geometry_checks": [
+              {
+                "kind": "symmetry_bounds",
+                "relation": {
+                  "a": "esc_zp",
+                  "b": "esc_zn",
+                  "axis": "z"
+                },
+                "passed": false,
+                "measurement": {
+                  "maximum_bound_error_m": 0.12999999895691872,
+                  "scope": "bounds only, not full shape symmetry"
+                }
+              }
+            ]
+          },
+          "parts": 19,
+          "attempt_elapsed_seconds": 72.25532674998976
+        },
+        {
+          "attempt": 1,
+          "status": "request_failed",
+          "geometry_executed": false,
+          "error": "Worst-case cost exceeds this profile\u2019s request ceiling. Nothing was generated; no automatic escalation.",
+          "attempt_elapsed_seconds": 0.24441195803228766
+        }
+      ],
+      "geometry_executed": true,
+      "status": "request_failed",
+      "extraction_billing": {
+        "operation_id": "5f8013f9c7ffd992bf981b013ab75f06",
+        "status": "completed",
+        "incomplete_details": null,
+        "usage": {
+          "input_tokens": 2621,
+          "input_tokens_details": {
+            "cache_write_tokens": 2618,
+            "cached_tokens": 0
+          },
+          "output_tokens": 1679,
+          "output_tokens_details": {
+            "reasoning_tokens": 447
+          },
+          "total_tokens": 4300
+        },
+        "calculated_cost_nanos": 23342500,
+        "dispatch_seconds": 15.7884002920473
+      },
+      "contract": {
+        "source_request": "Show me a generic quadcopter drone I can explore and take apart into its major components.",
+        "source_sha256": "758052f52045deda757beff0b2d5b27eab1c171dad7dee0d1b320fad2ab0c99a",
+        "inventory": {
+          "entities": [
+            {
+              "id": "e0",
+              "role": "Central frame"
+            },
+            {
+              "id": "e1",
+              "role": "Four arms"
+            },
+            {
+              "id": "e2",
+              "role": "Four motors"
+            },
+            {
+              "id": "e3",
+              "role": "Four propellers"
+            },
+            {
+              "id": "e4",
+              "role": "Battery"
+            },
+            {
+              "id": "e5",
+              "role": "Flight controller"
+            },
+            {
+              "id": "e6",
+              "role": "Electronic speed controllers"
+            }
+          ],
+          "requirements": [
+            {
+              "id": "r01",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e0",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r02",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e1",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r03",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e2",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r04",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e3",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r05",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e4",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r06",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e5",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r07",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e6",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r08",
+              "obligation": "required",
+              "kind": "visual",
+              "subject": "object",
+              "target": "",
+              "predicate": "appearance",
+              "value": "generic quadcopter drone",
+              "mode": "appearance",
+              "basis": "explicit",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r09",
+              "obligation": "required",
+              "kind": "constraint",
+              "subject": "e1",
+              "target": "",
+              "predicate": "count",
+              "value": "4",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r10",
+              "obligation": "required",
+              "kind": "constraint",
+              "subject": "e2",
+              "target": "",
+              "predicate": "count",
+              "value": "4",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r11",
+              "obligation": "required",
+              "kind": "constraint",
+              "subject": "e3",
+              "target": "",
+              "predicate": "count",
+              "value": "4",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r12",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e1",
+              "target": "e0",
+              "predicate": "other",
+              "value": "arms extend radially outward from central frame",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r13",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e1",
+              "target": "e0",
+              "predicate": "attached",
+              "value": "arms attach to frame",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r14",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e2",
+              "target": "e1",
+              "predicate": "other",
+              "value": "one motor at outward end of each arm",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r15",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e3",
+              "target": "e2",
+              "predicate": "other",
+              "value": "one propeller axis aligned with each motor axis",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r16",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e3",
+              "target": "e2",
+              "predicate": "attached",
+              "value": "propellers attach to motors",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r17",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e4",
+              "target": "e0",
+              "predicate": "attached",
+              "value": "battery mounted to frame",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r18",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e5",
+              "target": "e0",
+              "predicate": "attached",
+              "value": "flight controller mounted to frame",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r19",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e6",
+              "target": "e0",
+              "predicate": "attached",
+              "value": "speed controllers mounted to frame",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r20",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e6",
+              "target": "e2",
+              "predicate": "connected",
+              "value": "speed controllers connected to motors",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r21",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e5",
+              "target": "e6",
+              "predicate": "connected",
+              "value": "flight controller connected to speed controllers",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r22",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e4",
+              "target": "e6",
+              "predicate": "connected",
+              "value": "battery connected to speed controllers",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r23",
+              "obligation": "required",
+              "kind": "behavior",
+              "subject": "object",
+              "target": "",
+              "predicate": "capability",
+              "value": "inspect",
+              "mode": "behavior",
+              "basis": "explicit",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r24",
+              "obligation": "required",
+              "kind": "behavior",
+              "subject": "object",
+              "target": "",
+              "predicate": "capability",
+              "value": "geometric_explode",
+              "mode": "behavior",
+              "basis": "explicit",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r25",
+              "obligation": "required",
+              "kind": "behavior",
+              "subject": "object",
+              "target": "",
+              "predicate": "capability",
+              "value": "reassemble",
+              "mode": "behavior",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            }
+          ],
+          "exclusions": []
+        },
+        "inventory_sha256": "e07aa3aa78ab2671e69ffbe497eccdfbb6a73e75eb9ec61079e41e18f56f6c0e",
+        "interpretation_version": 2,
+        "extraction_completeness": "unassessed; consistency is not natural-language entailment",
+        "source_grounding": {
+          "units": [
+            {
+              "id": "s0",
+              "start": 0,
+              "end": 90,
+              "text": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            }
+          ],
+          "bindings": {
+            "r01": "s0",
+            "r02": "s0",
+            "r03": "s0",
+            "r04": "s0",
+            "r05": "s0",
+            "r06": "s0",
+            "r07": "s0",
+            "r08": "s0",
+            "r09": "s0",
+            "r10": "s0",
+            "r11": "s0",
+            "r12": "s0",
+            "r13": "s0",
+            "r14": "s0",
+            "r15": "s0",
+            "r16": "s0",
+            "r17": "s0",
+            "r18": "s0",
+            "r19": "s0",
+            "r20": "s0",
+            "r21": "s0",
+            "r22": "s0",
+            "r23": "s0",
+            "r24": "s0",
+            "r25": "s0"
+          }
+        },
+        "source_grounding_sha256": "5a24a119f3215f7cd7b19f365aaa386148f4c44cd3fb2d5edc8e560529967bc0",
+        "spatial_rules": [
+          {
+            "id": "r12",
+            "operator": "radial_outward",
+            "reference": "",
+            "axis": "y"
+          },
+          {
+            "id": "r14",
+            "operator": "outer_end",
+            "reference": "e0",
+            "axis": ""
+          },
+          {
+            "id": "r15",
+            "operator": "axis_aligned",
+            "reference": "",
+            "axis": ""
+          }
+        ],
+        "spatial_rules_sha256": "fd80b828ee7c34c8f8ef10e2aace734234d34a2b16b3574e464b84cfc966c9bf",
+        "spatial_policy_sha256": "abf21c243b7b133dc13ba5221866c9eabeff1f2f5a6ac127b3f15e6ace8bde33"
+      },
+      "admission": {
+        "planning_allowed": true,
+        "unsupported": [],
+        "blocking": [],
+        "interpretation_correct": "unassessed",
+        "detail": "Registered spatial checks permit planning only; binding and actual geometry must still pass.",
+        "pending_spatial_checks": [
+          "r12",
+          "r14",
+          "r15"
+        ]
+      },
+      "extraction_seconds": 16.221617917064577
+    },
+    {
+      "case": "static-concept",
+      "request": "Create a visual concept of a small sphere hanging from a cord inside an open ring on a base. Keep it static. Do not claim its supports are physically verified.",
+      "attempts": [
+        {
+          "attempt": 0,
+          "status": "structural_candidate",
+          "geometry_executed": true,
+          "planning_seconds": 34.47355979203712,
+          "billing": {
+            "operation_id": "4f32c5564c319a7c8f6187c99bb747ec",
+            "status": "completed",
+            "incomplete_details": null,
+            "usage": {
+              "input_tokens": 4672,
+              "input_tokens_details": {
+                "cache_write_tokens": 1212,
+                "cached_tokens": 3457
+              },
+              "output_tokens": 3146,
+              "output_tokens_details": {
+                "reasoning_tokens": 1673
+              },
+              "total_tokens": 7818
+            },
+            "calculated_cost_nanos": 43140000,
+            "dispatch_seconds": 34.164378791931085
+          },
+          "geometry_and_validation_seconds": 0.031000541988760233,
+          "declared_numeric_pass": true,
+          "coverage_complete": true,
+          "feedback": {
+            "failed_geometry_checks": []
+          },
+          "parts": 4,
+          "attempt_elapsed_seconds": 35.20929791708477
+        }
+      ],
+      "geometry_executed": true,
+      "status": "structural_candidate",
+      "extraction_billing": {
+        "operation_id": "50b9d561ae0d3829cb153d5645f5ddc3",
+        "status": "completed",
+        "incomplete_details": null,
+        "usage": {
+          "input_tokens": 2623,
+          "input_tokens_details": {
+            "cache_write_tokens": 2620,
+            "cached_tokens": 0
+          },
+          "output_tokens": 1070,
+          "output_tokens_details": {
+            "reasoning_tokens": 516
+          },
+          "total_tokens": 3693
+        },
+        "calculated_cost_nanos": 17257500,
+        "dispatch_seconds": 13.181634458014742
+      },
+      "contract": {
+        "source_request": "Create a visual concept of a small sphere hanging from a cord inside an open ring on a base. Keep it static. Do not claim its supports are physically verified.",
+        "source_sha256": "e044f8b0188510e0b81129924a248b19a0457a69b849c8dacdef928b6ee25c8f",
+        "inventory": {
+          "entities": [
+            {
+              "id": "e0",
+              "role": "Open ring"
+            },
+            {
+              "id": "e1",
+              "role": "Sphere"
+            },
+            {
+              "id": "e2",
+              "role": "Suspension cord"
+            },
+            {
+              "id": "e3",
+              "role": "Base"
+            }
+          ],
+          "requirements": [
+            {
+              "id": "r0",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e0",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "explicit",
+              "quote": "Create a visual concept of a small sphere hanging from a cord inside an open ring on a base."
+            },
+            {
+              "id": "r1",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e1",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "explicit",
+              "quote": "Create a visual concept of a small sphere hanging from a cord inside an open ring on a base."
+            },
+            {
+              "id": "r2",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e2",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "explicit",
+              "quote": "Create a visual concept of a small sphere hanging from a cord inside an open ring on a base."
+            },
+            {
+              "id": "r3",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e3",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "explicit",
+              "quote": "Create a visual concept of a small sphere hanging from a cord inside an open ring on a base."
+            },
+            {
+              "id": "r4",
+              "obligation": "required",
+              "kind": "visual",
+              "subject": "e0",
+              "target": "",
+              "predicate": "appearance",
+              "value": "open ring",
+              "mode": "appearance",
+              "basis": "explicit",
+              "quote": "Create a visual concept of a small sphere hanging from a cord inside an open ring on a base."
+            },
+            {
+              "id": "r5",
+              "obligation": "required",
+              "kind": "visual",
+              "subject": "e1",
+              "target": "",
+              "predicate": "appearance",
+              "value": "small sphere hanging from cord",
+              "mode": "appearance",
+              "basis": "explicit",
+              "quote": "Create a visual concept of a small sphere hanging from a cord inside an open ring on a base."
+            },
+            {
+              "id": "r6",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e1",
+              "target": "e0",
+              "predicate": "inside",
+              "value": "",
+              "mode": "structure",
+              "basis": "explicit",
+              "quote": "Create a visual concept of a small sphere hanging from a cord inside an open ring on a base."
+            },
+            {
+              "id": "r7",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e1",
+              "target": "e2",
+              "predicate": "attached",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Create a visual concept of a small sphere hanging from a cord inside an open ring on a base."
+            },
+            {
+              "id": "r8",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e2",
+              "target": "e0",
+              "predicate": "connected",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Create a visual concept of a small sphere hanging from a cord inside an open ring on a base."
+            },
+            {
+              "id": "r9",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e0",
+              "target": "e3",
+              "predicate": "other",
+              "value": "ring on top of base",
+              "mode": "structure",
+              "basis": "explicit",
+              "quote": "Create a visual concept of a small sphere hanging from a cord inside an open ring on a base."
+            },
+            {
+              "id": "r10",
+              "obligation": "required",
+              "kind": "behavior",
+              "subject": "object",
+              "target": "",
+              "predicate": "capability",
+              "value": "inspect",
+              "mode": "behavior",
+              "basis": "inferred",
+              "quote": "Create a visual concept of a small sphere hanging from a cord inside an open ring on a base."
+            }
+          ],
+          "exclusions": [
+            {
+              "id": "x0",
+              "subject": "object",
+              "domain": "motion",
+              "quote": "Keep it static."
+            },
+            {
+              "id": "x1",
+              "subject": "object",
+              "domain": "physical_verification",
+              "quote": "Do not claim its supports are physically verified."
+            }
+          ]
+        },
+        "inventory_sha256": "463b4f36ccb3b0fa9065bb1525ce2c2f83ae649556d76939cf6f5525c433751e",
+        "interpretation_version": 2,
+        "extraction_completeness": "unassessed; consistency is not natural-language entailment",
+        "source_grounding": {
+          "units": [
+            {
+              "id": "s0",
+              "start": 0,
+              "end": 92,
+              "text": "Create a visual concept of a small sphere hanging from a cord inside an open ring on a base."
+            },
+            {
+              "id": "s1",
+              "start": 93,
+              "end": 108,
+              "text": "Keep it static."
+            },
+            {
+              "id": "s2",
+              "start": 109,
+              "end": 159,
+              "text": "Do not claim its supports are physically verified."
+            }
+          ],
+          "bindings": {
+            "r0": "s0",
+            "r1": "s0",
+            "r2": "s0",
+            "r3": "s0",
+            "r4": "s0",
+            "r5": "s0",
+            "r6": "s0",
+            "r7": "s0",
+            "r8": "s0",
+            "r9": "s0",
+            "r10": "s0",
+            "x0": "s1",
+            "x1": "s2"
+          }
+        },
+        "source_grounding_sha256": "f752b5bdf928bcdf2cac736aa96278920387f51300a1df49959a62676a021359",
+        "spatial_rules": [
+          {
+            "id": "r9",
+            "operator": "on_top",
+            "reference": "",
+            "axis": ""
+          }
+        ],
+        "spatial_rules_sha256": "39803423410ef0b4a1661d93b37d629ce1090abb4258d47af555950ebce95aff",
+        "spatial_policy_sha256": "abf21c243b7b133dc13ba5221866c9eabeff1f2f5a6ac127b3f15e6ace8bde33"
+      },
+      "admission": {
+        "planning_allowed": true,
+        "unsupported": [],
+        "blocking": [],
+        "interpretation_correct": "unassessed",
+        "detail": "Registered spatial checks permit planning only; binding and actual geometry must still pass.",
+        "pending_spatial_checks": [
+          "r9"
+        ]
+      },
+      "extraction_seconds": 13.429082958959043
+    },
+    {
+      "case": "exact-product",
+      "status": "blocked_evidence",
+      "geometry_executed": false
+    }
+  ],
+  "native_generation_goal_passed": false,
+  "elapsed_seconds": 137.37009970902,
+  "experiment": "spatial-009",
+  "charged_and_held_nanos": 173552500,
+  "combined_008_009_cost_nanos": 466420000,
+  "new_uncertain_reservations": 0,
+  "geometry_executor_unchanged": true,
+  "decision": "Basic static concept passes declared checks and visual coherence; no general-object or polished-product pass.",
+  "visual_review": {
+    "static-concept-plan-0": {
+      "coherence": "pass",
+      "polish": "partial",
+      "observations": [
+        "Sphere visibly suspended inside upright ring seated on base.",
+        "Four independently selectable parts; separation and reset verified in browser.",
+        "Geometry is visibly faceted and materials are basic."
+      ]
+    },
+    "generic-drone-plan-0": {
+      "coherence": "fail",
+      "observations": [
+        "Two motor/propeller assemblies have inconsistent orientations relative to the others.",
+        "Pairwise axis alignment passes because each propeller aligns with its own motor.",
+        "Shared motor/propeller orientation is absent from the frozen inventory.",
+        "Electronics and frame remain crude geometric proxies.",
+        "One ESC symmetry check also fails by approximately 0.13 m."
+      ]
+    }
+  },
+  "repair_decision": {
+    "initial_status": "blocked before dispatch by per-request ceiling",
+    "input_tokens_before": 15207,
+    "input_tokens_after_lossless_compaction": 13577,
+    "new_quote_nanos": 156822500,
+    "request_ceiling_nanos": 160000000,
+    "dispatched": false,
+    "reason": "Symmetry-only repair cannot fix the known omitted global orientation requirement; do not spend against an incomplete contract."
+  },
+  "verification": {
+    "targeted_test_executions": 248,
+    "browser_checks": 7,
+    "browser_page_errors": 0
+  },
+  "code_freeze": "da4ff9b"
+}

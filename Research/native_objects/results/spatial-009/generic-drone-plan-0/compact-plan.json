@@ -1,0 +1,1389 @@
+{
+  "shapes": [
+    {
+      "id": "frame_shape",
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.2,
+            0.025,
+            0.2
+          ],
+          "at": [],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.045,
+            0.01,
+            0.035
+          ],
+          "at": [
+            -0.065,
+            0.0175,
+            -0.065
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.045,
+            0.01,
+            0.035
+          ],
+          "at": [
+            0.065,
+            0.0175,
+            -0.065
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.045,
+            0.01,
+            0.035
+          ],
+          "at": [
+            -0.065,
+            0.0175,
+            0.065
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.045,
+            0.01,
+            0.035
+          ],
+          "at": [
+            0.065,
+            0.0175,
+            0.065
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        }
+      ]
+    },
+    {
+      "id": "arm_shape",
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.3,
+            0.018,
+            0.032
+          ],
+          "at": [],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.024,
+            0.012,
+            0.024
+          ],
+          "at": [
+            0.15,
+            0.015,
+            0
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        }
+      ]
+    },
+    {
+      "id": "motor_shape",
+      "forms": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.042,
+            0.028,
+            0.042
+          ],
+          "at": [],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.012,
+            0.019,
+            0.012
+          ],
+          "at": [
+            0,
+            0.02,
+            0
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        }
+      ]
+    },
+    {
+      "id": "prop_shape",
+      "forms": [
+        {
+          "kind": "tube",
+          "size": [
+            0.026,
+            0.012,
+            0.026
+          ],
+          "at": [],
+          "rotate": [],
+          "op": "add",
+          "detail": [
+            {
+              "key": "wall",
+              "values": [
+                0.005
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.12,
+            0.006,
+            0.024
+          ],
+          "at": [
+            0.063,
+            0.0055,
+            0
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.12,
+            0.006,
+            0.024
+          ],
+          "at": [
+            -0.063,
+            0.0055,
+            0
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        }
+      ]
+    },
+    {
+      "id": "battery_shape",
+      "forms": [
+        {
+          "kind": "rounded_box",
+          "size": [
+            0.12,
+            0.032,
+            0.085
+          ],
+          "at": [],
+          "rotate": [],
+          "op": "add",
+          "detail": [
+            {
+              "key": "radius",
+              "values": [
+                0.005
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "controller_shape",
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.075,
+            0.011,
+            0.075
+          ],
+          "at": [],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        }
+      ]
+    },
+    {
+      "id": "esc_shape",
+      "forms": [
+        {
+          "kind": "box",
+          "size": [
+            0.037,
+            0.007,
+            0.025
+          ],
+          "at": [],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        }
+      ]
+    }
+  ],
+  "parts": [
+    {
+      "id": "frame",
+      "entity": "e0",
+      "parent": "",
+      "shape": "frame_shape",
+      "color": [
+        0.22,
+        0.25,
+        0.28
+      ]
+    },
+    {
+      "id": "arm_xp",
+      "entity": "e1",
+      "parent": "frame",
+      "shape": "arm_shape",
+      "color": [
+        0.29,
+        0.32,
+        0.34
+      ]
+    },
+    {
+      "id": "arm_xn",
+      "entity": "e1",
+      "parent": "frame",
+      "shape": "arm_shape",
+      "color": [
+        0.29,
+        0.32,
+        0.34
+      ]
+    },
+    {
+      "id": "arm_zp",
+      "entity": "e1",
+      "parent": "frame",
+      "shape": "arm_shape",
+      "color": [
+        0.29,
+        0.32,
+        0.34
+      ]
+    },
+    {
+      "id": "arm_zn",
+      "entity": "e1",
+      "parent": "frame",
+      "shape": "arm_shape",
+      "color": [
+        0.29,
+        0.32,
+        0.34
+      ]
+    },
+    {
+      "id": "motor_xp",
+      "entity": "e2",
+      "parent": "arm_xp",
+      "shape": "motor_shape",
+      "color": [
+        0.46,
+        0.48,
+        0.49
+      ]
+    },
+    {
+      "id": "motor_xn",
+      "entity": "e2",
+      "parent": "arm_xn",
+      "shape": "motor_shape",
+      "color": [
+        0.46,
+        0.48,
+        0.49
+      ]
+    },
+    {
+      "id": "motor_zp",
+      "entity": "e2",
+      "parent": "arm_zp",
+      "shape": "motor_shape",
+      "color": [
+        0.46,
+        0.48,
+        0.49
+      ]
+    },
+    {
+      "id": "motor_zn",
+      "entity": "e2",
+      "parent": "arm_zn",
+      "shape": "motor_shape",
+      "color": [
+        0.46,
+        0.48,
+        0.49
+      ]
+    },
+    {
+      "id": "prop_xp",
+      "entity": "e3",
+      "parent": "motor_xp",
+      "shape": "prop_shape",
+      "color": [
+        0.14,
+        0.17,
+        0.19
+      ]
+    },
+    {
+      "id": "prop_xn",
+      "entity": "e3",
+      "parent": "motor_xn",
+      "shape": "prop_shape",
+      "color": [
+        0.14,
+        0.17,
+        0.19
+      ]
+    },
+    {
+      "id": "prop_zp",
+      "entity": "e3",
+      "parent": "motor_zp",
+      "shape": "prop_shape",
+      "color": [
+        0.14,
+        0.17,
+        0.19
+      ]
+    },
+    {
+      "id": "prop_zn",
+      "entity": "e3",
+      "parent": "motor_zn",
+      "shape": "prop_shape",
+      "color": [
+        0.14,
+        0.17,
+        0.19
+      ]
+    },
+    {
+      "id": "battery",
+      "entity": "e4",
+      "parent": "frame",
+      "shape": "battery_shape",
+      "color": [
+        0.33,
+        0.36,
+        0.37
+      ]
+    },
+    {
+      "id": "controller",
+      "entity": "e5",
+      "parent": "frame",
+      "shape": "controller_shape",
+      "color": [
+        0.16,
+        0.36,
+        0.3
+      ]
+    },
+    {
+      "id": "esc_xp",
+      "entity": "e6",
+      "parent": "frame",
+      "shape": "esc_shape",
+      "color": [
+        0.19,
+        0.31,
+        0.32
+      ]
+    },
+    {
+      "id": "esc_xn",
+      "entity": "e6",
+      "parent": "frame",
+      "shape": "esc_shape",
+      "color": [
+        0.19,
+        0.31,
+        0.32
+      ]
+    },
+    {
+      "id": "esc_zp",
+      "entity": "e6",
+      "parent": "frame",
+      "shape": "esc_shape",
+      "color": [
+        0.19,
+        0.31,
+        0.32
+      ]
+    },
+    {
+      "id": "esc_zn",
+      "entity": "e6",
+      "parent": "frame",
+      "shape": "esc_shape",
+      "color": [
+        0.19,
+        0.31,
+        0.32
+      ]
+    }
+  ],
+  "root_position": [
+    0,
+    0,
+    0
+  ],
+  "root_rotation": [
+    0,
+    0,
+    0
+  ],
+  "ports": [
+    {
+      "id": "fxp",
+      "part": "frame",
+      "kind": "face",
+      "form": 0,
+      "face": "+x",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "fxn",
+      "part": "frame",
+      "kind": "face",
+      "form": 0,
+      "face": "-x",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "fzp",
+      "part": "frame",
+      "kind": "face",
+      "form": 0,
+      "face": "+z",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "fzn",
+      "part": "frame",
+      "kind": "face",
+      "form": 0,
+      "face": "-z",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "ftop",
+      "part": "frame",
+      "kind": "face",
+      "form": 0,
+      "face": "+y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "fbottom",
+      "part": "frame",
+      "kind": "face",
+      "form": 0,
+      "face": "-y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "fepad_xp",
+      "part": "frame",
+      "kind": "face",
+      "form": 4,
+      "face": "+y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "fepad_xn",
+      "part": "frame",
+      "kind": "face",
+      "form": 3,
+      "face": "+y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "fepad_zp",
+      "part": "frame",
+      "kind": "face",
+      "form": 2,
+      "face": "+y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "fepad_zn",
+      "part": "frame",
+      "kind": "face",
+      "form": 1,
+      "face": "+y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "axp_in",
+      "part": "arm_xp",
+      "kind": "face",
+      "form": 0,
+      "face": "-x",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "axn_in",
+      "part": "arm_xn",
+      "kind": "face",
+      "form": 0,
+      "face": "-x",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "azp_in",
+      "part": "arm_zp",
+      "kind": "face",
+      "form": 0,
+      "face": "-x",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "azn_in",
+      "part": "arm_zn",
+      "kind": "face",
+      "form": 0,
+      "face": "-x",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "axp_pad",
+      "part": "arm_xp",
+      "kind": "face",
+      "form": 1,
+      "face": "+y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "axn_pad",
+      "part": "arm_xn",
+      "kind": "face",
+      "form": 1,
+      "face": "+y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "azp_pad",
+      "part": "arm_zp",
+      "kind": "face",
+      "form": 1,
+      "face": "+y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "azn_pad",
+      "part": "arm_zn",
+      "kind": "face",
+      "form": 1,
+      "face": "+y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "mxp_base",
+      "part": "motor_xp",
+      "kind": "face",
+      "form": 0,
+      "face": "-y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "mxn_base",
+      "part": "motor_xn",
+      "kind": "face",
+      "form": 0,
+      "face": "-y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "mzp_base",
+      "part": "motor_zp",
+      "kind": "face",
+      "form": 0,
+      "face": "-y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "mzn_base",
+      "part": "motor_zn",
+      "kind": "face",
+      "form": 0,
+      "face": "-y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "mxp_shaft",
+      "part": "motor_xp",
+      "kind": "outer_axis",
+      "form": 1,
+      "face": "+y",
+      "span": [
+        0.25,
+        1
+      ]
+    },
+    {
+      "id": "mxn_shaft",
+      "part": "motor_xn",
+      "kind": "outer_axis",
+      "form": 1,
+      "face": "+y",
+      "span": [
+        0.25,
+        1
+      ]
+    },
+    {
+      "id": "mzp_shaft",
+      "part": "motor_zp",
+      "kind": "outer_axis",
+      "form": 1,
+      "face": "+y",
+      "span": [
+        0.25,
+        1
+      ]
+    },
+    {
+      "id": "mzn_shaft",
+      "part": "motor_zn",
+      "kind": "outer_axis",
+      "form": 1,
+      "face": "+y",
+      "span": [
+        0.25,
+        1
+      ]
+    },
+    {
+      "id": "pxp_bore",
+      "part": "prop_xp",
+      "kind": "bore_axis",
+      "form": 0,
+      "face": "+y",
+      "span": [
+        0,
+        0.4
+      ]
+    },
+    {
+      "id": "pxn_bore",
+      "part": "prop_xn",
+      "kind": "bore_axis",
+      "form": 0,
+      "face": "+y",
+      "span": [
+        0,
+        0.4
+      ]
+    },
+    {
+      "id": "pzp_bore",
+      "part": "prop_zp",
+      "kind": "bore_axis",
+      "form": 0,
+      "face": "+y",
+      "span": [
+        0,
+        0.4
+      ]
+    },
+    {
+      "id": "pzn_bore",
+      "part": "prop_zn",
+      "kind": "bore_axis",
+      "form": 0,
+      "face": "+y",
+      "span": [
+        0,
+        0.4
+      ]
+    },
+    {
+      "id": "battery_top",
+      "part": "battery",
+      "kind": "face",
+      "form": 0,
+      "face": "+y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "controller_bottom",
+      "part": "controller",
+      "kind": "face",
+      "form": 0,
+      "face": "-y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "exp_bottom",
+      "part": "esc_xp",
+      "kind": "face",
+      "form": 0,
+      "face": "-y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "exn_bottom",
+      "part": "esc_xn",
+      "kind": "face",
+      "form": 0,
+      "face": "-y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "ezp_bottom",
+      "part": "esc_zp",
+      "kind": "face",
+      "form": 0,
+      "face": "-y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "ezn_bottom",
+      "part": "esc_zn",
+      "kind": "face",
+      "form": 0,
+      "face": "-y",
+      "span": [
+        0,
+        1
+      ]
+    }
+  ],
+  "mates": [
+    {
+      "id": "arm_xp_mount",
+      "a": "fxp",
+      "b": "axp_in",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "arm_xn_mount",
+      "a": "fxn",
+      "b": "axn_in",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "arm_zp_mount",
+      "a": "fzp",
+      "b": "azp_in",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "arm_zn_mount",
+      "a": "fzn",
+      "b": "azn_in",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "motor_xp_mount",
+      "a": "axp_pad",
+      "b": "mxp_base",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "motor_xn_mount",
+      "a": "axn_pad",
+      "b": "mxn_base",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "motor_zp_mount",
+      "a": "azp_pad",
+      "b": "mzp_base",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "motor_zn_mount",
+      "a": "azn_pad",
+      "b": "mzn_base",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "prop_xp_mount",
+      "a": "mxp_shaft",
+      "b": "pxp_bore",
+      "kind": "coaxial",
+      "offset": 0.003625,
+      "twist": 0,
+      "minimum_clearance": 0.001,
+      "minimum_overlap": 0.004
+    },
+    {
+      "id": "prop_xn_mount",
+      "a": "mxn_shaft",
+      "b": "pxn_bore",
+      "kind": "coaxial",
+      "offset": 0.003625,
+      "twist": 0,
+      "minimum_clearance": 0.001,
+      "minimum_overlap": 0.004
+    },
+    {
+      "id": "prop_zp_mount",
+      "a": "mzp_shaft",
+      "b": "pzp_bore",
+      "kind": "coaxial",
+      "offset": 0.003625,
+      "twist": 0,
+      "minimum_clearance": 0.001,
+      "minimum_overlap": 0.004
+    },
+    {
+      "id": "prop_zn_mount",
+      "a": "mzn_shaft",
+      "b": "pzn_bore",
+      "kind": "coaxial",
+      "offset": 0.003625,
+      "twist": 0,
+      "minimum_clearance": 0.001,
+      "minimum_overlap": 0.004
+    },
+    {
+      "id": "battery_mount",
+      "a": "fbottom",
+      "b": "battery_top",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "controller_mount",
+      "a": "ftop",
+      "b": "controller_bottom",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "esc_xp_mount",
+      "a": "fepad_xp",
+      "b": "exp_bottom",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "esc_xn_mount",
+      "a": "fepad_xn",
+      "b": "exn_bottom",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "esc_zp_mount",
+      "a": "fepad_zp",
+      "b": "ezp_bottom",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "esc_zn_mount",
+      "a": "fepad_zn",
+      "b": "ezn_bottom",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    }
+  ],
+  "containments": [],
+  "clearances": [],
+  "symmetries": [
+    {
+      "a": "arm_xp",
+      "b": "arm_xn",
+      "axis": "x"
+    },
+    {
+      "a": "arm_zp",
+      "b": "arm_zn",
+      "axis": "z"
+    },
+    {
+      "a": "motor_xp",
+      "b": "motor_xn",
+      "axis": "x"
+    },
+    {
+      "a": "motor_zp",
+      "b": "motor_zn",
+      "axis": "z"
+    },
+    {
+      "a": "prop_xp",
+      "b": "prop_xn",
+      "axis": "x"
+    },
+    {
+      "a": "prop_zp",
+      "b": "prop_zn",
+      "axis": "z"
+    },
+    {
+      "a": "esc_xp",
+      "b": "esc_xn",
+      "axis": "x"
+    },
+    {
+      "a": "esc_zp",
+      "b": "esc_zn",
+      "axis": "z"
+    }
+  ],
+  "bindings": [
+    {
+      "id": "r01",
+      "kind": "components",
+      "refs": [
+        "part:frame"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r02",
+      "kind": "components",
+      "refs": [
+        "part:arm_xp",
+        "part:arm_xn",
+        "part:arm_zp",
+        "part:arm_zn"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r03",
+      "kind": "components",
+      "refs": [
+        "part:motor_xp",
+        "part:motor_xn",
+        "part:motor_zp",
+        "part:motor_zn"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r04",
+      "kind": "components",
+      "refs": [
+        "part:prop_xp",
+        "part:prop_xn",
+        "part:prop_zp",
+        "part:prop_zn"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r05",
+      "kind": "components",
+      "refs": [
+        "part:battery"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r06",
+      "kind": "components",
+      "refs": [
+        "part:controller"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r07",
+      "kind": "components",
+      "refs": [
+        "part:esc_xp",
+        "part:esc_xn",
+        "part:esc_zp",
+        "part:esc_zn"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r08",
+      "kind": "components",
+      "refs": [
+        "part:frame",
+        "part:arm_xp",
+        "part:arm_xn",
+        "part:arm_zp",
+        "part:arm_zn",
+        "part:motor_xp",
+        "part:motor_xn",
+        "part:motor_zp",
+        "part:motor_zn",
+        "part:prop_xp",
+        "part:prop_xn",
+        "part:prop_zp",
+        "part:prop_zn",
+        "part:battery",
+        "part:controller",
+        "part:esc_xp",
+        "part:esc_xn",
+        "part:esc_zp",
+        "part:esc_zn"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r09",
+      "kind": "components",
+      "refs": [
+        "part:arm_xp",
+        "part:arm_xn",
+        "part:arm_zp",
+        "part:arm_zn"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r10",
+      "kind": "components",
+      "refs": [
+        "part:motor_xp",
+        "part:motor_xn",
+        "part:motor_zp",
+        "part:motor_zn"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r11",
+      "kind": "components",
+      "refs": [
+        "part:prop_xp",
+        "part:prop_xn",
+        "part:prop_zp",
+        "part:prop_zn"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r12",
+      "kind": "constraint",
+      "refs": [
+        "part:arm_xp",
+        "part:arm_xn",
+        "part:arm_zp",
+        "part:arm_zn",
+        "part:frame"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r13",
+      "kind": "relations",
+      "refs": [
+        "mate:arm_xp_mount",
+        "mate:arm_xn_mount",
+        "mate:arm_zp_mount",
+        "mate:arm_zn_mount"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r14",
+      "kind": "constraint",
+      "refs": [
+        "mate:motor_xp_mount",
+        "mate:motor_xn_mount",
+        "mate:motor_zp_mount",
+        "mate:motor_zn_mount"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r15",
+      "kind": "constraint",
+      "refs": [
+        "mate:prop_xp_mount",
+        "mate:prop_xn_mount",
+        "mate:prop_zp_mount",
+        "mate:prop_zn_mount"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r16",
+      "kind": "relations",
+      "refs": [
+        "mate:prop_xp_mount",
+        "mate:prop_xn_mount",
+        "mate:prop_zp_mount",
+        "mate:prop_zn_mount"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r17",
+      "kind": "relations",
+      "refs": [
+        "mate:battery_mount"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r18",
+      "kind": "relations",
+      "refs": [
+        "mate:controller_mount"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r19",
+      "kind": "relations",
+      "refs": [
+        "mate:esc_xp_mount",
+        "mate:esc_xn_mount",
+        "mate:esc_zp_mount",
+        "mate:esc_zn_mount"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r20",
+      "kind": "relations",
+      "refs": [
+        "mate:esc_xp_mount",
+        "mate:arm_xp_mount",
+        "mate:motor_xp_mount",
+        "mate:esc_xn_mount",
+        "mate:arm_xn_mount",
+        "mate:motor_xn_mount",
+        "mate:esc_zp_mount",
+        "mate:arm_zp_mount",
+        "mate:motor_zp_mount",
+        "mate:esc_zn_mount",
+        "mate:arm_zn_mount",
+        "mate:motor_zn_mount"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r21",
+      "kind": "relations",
+      "refs": [
+        "mate:controller_mount",
+        "mate:esc_xp_mount",
+        "mate:esc_xn_mount",
+        "mate:esc_zp_mount",
+        "mate:esc_zn_mount"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r22",
+      "kind": "relations",
+      "refs": [
+        "mate:battery_mount",
+        "mate:esc_xp_mount",
+        "mate:esc_xn_mount",
+        "mate:esc_zp_mount",
+        "mate:esc_zn_mount"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r23",
+      "kind": "capability",
+      "refs": [
+        "capability:inspect"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r24",
+      "kind": "capability",
+      "refs": [
+        "capability:geometric_explode"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r25",
+      "kind": "capability",
+      "refs": [
+        "capability:reassemble"
+      ],
+      "note": ""
+    }
+  ]
+}

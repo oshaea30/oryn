@@ -61,11 +61,27 @@ outputs also pass a zero-cost replay that stops before planning as required.
 
 This is not proof of lossless understanding or working general objects. Static-pose
 representation still varies, and the drone retains spatial requirements with no
-checkable adapter. Next: a bounded, cross-object spatial-intent bridge, keeping the
-geometry executor unchanged until requirements can be honored. 196 targeted test
-executions pass. Additional API estimate $0.152625, no new uncertain reservations or
+checkable adapter. The spatial bridge below now tests this boundary with the geometry
+executor unchanged. That confirmation passed 196 targeted test executions. Additional API estimate $0.152625, no new uncertain reservations or
 GPU spend. User-authorized shared daily limit $6; aggregate research ceiling $5.
 [Earlier interpretation failures](MEANING_RESULT.md) remain retained.
+
+## Spatial bridge result
+
+[Spatial 008–009](SPATIAL_RESULT.md) connects typed intent to measured geometry
+without changing the executor. A four-part static hanging-sphere concept passes its
+checks, looks coherent, and supports selection/explode/reset in the desktop viewer.
+The drone's pairwise spatial rules pass, but shared motor/propeller orientation is
+missing and one symmetry check fails. The speaker repairs missing bindings, then
+fails housing connectivity. Lamp emission and sharpener paths remain unsupported.
+No general-object or polished-product pass is claimed.
+
+Next: explicit arrangement/axis relationships across repeated component groups,
+tested across object families. Do not repair symmetry alone on the current incomplete
+drone contract. A lossless context correction separately reduces its blocked repair
+input from 15,207 to 13,577 tokens under the unchanged per-call cap; it was not sent.
+248 targeted test executions and seven browser checks pass. Additional API estimate
+$0.46642; no new uncertain reservations, funding errors or GPU use.
 
 ## Completed request-to-requirements experiment
 

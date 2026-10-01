@@ -1,0 +1,10 @@
+{
+  "planning_allowed": true,
+  "unsupported": [],
+  "blocking": [],
+  "interpretation_correct": "unassessed",
+  "detail": "Registered spatial checks permit planning only; binding and actual geometry must still pass.",
+  "pending_spatial_checks": [
+    "r9"
+  ]
+}

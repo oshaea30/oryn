@@ -1,0 +1,187 @@
+{
+  "requirements": [
+    {
+      "id": "r0",
+      "obligation": "required",
+      "kind": "entity",
+      "subject": "e0",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "mode": "structure",
+      "basis": "explicit",
+      "source": "s0"
+    },
+    {
+      "id": "r1",
+      "obligation": "required",
+      "kind": "entity",
+      "subject": "e1",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "mode": "structure",
+      "basis": "explicit",
+      "source": "s0"
+    },
+    {
+      "id": "r2",
+      "obligation": "required",
+      "kind": "entity",
+      "subject": "e2",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "mode": "structure",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r3",
+      "obligation": "required",
+      "kind": "entity",
+      "subject": "e3",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "mode": "structure",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r4",
+      "obligation": "required",
+      "kind": "entity",
+      "subject": "e4",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "mode": "structure",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r5",
+      "obligation": "required",
+      "kind": "visual",
+      "subject": "e0",
+      "target": "",
+      "predicate": "appearance",
+      "value": "curled leaf-shaped shade",
+      "mode": "appearance",
+      "basis": "explicit",
+      "source": "s0"
+    },
+    {
+      "id": "r6",
+      "obligation": "required",
+      "kind": "visual",
+      "subject": "e1",
+      "target": "",
+      "predicate": "appearance",
+      "value": "seed-shaped, visibly suspended",
+      "mode": "appearance",
+      "basis": "explicit",
+      "source": "s0"
+    },
+    {
+      "id": "r7",
+      "obligation": "required",
+      "kind": "behavior",
+      "subject": "e1",
+      "target": "",
+      "predicate": "capability",
+      "value": "emission",
+      "mode": "appearance",
+      "basis": "explicit",
+      "source": "s0"
+    },
+    {
+      "id": "r8",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "e1",
+      "target": "e0",
+      "predicate": "inside",
+      "value": "suspended within the shade",
+      "mode": "structure",
+      "basis": "explicit",
+      "source": "s0"
+    },
+    {
+      "id": "r9",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "e1",
+      "target": "e2",
+      "predicate": "attached",
+      "value": "held by suspension strand",
+      "mode": "structure",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r10",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "e2",
+      "target": "e0",
+      "predicate": "attached",
+      "value": "strand anchored to shade",
+      "mode": "structure",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r11",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "e0",
+      "target": "e3",
+      "predicate": "attached",
+      "value": "shade joined to stem",
+      "mode": "structure",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r12",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "e3",
+      "target": "e4",
+      "predicate": "attached",
+      "value": "stem joined to desk base",
+      "mode": "structure",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r13",
+      "obligation": "required",
+      "kind": "behavior",
+      "subject": "object",
+      "target": "",
+      "predicate": "capability",
+      "value": "inspect",
+      "mode": "behavior",
+      "basis": "explicit",
+      "source": "s1"
+    }
+  ],
+  "exclusions": [
+    {
+      "id": "x0",
+      "subject": "object",
+      "domain": "manufacturing",
+      "source": "s2"
+    },
+    {
+      "id": "x1",
+      "subject": "object",
+      "domain": "physical_verification",
+      "source": "s2"
+    }
+  ],
+  "spatial": []
+}

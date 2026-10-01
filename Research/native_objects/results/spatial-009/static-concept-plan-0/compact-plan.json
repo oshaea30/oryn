@@ -1,0 +1,393 @@
+{
+  "shapes": [
+    {
+      "id": "base_shape",
+      "forms": [
+        {
+          "kind": "rounded_box",
+          "size": [
+            0.6,
+            0.12,
+            0.4
+          ],
+          "at": [],
+          "rotate": [],
+          "op": "add",
+          "detail": [
+            {
+              "key": "radius",
+              "values": [
+                0.025
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ring_shape",
+      "forms": [
+        {
+          "kind": "tube",
+          "size": [
+            0.5,
+            0.15,
+            0.5
+          ],
+          "at": [],
+          "rotate": [
+            90,
+            0,
+            0
+          ],
+          "op": "add",
+          "detail": [
+            {
+              "key": "wall",
+              "values": [
+                0.025
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.07,
+            0.025,
+            0.15
+          ],
+          "at": [
+            0,
+            -0.2375,
+            0
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.04,
+            0.025,
+            0.025
+          ],
+          "at": [
+            0,
+            0.2275,
+            0
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        }
+      ]
+    },
+    {
+      "id": "cord_shape",
+      "forms": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.012,
+            0.15,
+            0.012
+          ],
+          "at": [],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        }
+      ]
+    },
+    {
+      "id": "sphere_shape",
+      "forms": [
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.11,
+            0.11,
+            0.11
+          ],
+          "at": [],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.012,
+            0.02,
+            0.012
+          ],
+          "at": [
+            0,
+            0.055,
+            0
+          ],
+          "rotate": [],
+          "op": "add",
+          "detail": []
+        }
+      ]
+    }
+  ],
+  "parts": [
+    {
+      "id": "base",
+      "entity": "e3",
+      "parent": "",
+      "shape": "base_shape",
+      "color": [
+        0.24,
+        0.27,
+        0.29
+      ]
+    },
+    {
+      "id": "ring",
+      "entity": "e0",
+      "parent": "base",
+      "shape": "ring_shape",
+      "color": [
+        0.57,
+        0.61,
+        0.63
+      ]
+    },
+    {
+      "id": "cord",
+      "entity": "e2",
+      "parent": "ring",
+      "shape": "cord_shape",
+      "color": [
+        0.35,
+        0.38,
+        0.4
+      ]
+    },
+    {
+      "id": "sphere",
+      "entity": "e1",
+      "parent": "cord",
+      "shape": "sphere_shape",
+      "color": [
+        0.72,
+        0.53,
+        0.32
+      ]
+    }
+  ],
+  "root_position": [
+    0,
+    0,
+    0
+  ],
+  "root_rotation": [
+    0,
+    0,
+    0
+  ],
+  "ports": [
+    {
+      "id": "base_top",
+      "part": "base",
+      "kind": "face",
+      "form": 0,
+      "face": "+y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "ring_foot",
+      "part": "ring",
+      "kind": "face",
+      "form": 1,
+      "face": "-y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "ring_hanger",
+      "part": "ring",
+      "kind": "face",
+      "form": 2,
+      "face": "-y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "cord_top",
+      "part": "cord",
+      "kind": "face",
+      "form": 0,
+      "face": "+y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "cord_bottom",
+      "part": "cord",
+      "kind": "face",
+      "form": 0,
+      "face": "-y",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "sphere_stem",
+      "part": "sphere",
+      "kind": "face",
+      "form": 1,
+      "face": "+y",
+      "span": [
+        0,
+        1
+      ]
+    }
+  ],
+  "mates": [
+    {
+      "id": "m_base_ring",
+      "a": "base_top",
+      "b": "ring_foot",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "m_ring_cord",
+      "a": "ring_hanger",
+      "b": "cord_top",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    },
+    {
+      "id": "m_cord_sphere",
+      "a": "cord_bottom",
+      "b": "sphere_stem",
+      "kind": "face",
+      "offset": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "minimum_overlap": 0
+    }
+  ],
+  "containments": [
+    {
+      "outer": "ring",
+      "inner": "sphere",
+      "clearance": 0.005
+    }
+  ],
+  "clearances": [],
+  "symmetries": [],
+  "bindings": [
+    {
+      "id": "r0",
+      "kind": "components",
+      "refs": [
+        "part:ring"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r1",
+      "kind": "components",
+      "refs": [
+        "part:sphere"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r2",
+      "kind": "components",
+      "refs": [
+        "part:cord"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r3",
+      "kind": "components",
+      "refs": [
+        "part:base"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r4",
+      "kind": "components",
+      "refs": [
+        "part:ring"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r5",
+      "kind": "components",
+      "refs": [
+        "part:sphere"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r6",
+      "kind": "relations",
+      "refs": [
+        "containment:0"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r7",
+      "kind": "relations",
+      "refs": [
+        "mate:m_cord_sphere"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r8",
+      "kind": "relations",
+      "refs": [
+        "mate:m_ring_cord"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r9",
+      "kind": "constraint",
+      "refs": [
+        "mate:m_base_ring"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r10",
+      "kind": "capability",
+      "refs": [
+        "capability:inspect"
+      ],
+      "note": ""
+    }
+  ]
+}

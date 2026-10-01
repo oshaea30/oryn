@@ -1,0 +1,13 @@
+{
+  "original_input_tokens": 15207,
+  "compacted_input_tokens": 13577,
+  "max_output_tokens": 12288,
+  "maximum_reservation_nanos": 156822500,
+  "request_ceiling_nanos": 160000000,
+  "admissible_under_request_ceiling": true,
+  "generation_dispatched": false,
+  "reason_no_dispatch": "Existing render reveals missing global orientation requirements; do not spend repairing symmetry alone.",
+  "original_body_sha256": "642eaf0727ffdfa6342747ffed8252ba3f5ab950a8c6c047369f1cb641f95313",
+  "compacted_body_sha256": "e336c3f76d6ec25ba8fa5cbaa10ddf241cea5d0a85bb16e7ac626fd7704a3c70",
+  "restored_requirement_hash": "e07aa3aa78ab2671e69ffbe497eccdfbb6a73e75eb9ec61079e41e18f56f6c0e"
+}

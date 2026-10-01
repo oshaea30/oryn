@@ -1,0 +1,14 @@
+{
+  "case": "static-concept",
+  "parts": 4,
+  "checks": [
+    "selectable parts",
+    "exploded image differs",
+    "isolated part image differs",
+    "reset restores assembly",
+    "static motion disabled",
+    "drone measured failure visible",
+    "case URL works"
+  ],
+  "page_errors": []
+}

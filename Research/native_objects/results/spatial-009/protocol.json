@@ -1,0 +1,82 @@
+{
+  "experiment": "spatial-009",
+  "cases": [
+    "generic-drone",
+    "static-concept"
+  ],
+  "source": "Builds/NativeObjects/spatial-run-008",
+  "source_result_sha256": "27aa87ddc671a0ad850ade96158d34dfcc2e2dd70efcc88f074959656a672cc7",
+  "prior_failures": {
+    "generic-drone": "Radial plane axis required",
+    "static-concept": "Unexpected spatial reference"
+  },
+  "budget_nanos": 750000000,
+  "prior_upper_bound_nanos": 3500000000,
+  "aggregate_limit_nanos": 5000000000,
+  "files_sha256": {
+    "Research/native_objects/spatial_requirements.py": "6c4df5351844d6c675a1ffa88d069e7341df0f976449ffc3694b42da352c72b3",
+    "Research/native_objects/spatial_experiment.py": "1d44fb586b2f9595a75cd0f9af4ec4f271dfa940f99ba17dfc1b6d233621fea5",
+    "Research/native_objects/spatial_followup.py": "f03dc53a9e972388b90313407a830de13f689bee0f7c34c822a602ef8a73617f",
+    "Research/native_objects/requirements_experiment.py": "31b9bcfc098b897700c64130350ca813dcefd06d0d68772fe5e200e928ff11f1",
+    "Research/native_objects/requirement_meaning.py": "571f4f1e2bae166cc1d15e66e9bfc07b538ef0d8bdf94bc5136e0d53805911f5",
+    "Research/native_objects/intent_requirements.py": "6b11824652d4b182f426dd05f19fc36ac69738021a0c0ac8a784b8c6441249bf",
+    "Research/native_objects/compact_construction.py": "c413abc0530adb5d38a6cfc0ba74408a39eb5b9242f2e7c75fa069954790b32e",
+    "Research/native_objects/assembly_connections.py": "995b3fd6382a29206397537de4544d4cb57a9193a2f17f1f9de1fbb2ed484c4a",
+    "Research/native_objects/construction_solid.py": "9e0c192b8e2171adce174970fa436809ab7dfd58b683deaa746e787f637343d1",
+    "Research/native_objects/construction.py": "b21918b18d8176907d873a9be4cd925f5d112ca20875e8a486d044e98415b0c7",
+    "Research/native_objects/meaning_experiment.py": "bd8cd34e8c367fd3de72e0615dca6665b3b5e61339d19fc49d143d257d4c1e0c",
+    "Research/native_objects/meaning_cases_005.json": "ec58a76f21fed094da44db3694edf09db7954866295327618218a2eba1356624",
+    "Research/native_objects/results/planning-001.json": "83eb9a6ba24e8c9de611d34fc1c4e7e88c235cae666f2bb9dcc0c85ad0a0d09a",
+    "Research/native_objects/results/construction-001/heldout-plan.json": "ab35866be9353382f0469b06ceca3d04a3bb10c0d60997a84041a447cfd908ed",
+    "Orchestrator/spending.py": "d802cecf3b40352971095d50e710b7ac1893a681711d3333d5b53b547abd6878"
+  },
+  "policies": {
+    "extract": {
+      "provider": "openai",
+      "profile": "spatial_research_extract",
+      "model": "gpt-6-sol",
+      "effort": "medium",
+      "ceiling_nanos": 45000000,
+      "max_output_tokens": 3072,
+      "price_version": "openai-standard-text-2026-09-27-v1",
+      "rates": {
+        "input": 2000,
+        "cached": 200,
+        "cache_write": 2500,
+        "output": 10000
+      },
+      "price_expires": 1791072000,
+      "service_tier": "default"
+    },
+    "plan": {
+      "provider": "openai",
+      "profile": "spatial_research_plan",
+      "model": "gpt-6-sol",
+      "effort": "medium",
+      "ceiling_nanos": 160000000,
+      "max_output_tokens": 12288,
+      "price_version": "openai-standard-text-2026-09-27-v1",
+      "rates": {
+        "input": 2000,
+        "cached": 200,
+        "cache_write": 2500,
+        "output": 10000
+      },
+      "price_expires": 1791072000,
+      "service_tier": "default"
+    }
+  },
+  "request_deadlines_seconds": {
+    "extract": 120,
+    "plan": 240
+  },
+  "spatial_policy": {
+    "position_tolerance_m": 0.0005,
+    "angle_tolerance_degrees": 10.0,
+    "outer_end_fraction": 0.05,
+    "radial_plane_fraction": 0.05,
+    "minimum_elongation": 1.5,
+    "scope": "research visualization tolerances, not manufacturing or physical verification"
+  },
+  "execute": true
+}

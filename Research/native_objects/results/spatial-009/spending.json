@@ -1,0 +1,8 @@
+{
+  "charged_and_held_nanos": 173552500,
+  "daily_remaining_nanos": 3387355000,
+  "stopped": [
+    "Worst-case cost exceeds this profile\u2019s request ceiling. Nothing was generated; no automatic escalation."
+  ],
+  "actual_invoiced_cost": null
+}

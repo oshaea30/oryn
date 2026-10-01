@@ -1,0 +1,2308 @@
+{
+  "mates": [
+    {
+      "a": "frame_px",
+      "id": "frame_arm_px",
+      "kind": "face",
+      "offset": 0,
+      "minimum_overlap": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "b": "arm_px_root"
+    },
+    {
+      "a": "frame_nx",
+      "id": "frame_arm_nx",
+      "kind": "face",
+      "offset": 0,
+      "minimum_overlap": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "b": "arm_nx_root"
+    },
+    {
+      "a": "frame_pz",
+      "id": "frame_arm_pz",
+      "kind": "face",
+      "offset": 0,
+      "minimum_overlap": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "b": "arm_pz_root"
+    },
+    {
+      "a": "frame_nz",
+      "id": "frame_arm_nz",
+      "kind": "face",
+      "offset": 0,
+      "minimum_overlap": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "b": "arm_nz_root"
+    },
+    {
+      "a": "arm_px_end",
+      "id": "arm_motor_px",
+      "kind": "face",
+      "offset": 0,
+      "minimum_overlap": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "b": "motor_px_mount"
+    },
+    {
+      "a": "arm_nx_end",
+      "id": "arm_motor_nx",
+      "kind": "face",
+      "offset": 0,
+      "minimum_overlap": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "b": "motor_nx_mount"
+    },
+    {
+      "a": "arm_pz_end",
+      "id": "arm_motor_pz",
+      "kind": "face",
+      "offset": 0,
+      "minimum_overlap": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "b": "motor_pz_mount"
+    },
+    {
+      "a": "arm_nz_end",
+      "id": "arm_motor_nz",
+      "kind": "face",
+      "offset": 0,
+      "minimum_overlap": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "b": "motor_nz_mount"
+    },
+    {
+      "a": "motor_px_axis",
+      "id": "motor_prop_px",
+      "kind": "coaxial",
+      "offset": 0,
+      "minimum_overlap": 0.007,
+      "twist": 0,
+      "minimum_clearance": 0.0004,
+      "b": "prop_px_axis"
+    },
+    {
+      "a": "motor_nx_axis",
+      "id": "motor_prop_nx",
+      "kind": "coaxial",
+      "offset": 0,
+      "minimum_overlap": 0.007,
+      "twist": 0,
+      "minimum_clearance": 0.0004,
+      "b": "prop_nx_axis"
+    },
+    {
+      "a": "motor_pz_axis",
+      "id": "motor_prop_pz",
+      "kind": "coaxial",
+      "offset": 0,
+      "minimum_overlap": 0.007,
+      "twist": 0,
+      "minimum_clearance": 0.0004,
+      "b": "prop_pz_axis"
+    },
+    {
+      "a": "motor_nz_axis",
+      "id": "motor_prop_nz",
+      "kind": "coaxial",
+      "offset": 0,
+      "minimum_overlap": 0.007,
+      "twist": 0,
+      "minimum_clearance": 0.0004,
+      "b": "prop_nz_axis"
+    },
+    {
+      "a": "arm_px_top",
+      "id": "arm_esc_px",
+      "kind": "face",
+      "offset": 0,
+      "minimum_overlap": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "b": "esc_px_mount"
+    },
+    {
+      "a": "arm_nx_top",
+      "id": "arm_esc_nx",
+      "kind": "face",
+      "offset": 0,
+      "minimum_overlap": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "b": "esc_nx_mount"
+    },
+    {
+      "a": "arm_pz_top",
+      "id": "arm_esc_pz",
+      "kind": "face",
+      "offset": 0,
+      "minimum_overlap": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "b": "esc_pz_mount"
+    },
+    {
+      "a": "arm_nz_top",
+      "id": "arm_esc_nz",
+      "kind": "face",
+      "offset": 0,
+      "minimum_overlap": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "b": "esc_nz_mount"
+    },
+    {
+      "a": "frame_battery",
+      "id": "frame_battery_mount",
+      "kind": "face",
+      "offset": 0,
+      "minimum_overlap": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "b": "battery_mount"
+    },
+    {
+      "a": "frame_controller",
+      "id": "frame_controller_mount",
+      "kind": "face",
+      "offset": 0,
+      "minimum_overlap": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "b": "controller_mount"
+    },
+    {
+      "a": "battery_lead",
+      "id": "battery_controller",
+      "kind": "face",
+      "offset": 0,
+      "minimum_overlap": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "b": "controller_power"
+    },
+    {
+      "a": "controller_px",
+      "id": "controller_esc_px",
+      "kind": "face",
+      "offset": 0,
+      "minimum_overlap": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "b": "esc_px_input"
+    },
+    {
+      "a": "controller_nx",
+      "id": "controller_esc_nx",
+      "kind": "face",
+      "offset": 0,
+      "minimum_overlap": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "b": "esc_nx_input"
+    },
+    {
+      "a": "controller_pz",
+      "id": "controller_esc_pz",
+      "kind": "face",
+      "offset": 0,
+      "minimum_overlap": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "b": "esc_pz_input"
+    },
+    {
+      "a": "controller_nz",
+      "id": "controller_esc_nz",
+      "kind": "face",
+      "offset": 0,
+      "minimum_overlap": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "b": "esc_nz_input"
+    },
+    {
+      "a": "esc_px_output",
+      "id": "esc_motor_px",
+      "kind": "face",
+      "offset": 0,
+      "minimum_overlap": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "b": "motor_px_input"
+    },
+    {
+      "a": "esc_nx_output",
+      "id": "esc_motor_nx",
+      "kind": "face",
+      "offset": 0,
+      "minimum_overlap": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "b": "motor_nx_input"
+    },
+    {
+      "a": "esc_pz_output",
+      "id": "esc_motor_pz",
+      "kind": "face",
+      "offset": 0,
+      "minimum_overlap": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "b": "motor_pz_input"
+    },
+    {
+      "a": "esc_nz_output",
+      "id": "esc_motor_nz",
+      "kind": "face",
+      "offset": 0,
+      "minimum_overlap": 0,
+      "twist": 0,
+      "minimum_clearance": 0,
+      "b": "motor_nz_input"
+    }
+  ],
+  "bindings": [
+    {
+      "id": "r0",
+      "kind": "components",
+      "refs": [
+        "part:frame",
+        "part:arm_px",
+        "part:arm_nx",
+        "part:arm_pz",
+        "part:arm_nz",
+        "part:motor_px",
+        "part:motor_nx",
+        "part:motor_pz",
+        "part:motor_nz",
+        "part:prop_px",
+        "part:prop_nx",
+        "part:prop_pz",
+        "part:prop_nz",
+        "part:battery",
+        "part:controller",
+        "part:esc_px",
+        "part:esc_nx",
+        "part:esc_pz",
+        "part:esc_nz"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r1",
+      "kind": "components",
+      "refs": [
+        "part:frame"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r2",
+      "kind": "components",
+      "refs": [
+        "part:arm_px",
+        "part:arm_nx",
+        "part:arm_pz",
+        "part:arm_nz"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r3",
+      "kind": "components",
+      "refs": [
+        "part:motor_px",
+        "part:motor_nx",
+        "part:motor_pz",
+        "part:motor_nz"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r4",
+      "kind": "components",
+      "refs": [
+        "part:prop_px",
+        "part:prop_nx",
+        "part:prop_pz",
+        "part:prop_nz"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r5",
+      "kind": "components",
+      "refs": [
+        "part:battery"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r6",
+      "kind": "components",
+      "refs": [
+        "part:controller"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r7",
+      "kind": "components",
+      "refs": [
+        "part:esc_px",
+        "part:esc_nx",
+        "part:esc_pz",
+        "part:esc_nz"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r8",
+      "kind": "components",
+      "refs": [
+        "part:arm_px",
+        "part:arm_nx",
+        "part:arm_pz",
+        "part:arm_nz"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r9",
+      "kind": "components",
+      "refs": [
+        "part:motor_px",
+        "part:motor_nx",
+        "part:motor_pz",
+        "part:motor_nz"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r10",
+      "kind": "components",
+      "refs": [
+        "part:prop_px",
+        "part:prop_nx",
+        "part:prop_pz",
+        "part:prop_nz"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r11",
+      "kind": "components",
+      "refs": [
+        "part:esc_px",
+        "part:esc_nx",
+        "part:esc_pz",
+        "part:esc_nz"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r12",
+      "kind": "constraint",
+      "refs": [
+        "port:arm_px_root",
+        "port:arm_nx_root",
+        "port:arm_pz_root",
+        "port:arm_nz_root",
+        "part:frame"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r13",
+      "kind": "constraint",
+      "refs": [
+        "part:arm_px",
+        "part:arm_nx",
+        "part:arm_pz",
+        "part:arm_nz",
+        "part:frame"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r14",
+      "kind": "constraint",
+      "refs": [
+        "port:motor_px_axis",
+        "port:motor_nx_axis",
+        "port:motor_pz_axis",
+        "port:motor_nz_axis",
+        "part:frame"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r15",
+      "kind": "constraint",
+      "refs": [
+        "port:motor_px_axis",
+        "port:motor_nx_axis",
+        "port:motor_pz_axis",
+        "port:motor_nz_axis"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r16",
+      "kind": "constraint",
+      "refs": [
+        "port:prop_px_axis",
+        "port:prop_nx_axis",
+        "port:prop_pz_axis",
+        "port:prop_nz_axis",
+        "part:frame"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r17",
+      "kind": "constraint",
+      "refs": [
+        "port:prop_px_axis",
+        "port:prop_nx_axis",
+        "port:prop_pz_axis",
+        "port:prop_nz_axis"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r18",
+      "kind": "unsupported",
+      "refs": [],
+      "note": "The frozen controller-placement pattern is unsupported by the arrangement checker. Assumption: four separate controllers with integral illustrative leads; their proposed locations are not certified by this binding."
+    },
+    {
+      "id": "r19",
+      "kind": "unsupported",
+      "refs": [],
+      "note": "The frozen controller-orientation decision is unsupported. This is a generic, untested static visualization, not an exact product reconstruction; leads and mounts do not establish electrical operation, torque transmission, flight or manufacturing fit."
+    },
+    {
+      "id": "r20",
+      "kind": "relations",
+      "refs": [
+        "mate:frame_arm_px",
+        "mate:frame_arm_nx",
+        "mate:frame_arm_pz",
+        "mate:frame_arm_nz"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r21",
+      "kind": "constraint",
+      "refs": [
+        "mate:arm_motor_px",
+        "mate:arm_motor_nx",
+        "mate:arm_motor_pz",
+        "mate:arm_motor_nz"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r22",
+      "kind": "relations",
+      "refs": [
+        "mate:arm_motor_px",
+        "mate:arm_motor_nx",
+        "mate:arm_motor_pz",
+        "mate:arm_motor_nz"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r23",
+      "kind": "constraint",
+      "refs": [
+        "mate:motor_prop_px",
+        "mate:motor_prop_nx",
+        "mate:motor_prop_pz",
+        "mate:motor_prop_nz"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r24",
+      "kind": "relations",
+      "refs": [
+        "mate:motor_prop_px",
+        "mate:motor_prop_nx",
+        "mate:motor_prop_pz",
+        "mate:motor_prop_nz"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r25",
+      "kind": "relations",
+      "refs": [
+        "mate:frame_battery_mount"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r26",
+      "kind": "relations",
+      "refs": [
+        "mate:frame_controller_mount"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r27",
+      "kind": "relations",
+      "refs": [
+        "mate:battery_controller"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r28",
+      "kind": "relations",
+      "refs": [
+        "mate:controller_esc_px",
+        "mate:controller_esc_nx",
+        "mate:controller_esc_pz",
+        "mate:controller_esc_nz"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r29",
+      "kind": "relations",
+      "refs": [
+        "mate:esc_motor_px",
+        "mate:esc_motor_nx",
+        "mate:esc_motor_pz",
+        "mate:esc_motor_nz"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r30",
+      "kind": "relations",
+      "refs": [
+        "mate:arm_esc_px",
+        "mate:arm_esc_nx",
+        "mate:arm_esc_pz",
+        "mate:arm_esc_nz"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r31",
+      "kind": "capability",
+      "refs": [
+        "capability:inspect"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r32",
+      "kind": "capability",
+      "refs": [
+        "capability:geometric_explode"
+      ],
+      "note": ""
+    },
+    {
+      "id": "r33",
+      "kind": "capability",
+      "refs": [
+        "capability:reassemble"
+      ],
+      "note": ""
+    }
+  ],
+  "clearances": [
+    {
+      "minimum": 0.02,
+      "a": "prop_px",
+      "b": "prop_pz"
+    },
+    {
+      "minimum": 0.02,
+      "a": "prop_pz",
+      "b": "prop_nx"
+    },
+    {
+      "minimum": 0.02,
+      "a": "prop_nx",
+      "b": "prop_nz"
+    },
+    {
+      "minimum": 0.02,
+      "a": "prop_nz",
+      "b": "prop_px"
+    }
+  ],
+  "containments": [],
+  "shapes": [
+    {
+      "forms": [
+        {
+          "at": [],
+          "detail": [
+            {
+              "key": "wall",
+              "values": [
+                0.004
+              ]
+            }
+          ],
+          "kind": "box_shell",
+          "size": [
+            0.112,
+            0.018,
+            0.112
+          ],
+          "op": "add",
+          "rotate": []
+        },
+        {
+          "at": [
+            0.059,
+            0,
+            0
+          ],
+          "detail": [],
+          "kind": "box",
+          "size": [
+            0.016,
+            0.012,
+            0.03
+          ],
+          "op": "add",
+          "rotate": []
+        },
+        {
+          "at": [
+            -0.059,
+            0,
+            0
+          ],
+          "detail": [],
+          "kind": "box",
+          "size": [
+            0.016,
+            0.012,
+            0.03
+          ],
+          "op": "add",
+          "rotate": [
+            0,
+            180,
+            0
+          ]
+        },
+        {
+          "at": [
+            0,
+            0,
+            0.059
+          ],
+          "detail": [],
+          "kind": "box",
+          "size": [
+            0.016,
+            0.012,
+            0.03
+          ],
+          "op": "add",
+          "rotate": [
+            0,
+            -90,
+            0
+          ]
+        },
+        {
+          "at": [
+            0,
+            0,
+            -0.059
+          ],
+          "detail": [],
+          "kind": "box",
+          "size": [
+            0.016,
+            0.012,
+            0.03
+          ],
+          "op": "add",
+          "rotate": [
+            0,
+            90,
+            0
+          ]
+        },
+        {
+          "at": [
+            0,
+            0.003,
+            0
+          ],
+          "detail": [],
+          "kind": "box",
+          "size": [
+            0.014,
+            0.018,
+            0.014
+          ],
+          "op": "add",
+          "rotate": []
+        },
+        {
+          "at": [
+            0,
+            -0.0105,
+            0
+          ],
+          "detail": [],
+          "kind": "box",
+          "size": [
+            0.05,
+            0.005,
+            0.04
+          ],
+          "op": "add",
+          "rotate": []
+        },
+        {
+          "at": [
+            0.03,
+            -0.007,
+            0
+          ],
+          "detail": [],
+          "kind": "cylinder",
+          "size": [
+            0.006,
+            0.02,
+            0.006
+          ],
+          "op": "subtract",
+          "rotate": []
+        }
+      ],
+      "id": "frame_shape"
+    },
+    {
+      "forms": [
+        {
+          "at": [
+            0.007,
+            0,
+            0
+          ],
+          "detail": [],
+          "kind": "box",
+          "size": [
+            0.014,
+            0.012,
+            0.026
+          ],
+          "op": "add",
+          "rotate": []
+        },
+        {
+          "at": [],
+          "detail": [
+            {
+              "key": "sections",
+              "values": [
+                0,
+                0.008,
+                0,
+                0.006,
+                0.012,
+                0,
+                0.03,
+                0,
+                0.006,
+                0.01,
+                0,
+                0.116,
+                0,
+                0.005,
+                0.008,
+                0,
+                0.139,
+                0,
+                0.006,
+                0.01
+              ]
+            }
+          ],
+          "kind": "loft",
+          "size": [
+            1,
+            1,
+            1
+          ],
+          "op": "add",
+          "rotate": [
+            0,
+            0,
+            -90
+          ]
+        },
+        {
+          "at": [
+            0.138,
+            0,
+            0
+          ],
+          "detail": [],
+          "kind": "box",
+          "size": [
+            0.014,
+            0.012,
+            0.022
+          ],
+          "op": "add",
+          "rotate": []
+        },
+        {
+          "at": [
+            0.069,
+            0.0065,
+            0
+          ],
+          "detail": [],
+          "kind": "box",
+          "size": [
+            0.024,
+            0.003,
+            0.016
+          ],
+          "op": "add",
+          "rotate": []
+        }
+      ],
+      "id": "arm_shape"
+    },
+    {
+      "forms": [
+        {
+          "at": [],
+          "detail": [],
+          "kind": "cylinder",
+          "size": [
+            0.032,
+            0.006,
+            0.032
+          ],
+          "op": "add",
+          "rotate": []
+        },
+        {
+          "at": [
+            -0.014,
+            0,
+            0
+          ],
+          "detail": [],
+          "kind": "box",
+          "size": [
+            0.012,
+            0.012,
+            0.024
+          ],
+          "op": "add",
+          "rotate": []
+        },
+        {
+          "at": [
+            0,
+            0.011,
+            0
+          ],
+          "detail": [],
+          "kind": "cylinder",
+          "size": [
+            0.028,
+            0.018,
+            0.028
+          ],
+          "op": "add",
+          "rotate": []
+        },
+        {
+          "at": [
+            0,
+            0.027,
+            0
+          ],
+          "detail": [],
+          "kind": "cylinder",
+          "size": [
+            0.006,
+            0.016,
+            0.006
+          ],
+          "op": "add",
+          "rotate": []
+        },
+        {
+          "at": [
+            -0.016,
+            0.01,
+            0
+          ],
+          "detail": [],
+          "kind": "cylinder",
+          "size": [
+            0.008,
+            0.008,
+            0.008
+          ],
+          "op": "add",
+          "rotate": [
+            0,
+            0,
+            -90
+          ]
+        }
+      ],
+      "id": "motor_shape"
+    },
+    {
+      "forms": [
+        {
+          "at": [],
+          "detail": [
+            {
+              "key": "wall",
+              "values": [
+                0.0055
+              ]
+            }
+          ],
+          "kind": "tube",
+          "size": [
+            0.018,
+            0.008,
+            0.018
+          ],
+          "op": "add",
+          "rotate": []
+        },
+        {
+          "at": [],
+          "detail": [
+            {
+              "key": "sections",
+              "values": [
+                0,
+                0.006,
+                0,
+                0.0016,
+                0.0035,
+                0,
+                0.021,
+                0.002,
+                0.0016,
+                0.008,
+                0,
+                0.065,
+                0.008,
+                0.0011,
+                0.01,
+                0,
+                0.098,
+                0.006,
+                0.0007,
+                0.004,
+                0,
+                0.104,
+                0.004,
+                0.0003,
+                0.001
+              ]
+            }
+          ],
+          "kind": "loft",
+          "size": [
+            1,
+            1,
+            1
+          ],
+          "op": "add",
+          "rotate": [
+            0,
+            0,
+            -90
+          ]
+        },
+        {
+          "at": [],
+          "detail": [
+            {
+              "key": "sections",
+              "values": [
+                0,
+                0.006,
+                0,
+                0.0016,
+                0.0035,
+                0,
+                0.021,
+                0.002,
+                0.0016,
+                0.008,
+                0,
+                0.065,
+                0.008,
+                0.0011,
+                0.01,
+                0,
+                0.098,
+                0.006,
+                0.0007,
+                0.004,
+                0,
+                0.104,
+                0.004,
+                0.0003,
+                0.001
+              ]
+            }
+          ],
+          "kind": "loft",
+          "size": [
+            1,
+            1,
+            1
+          ],
+          "op": "add",
+          "rotate": [
+            0,
+            180,
+            90
+          ]
+        }
+      ],
+      "id": "prop_shape"
+    },
+    {
+      "forms": [
+        {
+          "at": [],
+          "detail": [
+            {
+              "key": "radius",
+              "values": [
+                0.003
+              ]
+            }
+          ],
+          "kind": "rounded_box",
+          "size": [
+            0.072,
+            0.026,
+            0.042
+          ],
+          "op": "add",
+          "rotate": []
+        },
+        {
+          "at": [
+            0,
+            0.014,
+            0
+          ],
+          "detail": [],
+          "kind": "box",
+          "size": [
+            0.05,
+            0.004,
+            0.032
+          ],
+          "op": "add",
+          "rotate": []
+        },
+        {
+          "at": [
+            0.03,
+            0.0295,
+            0
+          ],
+          "detail": [],
+          "kind": "cylinder",
+          "size": [
+            0.004,
+            0.035,
+            0.004
+          ],
+          "op": "add",
+          "rotate": []
+        }
+      ],
+      "id": "battery_shape"
+    },
+    {
+      "forms": [
+        {
+          "at": [],
+          "detail": [],
+          "kind": "box",
+          "size": [
+            0.072,
+            0.003,
+            0.072
+          ],
+          "op": "add",
+          "rotate": []
+        },
+        {
+          "at": [
+            0,
+            -0.005,
+            0
+          ],
+          "detail": [],
+          "kind": "box",
+          "size": [
+            0.012,
+            0.009,
+            0.012
+          ],
+          "op": "add",
+          "rotate": []
+        },
+        {
+          "at": [
+            0.03,
+            -0.0015,
+            0
+          ],
+          "detail": [],
+          "kind": "box",
+          "size": [
+            0.008,
+            0.004,
+            0.008
+          ],
+          "op": "add",
+          "rotate": []
+        },
+        {
+          "at": [
+            0.036,
+            0.0025,
+            0
+          ],
+          "detail": [],
+          "kind": "cylinder",
+          "size": [
+            0.006,
+            0.008,
+            0.006
+          ],
+          "op": "add",
+          "rotate": [
+            0,
+            0,
+            -90
+          ]
+        },
+        {
+          "at": [
+            -0.036,
+            0.0025,
+            0
+          ],
+          "detail": [],
+          "kind": "cylinder",
+          "size": [
+            0.006,
+            0.008,
+            0.006
+          ],
+          "op": "add",
+          "rotate": [
+            180,
+            0,
+            -90
+          ]
+        },
+        {
+          "at": [
+            0,
+            0.0025,
+            0.036
+          ],
+          "detail": [],
+          "kind": "cylinder",
+          "size": [
+            0.006,
+            0.008,
+            0.006
+          ],
+          "op": "add",
+          "rotate": [
+            90,
+            0,
+            -90
+          ]
+        },
+        {
+          "at": [
+            0,
+            0.0025,
+            -0.036
+          ],
+          "detail": [],
+          "kind": "cylinder",
+          "size": [
+            0.006,
+            0.008,
+            0.006
+          ],
+          "op": "add",
+          "rotate": [
+            -90,
+            0,
+            -90
+          ]
+        },
+        {
+          "at": [
+            0,
+            0.003,
+            0
+          ],
+          "detail": [],
+          "kind": "box",
+          "size": [
+            0.015,
+            0.004,
+            0.015
+          ],
+          "op": "add",
+          "rotate": []
+        },
+        {
+          "at": [
+            -0.02,
+            0.002,
+            -0.016
+          ],
+          "detail": [
+            {
+              "key": "repeat",
+              "values": [
+                2,
+                1,
+                2
+              ]
+            },
+            {
+              "key": "step",
+              "values": [
+                0.04,
+                0,
+                0.032
+              ]
+            }
+          ],
+          "kind": "box",
+          "size": [
+            0.006,
+            0.002,
+            0.012
+          ],
+          "op": "add",
+          "rotate": []
+        }
+      ],
+      "id": "controller_shape"
+    },
+    {
+      "forms": [
+        {
+          "at": [],
+          "detail": [
+            {
+              "key": "radius",
+              "values": [
+                0.001
+              ]
+            }
+          ],
+          "kind": "rounded_box",
+          "size": [
+            0.042,
+            0.009,
+            0.018
+          ],
+          "op": "add",
+          "rotate": []
+        },
+        {
+          "at": [
+            0,
+            -0.005,
+            0
+          ],
+          "detail": [],
+          "kind": "box",
+          "size": [
+            0.024,
+            0.002,
+            0.016
+          ],
+          "op": "add",
+          "rotate": []
+        },
+        {
+          "at": [
+            0.0475,
+            -0.004,
+            0
+          ],
+          "detail": [],
+          "kind": "cylinder",
+          "size": [
+            0.003,
+            0.057,
+            0.003
+          ],
+          "op": "add",
+          "rotate": [
+            0,
+            0,
+            -90
+          ]
+        },
+        {
+          "at": [
+            -0.057,
+            0.01,
+            0
+          ],
+          "detail": [],
+          "kind": "cylinder",
+          "size": [
+            0.003,
+            0.078,
+            0.003
+          ],
+          "op": "add",
+          "rotate": [
+            0,
+            0,
+            -90
+          ]
+        },
+        {
+          "at": [
+            -0.018,
+            0.0065,
+            0
+          ],
+          "detail": [],
+          "kind": "cylinder",
+          "size": [
+            0.003,
+            0.013,
+            0.003
+          ],
+          "op": "add",
+          "rotate": []
+        },
+        {
+          "at": [
+            0,
+            0.005,
+            0
+          ],
+          "detail": [],
+          "kind": "box",
+          "size": [
+            0.026,
+            0.002,
+            0.014
+          ],
+          "op": "add",
+          "rotate": []
+        }
+      ],
+      "id": "esc_shape"
+    }
+  ],
+  "parts": [
+    {
+      "color": [
+        0.16,
+        0.18,
+        0.2
+      ],
+      "parent": "",
+      "id": "frame",
+      "entity": "e0",
+      "shape": "frame_shape"
+    },
+    {
+      "color": [
+        0.1,
+        0.12,
+        0.14
+      ],
+      "parent": "frame",
+      "id": "arm_px",
+      "entity": "e1",
+      "shape": "arm_shape"
+    },
+    {
+      "color": [
+        0.1,
+        0.12,
+        0.14
+      ],
+      "parent": "frame",
+      "id": "arm_nx",
+      "entity": "e1",
+      "shape": "arm_shape"
+    },
+    {
+      "color": [
+        0.1,
+        0.12,
+        0.14
+      ],
+      "parent": "frame",
+      "id": "arm_pz",
+      "entity": "e1",
+      "shape": "arm_shape"
+    },
+    {
+      "color": [
+        0.1,
+        0.12,
+        0.14
+      ],
+      "parent": "frame",
+      "id": "arm_nz",
+      "entity": "e1",
+      "shape": "arm_shape"
+    },
+    {
+      "color": [
+        0.36,
+        0.39,
+        0.42
+      ],
+      "parent": "arm_px",
+      "id": "motor_px",
+      "entity": "e2",
+      "shape": "motor_shape"
+    },
+    {
+      "color": [
+        0.36,
+        0.39,
+        0.42
+      ],
+      "parent": "arm_nx",
+      "id": "motor_nx",
+      "entity": "e2",
+      "shape": "motor_shape"
+    },
+    {
+      "color": [
+        0.36,
+        0.39,
+        0.42
+      ],
+      "parent": "arm_pz",
+      "id": "motor_pz",
+      "entity": "e2",
+      "shape": "motor_shape"
+    },
+    {
+      "color": [
+        0.36,
+        0.39,
+        0.42
+      ],
+      "parent": "arm_nz",
+      "id": "motor_nz",
+      "entity": "e2",
+      "shape": "motor_shape"
+    },
+    {
+      "color": [
+        0.075,
+        0.085,
+        0.095
+      ],
+      "parent": "motor_px",
+      "id": "prop_px",
+      "entity": "e3",
+      "shape": "prop_shape"
+    },
+    {
+      "color": [
+        0.075,
+        0.085,
+        0.095
+      ],
+      "parent": "motor_nx",
+      "id": "prop_nx",
+      "entity": "e3",
+      "shape": "prop_shape"
+    },
+    {
+      "color": [
+        0.075,
+        0.085,
+        0.095
+      ],
+      "parent": "motor_pz",
+      "id": "prop_pz",
+      "entity": "e3",
+      "shape": "prop_shape"
+    },
+    {
+      "color": [
+        0.075,
+        0.085,
+        0.095
+      ],
+      "parent": "motor_nz",
+      "id": "prop_nz",
+      "entity": "e3",
+      "shape": "prop_shape"
+    },
+    {
+      "color": [
+        0.24,
+        0.29,
+        0.32
+      ],
+      "parent": "frame",
+      "id": "battery",
+      "entity": "e4",
+      "shape": "battery_shape"
+    },
+    {
+      "color": [
+        0.12,
+        0.3,
+        0.23
+      ],
+      "parent": "frame",
+      "id": "controller",
+      "entity": "e5",
+      "shape": "controller_shape"
+    },
+    {
+      "color": [
+        0.13,
+        0.19,
+        0.18
+      ],
+      "parent": "arm_px",
+      "id": "esc_px",
+      "entity": "e6",
+      "shape": "esc_shape"
+    },
+    {
+      "color": [
+        0.13,
+        0.19,
+        0.18
+      ],
+      "parent": "arm_nx",
+      "id": "esc_nx",
+      "entity": "e6",
+      "shape": "esc_shape"
+    },
+    {
+      "color": [
+        0.13,
+        0.19,
+        0.18
+      ],
+      "parent": "arm_pz",
+      "id": "esc_pz",
+      "entity": "e6",
+      "shape": "esc_shape"
+    },
+    {
+      "color": [
+        0.13,
+        0.19,
+        0.18
+      ],
+      "parent": "arm_nz",
+      "id": "esc_nz",
+      "entity": "e6",
+      "shape": "esc_shape"
+    }
+  ],
+  "root_rotation": [
+    0,
+    0,
+    0
+  ],
+  "symmetries": [
+    {
+      "a": "arm_px",
+      "axis": "x",
+      "b": "arm_nx"
+    },
+    {
+      "a": "arm_pz",
+      "axis": "z",
+      "b": "arm_nz"
+    },
+    {
+      "a": "motor_px",
+      "axis": "x",
+      "b": "motor_nx"
+    },
+    {
+      "a": "motor_pz",
+      "axis": "z",
+      "b": "motor_nz"
+    },
+    {
+      "a": "prop_px",
+      "axis": "x",
+      "b": "prop_nx"
+    },
+    {
+      "a": "prop_pz",
+      "axis": "z",
+      "b": "prop_nz"
+    },
+    {
+      "a": "esc_px",
+      "axis": "x",
+      "b": "esc_nx"
+    },
+    {
+      "a": "esc_pz",
+      "axis": "z",
+      "b": "esc_nz"
+    }
+  ],
+  "ports": [
+    {
+      "face": "+x",
+      "form": 1,
+      "id": "frame_px",
+      "kind": "face",
+      "part": "frame",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+x",
+      "form": 2,
+      "id": "frame_nx",
+      "kind": "face",
+      "part": "frame",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+x",
+      "form": 3,
+      "id": "frame_pz",
+      "kind": "face",
+      "part": "frame",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+x",
+      "form": 4,
+      "id": "frame_nz",
+      "kind": "face",
+      "part": "frame",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 5,
+      "id": "frame_controller",
+      "kind": "face",
+      "part": "frame",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "-y",
+      "form": 6,
+      "id": "frame_battery",
+      "kind": "face",
+      "part": "frame",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "-x",
+      "form": 0,
+      "id": "arm_px_root",
+      "kind": "face",
+      "part": "arm_px",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+x",
+      "form": 2,
+      "id": "arm_px_end",
+      "kind": "face",
+      "part": "arm_px",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 3,
+      "id": "arm_px_top",
+      "kind": "face",
+      "part": "arm_px",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "-x",
+      "form": 0,
+      "id": "arm_nx_root",
+      "kind": "face",
+      "part": "arm_nx",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+x",
+      "form": 2,
+      "id": "arm_nx_end",
+      "kind": "face",
+      "part": "arm_nx",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 3,
+      "id": "arm_nx_top",
+      "kind": "face",
+      "part": "arm_nx",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "-x",
+      "form": 0,
+      "id": "arm_pz_root",
+      "kind": "face",
+      "part": "arm_pz",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+x",
+      "form": 2,
+      "id": "arm_pz_end",
+      "kind": "face",
+      "part": "arm_pz",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 3,
+      "id": "arm_pz_top",
+      "kind": "face",
+      "part": "arm_pz",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "-x",
+      "form": 0,
+      "id": "arm_nz_root",
+      "kind": "face",
+      "part": "arm_nz",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+x",
+      "form": 2,
+      "id": "arm_nz_end",
+      "kind": "face",
+      "part": "arm_nz",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 3,
+      "id": "arm_nz_top",
+      "kind": "face",
+      "part": "arm_nz",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "-x",
+      "form": 1,
+      "id": "motor_px_mount",
+      "kind": "face",
+      "part": "motor_px",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 3,
+      "id": "motor_px_axis",
+      "kind": "outer_axis",
+      "part": "motor_px",
+      "span": [
+        0.125,
+        1
+      ]
+    },
+    {
+      "face": "-y",
+      "form": 4,
+      "id": "motor_px_input",
+      "kind": "face",
+      "part": "motor_px",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "-x",
+      "form": 1,
+      "id": "motor_nx_mount",
+      "kind": "face",
+      "part": "motor_nx",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 3,
+      "id": "motor_nx_axis",
+      "kind": "outer_axis",
+      "part": "motor_nx",
+      "span": [
+        0.125,
+        1
+      ]
+    },
+    {
+      "face": "-y",
+      "form": 4,
+      "id": "motor_nx_input",
+      "kind": "face",
+      "part": "motor_nx",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "-x",
+      "form": 1,
+      "id": "motor_pz_mount",
+      "kind": "face",
+      "part": "motor_pz",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 3,
+      "id": "motor_pz_axis",
+      "kind": "outer_axis",
+      "part": "motor_pz",
+      "span": [
+        0.125,
+        1
+      ]
+    },
+    {
+      "face": "-y",
+      "form": 4,
+      "id": "motor_pz_input",
+      "kind": "face",
+      "part": "motor_pz",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "-x",
+      "form": 1,
+      "id": "motor_nz_mount",
+      "kind": "face",
+      "part": "motor_nz",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 3,
+      "id": "motor_nz_axis",
+      "kind": "outer_axis",
+      "part": "motor_nz",
+      "span": [
+        0.125,
+        1
+      ]
+    },
+    {
+      "face": "-y",
+      "form": 4,
+      "id": "motor_nz_input",
+      "kind": "face",
+      "part": "motor_nz",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 0,
+      "id": "prop_px_axis",
+      "kind": "bore_axis",
+      "part": "prop_px",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 0,
+      "id": "prop_nx_axis",
+      "kind": "bore_axis",
+      "part": "prop_nx",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 0,
+      "id": "prop_pz_axis",
+      "kind": "bore_axis",
+      "part": "prop_pz",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 0,
+      "id": "prop_nz_axis",
+      "kind": "bore_axis",
+      "part": "prop_nz",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 1,
+      "id": "battery_mount",
+      "kind": "face",
+      "part": "battery",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 2,
+      "id": "battery_lead",
+      "kind": "face",
+      "part": "battery",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "-y",
+      "form": 1,
+      "id": "controller_mount",
+      "kind": "face",
+      "part": "controller",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "-y",
+      "form": 2,
+      "id": "controller_power",
+      "kind": "face",
+      "part": "controller",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 3,
+      "id": "controller_px",
+      "kind": "face",
+      "part": "controller",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 4,
+      "id": "controller_nx",
+      "kind": "face",
+      "part": "controller",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 5,
+      "id": "controller_pz",
+      "kind": "face",
+      "part": "controller",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 6,
+      "id": "controller_nz",
+      "kind": "face",
+      "part": "controller",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "-y",
+      "form": 1,
+      "id": "esc_px_mount",
+      "kind": "face",
+      "part": "esc_px",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 2,
+      "id": "esc_px_output",
+      "kind": "face",
+      "part": "esc_px",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "-y",
+      "form": 3,
+      "id": "esc_px_input",
+      "kind": "face",
+      "part": "esc_px",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "-y",
+      "form": 1,
+      "id": "esc_nx_mount",
+      "kind": "face",
+      "part": "esc_nx",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 2,
+      "id": "esc_nx_output",
+      "kind": "face",
+      "part": "esc_nx",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "-y",
+      "form": 3,
+      "id": "esc_nx_input",
+      "kind": "face",
+      "part": "esc_nx",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "-y",
+      "form": 1,
+      "id": "esc_pz_mount",
+      "kind": "face",
+      "part": "esc_pz",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 2,
+      "id": "esc_pz_output",
+      "kind": "face",
+      "part": "esc_pz",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "-y",
+      "form": 3,
+      "id": "esc_pz_input",
+      "kind": "face",
+      "part": "esc_pz",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "-y",
+      "form": 1,
+      "id": "esc_nz_mount",
+      "kind": "face",
+      "part": "esc_nz",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "+y",
+      "form": 2,
+      "id": "esc_nz_output",
+      "kind": "face",
+      "part": "esc_nz",
+      "span": [
+        0,
+        1
+      ]
+    },
+    {
+      "face": "-y",
+      "form": 3,
+      "id": "esc_nz_input",
+      "kind": "face",
+      "part": "esc_nz",
+      "span": [
+        0,
+        1
+      ]
+    }
+  ],
+  "root_position": [
+    0,
+    0,
+    0
+  ]
+}

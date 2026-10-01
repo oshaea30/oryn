@@ -1,5 +1,7 @@
 # Strong-model 014 — better global arrangement; funding interrupted the comparison
 
+Continuation completed after the user reloaded credit: see [014–015 results](STRONG_MODEL_CONTINUATION_RESULT.md). The report below retains the original interrupted outcome.
+
 **Astra's completed fresh drone plan passes the global arrangement checks, but fails
 four local feature/mate checks. The rest of the comparison is funding-blocked.**
 The repair job returned `credit_balance_exhausted` with no usage or model output.

@@ -1,0 +1,47 @@
+{
+  "status": "completed",
+  "evidence": {
+    "operation_id": "cbf70b94da3f917b234d68131faf9caf",
+    "response_id": "resp_011332d1b73e3871006abeb39a365c87d28fea61d3e4dfd057",
+    "response_sha256": "c645661ede29bc1d56c922ee3325059f775b9b671cca83344f1e626543265a90",
+    "body_sha256": "fafe7a1178494698457e9d092642d69550f306b50480af8b354d7a663d947b6a",
+    "error_code": "credit_balance_exhausted",
+    "user_confirmed_reload": true
+  },
+  "ledger_row_before": {
+    "request_id": "cbf70b94da3f917b234d68131faf9caf",
+    "actor_id": "developer",
+    "provider": "openai",
+    "profile": "research_astra_xhigh",
+    "model": "gpt-6-astra",
+    "effort": "xhigh",
+    "operation": "strong-model-014",
+    "fingerprint": "fafe7a1178494698457e9d092642d69550f306b50480af8b354d7a663d947b6a",
+    "price_version": "openai-standard-text-2026-09-27-v1",
+    "input_tokens": 20099,
+    "max_output_tokens": 32768,
+    "reserved_nanos": 1889637500,
+    "ceiling_nanos": 2100000000,
+    "created": 1790882714,
+    "expires": 1790882834,
+    "admission_day": "2026-10-01",
+    "status": "uncertain",
+    "charged_nanos": 1889637500,
+    "actual_input_tokens": null,
+    "actual_output_tokens": null,
+    "calculated_cost_nanos": null,
+    "actual_cost_nanos": null,
+    "tool_cost_nanos": 0,
+    "finished": 1790882722,
+    "outcome": "usage_unconfirmed"
+  },
+  "control_before": {
+    "id": 1,
+    "halted": 1,
+    "last_clock": 1790882714
+  },
+  "reviewed_at": 1790896277,
+  "hold_retained_nanos": 1889637500,
+  "billing_reconciled": false,
+  "released_nanos": 0
+}

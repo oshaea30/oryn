@@ -1,0 +1,68 @@
+{
+  "r12": {
+    "kind": "constraint",
+    "refs": [
+      "part:frame",
+      "port:arm_nx_root",
+      "port:arm_nz_root",
+      "port:arm_px_root",
+      "port:arm_pz_root"
+    ]
+  },
+  "r13": {
+    "kind": "constraint",
+    "refs": [
+      "part:arm_nx",
+      "part:arm_nz",
+      "part:arm_px",
+      "part:arm_pz",
+      "part:frame"
+    ]
+  },
+  "r14": {
+    "kind": "constraint",
+    "refs": [
+      "part:frame",
+      "port:motor_nx_axis",
+      "port:motor_nz_axis",
+      "port:motor_px_axis",
+      "port:motor_pz_axis"
+    ]
+  },
+  "r15": {
+    "kind": "constraint",
+    "refs": [
+      "port:motor_nx_axis",
+      "port:motor_nz_axis",
+      "port:motor_px_axis",
+      "port:motor_pz_axis"
+    ]
+  },
+  "r16": {
+    "kind": "constraint",
+    "refs": [
+      "part:frame",
+      "port:prop_nx_axis",
+      "port:prop_nz_axis",
+      "port:prop_px_axis",
+      "port:prop_pz_axis"
+    ]
+  },
+  "r17": {
+    "kind": "constraint",
+    "refs": [
+      "port:prop_nx_axis",
+      "port:prop_nz_axis",
+      "port:prop_px_axis",
+      "port:prop_pz_axis"
+    ]
+  },
+  "r18": {
+    "kind": "unsupported",
+    "refs": []
+  },
+  "r19": {
+    "kind": "unsupported",
+    "refs": []
+  }
+}

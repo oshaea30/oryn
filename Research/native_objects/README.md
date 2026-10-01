@@ -19,23 +19,26 @@ keeps GLB as a possible geometry carrier within a future intelligent object pack
 It authorizes no new format, schema rewrite, packaging system or `.oryn` implementation;
 missing broader concepts do not expand the immediate experiment's acceptance criteria.
 
-## Current step: stronger-model comparison, funding-blocked
+## Current result: stronger configuration repairs the drone; speaker remains blocked
 
-[Strong-model 014](STRONG_MODEL_RESULT.md) uses Astra xhigh with 32,768 output tokens
-under the unchanged geometry executor and acceptance gates. The user raised the batch
-ceiling to $10 and shared daily/aggregate research ceilings to $15 on 2026-10-01.
-The fresh 19-part drone passes all six global arrangement checks but fails four local
-feature/mate checks. Its completed request costs an estimated $1.03215 and takes
-367.60 seconds, without hitting the output or deadline limits. It is recognizable
-but remains a simplified, rejected candidate.
+[Strong-model 014–015](STRONG_MODEL_CONTINUATION_RESULT.md) completes the comparison
+using Astra xhigh under the same geometry tools and acceptance gates. Its 19-part
+drone passes all 292 checks after one automatic controller-shape patch, preserving
+all 308 previously passing facts with zero regressions. The fan passes 55/55 checks,
+as it also did with Sol. Both are recognizable but simplified technical models.
 
-The subsequent repair returned `credit_balance_exhausted`, with no usage or model output.
-Its $1.8896375 reservation remains held. Speaker and fan calls are undispatched; the
-benchmark is incomplete. Reload OpenAI API credit, review the failed-job accounting,
-and preflight a frozen continuation of unfinished operations before further calls.
-Do not repeat the completed plan or silently exceed the $10 batch cap. All earlier
-holds survive. Use $7.40 as conservative prior allowance for a new budget, including
-this interrupted batch. Eighteen desktop browser checks pass; Quest is unassessed.
+The speaker now records front-face and driver arrangement rules, but an inferred
+mandatory rear-cover placement lacks an executable rule. Its geometry is correctly
+blocked. The next general issue is consistency between optional design details,
+required relations and spatial bindings; do not add a speaker-specific exception or
+weaken the frozen requirement. No general-generation or polished-object pass is claimed.
+
+The user reloaded API credit and the interrupted comparison resumed from its saved
+candidate. New estimate $1.329675; completed Astra calls total $2.361825. The former
+$1.8896375 failed-job hold remains unchanged, with no new uncertain holds. Current daily
+and aggregate research ceilings are $15; carry $8.73 conservative prior allowance into
+a new budget. Thirty-six browser checks and 42 targeted tests pass. The drone takes
+about 7.15 minutes to plan/repair; Quest, motion and physical operation are unassessed.
 
 ## Earlier planning step
 

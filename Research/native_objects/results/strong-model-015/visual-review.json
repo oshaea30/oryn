@@ -1,0 +1,43 @@
+{
+  "method": "Direct inspection of assembled/exploded desktop browser views, isolated-part inspection sheets and a closer drone camera view. No output geometry or material edits.",
+  "manual_repairs": 0,
+  "cases": [
+    {
+      "case": "generic-drone-plan-1",
+      "structural_acceptance": "pass",
+      "visual_coherence": "partial",
+      "observations": [
+        "Recognizable quadcopter with four consistently oriented motor/propeller assemblies",
+        "Nineteen separately selectable components; controller feature corrections preserve the assembly appearance",
+        "Geometry and materials remain simplified technical visualization, not a polished or mechanically complete drone"
+      ],
+      "parts": 19,
+      "triangles": 9480
+    },
+    {
+      "case": "cooling-fan-row-plan-1",
+      "structural_acceptance": "pass",
+      "visual_coherence": "partial",
+      "observations": [
+        "Consistent three-fan arrangement in the unchanged mounting panel",
+        "Five blades per rotor preserved; earlier Sol repair used four",
+        "No visible center support/bearing structure establishes mechanical completeness; coaxial checks do not supply those missing components"
+      ],
+      "parts": 7,
+      "triangles": 6078
+    },
+    {
+      "case": "two-driver-speaker",
+      "structural_acceptance": "not executed",
+      "visual_coherence": "unassessed",
+      "observations": [
+        "Required inferred rear-cover placement lacks a spatial adapter binding; geometry correctly blocked"
+      ]
+    }
+  ],
+  "quest_performance": "unassessed",
+  "physical_operation": "unassessed",
+  "motion": "absent",
+  "detail_image": "Drone camera zoom 2.7 only; geometry unchanged",
+  "native_generation_goal_passed": false
+}

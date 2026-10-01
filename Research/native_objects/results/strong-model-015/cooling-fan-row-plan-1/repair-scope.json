@@ -1,0 +1,37 @@
+{
+  "base_sha256": "5f77599e5a9d6e98d2a5edccd8336ec211b088d16c62ac3c62a74f9e3c0613cb",
+  "direct_parts": [
+    "frame_center",
+    "frame_left",
+    "frame_right",
+    "rotor_center",
+    "rotor_left",
+    "rotor_right"
+  ],
+  "allowed_parts": [
+    "frame_center",
+    "frame_left",
+    "frame_right",
+    "rotor_center",
+    "rotor_left",
+    "rotor_right"
+  ],
+  "allowed_shapes": [
+    "frame_shape",
+    "rotor_shape"
+  ],
+  "allowed_ports": [
+    "frame_center_bore",
+    "frame_center_mount",
+    "frame_left_bore",
+    "frame_left_mount",
+    "frame_right_bore",
+    "frame_right_mount",
+    "rotor_center_axis",
+    "rotor_left_axis",
+    "rotor_right_axis"
+  ],
+  "unresolved_failures": [],
+  "dependency_rule": "shared shape consumers; solved poses and all constraints revalidated globally",
+  "scope_sha256": "ac46d4b0038f077d8993b6ced3a8dc08919942a3aa98f2010899cd1887c405ba"
+}

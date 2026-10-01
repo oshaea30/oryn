@@ -1,0 +1,260 @@
+{
+  "assemblies": [
+    {
+      "members": [
+        "e1"
+      ],
+      "placement": {
+        "pattern": "linear",
+        "axis": "x",
+        "id": "r9",
+        "reference": ""
+      },
+      "id": "a0",
+      "orientation": {
+        "direction": "+z",
+        "id": "r10"
+      }
+    }
+  ],
+  "spatial": [
+    {
+      "axis": "+z",
+      "id": "r8",
+      "operator": "on_surface",
+      "reference": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "domain": "audio_output",
+      "subject": "object",
+      "id": "x0",
+      "source": "s2"
+    },
+    {
+      "domain": "motion",
+      "subject": "object",
+      "id": "x1",
+      "source": "s2"
+    }
+  ],
+  "requirements": [
+    {
+      "basis": "inferred",
+      "subject": "e0",
+      "value": "",
+      "source": "s0",
+      "predicate": "exists",
+      "obligation": "required",
+      "mode": "structure",
+      "target": "",
+      "kind": "entity",
+      "id": "r0"
+    },
+    {
+      "basis": "explicit",
+      "subject": "e1",
+      "value": "",
+      "source": "s0",
+      "predicate": "exists",
+      "obligation": "required",
+      "mode": "structure",
+      "target": "",
+      "kind": "entity",
+      "id": "r1"
+    },
+    {
+      "basis": "design_choice",
+      "subject": "e2",
+      "value": "",
+      "source": "",
+      "predicate": "exists",
+      "obligation": "design_choice",
+      "mode": "structure",
+      "target": "",
+      "kind": "entity",
+      "id": "r2"
+    },
+    {
+      "basis": "design_choice",
+      "subject": "e3",
+      "value": "",
+      "source": "",
+      "predicate": "exists",
+      "obligation": "design_choice",
+      "mode": "structure",
+      "target": "",
+      "kind": "entity",
+      "id": "r3"
+    },
+    {
+      "basis": "explicit",
+      "subject": "object",
+      "value": "Tabletop speaker form factor",
+      "source": "s0",
+      "predicate": "appearance",
+      "obligation": "required",
+      "mode": "appearance",
+      "target": "",
+      "kind": "visual",
+      "id": "r4"
+    },
+    {
+      "basis": "explicit",
+      "subject": "e1",
+      "value": "2",
+      "source": "s0",
+      "predicate": "count",
+      "obligation": "required",
+      "mode": "structure",
+      "target": "",
+      "kind": "constraint",
+      "id": "r5"
+    },
+    {
+      "basis": "explicit",
+      "subject": "e1",
+      "value": "Matching loudspeaker drivers",
+      "source": "s0",
+      "predicate": "appearance",
+      "obligation": "required",
+      "mode": "appearance",
+      "target": "",
+      "kind": "visual",
+      "id": "r6"
+    },
+    {
+      "basis": "inferred",
+      "subject": "e1",
+      "value": "",
+      "source": "s0",
+      "predicate": "attached",
+      "obligation": "required",
+      "mode": "structure",
+      "target": "e0",
+      "kind": "relation",
+      "id": "r7"
+    },
+    {
+      "basis": "explicit",
+      "subject": "e1",
+      "value": "Mounted in the enclosure front face",
+      "source": "s0",
+      "predicate": "other",
+      "obligation": "required",
+      "mode": "structure",
+      "target": "e0",
+      "kind": "relation",
+      "id": "r8"
+    },
+    {
+      "basis": "explicit",
+      "subject": "e1",
+      "value": "Driver centers side by side in one horizontal row",
+      "source": "s0",
+      "predicate": "other",
+      "obligation": "required",
+      "mode": "structure",
+      "target": "",
+      "kind": "constraint",
+      "id": "r9"
+    },
+    {
+      "basis": "explicit",
+      "subject": "e1",
+      "value": "Both driver axes face forward",
+      "source": "s0",
+      "predicate": "other",
+      "obligation": "required",
+      "mode": "structure",
+      "target": "",
+      "kind": "constraint",
+      "id": "r10"
+    },
+    {
+      "basis": "inferred",
+      "subject": "e2",
+      "value": "",
+      "source": "s0",
+      "predicate": "inside",
+      "obligation": "required",
+      "mode": "structure",
+      "target": "e0",
+      "kind": "relation",
+      "id": "r11"
+    },
+    {
+      "basis": "inferred",
+      "subject": "e2",
+      "value": "Static mounting path",
+      "source": "s0",
+      "predicate": "connected",
+      "obligation": "required",
+      "mode": "structure",
+      "target": "e0",
+      "kind": "relation",
+      "id": "r12"
+    },
+    {
+      "basis": "inferred",
+      "subject": "e2",
+      "value": "Static wiring connection to both drivers",
+      "source": "s0",
+      "predicate": "connected",
+      "obligation": "required",
+      "mode": "structure",
+      "target": "e1",
+      "kind": "relation",
+      "id": "r13"
+    },
+    {
+      "basis": "inferred",
+      "subject": "e3",
+      "value": "",
+      "source": "s0",
+      "predicate": "attached",
+      "obligation": "required",
+      "mode": "structure",
+      "target": "e0",
+      "kind": "relation",
+      "id": "r14"
+    },
+    {
+      "basis": "inferred",
+      "subject": "e3",
+      "value": "At the rear of the enclosure",
+      "source": "s0",
+      "predicate": "other",
+      "obligation": "required",
+      "mode": "structure",
+      "target": "e0",
+      "kind": "relation",
+      "id": "r15"
+    },
+    {
+      "basis": "explicit",
+      "subject": "object",
+      "value": "inspect",
+      "source": "s1",
+      "predicate": "capability",
+      "obligation": "required",
+      "mode": "behavior",
+      "target": "",
+      "kind": "behavior",
+      "id": "r16"
+    },
+    {
+      "basis": "explicit",
+      "subject": "object",
+      "value": "geometric_explode",
+      "source": "s1",
+      "predicate": "capability",
+      "obligation": "required",
+      "mode": "behavior",
+      "target": "",
+      "kind": "behavior",
+      "id": "r17"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "fixed_operations": [
+    {
+      "operation": "generic-drone/patch/1",
+      "input_tokens": 20099,
+      "maximum_nanos": 1889637500,
+      "comparison": {
+        "input_identical": true,
+        "output_schema_identical": true,
+        "source": "014 funding-failed request"
+      }
+    },
+    {
+      "operation": "two-driver-speaker/extract/0",
+      "input_tokens": 3913,
+      "maximum_nanos": 1687312500,
+      "comparison": {
+        "source": "Builds/NativeObjects/repair-run-012/two-driver-speaker-extract-call-0/request.json",
+        "old_body_sha256": "77f9dde114a9e0797308d0c185de458d1d8fa806d00ee0f2d440fae0bcc3b268",
+        "new_body_sha256": "83e96c5e12c2d8c08570d1f725747f7f1af3da1fdec90c2fa50348c90db54053",
+        "changed_fields": [
+          "model",
+          "max_output_tokens",
+          "reasoning"
+        ],
+        "input_identical": true,
+        "output_schema_identical": true,
+        "interpretation": "combined model/effort/output allowance comparison, not isolated model-only causality"
+      }
+    },
+    {
+      "operation": "cooling-fan-row/patch/1",
+      "input_tokens": 13371,
+      "maximum_nanos": 1805537500,
+      "comparison": {
+        "source": "Builds/NativeObjects/repair-run-012/cooling-fan-row-patch-call-1/request.json",
+        "old_body_sha256": "a6fe350854349bc40cb39387a18151dd942d46ee31836566264ec0739094e65d",
+        "new_body_sha256": "6e0ac954221161c7cc91efa95ad8a81a849b18237a460dae2cbace07d3ea3387",
+        "changed_fields": [
+          "model",
+          "max_output_tokens",
+          "reasoning"
+        ],
+        "input_identical": true,
+        "output_schema_identical": true,
+        "interpretation": "combined model/effort/output allowance comparison, not isolated model-only causality"
+      }
+    }
+  ],
+  "conditional_worst_case_nanos": 2048000000,
+  "whole_batch_maximum_nanos": 7430487500,
+  "continuation_ceiling_nanos": 7500000000,
+  "prior_including_holds_nanos": 7400000000,
+  "aggregate_ceiling_nanos": 15000000000,
+  "parent_charged_and_held_nanos": 2921787500,
+  "combined_comparison_worst_with_old_hold_nanos": 10352275000,
+  "daily_remaining_before_nanos": 8809877500,
+  "generation_dispatched": false,
+  "old_funding_hold_released": false
+}

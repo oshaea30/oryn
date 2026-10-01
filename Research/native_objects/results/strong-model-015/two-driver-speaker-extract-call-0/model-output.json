@@ -1,0 +1,260 @@
+{
+  "assemblies": [
+    {
+      "members": [
+        "e1"
+      ],
+      "placement": {
+        "pattern": "linear",
+        "axis": "x",
+        "id": "r9",
+        "reference": ""
+      },
+      "id": "a0",
+      "orientation": {
+        "direction": "+z",
+        "id": "r10"
+      }
+    }
+  ],
+  "spatial": [
+    {
+      "axis": "+z",
+      "id": "r8",
+      "operator": "on_surface",
+      "reference": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "d": "audio_output",
+      "s": "object",
+      "i": "x0",
+      "q": "s2"
+    },
+    {
+      "d": "motion",
+      "s": "object",
+      "i": "x1",
+      "q": "s2"
+    }
+  ],
+  "requirements": [
+    {
+      "b": "inferred",
+      "s": "e0",
+      "v": "",
+      "q": "s0",
+      "p": "exists",
+      "o": "required",
+      "m": "structure",
+      "t": "",
+      "k": "entity",
+      "i": "r0"
+    },
+    {
+      "b": "explicit",
+      "s": "e1",
+      "v": "",
+      "q": "s0",
+      "p": "exists",
+      "o": "required",
+      "m": "structure",
+      "t": "",
+      "k": "entity",
+      "i": "r1"
+    },
+    {
+      "b": "design_choice",
+      "s": "e2",
+      "v": "",
+      "q": "",
+      "p": "exists",
+      "o": "design_choice",
+      "m": "structure",
+      "t": "",
+      "k": "entity",
+      "i": "r2"
+    },
+    {
+      "b": "design_choice",
+      "s": "e3",
+      "v": "",
+      "q": "",
+      "p": "exists",
+      "o": "design_choice",
+      "m": "structure",
+      "t": "",
+      "k": "entity",
+      "i": "r3"
+    },
+    {
+      "b": "explicit",
+      "s": "object",
+      "v": "Tabletop speaker form factor",
+      "q": "s0",
+      "p": "appearance",
+      "o": "required",
+      "m": "appearance",
+      "t": "",
+      "k": "visual",
+      "i": "r4"
+    },
+    {
+      "b": "explicit",
+      "s": "e1",
+      "v": "2",
+      "q": "s0",
+      "p": "count",
+      "o": "required",
+      "m": "structure",
+      "t": "",
+      "k": "constraint",
+      "i": "r5"
+    },
+    {
+      "b": "explicit",
+      "s": "e1",
+      "v": "Matching loudspeaker drivers",
+      "q": "s0",
+      "p": "appearance",
+      "o": "required",
+      "m": "appearance",
+      "t": "",
+      "k": "visual",
+      "i": "r6"
+    },
+    {
+      "b": "inferred",
+      "s": "e1",
+      "v": "",
+      "q": "s0",
+      "p": "attached",
+      "o": "required",
+      "m": "structure",
+      "t": "e0",
+      "k": "relation",
+      "i": "r7"
+    },
+    {
+      "b": "explicit",
+      "s": "e1",
+      "v": "Mounted in the enclosure front face",
+      "q": "s0",
+      "p": "other",
+      "o": "required",
+      "m": "structure",
+      "t": "e0",
+      "k": "relation",
+      "i": "r8"
+    },
+    {
+      "b": "explicit",
+      "s": "e1",
+      "v": "Driver centers side by side in one horizontal row",
+      "q": "s0",
+      "p": "other",
+      "o": "required",
+      "m": "structure",
+      "t": "",
+      "k": "constraint",
+      "i": "r9"
+    },
+    {
+      "b": "explicit",
+      "s": "e1",
+      "v": "Both driver axes face forward",
+      "q": "s0",
+      "p": "other",
+      "o": "required",
+      "m": "structure",
+      "t": "",
+      "k": "constraint",
+      "i": "r10"
+    },
+    {
+      "b": "inferred",
+      "s": "e2",
+      "v": "",
+      "q": "s0",
+      "p": "inside",
+      "o": "required",
+      "m": "structure",
+      "t": "e0",
+      "k": "relation",
+      "i": "r11"
+    },
+    {
+      "b": "inferred",
+      "s": "e2",
+      "v": "Static mounting path",
+      "q": "s0",
+      "p": "connected",
+      "o": "required",
+      "m": "structure",
+      "t": "e0",
+      "k": "relation",
+      "i": "r12"
+    },
+    {
+      "b": "inferred",
+      "s": "e2",
+      "v": "Static wiring connection to both drivers",
+      "q": "s0",
+      "p": "connected",
+      "o": "required",
+      "m": "structure",
+      "t": "e1",
+      "k": "relation",
+      "i": "r13"
+    },
+    {
+      "b": "inferred",
+      "s": "e3",
+      "v": "",
+      "q": "s0",
+      "p": "attached",
+      "o": "required",
+      "m": "structure",
+      "t": "e0",
+      "k": "relation",
+      "i": "r14"
+    },
+    {
+      "b": "inferred",
+      "s": "e3",
+      "v": "At the rear of the enclosure",
+      "q": "s0",
+      "p": "other",
+      "o": "required",
+      "m": "structure",
+      "t": "e0",
+      "k": "relation",
+      "i": "r15"
+    },
+    {
+      "b": "explicit",
+      "s": "object",
+      "v": "inspect",
+      "q": "s1",
+      "p": "capability",
+      "o": "required",
+      "m": "behavior",
+      "t": "",
+      "k": "behavior",
+      "i": "r16"
+    },
+    {
+      "b": "explicit",
+      "s": "object",
+      "v": "geometric_explode",
+      "q": "s1",
+      "p": "capability",
+      "o": "required",
+      "m": "behavior",
+      "t": "",
+      "k": "behavior",
+      "i": "r17"
+    }
+  ]
+}

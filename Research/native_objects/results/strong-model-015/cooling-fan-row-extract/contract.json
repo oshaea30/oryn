@@ -1,0 +1,293 @@
+{
+  "source_request": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward. Let me inspect and separate the main parts. Keep it static; no airflow simulation is needed.",
+  "source_sha256": "724a3089941b51484e769f2112a723bc475ee9e70505591195f6ad0161a85229",
+  "inventory": {
+    "entities": [
+      {
+        "id": "e0",
+        "role": "Mounting panel"
+      },
+      {
+        "id": "e1",
+        "role": "Three fan frames"
+      },
+      {
+        "id": "e2",
+        "role": "Three fan rotors"
+      }
+    ],
+    "requirements": [
+      {
+        "id": "r01",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "e0",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "mode": "structure",
+        "basis": "explicit",
+        "quote": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward."
+      },
+      {
+        "id": "r02",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "e1",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward."
+      },
+      {
+        "id": "r03",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "e2",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward."
+      },
+      {
+        "id": "r04",
+        "obligation": "required",
+        "kind": "constraint",
+        "subject": "e1",
+        "target": "",
+        "predicate": "count",
+        "value": "3",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward."
+      },
+      {
+        "id": "r05",
+        "obligation": "required",
+        "kind": "constraint",
+        "subject": "e2",
+        "target": "",
+        "predicate": "count",
+        "value": "3",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward."
+      },
+      {
+        "id": "r06",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "e1",
+        "target": "e0",
+        "predicate": "attached",
+        "value": "all frames share the panel",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward."
+      },
+      {
+        "id": "r07",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "e2",
+        "target": "e1",
+        "predicate": "inside",
+        "value": "one rotor per frame",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward."
+      },
+      {
+        "id": "r08",
+        "obligation": "required",
+        "kind": "constraint",
+        "subject": "e1",
+        "target": "",
+        "predicate": "other",
+        "value": "evenly spaced horizontal row along x",
+        "mode": "structure",
+        "basis": "explicit",
+        "quote": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward."
+      },
+      {
+        "id": "r09",
+        "obligation": "required",
+        "kind": "constraint",
+        "subject": "e1",
+        "target": "",
+        "predicate": "other",
+        "value": "fan fronts face +z",
+        "mode": "structure",
+        "basis": "explicit",
+        "quote": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward."
+      },
+      {
+        "id": "r10",
+        "obligation": "required",
+        "kind": "constraint",
+        "subject": "e2",
+        "target": "",
+        "predicate": "other",
+        "value": "corresponding evenly spaced row along x",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward."
+      },
+      {
+        "id": "r11",
+        "obligation": "required",
+        "kind": "constraint",
+        "subject": "e2",
+        "target": "",
+        "predicate": "other",
+        "value": "rotor fronts face +z",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward."
+      },
+      {
+        "id": "r12",
+        "obligation": "required",
+        "kind": "behavior",
+        "subject": "object",
+        "target": "",
+        "predicate": "capability",
+        "value": "inspect",
+        "mode": "behavior",
+        "basis": "explicit",
+        "quote": "Let me inspect and separate the main parts."
+      },
+      {
+        "id": "r13",
+        "obligation": "required",
+        "kind": "behavior",
+        "subject": "object",
+        "target": "",
+        "predicate": "capability",
+        "value": "geometric_explode",
+        "mode": "behavior",
+        "basis": "explicit",
+        "quote": "Let me inspect and separate the main parts."
+      },
+      {
+        "id": "r14",
+        "obligation": "required",
+        "kind": "visual",
+        "subject": "e2",
+        "target": "",
+        "predicate": "appearance",
+        "value": "cooling-fan rotors",
+        "mode": "appearance",
+        "basis": "inferred",
+        "quote": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward."
+      }
+    ],
+    "exclusions": [
+      {
+        "id": "x01",
+        "subject": "object",
+        "domain": "motion",
+        "quote": "Keep it static;"
+      },
+      {
+        "id": "x02",
+        "subject": "object",
+        "domain": "physical_verification",
+        "quote": "no airflow simulation is needed."
+      }
+    ]
+  },
+  "inventory_sha256": "97ba6e59d49733455b9ac9b738d56ececcac1c1dc9c252f60baee6e69e1fc7b5",
+  "interpretation_version": 2,
+  "extraction_completeness": "unassessed; consistency is not natural-language entailment",
+  "source_grounding": {
+    "units": [
+      {
+        "id": "s0",
+        "start": 0,
+        "end": 133,
+        "text": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward."
+      },
+      {
+        "id": "s1",
+        "start": 134,
+        "end": 177,
+        "text": "Let me inspect and separate the main parts."
+      },
+      {
+        "id": "s2",
+        "start": 178,
+        "end": 193,
+        "text": "Keep it static;"
+      },
+      {
+        "id": "s3",
+        "start": 194,
+        "end": 226,
+        "text": "no airflow simulation is needed."
+      }
+    ],
+    "bindings": {
+      "r01": "s0",
+      "r02": "s0",
+      "r03": "s0",
+      "r04": "s0",
+      "r05": "s0",
+      "r06": "s0",
+      "r07": "s0",
+      "r08": "s0",
+      "r09": "s0",
+      "r10": "s0",
+      "r11": "s0",
+      "r12": "s1",
+      "r13": "s1",
+      "r14": "s0",
+      "x01": "s2",
+      "x02": "s3"
+    }
+  },
+  "source_grounding_sha256": "9fc125afbbe35ab847cc1861aeddea22a855fd47e82d4abeb7bd239710891830",
+  "spatial_rules": [],
+  "spatial_rules_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "spatial_policy_sha256": "abf21c243b7b133dc13ba5221866c9eabeff1f2f5a6ac127b3f15e6ace8bde33",
+  "assemblies": [
+    {
+      "id": "a01",
+      "members": [
+        "e1"
+      ],
+      "placement": {
+        "id": "r08",
+        "pattern": "linear",
+        "reference": "",
+        "axis": "x"
+      },
+      "orientation": {
+        "id": "r09",
+        "direction": "+z"
+      }
+    },
+    {
+      "id": "a02",
+      "members": [
+        "e2"
+      ],
+      "placement": {
+        "id": "r10",
+        "pattern": "linear",
+        "reference": "",
+        "axis": "x"
+      },
+      "orientation": {
+        "id": "r11",
+        "direction": "+z"
+      }
+    }
+  ],
+  "assemblies_sha256": "2b03362cfdff8d3e95584a38ee4fdc30fe1718368c63de18414127595de1dc14",
+  "arrangement_policy_sha256": "4a4bf140b11ad32d852c1161f2d9000e1a4f457c0142990424643c49c2816ca5"
+}

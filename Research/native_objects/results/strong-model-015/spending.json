@@ -1,0 +1,10 @@
+{
+  "charged_and_held_nanos": 1329675000,
+  "batch_ceiling_nanos": 7500000000,
+  "prior_upper_bound_nanos": 7400000000,
+  "aggregate_limit_nanos": 15000000000,
+  "daily_limit_nanos": 15000000000,
+  "daily_remaining_nanos": 7480202500,
+  "stopped": [],
+  "actual_invoiced_cost": null
+}

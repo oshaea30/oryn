@@ -189,21 +189,29 @@ axes during pose solving. The user then authorized a stronger-model comparison f
 The original 149 targeted tests and 36 browser checks pass; the $0.261955 estimate and
 older uncertain holds remain recorded.
 
-The [014 Astra xhigh comparison](Research/native_objects/STRONG_MODEL_RESULT.md) raises
-output capacity to 32,768 tokens with a 900-second deadline, $10 batch ceiling and $15
-shared daily/aggregate research ceilings. All geometry, requests and acceptance checks
-remain fixed. Its fresh 19-part drone passes global arrangements but fails four local
-feature/mate checks. The completed plan takes 367.60 seconds and an estimated $1.03215,
-without hitting a resource cap. It remains a simplified, rejected object.
+The [014–015 Astra xhigh comparison](Research/native_objects/STRONG_MODEL_CONTINUATION_RESULT.md)
+now completes with the same geometry executor and acceptance gates. After its initial
+plan passed global arrangements but failed four local checks, one automatic controller
+shape patch produces a 19-part drone passing all 292 checks and preserving 308 facts.
+The fan passes 55/55 checks with no regressions, as Sol's earlier patch also did. Both
+remain simplified technical models, with engineering completeness and visual polish
+unproven. This result argues against requiring a new solver merely to overcome the
+previous drone failure; the stronger configuration can succeed with existing tools.
 
-The repair job returned `credit_balance_exhausted` with no usage/model output. Retain its
-$1.8896375 accounting hold; speaker and fan calls are undispatched. This is an incomplete
-comparison, funding-blocked at OpenAI API billing, not a completed negative result.
-Restore funding and review accounting before a frozen continuation of unfinished work;
-keep the completed plan and failed job intact, and recheck the whole remaining budget.
-The remaining local allowance is not provider credit. Carry $7.40 conservative prior
-allowance into a new budget, including unresolved holds. Eighteen desktop checks pass;
-Quest, mechanical function and product readiness remain unassessed.
+The speaker's required inferred rear-cover placement has no executable spatial rule,
+so geometry remains blocked. Front-face/driver arrangement bindings now satisfy the
+limited assertions, not proof of complete interpretation or panel embedding. Next
+is the general obligation/spatial-binding gap across unrelated requests, preserving
+explicit user requirements and keeping optional design details consistent. No case recipe,
+per-output manual edit, new primitive, animation expansion or product promotion.
+
+After the user reloaded $10, 015 spent an estimated $1.329675. Completed Astra calls
+across 014–015 total $2.361825; the old $1.8896375 funding-failure hold remains unchanged.
+No new uncertain holds or funding errors. Daily/aggregate research ceilings remain $15;
+carry $8.73 conservative prior allowance for new budgeting, including all earlier holds.
+The drone takes about 7.15 minutes for plan plus repair; faster production generation is
+not established. Forty-two targeted tests and 36 desktop browser checks pass. Quest
+performance, motion and complete physical operation remain unassessed.
 
 Generation research is the active track. The product remains stable; answering,
 voice and motion-inference expansion are paused. Research output does not enter

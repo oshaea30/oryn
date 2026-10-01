@@ -1,0 +1,43 @@
+{
+  "base_sha256": "634e3b08da2f42ed3777434ac9ec09ce6c8d36c249f806b26f3dd7c3a0852c15",
+  "direct_parts": [
+    "controller",
+    "esc_nx",
+    "esc_nz",
+    "esc_pz"
+  ],
+  "allowed_parts": [
+    "controller",
+    "esc_nx",
+    "esc_nz",
+    "esc_px",
+    "esc_pz"
+  ],
+  "allowed_shapes": [
+    "controller_shape",
+    "esc_shape"
+  ],
+  "allowed_ports": [
+    "controller_mount",
+    "controller_nx",
+    "controller_nz",
+    "controller_power",
+    "controller_px",
+    "controller_pz",
+    "esc_nx_input",
+    "esc_nx_mount",
+    "esc_nx_output",
+    "esc_nz_input",
+    "esc_nz_mount",
+    "esc_nz_output",
+    "esc_px_input",
+    "esc_px_mount",
+    "esc_px_output",
+    "esc_pz_input",
+    "esc_pz_mount",
+    "esc_pz_output"
+  ],
+  "unresolved_failures": [],
+  "dependency_rule": "shared shape consumers; solved poses and all constraints revalidated globally",
+  "scope_sha256": "938c180a7271b2b2160b96820bc0d9abe71bcdf44ebc6a11cc7e1bd7c6b5db3e"
+}

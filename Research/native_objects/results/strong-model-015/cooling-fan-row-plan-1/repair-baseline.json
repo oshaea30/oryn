@@ -1,0 +1,447 @@
+{
+  "version": 1,
+  "passed_facts": [
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r09",
+      "assembly_id": "a01",
+      "aspect": "orientation",
+      "facet": "member_relation",
+      "part": "frame_center",
+      "port": "frame_center_bore"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r09",
+      "assembly_id": "a01",
+      "aspect": "orientation",
+      "facet": "member_relation",
+      "part": "frame_left",
+      "port": "frame_left_bore"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r09",
+      "assembly_id": "a01",
+      "aspect": "orientation",
+      "facet": "member_relation",
+      "part": "frame_right",
+      "port": "frame_right_bore"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r11",
+      "assembly_id": "a02",
+      "aspect": "orientation",
+      "facet": "member_relation",
+      "part": "rotor_center",
+      "port": "rotor_center_axis"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r11",
+      "assembly_id": "a02",
+      "aspect": "orientation",
+      "facet": "member_relation",
+      "part": "rotor_left",
+      "port": "rotor_left_axis"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r11",
+      "assembly_id": "a02",
+      "aspect": "orientation",
+      "facet": "member_relation",
+      "part": "rotor_right",
+      "port": "rotor_right_axis"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r08",
+      "assembly_id": "a01",
+      "aspect": "placement",
+      "facet": "member_relation",
+      "part": "frame_center",
+      "port": "frame_center_bore"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r08",
+      "assembly_id": "a01",
+      "aspect": "placement",
+      "facet": "member_relation",
+      "part": "frame_left",
+      "port": "frame_left_bore"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r08",
+      "assembly_id": "a01",
+      "aspect": "placement",
+      "facet": "member_relation",
+      "part": "frame_right",
+      "port": "frame_right_bore"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r10",
+      "assembly_id": "a02",
+      "aspect": "placement",
+      "facet": "member_relation",
+      "part": "rotor_center",
+      "port": "rotor_center_axis"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r10",
+      "assembly_id": "a02",
+      "aspect": "placement",
+      "facet": "member_relation",
+      "part": "rotor_left",
+      "port": "rotor_left_axis"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r10",
+      "assembly_id": "a02",
+      "aspect": "placement",
+      "facet": "member_relation",
+      "part": "rotor_right",
+      "port": "rotor_right_axis"
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame_center",
+        "b": "frame_left"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame_center",
+        "b": "frame_right"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame_center",
+        "b": "panel"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame_center",
+        "b": "rotor_center"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame_center",
+        "b": "rotor_left"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame_center",
+        "b": "rotor_right"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame_left",
+        "b": "frame_right"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame_left",
+        "b": "panel"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame_left",
+        "b": "rotor_center"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame_left",
+        "b": "rotor_left"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame_left",
+        "b": "rotor_right"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame_right",
+        "b": "panel"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame_right",
+        "b": "rotor_center"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame_right",
+        "b": "rotor_left"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame_right",
+        "b": "rotor_right"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "panel",
+        "b": "rotor_center"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "panel",
+        "b": "rotor_left"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "panel",
+        "b": "rotor_right"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "rotor_center",
+        "b": "rotor_left"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "rotor_center",
+        "b": "rotor_right"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "rotor_left",
+        "b": "rotor_right"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "frame_center"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "frame_left"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "frame_right"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "panel"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "rotor_center"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "rotor_left"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "rotor_right"
+      }
+    },
+    {
+      "kind": "containment",
+      "relation": {
+        "outer": "frame_center",
+        "inner": "rotor_center",
+        "clearance": 0.003
+      }
+    },
+    {
+      "kind": "containment",
+      "relation": {
+        "outer": "frame_left",
+        "inner": "rotor_left",
+        "clearance": 0.003
+      }
+    },
+    {
+      "kind": "containment",
+      "relation": {
+        "outer": "frame_right",
+        "inner": "rotor_right",
+        "clearance": 0.003
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "id": "seat_center",
+        "a": "frame_center_bore",
+        "b": "rotor_center_axis",
+        "kind": "coaxial",
+        "offset": 0,
+        "twist": 0,
+        "minimum_clearance": 0.003,
+        "minimum_overlap": 0.008
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "id": "seat_left",
+        "a": "frame_left_bore",
+        "b": "rotor_left_axis",
+        "kind": "coaxial",
+        "offset": 0,
+        "twist": 0,
+        "minimum_clearance": 0.003,
+        "minimum_overlap": 0.008
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "id": "seat_right",
+        "a": "frame_right_bore",
+        "b": "rotor_right_axis",
+        "kind": "coaxial",
+        "offset": 0,
+        "twist": 0,
+        "minimum_clearance": 0.003,
+        "minimum_overlap": 0.008
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "id": "mount_center",
+        "a": "panel_center",
+        "b": "frame_center_mount",
+        "kind": "face",
+        "offset": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "minimum_overlap": 0
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "id": "mount_left",
+        "a": "panel_left",
+        "b": "frame_left_mount",
+        "kind": "face",
+        "offset": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "minimum_overlap": 0
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "id": "mount_right",
+        "a": "panel_right",
+        "b": "frame_right_mount",
+        "kind": "face",
+        "offset": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "minimum_overlap": 0
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "frame_center_mount",
+        "part": "frame_center"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "frame_left_mount",
+        "part": "frame_left"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "frame_right_mount",
+        "part": "frame_right"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "panel_center",
+        "part": "panel"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "panel_left",
+        "part": "panel"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "panel_right",
+        "part": "panel"
+      }
+    }
+  ],
+  "sha256": "7e663f2ca54d9ca4957ae8ed2b38e7a03083984c32cbe611620c9308863df5da"
+}

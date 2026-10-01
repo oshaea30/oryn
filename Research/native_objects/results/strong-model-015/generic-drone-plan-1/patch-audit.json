@@ -1,0 +1,29 @@
+{
+  "status": "proposed",
+  "changed": {
+    "shapes": [
+      "controller_shape"
+    ],
+    "ports": []
+  },
+  "protected_parts": [
+    "frame",
+    "arm_px",
+    "arm_nx",
+    "arm_pz",
+    "arm_nz",
+    "motor_px",
+    "motor_nx",
+    "motor_pz",
+    "motor_nz",
+    "prop_px",
+    "prop_nx",
+    "prop_pz",
+    "prop_nz",
+    "battery"
+  ],
+  "protected_geometry_unchanged": true,
+  "base_sha256": "634e3b08da2f42ed3777434ac9ec09ce6c8d36c249f806b26f3dd7c3a0852c15",
+  "result_sha256": "067d31813495c1e7a86d7d92b91b84ad0887c5ed7f43802a38ed66558141f2e7",
+  "validation_scope": "full assembly; patch admission alone is not success"
+}

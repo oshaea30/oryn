@@ -1,0 +1,4029 @@
+{
+  "declared_relations_passed": true,
+  "checks": [
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "arm_px",
+        "axis": "x",
+        "b": "arm_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "maximum_bound_error_m": 0.0,
+        "scope": "bounds only, not full shape symmetry"
+      }
+    },
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "arm_pz",
+        "axis": "z",
+        "b": "arm_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "maximum_bound_error_m": 0.0,
+        "scope": "bounds only, not full shape symmetry"
+      }
+    },
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "motor_px",
+        "axis": "x",
+        "b": "motor_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "maximum_bound_error_m": 0.0,
+        "scope": "bounds only, not full shape symmetry"
+      }
+    },
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "motor_pz",
+        "axis": "z",
+        "b": "motor_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "maximum_bound_error_m": 0.0,
+        "scope": "bounds only, not full shape symmetry"
+      }
+    },
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "prop_px",
+        "axis": "x",
+        "b": "prop_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "maximum_bound_error_m": 0.0,
+        "scope": "bounds only, not full shape symmetry"
+      }
+    },
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "prop_pz",
+        "axis": "z",
+        "b": "prop_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "maximum_bound_error_m": 0.0,
+        "scope": "bounds only, not full shape symmetry"
+      }
+    },
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "esc_px",
+        "axis": "x",
+        "b": "esc_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "maximum_bound_error_m": 0.0,
+        "scope": "bounds only, not full shape symmetry"
+      }
+    },
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "esc_pz",
+        "axis": "z",
+        "b": "esc_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "maximum_bound_error_m": 0.0,
+        "scope": "bounds only, not full shape symmetry"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "frame"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "arm_px"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "arm_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "arm_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "arm_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "motor_px"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "motor_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "motor_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "motor_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "prop_px"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "prop_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "prop_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "prop_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "battery"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "controller"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "esc_px"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "esc_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "esc_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "esc_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "clearance",
+      "relation": {
+        "minimum": 0.02,
+        "a": "prop_px",
+        "b": "prop_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "gap_m": 0.021,
+        "intersection_volume_m3": 0.0
+      }
+    },
+    {
+      "kind": "clearance",
+      "relation": {
+        "minimum": 0.02,
+        "a": "prop_pz",
+        "b": "prop_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "gap_m": 0.021,
+        "intersection_volume_m3": 0.0
+      }
+    },
+    {
+      "kind": "clearance",
+      "relation": {
+        "minimum": 0.02,
+        "a": "prop_nx",
+        "b": "prop_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "gap_m": 0.021,
+        "intersection_volume_m3": 0.0
+      }
+    },
+    {
+      "kind": "clearance",
+      "relation": {
+        "minimum": 0.02,
+        "a": "prop_nz",
+        "b": "prop_px"
+      },
+      "passed": true,
+      "measurement": {
+        "gap_m": 0.021,
+        "intersection_volume_m3": 0.0
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "frame_px",
+        "part": "frame"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "frame_nx",
+        "part": "frame"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 3.8463898483715787e-23,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "frame_pz",
+        "part": "frame"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": -3.9291079096268815e-23,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "frame_nz",
+        "part": "frame"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": -3.350081480839762e-23,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "frame_controller",
+        "part": "frame"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "frame_battery",
+        "part": "frame"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "arm_px_root",
+        "part": "arm_px"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "arm_px_end",
+        "part": "arm_px"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "arm_px_top",
+        "part": "arm_px"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "arm_nx_root",
+        "part": "arm_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "arm_nx_end",
+        "part": "arm_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "arm_nx_top",
+        "part": "arm_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "arm_pz_root",
+        "part": "arm_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "arm_pz_end",
+        "part": "arm_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "arm_pz_top",
+        "part": "arm_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "arm_nz_root",
+        "part": "arm_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "arm_nz_end",
+        "part": "arm_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "arm_nz_top",
+        "part": "arm_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "motor_px_mount",
+        "part": "motor_px"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "motor_px_axis",
+        "part": "motor_px"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "declared finite cylindrical interval"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "motor_px_input",
+        "part": "motor_px"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "motor_nx_mount",
+        "part": "motor_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "motor_nx_axis",
+        "part": "motor_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "declared finite cylindrical interval"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "motor_nx_input",
+        "part": "motor_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "motor_pz_mount",
+        "part": "motor_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "motor_pz_axis",
+        "part": "motor_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "declared finite cylindrical interval"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "motor_pz_input",
+        "part": "motor_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "motor_nz_mount",
+        "part": "motor_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "motor_nz_axis",
+        "part": "motor_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "declared finite cylindrical interval"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "motor_nz_input",
+        "part": "motor_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "prop_px_axis",
+        "part": "prop_px"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "declared finite cylindrical interval"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "prop_nx_axis",
+        "part": "prop_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "declared finite cylindrical interval"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "prop_pz_axis",
+        "part": "prop_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "declared finite cylindrical interval"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "prop_nz_axis",
+        "part": "prop_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "declared finite cylindrical interval"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "battery_mount",
+        "part": "battery"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "battery_lead",
+        "part": "battery"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "controller_mount",
+        "part": "controller"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "controller_power",
+        "part": "controller"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "controller_px",
+        "part": "controller"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "controller_nx",
+        "part": "controller"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "controller_pz",
+        "part": "controller"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "controller_nz",
+        "part": "controller"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "esc_px_mount",
+        "part": "esc_px"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "esc_px_output",
+        "part": "esc_px"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "esc_px_input",
+        "part": "esc_px"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "esc_nx_mount",
+        "part": "esc_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "esc_nx_output",
+        "part": "esc_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "esc_nx_input",
+        "part": "esc_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "esc_pz_mount",
+        "part": "esc_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "esc_pz_output",
+        "part": "esc_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "esc_pz_input",
+        "part": "esc_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "esc_nz_mount",
+        "part": "esc_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "esc_nz_output",
+        "part": "esc_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "esc_nz_input",
+        "part": "esc_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "frame_px",
+        "id": "frame_arm_px",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "arm_px_root"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "frame_nx",
+        "id": "frame_arm_nx",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "arm_nx_root"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "frame_pz",
+        "id": "frame_arm_pz",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "arm_pz_root"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "frame_nz",
+        "id": "frame_arm_nz",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "arm_nz_root"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "arm_px_end",
+        "id": "arm_motor_px",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "motor_px_mount"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 3.0814879110195774e-33
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "arm_nx_end",
+        "id": "arm_motor_nx",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "motor_nx_mount"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 6.162975822039155e-33
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "arm_pz_end",
+        "id": "arm_motor_pz",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "motor_pz_mount"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "arm_nz_end",
+        "id": "arm_motor_nz",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "motor_nz_mount"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "motor_px_axis",
+        "id": "motor_prop_px",
+        "kind": "coaxial",
+        "offset": 0,
+        "minimum_overlap": 0.007,
+        "twist": 0,
+        "minimum_clearance": 0.0004,
+        "b": "prop_px_axis"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0,
+        "radial_clearance_m": 0.0004999999999999996,
+        "axial_overlap_m": 0.008
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "motor_nx_axis",
+        "id": "motor_prop_nx",
+        "kind": "coaxial",
+        "offset": 0,
+        "minimum_overlap": 0.007,
+        "twist": 0,
+        "minimum_clearance": 0.0004,
+        "b": "prop_nx_axis"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0,
+        "radial_clearance_m": 0.0004999999999999996,
+        "axial_overlap_m": 0.008
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "motor_pz_axis",
+        "id": "motor_prop_pz",
+        "kind": "coaxial",
+        "offset": 0,
+        "minimum_overlap": 0.007,
+        "twist": 0,
+        "minimum_clearance": 0.0004,
+        "b": "prop_pz_axis"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0,
+        "radial_clearance_m": 0.0004999999999999996,
+        "axial_overlap_m": 0.008
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "motor_nz_axis",
+        "id": "motor_prop_nz",
+        "kind": "coaxial",
+        "offset": 0,
+        "minimum_overlap": 0.007,
+        "twist": 0,
+        "minimum_clearance": 0.0004,
+        "b": "prop_nz_axis"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0,
+        "radial_clearance_m": 0.0004999999999999996,
+        "axial_overlap_m": 0.008
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "arm_px_top",
+        "id": "arm_esc_px",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "esc_px_mount"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "arm_nx_top",
+        "id": "arm_esc_nx",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "esc_nx_mount"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "arm_pz_top",
+        "id": "arm_esc_pz",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "esc_pz_mount"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "arm_nz_top",
+        "id": "arm_esc_nz",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "esc_nz_mount"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "frame_battery",
+        "id": "frame_battery_mount",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "battery_mount"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "frame_controller",
+        "id": "frame_controller_mount",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "controller_mount"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 1.734723475976807e-18
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "battery_lead",
+        "id": "battery_controller",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "controller_power"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 1.2246467991473532e-16
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "controller_px",
+        "id": "controller_esc_px",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "esc_px_input"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 2.4492935982947064e-16
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "controller_nx",
+        "id": "controller_esc_nx",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "esc_nx_input"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 4.898587196589413e-16
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "controller_pz",
+        "id": "controller_esc_pz",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "esc_pz_input"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 2.4492935982947064e-16
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "controller_nz",
+        "id": "controller_esc_nz",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "esc_nz_input"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 2.4492935982947064e-16
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "esc_px_output",
+        "id": "esc_motor_px",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "motor_px_input"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 2.4492935982947064e-16
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "esc_nx_output",
+        "id": "esc_motor_nx",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "motor_nx_input"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 2.449293598294706e-16
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "esc_pz_output",
+        "id": "esc_motor_pz",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "motor_pz_input"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 2.4492935982947064e-16
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "esc_nz_output",
+        "id": "esc_motor_nz",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "motor_nz_input"
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 2.449293598294706e-16
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "arm_px"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "arm_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "arm_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "arm_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "motor_px"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "motor_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "motor_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "motor_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "prop_px"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.14171642554149e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "prop_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "prop_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "prop_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "battery"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "controller"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "esc_px"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828883e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "esc_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828885e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "esc_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828883e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "esc_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828883e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_px",
+        "b": "arm_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_px",
+        "b": "arm_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_px",
+        "b": "arm_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_px",
+        "b": "motor_px"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_px",
+        "b": "motor_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_px",
+        "b": "motor_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_px",
+        "b": "motor_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_px",
+        "b": "prop_px"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.14171642554149e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_px",
+        "b": "prop_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_px",
+        "b": "prop_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_px",
+        "b": "prop_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_px",
+        "b": "battery"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_px",
+        "b": "controller"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_px",
+        "b": "esc_px"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828883e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_px",
+        "b": "esc_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828885e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_px",
+        "b": "esc_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828883e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_px",
+        "b": "esc_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828883e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nx",
+        "b": "arm_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nx",
+        "b": "arm_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nx",
+        "b": "motor_px"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nx",
+        "b": "motor_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nx",
+        "b": "motor_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nx",
+        "b": "motor_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nx",
+        "b": "prop_px"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.14171642554149e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nx",
+        "b": "prop_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nx",
+        "b": "prop_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nx",
+        "b": "prop_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nx",
+        "b": "battery"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nx",
+        "b": "controller"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nx",
+        "b": "esc_px"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828883e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nx",
+        "b": "esc_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 1.0587911840678754e-22,
+        "tolerance_m3": 8.843336981828885e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nx",
+        "b": "esc_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828883e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nx",
+        "b": "esc_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828883e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_pz",
+        "b": "arm_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_pz",
+        "b": "motor_px"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_pz",
+        "b": "motor_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_pz",
+        "b": "motor_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_pz",
+        "b": "motor_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_pz",
+        "b": "prop_px"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.14171642554149e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_pz",
+        "b": "prop_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_pz",
+        "b": "prop_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_pz",
+        "b": "prop_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_pz",
+        "b": "battery"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_pz",
+        "b": "controller"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_pz",
+        "b": "esc_px"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828883e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_pz",
+        "b": "esc_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828885e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_pz",
+        "b": "esc_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828883e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_pz",
+        "b": "esc_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828883e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nz",
+        "b": "motor_px"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nz",
+        "b": "motor_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nz",
+        "b": "motor_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nz",
+        "b": "motor_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nz",
+        "b": "prop_px"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.14171642554149e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nz",
+        "b": "prop_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nz",
+        "b": "prop_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nz",
+        "b": "prop_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nz",
+        "b": "battery"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nz",
+        "b": "controller"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nz",
+        "b": "esc_px"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828883e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nz",
+        "b": "esc_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828885e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nz",
+        "b": "esc_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828883e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nz",
+        "b": "esc_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828883e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_px",
+        "b": "motor_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_px",
+        "b": "motor_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_px",
+        "b": "motor_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_px",
+        "b": "prop_px"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.14171642554149e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_px",
+        "b": "prop_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_px",
+        "b": "prop_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_px",
+        "b": "prop_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_px",
+        "b": "battery"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_px",
+        "b": "controller"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_px",
+        "b": "esc_px"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828883e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_px",
+        "b": "esc_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828885e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_px",
+        "b": "esc_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828883e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_px",
+        "b": "esc_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828883e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_nx",
+        "b": "motor_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_nx",
+        "b": "motor_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_nx",
+        "b": "prop_px"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.14171642554149e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_nx",
+        "b": "prop_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_nx",
+        "b": "prop_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_nx",
+        "b": "prop_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_nx",
+        "b": "battery"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_nx",
+        "b": "controller"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_nx",
+        "b": "esc_px"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828883e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_nx",
+        "b": "esc_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828885e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_nx",
+        "b": "esc_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828883e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_nx",
+        "b": "esc_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828883e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_pz",
+        "b": "motor_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_pz",
+        "b": "prop_px"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.14171642554149e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_pz",
+        "b": "prop_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_pz",
+        "b": "prop_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_pz",
+        "b": "prop_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_pz",
+        "b": "battery"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_pz",
+        "b": "controller"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_pz",
+        "b": "esc_px"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828883e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_pz",
+        "b": "esc_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828885e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_pz",
+        "b": "esc_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828883e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_pz",
+        "b": "esc_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828883e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_nz",
+        "b": "prop_px"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.14171642554149e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_nz",
+        "b": "prop_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_nz",
+        "b": "prop_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_nz",
+        "b": "prop_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_nz",
+        "b": "battery"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_nz",
+        "b": "controller"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_nz",
+        "b": "esc_px"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828883e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_nz",
+        "b": "esc_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828885e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_nz",
+        "b": "esc_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828883e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_nz",
+        "b": "esc_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828883e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "prop_px",
+        "b": "prop_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "prop_px",
+        "b": "prop_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "prop_px",
+        "b": "prop_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "prop_px",
+        "b": "battery"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.14171642554149e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "prop_px",
+        "b": "controller"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.14171642554149e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "prop_px",
+        "b": "esc_px"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.14171642554149e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "prop_px",
+        "b": "esc_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.14171642554149e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "prop_px",
+        "b": "esc_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.14171642554149e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "prop_px",
+        "b": "esc_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.14171642554149e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "prop_nx",
+        "b": "prop_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "prop_nx",
+        "b": "prop_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "prop_nx",
+        "b": "battery"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "prop_nx",
+        "b": "controller"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "prop_nx",
+        "b": "esc_px"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "prop_nx",
+        "b": "esc_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "prop_nx",
+        "b": "esc_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "prop_nx",
+        "b": "esc_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "prop_pz",
+        "b": "prop_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "prop_pz",
+        "b": "battery"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "prop_pz",
+        "b": "controller"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "prop_pz",
+        "b": "esc_px"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "prop_pz",
+        "b": "esc_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "prop_pz",
+        "b": "esc_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "prop_pz",
+        "b": "esc_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "prop_nz",
+        "b": "battery"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "prop_nz",
+        "b": "controller"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "prop_nz",
+        "b": "esc_px"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "prop_nz",
+        "b": "esc_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "prop_nz",
+        "b": "esc_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "prop_nz",
+        "b": "esc_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 7.141716425541488e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery",
+        "b": "controller"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery",
+        "b": "esc_px"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828883e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery",
+        "b": "esc_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828885e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery",
+        "b": "esc_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828883e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery",
+        "b": "esc_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828883e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "controller",
+        "b": "esc_px"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828883e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "controller",
+        "b": "esc_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828885e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "controller",
+        "b": "esc_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828883e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "controller",
+        "b": "esc_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828883e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_px",
+        "b": "esc_nx"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828883e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_px",
+        "b": "esc_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828883e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_px",
+        "b": "esc_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828883e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_nx",
+        "b": "esc_pz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828883e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_nx",
+        "b": "esc_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828883e-13
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_pz",
+        "b": "esc_nz"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 8.843336981828883e-13
+      }
+    },
+    {
+      "kind": "spatial_requirement",
+      "requirement_id": "r13",
+      "operator": "radial_outward",
+      "passed": true,
+      "measurement": {
+        "members": [
+          {
+            "part": "arm_nx",
+            "radius_m": 0.1394999995827675,
+            "radial_axis_alignment": 0.9999995335398549,
+            "elongation": 5.570557207141647
+          },
+          {
+            "part": "arm_nz",
+            "radius_m": 0.1394999995827675,
+            "radial_axis_alignment": 0.9999995335398548,
+            "elongation": 5.570557207141645
+          },
+          {
+            "part": "arm_px",
+            "radius_m": 0.1394999995827675,
+            "radial_axis_alignment": 0.9999995335398549,
+            "elongation": 5.570557207141648
+          },
+          {
+            "part": "arm_pz",
+            "radius_m": 0.1394999995827675,
+            "radial_axis_alignment": 0.9999995335398548,
+            "elongation": 5.570557207141645
+          }
+        ],
+        "plane_spread_m": 0.0,
+        "plane_limit_m": 0.0069749999791383745,
+        "max_bearing_gap_degrees": 90.0,
+        "min_bearing_gap_degrees": 90.0
+      },
+      "scope": "Measured declared geometry only; semantic feature selection and appearance are unverified."
+    },
+    {
+      "kind": "spatial_requirement",
+      "requirement_id": "r21",
+      "operator": "outer_end",
+      "passed": true,
+      "measurement": {
+        "pairs": [
+          {
+            "passed": true,
+            "subject": "motor_px",
+            "target": "arm_px",
+            "mate": "arm_motor_px",
+            "end_error_m": 6.450990774495291e-05,
+            "end_tolerance_m": 0.0072560319450982475,
+            "reference": "frame"
+          },
+          {
+            "passed": true,
+            "subject": "motor_nx",
+            "target": "arm_nx",
+            "mate": "arm_motor_nx",
+            "end_error_m": 6.450990774495291e-05,
+            "end_tolerance_m": 0.0072560319450982475,
+            "reference": "frame"
+          },
+          {
+            "passed": true,
+            "subject": "motor_pz",
+            "target": "arm_pz",
+            "mate": "arm_motor_pz",
+            "end_error_m": 6.450990774495291e-05,
+            "end_tolerance_m": 0.0072560319450982475,
+            "reference": "frame"
+          },
+          {
+            "passed": true,
+            "subject": "motor_nz",
+            "target": "arm_nz",
+            "mate": "arm_motor_nz",
+            "end_error_m": 6.450990774495291e-05,
+            "end_tolerance_m": 0.0072560319450982475,
+            "reference": "frame"
+          }
+        ]
+      },
+      "scope": "Measured declared geometry only; semantic feature selection and appearance are unverified."
+    },
+    {
+      "kind": "spatial_requirement",
+      "requirement_id": "r23",
+      "operator": "axis_aligned",
+      "passed": true,
+      "measurement": {
+        "pairs": [
+          {
+            "passed": true,
+            "subject": "prop_px",
+            "target": "motor_px",
+            "mate": "motor_prop_px",
+            "axis_alignment": 1.0,
+            "axis_distance_m": 0.0
+          },
+          {
+            "passed": true,
+            "subject": "prop_nx",
+            "target": "motor_nx",
+            "mate": "motor_prop_nx",
+            "axis_alignment": 1.0,
+            "axis_distance_m": 3.4290110376125876e-18
+          },
+          {
+            "passed": true,
+            "subject": "prop_pz",
+            "target": "motor_pz",
+            "mate": "motor_prop_pz",
+            "axis_alignment": 1.0,
+            "axis_distance_m": 0.0
+          },
+          {
+            "passed": true,
+            "subject": "prop_nz",
+            "target": "motor_nz",
+            "mate": "motor_prop_nz",
+            "axis_alignment": 1.0,
+            "axis_distance_m": 0.0
+          }
+        ]
+      },
+      "scope": "Measured declared geometry only; semantic feature selection and appearance are unverified."
+    },
+    {
+      "kind": "assembly_arrangement",
+      "assembly_id": "a0",
+      "requirement_id": "r12",
+      "aspect": "placement",
+      "passed": true,
+      "failure_classes": [],
+      "measurement": {
+        "members": [
+          {
+            "part": "arm_nx",
+            "port": "arm_nx_root",
+            "relation_passed": true,
+            "feature_geometry_passed": true,
+            "radius_m": 0.067,
+            "radius_error_m": 0.0,
+            "height_error_m": 0.0,
+            "adjacent_gap_error_degrees": 0.0,
+            "passed": true
+          },
+          {
+            "part": "arm_nz",
+            "port": "arm_nz_root",
+            "relation_passed": true,
+            "feature_geometry_passed": true,
+            "radius_m": 0.067,
+            "radius_error_m": 0.0,
+            "height_error_m": 0.0,
+            "adjacent_gap_error_degrees": 0.0,
+            "passed": true
+          },
+          {
+            "part": "arm_px",
+            "port": "arm_px_root",
+            "relation_passed": true,
+            "feature_geometry_passed": true,
+            "radius_m": 0.067,
+            "radius_error_m": 0.0,
+            "height_error_m": 0.0,
+            "adjacent_gap_error_degrees": 0.0,
+            "passed": true
+          },
+          {
+            "part": "arm_pz",
+            "port": "arm_pz_root",
+            "relation_passed": true,
+            "feature_geometry_passed": true,
+            "radius_m": 0.067,
+            "radius_error_m": 0.0,
+            "height_error_m": 0.0,
+            "adjacent_gap_error_degrees": 0.0,
+            "passed": true
+          }
+        ],
+        "radius_m": 0.067,
+        "distance_tolerance_m": 0.0033500000000000005,
+        "expected_gap_degrees": 90.0
+      },
+      "scope": "Solved declared feature geometry; interpretation and feature meaning remain unverified."
+    },
+    {
+      "kind": "assembly_arrangement",
+      "assembly_id": "a0",
+      "requirement_id": "r13",
+      "aspect": "orientation",
+      "passed": true,
+      "measurement": {
+        "members": [
+          {
+            "part": "arm_nx",
+            "radius_m": 0.1394999995827675,
+            "radial_axis_alignment": 0.9999995335398549,
+            "elongation": 5.570557207141647
+          },
+          {
+            "part": "arm_nz",
+            "radius_m": 0.1394999995827675,
+            "radial_axis_alignment": 0.9999995335398548,
+            "elongation": 5.570557207141645
+          },
+          {
+            "part": "arm_px",
+            "radius_m": 0.1394999995827675,
+            "radial_axis_alignment": 0.9999995335398549,
+            "elongation": 5.570557207141648
+          },
+          {
+            "part": "arm_pz",
+            "radius_m": 0.1394999995827675,
+            "radial_axis_alignment": 0.9999995335398548,
+            "elongation": 5.570557207141645
+          }
+        ],
+        "plane_spread_m": 0.0,
+        "plane_limit_m": 0.0069749999791383745,
+        "max_bearing_gap_degrees": 90.0,
+        "min_bearing_gap_degrees": 90.0
+      },
+      "scope": "Reused measured radial member orientation; semantic meaning remains unverified."
+    },
+    {
+      "kind": "assembly_arrangement",
+      "assembly_id": "a1",
+      "requirement_id": "r14",
+      "aspect": "placement",
+      "passed": true,
+      "failure_classes": [],
+      "measurement": {
+        "members": [
+          {
+            "part": "motor_nx",
+            "port": "motor_nx_axis",
+            "relation_passed": true,
+            "feature_geometry_passed": true,
+            "radius_m": 0.232,
+            "radius_error_m": 0.0,
+            "height_error_m": 0.0,
+            "adjacent_gap_error_degrees": 1.2722218725854067e-14,
+            "passed": true
+          },
+          {
+            "part": "motor_nz",
+            "port": "motor_nz_axis",
+            "relation_passed": true,
+            "feature_geometry_passed": true,
+            "radius_m": 0.232,
+            "radius_error_m": 0.0,
+            "height_error_m": 0.0,
+            "adjacent_gap_error_degrees": 0.0,
+            "passed": true
+          },
+          {
+            "part": "motor_px",
+            "port": "motor_px_axis",
+            "relation_passed": true,
+            "feature_geometry_passed": true,
+            "radius_m": 0.232,
+            "radius_error_m": 0.0,
+            "height_error_m": 0.0,
+            "adjacent_gap_error_degrees": 0.0,
+            "passed": true
+          },
+          {
+            "part": "motor_pz",
+            "port": "motor_pz_axis",
+            "relation_passed": true,
+            "feature_geometry_passed": true,
+            "radius_m": 0.232,
+            "radius_error_m": 0.0,
+            "height_error_m": 0.0,
+            "adjacent_gap_error_degrees": 1.2722218725854067e-14,
+            "passed": true
+          }
+        ],
+        "radius_m": 0.232,
+        "distance_tolerance_m": 0.011600000000000001,
+        "expected_gap_degrees": 90.0
+      },
+      "scope": "Solved declared feature geometry; interpretation and feature meaning remain unverified."
+    },
+    {
+      "kind": "assembly_arrangement",
+      "assembly_id": "a1",
+      "requirement_id": "r15",
+      "aspect": "orientation",
+      "passed": true,
+      "failure_classes": [],
+      "measurement": {
+        "members": [
+          {
+            "part": "motor_nx",
+            "port": "motor_nx_axis",
+            "axis_alignment": 1.0,
+            "relation_passed": true,
+            "feature_geometry_passed": true,
+            "passed": true
+          },
+          {
+            "part": "motor_nz",
+            "port": "motor_nz_axis",
+            "axis_alignment": 1.0,
+            "relation_passed": true,
+            "feature_geometry_passed": true,
+            "passed": true
+          },
+          {
+            "part": "motor_px",
+            "port": "motor_px_axis",
+            "axis_alignment": 1.0,
+            "relation_passed": true,
+            "feature_geometry_passed": true,
+            "passed": true
+          },
+          {
+            "part": "motor_pz",
+            "port": "motor_pz_axis",
+            "axis_alignment": 1.0,
+            "relation_passed": true,
+            "feature_geometry_passed": true,
+            "passed": true
+          }
+        ],
+        "direction": "+y",
+        "minimum_alignment": 1.0
+      },
+      "scope": "Solved declared feature geometry; interpretation and feature meaning remain unverified."
+    },
+    {
+      "kind": "assembly_arrangement",
+      "assembly_id": "a2",
+      "requirement_id": "r16",
+      "aspect": "placement",
+      "passed": true,
+      "failure_classes": [],
+      "measurement": {
+        "members": [
+          {
+            "part": "prop_nx",
+            "port": "prop_nx_axis",
+            "relation_passed": true,
+            "feature_geometry_passed": true,
+            "radius_m": 0.232,
+            "radius_error_m": 0.0,
+            "height_error_m": 0.0,
+            "adjacent_gap_error_degrees": 1.2722218725854067e-14,
+            "passed": true
+          },
+          {
+            "part": "prop_nz",
+            "port": "prop_nz_axis",
+            "relation_passed": true,
+            "feature_geometry_passed": true,
+            "radius_m": 0.232,
+            "radius_error_m": 0.0,
+            "height_error_m": 0.0,
+            "adjacent_gap_error_degrees": 0.0,
+            "passed": true
+          },
+          {
+            "part": "prop_px",
+            "port": "prop_px_axis",
+            "relation_passed": true,
+            "feature_geometry_passed": true,
+            "radius_m": 0.232,
+            "radius_error_m": 0.0,
+            "height_error_m": 0.0,
+            "adjacent_gap_error_degrees": 0.0,
+            "passed": true
+          },
+          {
+            "part": "prop_pz",
+            "port": "prop_pz_axis",
+            "relation_passed": true,
+            "feature_geometry_passed": true,
+            "radius_m": 0.232,
+            "radius_error_m": 0.0,
+            "height_error_m": 0.0,
+            "adjacent_gap_error_degrees": 1.2722218725854067e-14,
+            "passed": true
+          }
+        ],
+        "radius_m": 0.232,
+        "distance_tolerance_m": 0.011600000000000001,
+        "expected_gap_degrees": 90.0
+      },
+      "scope": "Solved declared feature geometry; interpretation and feature meaning remain unverified."
+    },
+    {
+      "kind": "assembly_arrangement",
+      "assembly_id": "a2",
+      "requirement_id": "r17",
+      "aspect": "orientation",
+      "passed": true,
+      "failure_classes": [],
+      "measurement": {
+        "members": [
+          {
+            "part": "prop_nx",
+            "port": "prop_nx_axis",
+            "axis_alignment": 1.0,
+            "relation_passed": true,
+            "feature_geometry_passed": true,
+            "passed": true
+          },
+          {
+            "part": "prop_nz",
+            "port": "prop_nz_axis",
+            "axis_alignment": 1.0,
+            "relation_passed": true,
+            "feature_geometry_passed": true,
+            "passed": true
+          },
+          {
+            "part": "prop_px",
+            "port": "prop_px_axis",
+            "axis_alignment": 1.0,
+            "relation_passed": true,
+            "feature_geometry_passed": true,
+            "passed": true
+          },
+          {
+            "part": "prop_pz",
+            "port": "prop_pz_axis",
+            "axis_alignment": 1.0,
+            "relation_passed": true,
+            "feature_geometry_passed": true,
+            "passed": true
+          }
+        ],
+        "direction": "+y",
+        "minimum_alignment": 1.0
+      },
+      "scope": "Solved declared feature geometry; interpretation and feature meaning remain unverified."
+    }
+  ],
+  "semantic_completeness": "not_assessed",
+  "global_collisions": "all pairs static positive-volume interference checked; no swept motion",
+  "engineering_correctness": "not_assessed",
+  "native_generation_goal_passed": false,
+  "requirement_coverage": "not_assessed; solver cannot prove omitted functional connections",
+  "locked_requirements_sha256": "41b03b88803a3186963f6b64664b451244813ae3837f4eac941cc6754dd9eea0",
+  "spatial_policy_sha256": "abf21c243b7b133dc13ba5221866c9eabeff1f2f5a6ac127b3f15e6ace8bde33",
+  "arrangement_policy_sha256": "4a4bf140b11ad32d852c1161f2d9000e1a4f457c0142990424643c49c2816ca5",
+  "repair_preservation": {
+    "baseline_sha256": "7d62183e0e9989f41264513af3340db25e8fcc88f39e9b43c0d3bc0b417ce73a",
+    "preserved_fact_count": 308,
+    "passed": true,
+    "regressions": []
+  }
+}

@@ -1,0 +1,2324 @@
+{
+  "version": 1,
+  "passed_facts": [
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r13",
+      "assembly_id": "a0",
+      "aspect": "orientation"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r15",
+      "assembly_id": "a1",
+      "aspect": "orientation",
+      "facet": "member_relation",
+      "part": "motor_nx",
+      "port": "motor_nx_axis"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r15",
+      "assembly_id": "a1",
+      "aspect": "orientation",
+      "facet": "member_relation",
+      "part": "motor_nz",
+      "port": "motor_nz_axis"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r15",
+      "assembly_id": "a1",
+      "aspect": "orientation",
+      "facet": "member_relation",
+      "part": "motor_px",
+      "port": "motor_px_axis"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r15",
+      "assembly_id": "a1",
+      "aspect": "orientation",
+      "facet": "member_relation",
+      "part": "motor_pz",
+      "port": "motor_pz_axis"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r15",
+      "assembly_id": "a1",
+      "aspect": "orientation"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r17",
+      "assembly_id": "a2",
+      "aspect": "orientation",
+      "facet": "member_relation",
+      "part": "prop_nx",
+      "port": "prop_nx_axis"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r17",
+      "assembly_id": "a2",
+      "aspect": "orientation",
+      "facet": "member_relation",
+      "part": "prop_nz",
+      "port": "prop_nz_axis"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r17",
+      "assembly_id": "a2",
+      "aspect": "orientation",
+      "facet": "member_relation",
+      "part": "prop_px",
+      "port": "prop_px_axis"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r17",
+      "assembly_id": "a2",
+      "aspect": "orientation",
+      "facet": "member_relation",
+      "part": "prop_pz",
+      "port": "prop_pz_axis"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r17",
+      "assembly_id": "a2",
+      "aspect": "orientation"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r12",
+      "assembly_id": "a0",
+      "aspect": "placement",
+      "facet": "member_relation",
+      "part": "arm_nx",
+      "port": "arm_nx_root"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r12",
+      "assembly_id": "a0",
+      "aspect": "placement",
+      "facet": "member_relation",
+      "part": "arm_nz",
+      "port": "arm_nz_root"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r12",
+      "assembly_id": "a0",
+      "aspect": "placement",
+      "facet": "member_relation",
+      "part": "arm_px",
+      "port": "arm_px_root"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r12",
+      "assembly_id": "a0",
+      "aspect": "placement",
+      "facet": "member_relation",
+      "part": "arm_pz",
+      "port": "arm_pz_root"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r12",
+      "assembly_id": "a0",
+      "aspect": "placement"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r14",
+      "assembly_id": "a1",
+      "aspect": "placement",
+      "facet": "member_relation",
+      "part": "motor_nx",
+      "port": "motor_nx_axis"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r14",
+      "assembly_id": "a1",
+      "aspect": "placement",
+      "facet": "member_relation",
+      "part": "motor_nz",
+      "port": "motor_nz_axis"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r14",
+      "assembly_id": "a1",
+      "aspect": "placement",
+      "facet": "member_relation",
+      "part": "motor_px",
+      "port": "motor_px_axis"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r14",
+      "assembly_id": "a1",
+      "aspect": "placement",
+      "facet": "member_relation",
+      "part": "motor_pz",
+      "port": "motor_pz_axis"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r14",
+      "assembly_id": "a1",
+      "aspect": "placement"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r16",
+      "assembly_id": "a2",
+      "aspect": "placement",
+      "facet": "member_relation",
+      "part": "prop_nx",
+      "port": "prop_nx_axis"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r16",
+      "assembly_id": "a2",
+      "aspect": "placement",
+      "facet": "member_relation",
+      "part": "prop_nz",
+      "port": "prop_nz_axis"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r16",
+      "assembly_id": "a2",
+      "aspect": "placement",
+      "facet": "member_relation",
+      "part": "prop_px",
+      "port": "prop_px_axis"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r16",
+      "assembly_id": "a2",
+      "aspect": "placement",
+      "facet": "member_relation",
+      "part": "prop_pz",
+      "port": "prop_pz_axis"
+    },
+    {
+      "kind": "assembly_arrangement",
+      "requirement_id": "r16",
+      "assembly_id": "a2",
+      "aspect": "placement"
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nx",
+        "b": "arm_nz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nx",
+        "b": "arm_px"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nx",
+        "b": "arm_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nx",
+        "b": "battery"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nx",
+        "b": "controller"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nx",
+        "b": "esc_nx"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nx",
+        "b": "esc_nz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nx",
+        "b": "esc_px"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nx",
+        "b": "esc_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nx",
+        "b": "frame"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nx",
+        "b": "motor_nx"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nx",
+        "b": "motor_nz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nx",
+        "b": "motor_px"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nx",
+        "b": "motor_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nx",
+        "b": "prop_nx"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nx",
+        "b": "prop_nz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nx",
+        "b": "prop_px"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nx",
+        "b": "prop_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nz",
+        "b": "arm_px"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nz",
+        "b": "arm_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nz",
+        "b": "battery"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nz",
+        "b": "controller"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nz",
+        "b": "esc_nx"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nz",
+        "b": "esc_nz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nz",
+        "b": "esc_px"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nz",
+        "b": "esc_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nz",
+        "b": "frame"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nz",
+        "b": "motor_nx"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nz",
+        "b": "motor_nz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nz",
+        "b": "motor_px"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nz",
+        "b": "motor_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nz",
+        "b": "prop_nx"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nz",
+        "b": "prop_nz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nz",
+        "b": "prop_px"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_nz",
+        "b": "prop_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_px",
+        "b": "arm_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_px",
+        "b": "battery"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_px",
+        "b": "controller"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_px",
+        "b": "esc_nx"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_px",
+        "b": "esc_nz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_px",
+        "b": "esc_px"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_px",
+        "b": "esc_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_px",
+        "b": "frame"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_px",
+        "b": "motor_nx"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_px",
+        "b": "motor_nz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_px",
+        "b": "motor_px"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_px",
+        "b": "motor_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_px",
+        "b": "prop_nx"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_px",
+        "b": "prop_nz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_px",
+        "b": "prop_px"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_px",
+        "b": "prop_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_pz",
+        "b": "battery"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_pz",
+        "b": "controller"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_pz",
+        "b": "esc_nx"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_pz",
+        "b": "esc_nz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_pz",
+        "b": "esc_px"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_pz",
+        "b": "esc_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_pz",
+        "b": "frame"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_pz",
+        "b": "motor_nx"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_pz",
+        "b": "motor_nz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_pz",
+        "b": "motor_px"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_pz",
+        "b": "motor_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_pz",
+        "b": "prop_nx"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_pz",
+        "b": "prop_nz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_pz",
+        "b": "prop_px"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "arm_pz",
+        "b": "prop_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery",
+        "b": "controller"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery",
+        "b": "esc_nx"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery",
+        "b": "esc_nz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery",
+        "b": "esc_px"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery",
+        "b": "esc_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery",
+        "b": "frame"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery",
+        "b": "motor_nx"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery",
+        "b": "motor_nz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery",
+        "b": "motor_px"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery",
+        "b": "motor_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery",
+        "b": "prop_nx"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery",
+        "b": "prop_nz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery",
+        "b": "prop_px"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "battery",
+        "b": "prop_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "controller",
+        "b": "esc_nx"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "controller",
+        "b": "esc_nz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "controller",
+        "b": "esc_px"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "controller",
+        "b": "esc_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "controller",
+        "b": "frame"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "controller",
+        "b": "motor_nx"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "controller",
+        "b": "motor_nz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "controller",
+        "b": "motor_px"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "controller",
+        "b": "motor_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "controller",
+        "b": "prop_nx"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "controller",
+        "b": "prop_nz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "controller",
+        "b": "prop_px"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "controller",
+        "b": "prop_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_nx",
+        "b": "esc_nz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_nx",
+        "b": "esc_px"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_nx",
+        "b": "esc_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_nx",
+        "b": "frame"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_nx",
+        "b": "motor_nx"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_nx",
+        "b": "motor_nz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_nx",
+        "b": "motor_px"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_nx",
+        "b": "motor_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_nx",
+        "b": "prop_nx"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_nx",
+        "b": "prop_nz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_nx",
+        "b": "prop_px"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_nx",
+        "b": "prop_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_nz",
+        "b": "esc_px"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_nz",
+        "b": "esc_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_nz",
+        "b": "frame"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_nz",
+        "b": "motor_nx"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_nz",
+        "b": "motor_nz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_nz",
+        "b": "motor_px"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_nz",
+        "b": "motor_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_nz",
+        "b": "prop_nx"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_nz",
+        "b": "prop_nz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_nz",
+        "b": "prop_px"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_nz",
+        "b": "prop_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_px",
+        "b": "esc_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_px",
+        "b": "frame"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_px",
+        "b": "motor_nx"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_px",
+        "b": "motor_nz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_px",
+        "b": "motor_px"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_px",
+        "b": "motor_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_px",
+        "b": "prop_nx"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_px",
+        "b": "prop_nz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_px",
+        "b": "prop_px"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_px",
+        "b": "prop_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_pz",
+        "b": "frame"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_pz",
+        "b": "motor_nx"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_pz",
+        "b": "motor_nz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_pz",
+        "b": "motor_px"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_pz",
+        "b": "motor_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_pz",
+        "b": "prop_nx"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_pz",
+        "b": "prop_nz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_pz",
+        "b": "prop_px"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "esc_pz",
+        "b": "prop_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "motor_nx"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "motor_nz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "motor_px"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "motor_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "prop_nx"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "prop_nz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "prop_px"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame",
+        "b": "prop_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_nx",
+        "b": "motor_nz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_nx",
+        "b": "motor_px"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_nx",
+        "b": "motor_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_nx",
+        "b": "prop_nx"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_nx",
+        "b": "prop_nz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_nx",
+        "b": "prop_px"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_nx",
+        "b": "prop_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_nz",
+        "b": "motor_px"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_nz",
+        "b": "motor_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_nz",
+        "b": "prop_nx"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_nz",
+        "b": "prop_nz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_nz",
+        "b": "prop_px"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_nz",
+        "b": "prop_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_px",
+        "b": "motor_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_px",
+        "b": "prop_nx"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_px",
+        "b": "prop_nz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_px",
+        "b": "prop_px"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_px",
+        "b": "prop_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_pz",
+        "b": "prop_nx"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_pz",
+        "b": "prop_nz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_pz",
+        "b": "prop_px"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "motor_pz",
+        "b": "prop_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "prop_nx",
+        "b": "prop_nz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "prop_nx",
+        "b": "prop_px"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "prop_nx",
+        "b": "prop_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "prop_nz",
+        "b": "prop_px"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "prop_nz",
+        "b": "prop_pz"
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "prop_px",
+        "b": "prop_pz"
+      }
+    },
+    {
+      "kind": "clearance",
+      "relation": {
+        "minimum": 0.02,
+        "a": "prop_nx",
+        "b": "prop_nz"
+      }
+    },
+    {
+      "kind": "clearance",
+      "relation": {
+        "minimum": 0.02,
+        "a": "prop_nz",
+        "b": "prop_px"
+      }
+    },
+    {
+      "kind": "clearance",
+      "relation": {
+        "minimum": 0.02,
+        "a": "prop_px",
+        "b": "prop_pz"
+      }
+    },
+    {
+      "kind": "clearance",
+      "relation": {
+        "minimum": 0.02,
+        "a": "prop_pz",
+        "b": "prop_nx"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "arm_nx"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "arm_nz"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "arm_px"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "arm_pz"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "battery"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "controller"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "esc_nx"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "esc_nz"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "esc_px"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "esc_pz"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "frame"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "motor_nx"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "motor_nz"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "motor_px"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "motor_pz"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "prop_nx"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "prop_nz"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "prop_px"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "prop_pz"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "arm_nx_end",
+        "id": "arm_motor_nx",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "motor_nx_mount"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "arm_nx_top",
+        "id": "arm_esc_nx",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "esc_nx_mount"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "arm_nz_end",
+        "id": "arm_motor_nz",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "motor_nz_mount"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "arm_nz_top",
+        "id": "arm_esc_nz",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "esc_nz_mount"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "arm_px_end",
+        "id": "arm_motor_px",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "motor_px_mount"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "arm_px_top",
+        "id": "arm_esc_px",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "esc_px_mount"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "arm_pz_end",
+        "id": "arm_motor_pz",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "motor_pz_mount"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "arm_pz_top",
+        "id": "arm_esc_pz",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "esc_pz_mount"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "battery_lead",
+        "id": "battery_controller",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "controller_power"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "controller_px",
+        "id": "controller_esc_px",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "esc_px_input"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "esc_nx_output",
+        "id": "esc_motor_nx",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "motor_nx_input"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "esc_nz_output",
+        "id": "esc_motor_nz",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "motor_nz_input"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "esc_px_output",
+        "id": "esc_motor_px",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "motor_px_input"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "esc_pz_output",
+        "id": "esc_motor_pz",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "motor_pz_input"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "frame_battery",
+        "id": "frame_battery_mount",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "battery_mount"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "frame_controller",
+        "id": "frame_controller_mount",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "controller_mount"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "frame_nx",
+        "id": "frame_arm_nx",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "arm_nx_root"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "frame_nz",
+        "id": "frame_arm_nz",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "arm_nz_root"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "frame_px",
+        "id": "frame_arm_px",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "arm_px_root"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "frame_pz",
+        "id": "frame_arm_pz",
+        "kind": "face",
+        "offset": 0,
+        "minimum_overlap": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "b": "arm_pz_root"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "motor_nx_axis",
+        "id": "motor_prop_nx",
+        "kind": "coaxial",
+        "offset": 0,
+        "minimum_overlap": 0.007,
+        "twist": 0,
+        "minimum_clearance": 0.0004,
+        "b": "prop_nx_axis"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "motor_nz_axis",
+        "id": "motor_prop_nz",
+        "kind": "coaxial",
+        "offset": 0,
+        "minimum_overlap": 0.007,
+        "twist": 0,
+        "minimum_clearance": 0.0004,
+        "b": "prop_nz_axis"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "motor_px_axis",
+        "id": "motor_prop_px",
+        "kind": "coaxial",
+        "offset": 0,
+        "minimum_overlap": 0.007,
+        "twist": 0,
+        "minimum_clearance": 0.0004,
+        "b": "prop_px_axis"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "a": "motor_pz_axis",
+        "id": "motor_prop_pz",
+        "kind": "coaxial",
+        "offset": 0,
+        "minimum_overlap": 0.007,
+        "twist": 0,
+        "minimum_clearance": 0.0004,
+        "b": "prop_pz_axis"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "arm_nx_end",
+        "part": "arm_nx"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "arm_nx_root",
+        "part": "arm_nx"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "arm_nx_top",
+        "part": "arm_nx"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "arm_nz_end",
+        "part": "arm_nz"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "arm_nz_root",
+        "part": "arm_nz"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "arm_nz_top",
+        "part": "arm_nz"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "arm_px_end",
+        "part": "arm_px"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "arm_px_root",
+        "part": "arm_px"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "arm_px_top",
+        "part": "arm_px"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "arm_pz_end",
+        "part": "arm_pz"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "arm_pz_root",
+        "part": "arm_pz"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "arm_pz_top",
+        "part": "arm_pz"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "battery_lead",
+        "part": "battery"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "battery_mount",
+        "part": "battery"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "controller_mount",
+        "part": "controller"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "controller_nz",
+        "part": "controller"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "controller_power",
+        "part": "controller"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "controller_px",
+        "part": "controller"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "controller_pz",
+        "part": "controller"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "esc_nx_input",
+        "part": "esc_nx"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "esc_nx_mount",
+        "part": "esc_nx"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "esc_nx_output",
+        "part": "esc_nx"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "esc_nz_input",
+        "part": "esc_nz"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "esc_nz_mount",
+        "part": "esc_nz"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "esc_nz_output",
+        "part": "esc_nz"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "esc_px_input",
+        "part": "esc_px"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "esc_px_mount",
+        "part": "esc_px"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "esc_px_output",
+        "part": "esc_px"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "esc_pz_input",
+        "part": "esc_pz"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "esc_pz_mount",
+        "part": "esc_pz"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "esc_pz_output",
+        "part": "esc_pz"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "frame_battery",
+        "part": "frame"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "frame_controller",
+        "part": "frame"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "frame_nx",
+        "part": "frame"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "frame_nz",
+        "part": "frame"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "frame_px",
+        "part": "frame"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "frame_pz",
+        "part": "frame"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "motor_nx_axis",
+        "part": "motor_nx"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "motor_nx_input",
+        "part": "motor_nx"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "motor_nx_mount",
+        "part": "motor_nx"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "motor_nz_axis",
+        "part": "motor_nz"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "motor_nz_input",
+        "part": "motor_nz"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "motor_nz_mount",
+        "part": "motor_nz"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "motor_px_axis",
+        "part": "motor_px"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "motor_px_input",
+        "part": "motor_px"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "motor_px_mount",
+        "part": "motor_px"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "motor_pz_axis",
+        "part": "motor_pz"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "motor_pz_input",
+        "part": "motor_pz"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "motor_pz_mount",
+        "part": "motor_pz"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "prop_nx_axis",
+        "part": "prop_nx"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "prop_nz_axis",
+        "part": "prop_nz"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "prop_px_axis",
+        "part": "prop_px"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "prop_pz_axis",
+        "part": "prop_pz"
+      }
+    },
+    {
+      "kind": "spatial_requirement",
+      "requirement_id": "r13"
+    },
+    {
+      "kind": "spatial_requirement",
+      "requirement_id": "r21"
+    },
+    {
+      "kind": "spatial_requirement",
+      "requirement_id": "r23"
+    },
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "arm_px",
+        "axis": "x",
+        "b": "arm_nx"
+      }
+    },
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "arm_pz",
+        "axis": "z",
+        "b": "arm_nz"
+      }
+    },
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "esc_px",
+        "axis": "x",
+        "b": "esc_nx"
+      }
+    },
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "esc_pz",
+        "axis": "z",
+        "b": "esc_nz"
+      }
+    },
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "motor_px",
+        "axis": "x",
+        "b": "motor_nx"
+      }
+    },
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "motor_pz",
+        "axis": "z",
+        "b": "motor_nz"
+      }
+    },
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "prop_px",
+        "axis": "x",
+        "b": "prop_nx"
+      }
+    },
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "prop_pz",
+        "axis": "z",
+        "b": "prop_nz"
+      }
+    }
+  ],
+  "sha256": "7d62183e0e9989f41264513af3340db25e8fcc88f39e9b43c0d3bc0b417ce73a"
+}

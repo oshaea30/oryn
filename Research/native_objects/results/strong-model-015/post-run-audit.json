@@ -1,0 +1,519 @@
+{
+  "live_freeze_commit": "336d11e",
+  "parent_live_freeze_commit": "695d786",
+  "all_frozen_sources_unchanged": true,
+  "geometry_executor_changed": false,
+  "acceptance_changed": false,
+  "manual_geometry_repairs": 0,
+  "batch_complete": true,
+  "completed_calls": {
+    "generic-drone-patch-call-1": {
+      "operation_id": "b2295d826d2c0931b3249e09eb627d84",
+      "response_id": "resp_0a561e1502f1f776006abee895c04887d2a849fb3566d6e39e",
+      "status": "completed",
+      "incomplete_details": null,
+      "usage": {
+        "input_tokens": 20099,
+        "input_tokens_details": {
+          "cache_write_tokens": 20096,
+          "cached_tokens": 0
+        },
+        "output_tokens": 2200,
+        "output_tokens_details": {
+          "reasoning_tokens": 1445
+        },
+        "total_tokens": 22299
+      },
+      "calculated_cost_nanos": 361237500,
+      "dispatch_seconds": 61.24371814727783,
+      "creation_calls": 1,
+      "poll_calls": 11,
+      "cancel_calls": 0,
+      "background": true
+    },
+    "cooling-fan-row-patch-call-1": {
+      "operation_id": "7fd20379289f0d3a36528a8b8ef95f52",
+      "response_id": "resp_000deff49d9c57e3006abee97c54f087d28afc2b041cfe56bd",
+      "status": "completed",
+      "incomplete_details": null,
+      "usage": {
+        "input_tokens": 13371,
+        "input_tokens_details": {
+          "cache_write_tokens": 13368,
+          "cached_tokens": 0
+        },
+        "output_tokens": 8470,
+        "output_tokens_details": {
+          "reasoning_tokens": 7396
+        },
+        "total_tokens": 21841
+      },
+      "calculated_cost_nanos": 590637500,
+      "dispatch_seconds": 217.15415811538696,
+      "creation_calls": 1,
+      "poll_calls": 40,
+      "cancel_calls": 0,
+      "background": true
+    },
+    "two-driver-speaker-extract-call-0": {
+      "operation_id": "ba1eb5dcfd116622f4a5387290e13e36",
+      "response_id": "resp_0017a16aafc8c397006abee8d8c47887d2b8ae515db379f484",
+      "status": "completed",
+      "incomplete_details": null,
+      "usage": {
+        "input_tokens": 3912,
+        "input_tokens_details": {
+          "cache_write_tokens": 3909,
+          "cached_tokens": 0
+        },
+        "output_tokens": 6578,
+        "output_tokens_details": {
+          "reasoning_tokens": 4954
+        },
+        "total_tokens": 10490
+      },
+      "calculated_cost_nanos": 377800000,
+      "dispatch_seconds": 163.31373596191406,
+      "creation_calls": 1,
+      "poll_calls": 30,
+      "cancel_calls": 0,
+      "background": true
+    }
+  },
+  "new_call_estimate_nanos": 1329675000,
+  "new_uncertain_hold_nanos": 0,
+  "charged_and_held_nanos": 1329675000,
+  "combined_014_015_completed_estimate_nanos": 2361825000,
+  "combined_014_015_charged_and_held_nanos": 4251462500,
+  "old_funding_hold_retained_nanos": 1889637500,
+  "old_funding_row_unchanged": true,
+  "ledger_records": [
+    {
+      "request_id": "b2295d826d2c0931b3249e09eb627d84",
+      "status": "completed",
+      "outcome": "completed",
+      "input_tokens": 20099,
+      "reserved_nanos": 1889637500,
+      "charged_nanos": 361237500,
+      "calculated_cost_nanos": 361237500,
+      "actual_cost_nanos": null
+    },
+    {
+      "request_id": "ba1eb5dcfd116622f4a5387290e13e36",
+      "status": "completed",
+      "outcome": "completed",
+      "input_tokens": 3913,
+      "reserved_nanos": 1687312500,
+      "charged_nanos": 377800000,
+      "calculated_cost_nanos": 377800000,
+      "actual_cost_nanos": null
+    },
+    {
+      "request_id": "7fd20379289f0d3a36528a8b8ef95f52",
+      "status": "completed",
+      "outcome": "completed",
+      "input_tokens": 13371,
+      "reserved_nanos": 1805537500,
+      "charged_nanos": 590637500,
+      "calculated_cost_nanos": 590637500,
+      "actual_cost_nanos": null
+    }
+  ],
+  "ledger_halted": false,
+  "earlier_holds_retained": true,
+  "actual_invoice_cost": null,
+  "gpu_cost_nanos": 0,
+  "next_conservative_prior_allowance_nanos": 8730000000,
+  "packages": [
+    {
+      "case": "cooling-fan-row-plan-0",
+      "parts": 7,
+      "triangles": 6102,
+      "structural_checks_passed": false,
+      "check_count": 55,
+      "failures": [
+        {
+          "kind": "symmetry_bounds",
+          "relation": {
+            "a": "frame_left",
+            "b": "frame_right",
+            "axis": "x"
+          },
+          "passed": false,
+          "measurement": {
+            "maximum_bound_error_m": 0.00299999862909317,
+            "scope": "bounds only, not full shape symmetry"
+          }
+        },
+        {
+          "kind": "symmetry_bounds",
+          "relation": {
+            "a": "rotor_left",
+            "b": "rotor_right",
+            "axis": "x"
+          },
+          "passed": false,
+          "measurement": {
+            "maximum_bound_error_m": 0.010357700288295746,
+            "scope": "bounds only, not full shape symmetry"
+          }
+        },
+        {
+          "kind": "port_geometry",
+          "relation": {
+            "port": "frame_left_bore",
+            "part": "frame_left"
+          },
+          "passed": false,
+          "measurement": {
+            "missing_surface_band_m3": -6.352747104407253e-22,
+            "obstructed_exterior_m3": 5.3170278789075375e-09,
+            "scope": "declared finite cylindrical interval"
+          }
+        },
+        {
+          "kind": "port_geometry",
+          "relation": {
+            "port": "frame_center_bore",
+            "part": "frame_center"
+          },
+          "passed": false,
+          "measurement": {
+            "missing_surface_band_m3": -6.352747104407253e-22,
+            "obstructed_exterior_m3": 5.3170278789075375e-09,
+            "scope": "declared finite cylindrical interval"
+          }
+        },
+        {
+          "kind": "port_geometry",
+          "relation": {
+            "port": "frame_right_bore",
+            "part": "frame_right"
+          },
+          "passed": false,
+          "measurement": {
+            "missing_surface_band_m3": -6.352747104407253e-22,
+            "obstructed_exterior_m3": 5.3170278789075375e-09,
+            "scope": "declared finite cylindrical interval"
+          }
+        },
+        {
+          "kind": "port_geometry",
+          "relation": {
+            "port": "rotor_left_axis",
+            "part": "rotor_left"
+          },
+          "passed": false,
+          "measurement": {
+            "missing_surface_band_m3": -1.4197388457639462e-23,
+            "obstructed_exterior_m3": 3.825443945234012e-09,
+            "scope": "declared finite cylindrical interval"
+          }
+        },
+        {
+          "kind": "port_geometry",
+          "relation": {
+            "port": "rotor_center_axis",
+            "part": "rotor_center"
+          },
+          "passed": false,
+          "measurement": {
+            "missing_surface_band_m3": -1.4197388457639462e-23,
+            "obstructed_exterior_m3": 3.825443945234012e-09,
+            "scope": "declared finite cylindrical interval"
+          }
+        },
+        {
+          "kind": "port_geometry",
+          "relation": {
+            "port": "rotor_right_axis",
+            "part": "rotor_right"
+          },
+          "passed": false,
+          "measurement": {
+            "missing_surface_band_m3": -1.4197388457639462e-23,
+            "obstructed_exterior_m3": 3.825443945234012e-09,
+            "scope": "declared finite cylindrical interval"
+          }
+        },
+        {
+          "kind": "assembly_arrangement",
+          "assembly_id": "a01",
+          "requirement_id": "r08",
+          "aspect": "placement",
+          "passed": false,
+          "failure_classes": [
+            "feature_geometry"
+          ],
+          "measurement": {
+            "members": [
+              {
+                "part": "frame_center",
+                "port": "frame_center_bore",
+                "relation_passed": true,
+                "feature_geometry_passed": false,
+                "line_error_m": 0.0,
+                "spacing_error_m": 3.700743415417188e-17,
+                "passed": false
+              },
+              {
+                "part": "frame_left",
+                "port": "frame_left_bore",
+                "relation_passed": true,
+                "feature_geometry_passed": false,
+                "line_error_m": 0.0,
+                "spacing_error_m": 0.0,
+                "passed": false
+              },
+              {
+                "part": "frame_right",
+                "port": "frame_right_bore",
+                "relation_passed": true,
+                "feature_geometry_passed": false,
+                "line_error_m": 0.0,
+                "spacing_error_m": 0.0,
+                "passed": false
+              }
+            ],
+            "pitch_m": 0.16999999999999998,
+            "minimum_gap_m": 0.16999999999999998,
+            "distance_tolerance_m": 0.008499999999999999
+          },
+          "scope": "Solved declared feature geometry; interpretation and feature meaning remain unverified."
+        },
+        {
+          "kind": "assembly_arrangement",
+          "assembly_id": "a01",
+          "requirement_id": "r09",
+          "aspect": "orientation",
+          "passed": false,
+          "failure_classes": [
+            "feature_geometry"
+          ],
+          "measurement": {
+            "members": [
+              {
+                "part": "frame_center",
+                "port": "frame_center_bore",
+                "axis_alignment": 1.0,
+                "relation_passed": true,
+                "feature_geometry_passed": false,
+                "passed": false
+              },
+              {
+                "part": "frame_left",
+                "port": "frame_left_bore",
+                "axis_alignment": 1.0,
+                "relation_passed": true,
+                "feature_geometry_passed": false,
+                "passed": false
+              },
+              {
+                "part": "frame_right",
+                "port": "frame_right_bore",
+                "axis_alignment": 1.0,
+                "relation_passed": true,
+                "feature_geometry_passed": false,
+                "passed": false
+              }
+            ],
+            "direction": "+z",
+            "minimum_alignment": 1.0
+          },
+          "scope": "Solved declared feature geometry; interpretation and feature meaning remain unverified."
+        },
+        {
+          "kind": "assembly_arrangement",
+          "assembly_id": "a02",
+          "requirement_id": "r10",
+          "aspect": "placement",
+          "passed": false,
+          "failure_classes": [
+            "feature_geometry"
+          ],
+          "measurement": {
+            "members": [
+              {
+                "part": "rotor_center",
+                "port": "rotor_center_axis",
+                "relation_passed": true,
+                "feature_geometry_passed": false,
+                "line_error_m": 0.0,
+                "spacing_error_m": 3.700743415417188e-17,
+                "passed": false
+              },
+              {
+                "part": "rotor_left",
+                "port": "rotor_left_axis",
+                "relation_passed": true,
+                "feature_geometry_passed": false,
+                "line_error_m": 0.0,
+                "spacing_error_m": 0.0,
+                "passed": false
+              },
+              {
+                "part": "rotor_right",
+                "port": "rotor_right_axis",
+                "relation_passed": true,
+                "feature_geometry_passed": false,
+                "line_error_m": 0.0,
+                "spacing_error_m": 0.0,
+                "passed": false
+              }
+            ],
+            "pitch_m": 0.16999999999999998,
+            "minimum_gap_m": 0.16999999999999998,
+            "distance_tolerance_m": 0.008499999999999999
+          },
+          "scope": "Solved declared feature geometry; interpretation and feature meaning remain unverified."
+        },
+        {
+          "kind": "assembly_arrangement",
+          "assembly_id": "a02",
+          "requirement_id": "r11",
+          "aspect": "orientation",
+          "passed": false,
+          "failure_classes": [
+            "feature_geometry"
+          ],
+          "measurement": {
+            "members": [
+              {
+                "part": "rotor_center",
+                "port": "rotor_center_axis",
+                "axis_alignment": 1.0,
+                "relation_passed": true,
+                "feature_geometry_passed": false,
+                "passed": false
+              },
+              {
+                "part": "rotor_left",
+                "port": "rotor_left_axis",
+                "axis_alignment": 1.0,
+                "relation_passed": true,
+                "feature_geometry_passed": false,
+                "passed": false
+              },
+              {
+                "part": "rotor_right",
+                "port": "rotor_right_axis",
+                "axis_alignment": 1.0,
+                "relation_passed": true,
+                "feature_geometry_passed": false,
+                "passed": false
+              }
+            ],
+            "direction": "+z",
+            "minimum_alignment": 1.0
+          },
+          "scope": "Solved declared feature geometry; interpretation and feature meaning remain unverified."
+        }
+      ],
+      "preserved_fact_count": 55,
+      "regressions": [],
+      "source": "replayed unchanged baseline"
+    },
+    {
+      "case": "cooling-fan-row-plan-1",
+      "parts": 7,
+      "triangles": 6078,
+      "structural_checks_passed": true,
+      "check_count": 55,
+      "failures": [],
+      "preserved_fact_count": 55,
+      "regressions": [],
+      "source": "015 model patch"
+    },
+    {
+      "case": "generic-drone-plan-0",
+      "parts": 19,
+      "triangles": 9480,
+      "structural_checks_passed": false,
+      "check_count": 292,
+      "failures": [
+        {
+          "kind": "port_geometry",
+          "relation": {
+            "port": "controller_nx",
+            "part": "controller"
+          },
+          "passed": false,
+          "measurement": {
+            "missing_surface_band_m3": 0.0,
+            "obstructed_exterior_m3": 5.1282853428343265e-12,
+            "scope": "finite central face patch"
+          }
+        },
+        {
+          "kind": "executable_mate",
+          "relation": {
+            "a": "controller_nx",
+            "id": "controller_esc_nx",
+            "kind": "face",
+            "offset": 0,
+            "minimum_overlap": 0,
+            "twist": 0,
+            "minimum_clearance": 0,
+            "b": "esc_nx_input"
+          },
+          "passed": false,
+          "measurement": {
+            "frame_max_error": 2.0
+          }
+        },
+        {
+          "kind": "executable_mate",
+          "relation": {
+            "a": "controller_pz",
+            "id": "controller_esc_pz",
+            "kind": "face",
+            "offset": 0,
+            "minimum_overlap": 0,
+            "twist": 0,
+            "minimum_clearance": 0,
+            "b": "esc_pz_input"
+          },
+          "passed": false,
+          "measurement": {
+            "frame_max_error": 1.0000000000000002
+          }
+        },
+        {
+          "kind": "executable_mate",
+          "relation": {
+            "a": "controller_nz",
+            "id": "controller_esc_nz",
+            "kind": "face",
+            "offset": 0,
+            "minimum_overlap": 0,
+            "twist": 0,
+            "minimum_clearance": 0,
+            "b": "esc_nz_input"
+          },
+          "passed": false,
+          "measurement": {
+            "frame_max_error": 1.0
+          }
+        }
+      ],
+      "preserved_fact_count": 308,
+      "regressions": [],
+      "source": "replayed unchanged baseline"
+    },
+    {
+      "case": "generic-drone-plan-1",
+      "parts": 19,
+      "triangles": 9480,
+      "structural_checks_passed": true,
+      "check_count": 292,
+      "failures": [],
+      "preserved_fact_count": 308,
+      "regressions": [],
+      "source": "015 model patch"
+    }
+  ],
+  "browser_checks": 36,
+  "browser_page_errors": [],
+  "native_generation_goal_passed": false,
+  "interpretation": "One bounded combined-configuration comparison, supplied role catalogs; no general reliability, polished-object, engineering or Quest claim."
+}

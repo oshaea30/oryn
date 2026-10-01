@@ -1,0 +1,198 @@
+{
+  "entities": [
+    {
+      "id": "open_ring",
+      "role": "Open ring"
+    },
+    {
+      "id": "sphere",
+      "role": "Sphere"
+    },
+    {
+      "id": "suspension_cord",
+      "role": "Suspension cord"
+    },
+    {
+      "id": "base",
+      "role": "Base"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "r01",
+      "obligation": "required",
+      "kind": "entity",
+      "subject": "open_ring",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "quote": "an open ring",
+      "mode": "structure",
+      "basis": "explicit"
+    },
+    {
+      "id": "r02",
+      "obligation": "required",
+      "kind": "entity",
+      "subject": "sphere",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "quote": "a small sphere",
+      "mode": "structure",
+      "basis": "explicit"
+    },
+    {
+      "id": "r03",
+      "obligation": "required",
+      "kind": "entity",
+      "subject": "suspension_cord",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "quote": "a cord",
+      "mode": "structure",
+      "basis": "explicit"
+    },
+    {
+      "id": "r04",
+      "obligation": "required",
+      "kind": "entity",
+      "subject": "base",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "quote": "a base",
+      "mode": "structure",
+      "basis": "explicit"
+    },
+    {
+      "id": "r05",
+      "obligation": "required",
+      "kind": "visual",
+      "subject": "sphere",
+      "target": "",
+      "predicate": "appearance",
+      "value": "small, hanging pose",
+      "quote": "a small sphere hanging from a cord",
+      "mode": "appearance",
+      "basis": "explicit"
+    },
+    {
+      "id": "r06",
+      "obligation": "required",
+      "kind": "visual",
+      "subject": "open_ring",
+      "target": "",
+      "predicate": "appearance",
+      "value": "visibly open ring",
+      "quote": "an open ring",
+      "mode": "appearance",
+      "basis": "explicit"
+    },
+    {
+      "id": "r07",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "sphere",
+      "target": "open_ring",
+      "predicate": "inside",
+      "value": "",
+      "quote": "sphere hanging from a cord inside an open ring",
+      "mode": "structure",
+      "basis": "explicit"
+    },
+    {
+      "id": "r08",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "open_ring",
+      "target": "base",
+      "predicate": "attached",
+      "value": "",
+      "quote": "an open ring on a base",
+      "mode": "structure",
+      "basis": "inferred"
+    },
+    {
+      "id": "r09",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "sphere",
+      "target": "suspension_cord",
+      "predicate": "attached",
+      "value": "",
+      "quote": "sphere hanging from a cord",
+      "mode": "structure",
+      "basis": "inferred"
+    },
+    {
+      "id": "r10",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "suspension_cord",
+      "target": "open_ring",
+      "predicate": "attached",
+      "value": "",
+      "quote": "sphere hanging from a cord inside an open ring",
+      "mode": "structure",
+      "basis": "inferred"
+    },
+    {
+      "id": "r11",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "suspension_cord",
+      "target": "",
+      "predicate": "other",
+      "value": "extends above sphere to suspension point",
+      "quote": "sphere hanging from a cord",
+      "mode": "structure",
+      "basis": "inferred"
+    },
+    {
+      "id": "r12",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "open_ring",
+      "target": "",
+      "predicate": "other",
+      "value": "upright above base around sphere",
+      "quote": "sphere hanging from a cord inside an open ring on a base",
+      "mode": "structure",
+      "basis": "inferred"
+    },
+    {
+      "id": "r13",
+      "obligation": "required",
+      "kind": "behavior",
+      "subject": "sphere",
+      "target": "",
+      "predicate": "capability",
+      "value": "animate swinging",
+      "quote": "Animate the sphere swinging",
+      "mode": "behavior",
+      "basis": "explicit"
+    },
+    {
+      "id": "r14",
+      "obligation": "required",
+      "kind": "behavior",
+      "subject": "suspension_cord",
+      "target": "sphere",
+      "predicate": "capability",
+      "value": "maintain attachment during swing",
+      "quote": "while the cord stays attached",
+      "mode": "behavior",
+      "basis": "explicit"
+    }
+  ],
+  "exclusions": [
+    {
+      "id": "x01",
+      "subject": "object",
+      "domain": "physical_verification",
+      "quote": "Do not claim its supports are physically verified."
+    }
+  ]
+}

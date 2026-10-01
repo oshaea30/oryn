@@ -1,0 +1,21 @@
+{
+  "predeclared_checks_passed": true,
+  "checks": [
+    {
+      "kind": "required_interpretation",
+      "selector": {
+        "mode": "identity",
+        "predicate": "exact_identity",
+        "obligation": "evidence_required"
+      },
+      "passed": true
+    },
+    {
+      "kind": "expected_admission",
+      "expected": false,
+      "passed": true
+    }
+  ],
+  "meaning_fully_correct": "unassessed",
+  "scope": "Limited benchmark checks plus separate source review, not a semantic proof."
+}

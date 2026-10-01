@@ -135,6 +135,16 @@ Coverage does not prove correct extraction: conceptual appearance, implied struc
 and engineering function still need better distinctions. Keep geometry frozen;
 no polished-object or generalization success is claimed.
 
+The [meaning experiment](Research/native_objects/MEANING_RESULT.md) then separates
+appearance, static structure, demonstrated behavior and evidence-backed claims.
+Four of seven cases preserve the expected distinctions; motion has a capability
+shape error and drone/controller invent source quotations. Source-segment references
+and canonical capability types now address those interface failures in local tests.
+The paired live follow-up is incomplete at its output ceiling, so confirmation
+remains pending. Cost $0.129625; geometry remains unchanged. The next confirmation
+uses separate responses for the three failed cases and awaits approval for up to
+$0.10 above today's shared API limit, preserving the $5 aggregate research cap.
+
 Generation research is the active track. The product remains stable; answering,
 voice and motion-inference expansion are paused. Research output does not enter
 production automatically. The existing $5 research ceiling includes the prior run.

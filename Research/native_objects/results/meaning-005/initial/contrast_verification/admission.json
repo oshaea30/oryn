@@ -1,0 +1,37 @@
+{
+  "planning_allowed": false,
+  "unsupported": [
+    {
+      "id": "r11",
+      "obligation": "required",
+      "mode": "structure",
+      "basis": "inferred",
+      "reason": "No deterministic adapter implements this requirement."
+    },
+    {
+      "id": "r12",
+      "obligation": "evidence_required",
+      "mode": "physical_verification",
+      "basis": "explicit",
+      "reason": "Matching evidence is not supplied."
+    }
+  ],
+  "blocking": [
+    {
+      "id": "r11",
+      "obligation": "required",
+      "mode": "structure",
+      "basis": "inferred",
+      "reason": "No deterministic adapter implements this requirement."
+    },
+    {
+      "id": "r12",
+      "obligation": "evidence_required",
+      "mode": "physical_verification",
+      "basis": "explicit",
+      "reason": "Matching evidence is not supplied."
+    }
+  ],
+  "interpretation_correct": "unassessed",
+  "detail": "Registry admission only; planning admission is not fulfillment."
+}

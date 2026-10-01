@@ -1,0 +1,176 @@
+{
+  "cases": [
+    {
+      "case": "contrast_static",
+      "status": "interpreted",
+      "geometry_executed": false,
+      "billing": {
+        "operation_id": "f30c302a1417e2ec85d71544f48311fc",
+        "status": "completed",
+        "incomplete_details": null,
+        "usage": {
+          "input_tokens": 1147,
+          "input_tokens_details": {
+            "cache_write_tokens": 1144,
+            "cached_tokens": 0
+          },
+          "output_tokens": 886,
+          "output_tokens_details": {
+            "reasoning_tokens": 287
+          },
+          "total_tokens": 2033
+        },
+        "calculated_cost_nanos": 11727500,
+        "dispatch_seconds": 10.38029458397068
+      },
+      "planning_allowed": true,
+      "predeclared_checks_passed": true,
+      "blocking": [],
+      "elapsed_seconds": 10.697890333016403
+    },
+    {
+      "case": "contrast_motion",
+      "status": "stopped",
+      "geometry_executed": false,
+      "error": "Unexpected requirement target",
+      "elapsed_seconds": 11.445806792005897
+    },
+    {
+      "case": "contrast_verification",
+      "status": "interpreted",
+      "geometry_executed": false,
+      "billing": {
+        "operation_id": "6b97505fecee03cc57a38e39a54e8224",
+        "status": "completed",
+        "incomplete_details": null,
+        "usage": {
+          "input_tokens": 1152,
+          "input_tokens_details": {
+            "cache_write_tokens": 68,
+            "cached_tokens": 1081
+          },
+          "output_tokens": 975,
+          "output_tokens_details": {
+            "reasoning_tokens": 305
+          },
+          "total_tokens": 2127
+        },
+        "calculated_cost_nanos": 12630000,
+        "dispatch_seconds": 11.08629737503361
+      },
+      "planning_allowed": false,
+      "predeclared_checks_passed": true,
+      "blocking": [
+        {
+          "id": "r11",
+          "obligation": "required",
+          "mode": "structure",
+          "basis": "inferred",
+          "reason": "No deterministic adapter implements this requirement."
+        },
+        {
+          "id": "r12",
+          "obligation": "evidence_required",
+          "mode": "physical_verification",
+          "basis": "explicit",
+          "reason": "Matching evidence is not supplied."
+        }
+      ],
+      "elapsed_seconds": 11.297734083025716
+    },
+    {
+      "case": "original_lamp",
+      "status": "interpreted",
+      "geometry_executed": false,
+      "billing": {
+        "operation_id": "ff1bc7a3fc7da4242868cb59d76e5880",
+        "status": "completed",
+        "incomplete_details": null,
+        "usage": {
+          "input_tokens": 1159,
+          "input_tokens_details": {
+            "cache_write_tokens": 75,
+            "cached_tokens": 1081
+          },
+          "output_tokens": 1155,
+          "output_tokens_details": {
+            "reasoning_tokens": 414
+          },
+          "total_tokens": 2314
+        },
+        "calculated_cost_nanos": 14447500,
+        "dispatch_seconds": 11.006268207915127
+      },
+      "planning_allowed": false,
+      "predeclared_checks_passed": true,
+      "blocking": [
+        {
+          "id": "r13",
+          "obligation": "required",
+          "mode": "appearance",
+          "basis": "explicit",
+          "reason": "Runtime capability is not implemented: emission"
+        }
+      ],
+      "elapsed_seconds": 11.232818666030653
+    },
+    {
+      "case": "original_drone",
+      "status": "stopped",
+      "geometry_executed": false,
+      "error": "Requirement quote is not in original request",
+      "elapsed_seconds": 14.572868167073466
+    },
+    {
+      "case": "static_controller",
+      "status": "stopped",
+      "geometry_executed": false,
+      "error": "Requirement quote is not in original request",
+      "elapsed_seconds": 11.660128207993694
+    },
+    {
+      "case": "exact_identity",
+      "status": "interpreted",
+      "geometry_executed": false,
+      "billing": {
+        "operation_id": "27183b2b2d15318738e1eefd8d8198d3",
+        "status": "completed",
+        "incomplete_details": null,
+        "usage": {
+          "input_tokens": 1134,
+          "input_tokens_details": {
+            "cache_write_tokens": 50,
+            "cached_tokens": 1081
+          },
+          "output_tokens": 895,
+          "output_tokens_details": {
+            "reasoning_tokens": 447
+          },
+          "total_tokens": 2029
+        },
+        "calculated_cost_nanos": 11785000,
+        "dispatch_seconds": 11.164126625051722
+      },
+      "planning_allowed": false,
+      "predeclared_checks_passed": true,
+      "blocking": [
+        {
+          "id": "r7",
+          "obligation": "evidence_required",
+          "mode": "identity",
+          "basis": "explicit",
+          "reason": "Matching evidence is not supplied."
+        },
+        {
+          "id": "r8",
+          "obligation": "required",
+          "mode": "behavior",
+          "basis": "explicit",
+          "reason": "Runtime capability is not implemented: show which details are verified"
+        }
+      ],
+      "elapsed_seconds": 11.656744749983773
+    }
+  ],
+  "native_generation_goal_passed": false
+}

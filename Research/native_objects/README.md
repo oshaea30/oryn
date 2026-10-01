@@ -49,6 +49,17 @@ an external geometry model; no GPU run was dispatched. It identified the gap bet
 role-group proposals and spatial construction. The following procedural experiment
 tests that gap without changing the failed Cube/PartCrafter decisions.
 
+## Current interpretation correction
+
+[Meaning 005](MEANING_RESULT.md) separates appearance, structure, behavior and
+verified claims. Four of seven initial cases met the frozen interpretation checks;
+three were rejected. General source-segment references and typed capability names
+fix the observed interface defects locally. A paired live confirmation exhausted
+its output allowance and remains unconfirmed. Cost $0.129625; 107 targeted test
+executions pass. No geometry expansion or product promotion. Separate confirmation
+calls await approval for up to $0.10 beyond today's shared API limit.
+[Protocol](MEANING_EXPERIMENT.md) · [Evidence](results/meaning-005.json).
+
 ## Completed request-to-requirements experiment
 
 [Intent result 004](REQUIREMENTS_RESULT.md) records stable requirement IDs and a

@@ -1,0 +1,209 @@
+{
+  "source_request": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside. Let me inspect its main pieces; it does not need to be a buildable electrical product.",
+  "source_sha256": "5532a73f6e85abad2f8cf8e507e36c075a21b34ce6b6bc69122e0266309a6c03",
+  "inventory": {
+    "entities": [
+      {
+        "id": "leaf_shade",
+        "role": "Curled leaf shade"
+      },
+      {
+        "id": "seed",
+        "role": "Glowing seed"
+      },
+      {
+        "id": "strand",
+        "role": "Seed suspension strand"
+      },
+      {
+        "id": "stem",
+        "role": "Stem support"
+      },
+      {
+        "id": "base",
+        "role": "Desk base"
+      }
+    ],
+    "requirements": [
+      {
+        "id": "r01",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "leaf_shade",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "quote": "desk lamp shaped like a curled leaf",
+        "mode": "structure",
+        "basis": "inferred"
+      },
+      {
+        "id": "r02",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "seed",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "quote": "glowing seed suspended inside",
+        "mode": "structure",
+        "basis": "explicit"
+      },
+      {
+        "id": "r03",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "strand",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "quote": "seed suspended inside",
+        "mode": "structure",
+        "basis": "inferred"
+      },
+      {
+        "id": "r04",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "stem",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "quote": "desk lamp shaped like a curled leaf",
+        "mode": "structure",
+        "basis": "inferred"
+      },
+      {
+        "id": "r05",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "base",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "quote": "desk lamp shaped like a curled leaf",
+        "mode": "structure",
+        "basis": "inferred"
+      },
+      {
+        "id": "r06",
+        "obligation": "required",
+        "kind": "visual",
+        "subject": "leaf_shade",
+        "target": "",
+        "predicate": "appearance",
+        "value": "curled leaf shape",
+        "quote": "shaped like a curled leaf",
+        "mode": "appearance",
+        "basis": "explicit"
+      },
+      {
+        "id": "r07",
+        "obligation": "required",
+        "kind": "visual",
+        "subject": "seed",
+        "target": "",
+        "predicate": "appearance",
+        "value": "visibly suspended",
+        "quote": "seed suspended inside",
+        "mode": "appearance",
+        "basis": "explicit"
+      },
+      {
+        "id": "r08",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "seed",
+        "target": "leaf_shade",
+        "predicate": "inside",
+        "value": "",
+        "quote": "seed suspended inside",
+        "mode": "structure",
+        "basis": "explicit"
+      },
+      {
+        "id": "r09",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "strand",
+        "target": "seed",
+        "predicate": "attached",
+        "value": "",
+        "quote": "seed suspended inside",
+        "mode": "structure",
+        "basis": "inferred"
+      },
+      {
+        "id": "r10",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "strand",
+        "target": "leaf_shade",
+        "predicate": "attached",
+        "value": "",
+        "quote": "seed suspended inside",
+        "mode": "structure",
+        "basis": "inferred"
+      },
+      {
+        "id": "r11",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "leaf_shade",
+        "target": "stem",
+        "predicate": "attached",
+        "value": "",
+        "quote": "desk lamp shaped like a curled leaf",
+        "mode": "structure",
+        "basis": "inferred"
+      },
+      {
+        "id": "r12",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "stem",
+        "target": "base",
+        "predicate": "attached",
+        "value": "",
+        "quote": "desk lamp shaped like a curled leaf",
+        "mode": "structure",
+        "basis": "inferred"
+      },
+      {
+        "id": "r13",
+        "obligation": "required",
+        "kind": "behavior",
+        "subject": "seed",
+        "target": "",
+        "predicate": "capability",
+        "value": "emission",
+        "quote": "glowing seed",
+        "mode": "appearance",
+        "basis": "explicit"
+      },
+      {
+        "id": "r14",
+        "obligation": "required",
+        "kind": "behavior",
+        "subject": "object",
+        "target": "",
+        "predicate": "capability",
+        "value": "inspect",
+        "quote": "Let me inspect its main pieces",
+        "mode": "behavior",
+        "basis": "explicit"
+      }
+    ],
+    "exclusions": [
+      {
+        "id": "x01",
+        "subject": "object",
+        "domain": "physical_verification",
+        "quote": "it does not need to be a buildable electrical product"
+      }
+    ]
+  },
+  "inventory_sha256": "09cbc6535775ae7f899fe2423a840e1c761c885b0cc203db735cb701f06eeb93",
+  "interpretation_version": 1,
+  "extraction_completeness": "unassessed; consistency is not natural-language entailment"
+}

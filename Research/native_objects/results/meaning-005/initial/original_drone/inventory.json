@@ -1,0 +1,335 @@
+{
+  "entities": [
+    {
+      "id": "central_frame",
+      "role": "Central frame"
+    },
+    {
+      "id": "arms",
+      "role": "Four arms"
+    },
+    {
+      "id": "motors",
+      "role": "Four motors"
+    },
+    {
+      "id": "propellers",
+      "role": "Four propellers"
+    },
+    {
+      "id": "battery",
+      "role": "Battery"
+    },
+    {
+      "id": "flight_controller",
+      "role": "Flight controller"
+    },
+    {
+      "id": "speed_controllers",
+      "role": "Electronic speed controllers"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "r01",
+      "obligation": "required",
+      "kind": "entity",
+      "subject": "central_frame",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "quote": "Central frame",
+      "mode": "structure",
+      "basis": "explicit"
+    },
+    {
+      "id": "r02",
+      "obligation": "required",
+      "kind": "entity",
+      "subject": "arms",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "quote": "Four arms",
+      "mode": "structure",
+      "basis": "explicit"
+    },
+    {
+      "id": "r03",
+      "obligation": "required",
+      "kind": "entity",
+      "subject": "motors",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "quote": "Four motors",
+      "mode": "structure",
+      "basis": "explicit"
+    },
+    {
+      "id": "r04",
+      "obligation": "required",
+      "kind": "entity",
+      "subject": "propellers",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "quote": "Four propellers",
+      "mode": "structure",
+      "basis": "explicit"
+    },
+    {
+      "id": "r05",
+      "obligation": "required",
+      "kind": "entity",
+      "subject": "battery",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "quote": "Battery",
+      "mode": "structure",
+      "basis": "explicit"
+    },
+    {
+      "id": "r06",
+      "obligation": "required",
+      "kind": "entity",
+      "subject": "flight_controller",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "quote": "Flight controller",
+      "mode": "structure",
+      "basis": "explicit"
+    },
+    {
+      "id": "r07",
+      "obligation": "required",
+      "kind": "entity",
+      "subject": "speed_controllers",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "quote": "Electronic speed controllers",
+      "mode": "structure",
+      "basis": "explicit"
+    },
+    {
+      "id": "r08",
+      "obligation": "required",
+      "kind": "constraint",
+      "subject": "arms",
+      "target": "",
+      "predicate": "count",
+      "value": "4",
+      "quote": "Four arms",
+      "mode": "structure",
+      "basis": "explicit"
+    },
+    {
+      "id": "r09",
+      "obligation": "required",
+      "kind": "constraint",
+      "subject": "motors",
+      "target": "",
+      "predicate": "count",
+      "value": "4",
+      "quote": "Four motors",
+      "mode": "structure",
+      "basis": "explicit"
+    },
+    {
+      "id": "r10",
+      "obligation": "required",
+      "kind": "constraint",
+      "subject": "propellers",
+      "target": "",
+      "predicate": "count",
+      "value": "4",
+      "quote": "Four propellers",
+      "mode": "structure",
+      "basis": "explicit"
+    },
+    {
+      "id": "r11",
+      "obligation": "required",
+      "kind": "visual",
+      "subject": "object",
+      "target": "",
+      "predicate": "appearance",
+      "value": "recognizable generic quadcopter drone",
+      "quote": "generic quadcopter drone",
+      "mode": "appearance",
+      "basis": "explicit"
+    },
+    {
+      "id": "r12",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "arms",
+      "target": "central_frame",
+      "predicate": "attached",
+      "value": "",
+      "quote": "quadcopter drone",
+      "mode": "structure",
+      "basis": "inferred"
+    },
+    {
+      "id": "r13",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "arms",
+      "target": "",
+      "predicate": "other",
+      "value": "extend outward around central frame",
+      "quote": "quadcopter drone",
+      "mode": "structure",
+      "basis": "inferred"
+    },
+    {
+      "id": "r14",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "motors",
+      "target": "arms",
+      "predicate": "attached",
+      "value": "",
+      "quote": "quadcopter drone",
+      "mode": "structure",
+      "basis": "inferred"
+    },
+    {
+      "id": "r15",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "motors",
+      "target": "",
+      "predicate": "other",
+      "value": "one near the outer end of each arm",
+      "quote": "quadcopter drone",
+      "mode": "structure",
+      "basis": "inferred"
+    },
+    {
+      "id": "r16",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "propellers",
+      "target": "motors",
+      "predicate": "attached",
+      "value": "",
+      "quote": "quadcopter drone",
+      "mode": "structure",
+      "basis": "inferred"
+    },
+    {
+      "id": "r17",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "propellers",
+      "target": "",
+      "predicate": "other",
+      "value": "one aligned with each motor",
+      "quote": "quadcopter drone",
+      "mode": "structure",
+      "basis": "inferred"
+    },
+    {
+      "id": "r18",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "battery",
+      "target": "central_frame",
+      "predicate": "attached",
+      "value": "",
+      "quote": "quadcopter drone",
+      "mode": "structure",
+      "basis": "inferred"
+    },
+    {
+      "id": "r19",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "flight_controller",
+      "target": "central_frame",
+      "predicate": "attached",
+      "value": "",
+      "quote": "quadcopter drone",
+      "mode": "structure",
+      "basis": "inferred"
+    },
+    {
+      "id": "r20",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "speed_controllers",
+      "target": "flight_controller",
+      "predicate": "connected",
+      "value": "",
+      "quote": "Electronic speed controllers",
+      "mode": "structure",
+      "basis": "inferred"
+    },
+    {
+      "id": "r21",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "speed_controllers",
+      "target": "motors",
+      "predicate": "connected",
+      "value": "",
+      "quote": "Electronic speed controllers",
+      "mode": "structure",
+      "basis": "inferred"
+    },
+    {
+      "id": "r22",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "battery",
+      "target": "speed_controllers",
+      "predicate": "connected",
+      "value": "",
+      "quote": "Battery",
+      "mode": "structure",
+      "basis": "inferred"
+    },
+    {
+      "id": "r23",
+      "obligation": "required",
+      "kind": "behavior",
+      "subject": "object",
+      "target": "",
+      "predicate": "capability",
+      "value": "inspect",
+      "quote": "explore",
+      "mode": "behavior",
+      "basis": "explicit"
+    },
+    {
+      "id": "r24",
+      "obligation": "required",
+      "kind": "behavior",
+      "subject": "object",
+      "target": "",
+      "predicate": "capability",
+      "value": "geometric_explode",
+      "quote": "take apart into its major components",
+      "mode": "behavior",
+      "basis": "explicit"
+    },
+    {
+      "id": "r25",
+      "obligation": "required",
+      "kind": "behavior",
+      "subject": "object",
+      "target": "",
+      "predicate": "capability",
+      "value": "reassemble",
+      "quote": "take apart into its major components",
+      "mode": "behavior",
+      "basis": "inferred"
+    }
+  ],
+  "exclusions": []
+}

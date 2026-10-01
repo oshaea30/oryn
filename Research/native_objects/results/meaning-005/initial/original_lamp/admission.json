@@ -1,0 +1,23 @@
+{
+  "planning_allowed": false,
+  "unsupported": [
+    {
+      "id": "r13",
+      "obligation": "required",
+      "mode": "appearance",
+      "basis": "explicit",
+      "reason": "Runtime capability is not implemented: emission"
+    }
+  ],
+  "blocking": [
+    {
+      "id": "r13",
+      "obligation": "required",
+      "mode": "appearance",
+      "basis": "explicit",
+      "reason": "Runtime capability is not implemented: emission"
+    }
+  ],
+  "interpretation_correct": "unassessed",
+  "detail": "Registry admission only; planning admission is not fulfillment."
+}

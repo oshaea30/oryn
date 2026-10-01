@@ -1,0 +1,115 @@
+{
+  "entities": [
+    {
+      "id": "enclosure",
+      "role": "Enclosure"
+    },
+    {
+      "id": "battery",
+      "role": "Battery"
+    },
+    {
+      "id": "battery_mount",
+      "role": "Battery mount"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "r1",
+      "obligation": "required",
+      "kind": "entity",
+      "subject": "enclosure",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "quote": "internal assembly of a JBL Flip 7",
+      "mode": "structure",
+      "basis": "inferred"
+    },
+    {
+      "id": "r2",
+      "obligation": "required",
+      "kind": "entity",
+      "subject": "battery",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "quote": "including its battery mounting",
+      "mode": "structure",
+      "basis": "explicit"
+    },
+    {
+      "id": "r3",
+      "obligation": "required",
+      "kind": "entity",
+      "subject": "battery_mount",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "quote": "including its battery mounting",
+      "mode": "structure",
+      "basis": "explicit"
+    },
+    {
+      "id": "r4",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "battery",
+      "target": "enclosure",
+      "predicate": "inside",
+      "value": "",
+      "quote": "internal assembly of a JBL Flip 7",
+      "mode": "structure",
+      "basis": "inferred"
+    },
+    {
+      "id": "r5",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "battery_mount",
+      "target": "enclosure",
+      "predicate": "inside",
+      "value": "",
+      "quote": "internal assembly of a JBL Flip 7",
+      "mode": "structure",
+      "basis": "inferred"
+    },
+    {
+      "id": "r6",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "battery",
+      "target": "battery_mount",
+      "predicate": "attached",
+      "value": "",
+      "quote": "including its battery mounting",
+      "mode": "structure",
+      "basis": "inferred"
+    },
+    {
+      "id": "r7",
+      "obligation": "evidence_required",
+      "kind": "constraint",
+      "subject": "object",
+      "target": "",
+      "predicate": "exact_identity",
+      "value": "JBL Flip 7 internal assembly, including battery mounting",
+      "quote": "Recreate the internal assembly of a JBL Flip 7 exactly, including its battery mounting.",
+      "mode": "identity",
+      "basis": "explicit"
+    },
+    {
+      "id": "r8",
+      "obligation": "required",
+      "kind": "behavior",
+      "subject": "object",
+      "target": "",
+      "predicate": "capability",
+      "value": "show which details are verified",
+      "quote": "Show which details are verified.",
+      "mode": "behavior",
+      "basis": "explicit"
+    }
+  ],
+  "exclusions": []
+}

@@ -1,0 +1,220 @@
+{
+  "entities": [
+    {
+      "id": "shell",
+      "role": "Shell"
+    },
+    {
+      "id": "buttons",
+      "role": "Buttons"
+    },
+    {
+      "id": "thumbsticks",
+      "role": "Thumbsticks"
+    },
+    {
+      "id": "circuit_board",
+      "role": "Circuit board"
+    },
+    {
+      "id": "battery",
+      "role": "Battery"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "r01",
+      "obligation": "required",
+      "kind": "entity",
+      "subject": "shell",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "quote": "Shell",
+      "mode": "structure",
+      "basis": "explicit"
+    },
+    {
+      "id": "r02",
+      "obligation": "required",
+      "kind": "entity",
+      "subject": "buttons",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "quote": "Buttons",
+      "mode": "structure",
+      "basis": "explicit"
+    },
+    {
+      "id": "r03",
+      "obligation": "required",
+      "kind": "entity",
+      "subject": "thumbsticks",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "quote": "Thumbsticks",
+      "mode": "structure",
+      "basis": "explicit"
+    },
+    {
+      "id": "r04",
+      "obligation": "required",
+      "kind": "entity",
+      "subject": "circuit_board",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "quote": "Circuit board",
+      "mode": "structure",
+      "basis": "explicit"
+    },
+    {
+      "id": "r05",
+      "obligation": "required",
+      "kind": "entity",
+      "subject": "battery",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "quote": "Battery",
+      "mode": "structure",
+      "basis": "explicit"
+    },
+    {
+      "id": "r06",
+      "obligation": "required",
+      "kind": "visual",
+      "subject": "object",
+      "target": "",
+      "predicate": "appearance",
+      "value": "generic handheld video game controller",
+      "quote": "generic video game controller",
+      "mode": "appearance",
+      "basis": "explicit"
+    },
+    {
+      "id": "r07",
+      "obligation": "required",
+      "kind": "behavior",
+      "subject": "object",
+      "target": "",
+      "predicate": "capability",
+      "value": "inspect",
+      "quote": "Show me a generic video game controller",
+      "mode": "behavior",
+      "basis": "inferred"
+    },
+    {
+      "id": "r08",
+      "obligation": "required",
+      "kind": "behavior",
+      "subject": "object",
+      "target": "",
+      "predicate": "capability",
+      "value": "geometric_explode",
+      "quote": "take apart into its main components",
+      "mode": "behavior",
+      "basis": "explicit"
+    },
+    {
+      "id": "r09",
+      "obligation": "required",
+      "kind": "constraint",
+      "subject": "circuit_board",
+      "target": "shell",
+      "predicate": "inside",
+      "value": "",
+      "quote": "video game controller I can take apart into its main components",
+      "mode": "structure",
+      "basis": "inferred"
+    },
+    {
+      "id": "r10",
+      "obligation": "required",
+      "kind": "constraint",
+      "subject": "battery",
+      "target": "shell",
+      "predicate": "inside",
+      "value": "",
+      "quote": "video game controller I can take apart into its main components",
+      "mode": "structure",
+      "basis": "inferred"
+    },
+    {
+      "id": "r11",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "buttons",
+      "target": "shell",
+      "predicate": "attached",
+      "value": "",
+      "quote": "video game controller",
+      "mode": "structure",
+      "basis": "inferred"
+    },
+    {
+      "id": "r12",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "thumbsticks",
+      "target": "circuit_board",
+      "predicate": "attached",
+      "value": "",
+      "quote": "video game controller",
+      "mode": "structure",
+      "basis": "inferred"
+    },
+    {
+      "id": "r13",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "buttons",
+      "target": "",
+      "predicate": "other",
+      "value": "accessible on controller front face",
+      "quote": "video game controller",
+      "mode": "structure",
+      "basis": "inferred"
+    },
+    {
+      "id": "r14",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "thumbsticks",
+      "target": "",
+      "predicate": "other",
+      "value": "project through controller front face",
+      "quote": "video game controller",
+      "mode": "structure",
+      "basis": "inferred"
+    },
+    {
+      "id": "r15",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "circuit_board",
+      "target": "",
+      "predicate": "other",
+      "value": "positioned beneath front controls",
+      "quote": "video game controller",
+      "mode": "structure",
+      "basis": "inferred"
+    }
+  ],
+  "exclusions": [
+    {
+      "id": "x01",
+      "subject": "thumbsticks",
+      "domain": "motion",
+      "quote": "Keep its sticks and buttons static."
+    },
+    {
+      "id": "x02",
+      "subject": "buttons",
+      "domain": "motion",
+      "quote": "Keep its sticks and buttons static."
+    }
+  ]
+}

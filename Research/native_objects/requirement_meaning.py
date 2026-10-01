@@ -207,3 +207,44 @@ def validate_source_output(raw,request,roles):
     contract=validate(projected,request,roles);grounding={'units':units,'bindings':bindings}
     contract.update(source_grounding=grounding,source_grounding_sha256=base.digest(grounding),interpretation_version=2)
     return contract
+
+
+BOUND_SOURCE_INSTRUCTIONS=SOURCE_INSTRUCTIONS+'''
+ENTITY REFERENCES (overrides entity generation above):
+The application supplies entities with stable IDs for the proposed role groups. Use these IDs
+exactly for subject/target/exclusion scopes; do not emit an entities array or invent another entity.
+Each supplied entity still needs one exists requirement. Refer to object only for whole-assembly
+scope. An exclusion that names a group must refer to its applicable existing entities; split it
+when needed. Do not broaden a scoped exclusion merely to avoid resolving its components.
+
+Capability meanings: inspect allows viewing/selecting components; geometric_explode separates the
+object into its modeled components for inspection; reassemble restores their assembled placement.
+A paraphrase of these meanings does not need an additional other requirement. Only a genuinely
+additional condition (such as a relationship that must persist during motion) needs another ID.
+Keep every such condition and every unsupported spatial relationship; do not downgrade it to a
+visual label or optional choice just to obtain admission.'''
+
+
+def entity_catalog(roles):
+    if not isinstance(roles,(list,tuple)) or not 1<=len(roles)<=32 or any(not isinstance(r,str) or not r.strip() for r in roles) or len(set(roles))!=len(roles):
+        raise ValueError('Invalid proposed role catalog')
+    return [{'id':'e'+str(i),'role':r} for i,r in enumerate(roles)]
+
+
+def bound_source_schema(request,roles):
+    schema=source_schema(request);ids=[e['id'] for e in entity_catalog(roles)]
+    schema['properties'].pop('entities');schema['required'].remove('entities')
+    for variant in schema['properties']['requirements']['items']['anyOf']:
+        props=variant['properties'];props['subject']={'type':'string','enum':ids+['object']}
+        if variant['properties']['predicate']['enum']!=['capability']:
+            props['target']={'type':'string','enum':ids+['']}
+    schema['properties']['exclusions']['items']['properties']['subject']={'type':'string','enum':ids+['object']}
+    return schema
+
+
+def validate_bound_source_output(raw,request,roles):
+    if not isinstance(raw,dict) or set(raw)!={'requirements','exclusions'}:
+        raise ValueError('Bound inventory must use the supplied entity catalog')
+    # This deterministic projection of supplied input is not repair of generated output.
+    projected={'entities':entity_catalog(roles),**deepcopy(raw)}
+    return validate_source_output(projected,request,roles)

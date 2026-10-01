@@ -25,15 +25,15 @@ def request(case,folder,ledger,key):
     return previous.dispatch(BATCH.operation_id(case['id']),p,body,folder,ledger,key,batch=BATCH)
 
 
-def execute(output,model):
+def execute(output,model,cases=CASES,experiment=BATCH.experiment,validator=meaning.validate_source_output):
     records=[]
-    for case in CASES:
+    for case in cases:
         folder=output/case['id'];folder.mkdir()
         record={'case':case['id'],'geometry_executed':False};records.append(record)
         print('Confirm '+case['id'],flush=True);started=time.perf_counter();stop=False
         try:
             raw,bill=model(case,folder);prior.write(folder/'inventory.json',raw)
-            contract=meaning.validate_source_output(raw,case['request'],case['roles'])
+            contract=validator(raw,case['request'],case['roles'])
             prior.write(folder/'contract.json',contract)
             admission=meaning.preflight(contract);prior.write(folder/'admission.json',admission)
             assessment=previous.assess(case,contract,admission);prior.write(folder/'assessment.json',assessment)
@@ -47,7 +47,7 @@ def execute(output,model):
             meta=folder/'response-metadata.json'
             if meta.exists():record['billing']=json.loads(meta.read_text())
             record['elapsed_seconds']=time.perf_counter()-started
-            prior.write(output/'result.json',{'experiment':BATCH.experiment,'cases':records,
+            prior.write(output/'result.json',{'experiment':experiment,'cases':records,
                 'native_generation_goal_passed':False,'geometry_executed':False})
         if stop:break  # No automatic retry or further spend after a transport/billing stop.
     return records

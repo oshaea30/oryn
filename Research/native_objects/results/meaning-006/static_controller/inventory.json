@@ -1,0 +1,232 @@
+{
+  "entities": [
+    {
+      "id": "shell",
+      "role": "Shell"
+    },
+    {
+      "id": "buttons",
+      "role": "Buttons"
+    },
+    {
+      "id": "thumbsticks",
+      "role": "Thumbsticks"
+    },
+    {
+      "id": "circuit_board",
+      "role": "Circuit board"
+    },
+    {
+      "id": "battery",
+      "role": "Battery"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "r01",
+      "obligation": "required",
+      "kind": "entity",
+      "subject": "shell",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "mode": "structure",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r02",
+      "obligation": "required",
+      "kind": "entity",
+      "subject": "buttons",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "mode": "structure",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r03",
+      "obligation": "required",
+      "kind": "entity",
+      "subject": "thumbsticks",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "mode": "structure",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r04",
+      "obligation": "required",
+      "kind": "entity",
+      "subject": "circuit_board",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "mode": "structure",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r05",
+      "obligation": "design_choice",
+      "kind": "entity",
+      "subject": "battery",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "mode": "structure",
+      "basis": "design_choice",
+      "source": ""
+    },
+    {
+      "id": "r06",
+      "obligation": "required",
+      "kind": "visual",
+      "subject": "object",
+      "target": "",
+      "predicate": "appearance",
+      "value": "generic video game controller",
+      "mode": "appearance",
+      "basis": "explicit",
+      "source": "s0"
+    },
+    {
+      "id": "r07",
+      "obligation": "required",
+      "kind": "behavior",
+      "subject": "object",
+      "target": "",
+      "predicate": "capability",
+      "value": "inspect",
+      "mode": "behavior",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r08",
+      "obligation": "required",
+      "kind": "behavior",
+      "subject": "object",
+      "target": "",
+      "predicate": "capability",
+      "value": "geometric_explode",
+      "mode": "behavior",
+      "basis": "explicit",
+      "source": "s0"
+    },
+    {
+      "id": "r09",
+      "obligation": "required",
+      "kind": "behavior",
+      "subject": "object",
+      "target": "",
+      "predicate": "capability",
+      "value": "reassemble",
+      "mode": "behavior",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r10",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "circuit_board",
+      "target": "shell",
+      "predicate": "inside",
+      "value": "",
+      "mode": "structure",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r11",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "buttons",
+      "target": "shell",
+      "predicate": "attached",
+      "value": "",
+      "mode": "structure",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r12",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "thumbsticks",
+      "target": "shell",
+      "predicate": "attached",
+      "value": "",
+      "mode": "structure",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r13",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "buttons",
+      "target": "circuit_board",
+      "predicate": "connected",
+      "value": "",
+      "mode": "structure",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r14",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "thumbsticks",
+      "target": "circuit_board",
+      "predicate": "connected",
+      "value": "",
+      "mode": "structure",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r15",
+      "obligation": "design_choice",
+      "kind": "relation",
+      "subject": "battery",
+      "target": "shell",
+      "predicate": "inside",
+      "value": "",
+      "mode": "structure",
+      "basis": "design_choice",
+      "source": ""
+    },
+    {
+      "id": "r16",
+      "obligation": "design_choice",
+      "kind": "relation",
+      "subject": "battery",
+      "target": "circuit_board",
+      "predicate": "connected",
+      "value": "",
+      "mode": "structure",
+      "basis": "design_choice",
+      "source": ""
+    }
+  ],
+  "exclusions": [
+    {
+      "id": "x01",
+      "subject": "thumbsticks",
+      "domain": "motion",
+      "source": "s1"
+    },
+    {
+      "id": "x02",
+      "subject": "buttons",
+      "domain": "motion",
+      "source": "s1"
+    }
+  ]
+}

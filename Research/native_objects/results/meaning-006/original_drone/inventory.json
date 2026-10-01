@@ -1,0 +1,311 @@
+{
+  "entities": [
+    {
+      "id": "frame",
+      "role": "Central frame"
+    },
+    {
+      "id": "arms",
+      "role": "Four arms"
+    },
+    {
+      "id": "motors",
+      "role": "Four motors"
+    },
+    {
+      "id": "propellers",
+      "role": "Four propellers"
+    },
+    {
+      "id": "battery",
+      "role": "Battery"
+    },
+    {
+      "id": "controller",
+      "role": "Flight controller"
+    },
+    {
+      "id": "escs",
+      "role": "Electronic speed controllers"
+    }
+  ],
+  "requirements": [
+    {
+      "id": "r01",
+      "obligation": "required",
+      "kind": "visual",
+      "subject": "object",
+      "target": "",
+      "predicate": "appearance",
+      "value": "generic quadcopter drone",
+      "mode": "appearance",
+      "basis": "explicit",
+      "source": "s0"
+    },
+    {
+      "id": "r02",
+      "obligation": "required",
+      "kind": "entity",
+      "subject": "frame",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "mode": "structure",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r03",
+      "obligation": "required",
+      "kind": "entity",
+      "subject": "arms",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "mode": "structure",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r04",
+      "obligation": "required",
+      "kind": "entity",
+      "subject": "motors",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "mode": "structure",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r05",
+      "obligation": "required",
+      "kind": "entity",
+      "subject": "propellers",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "mode": "structure",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r06",
+      "obligation": "design_choice",
+      "kind": "entity",
+      "subject": "battery",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "mode": "structure",
+      "basis": "design_choice",
+      "source": ""
+    },
+    {
+      "id": "r07",
+      "obligation": "design_choice",
+      "kind": "entity",
+      "subject": "controller",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "mode": "structure",
+      "basis": "design_choice",
+      "source": ""
+    },
+    {
+      "id": "r08",
+      "obligation": "design_choice",
+      "kind": "entity",
+      "subject": "escs",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "mode": "structure",
+      "basis": "design_choice",
+      "source": ""
+    },
+    {
+      "id": "r09",
+      "obligation": "required",
+      "kind": "constraint",
+      "subject": "arms",
+      "target": "",
+      "predicate": "count",
+      "value": "4",
+      "mode": "structure",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r10",
+      "obligation": "required",
+      "kind": "constraint",
+      "subject": "motors",
+      "target": "",
+      "predicate": "count",
+      "value": "4",
+      "mode": "structure",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r11",
+      "obligation": "required",
+      "kind": "constraint",
+      "subject": "propellers",
+      "target": "",
+      "predicate": "count",
+      "value": "4",
+      "mode": "structure",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r12",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "arms",
+      "target": "frame",
+      "predicate": "attached",
+      "value": "",
+      "mode": "structure",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r13",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "motors",
+      "target": "arms",
+      "predicate": "attached",
+      "value": "",
+      "mode": "structure",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r14",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "propellers",
+      "target": "motors",
+      "predicate": "attached",
+      "value": "",
+      "mode": "structure",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r15",
+      "obligation": "required",
+      "kind": "constraint",
+      "subject": "arms",
+      "target": "",
+      "predicate": "other",
+      "value": "extend outward from central frame",
+      "mode": "structure",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r16",
+      "obligation": "design_choice",
+      "kind": "relation",
+      "subject": "battery",
+      "target": "frame",
+      "predicate": "attached",
+      "value": "",
+      "mode": "structure",
+      "basis": "design_choice",
+      "source": ""
+    },
+    {
+      "id": "r17",
+      "obligation": "design_choice",
+      "kind": "relation",
+      "subject": "controller",
+      "target": "frame",
+      "predicate": "attached",
+      "value": "",
+      "mode": "structure",
+      "basis": "design_choice",
+      "source": ""
+    },
+    {
+      "id": "r18",
+      "obligation": "design_choice",
+      "kind": "relation",
+      "subject": "escs",
+      "target": "motors",
+      "predicate": "connected",
+      "value": "",
+      "mode": "structure",
+      "basis": "design_choice",
+      "source": ""
+    },
+    {
+      "id": "r19",
+      "obligation": "design_choice",
+      "kind": "relation",
+      "subject": "controller",
+      "target": "escs",
+      "predicate": "connected",
+      "value": "",
+      "mode": "structure",
+      "basis": "design_choice",
+      "source": ""
+    },
+    {
+      "id": "r20",
+      "obligation": "required",
+      "kind": "behavior",
+      "subject": "object",
+      "target": "",
+      "predicate": "capability",
+      "value": "inspect",
+      "mode": "behavior",
+      "basis": "explicit",
+      "source": "s0"
+    },
+    {
+      "id": "r21",
+      "obligation": "required",
+      "kind": "behavior",
+      "subject": "object",
+      "target": "",
+      "predicate": "capability",
+      "value": "geometric_explode",
+      "mode": "behavior",
+      "basis": "explicit",
+      "source": "s0"
+    },
+    {
+      "id": "r22",
+      "obligation": "required",
+      "kind": "behavior",
+      "subject": "object",
+      "target": "",
+      "predicate": "capability",
+      "value": "reassemble",
+      "mode": "behavior",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r23",
+      "obligation": "required",
+      "kind": "behavior",
+      "subject": "object",
+      "target": "",
+      "predicate": "other",
+      "value": "separate major components when taken apart",
+      "mode": "behavior",
+      "basis": "explicit",
+      "source": "s0"
+    }
+  ],
+  "exclusions": []
+}

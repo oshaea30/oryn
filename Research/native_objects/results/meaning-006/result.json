@@ -1,0 +1,104 @@
+{
+  "experiment": "meaning-006",
+  "cases": [
+    {
+      "case": "contrast_motion",
+      "geometry_executed": false,
+      "status": "stopped",
+      "error": "Invalid exclusion identity/scope",
+      "billing": {
+        "operation_id": "8e8f7759931d7c3bb0b4f9c110e3e30b",
+        "status": "completed",
+        "incomplete_details": null,
+        "usage": {
+          "input_tokens": 1782,
+          "input_tokens_details": {
+            "cache_write_tokens": 1779,
+            "cached_tokens": 0
+          },
+          "output_tokens": 965,
+          "output_tokens_details": {
+            "reasoning_tokens": 309
+          },
+          "total_tokens": 2747
+        },
+        "calculated_cost_nanos": 14105000,
+        "dispatch_seconds": 10.31030054204166
+      },
+      "elapsed_seconds": 11.334404333028942
+    },
+    {
+      "case": "original_drone",
+      "geometry_executed": false,
+      "status": "interpreted",
+      "planning_allowed": false,
+      "predeclared_checks_passed": true,
+      "blocking": [
+        {
+          "id": "r15",
+          "obligation": "required",
+          "mode": "structure",
+          "basis": "inferred",
+          "reason": "No deterministic adapter implements this requirement."
+        },
+        {
+          "id": "r23",
+          "obligation": "required",
+          "mode": "behavior",
+          "basis": "explicit",
+          "reason": "No deterministic adapter implements this requirement."
+        }
+      ],
+      "billing": {
+        "operation_id": "12b5b56861c2076b96acb98be0712af9",
+        "status": "completed",
+        "incomplete_details": null,
+        "usage": {
+          "input_tokens": 1684,
+          "input_tokens_details": {
+            "cache_write_tokens": 1681,
+            "cached_tokens": 0
+          },
+          "output_tokens": 1475,
+          "output_tokens_details": {
+            "reasoning_tokens": 400
+          },
+          "total_tokens": 3159
+        },
+        "calculated_cost_nanos": 18960000,
+        "dispatch_seconds": 20.903016790980473
+      },
+      "elapsed_seconds": 21.342370541067794
+    },
+    {
+      "case": "static_controller",
+      "geometry_executed": false,
+      "status": "interpreted",
+      "planning_allowed": true,
+      "predeclared_checks_passed": true,
+      "blocking": [],
+      "billing": {
+        "operation_id": "4c6c52fd373297567f82dc6b20becaba",
+        "status": "completed",
+        "incomplete_details": null,
+        "usage": {
+          "input_tokens": 1716,
+          "input_tokens_details": {
+            "cache_write_tokens": 1713,
+            "cached_tokens": 0
+          },
+          "output_tokens": 1038,
+          "output_tokens_details": {
+            "reasoning_tokens": 244
+          },
+          "total_tokens": 2754
+        },
+        "calculated_cost_nanos": 14670000,
+        "dispatch_seconds": 10.551356832962483
+      },
+      "elapsed_seconds": 10.793891542009078
+    }
+  ],
+  "native_generation_goal_passed": false,
+  "geometry_executed": false
+}

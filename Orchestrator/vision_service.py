@@ -4,6 +4,7 @@ import hashlib
 import threading
 import time
 
+from spending import DAILY_LIMIT
 from cognition import CommandError
 from vision_provider import OpenAIMappingProvider
 
@@ -80,7 +81,7 @@ class VisionService:
                 references = [s for s in record['sources'] if s['id'] in record['selected_source_ids']]
                 event('policy_checked', {'sharing_disabled': True, 'basis': 'operator_confirmed_data_controls',
                     'store': False, 'room_images': False, 'raw_glb': False,
-                    'max_object_nanos': 50_000_000, 'daily_nanos': 2_000_000_000})
+                    'max_object_nanos': 50_000_000, 'daily_nanos': DAILY_LIMIT})
                 result, refs, provenance = self.factory(research.ledger, research.key).propose_mappings(
                     record, package, references, images, event)
                 # The evidence package can have eight targets; this pilot examines

@@ -9,7 +9,7 @@ from unittest.mock import Mock
 
 from cognition import CommandError
 from research_providers import WikipediaRetrieval, OpenAICognitiveProvider, research_body
-from spending import policy, PRICE_REVIEWED, PRICE_EXPIRES
+from spending import policy, PRICE_REVIEWED, PRICE_EXPIRES, DAILY_LIMIT
 from test_investigation import source, findings
 from usage_ledger import UsageLedger
 
@@ -111,8 +111,8 @@ class CognitiveTests(unittest.TestCase):
         quote={'request_id':'b'*32,'actor_id':'developer','provider':'openai','profile':'fixture',
             'model':'gpt-6-sol','effort':'medium','operation':'intent_interpretation','fingerprint':'fixture',
             'price_version':'fixture','input_tokens':1000,'max_output_tokens':1024,
-            'reserved_nanos':2_000_000_000,'ceiling_nanos':2_000_000_000,'created':self.now,'expires':self.now+120}
-        self.ledger.create_quote(quote); self.ledger.reserve('b'*32,'developer','fixture',2_000_000_000)
+            'reserved_nanos':DAILY_LIMIT,'ceiling_nanos':DAILY_LIMIT,'created':self.now,'expires':self.now+120}
+        self.ledger.create_quote(quote); self.ledger.reserve('b'*32,'developer','fixture',DAILY_LIMIT)
         with self.assertRaises(CommandError): self.provider.investigate('a'*32,self.request)
         self.counter.assert_not_called(); self.sender.assert_not_called()
 

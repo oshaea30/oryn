@@ -22,7 +22,7 @@ tools, voice or generation API other than text Responses is enabled. Gemini's
 adapter remains available in source, but paid Gemini requests are blocked until a
 reviewed pricing/counting/usage policy is added.
 
-Daily limit: $2, resetting at UTC midnight for completed admissions. Uncertain
+Daily limit: $6 (tripled from $2 by the user on 2026-10-01), resetting at UTC midnight for completed admissions. Uncertain
 and in-flight reservations from previous days continue consuming available funds.
 Both the server-owned `developer` identity and global ledger total are checked.
 Future authenticated account IDs belong here; the client cannot choose its identity.

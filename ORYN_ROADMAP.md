@@ -142,8 +142,9 @@ shape error and drone/controller invent source quotations. Source-segment refere
 and canonical capability types now address those interface failures in local tests.
 The paired live follow-up is incomplete at its output ceiling, so confirmation
 remains pending. Cost $0.129625; geometry remains unchanged. The next confirmation
-uses separate responses for the three failed cases and awaits approval for up to
-$0.10 above today's shared API limit, preserving the $5 aggregate research cap.
+uses separate responses for the three failed cases within a $0.15 batch. The user
+authorized tripling the shared daily API limit to $6 on 2026-10-01; the $5 aggregate
+research cap remains in force. See the [confirmation protocol](Research/native_objects/SOURCE_CONFIRMATION.md).
 
 Generation research is the active track. The product remains stable; answering,
 voice and motion-inference expansion are paused. Research output does not enter
@@ -264,7 +265,7 @@ completed in 18.052 seconds: islands 001/002 received “Cylinder-bank upper cov
 not established mechanical identities. No Quest build or runtime capability changed.
 The conservative vision usage estimate was $0.01309; total with earlier text
 research is $0.0196625 of the cumulative $0.05 object allowance. Actual invoice cost
-is not asserted. Shared $2/day admission and no-retry behavior remain enforced.
+is not asserted. Shared $6/day admission (user increased it on 2026-10-01) and no-retry behavior remain enforced.
 The service runs explicitly requested episodes only, not all 200 V8 pieces or all
 new generations. Next: reference-backed assessment of candidates, preserving the
 original episode and rejected/corrected hypotheses. No new key was required.

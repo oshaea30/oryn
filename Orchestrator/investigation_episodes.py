@@ -7,6 +7,7 @@ import shutil
 import threading
 import time
 
+from spending import DAILY_LIMIT
 from workflow import encoded, fingerprint
 
 CONTRACT='oryn-vision-episode-v1'
@@ -182,7 +183,7 @@ class Episodes:
         record={'contract':CONTRACT,'credential_binding':key_binding,'confirmed_at':time.time(),
                 'confirmed_by':'local_operator','verification':'operator_attestation_not_provider_api',
                 'store':False,'room_images':False,'raw_glb':False,'object_only_vision':True,
-                'sharing_disabled':True,'max_object_nanos':50_000_000,'daily_nanos':2_000_000_000,
+                'sharing_disabled':True,'max_object_nanos':50_000_000,'daily_nanos':DAILY_LIMIT,
                 'automatic_paid_retries':False}
         with self.workflows.connect() as db:
             db.execute('INSERT OR REPLACE INTO vision_policy VALUES (1,?)',(encoded(record),))

@@ -8,7 +8,7 @@ class MeaningSpendingTests(ConnectionSpendingTests):
         with patch.object(run.prior,'count_input',lambda *_:100),patch.object(run.urllib.request.OpenerDirector,'open',opener or self.open):
             return run.request(run.CASES[0],self.folder,self.ledger,'fake-credential')
     def test_experiment_cap_blocks_generation(self):
-        with patch.object(run,'spent',lambda _:run.BUDGET),self.assertRaises(run.prior.CommandError):self.call()
+        with patch.object(run.Batch,'spent',lambda *_:run.BUDGET),self.assertRaises(run.prior.CommandError):self.call()
         self.assertEqual(self.calls,0)
     def test_unknown_outcome_keeps_reservation_and_safe_diagnostics(self):
         def fail(*args,**kwargs):raise TimeoutError('fake-credential')

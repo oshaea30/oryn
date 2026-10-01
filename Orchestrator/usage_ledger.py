@@ -122,7 +122,7 @@ class UsageLedger:
                     raise CommandError('Cumulative object investigation budget exhausted. Nothing sent.')
             for scope in (None, actor):
                 if self._spent(db, day, scope) + row['reserved_nanos'] > DAILY_LIMIT:
-                    raise CommandError('Daily $2 budget exhausted, including outstanding reservations. Nothing sent.')
+                    raise CommandError('Shared daily budget exhausted, including outstanding reservations. Nothing sent.')
             db.execute("UPDATE usage SET status='reserved',charged_nanos=reserved_nanos,admission_day=? WHERE request_id=?", (day, ident))
 
     @staticmethod

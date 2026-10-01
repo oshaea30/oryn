@@ -5,7 +5,7 @@ from datetime import datetime, timezone
 from cognition import CommandError
 
 USD = 1_000_000_000
-DAILY_LIMIT = 2 * USD
+DAILY_LIMIT = 6 * USD  # User-authorized increase, 2026-10-01.
 MAX_OUTPUT = 1024
 PRICE_VERSION = 'openai-standard-text-2026-09-27-v1'
 # Explicit review expiry, not silently refreshed at startup. No auto pricing downloads.

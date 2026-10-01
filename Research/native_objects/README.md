@@ -56,8 +56,9 @@ verified claims. Four of seven initial cases met the frozen interpretation check
 three were rejected. General source-segment references and typed capability names
 fix the observed interface defects locally. A paired live confirmation exhausted
 its output allowance and remains unconfirmed. Cost $0.129625; 107 targeted test
-executions pass. No geometry expansion or product promotion. Separate confirmation
-calls await approval for up to $0.10 beyond today's shared API limit.
+executions pass. No geometry expansion or product promotion. The user authorized a $6 shared daily limit on 2026-10-01.
+[Separate confirmation](SOURCE_CONFIRMATION.md) is now authorized within a $0.15
+batch and the unchanged $5 aggregate research ceiling.
 [Protocol](MEANING_EXPERIMENT.md) · [Evidence](results/meaning-005.json).
 
 ## Completed request-to-requirements experiment

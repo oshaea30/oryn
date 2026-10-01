@@ -1,6 +1,7 @@
 """Application-owned background research, independent of the delivery worker."""
 import threading
 
+from spending import DAILY_LIMIT
 from credential_store import CredentialError, validate_key
 from investigation import Investigations
 from research_providers import WikipediaRetrieval, OpenAICognitiveProvider
@@ -47,7 +48,7 @@ class ResearchService:
         except Exception:
             budget={'halted':True,'remaining_nanos':0,'error':'Cognition budget unavailable; paid research is blocked.'}
         return {'enabled':True,'configured':bool(self.key),'keyStorage':self.key_storage,'error':self.budget_error or self.error,
-                'policy':{'max_investigation_nanos':50_000_000,'shared_daily_nanos':2_000_000_000,
+                'policy':{'max_investigation_nanos':50_000_000,'shared_daily_nanos':DAILY_LIMIT,
                           'max_references':5,'max_synthesis_references':3,'automatic_retries':False},
                 'budget':budget}
 

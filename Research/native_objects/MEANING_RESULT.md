@@ -88,3 +88,10 @@ up to $0.10 additional authorized API spend today, within the unchanged $5 aggre
 research cap. That approval is pending; do not dispatch or raise a limit without it.
 No claim that the new compiler or general generator is solved follows from local
 fixtures. Keep geometry frozen while confirming this correction.
+
+## Authorization update — 2026-10-01
+
+The user has now authorized tripling the shared daily limit to $6. The historical
+005 costs and failures above remain unchanged. Three separate confirmation calls
+are authorized under a new $0.15 bounded batch and the same $5 aggregate research
+cap; see [Meaning 006](SOURCE_CONFIRMATION.md).

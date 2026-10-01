@@ -1,5 +1,6 @@
 """Bounded interpretation-only test. No planning, geometry or model judge calls."""
 import argparse
+from dataclasses import dataclass
 import fcntl
 import hashlib
 import json
@@ -24,13 +25,47 @@ def selected():
     p=prior.chosen('construct');p.update(profile='meaning_research',effort='medium',max_output_tokens=3072,ceiling_nanos=45_000_000);return p
 
 
-def operation_id(case):return prior.digest({'experiment':EXPERIMENT,'case':case})[:32]
+def operation_id(case):return DEFAULT_BATCH.operation_id(case)
 
 
 FOLLOWUP_ID='source-reference-followup'
 FOLLOWUP_CASES=('contrast_motion','original_drone')
 
-def spent(ledger):return sum((ledger.get(operation_id(c)) or {}).get('charged_nanos',0) for c in [c['id'] for c in CASES]+[FOLLOWUP_ID])
+@dataclass(frozen=True)
+class Batch:
+    experiment: str
+    cases: tuple
+    budget: int
+    prior_upper_bound: int
+    aggregate_limit: int
+
+    def operation_id(self,case):
+        return prior.digest({'experiment':self.experiment,'case':case})[:32]
+
+    def spent(self,ledger):
+        return sum((ledger.get(self.operation_id(c)) or {}).get('charged_nanos',0) for c in self.cases)
+
+
+DEFAULT_BATCH=Batch(EXPERIMENT,tuple(c['id'] for c in CASES)+(FOLLOWUP_ID,),BUDGET,PRIOR_UPPER_BOUND,AGGREGATE_LIMIT)
+
+
+def spent(ledger):return DEFAULT_BATCH.spent(ledger)
+
+
+def failure_category(error):
+    # Classify only known provider codes, never expose exception text or response bodies.
+    if isinstance(error,urllib.error.HTTPError):
+        try:
+            raw=error.read(8193)
+            if len(raw)<=8192:
+                code=json.loads(raw).get('error',{}).get('code')
+                if code in ('insufficient_quota','billing_hard_limit_reached','billing_not_active'):
+                    return 'provider_funding_required'
+                if code=='rate_limit_exceeded':return 'rate_limited'
+        except (ValueError,TypeError,AttributeError,OSError):pass
+        return 'http_error'
+    cause=error.reason if isinstance(error,urllib.error.URLError) else error
+    return 'timeout' if isinstance(cause,TimeoutError) else 'response_unavailable'
 
 
 def request(case,folder,ledger,key):
@@ -42,16 +77,18 @@ def request(case,folder,ledger,key):
     return dispatch(ident,p,body,folder,ledger,key)
 
 
-def dispatch(ident,p,body,folder,ledger,key):
-    allowed={operation_id(c['id']) for c in CASES}|{operation_id(FOLLOWUP_ID)}
+def dispatch(ident,p,body,folder,ledger,key,batch=None):
+    batch=batch or DEFAULT_BATCH
+    allowed={batch.operation_id(c) for c in batch.cases}
     if ident not in allowed:raise prior.CommandError('Operation outside frozen bounds')
     if ledger.get(ident):raise prior.CommandError('Already attempted; no retry')
     if ledger.summary()['halted']:raise prior.CommandError('Shared ledger halted')
     prior.write(folder/'request.json',{'body':body,'body_sha256':prior.digest(body)})
     tokens=prior.count_input(key,body);cost=prior.quote_cost(p,tokens);now=int(time.time())
-    if spent(ledger)+cost>BUDGET or PRIOR_UPPER_BOUND+spent(ledger)+cost>AGGREGATE_LIMIT:raise prior.CommandError('Research spending ceiling reached')
+    used=batch.spent(ledger)
+    if used+cost>batch.budget or batch.prior_upper_bound+used+cost>batch.aggregate_limit:raise prior.CommandError('Research spending ceiling reached')
     q={'request_id':ident,'actor_id':'developer','provider':'openai','profile':p['profile'],'model':p['model'],'effort':p['effort'],
-       'operation':EXPERIMENT,'fingerprint':prior.digest(body),'price_version':p['price_version'],'input_tokens':tokens,
+       'operation':batch.experiment,'fingerprint':prior.digest(body),'price_version':p['price_version'],'input_tokens':tokens,
        'max_output_tokens':p['max_output_tokens'],'reserved_nanos':cost,'ceiling_nanos':p['ceiling_nanos'],'created':now,'expires':min(now+120,prior.PRICE_EXPIRES)}
     ledger.create_quote(q);ledger.reserve(ident,'developer',q['fingerprint'],cost)
     req=urllib.request.Request('https://api.openai.com/v1/responses',data=json.dumps(body).encode(),headers={'Authorization':'Bearer '+key,'Content-Type':'application/json'},method='POST')
@@ -62,9 +99,10 @@ def dispatch(ident,p,body,folder,ledger,key):
         if len(raw)>262144:raise ValueError('Oversized response')
         response=json.loads(raw)
     except Exception as error:
-        ledger.uncertain(ident);cause=error.reason if isinstance(error,urllib.error.URLError) else error
-        prior.write(folder/'failure.json',{'category':'timeout' if isinstance(cause,TimeoutError) else 'response_unavailable','reservation_held':True,'automatic_retry':False})
-        raise prior.CommandError('Response unavailable; reservation held') from None
+        ledger.uncertain(ident);category=failure_category(error)
+        prior.write(folder/'failure.json',{'category':category,'reservation_held':True,'automatic_retry':False})
+        message='Provider funding required; top up the API account before continuing' if category=='provider_funding_required' else 'Response unavailable; reservation held'
+        raise prior.CommandError(message) from None
     prior.write(folder/'response.json',response)
     try:incoming,outgoing,amount=prior.settled_usage(response,q)
     except prior.CommandError:ledger.uncertain(ident,halt=True);raise

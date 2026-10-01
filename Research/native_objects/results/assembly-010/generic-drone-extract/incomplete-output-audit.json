@@ -1,0 +1,7 @@
+{
+  "source_response_sha256": "ddb3da4ca54365e63ab7c98d5910ee5ccd6b166ee829ae41f19402e0e8e5f4cd",
+  "partial_text_sha256": "68d5b0b9dcd658a51aed7dd60ad9354bd64829cdea53e5b2d5af0522bc97f4ca",
+  "status": "incomplete",
+  "parse_or_repair_attempted": false,
+  "source": "Exact output_text retained for output-capacity diagnosis; never supplied as a valid contract."
+}

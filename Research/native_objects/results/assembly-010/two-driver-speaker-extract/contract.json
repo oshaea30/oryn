@@ -1,0 +1,301 @@
+{
+  "source_request": "Show me a tabletop speaker with two matching loudspeaker drivers side by side in its front face, both facing forward. I want to inspect and take apart its main components. It does not need to play sound or animate.",
+  "source_sha256": "139066d7706ac1daad00d7b22d484a6c6a560a1434ceb45e74c467f0b3cdc25c",
+  "inventory": {
+    "entities": [
+      {
+        "id": "e0",
+        "role": "Enclosure"
+      },
+      {
+        "id": "e1",
+        "role": "Two loudspeaker drivers"
+      },
+      {
+        "id": "e2",
+        "role": "Amplifier board"
+      },
+      {
+        "id": "e3",
+        "role": "Rear cover"
+      }
+    ],
+    "requirements": [
+      {
+        "id": "r0",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "e0",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "mode": "structure",
+        "basis": "explicit",
+        "quote": "Show me a tabletop speaker with two matching loudspeaker drivers side by side in its front face, both facing forward."
+      },
+      {
+        "id": "r1",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "e1",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "mode": "structure",
+        "basis": "explicit",
+        "quote": "Show me a tabletop speaker with two matching loudspeaker drivers side by side in its front face, both facing forward."
+      },
+      {
+        "id": "r2",
+        "obligation": "design_choice",
+        "kind": "entity",
+        "subject": "e2",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "mode": "structure",
+        "basis": "design_choice",
+        "quote": ""
+      },
+      {
+        "id": "r3",
+        "obligation": "design_choice",
+        "kind": "entity",
+        "subject": "e3",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "mode": "structure",
+        "basis": "design_choice",
+        "quote": ""
+      },
+      {
+        "id": "r4",
+        "obligation": "required",
+        "kind": "constraint",
+        "subject": "e1",
+        "target": "",
+        "predicate": "count",
+        "value": "2",
+        "mode": "structure",
+        "basis": "explicit",
+        "quote": "Show me a tabletop speaker with two matching loudspeaker drivers side by side in its front face, both facing forward."
+      },
+      {
+        "id": "r5",
+        "obligation": "required",
+        "kind": "visual",
+        "subject": "e0",
+        "target": "",
+        "predicate": "appearance",
+        "value": "tabletop speaker form",
+        "mode": "appearance",
+        "basis": "explicit",
+        "quote": "Show me a tabletop speaker with two matching loudspeaker drivers side by side in its front face, both facing forward."
+      },
+      {
+        "id": "r6",
+        "obligation": "required",
+        "kind": "visual",
+        "subject": "e1",
+        "target": "",
+        "predicate": "appearance",
+        "value": "matching, forward-facing drivers",
+        "mode": "appearance",
+        "basis": "explicit",
+        "quote": "Show me a tabletop speaker with two matching loudspeaker drivers side by side in its front face, both facing forward."
+      },
+      {
+        "id": "r7",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "e1",
+        "target": "e0",
+        "predicate": "attached",
+        "value": "drivers mounted to enclosure",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Show me a tabletop speaker with two matching loudspeaker drivers side by side in its front face, both facing forward."
+      },
+      {
+        "id": "r8",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "e1",
+        "target": "e0",
+        "predicate": "other",
+        "value": "drivers in enclosure front face",
+        "mode": "structure",
+        "basis": "explicit",
+        "quote": "Show me a tabletop speaker with two matching loudspeaker drivers side by side in its front face, both facing forward."
+      },
+      {
+        "id": "r9",
+        "obligation": "required",
+        "kind": "constraint",
+        "subject": "e1",
+        "target": "",
+        "predicate": "other",
+        "value": "two drivers side by side in a horizontal row",
+        "mode": "structure",
+        "basis": "explicit",
+        "quote": "Show me a tabletop speaker with two matching loudspeaker drivers side by side in its front face, both facing forward."
+      },
+      {
+        "id": "r10",
+        "obligation": "required",
+        "kind": "constraint",
+        "subject": "e1",
+        "target": "",
+        "predicate": "other",
+        "value": "both driver axes point forward (+Z)",
+        "mode": "structure",
+        "basis": "explicit",
+        "quote": "Show me a tabletop speaker with two matching loudspeaker drivers side by side in its front face, both facing forward."
+      },
+      {
+        "id": "r11",
+        "obligation": "design_choice",
+        "kind": "relation",
+        "subject": "e2",
+        "target": "e0",
+        "predicate": "inside",
+        "value": "board housed in enclosure",
+        "mode": "structure",
+        "basis": "design_choice",
+        "quote": ""
+      },
+      {
+        "id": "r12",
+        "obligation": "design_choice",
+        "kind": "relation",
+        "subject": "e3",
+        "target": "e0",
+        "predicate": "attached",
+        "value": "cover mounted to enclosure rear",
+        "mode": "structure",
+        "basis": "design_choice",
+        "quote": ""
+      },
+      {
+        "id": "r13",
+        "obligation": "required",
+        "kind": "behavior",
+        "subject": "object",
+        "target": "",
+        "predicate": "capability",
+        "value": "inspect",
+        "mode": "behavior",
+        "basis": "explicit",
+        "quote": "I want to inspect and take apart its main components."
+      },
+      {
+        "id": "r14",
+        "obligation": "required",
+        "kind": "behavior",
+        "subject": "object",
+        "target": "",
+        "predicate": "capability",
+        "value": "geometric_explode",
+        "mode": "behavior",
+        "basis": "explicit",
+        "quote": "I want to inspect and take apart its main components."
+      },
+      {
+        "id": "r15",
+        "obligation": "design_choice",
+        "kind": "behavior",
+        "subject": "object",
+        "target": "",
+        "predicate": "capability",
+        "value": "reassemble",
+        "mode": "behavior",
+        "basis": "design_choice",
+        "quote": ""
+      }
+    ],
+    "exclusions": [
+      {
+        "id": "x0",
+        "subject": "object",
+        "domain": "audio_output",
+        "quote": "It does not need to play sound or animate."
+      },
+      {
+        "id": "x1",
+        "subject": "object",
+        "domain": "motion",
+        "quote": "It does not need to play sound or animate."
+      }
+    ]
+  },
+  "inventory_sha256": "2fda8f69a3574212f48e8fb9425499a20cee23bd5b90e5f6f2eee23515b7dbba",
+  "interpretation_version": 2,
+  "extraction_completeness": "unassessed; consistency is not natural-language entailment",
+  "source_grounding": {
+    "units": [
+      {
+        "id": "s0",
+        "start": 0,
+        "end": 117,
+        "text": "Show me a tabletop speaker with two matching loudspeaker drivers side by side in its front face, both facing forward."
+      },
+      {
+        "id": "s1",
+        "start": 118,
+        "end": 171,
+        "text": "I want to inspect and take apart its main components."
+      },
+      {
+        "id": "s2",
+        "start": 172,
+        "end": 214,
+        "text": "It does not need to play sound or animate."
+      }
+    ],
+    "bindings": {
+      "r0": "s0",
+      "r1": "s0",
+      "r2": "",
+      "r3": "",
+      "r4": "s0",
+      "r5": "s0",
+      "r6": "s0",
+      "r7": "s0",
+      "r8": "s0",
+      "r9": "s0",
+      "r10": "s0",
+      "r11": "",
+      "r12": "",
+      "r13": "s1",
+      "r14": "s1",
+      "r15": "",
+      "x0": "s2",
+      "x1": "s2"
+    }
+  },
+  "source_grounding_sha256": "5898120179ef39f902959108f40b107902baf5d5603160dfe5443d37b8205c18",
+  "spatial_rules": [],
+  "spatial_rules_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "spatial_policy_sha256": "abf21c243b7b133dc13ba5221866c9eabeff1f2f5a6ac127b3f15e6ace8bde33",
+  "assemblies": [
+    {
+      "id": "a0",
+      "members": [
+        "e1"
+      ],
+      "placement": {
+        "id": "r9",
+        "pattern": "linear",
+        "reference": "",
+        "axis": "x"
+      },
+      "orientation": {
+        "id": "r10",
+        "direction": "+z"
+      }
+    }
+  ],
+  "assemblies_sha256": "730ba268b43946b931268243636eaf7d06b6441aeac8250ce032f15d196ebac5",
+  "arrangement_policy_sha256": "4a4bf140b11ad32d852c1161f2d9000e1a4f457c0142990424643c49c2816ca5"
+}

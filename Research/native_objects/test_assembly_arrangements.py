@@ -100,7 +100,7 @@ class ArrangementTests(unittest.TestCase):
         c=contract();p=proposal()
         for rotation in ([90,0,0],[180,0,0]):
             checks,_=self.measure(c,p,lambda q:q['parts'][2].update(rotation=rotation))
-            self.assertFalse(checks[1]['passed']);self.assertFalse(next(v['passed'] for v in checks[1]['measurement']['members'] if v['part']=='member1'))
+            self.assertFalse(checks[1]['passed']);self.assertIn('group_orientation',checks[1]['failure_classes']);self.assertFalse(next(v['passed'] for v in checks[1]['measurement']['members'] if v['part']=='member1'))
             self.assertEqual(checks[1]['assembly_id'],'array');self.assertEqual(checks[1]['requirement_id'],'facing')
         checks,_=self.measure(contract(direction='parallel'),p,lambda q:q['parts'][2].update(rotation=[180,0,0]))
         self.assertTrue(checks[1]['passed'])
@@ -159,6 +159,8 @@ class ArrangementTests(unittest.TestCase):
     def test_buried_axis_or_disconnected_solid_does_not_pass_full_pipeline(self):
         c=contract();p=proposal();p['parts'][1]['forms'].append(operation('cylinder',[.07,.12,.07]))
         checks,report=self.measure(c,p);self.assertFalse(all(c['passed'] for c in checks));self.assertFalse(report['declared_relations_passed'])
+        self.assertEqual(checks[1]['failure_classes'],['feature_geometry'])
+        self.assertTrue(all(v['relation_passed'] for v in checks[1]['measurement']['members']))
         p=proposal();p['parts'][1]['forms'].append(operation('box',[.03,.03,.03],[0,.25,0]))
         checks,report=self.measure(c,p);self.assertTrue(all(c['passed'] for c in checks));self.assertFalse(report['declared_relations_passed'])
         self.assertTrue(any(v['kind']=='connected_component' and not v['passed'] for v in report['checks']))

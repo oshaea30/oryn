@@ -160,12 +160,25 @@ one ESC symmetry also fails. The speaker repairs missing connection bindings and
 then fails housing connectivity. Lamp emission and sharpener feed/collection paths
 remain unsupported. No geometry executor change or production promotion occurred.
 
-Next: require explicit arrangement/axis relationships across repeated component
+That result motivated explicit arrangement/axis relationships across repeated component
 groups before construction, without an object-specific recipe or another symmetry-only
 repair. Additional API estimate $0.46642. A lossless context change fixes the blocked
 repair quote without increasing limits or dispatching another generation. 248 targeted
 test executions and seven browser checks pass. This is a narrow simple-concept success,
 not a general-object or visual-quality breakthrough.
+
+The [assembly arrangement experiment](Research/native_objects/ASSEMBLY_RESULT.md)
+now requires group placement and orientation decisions and checks solved geometry in
+the object frame. Fan and speaker group intent survives. The fan's seven parts fail
+construction after one repair reverses every declared axis and leaves disconnected
+frames/insufficient overlap. The speaker blocks on unsupported front-face placement;
+the drone exhausts its interpretation response allowance. No cross-family pass.
+
+Keep the group checks. Resolve response capacity, generic surface placement and repair
+regressions as separate failures before widening layout scope. No geometry-executor
+change, handwritten output repair, GPU use or production promotion. 152 targeted test
+executions and nine browser checks pass; API estimate $0.2022 with no new uncertain
+reservations or funding errors. The diagnostic replay preserves original verdicts.
 
 Generation research is the active track. The product remains stable; answering,
 voice and motion-inference expansion are paused. Research output does not enter

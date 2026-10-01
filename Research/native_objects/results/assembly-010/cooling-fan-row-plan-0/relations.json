@@ -1,0 +1,794 @@
+{
+  "declared_relations_passed": false,
+  "checks": [
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "frame_left",
+        "b": "frame_right",
+        "axis": "x"
+      },
+      "passed": false,
+      "measurement": {
+        "maximum_bound_error_m": 0.00299999862909317,
+        "scope": "bounds only, not full shape symmetry"
+      }
+    },
+    {
+      "kind": "symmetry_bounds",
+      "relation": {
+        "a": "rotor_left",
+        "b": "rotor_right",
+        "axis": "x"
+      },
+      "passed": false,
+      "measurement": {
+        "maximum_bound_error_m": 0.010357700288295746,
+        "scope": "bounds only, not full shape symmetry"
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "panel"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "frame_left"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "frame_center"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "frame_right"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "rotor_left"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "rotor_center"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "rotor_right"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "containment",
+      "relation": {
+        "outer": "frame_left",
+        "inner": "rotor_left",
+        "clearance": 0.003
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "outside_convex_envelope_m3": 0.0,
+        "minimum_surface_gap_m": 0.004,
+        "scope": "convex envelope and solid intersection, not semantic containment"
+      }
+    },
+    {
+      "kind": "containment",
+      "relation": {
+        "outer": "frame_center",
+        "inner": "rotor_center",
+        "clearance": 0.003
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "outside_convex_envelope_m3": 0.0,
+        "minimum_surface_gap_m": 0.004,
+        "scope": "convex envelope and solid intersection, not semantic containment"
+      }
+    },
+    {
+      "kind": "containment",
+      "relation": {
+        "outer": "frame_right",
+        "inner": "rotor_right",
+        "clearance": 0.003
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "outside_convex_envelope_m3": 0.0,
+        "minimum_surface_gap_m": 0.004,
+        "scope": "convex envelope and solid intersection, not semantic containment"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "panel_left",
+        "part": "panel"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "panel_center",
+        "part": "panel"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "panel_right",
+        "part": "panel"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "frame_left_mount",
+        "part": "frame_left"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "frame_center_mount",
+        "part": "frame_center"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "frame_right_mount",
+        "part": "frame_right"
+      },
+      "passed": true,
+      "measurement": {
+        "missing_surface_band_m3": 0.0,
+        "obstructed_exterior_m3": 0.0,
+        "scope": "finite central face patch"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "frame_left_bore",
+        "part": "frame_left"
+      },
+      "passed": false,
+      "measurement": {
+        "missing_surface_band_m3": -6.352747104407253e-22,
+        "obstructed_exterior_m3": 5.3170278789075375e-09,
+        "scope": "declared finite cylindrical interval"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "frame_center_bore",
+        "part": "frame_center"
+      },
+      "passed": false,
+      "measurement": {
+        "missing_surface_band_m3": -6.352747104407253e-22,
+        "obstructed_exterior_m3": 5.3170278789075375e-09,
+        "scope": "declared finite cylindrical interval"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "frame_right_bore",
+        "part": "frame_right"
+      },
+      "passed": false,
+      "measurement": {
+        "missing_surface_band_m3": -6.352747104407253e-22,
+        "obstructed_exterior_m3": 5.3170278789075375e-09,
+        "scope": "declared finite cylindrical interval"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "rotor_left_axis",
+        "part": "rotor_left"
+      },
+      "passed": false,
+      "measurement": {
+        "missing_surface_band_m3": -1.4197388457639462e-23,
+        "obstructed_exterior_m3": 3.825443945234012e-09,
+        "scope": "declared finite cylindrical interval"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "rotor_center_axis",
+        "part": "rotor_center"
+      },
+      "passed": false,
+      "measurement": {
+        "missing_surface_band_m3": -1.4197388457639462e-23,
+        "obstructed_exterior_m3": 3.825443945234012e-09,
+        "scope": "declared finite cylindrical interval"
+      }
+    },
+    {
+      "kind": "port_geometry",
+      "relation": {
+        "port": "rotor_right_axis",
+        "part": "rotor_right"
+      },
+      "passed": false,
+      "measurement": {
+        "missing_surface_band_m3": -1.4197388457639462e-23,
+        "obstructed_exterior_m3": 3.825443945234012e-09,
+        "scope": "declared finite cylindrical interval"
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "id": "mount_left",
+        "a": "panel_left",
+        "b": "frame_left_mount",
+        "kind": "face",
+        "offset": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "minimum_overlap": 0
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 1.734723475976807e-18
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "id": "mount_center",
+        "a": "panel_center",
+        "b": "frame_center_mount",
+        "kind": "face",
+        "offset": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "minimum_overlap": 0
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 1.734723475976807e-18
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "id": "mount_right",
+        "a": "panel_right",
+        "b": "frame_right_mount",
+        "kind": "face",
+        "offset": 0,
+        "twist": 0,
+        "minimum_clearance": 0,
+        "minimum_overlap": 0
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 1.734723475976807e-18
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "id": "seat_left",
+        "a": "frame_left_bore",
+        "b": "rotor_left_axis",
+        "kind": "coaxial",
+        "offset": 0,
+        "twist": 0,
+        "minimum_clearance": 0.003,
+        "minimum_overlap": 0.008
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0,
+        "radial_clearance_m": 0.052000000000000005,
+        "axial_overlap_m": 0.008
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "id": "seat_center",
+        "a": "frame_center_bore",
+        "b": "rotor_center_axis",
+        "kind": "coaxial",
+        "offset": 0,
+        "twist": 0,
+        "minimum_clearance": 0.003,
+        "minimum_overlap": 0.008
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0,
+        "radial_clearance_m": 0.052000000000000005,
+        "axial_overlap_m": 0.008
+      }
+    },
+    {
+      "kind": "executable_mate",
+      "relation": {
+        "id": "seat_right",
+        "a": "frame_right_bore",
+        "b": "rotor_right_axis",
+        "kind": "coaxial",
+        "offset": 0,
+        "twist": 0,
+        "minimum_clearance": 0.003,
+        "minimum_overlap": 0.008
+      },
+      "passed": true,
+      "measurement": {
+        "frame_max_error": 0.0,
+        "radial_clearance_m": 0.052000000000000005,
+        "axial_overlap_m": 0.008
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "panel",
+        "b": "frame_left"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "panel",
+        "b": "frame_center"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "panel",
+        "b": "frame_right"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "panel",
+        "b": "rotor_left"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "panel",
+        "b": "rotor_center"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "panel",
+        "b": "rotor_right"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame_left",
+        "b": "frame_center"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame_left",
+        "b": "frame_right"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame_left",
+        "b": "rotor_left"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame_left",
+        "b": "rotor_center"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame_left",
+        "b": "rotor_right"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame_center",
+        "b": "frame_right"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame_center",
+        "b": "rotor_left"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame_center",
+        "b": "rotor_center"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame_center",
+        "b": "rotor_right"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame_right",
+        "b": "rotor_left"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame_right",
+        "b": "rotor_center"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "frame_right",
+        "b": "rotor_right"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "rotor_left",
+        "b": "rotor_center"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "rotor_left",
+        "b": "rotor_right"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_interference",
+      "relation": {
+        "a": "rotor_center",
+        "b": "rotor_right"
+      },
+      "passed": true,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "tolerance_m3": 1e-12
+      }
+    },
+    {
+      "kind": "assembly_arrangement",
+      "assembly_id": "a01",
+      "requirement_id": "r08",
+      "aspect": "placement",
+      "passed": false,
+      "measurement": {
+        "members": [
+          {
+            "part": "frame_center",
+            "line_error_m": 0.0,
+            "spacing_error_m": 3.700743415417188e-17,
+            "passed": false
+          },
+          {
+            "part": "frame_left",
+            "line_error_m": 0.0,
+            "spacing_error_m": 0.0,
+            "passed": false
+          },
+          {
+            "part": "frame_right",
+            "line_error_m": 0.0,
+            "spacing_error_m": 0.0,
+            "passed": false
+          }
+        ],
+        "pitch_m": 0.16999999999999998,
+        "minimum_gap_m": 0.16999999999999998,
+        "distance_tolerance_m": 0.008499999999999999
+      },
+      "scope": "Solved declared feature geometry; interpretation and feature meaning remain unverified."
+    },
+    {
+      "kind": "assembly_arrangement",
+      "assembly_id": "a01",
+      "requirement_id": "r09",
+      "aspect": "orientation",
+      "passed": false,
+      "measurement": {
+        "members": [
+          {
+            "part": "frame_center",
+            "axis_alignment": 1.0,
+            "passed": false
+          },
+          {
+            "part": "frame_left",
+            "axis_alignment": 1.0,
+            "passed": false
+          },
+          {
+            "part": "frame_right",
+            "axis_alignment": 1.0,
+            "passed": false
+          }
+        ],
+        "direction": "+z",
+        "minimum_alignment": 1.0
+      },
+      "scope": "Solved declared feature geometry; interpretation and feature meaning remain unverified."
+    },
+    {
+      "kind": "assembly_arrangement",
+      "assembly_id": "a02",
+      "requirement_id": "r10",
+      "aspect": "placement",
+      "passed": false,
+      "measurement": {
+        "members": [
+          {
+            "part": "rotor_center",
+            "line_error_m": 0.0,
+            "spacing_error_m": 3.700743415417188e-17,
+            "passed": false
+          },
+          {
+            "part": "rotor_left",
+            "line_error_m": 0.0,
+            "spacing_error_m": 0.0,
+            "passed": false
+          },
+          {
+            "part": "rotor_right",
+            "line_error_m": 0.0,
+            "spacing_error_m": 0.0,
+            "passed": false
+          }
+        ],
+        "pitch_m": 0.16999999999999998,
+        "minimum_gap_m": 0.16999999999999998,
+        "distance_tolerance_m": 0.008499999999999999
+      },
+      "scope": "Solved declared feature geometry; interpretation and feature meaning remain unverified."
+    },
+    {
+      "kind": "assembly_arrangement",
+      "assembly_id": "a02",
+      "requirement_id": "r11",
+      "aspect": "orientation",
+      "passed": false,
+      "measurement": {
+        "members": [
+          {
+            "part": "rotor_center",
+            "axis_alignment": 1.0,
+            "passed": false
+          },
+          {
+            "part": "rotor_left",
+            "axis_alignment": 1.0,
+            "passed": false
+          },
+          {
+            "part": "rotor_right",
+            "axis_alignment": 1.0,
+            "passed": false
+          }
+        ],
+        "direction": "+z",
+        "minimum_alignment": 1.0
+      },
+      "scope": "Solved declared feature geometry; interpretation and feature meaning remain unverified."
+    }
+  ],
+  "semantic_completeness": "not_assessed",
+  "global_collisions": "all pairs static positive-volume interference checked; no swept motion",
+  "engineering_correctness": "not_assessed",
+  "native_generation_goal_passed": false,
+  "requirement_coverage": "not_assessed; solver cannot prove omitted functional connections",
+  "locked_requirements_sha256": "c8ec4573e27a61b40b800770db8d82d8b9b7b455e67d1f9b9581c9223f0e5841",
+  "spatial_policy_sha256": "abf21c243b7b133dc13ba5221866c9eabeff1f2f5a6ac127b3f15e6ace8bde33",
+  "arrangement_policy_sha256": "4a4bf140b11ad32d852c1161f2d9000e1a4f457c0142990424643c49c2816ca5"
+}

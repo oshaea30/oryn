@@ -272,7 +272,9 @@ def measurements(contract,plan,bindings,compiled):
                     similarities=np.abs(normals@normals.T);alignments=np.min(similarities,axis=1)
                 else:
                     axis=frame[:,'xyz'.index(direction[1])]*(1 if direction[0]=='+' else -1);alignments=normals@axis
-                for p,value in zip(ports,alignments):member_metrics.append({'part':p['part'],'axis_alignment':float(value),'passed':bool(value>=cosine and features[p['id']]['passed'])})
+                for p,value in zip(ports,alignments):member_metrics.append({'part':p['part'],'port':p['id'],'axis_alignment':float(value),
+                    'relation_passed':bool(value>=cosine),'feature_geometry_passed':bool(features[p['id']]['passed']),
+                    'passed':bool(value>=cosine and features[p['id']]['passed'])})
                 passed=valid and all(m['passed'] for m in member_metrics)
                 metric={'members':member_metrics,'direction':direction,'minimum_alignment':float(min(alignments))}
             elif rule['pattern']=='radial':
@@ -284,8 +286,10 @@ def measurements(contract,plan,bindings,compiled):
                 angular=np.abs(gaps-ideal);height_error=np.abs(heights-np.mean(heights));radius_error=np.abs(radii-radius)
                 for index,p in enumerate(ports):
                     k=int(np.where(order==index)[0][0]);gap_error=max(float(angular[k]),float(angular[(k-1)%len(ports)]))
-                    ok=radii[index]>tol and radius_error[index]<=limit and height_error[index]<=limit and gap_error<=angle and fs[index]['passed']
-                    member_metrics.append({'part':p['part'],'radius_m':float(radii[index]),'radius_error_m':float(radius_error[index]),
+                    relation_ok=radii[index]>tol and radius_error[index]<=limit and height_error[index]<=limit and gap_error<=angle
+                    ok=relation_ok and fs[index]['passed']
+                    member_metrics.append({'part':p['part'],'port':p['id'],'relation_passed':bool(relation_ok),
+                        'feature_geometry_passed':bool(fs[index]['passed']),'radius_m':float(radii[index]),'radius_error_m':float(radius_error[index]),
                         'height_error_m':float(height_error[index]),'adjacent_gap_error_degrees':math.degrees(gap_error),'passed':bool(ok)})
                 passed=valid and all(m['passed'] for m in member_metrics)
                 metric={'members':member_metrics,'radius_m':radius,'distance_tolerance_m':limit,'expected_gap_degrees':360/len(ports)}
@@ -294,11 +298,17 @@ def measurements(contract,plan,bindings,compiled):
                 order=np.argsort(along);locations=along[order];pitch=float((locations[-1]-locations[0])/(len(ports)-1));limit=max(tol,pitch*relative)
                 targets=np.linspace(locations[0],locations[-1],len(ports));errors=np.abs(locations-targets);gaps=np.diff(locations)
                 for index,p in enumerate(ports):
-                    k=int(np.where(order==index)[0][0]);ok=off[index]<=limit and errors[k]<=limit and fs[index]['passed']
-                    member_metrics.append({'part':p['part'],'line_error_m':float(off[index]),'spacing_error_m':float(errors[k]),'passed':bool(ok)})
+                    k=int(np.where(order==index)[0][0]);relation_ok=off[index]<=limit and errors[k]<=limit and pitch>tol and min(gaps)>tol
+                    ok=relation_ok and fs[index]['passed']
+                    member_metrics.append({'part':p['part'],'port':p['id'],'relation_passed':bool(relation_ok),
+                        'feature_geometry_passed':bool(fs[index]['passed']),'line_error_m':float(off[index]),'spacing_error_m':float(errors[k]),'passed':bool(ok)})
                 passed=valid and pitch>tol and min(gaps)>tol and all(m['passed'] for m in member_metrics)
                 metric={'members':member_metrics,'pitch_m':pitch,'minimum_gap_m':float(min(gaps)),'distance_tolerance_m':limit}
         except (ValueError,KeyError,np.linalg.LinAlgError) as error:metric={'error':str(error)}
+        failures=[]
+        if 'error' in metric:failures.append('measurement_unavailable')
+        if any(not m['feature_geometry_passed'] for m in metric.get('members',[])):failures.append('feature_geometry')
+        if any(not m['relation_passed'] for m in metric.get('members',[])):failures.append('group_'+kind)
         checks.append({'kind':'assembly_arrangement','assembly_id':a['id'],'requirement_id':rid,'aspect':kind,
-            'passed':bool(passed),'measurement':metric,'scope':'Solved declared feature geometry; interpretation and feature meaning remain unverified.'})
+            'passed':bool(passed),'failure_classes':failures,'measurement':metric,'scope':'Solved declared feature geometry; interpretation and feature meaning remain unverified.'})
     return checks

@@ -63,3 +63,8 @@ If declared groups survive but geometry fails, use the exact failed checks to id
 what remains. Do not loosen a checker or add a case-specific layout to obtain a pass.
 A disconnected speaker housing remains a topology failure. Do not spend further merely
 to produce one attractive drone. No production/Quest promotion from this experiment.
+
+## Result
+
+Completed; see the [measured result and limitations](ASSEMBLY_RESULT.md).
+The frozen rules above remain unchanged.

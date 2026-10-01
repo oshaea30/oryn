@@ -1,0 +1,15 @@
+{
+  "checks": [
+    "case URL loads repaired candidate",
+    "seven individually selectable parts",
+    "failed geometry remains visibly failed",
+    "assembly check status displayed",
+    "separation changes the rendered image",
+    "part isolation changes the rendered image",
+    "reset restores full assembly",
+    "static output has no claimed animation",
+    "no browser page errors"
+  ],
+  "page_errors": [],
+  "parts": 7
+}

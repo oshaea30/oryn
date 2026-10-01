@@ -1,0 +1,20 @@
+{
+  "method": "No new geometry or plan; added failure classification only. Original numeric verdicts and policy preserved.",
+  "module_sha256": "10ed1d452761874e552b655551f684deaee06bba66a15e9dd9dc6cfa8e9db8c7",
+  "outputs": [
+    {
+      "case": "cooling-fan-row-plan-0",
+      "original_verdicts_unchanged": true,
+      "package_sha256": "edcb19769d4e5ea19ecbd2bf44c380cebcf3e2629458d469966b82f8e2c8c181",
+      "compiled_sha256": "40b52db62ba2d1d525f13263feda21946e0fb2b678d2b9ad4f291487a4ac1419",
+      "check_policy_unchanged": true
+    },
+    {
+      "case": "cooling-fan-row-plan-1",
+      "original_verdicts_unchanged": true,
+      "package_sha256": "b3040673359177706ac1fc04acd1fa4eba38a730c398272f64357ea8e07bd078",
+      "compiled_sha256": "a18757ca22b43ce7b71baf5bc93319f923713caa18b8401f1dddb1826767c77b",
+      "check_policy_unchanged": true
+    }
+  ]
+}

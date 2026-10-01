@@ -1,0 +1,178 @@
+{
+  "experiment": "assembly-010",
+  "specs": [
+    {
+      "id": "generic-drone",
+      "request": "Show me a generic quadcopter drone I can explore and take apart into its major components.",
+      "roles": [
+        "Central frame",
+        "Four arms",
+        "Four motors",
+        "Four propellers",
+        "Battery",
+        "Flight controller",
+        "Electronic speed controllers"
+      ],
+      "fidelity": "generic_design",
+      "expect": [
+        {
+          "role": "Four arms",
+          "count": 4,
+          "pattern": "radial",
+          "axis": "y",
+          "reference": "Central frame",
+          "directions": [
+            "spatial"
+          ]
+        },
+        {
+          "role": "Four motors",
+          "count": 4,
+          "pattern": "radial",
+          "axis": "y",
+          "reference": "Central frame",
+          "directions": [
+            "+y",
+            "-y"
+          ]
+        },
+        {
+          "role": "Four propellers",
+          "count": 4,
+          "pattern": "radial",
+          "axis": "y",
+          "reference": "Central frame",
+          "directions": [
+            "+y",
+            "-y"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cooling-fan-row",
+      "request": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward. Let me inspect and separate the main parts. Keep it static; no airflow simulation is needed.",
+      "roles": [
+        "Mounting panel",
+        "Three fan frames",
+        "Three fan rotors"
+      ],
+      "fidelity": "generic_design",
+      "expect": [
+        {
+          "role": "Three fan frames",
+          "count": 3,
+          "pattern": "linear",
+          "axis": "x",
+          "reference": "",
+          "directions": [
+            "+z"
+          ]
+        },
+        {
+          "role": "Three fan rotors",
+          "count": 3,
+          "pattern": "linear",
+          "axis": "x",
+          "reference": "",
+          "directions": [
+            "+z"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "two-driver-speaker",
+      "request": "Show me a tabletop speaker with two matching loudspeaker drivers side by side in its front face, both facing forward. I want to inspect and take apart its main components. It does not need to play sound or animate.",
+      "roles": [
+        "Enclosure",
+        "Two loudspeaker drivers",
+        "Amplifier board",
+        "Rear cover"
+      ],
+      "fidelity": "generic_design",
+      "expect": [
+        {
+          "role": "Two loudspeaker drivers",
+          "count": 2,
+          "pattern": "linear",
+          "axis": "x",
+          "reference": "",
+          "directions": [
+            "+z"
+          ]
+        }
+      ]
+    }
+  ],
+  "budget_nanos": 1100000000,
+  "prior_upper_bound_nanos": 3700000000,
+  "aggregate_limit_nanos": 5000000000,
+  "files_sha256": {
+    "Research/native_objects/assembly_arrangements.py": "edd886c0f6c672908a1194a5f7588f34937a55ffea54113d6a6b413939d298f9",
+    "Research/native_objects/arrangement_experiment.py": "9206954075b356980e548c8387d7c77013b88b19d0769d67453da87ae21769f1",
+    "Research/native_objects/arrangement_cases_010.json": "22ebcf7fa674a98eedcce789733a0b8f27b4a395cee7c5a6e525580e4db49686",
+    "Research/native_objects/spatial_requirements.py": "6c4df5351844d6c675a1ffa88d069e7341df0f976449ffc3694b42da352c72b3",
+    "Research/native_objects/spatial_experiment.py": "aecb6777ee55e391dddf1e51c09b5600b0a1c685af0611fed78e2a926be0c294",
+    "Research/native_objects/requirements_experiment.py": "de6a5028e50797dfdac10f423899c03e81c77ea455f0077f4f3f0a16256602ee",
+    "Research/native_objects/requirement_meaning.py": "571f4f1e2bae166cc1d15e66e9bfc07b538ef0d8bdf94bc5136e0d53805911f5",
+    "Research/native_objects/intent_requirements.py": "6b11824652d4b182f426dd05f19fc36ac69738021a0c0ac8a784b8c6441249bf",
+    "Research/native_objects/compact_construction.py": "7b30f0bb183b1caf90f335cd811d589570ceca9c0362668887352c8b61861fec",
+    "Research/native_objects/assembly_connections.py": "995b3fd6382a29206397537de4544d4cb57a9193a2f17f1f9de1fbb2ed484c4a",
+    "Research/native_objects/construction_solid.py": "9e0c192b8e2171adce174970fa436809ab7dfd58b683deaa746e787f637343d1",
+    "Research/native_objects/construction.py": "b21918b18d8176907d873a9be4cd925f5d112ca20875e8a486d044e98415b0c7",
+    "Research/native_objects/meaning_experiment.py": "bd8cd34e8c367fd3de72e0615dca6665b3b5e61339d19fc49d143d257d4c1e0c",
+    "Research/native_objects/ASSEMBLY_EXPERIMENT.md": "ad2f567fd314ebdfe1ce981a0aec42d155d5a74b76cb70bd28bb00ae75981416",
+    "Orchestrator/spending.py": "d802cecf3b40352971095d50e710b7ac1893a681711d3333d5b53b547abd6878"
+  },
+  "policies": {
+    "extract": {
+      "provider": "openai",
+      "profile": "assembly_arrangement_research_extract",
+      "model": "gpt-6-sol",
+      "effort": "medium",
+      "ceiling_nanos": 45000000,
+      "max_output_tokens": 3072,
+      "price_version": "openai-standard-text-2026-09-27-v1",
+      "rates": {
+        "input": 2000,
+        "cached": 200,
+        "cache_write": 2500,
+        "output": 10000
+      },
+      "price_expires": 1791072000,
+      "service_tier": "default"
+    },
+    "plan": {
+      "provider": "openai",
+      "profile": "assembly_arrangement_research_plan",
+      "model": "gpt-6-sol",
+      "effort": "medium",
+      "ceiling_nanos": 160000000,
+      "max_output_tokens": 12288,
+      "price_version": "openai-standard-text-2026-09-27-v1",
+      "rates": {
+        "input": 2000,
+        "cached": 200,
+        "cache_write": 2500,
+        "output": 10000
+      },
+      "price_expires": 1791072000,
+      "service_tier": "default"
+    }
+  },
+  "arrangement_policy": {
+    "position_tolerance_m": 0.0005,
+    "angle_tolerance_degrees": 10.0,
+    "relative_spacing_tolerance": 0.05,
+    "scope": "declared static feature arrangements; not semantic or engineering certification"
+  },
+  "request_deadlines_seconds": {
+    "extract": 120,
+    "plan": 240
+  },
+  "maximum_plan_attempts": 2,
+  "execute": true,
+  "geometry_executor_changed": false,
+  "paid_judge": false
+}

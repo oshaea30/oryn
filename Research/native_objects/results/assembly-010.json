@@ -1,0 +1,1162 @@
+{
+  "cases": [
+    {
+      "case": "generic-drone",
+      "request": "Show me a generic quadcopter drone I can explore and take apart into its major components.",
+      "attempts": [],
+      "geometry_executed": false,
+      "status": "extraction_failed",
+      "error": "Incomplete generation",
+      "extraction_seconds": 37.587639667093754
+    },
+    {
+      "case": "cooling-fan-row",
+      "request": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward. Let me inspect and separate the main parts. Keep it static; no airflow simulation is needed.",
+      "attempts": [
+        {
+          "attempt": 0,
+          "status": "geometry_failed",
+          "geometry_executed": true,
+          "planning_seconds": 60.06205795798451,
+          "billing": {
+            "operation_id": "56a59ae44333cbcdb49f902ab5ada8e8",
+            "status": "completed",
+            "incomplete_details": null,
+            "usage": {
+              "input_tokens": 5388,
+              "input_tokens_details": {
+                "cache_write_tokens": 5385,
+                "cached_tokens": 0
+              },
+              "output_tokens": 4291,
+              "output_tokens_details": {
+                "reasoning_tokens": 2025
+              },
+              "total_tokens": 9679
+            },
+            "calculated_cost_nanos": 56380000,
+            "dispatch_seconds": 59.784292791970074
+          },
+          "geometry_and_validation_seconds": 0.14669904101174325,
+          "declared_numeric_pass": false,
+          "coverage_complete": true,
+          "feedback": {
+            "failed_geometry_checks": [
+              {
+                "kind": "symmetry_bounds",
+                "relation": {
+                  "a": "frame_left",
+                  "b": "frame_right",
+                  "axis": "x"
+                },
+                "passed": false,
+                "measurement": {
+                  "maximum_bound_error_m": 0.00299999862909317,
+                  "scope": "bounds only, not full shape symmetry"
+                }
+              },
+              {
+                "kind": "symmetry_bounds",
+                "relation": {
+                  "a": "rotor_left",
+                  "b": "rotor_right",
+                  "axis": "x"
+                },
+                "passed": false,
+                "measurement": {
+                  "maximum_bound_error_m": 0.010357700288295746,
+                  "scope": "bounds only, not full shape symmetry"
+                }
+              },
+              {
+                "kind": "port_geometry",
+                "relation": {
+                  "port": "frame_left_bore",
+                  "part": "frame_left"
+                },
+                "passed": false,
+                "measurement": {
+                  "missing_surface_band_m3": -6.352747104407253e-22,
+                  "obstructed_exterior_m3": 5.3170278789075375e-09,
+                  "scope": "declared finite cylindrical interval"
+                }
+              },
+              {
+                "kind": "port_geometry",
+                "relation": {
+                  "port": "frame_center_bore",
+                  "part": "frame_center"
+                },
+                "passed": false,
+                "measurement": {
+                  "missing_surface_band_m3": -6.352747104407253e-22,
+                  "obstructed_exterior_m3": 5.3170278789075375e-09,
+                  "scope": "declared finite cylindrical interval"
+                }
+              },
+              {
+                "kind": "port_geometry",
+                "relation": {
+                  "port": "frame_right_bore",
+                  "part": "frame_right"
+                },
+                "passed": false,
+                "measurement": {
+                  "missing_surface_band_m3": -6.352747104407253e-22,
+                  "obstructed_exterior_m3": 5.3170278789075375e-09,
+                  "scope": "declared finite cylindrical interval"
+                }
+              },
+              {
+                "kind": "port_geometry",
+                "relation": {
+                  "port": "rotor_left_axis",
+                  "part": "rotor_left"
+                },
+                "passed": false,
+                "measurement": {
+                  "missing_surface_band_m3": -1.4197388457639462e-23,
+                  "obstructed_exterior_m3": 3.825443945234012e-09,
+                  "scope": "declared finite cylindrical interval"
+                }
+              },
+              {
+                "kind": "port_geometry",
+                "relation": {
+                  "port": "rotor_center_axis",
+                  "part": "rotor_center"
+                },
+                "passed": false,
+                "measurement": {
+                  "missing_surface_band_m3": -1.4197388457639462e-23,
+                  "obstructed_exterior_m3": 3.825443945234012e-09,
+                  "scope": "declared finite cylindrical interval"
+                }
+              },
+              {
+                "kind": "port_geometry",
+                "relation": {
+                  "port": "rotor_right_axis",
+                  "part": "rotor_right"
+                },
+                "passed": false,
+                "measurement": {
+                  "missing_surface_band_m3": -1.4197388457639462e-23,
+                  "obstructed_exterior_m3": 3.825443945234012e-09,
+                  "scope": "declared finite cylindrical interval"
+                }
+              },
+              {
+                "kind": "assembly_arrangement",
+                "assembly_id": "a01",
+                "requirement_id": "r08",
+                "aspect": "placement",
+                "passed": false,
+                "measurement": {
+                  "members": [
+                    {
+                      "part": "frame_center",
+                      "line_error_m": 0.0,
+                      "spacing_error_m": 3.700743415417188e-17,
+                      "passed": false
+                    },
+                    {
+                      "part": "frame_left",
+                      "line_error_m": 0.0,
+                      "spacing_error_m": 0.0,
+                      "passed": false
+                    },
+                    {
+                      "part": "frame_right",
+                      "line_error_m": 0.0,
+                      "spacing_error_m": 0.0,
+                      "passed": false
+                    }
+                  ],
+                  "pitch_m": 0.16999999999999998,
+                  "minimum_gap_m": 0.16999999999999998,
+                  "distance_tolerance_m": 0.008499999999999999
+                },
+                "scope": "Solved declared feature geometry; interpretation and feature meaning remain unverified."
+              },
+              {
+                "kind": "assembly_arrangement",
+                "assembly_id": "a01",
+                "requirement_id": "r09",
+                "aspect": "orientation",
+                "passed": false,
+                "measurement": {
+                  "members": [
+                    {
+                      "part": "frame_center",
+                      "axis_alignment": 1.0,
+                      "passed": false
+                    },
+                    {
+                      "part": "frame_left",
+                      "axis_alignment": 1.0,
+                      "passed": false
+                    },
+                    {
+                      "part": "frame_right",
+                      "axis_alignment": 1.0,
+                      "passed": false
+                    }
+                  ],
+                  "direction": "+z",
+                  "minimum_alignment": 1.0
+                },
+                "scope": "Solved declared feature geometry; interpretation and feature meaning remain unverified."
+              },
+              {
+                "kind": "assembly_arrangement",
+                "assembly_id": "a02",
+                "requirement_id": "r10",
+                "aspect": "placement",
+                "passed": false,
+                "measurement": {
+                  "members": [
+                    {
+                      "part": "rotor_center",
+                      "line_error_m": 0.0,
+                      "spacing_error_m": 3.700743415417188e-17,
+                      "passed": false
+                    },
+                    {
+                      "part": "rotor_left",
+                      "line_error_m": 0.0,
+                      "spacing_error_m": 0.0,
+                      "passed": false
+                    },
+                    {
+                      "part": "rotor_right",
+                      "line_error_m": 0.0,
+                      "spacing_error_m": 0.0,
+                      "passed": false
+                    }
+                  ],
+                  "pitch_m": 0.16999999999999998,
+                  "minimum_gap_m": 0.16999999999999998,
+                  "distance_tolerance_m": 0.008499999999999999
+                },
+                "scope": "Solved declared feature geometry; interpretation and feature meaning remain unverified."
+              },
+              {
+                "kind": "assembly_arrangement",
+                "assembly_id": "a02",
+                "requirement_id": "r11",
+                "aspect": "orientation",
+                "passed": false,
+                "measurement": {
+                  "members": [
+                    {
+                      "part": "rotor_center",
+                      "axis_alignment": 1.0,
+                      "passed": false
+                    },
+                    {
+                      "part": "rotor_left",
+                      "axis_alignment": 1.0,
+                      "passed": false
+                    },
+                    {
+                      "part": "rotor_right",
+                      "axis_alignment": 1.0,
+                      "passed": false
+                    }
+                  ],
+                  "direction": "+z",
+                  "minimum_alignment": 1.0
+                },
+                "scope": "Solved declared feature geometry; interpretation and feature meaning remain unverified."
+              }
+            ]
+          },
+          "parts": 7,
+          "attempt_elapsed_seconds": 61.30757866601925
+        },
+        {
+          "attempt": 1,
+          "status": "geometry_failed",
+          "geometry_executed": true,
+          "planning_seconds": 40.44515762501396,
+          "billing": {
+            "operation_id": "e0df75fc9053b85e3eb8d3d1a73a4bd5",
+            "status": "completed",
+            "incomplete_details": null,
+            "usage": {
+              "input_tokens": 10450,
+              "input_tokens_details": {
+                "cache_write_tokens": 6507,
+                "cached_tokens": 3940
+              },
+              "output_tokens": 3601,
+              "output_tokens_details": {
+                "reasoning_tokens": 1439
+              },
+              "total_tokens": 14051
+            },
+            "calculated_cost_nanos": 62135000,
+            "dispatch_seconds": 40.08223300008103
+          },
+          "geometry_and_validation_seconds": 0.10803554090671241,
+          "declared_numeric_pass": false,
+          "coverage_complete": true,
+          "feedback": {
+            "failed_geometry_checks": [
+              {
+                "kind": "connected_component",
+                "relation": {
+                  "part": "frame_left"
+                },
+                "passed": false,
+                "measurement": {
+                  "solid_islands": 2
+                }
+              },
+              {
+                "kind": "connected_component",
+                "relation": {
+                  "part": "frame_center"
+                },
+                "passed": false,
+                "measurement": {
+                  "solid_islands": 2
+                }
+              },
+              {
+                "kind": "connected_component",
+                "relation": {
+                  "part": "frame_right"
+                },
+                "passed": false,
+                "measurement": {
+                  "solid_islands": 2
+                }
+              },
+              {
+                "kind": "executable_mate",
+                "relation": {
+                  "id": "seat_left",
+                  "a": "frame_left_bore",
+                  "b": "rotor_left_axis",
+                  "kind": "coaxial",
+                  "offset": 0,
+                  "twist": 0,
+                  "minimum_clearance": 0.003,
+                  "minimum_overlap": 0.008
+                },
+                "passed": false,
+                "measurement": {
+                  "frame_max_error": 0.0,
+                  "radial_clearance_m": 0.052000000000000005,
+                  "axial_overlap_m": 0.0019999999999999996
+                }
+              },
+              {
+                "kind": "executable_mate",
+                "relation": {
+                  "id": "seat_center",
+                  "a": "frame_center_bore",
+                  "b": "rotor_center_axis",
+                  "kind": "coaxial",
+                  "offset": 0,
+                  "twist": 0,
+                  "minimum_clearance": 0.003,
+                  "minimum_overlap": 0.008
+                },
+                "passed": false,
+                "measurement": {
+                  "frame_max_error": 0.0,
+                  "radial_clearance_m": 0.052000000000000005,
+                  "axial_overlap_m": 0.0019999999999999996
+                }
+              },
+              {
+                "kind": "executable_mate",
+                "relation": {
+                  "id": "seat_right",
+                  "a": "frame_right_bore",
+                  "b": "rotor_right_axis",
+                  "kind": "coaxial",
+                  "offset": 0,
+                  "twist": 0,
+                  "minimum_clearance": 0.003,
+                  "minimum_overlap": 0.008
+                },
+                "passed": false,
+                "measurement": {
+                  "frame_max_error": 0.0,
+                  "radial_clearance_m": 0.052000000000000005,
+                  "axial_overlap_m": 0.0019999999999999996
+                }
+              },
+              {
+                "kind": "assembly_arrangement",
+                "assembly_id": "a01",
+                "requirement_id": "r09",
+                "aspect": "orientation",
+                "passed": false,
+                "measurement": {
+                  "members": [
+                    {
+                      "part": "frame_center",
+                      "axis_alignment": -1.0,
+                      "passed": false
+                    },
+                    {
+                      "part": "frame_left",
+                      "axis_alignment": -1.0,
+                      "passed": false
+                    },
+                    {
+                      "part": "frame_right",
+                      "axis_alignment": -1.0,
+                      "passed": false
+                    }
+                  ],
+                  "direction": "+z",
+                  "minimum_alignment": -1.0
+                },
+                "scope": "Solved declared feature geometry; interpretation and feature meaning remain unverified."
+              },
+              {
+                "kind": "assembly_arrangement",
+                "assembly_id": "a02",
+                "requirement_id": "r11",
+                "aspect": "orientation",
+                "passed": false,
+                "measurement": {
+                  "members": [
+                    {
+                      "part": "rotor_center",
+                      "axis_alignment": -1.0,
+                      "passed": false
+                    },
+                    {
+                      "part": "rotor_left",
+                      "axis_alignment": -1.0,
+                      "passed": false
+                    },
+                    {
+                      "part": "rotor_right",
+                      "axis_alignment": -1.0,
+                      "passed": false
+                    }
+                  ],
+                  "direction": "+z",
+                  "minimum_alignment": -1.0
+                },
+                "scope": "Solved declared feature geometry; interpretation and feature meaning remain unverified."
+              }
+            ]
+          },
+          "parts": 7,
+          "attempt_elapsed_seconds": 41.42104849999305
+        }
+      ],
+      "geometry_executed": true,
+      "status": "geometry_failed",
+      "extraction_billing": {
+        "operation_id": "fdce0e6fbcae6d93970cb5cfc4a9006c",
+        "status": "completed",
+        "incomplete_details": null,
+        "usage": {
+          "input_tokens": 3538,
+          "input_tokens_details": {
+            "cache_write_tokens": 3535,
+            "cached_tokens": 0
+          },
+          "output_tokens": 1301,
+          "output_tokens_details": {
+            "reasoning_tokens": 516
+          },
+          "total_tokens": 4839
+        },
+        "calculated_cost_nanos": 21855000,
+        "dispatch_seconds": 15.869911666028202
+      },
+      "contract": {
+        "source_request": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward. Let me inspect and separate the main parts. Keep it static; no airflow simulation is needed.",
+        "source_sha256": "724a3089941b51484e769f2112a723bc475ee9e70505591195f6ad0161a85229",
+        "inventory": {
+          "entities": [
+            {
+              "id": "e0",
+              "role": "Mounting panel"
+            },
+            {
+              "id": "e1",
+              "role": "Three fan frames"
+            },
+            {
+              "id": "e2",
+              "role": "Three fan rotors"
+            }
+          ],
+          "requirements": [
+            {
+              "id": "r01",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e0",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "explicit",
+              "quote": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward."
+            },
+            {
+              "id": "r02",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e1",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward."
+            },
+            {
+              "id": "r03",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e2",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward."
+            },
+            {
+              "id": "r04",
+              "obligation": "required",
+              "kind": "constraint",
+              "subject": "e1",
+              "target": "",
+              "predicate": "count",
+              "value": "3",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward."
+            },
+            {
+              "id": "r05",
+              "obligation": "required",
+              "kind": "constraint",
+              "subject": "e2",
+              "target": "",
+              "predicate": "count",
+              "value": "3",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward."
+            },
+            {
+              "id": "r06",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e1",
+              "target": "e0",
+              "predicate": "attached",
+              "value": "all frames share the panel",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward."
+            },
+            {
+              "id": "r07",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e2",
+              "target": "e1",
+              "predicate": "inside",
+              "value": "one rotor per frame",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward."
+            },
+            {
+              "id": "r08",
+              "obligation": "required",
+              "kind": "constraint",
+              "subject": "e1",
+              "target": "",
+              "predicate": "other",
+              "value": "evenly spaced horizontal row along x",
+              "mode": "structure",
+              "basis": "explicit",
+              "quote": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward."
+            },
+            {
+              "id": "r09",
+              "obligation": "required",
+              "kind": "constraint",
+              "subject": "e1",
+              "target": "",
+              "predicate": "other",
+              "value": "fan fronts face +z",
+              "mode": "structure",
+              "basis": "explicit",
+              "quote": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward."
+            },
+            {
+              "id": "r10",
+              "obligation": "required",
+              "kind": "constraint",
+              "subject": "e2",
+              "target": "",
+              "predicate": "other",
+              "value": "corresponding evenly spaced row along x",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward."
+            },
+            {
+              "id": "r11",
+              "obligation": "required",
+              "kind": "constraint",
+              "subject": "e2",
+              "target": "",
+              "predicate": "other",
+              "value": "rotor fronts face +z",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward."
+            },
+            {
+              "id": "r12",
+              "obligation": "required",
+              "kind": "behavior",
+              "subject": "object",
+              "target": "",
+              "predicate": "capability",
+              "value": "inspect",
+              "mode": "behavior",
+              "basis": "explicit",
+              "quote": "Let me inspect and separate the main parts."
+            },
+            {
+              "id": "r13",
+              "obligation": "required",
+              "kind": "behavior",
+              "subject": "object",
+              "target": "",
+              "predicate": "capability",
+              "value": "geometric_explode",
+              "mode": "behavior",
+              "basis": "explicit",
+              "quote": "Let me inspect and separate the main parts."
+            },
+            {
+              "id": "r14",
+              "obligation": "required",
+              "kind": "visual",
+              "subject": "e2",
+              "target": "",
+              "predicate": "appearance",
+              "value": "cooling-fan rotors",
+              "mode": "appearance",
+              "basis": "inferred",
+              "quote": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward."
+            }
+          ],
+          "exclusions": [
+            {
+              "id": "x01",
+              "subject": "object",
+              "domain": "motion",
+              "quote": "Keep it static;"
+            },
+            {
+              "id": "x02",
+              "subject": "object",
+              "domain": "physical_verification",
+              "quote": "no airflow simulation is needed."
+            }
+          ]
+        },
+        "inventory_sha256": "97ba6e59d49733455b9ac9b738d56ececcac1c1dc9c252f60baee6e69e1fc7b5",
+        "interpretation_version": 2,
+        "extraction_completeness": "unassessed; consistency is not natural-language entailment",
+        "source_grounding": {
+          "units": [
+            {
+              "id": "s0",
+              "start": 0,
+              "end": 133,
+              "text": "Show me a bank of three cooling fans, side by side in an evenly spaced horizontal row on a shared mounting panel, all facing forward."
+            },
+            {
+              "id": "s1",
+              "start": 134,
+              "end": 177,
+              "text": "Let me inspect and separate the main parts."
+            },
+            {
+              "id": "s2",
+              "start": 178,
+              "end": 193,
+              "text": "Keep it static;"
+            },
+            {
+              "id": "s3",
+              "start": 194,
+              "end": 226,
+              "text": "no airflow simulation is needed."
+            }
+          ],
+          "bindings": {
+            "r01": "s0",
+            "r02": "s0",
+            "r03": "s0",
+            "r04": "s0",
+            "r05": "s0",
+            "r06": "s0",
+            "r07": "s0",
+            "r08": "s0",
+            "r09": "s0",
+            "r10": "s0",
+            "r11": "s0",
+            "r12": "s1",
+            "r13": "s1",
+            "r14": "s0",
+            "x01": "s2",
+            "x02": "s3"
+          }
+        },
+        "source_grounding_sha256": "9fc125afbbe35ab847cc1861aeddea22a855fd47e82d4abeb7bd239710891830",
+        "spatial_rules": [],
+        "spatial_rules_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "spatial_policy_sha256": "abf21c243b7b133dc13ba5221866c9eabeff1f2f5a6ac127b3f15e6ace8bde33",
+        "assemblies": [
+          {
+            "id": "a01",
+            "members": [
+              "e1"
+            ],
+            "placement": {
+              "id": "r08",
+              "pattern": "linear",
+              "reference": "",
+              "axis": "x"
+            },
+            "orientation": {
+              "id": "r09",
+              "direction": "+z"
+            }
+          },
+          {
+            "id": "a02",
+            "members": [
+              "e2"
+            ],
+            "placement": {
+              "id": "r10",
+              "pattern": "linear",
+              "reference": "",
+              "axis": "x"
+            },
+            "orientation": {
+              "id": "r11",
+              "direction": "+z"
+            }
+          }
+        ],
+        "assemblies_sha256": "2b03362cfdff8d3e95584a38ee4fdc30fe1718368c63de18414127595de1dc14",
+        "arrangement_policy_sha256": "4a4bf140b11ad32d852c1161f2d9000e1a4f457c0142990424643c49c2816ca5"
+      },
+      "admission": {
+        "planning_allowed": true,
+        "unsupported": [],
+        "blocking": [],
+        "interpretation_correct": "unassessed",
+        "detail": "Registered spatial checks permit planning only; binding and actual geometry must still pass.",
+        "pending_spatial_checks": [],
+        "pending_arrangement_checks": [
+          "r08",
+          "r09",
+          "r10",
+          "r11"
+        ]
+      },
+      "extraction_seconds": 16.26059395901393
+    },
+    {
+      "case": "two-driver-speaker",
+      "request": "Show me a tabletop speaker with two matching loudspeaker drivers side by side in its front face, both facing forward. I want to inspect and take apart its main components. It does not need to play sound or animate.",
+      "attempts": [],
+      "geometry_executed": false,
+      "status": "unsupported_before_planning",
+      "extraction_billing": {
+        "operation_id": "f48638c1b83a34527aef128876434d54",
+        "status": "completed",
+        "incomplete_details": null,
+        "usage": {
+          "input_tokens": 3533,
+          "input_tokens_details": {
+            "cache_write_tokens": 3530,
+            "cached_tokens": 0
+          },
+          "output_tokens": 1347,
+          "output_tokens_details": {
+            "reasoning_tokens": 516
+          },
+          "total_tokens": 4880
+        },
+        "calculated_cost_nanos": 22302500,
+        "dispatch_seconds": 16.292730167042464
+      },
+      "contract": {
+        "source_request": "Show me a tabletop speaker with two matching loudspeaker drivers side by side in its front face, both facing forward. I want to inspect and take apart its main components. It does not need to play sound or animate.",
+        "source_sha256": "139066d7706ac1daad00d7b22d484a6c6a560a1434ceb45e74c467f0b3cdc25c",
+        "inventory": {
+          "entities": [
+            {
+              "id": "e0",
+              "role": "Enclosure"
+            },
+            {
+              "id": "e1",
+              "role": "Two loudspeaker drivers"
+            },
+            {
+              "id": "e2",
+              "role": "Amplifier board"
+            },
+            {
+              "id": "e3",
+              "role": "Rear cover"
+            }
+          ],
+          "requirements": [
+            {
+              "id": "r0",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e0",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "explicit",
+              "quote": "Show me a tabletop speaker with two matching loudspeaker drivers side by side in its front face, both facing forward."
+            },
+            {
+              "id": "r1",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e1",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "explicit",
+              "quote": "Show me a tabletop speaker with two matching loudspeaker drivers side by side in its front face, both facing forward."
+            },
+            {
+              "id": "r2",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "e2",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "design_choice",
+              "quote": ""
+            },
+            {
+              "id": "r3",
+              "obligation": "design_choice",
+              "kind": "entity",
+              "subject": "e3",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "design_choice",
+              "quote": ""
+            },
+            {
+              "id": "r4",
+              "obligation": "required",
+              "kind": "constraint",
+              "subject": "e1",
+              "target": "",
+              "predicate": "count",
+              "value": "2",
+              "mode": "structure",
+              "basis": "explicit",
+              "quote": "Show me a tabletop speaker with two matching loudspeaker drivers side by side in its front face, both facing forward."
+            },
+            {
+              "id": "r5",
+              "obligation": "required",
+              "kind": "visual",
+              "subject": "e0",
+              "target": "",
+              "predicate": "appearance",
+              "value": "tabletop speaker form",
+              "mode": "appearance",
+              "basis": "explicit",
+              "quote": "Show me a tabletop speaker with two matching loudspeaker drivers side by side in its front face, both facing forward."
+            },
+            {
+              "id": "r6",
+              "obligation": "required",
+              "kind": "visual",
+              "subject": "e1",
+              "target": "",
+              "predicate": "appearance",
+              "value": "matching, forward-facing drivers",
+              "mode": "appearance",
+              "basis": "explicit",
+              "quote": "Show me a tabletop speaker with two matching loudspeaker drivers side by side in its front face, both facing forward."
+            },
+            {
+              "id": "r7",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e1",
+              "target": "e0",
+              "predicate": "attached",
+              "value": "drivers mounted to enclosure",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a tabletop speaker with two matching loudspeaker drivers side by side in its front face, both facing forward."
+            },
+            {
+              "id": "r8",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e1",
+              "target": "e0",
+              "predicate": "other",
+              "value": "drivers in enclosure front face",
+              "mode": "structure",
+              "basis": "explicit",
+              "quote": "Show me a tabletop speaker with two matching loudspeaker drivers side by side in its front face, both facing forward."
+            },
+            {
+              "id": "r9",
+              "obligation": "required",
+              "kind": "constraint",
+              "subject": "e1",
+              "target": "",
+              "predicate": "other",
+              "value": "two drivers side by side in a horizontal row",
+              "mode": "structure",
+              "basis": "explicit",
+              "quote": "Show me a tabletop speaker with two matching loudspeaker drivers side by side in its front face, both facing forward."
+            },
+            {
+              "id": "r10",
+              "obligation": "required",
+              "kind": "constraint",
+              "subject": "e1",
+              "target": "",
+              "predicate": "other",
+              "value": "both driver axes point forward (+Z)",
+              "mode": "structure",
+              "basis": "explicit",
+              "quote": "Show me a tabletop speaker with two matching loudspeaker drivers side by side in its front face, both facing forward."
+            },
+            {
+              "id": "r11",
+              "obligation": "design_choice",
+              "kind": "relation",
+              "subject": "e2",
+              "target": "e0",
+              "predicate": "inside",
+              "value": "board housed in enclosure",
+              "mode": "structure",
+              "basis": "design_choice",
+              "quote": ""
+            },
+            {
+              "id": "r12",
+              "obligation": "design_choice",
+              "kind": "relation",
+              "subject": "e3",
+              "target": "e0",
+              "predicate": "attached",
+              "value": "cover mounted to enclosure rear",
+              "mode": "structure",
+              "basis": "design_choice",
+              "quote": ""
+            },
+            {
+              "id": "r13",
+              "obligation": "required",
+              "kind": "behavior",
+              "subject": "object",
+              "target": "",
+              "predicate": "capability",
+              "value": "inspect",
+              "mode": "behavior",
+              "basis": "explicit",
+              "quote": "I want to inspect and take apart its main components."
+            },
+            {
+              "id": "r14",
+              "obligation": "required",
+              "kind": "behavior",
+              "subject": "object",
+              "target": "",
+              "predicate": "capability",
+              "value": "geometric_explode",
+              "mode": "behavior",
+              "basis": "explicit",
+              "quote": "I want to inspect and take apart its main components."
+            },
+            {
+              "id": "r15",
+              "obligation": "design_choice",
+              "kind": "behavior",
+              "subject": "object",
+              "target": "",
+              "predicate": "capability",
+              "value": "reassemble",
+              "mode": "behavior",
+              "basis": "design_choice",
+              "quote": ""
+            }
+          ],
+          "exclusions": [
+            {
+              "id": "x0",
+              "subject": "object",
+              "domain": "audio_output",
+              "quote": "It does not need to play sound or animate."
+            },
+            {
+              "id": "x1",
+              "subject": "object",
+              "domain": "motion",
+              "quote": "It does not need to play sound or animate."
+            }
+          ]
+        },
+        "inventory_sha256": "2fda8f69a3574212f48e8fb9425499a20cee23bd5b90e5f6f2eee23515b7dbba",
+        "interpretation_version": 2,
+        "extraction_completeness": "unassessed; consistency is not natural-language entailment",
+        "source_grounding": {
+          "units": [
+            {
+              "id": "s0",
+              "start": 0,
+              "end": 117,
+              "text": "Show me a tabletop speaker with two matching loudspeaker drivers side by side in its front face, both facing forward."
+            },
+            {
+              "id": "s1",
+              "start": 118,
+              "end": 171,
+              "text": "I want to inspect and take apart its main components."
+            },
+            {
+              "id": "s2",
+              "start": 172,
+              "end": 214,
+              "text": "It does not need to play sound or animate."
+            }
+          ],
+          "bindings": {
+            "r0": "s0",
+            "r1": "s0",
+            "r2": "",
+            "r3": "",
+            "r4": "s0",
+            "r5": "s0",
+            "r6": "s0",
+            "r7": "s0",
+            "r8": "s0",
+            "r9": "s0",
+            "r10": "s0",
+            "r11": "",
+            "r12": "",
+            "r13": "s1",
+            "r14": "s1",
+            "r15": "",
+            "x0": "s2",
+            "x1": "s2"
+          }
+        },
+        "source_grounding_sha256": "5898120179ef39f902959108f40b107902baf5d5603160dfe5443d37b8205c18",
+        "spatial_rules": [],
+        "spatial_rules_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "spatial_policy_sha256": "abf21c243b7b133dc13ba5221866c9eabeff1f2f5a6ac127b3f15e6ace8bde33",
+        "assemblies": [
+          {
+            "id": "a0",
+            "members": [
+              "e1"
+            ],
+            "placement": {
+              "id": "r9",
+              "pattern": "linear",
+              "reference": "",
+              "axis": "x"
+            },
+            "orientation": {
+              "id": "r10",
+              "direction": "+z"
+            }
+          }
+        ],
+        "assemblies_sha256": "730ba268b43946b931268243636eaf7d06b6441aeac8250ce032f15d196ebac5",
+        "arrangement_policy_sha256": "4a4bf140b11ad32d852c1161f2d9000e1a4f457c0142990424643c49c2816ca5"
+      },
+      "admission": {
+        "planning_allowed": false,
+        "unsupported": [
+          {
+            "id": "r8",
+            "obligation": "required",
+            "mode": "structure",
+            "basis": "explicit",
+            "reason": "No deterministic adapter implements this requirement."
+          }
+        ],
+        "blocking": [
+          {
+            "id": "r8",
+            "obligation": "required",
+            "mode": "structure",
+            "basis": "explicit",
+            "reason": "No deterministic adapter implements this requirement."
+          }
+        ],
+        "interpretation_correct": "unassessed",
+        "detail": "Registered spatial checks permit planning only; binding and actual geometry must still pass.",
+        "pending_spatial_checks": [],
+        "pending_arrangement_checks": [
+          "r10",
+          "r9"
+        ]
+      },
+      "extraction_seconds": 16.5782317079138
+    }
+  ],
+  "native_generation_goal_passed": false,
+  "elapsed_seconds": 173.1605727499118,
+  "experiment": "assembly-010",
+  "code_freeze": "6cd6068",
+  "charged_and_held_nanos": 202200000,
+  "new_uncertain_reservations": 0,
+  "geometry_executor_unchanged": true,
+  "decision": "Retain group declarations/checks; cross-family generation has not passed. Distinct response-capacity, unsupported-surface and construction-repair failures.",
+  "visual_review": {
+    "cooling-fan-row": "Recognizable row of seven separable fan-like parts; basic shading, disconnected mounting tabs after repair and no meaningful central rotor support established. Failure."
+  },
+  "verification": {
+    "test_executions_passed": 152,
+    "browser_checks_passed": 9,
+    "page_errors": 0
+  },
+  "no_additional_paid_repairs": true
+}

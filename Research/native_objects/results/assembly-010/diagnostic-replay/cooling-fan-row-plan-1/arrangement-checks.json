@@ -1,0 +1,170 @@
+[
+  {
+    "kind": "assembly_arrangement",
+    "assembly_id": "a01",
+    "requirement_id": "r08",
+    "aspect": "placement",
+    "passed": true,
+    "failure_classes": [],
+    "measurement": {
+      "members": [
+        {
+          "part": "frame_center",
+          "port": "frame_center_bore",
+          "relation_passed": true,
+          "feature_geometry_passed": true,
+          "line_error_m": 0.0,
+          "spacing_error_m": 0.0,
+          "passed": true
+        },
+        {
+          "part": "frame_left",
+          "port": "frame_left_bore",
+          "relation_passed": true,
+          "feature_geometry_passed": true,
+          "line_error_m": 0.0,
+          "spacing_error_m": 0.0,
+          "passed": true
+        },
+        {
+          "part": "frame_right",
+          "port": "frame_right_bore",
+          "relation_passed": true,
+          "feature_geometry_passed": true,
+          "line_error_m": 0.0,
+          "spacing_error_m": 0.0,
+          "passed": true
+        }
+      ],
+      "pitch_m": 0.17,
+      "minimum_gap_m": 0.17,
+      "distance_tolerance_m": 0.0085
+    },
+    "scope": "Solved declared feature geometry; interpretation and feature meaning remain unverified."
+  },
+  {
+    "kind": "assembly_arrangement",
+    "assembly_id": "a01",
+    "requirement_id": "r09",
+    "aspect": "orientation",
+    "passed": false,
+    "failure_classes": [
+      "group_orientation"
+    ],
+    "measurement": {
+      "members": [
+        {
+          "part": "frame_center",
+          "port": "frame_center_bore",
+          "axis_alignment": -1.0,
+          "relation_passed": false,
+          "feature_geometry_passed": true,
+          "passed": false
+        },
+        {
+          "part": "frame_left",
+          "port": "frame_left_bore",
+          "axis_alignment": -1.0,
+          "relation_passed": false,
+          "feature_geometry_passed": true,
+          "passed": false
+        },
+        {
+          "part": "frame_right",
+          "port": "frame_right_bore",
+          "axis_alignment": -1.0,
+          "relation_passed": false,
+          "feature_geometry_passed": true,
+          "passed": false
+        }
+      ],
+      "direction": "+z",
+      "minimum_alignment": -1.0
+    },
+    "scope": "Solved declared feature geometry; interpretation and feature meaning remain unverified."
+  },
+  {
+    "kind": "assembly_arrangement",
+    "assembly_id": "a02",
+    "requirement_id": "r10",
+    "aspect": "placement",
+    "passed": true,
+    "failure_classes": [],
+    "measurement": {
+      "members": [
+        {
+          "part": "rotor_center",
+          "port": "rotor_center_axis",
+          "relation_passed": true,
+          "feature_geometry_passed": true,
+          "line_error_m": 0.0,
+          "spacing_error_m": 0.0,
+          "passed": true
+        },
+        {
+          "part": "rotor_left",
+          "port": "rotor_left_axis",
+          "relation_passed": true,
+          "feature_geometry_passed": true,
+          "line_error_m": 0.0,
+          "spacing_error_m": 0.0,
+          "passed": true
+        },
+        {
+          "part": "rotor_right",
+          "port": "rotor_right_axis",
+          "relation_passed": true,
+          "feature_geometry_passed": true,
+          "line_error_m": 0.0,
+          "spacing_error_m": 0.0,
+          "passed": true
+        }
+      ],
+      "pitch_m": 0.17,
+      "minimum_gap_m": 0.17,
+      "distance_tolerance_m": 0.0085
+    },
+    "scope": "Solved declared feature geometry; interpretation and feature meaning remain unverified."
+  },
+  {
+    "kind": "assembly_arrangement",
+    "assembly_id": "a02",
+    "requirement_id": "r11",
+    "aspect": "orientation",
+    "passed": false,
+    "failure_classes": [
+      "group_orientation"
+    ],
+    "measurement": {
+      "members": [
+        {
+          "part": "rotor_center",
+          "port": "rotor_center_axis",
+          "axis_alignment": -1.0,
+          "relation_passed": false,
+          "feature_geometry_passed": true,
+          "passed": false
+        },
+        {
+          "part": "rotor_left",
+          "port": "rotor_left_axis",
+          "axis_alignment": -1.0,
+          "relation_passed": false,
+          "feature_geometry_passed": true,
+          "passed": false
+        },
+        {
+          "part": "rotor_right",
+          "port": "rotor_right_axis",
+          "axis_alignment": -1.0,
+          "relation_passed": false,
+          "feature_geometry_passed": true,
+          "passed": false
+        }
+      ],
+      "direction": "+z",
+      "minimum_alignment": -1.0
+    },
+    "scope": "Solved declared feature geometry; interpretation and feature meaning remain unverified."
+  }
+]

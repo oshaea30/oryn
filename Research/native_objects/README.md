@@ -66,6 +66,22 @@ executor unchanged. That confirmation passed 196 targeted test executions. Addit
 GPU spend. User-authorized shared daily limit $6; aggregate research ceiling $5.
 [Earlier interpretation failures](MEANING_RESULT.md) remain retained.
 
+## Assembly arrangement result
+
+[Assembly 010](ASSEMBLY_RESULT.md) adds explicit placement/orientation decisions for
+repeated groups and measures them in the object frame. The fan and speaker preserve
+the tested group intent. The fan's seven-part geometry still fails: its one repair
+reverses every requested axis and leaves disconnected frames/insufficient overlap.
+The speaker remains blocked on front-face placement; the drone inventory exhausts
+its response allowance. Cross-family generation has **not** passed.
+
+Group decisions, coverage, real-feature checks and binding locks remain useful. Next
+work must address the separate output-capacity, surface-placement and repair failures;
+do not add object recipes, relax checks or declare interpretation generally solved.
+152 targeted test executions and nine browser checks pass. API estimate $0.2022;
+no new uncertain reservations, funding errors or GPU spending. Original failures and
+an unchanged-geometry diagnostic replay are retained.
+
 ## Spatial bridge result
 
 [Spatial 008–009](SPATIAL_RESULT.md) connects typed intent to measured geometry
@@ -76,7 +92,7 @@ missing and one symmetry check fails. The speaker repairs missing bindings, then
 fails housing connectivity. Lamp emission and sharpener paths remain unsupported.
 No general-object or polished-product pass is claimed.
 
-Next: explicit arrangement/axis relationships across repeated component groups,
+That result motivated the assembly-arrangement experiment above,
 tested across object families. Do not repair symmetry alone on the current incomplete
 drone contract. A lossless context correction separately reduces its blocked repair
 input from 15,207 to 13,577 tokens under the unchanged per-call cap; it was not sent.

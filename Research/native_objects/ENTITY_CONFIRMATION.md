@@ -37,3 +37,8 @@ assertion fails because unsupported inferred geometry is retained, report that
 conflict explicitly rather than declaring understanding or geometry solved. After
 this comparison, choose the next step from the observed limitation. Do not repeat
 seeds to search for a passing interpretation.
+
+## Result
+
+Completed; see the [measured confirmation result](MEANING_CONFIRMATION_RESULT.md).
+The frozen rules above remain unchanged.

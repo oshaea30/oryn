@@ -1,0 +1,175 @@
+{
+  "source_request": "Recreate the internal assembly of a JBL Flip 7 exactly, including its battery mounting. Show which details are verified.",
+  "source_sha256": "06e51a228d50f3df92dcc9fad2e091d2dcef129f4d6d79b0f5a4baa045d122cc",
+  "inventory": {
+    "entities": [
+      {
+        "id": "e0",
+        "role": "Enclosure"
+      },
+      {
+        "id": "e1",
+        "role": "Battery"
+      },
+      {
+        "id": "e2",
+        "role": "Battery mount"
+      }
+    ],
+    "requirements": [
+      {
+        "id": "r_enclosure",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "e0",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Recreate the internal assembly of a JBL Flip 7 exactly, including its battery mounting."
+      },
+      {
+        "id": "r_battery",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "e1",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Recreate the internal assembly of a JBL Flip 7 exactly, including its battery mounting."
+      },
+      {
+        "id": "r_mount",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "e2",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Recreate the internal assembly of a JBL Flip 7 exactly, including its battery mounting."
+      },
+      {
+        "id": "r_battery_inside",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "e1",
+        "target": "e0",
+        "predicate": "inside",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Recreate the internal assembly of a JBL Flip 7 exactly, including its battery mounting."
+      },
+      {
+        "id": "r_mount_inside",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "e2",
+        "target": "e0",
+        "predicate": "inside",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Recreate the internal assembly of a JBL Flip 7 exactly, including its battery mounting."
+      },
+      {
+        "id": "r_battery_mount",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "e1",
+        "target": "e2",
+        "predicate": "attached",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Recreate the internal assembly of a JBL Flip 7 exactly, including its battery mounting."
+      },
+      {
+        "id": "r_mount_enclosure",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "e2",
+        "target": "e0",
+        "predicate": "attached",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Recreate the internal assembly of a JBL Flip 7 exactly, including its battery mounting."
+      },
+      {
+        "id": "r_exact_assembly",
+        "obligation": "evidence_required",
+        "kind": "constraint",
+        "subject": "object",
+        "target": "",
+        "predicate": "exact_identity",
+        "value": "Exact JBL Flip 7 internal assembly",
+        "mode": "identity",
+        "basis": "explicit",
+        "quote": "Recreate the internal assembly of a JBL Flip 7 exactly, including its battery mounting."
+      },
+      {
+        "id": "r_exact_mounting",
+        "obligation": "evidence_required",
+        "kind": "constraint",
+        "subject": "e2",
+        "target": "",
+        "predicate": "exact_identity",
+        "value": "Exact JBL Flip 7 battery mounting",
+        "mode": "identity",
+        "basis": "explicit",
+        "quote": "Recreate the internal assembly of a JBL Flip 7 exactly, including its battery mounting."
+      },
+      {
+        "id": "r_verification_status",
+        "obligation": "required",
+        "kind": "behavior",
+        "subject": "object",
+        "target": "",
+        "predicate": "other",
+        "value": "Identify which details are verified",
+        "mode": "behavior",
+        "basis": "explicit",
+        "quote": "Show which details are verified."
+      }
+    ],
+    "exclusions": []
+  },
+  "inventory_sha256": "29d65cc0f1882621c74035d8440941665190fa08bf50abfc729fa8c9815ce24d",
+  "interpretation_version": 2,
+  "extraction_completeness": "unassessed; consistency is not natural-language entailment",
+  "source_grounding": {
+    "units": [
+      {
+        "id": "s0",
+        "start": 0,
+        "end": 87,
+        "text": "Recreate the internal assembly of a JBL Flip 7 exactly, including its battery mounting."
+      },
+      {
+        "id": "s1",
+        "start": 88,
+        "end": 120,
+        "text": "Show which details are verified."
+      }
+    ],
+    "bindings": {
+      "r_enclosure": "s0",
+      "r_battery": "s0",
+      "r_mount": "s0",
+      "r_battery_inside": "s0",
+      "r_mount_inside": "s0",
+      "r_battery_mount": "s0",
+      "r_mount_enclosure": "s0",
+      "r_exact_assembly": "s0",
+      "r_exact_mounting": "s0",
+      "r_verification_status": "s1"
+    }
+  },
+  "source_grounding_sha256": "a78035e30a6df34db55e54f7c335e189d08d29b469213c149c683a0ee6a09399"
+}

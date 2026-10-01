@@ -1,0 +1,65 @@
+{
+  "planning_allowed": false,
+  "unsupported": [
+    {
+      "id": "r8",
+      "obligation": "required",
+      "mode": "structure",
+      "basis": "explicit",
+      "reason": "No deterministic adapter implements this requirement."
+    },
+    {
+      "id": "r12",
+      "obligation": "required",
+      "mode": "behavior",
+      "basis": "explicit",
+      "reason": "Runtime capability is not implemented: animate"
+    },
+    {
+      "id": "r13",
+      "obligation": "required",
+      "mode": "behavior",
+      "basis": "explicit",
+      "reason": "No deterministic adapter implements this requirement."
+    },
+    {
+      "id": "r14",
+      "obligation": "required",
+      "mode": "behavior",
+      "basis": "explicit",
+      "reason": "No deterministic adapter implements this requirement."
+    }
+  ],
+  "blocking": [
+    {
+      "id": "r8",
+      "obligation": "required",
+      "mode": "structure",
+      "basis": "explicit",
+      "reason": "No deterministic adapter implements this requirement."
+    },
+    {
+      "id": "r12",
+      "obligation": "required",
+      "mode": "behavior",
+      "basis": "explicit",
+      "reason": "Runtime capability is not implemented: animate"
+    },
+    {
+      "id": "r13",
+      "obligation": "required",
+      "mode": "behavior",
+      "basis": "explicit",
+      "reason": "No deterministic adapter implements this requirement."
+    },
+    {
+      "id": "r14",
+      "obligation": "required",
+      "mode": "behavior",
+      "basis": "explicit",
+      "reason": "No deterministic adapter implements this requirement."
+    }
+  ],
+  "interpretation_correct": "unassessed",
+  "detail": "Registry admission only; planning admission is not fulfillment."
+}

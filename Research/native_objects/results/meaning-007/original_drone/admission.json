@@ -1,0 +1,51 @@
+{
+  "planning_allowed": false,
+  "unsupported": [
+    {
+      "id": "r18",
+      "obligation": "required",
+      "mode": "structure",
+      "basis": "inferred",
+      "reason": "No deterministic adapter implements this requirement."
+    },
+    {
+      "id": "r19",
+      "obligation": "required",
+      "mode": "structure",
+      "basis": "inferred",
+      "reason": "No deterministic adapter implements this requirement."
+    },
+    {
+      "id": "r20",
+      "obligation": "required",
+      "mode": "structure",
+      "basis": "inferred",
+      "reason": "No deterministic adapter implements this requirement."
+    }
+  ],
+  "blocking": [
+    {
+      "id": "r18",
+      "obligation": "required",
+      "mode": "structure",
+      "basis": "inferred",
+      "reason": "No deterministic adapter implements this requirement."
+    },
+    {
+      "id": "r19",
+      "obligation": "required",
+      "mode": "structure",
+      "basis": "inferred",
+      "reason": "No deterministic adapter implements this requirement."
+    },
+    {
+      "id": "r20",
+      "obligation": "required",
+      "mode": "structure",
+      "basis": "inferred",
+      "reason": "No deterministic adapter implements this requirement."
+    }
+  ],
+  "interpretation_correct": "unassessed",
+  "detail": "Registry admission only; planning admission is not fulfillment."
+}

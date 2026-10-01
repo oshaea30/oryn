@@ -135,16 +135,22 @@ Coverage does not prove correct extraction: conceptual appearance, implied struc
 and engineering function still need better distinctions. Keep geometry frozen;
 no polished-object or generalization success is claimed.
 
-The [meaning experiment](Research/native_objects/MEANING_RESULT.md) then separates
-appearance, static structure, demonstrated behavior and evidence-backed claims.
-Four of seven cases preserve the expected distinctions; motion has a capability
-shape error and drone/controller invent source quotations. Source-segment references
-and canonical capability types now address those interface failures in local tests.
-The paired live follow-up is incomplete at its output ceiling, so confirmation
-remains pending. Cost $0.129625; geometry remains unchanged. The next confirmation
-uses separate responses for the three failed cases within a $0.15 batch. The user
-authorized tripling the shared daily API limit to $6 on 2026-10-01; the $5 aggregate
-research cap remains in force. See the [confirmation protocol](Research/native_objects/SOURCE_CONFIRMATION.md).
+The [meaning experiment](Research/native_objects/MEANING_RESULT.md) exposed
+fabricated references and ambiguous capability output. The follow-up
+[006–007 confirmation](Research/native_objects/MEANING_CONFIRMATION_RESULT.md)
+uses application-assigned source/component IDs and explicit capability meanings.
+All seven frozen cases produce complete valid inventories meeting the original
+limited assertions. The lamp's seed remains suspended inside; static controls,
+motion and verified claims remain distinct. The corrected inventory enters the
+existing planning gate, with unchanged live lamp/drone outputs blocking unsupported
+work before planning. 196 targeted test executions pass; geometry remains unchanged.
+
+This does not prove lossless interpretation or general object generation. Spatial
+intent survives but lacks checkable adapters, and static-pose representation still
+varies between requests. The next bounded step is a cross-object spatial-intent
+bridge to the existing planner/executor, without hiding unsupported requirements.
+Additional API estimate $0.152625; zero new uncertain reservations. The user tripled
+the shared daily API cap to $6 on 2026-10-01; the $5 aggregate research cap remains.
 
 Generation research is the active track. The product remains stable; answering,
 voice and motion-inference expansion are paused. Research output does not enter

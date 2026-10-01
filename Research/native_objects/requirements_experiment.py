@@ -113,7 +113,11 @@ def execute(items,output,model,renderer=prior.render,case_ids=CASES):
         try:
             raw,bill=model(case,'extract',0,{'original_request':item['request'],'proposed_role_groups':[c['name'] for c in p['components']]},folder)
             prior.write(folder/'inventory.json',raw)
-            validator=(meaning.validate_source_output if any('source' in r for r in raw.get('requirements',[])) else meaning.validate) if 'exclusions' in raw else intent.validate_inventory
+            validator=intent.validate_inventory
+            if 'exclusions' in raw:
+                validator=meaning.validate
+                if any('source' in r for r in raw.get('requirements',[])):
+                    validator=meaning.validate_source_output if 'entities' in raw else meaning.validate_bound_source_output
             contract=validator(raw,item['request'],[c['name'] for c in p['components']]);prior.write(folder/'contract.json',contract)
             state.update(status='requirements_ready',extraction_billing=bill,contract=contract)
             if contract.get('interpretation_version'):

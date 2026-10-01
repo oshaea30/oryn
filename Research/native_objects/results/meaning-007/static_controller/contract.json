@@ -1,0 +1,250 @@
+{
+  "source_request": "Show me a generic video game controller I can take apart into its main components. Keep its sticks and buttons static.",
+  "source_sha256": "d97a85a31aeb19fe5f7b758a738f23915485c80b8d4e3270815fbfa5b7748243",
+  "inventory": {
+    "entities": [
+      {
+        "id": "e0",
+        "role": "Shell"
+      },
+      {
+        "id": "e1",
+        "role": "Buttons"
+      },
+      {
+        "id": "e2",
+        "role": "Thumbsticks"
+      },
+      {
+        "id": "e3",
+        "role": "Circuit board"
+      },
+      {
+        "id": "e4",
+        "role": "Battery"
+      }
+    ],
+    "requirements": [
+      {
+        "id": "r0",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "e0",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Show me a generic video game controller I can take apart into its main components."
+      },
+      {
+        "id": "r1",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "e1",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "mode": "structure",
+        "basis": "explicit",
+        "quote": "Keep its sticks and buttons static."
+      },
+      {
+        "id": "r2",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "e2",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "mode": "structure",
+        "basis": "explicit",
+        "quote": "Keep its sticks and buttons static."
+      },
+      {
+        "id": "r3",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "e3",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Show me a generic video game controller I can take apart into its main components."
+      },
+      {
+        "id": "r4",
+        "obligation": "design_choice",
+        "kind": "entity",
+        "subject": "e4",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "mode": "structure",
+        "basis": "design_choice",
+        "quote": ""
+      },
+      {
+        "id": "r5",
+        "obligation": "required",
+        "kind": "visual",
+        "subject": "object",
+        "target": "",
+        "predicate": "appearance",
+        "value": "generic video game controller",
+        "mode": "appearance",
+        "basis": "explicit",
+        "quote": "Show me a generic video game controller I can take apart into its main components."
+      },
+      {
+        "id": "r6",
+        "obligation": "required",
+        "kind": "behavior",
+        "subject": "object",
+        "target": "",
+        "predicate": "capability",
+        "value": "inspect",
+        "mode": "behavior",
+        "basis": "inferred",
+        "quote": "Show me a generic video game controller I can take apart into its main components."
+      },
+      {
+        "id": "r7",
+        "obligation": "required",
+        "kind": "behavior",
+        "subject": "object",
+        "target": "",
+        "predicate": "capability",
+        "value": "geometric_explode",
+        "mode": "behavior",
+        "basis": "explicit",
+        "quote": "Show me a generic video game controller I can take apart into its main components."
+      },
+      {
+        "id": "r8",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "e1",
+        "target": "e0",
+        "predicate": "attached",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Show me a generic video game controller I can take apart into its main components."
+      },
+      {
+        "id": "r9",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "e2",
+        "target": "e0",
+        "predicate": "attached",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Show me a generic video game controller I can take apart into its main components."
+      },
+      {
+        "id": "r10",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "e3",
+        "target": "e0",
+        "predicate": "inside",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Show me a generic video game controller I can take apart into its main components."
+      },
+      {
+        "id": "r11",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "e1",
+        "target": "e3",
+        "predicate": "connected",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Show me a generic video game controller I can take apart into its main components."
+      },
+      {
+        "id": "r12",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "e2",
+        "target": "e3",
+        "predicate": "connected",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Show me a generic video game controller I can take apart into its main components."
+      },
+      {
+        "id": "r13",
+        "obligation": "design_choice",
+        "kind": "relation",
+        "subject": "e4",
+        "target": "e0",
+        "predicate": "inside",
+        "value": "",
+        "mode": "structure",
+        "basis": "design_choice",
+        "quote": ""
+      }
+    ],
+    "exclusions": [
+      {
+        "id": "x0",
+        "subject": "e1",
+        "domain": "motion",
+        "quote": "Keep its sticks and buttons static."
+      },
+      {
+        "id": "x1",
+        "subject": "e2",
+        "domain": "motion",
+        "quote": "Keep its sticks and buttons static."
+      }
+    ]
+  },
+  "inventory_sha256": "764adce9d339d8cf7b1de86f216a7a606de7eb6b57d77acefb86e15b2f6c892d",
+  "interpretation_version": 2,
+  "extraction_completeness": "unassessed; consistency is not natural-language entailment",
+  "source_grounding": {
+    "units": [
+      {
+        "id": "s0",
+        "start": 0,
+        "end": 82,
+        "text": "Show me a generic video game controller I can take apart into its main components."
+      },
+      {
+        "id": "s1",
+        "start": 83,
+        "end": 118,
+        "text": "Keep its sticks and buttons static."
+      }
+    ],
+    "bindings": {
+      "r0": "s0",
+      "r1": "s1",
+      "r2": "s1",
+      "r3": "s0",
+      "r4": "",
+      "r5": "s0",
+      "r6": "s0",
+      "r7": "s0",
+      "r8": "s0",
+      "r9": "s0",
+      "r10": "s0",
+      "r11": "s0",
+      "r12": "s0",
+      "r13": "",
+      "x0": "s1",
+      "x1": "s1"
+    }
+  },
+  "source_grounding_sha256": "460cc71bf21189bed81cc7fffb87e675fcf331090efb753f89958301879708f1"
+}

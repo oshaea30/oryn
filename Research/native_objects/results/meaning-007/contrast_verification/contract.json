@@ -1,0 +1,219 @@
+{
+  "source_request": "Create a visual concept of a small sphere hanging from a cord inside an open ring on a base. Verify that the cord safely supports a 0.5 kg sphere. Keep it static.",
+  "source_sha256": "6a93c8a46e3853eb087c066e671823e34847c452f8906ff7f6d8998562168819",
+  "inventory": {
+    "entities": [
+      {
+        "id": "e0",
+        "role": "Open ring"
+      },
+      {
+        "id": "e1",
+        "role": "Sphere"
+      },
+      {
+        "id": "e2",
+        "role": "Suspension cord"
+      },
+      {
+        "id": "e3",
+        "role": "Base"
+      }
+    ],
+    "requirements": [
+      {
+        "id": "r0",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "e0",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "mode": "structure",
+        "basis": "explicit",
+        "quote": "Create a visual concept of a small sphere hanging from a cord inside an open ring on a base."
+      },
+      {
+        "id": "r1",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "e1",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "mode": "structure",
+        "basis": "explicit",
+        "quote": "Create a visual concept of a small sphere hanging from a cord inside an open ring on a base."
+      },
+      {
+        "id": "r2",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "e2",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "mode": "structure",
+        "basis": "explicit",
+        "quote": "Create a visual concept of a small sphere hanging from a cord inside an open ring on a base."
+      },
+      {
+        "id": "r3",
+        "obligation": "required",
+        "kind": "entity",
+        "subject": "e3",
+        "target": "",
+        "predicate": "exists",
+        "value": "",
+        "mode": "structure",
+        "basis": "explicit",
+        "quote": "Create a visual concept of a small sphere hanging from a cord inside an open ring on a base."
+      },
+      {
+        "id": "r4",
+        "obligation": "required",
+        "kind": "visual",
+        "subject": "e0",
+        "target": "",
+        "predicate": "appearance",
+        "value": "open ring",
+        "mode": "appearance",
+        "basis": "explicit",
+        "quote": "Create a visual concept of a small sphere hanging from a cord inside an open ring on a base."
+      },
+      {
+        "id": "r5",
+        "obligation": "required",
+        "kind": "visual",
+        "subject": "e1",
+        "target": "",
+        "predicate": "appearance",
+        "value": "small sphere hanging from cord",
+        "mode": "appearance",
+        "basis": "explicit",
+        "quote": "Create a visual concept of a small sphere hanging from a cord inside an open ring on a base."
+      },
+      {
+        "id": "r6",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "e1",
+        "target": "e0",
+        "predicate": "inside",
+        "value": "",
+        "mode": "structure",
+        "basis": "explicit",
+        "quote": "Create a visual concept of a small sphere hanging from a cord inside an open ring on a base."
+      },
+      {
+        "id": "r7",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "e1",
+        "target": "e2",
+        "predicate": "attached",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Create a visual concept of a small sphere hanging from a cord inside an open ring on a base."
+      },
+      {
+        "id": "r8",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "e2",
+        "target": "e0",
+        "predicate": "attached",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Create a visual concept of a small sphere hanging from a cord inside an open ring on a base."
+      },
+      {
+        "id": "r9",
+        "obligation": "required",
+        "kind": "relation",
+        "subject": "e0",
+        "target": "e3",
+        "predicate": "attached",
+        "value": "",
+        "mode": "structure",
+        "basis": "inferred",
+        "quote": "Create a visual concept of a small sphere hanging from a cord inside an open ring on a base."
+      },
+      {
+        "id": "r10",
+        "obligation": "evidence_required",
+        "kind": "constraint",
+        "subject": "e2",
+        "target": "",
+        "predicate": "other",
+        "value": "Safely supports a 0.5 kg sphere",
+        "mode": "physical_verification",
+        "basis": "explicit",
+        "quote": "Verify that the cord safely supports a 0.5 kg sphere."
+      },
+      {
+        "id": "r11",
+        "obligation": "required",
+        "kind": "behavior",
+        "subject": "object",
+        "target": "",
+        "predicate": "capability",
+        "value": "inspect",
+        "mode": "behavior",
+        "basis": "inferred",
+        "quote": "Create a visual concept of a small sphere hanging from a cord inside an open ring on a base."
+      }
+    ],
+    "exclusions": [
+      {
+        "id": "x0",
+        "subject": "object",
+        "domain": "motion",
+        "quote": "Keep it static."
+      }
+    ]
+  },
+  "inventory_sha256": "408fd0e1281b1da650018199dccae721abc8aa47df1dc4ba81dd54b5cdf416dc",
+  "interpretation_version": 2,
+  "extraction_completeness": "unassessed; consistency is not natural-language entailment",
+  "source_grounding": {
+    "units": [
+      {
+        "id": "s0",
+        "start": 0,
+        "end": 92,
+        "text": "Create a visual concept of a small sphere hanging from a cord inside an open ring on a base."
+      },
+      {
+        "id": "s1",
+        "start": 93,
+        "end": 146,
+        "text": "Verify that the cord safely supports a 0.5 kg sphere."
+      },
+      {
+        "id": "s2",
+        "start": 147,
+        "end": 162,
+        "text": "Keep it static."
+      }
+    ],
+    "bindings": {
+      "r0": "s0",
+      "r1": "s0",
+      "r2": "s0",
+      "r3": "s0",
+      "r4": "s0",
+      "r5": "s0",
+      "r6": "s0",
+      "r7": "s0",
+      "r8": "s0",
+      "r9": "s0",
+      "r10": "s1",
+      "r11": "s0",
+      "x0": "s2"
+    }
+  },
+  "source_grounding_sha256": "fb5ca67d4b25af2dd1ec26d683faa35bf4a4758bf8762c4c42e539371d255069"
+}

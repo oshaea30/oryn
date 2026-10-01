@@ -1,0 +1,799 @@
+{
+  "cases": [
+    {
+      "case": "creative-concept",
+      "request": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside. Let me inspect its main pieces; it does not need to be a buildable electrical product.",
+      "attempts": [],
+      "geometry_executed": false,
+      "status": "unsupported_before_planning",
+      "extraction_billing": {
+        "replayed": true,
+        "new_cost_nanos": 0,
+        "original_operation_id": "714df21522aa13d2024eef50c387e544"
+      },
+      "contract": {
+        "source_request": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside. Let me inspect its main pieces; it does not need to be a buildable electrical product.",
+        "source_sha256": "5532a73f6e85abad2f8cf8e507e36c075a21b34ce6b6bc69122e0266309a6c03",
+        "inventory": {
+          "entities": [
+            {
+              "id": "e0",
+              "role": "Curled leaf shade"
+            },
+            {
+              "id": "e1",
+              "role": "Glowing seed"
+            },
+            {
+              "id": "e2",
+              "role": "Seed suspension strand"
+            },
+            {
+              "id": "e3",
+              "role": "Stem support"
+            },
+            {
+              "id": "e4",
+              "role": "Desk base"
+            }
+          ],
+          "requirements": [
+            {
+              "id": "r0",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e0",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "explicit",
+              "quote": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside."
+            },
+            {
+              "id": "r1",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e1",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "explicit",
+              "quote": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside."
+            },
+            {
+              "id": "r2",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e2",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside."
+            },
+            {
+              "id": "r3",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e3",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside."
+            },
+            {
+              "id": "r4",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e4",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside."
+            },
+            {
+              "id": "r5",
+              "obligation": "required",
+              "kind": "visual",
+              "subject": "e0",
+              "target": "",
+              "predicate": "appearance",
+              "value": "Curled leaf shade",
+              "mode": "appearance",
+              "basis": "explicit",
+              "quote": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside."
+            },
+            {
+              "id": "r6",
+              "obligation": "required",
+              "kind": "visual",
+              "subject": "e1",
+              "target": "",
+              "predicate": "appearance",
+              "value": "Glowing seed",
+              "mode": "appearance",
+              "basis": "explicit",
+              "quote": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside."
+            },
+            {
+              "id": "r7",
+              "obligation": "required",
+              "kind": "visual",
+              "subject": "e2",
+              "target": "",
+              "predicate": "appearance",
+              "value": "Seed suspension strand",
+              "mode": "appearance",
+              "basis": "inferred",
+              "quote": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside."
+            },
+            {
+              "id": "r8",
+              "obligation": "required",
+              "kind": "visual",
+              "subject": "e3",
+              "target": "",
+              "predicate": "appearance",
+              "value": "Stem support",
+              "mode": "appearance",
+              "basis": "inferred",
+              "quote": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside."
+            },
+            {
+              "id": "r9",
+              "obligation": "required",
+              "kind": "visual",
+              "subject": "e4",
+              "target": "",
+              "predicate": "appearance",
+              "value": "Desk base",
+              "mode": "appearance",
+              "basis": "inferred",
+              "quote": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside."
+            },
+            {
+              "id": "r10",
+              "obligation": "required",
+              "kind": "visual",
+              "subject": "e1",
+              "target": "",
+              "predicate": "appearance",
+              "value": "Suspended pose",
+              "mode": "appearance",
+              "basis": "explicit",
+              "quote": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside."
+            },
+            {
+              "id": "r11",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e1",
+              "target": "e0",
+              "predicate": "inside",
+              "value": "",
+              "mode": "structure",
+              "basis": "explicit",
+              "quote": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside."
+            },
+            {
+              "id": "r12",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e2",
+              "target": "e1",
+              "predicate": "attached",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside."
+            },
+            {
+              "id": "r13",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e2",
+              "target": "e0",
+              "predicate": "attached",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside."
+            },
+            {
+              "id": "r14",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e3",
+              "target": "e0",
+              "predicate": "attached",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside."
+            },
+            {
+              "id": "r15",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e3",
+              "target": "e4",
+              "predicate": "attached",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside."
+            },
+            {
+              "id": "r16",
+              "obligation": "required",
+              "kind": "behavior",
+              "subject": "e1",
+              "target": "",
+              "predicate": "capability",
+              "value": "emission",
+              "mode": "appearance",
+              "basis": "explicit",
+              "quote": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside."
+            },
+            {
+              "id": "r17",
+              "obligation": "required",
+              "kind": "behavior",
+              "subject": "object",
+              "target": "",
+              "predicate": "capability",
+              "value": "inspect",
+              "mode": "behavior",
+              "basis": "explicit",
+              "quote": "Let me inspect its main pieces;"
+            }
+          ],
+          "exclusions": [
+            {
+              "id": "x0",
+              "subject": "object",
+              "domain": "manufacturing",
+              "quote": "it does not need to be a buildable electrical product."
+            },
+            {
+              "id": "x1",
+              "subject": "object",
+              "domain": "physical_verification",
+              "quote": "it does not need to be a buildable electrical product."
+            }
+          ]
+        },
+        "inventory_sha256": "91f427dfd720cb6cd287617264a662a18d5425aff84ee128519225f0317a26a8",
+        "interpretation_version": 2,
+        "extraction_completeness": "unassessed; consistency is not natural-language entailment",
+        "source_grounding": {
+          "units": [
+            {
+              "id": "s0",
+              "start": 0,
+              "end": 83,
+              "text": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside."
+            },
+            {
+              "id": "s1",
+              "start": 84,
+              "end": 115,
+              "text": "Let me inspect its main pieces;"
+            },
+            {
+              "id": "s2",
+              "start": 116,
+              "end": 170,
+              "text": "it does not need to be a buildable electrical product."
+            }
+          ],
+          "bindings": {
+            "r0": "s0",
+            "r1": "s0",
+            "r2": "s0",
+            "r3": "s0",
+            "r4": "s0",
+            "r5": "s0",
+            "r6": "s0",
+            "r7": "s0",
+            "r8": "s0",
+            "r9": "s0",
+            "r10": "s0",
+            "r11": "s0",
+            "r12": "s0",
+            "r13": "s0",
+            "r14": "s0",
+            "r15": "s0",
+            "r16": "s0",
+            "r17": "s1",
+            "x0": "s2",
+            "x1": "s2"
+          }
+        },
+        "source_grounding_sha256": "a9057763a232406a3858421cfd8011ab3c13a179c213091fdf565e71b76198ac"
+      },
+      "admission": {
+        "planning_allowed": false,
+        "unsupported": [
+          {
+            "id": "r16",
+            "obligation": "required",
+            "mode": "appearance",
+            "basis": "explicit",
+            "reason": "Runtime capability is not implemented: emission"
+          }
+        ],
+        "blocking": [
+          {
+            "id": "r16",
+            "obligation": "required",
+            "mode": "appearance",
+            "basis": "explicit",
+            "reason": "Runtime capability is not implemented: emission"
+          }
+        ],
+        "interpretation_correct": "unassessed",
+        "detail": "Registry admission only; planning admission is not fulfillment."
+      },
+      "extraction_seconds": 0.0015532500110566616
+    },
+    {
+      "case": "generic-drone",
+      "request": "Show me a generic quadcopter drone I can explore and take apart into its major components.",
+      "attempts": [],
+      "geometry_executed": false,
+      "status": "unsupported_before_planning",
+      "extraction_billing": {
+        "replayed": true,
+        "new_cost_nanos": 0,
+        "original_operation_id": "ffbda17ff70f13c6ef6a9893db1802b2"
+      },
+      "contract": {
+        "source_request": "Show me a generic quadcopter drone I can explore and take apart into its major components.",
+        "source_sha256": "758052f52045deda757beff0b2d5b27eab1c171dad7dee0d1b320fad2ab0c99a",
+        "inventory": {
+          "entities": [
+            {
+              "id": "e0",
+              "role": "Central frame"
+            },
+            {
+              "id": "e1",
+              "role": "Four arms"
+            },
+            {
+              "id": "e2",
+              "role": "Four motors"
+            },
+            {
+              "id": "e3",
+              "role": "Four propellers"
+            },
+            {
+              "id": "e4",
+              "role": "Battery"
+            },
+            {
+              "id": "e5",
+              "role": "Flight controller"
+            },
+            {
+              "id": "e6",
+              "role": "Electronic speed controllers"
+            }
+          ],
+          "requirements": [
+            {
+              "id": "r0",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e0",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r1",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e1",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r2",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e2",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r3",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e3",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r4",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e4",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r5",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e5",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r6",
+              "obligation": "required",
+              "kind": "entity",
+              "subject": "e6",
+              "target": "",
+              "predicate": "exists",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r7",
+              "obligation": "required",
+              "kind": "constraint",
+              "subject": "e1",
+              "target": "",
+              "predicate": "count",
+              "value": "4",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r8",
+              "obligation": "required",
+              "kind": "constraint",
+              "subject": "e2",
+              "target": "",
+              "predicate": "count",
+              "value": "4",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r9",
+              "obligation": "required",
+              "kind": "constraint",
+              "subject": "e3",
+              "target": "",
+              "predicate": "count",
+              "value": "4",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r10",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e1",
+              "target": "e0",
+              "predicate": "attached",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r11",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e2",
+              "target": "e1",
+              "predicate": "attached",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r12",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e3",
+              "target": "e2",
+              "predicate": "attached",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r13",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e4",
+              "target": "e0",
+              "predicate": "attached",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r14",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e5",
+              "target": "e0",
+              "predicate": "attached",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r15",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e6",
+              "target": "e2",
+              "predicate": "connected",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r16",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e6",
+              "target": "e5",
+              "predicate": "connected",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r17",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e4",
+              "target": "e6",
+              "predicate": "connected",
+              "value": "",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r18",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e1",
+              "target": "",
+              "predicate": "other",
+              "value": "Arms extend outward around the central frame",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r19",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e2",
+              "target": "",
+              "predicate": "other",
+              "value": "One motor near each arm's outer end",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r20",
+              "obligation": "required",
+              "kind": "relation",
+              "subject": "e3",
+              "target": "",
+              "predicate": "other",
+              "value": "One propeller aligned with each motor axis",
+              "mode": "structure",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r21",
+              "obligation": "required",
+              "kind": "visual",
+              "subject": "object",
+              "target": "",
+              "predicate": "appearance",
+              "value": "Generic quadcopter drone",
+              "mode": "appearance",
+              "basis": "explicit",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r22",
+              "obligation": "required",
+              "kind": "behavior",
+              "subject": "object",
+              "target": "",
+              "predicate": "capability",
+              "value": "inspect",
+              "mode": "behavior",
+              "basis": "explicit",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r23",
+              "obligation": "required",
+              "kind": "behavior",
+              "subject": "object",
+              "target": "",
+              "predicate": "capability",
+              "value": "geometric_explode",
+              "mode": "behavior",
+              "basis": "explicit",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            },
+            {
+              "id": "r24",
+              "obligation": "required",
+              "kind": "behavior",
+              "subject": "object",
+              "target": "",
+              "predicate": "capability",
+              "value": "reassemble",
+              "mode": "behavior",
+              "basis": "inferred",
+              "quote": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            }
+          ],
+          "exclusions": []
+        },
+        "inventory_sha256": "0b06c97802322831bc80cd63c15d837e3ad017ae71a63741aaa572bd33f8145b",
+        "interpretation_version": 2,
+        "extraction_completeness": "unassessed; consistency is not natural-language entailment",
+        "source_grounding": {
+          "units": [
+            {
+              "id": "s0",
+              "start": 0,
+              "end": 90,
+              "text": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+            }
+          ],
+          "bindings": {
+            "r0": "s0",
+            "r1": "s0",
+            "r2": "s0",
+            "r3": "s0",
+            "r4": "s0",
+            "r5": "s0",
+            "r6": "s0",
+            "r7": "s0",
+            "r8": "s0",
+            "r9": "s0",
+            "r10": "s0",
+            "r11": "s0",
+            "r12": "s0",
+            "r13": "s0",
+            "r14": "s0",
+            "r15": "s0",
+            "r16": "s0",
+            "r17": "s0",
+            "r18": "s0",
+            "r19": "s0",
+            "r20": "s0",
+            "r21": "s0",
+            "r22": "s0",
+            "r23": "s0",
+            "r24": "s0"
+          }
+        },
+        "source_grounding_sha256": "2a5f1d869ad434c76485ec228ed452914d32b8931508e12e8e6b3e7b4ba76d6e"
+      },
+      "admission": {
+        "planning_allowed": false,
+        "unsupported": [
+          {
+            "id": "r18",
+            "obligation": "required",
+            "mode": "structure",
+            "basis": "inferred",
+            "reason": "No deterministic adapter implements this requirement."
+          },
+          {
+            "id": "r19",
+            "obligation": "required",
+            "mode": "structure",
+            "basis": "inferred",
+            "reason": "No deterministic adapter implements this requirement."
+          },
+          {
+            "id": "r20",
+            "obligation": "required",
+            "mode": "structure",
+            "basis": "inferred",
+            "reason": "No deterministic adapter implements this requirement."
+          }
+        ],
+        "blocking": [
+          {
+            "id": "r18",
+            "obligation": "required",
+            "mode": "structure",
+            "basis": "inferred",
+            "reason": "No deterministic adapter implements this requirement."
+          },
+          {
+            "id": "r19",
+            "obligation": "required",
+            "mode": "structure",
+            "basis": "inferred",
+            "reason": "No deterministic adapter implements this requirement."
+          },
+          {
+            "id": "r20",
+            "obligation": "required",
+            "mode": "structure",
+            "basis": "inferred",
+            "reason": "No deterministic adapter implements this requirement."
+          }
+        ],
+        "interpretation_correct": "unassessed",
+        "detail": "Registry admission only; planning admission is not fulfillment."
+      },
+      "extraction_seconds": 0.001723624998703599
+    },
+    {
+      "case": "exact-product",
+      "status": "blocked_evidence",
+      "geometry_executed": false
+    }
+  ],
+  "native_generation_goal_passed": false,
+  "elapsed_seconds": 0.0041773749981075525
+}

@@ -1,0 +1,125 @@
+{
+  "requirements": [
+    {
+      "id": "r_enclosure",
+      "obligation": "required",
+      "kind": "entity",
+      "subject": "e0",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "mode": "structure",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r_battery",
+      "obligation": "required",
+      "kind": "entity",
+      "subject": "e1",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "mode": "structure",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r_mount",
+      "obligation": "required",
+      "kind": "entity",
+      "subject": "e2",
+      "target": "",
+      "predicate": "exists",
+      "value": "",
+      "mode": "structure",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r_battery_inside",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "e1",
+      "target": "e0",
+      "predicate": "inside",
+      "value": "",
+      "mode": "structure",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r_mount_inside",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "e2",
+      "target": "e0",
+      "predicate": "inside",
+      "value": "",
+      "mode": "structure",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r_battery_mount",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "e1",
+      "target": "e2",
+      "predicate": "attached",
+      "value": "",
+      "mode": "structure",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r_mount_enclosure",
+      "obligation": "required",
+      "kind": "relation",
+      "subject": "e2",
+      "target": "e0",
+      "predicate": "attached",
+      "value": "",
+      "mode": "structure",
+      "basis": "inferred",
+      "source": "s0"
+    },
+    {
+      "id": "r_exact_assembly",
+      "obligation": "evidence_required",
+      "kind": "constraint",
+      "subject": "object",
+      "target": "",
+      "predicate": "exact_identity",
+      "value": "Exact JBL Flip 7 internal assembly",
+      "mode": "identity",
+      "basis": "explicit",
+      "source": "s0"
+    },
+    {
+      "id": "r_exact_mounting",
+      "obligation": "evidence_required",
+      "kind": "constraint",
+      "subject": "e2",
+      "target": "",
+      "predicate": "exact_identity",
+      "value": "Exact JBL Flip 7 battery mounting",
+      "mode": "identity",
+      "basis": "explicit",
+      "source": "s0"
+    },
+    {
+      "id": "r_verification_status",
+      "obligation": "required",
+      "kind": "behavior",
+      "subject": "object",
+      "target": "",
+      "predicate": "other",
+      "value": "Identify which details are verified",
+      "mode": "behavior",
+      "basis": "explicit",
+      "source": "s1"
+    }
+  ],
+  "exclusions": []
+}

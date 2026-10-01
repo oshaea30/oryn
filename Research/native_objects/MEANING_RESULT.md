@@ -95,3 +95,7 @@ The user has now authorized tripling the shared daily limit to $6. The historica
 005 costs and failures above remain unchanged. Three separate confirmation calls
 are authorized under a new $0.15 bounded batch and the same $5 aggregate research
 cap; see [Meaning 006](SOURCE_CONFIRMATION.md).
+
+The subsequent [006–007 result](MEANING_CONFIRMATION_RESULT.md) now confirms the
+reference correction on all seven frozen cases, with the semantic and geometry
+limitations documented separately.

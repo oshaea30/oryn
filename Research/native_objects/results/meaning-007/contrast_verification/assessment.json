@@ -1,0 +1,42 @@
+{
+  "predeclared_checks_passed": true,
+  "checks": [
+    {
+      "kind": "required_interpretation",
+      "selector": {
+        "mode": "physical_verification",
+        "obligation": "evidence_required"
+      },
+      "passed": true
+    },
+    {
+      "kind": "required_interpretation",
+      "selector": {
+        "predicate": "inside",
+        "subject_role": "Sphere",
+        "target_role": "Open ring"
+      },
+      "passed": true
+    },
+    {
+      "kind": "forbidden_interpretation",
+      "selector": {
+        "predicate": "capability",
+        "value": "animate"
+      },
+      "passed": true
+    },
+    {
+      "kind": "waiver_preserved",
+      "domain": "motion",
+      "passed": true
+    },
+    {
+      "kind": "expected_admission",
+      "expected": false,
+      "passed": true
+    }
+  ],
+  "meaning_fully_correct": "unassessed",
+  "scope": "Limited benchmark checks plus separate source review, not a semantic proof."
+}

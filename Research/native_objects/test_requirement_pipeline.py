@@ -26,6 +26,41 @@ class RequirementSpendingTests(ConnectionSpendingTests):
 class PipelineTests(unittest.TestCase):
     def setUp(self):
         self.temp=tempfile.TemporaryDirectory();self.addCleanup(self.temp.cleanup);self.folder=Path(self.temp.name)
+    def bound_inventory(self):
+        raw=inventory()['inventory'];mapping={'host':'e0','child':'e1','':'','object':'object'}
+        for r in raw['requirements']:
+            r['subject']=mapping[r['subject']];r['target']=mapping[r['target']]
+            r.pop('quote');r.update(source='s0',mode='structure',basis='inferred')
+        return {'requirements':raw['requirements'],'exclusions':[]}
+
+    def test_bound_catalog_preserved_from_extraction_to_plan_and_geometry(self):
+        raw=self.bound_inventory();frozen=copy.deepcopy(raw)
+        contract=run.meaning.validate_bound_source_output(raw,REQUEST,['host','child']);calls=[]
+        def model(case,stage,attempt,context,folder):
+            calls.append(stage)
+            if stage=='extract':return raw,{}
+            self.assertEqual(context['requirements'],contract['inventory'])
+            return run.compact.pack(proposal(),contract,bindings()),{}
+        case=run.CASES[0]
+        states=run.execute(self.items(),self.folder,model,renderer=lambda _:None,case_ids=(case,))
+        self.assertEqual(calls,['extract','plan']);self.assertEqual(raw,frozen)
+        self.assertTrue(states[case]['geometry_executed'])
+        self.assertEqual(states[case]['contract']['inventory_sha256'],contract['inventory_sha256'])
+        self.assertEqual(states[case]['status'],'structural_candidate')
+
+    def test_bound_unsupported_requirement_stops_before_any_plan(self):
+        raw=self.bound_inventory()
+        raw['requirements'].append(dict(raw['requirements'][1],id='light',predicate='capability',
+            kind='visual',value='emission',mode='appearance',basis='explicit'))
+        def model(case,stage,attempt,context,folder):
+            self.assertEqual(stage,'extract');return raw,{}
+        case=run.CASES[0]
+        states=run.execute(self.items(),self.folder,model,renderer=lambda _:None,case_ids=(case,))
+        self.assertEqual(states[case]['status'],'unsupported_before_planning')
+        self.assertEqual(states[case]['attempts'],[])
+        self.assertFalse(states[case]['geometry_executed'])
+        self.assertEqual(states[case]['admission']['blocking'][0]['id'],'light')
+
     def test_gate_precedes_builder(self):
         c=inventory();p=run.compact.pack(proposal(),c,bindings()[:-1]);builder=Mock(side_effect=AssertionError('must not build'))
         result,_=run.evaluate_candidate(p,c,self.folder,'test',builder=builder)

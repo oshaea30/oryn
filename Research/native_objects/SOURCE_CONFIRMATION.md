@@ -40,3 +40,8 @@ A local spending-policy or funding/transport failure stops further dispatch. No
 paid model judge, GPU call, geometry execution, Quest promotion or generated-output
 repair belongs to this batch. Frozen code/prompt/schema hashes, exact token counts,
 usage, latency and admission outcomes are recorded with results.
+
+## Result
+
+Completed; see the [measured confirmation result](MEANING_CONFIRMATION_RESULT.md).
+The frozen rules above remain unchanged.

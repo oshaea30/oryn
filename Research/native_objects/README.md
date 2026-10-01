@@ -51,15 +51,21 @@ tests that gap without changing the failed Cube/PartCrafter decisions.
 
 ## Current interpretation correction
 
-[Meaning 005](MEANING_RESULT.md) separates appearance, structure, behavior and
-verified claims. Four of seven initial cases met the frozen interpretation checks;
-three were rejected. General source-segment references and typed capability names
-fix the observed interface defects locally. A paired live confirmation exhausted
-its output allowance and remains unconfirmed. Cost $0.129625; 107 targeted test
-executions pass. No geometry expansion or product promotion. The user authorized a $6 shared daily limit on 2026-10-01.
-[Separate confirmation](SOURCE_CONFIRMATION.md) is now authorized within a $0.15
-batch and the unchanged $5 aggregate research ceiling.
-[Protocol](MEANING_EXPERIMENT.md) · [Evidence](results/meaning-005.json).
+[Meaning 006–007](MEANING_CONFIRMATION_RESULT.md) confirms source-bound, typed
+component references across seven frozen interpretation cases: 7/7 complete responses
+pass the original limited assertions. The lamp preserves seed/suspension/inside;
+static controls, requested motion and evidence-dependent claims remain distinct.
+Unsupported spatial relationships and effects block planning instead of disappearing.
+The corrected inventory enters the existing planning gate; unchanged live lamp/drone
+outputs also pass a zero-cost replay that stops before planning as required.
+
+This is not proof of lossless understanding or working general objects. Static-pose
+representation still varies, and the drone retains spatial requirements with no
+checkable adapter. Next: a bounded, cross-object spatial-intent bridge, keeping the
+geometry executor unchanged until requirements can be honored. 196 targeted test
+executions pass. Additional API estimate $0.152625, no new uncertain reservations or
+GPU spend. User-authorized shared daily limit $6; aggregate research ceiling $5.
+[Earlier interpretation failures](MEANING_RESULT.md) remain retained.
 
 ## Completed request-to-requirements experiment
 

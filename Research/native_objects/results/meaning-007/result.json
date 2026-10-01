@@ -1,0 +1,292 @@
+{
+  "experiment": "meaning-007",
+  "cases": [
+    {
+      "case": "contrast_static",
+      "geometry_executed": false,
+      "status": "interpreted",
+      "planning_allowed": true,
+      "predeclared_checks_passed": true,
+      "blocking": [],
+      "billing": {
+        "operation_id": "4a8cffeb2417284cda0a863434222dbc",
+        "status": "completed",
+        "incomplete_details": null,
+        "usage": {
+          "input_tokens": 2051,
+          "input_tokens_details": {
+            "cache_write_tokens": 2048,
+            "cached_tokens": 0
+          },
+          "output_tokens": 790,
+          "output_tokens_details": {
+            "reasoning_tokens": 259
+          },
+          "total_tokens": 2841
+        },
+        "calculated_cost_nanos": 13027500,
+        "dispatch_seconds": 8.309168208041228
+      },
+      "elapsed_seconds": 8.64521899993997
+    },
+    {
+      "case": "contrast_motion",
+      "geometry_executed": false,
+      "status": "interpreted",
+      "planning_allowed": false,
+      "predeclared_checks_passed": true,
+      "blocking": [
+        {
+          "id": "r8",
+          "obligation": "required",
+          "mode": "structure",
+          "basis": "explicit",
+          "reason": "No deterministic adapter implements this requirement."
+        },
+        {
+          "id": "r12",
+          "obligation": "required",
+          "mode": "behavior",
+          "basis": "explicit",
+          "reason": "Runtime capability is not implemented: animate"
+        },
+        {
+          "id": "r13",
+          "obligation": "required",
+          "mode": "behavior",
+          "basis": "explicit",
+          "reason": "No deterministic adapter implements this requirement."
+        },
+        {
+          "id": "r14",
+          "obligation": "required",
+          "mode": "behavior",
+          "basis": "explicit",
+          "reason": "No deterministic adapter implements this requirement."
+        }
+      ],
+      "billing": {
+        "operation_id": "712359f1649f8bee5e2a7d660443744e",
+        "status": "completed",
+        "incomplete_details": null,
+        "usage": {
+          "input_tokens": 2063,
+          "input_tokens_details": {
+            "cache_write_tokens": 222,
+            "cached_tokens": 1838
+          },
+          "output_tokens": 941,
+          "output_tokens_details": {
+            "reasoning_tokens": 248
+          },
+          "total_tokens": 3004
+        },
+        "calculated_cost_nanos": 14567500,
+        "dispatch_seconds": 9.540036167018116
+      },
+      "elapsed_seconds": 9.808869667002
+    },
+    {
+      "case": "contrast_verification",
+      "geometry_executed": false,
+      "status": "interpreted",
+      "planning_allowed": false,
+      "predeclared_checks_passed": true,
+      "blocking": [
+        {
+          "id": "r10",
+          "obligation": "evidence_required",
+          "mode": "physical_verification",
+          "basis": "explicit",
+          "reason": "Matching evidence is not supplied."
+        }
+      ],
+      "billing": {
+        "operation_id": "1a72d4e6c9cd101b1f7c77d4ff3346c2",
+        "status": "completed",
+        "incomplete_details": null,
+        "usage": {
+          "input_tokens": 2061,
+          "input_tokens_details": {
+            "cache_write_tokens": 220,
+            "cached_tokens": 1838
+          },
+          "output_tokens": 764,
+          "output_tokens_details": {
+            "reasoning_tokens": 199
+          },
+          "total_tokens": 2825
+        },
+        "calculated_cost_nanos": 12792500,
+        "dispatch_seconds": 8.816856540972367
+      },
+      "elapsed_seconds": 9.020591499982402
+    },
+    {
+      "case": "original_lamp",
+      "geometry_executed": false,
+      "status": "interpreted",
+      "planning_allowed": false,
+      "predeclared_checks_passed": true,
+      "blocking": [
+        {
+          "id": "r16",
+          "obligation": "required",
+          "mode": "appearance",
+          "basis": "explicit",
+          "reason": "Runtime capability is not implemented: emission"
+        }
+      ],
+      "billing": {
+        "operation_id": "714df21522aa13d2024eef50c387e544",
+        "status": "completed",
+        "incomplete_details": null,
+        "usage": {
+          "input_tokens": 2091,
+          "input_tokens_details": {
+            "cache_write_tokens": 2088,
+            "cached_tokens": 0
+          },
+          "output_tokens": 1354,
+          "output_tokens_details": {
+            "reasoning_tokens": 516
+          },
+          "total_tokens": 3445
+        },
+        "calculated_cost_nanos": 18767500,
+        "dispatch_seconds": 14.537962541915476
+      },
+      "elapsed_seconds": 14.73968366603367
+    },
+    {
+      "case": "original_drone",
+      "geometry_executed": false,
+      "status": "interpreted",
+      "planning_allowed": false,
+      "predeclared_checks_passed": true,
+      "blocking": [
+        {
+          "id": "r18",
+          "obligation": "required",
+          "mode": "structure",
+          "basis": "inferred",
+          "reason": "No deterministic adapter implements this requirement."
+        },
+        {
+          "id": "r19",
+          "obligation": "required",
+          "mode": "structure",
+          "basis": "inferred",
+          "reason": "No deterministic adapter implements this requirement."
+        },
+        {
+          "id": "r20",
+          "obligation": "required",
+          "mode": "structure",
+          "basis": "inferred",
+          "reason": "No deterministic adapter implements this requirement."
+        }
+      ],
+      "billing": {
+        "operation_id": "ffbda17ff70f13c6ef6a9893db1802b2",
+        "status": "completed",
+        "incomplete_details": null,
+        "usage": {
+          "input_tokens": 2040,
+          "input_tokens_details": {
+            "cache_write_tokens": 2037,
+            "cached_tokens": 0
+          },
+          "output_tokens": 1360,
+          "output_tokens_details": {
+            "reasoning_tokens": 242
+          },
+          "total_tokens": 3400
+        },
+        "calculated_cost_nanos": 18700000,
+        "dispatch_seconds": 12.528740749927238
+      },
+      "elapsed_seconds": 12.78371870808769
+    },
+    {
+      "case": "static_controller",
+      "geometry_executed": false,
+      "status": "interpreted",
+      "planning_allowed": true,
+      "predeclared_checks_passed": true,
+      "blocking": [],
+      "billing": {
+        "operation_id": "789257360f406413aa94d2e37268ced4",
+        "status": "completed",
+        "incomplete_details": null,
+        "usage": {
+          "input_tokens": 2022,
+          "input_tokens_details": {
+            "cache_write_tokens": 2019,
+            "cached_tokens": 0
+          },
+          "output_tokens": 930,
+          "output_tokens_details": {
+            "reasoning_tokens": 268
+          },
+          "total_tokens": 2952
+        },
+        "calculated_cost_nanos": 14355000,
+        "dispatch_seconds": 10.23592304205522
+      },
+      "elapsed_seconds": 10.458503457950428
+    },
+    {
+      "case": "exact_identity",
+      "geometry_executed": false,
+      "status": "interpreted",
+      "planning_allowed": false,
+      "predeclared_checks_passed": true,
+      "blocking": [
+        {
+          "id": "r_exact_assembly",
+          "obligation": "evidence_required",
+          "mode": "identity",
+          "basis": "explicit",
+          "reason": "Matching evidence is not supplied."
+        },
+        {
+          "id": "r_exact_mounting",
+          "obligation": "evidence_required",
+          "mode": "identity",
+          "basis": "explicit",
+          "reason": "Matching evidence is not supplied."
+        },
+        {
+          "id": "r_verification_status",
+          "obligation": "required",
+          "mode": "behavior",
+          "basis": "explicit",
+          "reason": "No deterministic adapter implements this requirement."
+        }
+      ],
+      "billing": {
+        "operation_id": "a7c7671b12f117c3ffc0c06c563eca44",
+        "status": "completed",
+        "incomplete_details": null,
+        "usage": {
+          "input_tokens": 1968,
+          "input_tokens_details": {
+            "cache_write_tokens": 1965,
+            "cached_tokens": 0
+          },
+          "output_tokens": 776,
+          "output_tokens_details": {
+            "reasoning_tokens": 292
+          },
+          "total_tokens": 2744
+        },
+        "calculated_cost_nanos": 12680000,
+        "dispatch_seconds": 8.91143729200121
+      },
+      "elapsed_seconds": 9.113190624979325
+    }
+  ],
+  "native_generation_goal_passed": false,
+  "geometry_executed": false
+}

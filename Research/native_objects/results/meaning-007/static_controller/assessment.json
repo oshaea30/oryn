@@ -1,0 +1,49 @@
+{
+  "predeclared_checks_passed": true,
+  "checks": [
+    {
+      "kind": "required_interpretation",
+      "selector": {
+        "predicate": "capability",
+        "value": "geometric_explode"
+      },
+      "passed": true
+    },
+    {
+      "kind": "required_interpretation",
+      "selector": {
+        "mode": "structure",
+        "basis": "inferred",
+        "predicate_any": [
+          "inside",
+          "attached",
+          "connected",
+          "other"
+        ]
+      },
+      "passed": true
+    },
+    {
+      "kind": "forbidden_interpretation",
+      "selector": {
+        "mode": "physical_verification"
+      },
+      "passed": true
+    },
+    {
+      "kind": "forbidden_interpretation",
+      "selector": {
+        "predicate": "capability",
+        "value": "animate"
+      },
+      "passed": true
+    },
+    {
+      "kind": "waiver_preserved",
+      "domain": "motion",
+      "passed": true
+    }
+  ],
+  "meaning_fully_correct": "unassessed",
+  "scope": "Limited benchmark checks plus separate source review, not a semantic proof."
+}

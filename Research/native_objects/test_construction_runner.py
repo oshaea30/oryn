@@ -50,7 +50,7 @@ class RunnerTests(unittest.TestCase):
             r=self.sender(*args);r['status']='incomplete';return r
         r,cost=self.run_case(incomplete)
         with self.assertRaises(ValueError):parse(r)
-        self.assertEqual(self.ledger.get(cost['operation_id'])['outcome'],'incomplete')
+        self.assertEqual(self.ledger.get(cost['operation_id'])['outcome'],'invalid_response')
 
     def test_exact_gate_does_not_call_model(self):
         x=item();x['case_id']='exact-product';x['candidate']['plan']['fidelity']='exact_product'

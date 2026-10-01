@@ -69,7 +69,7 @@ def generate(item,ledger,key,chosen,counter=count_input,sender=send):
     try:incoming,outgoing,cost=settled_usage(result,q)
     except CommandError:ledger.uncertain(ident,halt=True);raise
     # Retain malformed/incomplete output as evidence too; caller validates, never rescues.
-    ledger.settle(ident,incoming,outgoing,cost,'completed' if result.get('status')=='completed' else 'incomplete')
+    ledger.settle(ident,incoming,outgoing,cost,'completed' if result.get('status')=='completed' else 'invalid_response')
     return result,{'operation_id':ident,'calculated_cost_nanos':cost,'invoice_cost_nanos':None,'body_sha256':digest(body)}
 
 

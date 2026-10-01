@@ -1,6 +1,7 @@
 """Bounded application-owned solid construction and independent visual feedback."""
 import argparse
 import base64
+import fcntl
 from copy import deepcopy
 import json
 import os
@@ -176,6 +177,8 @@ def main():
        'generator':chosen('construct'),'reviewer':chosen('review'),'instructions_sha256':digest(geom.INSTRUCTIONS),'schema_sha256':digest(geom.SCHEMA),'review_instructions_sha256':digest(REVIEW_INSTRUCTIONS),
        'case_requests':[{k:i[k] for k in ('case_id','request')} for i in items],'execute':args.execute,'baseline_negative':args.baseline})
     if not args.execute:print('Offline protocol only');return
+    lock=open(ROOT/'.oryn-usage'/('solid-002.lock'),'a')
+    fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
     ledger=UsageLedger();key=MacKeychain(account=b'openai-api-key').load()
     if not key:raise CommandError('Research connection missing')
     if args.baseline:
@@ -184,6 +187,9 @@ def main():
         shutil.copy2('Builds/NativeObjects/construction-heldout-run-001/heldout-001-fine/package.json',args.output/'package.json');render(args.output)
         review,billing=critique('baseline-negative',0,item,proposal,report,args.output,ledger,key)
         write(args.output/'result.json',{'review':review,'billing':billing,'expected':'Must not pass the known-incomplete baseline; this tests critique, not new generation.'});print(review['decision']);return
+    control=json.loads((ROOT/'Builds/NativeObjects/solid-review-control-002/review.json').read_text())
+    if control['decision']=='pass' or control['scores']['interfaces']>=2 or not any(i['severity']=='blocking' for i in control['issues']):
+        raise CommandError('Negative-control review did not detect missing interfaces; generation blocked')
     results=[]
     for item in items:
         results.append(run_case(item,args.output,ledger,key));write(args.output/'result.json',results)

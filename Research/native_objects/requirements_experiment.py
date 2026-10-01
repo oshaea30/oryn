@@ -11,6 +11,7 @@ import urllib.error
 import urllib.request
 from Research.native_objects import intent_requirements as intent
 from Research.native_objects import requirement_meaning as meaning
+from Research.native_objects import spatial_requirements as spatial
 from Research.native_objects import compact_construction as compact
 from Research.native_objects import assembly_connections as geometry
 from Research.native_objects import solid_experiment as prior
@@ -79,7 +80,7 @@ def request_model(case,stage,attempt,context,folder,ledger,key):
 
 def evaluate_candidate(raw,contract,folder,case,locked=None,builder=geometry.build,renderer=prior.render):
     plan=compact.expand(raw,contract)
-    gate=(meaning.coverage if contract.get('interpretation_version') else intent.coverage)(contract,plan,raw['bindings']);prior.write(folder/'coverage.json',gate)
+    gate=(spatial.coverage if 'spatial_rules' in contract else meaning.coverage if contract.get('interpretation_version') else intent.coverage)(contract,plan,raw['bindings']);prior.write(folder/'coverage.json',gate)
     prior.write(folder/'expanded.json',plan)
     if not gate['coverage_complete']:
         return {'status':'coverage_failed','geometry_executed':False,'feedback':{'coverage_errors':gate['errors']}},locked
@@ -91,6 +92,10 @@ def evaluate_candidate(raw,contract,folder,case,locked=None,builder=geometry.bui
     prior.write(folder/'assembly-lock.json',json.loads(frozen))
     prior.write(folder/'execution-started.json',{'coverage_complete':True,'geometry_allowed':True})
     before=time.perf_counter();pkg,report,compiled=builder(plan,roles,case,frozen)
+    if 'spatial_rules' in contract:
+        report['checks']+=spatial.measurements(contract,plan,raw['bindings'],compiled)
+        report['declared_relations_passed']=all(c['passed'] for c in report['checks'])
+        report['spatial_policy_sha256']=contract['spatial_policy_sha256']
     seconds=time.perf_counter()-before
     prior.write(folder/'relations.json',report);prior.write(folder/'compiled.json',compiled)
     # Existing inspectors consume the expanded proposal, not compact transport.
@@ -102,8 +107,9 @@ def evaluate_candidate(raw,contract,folder,case,locked=None,builder=geometry.bui
 
 
 def execute(items,output,model,renderer=prior.render,case_ids=CASES):
-    if len(set(case_ids))!=len(case_ids) or any(c not in CASES for c in case_ids):raise ValueError("Invalid case subset")
-    states={};order={i['case_id']:i for i in items};started=time.perf_counter()
+    order={i['case_id']:i for i in items}
+    if len(set(case_ids))!=len(case_ids) or any(c not in order for c in case_ids):raise ValueError("Invalid case subset")
+    states={};started=time.perf_counter()
     def save():prior.write(output/'result.json',{'cases':list(states.values()),'native_generation_goal_passed':False,'elapsed_seconds':time.perf_counter()-started})
     # All initial attempts precede repairs; one difficult case cannot consume the whole budget first.
     for case in case_ids:
@@ -118,10 +124,11 @@ def execute(items,output,model,renderer=prior.render,case_ids=CASES):
                 validator=meaning.validate
                 if any('source' in r for r in raw.get('requirements',[])):
                     validator=meaning.validate_source_output if 'entities' in raw else meaning.validate_bound_source_output
+            if 'spatial' in raw:validator=spatial.validate
             contract=validator(raw,item['request'],[c['name'] for c in p['components']]);prior.write(folder/'contract.json',contract)
             state.update(status='requirements_ready',extraction_billing=bill,contract=contract)
             if contract.get('interpretation_version'):
-                admission=meaning.preflight(contract);prior.write(folder/'admission.json',admission);state['admission']=admission
+                admission=(spatial.preflight if 'spatial_rules' in contract else meaning.preflight)(contract);prior.write(folder/'admission.json',admission);state['admission']=admission
                 if not admission['planning_allowed']:state['status']='unsupported_before_planning'
         except (prior.CommandError,ValueError,KeyError,TypeError) as e:state.update(status='extraction_failed',error=str(e))
         finally:state['extraction_seconds']=time.perf_counter()-before;save()
@@ -133,6 +140,8 @@ def execute(items,output,model,renderer=prior.render,case_ids=CASES):
             print('Plan '+case+' attempt '+str(attempt),flush=True)
             context={'original_request':state['request'],'requirements':state['contract']['inventory'],
                      'requirement_hash':state['contract']['inventory_sha256']}
+            if 'spatial_rules' in state['contract']:
+                context.update(spatial_rules=state['contract']['spatial_rules'],spatial_policy=spatial.POLICY)
             if attempt:context.update(previous_compact_plan=state.get('previous'),application_feedback=state.get('feedback'),locked_assembly=state.get('locked'))
             try:
                 raw,bill=model(case,'plan',attempt,context,folder);record.update(planning_seconds=time.perf_counter()-before,billing=bill)

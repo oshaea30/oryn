@@ -63,10 +63,16 @@ remain unsupported. No geometry or answer is injected to rescue a case. The
 supports these nested alternatives; schema conformance still does not prove meaning.
 
 One paired follow-up covers the failed motion/drone requests with the SAME frozen
-assertions and original role inputs. Medium reasoning, 2,560 output tokens, no
+assertions and original role inputs. Medium reasoning, 2,432 output tokens, no
 reviewer. Retain initial failures. Pairing and changed schema/prompt prevent a clean
 causal attribution; the controller is not independently rerun. Cumulative initial
 plus follow-up cost/reservations must remain under the SAME $0.13 cap and shared
 limits. No additional attempt follows an ambiguous or incomplete response. This is
 an explicit bounded protocol amendment after observed failures, not a claim that
 the first frozen seven-case run passed.
+
+The first follow-up admission at 2,560 output tokens was refused before dispatch:
+2,517 counted input tokens implied a $0.0318925 maximum reservation, above the
+remaining $0.0308725. Reducing the output ceiling to 2,432 makes the reservation
+$0.0306125. Preserve the refused admission record; no generated output was retried,
+and no spending ceiling was raised. Incomplete output still stops without retry.

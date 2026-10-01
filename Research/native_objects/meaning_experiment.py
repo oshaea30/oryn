@@ -114,7 +114,7 @@ def execute(output,model):
 
 def followup_spec():
     chosen=[c for c in CASES if c['id'] in FOLLOWUP_CASES]
-    policy=selected();policy['max_output_tokens']=2560
+    policy=selected();policy['max_output_tokens']=2432
     schema=meaning.construction.object_schema({c['id']:meaning.source_schema(c['request']) for c in chosen})
     content={'cases':[{k:c[k] for k in ('id','request','roles')}|{'source_units':meaning.source_units(c['request'])} for c in chosen]}
     body=prior.body(policy,meaning.SOURCE_INSTRUCTIONS,json.dumps(content),schema,'oryn_source_bound_interpretation')

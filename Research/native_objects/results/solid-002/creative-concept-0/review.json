@@ -1,0 +1,29 @@
+{
+  "decision": "revise",
+  "scores": {
+    "concept": 2,
+    "coherence": 1,
+    "role_geometry": 2,
+    "interfaces": 1,
+    "visual_finish": 2
+  },
+  "issues": [
+    {
+      "part_ids": [
+        "curled_leaf_shade",
+        "glowing_seed"
+      ],
+      "observation": "The seed sits at the leaf opening rather than convincingly inside its hollow. The supplied containment check also fails, reporting part of the seed outside the shade\u2019s convex envelope.",
+      "severity": "blocking"
+    },
+    {
+      "part_ids": [
+        "seed_suspension_strand",
+        "glowing_seed"
+      ],
+      "observation": "In the assembled views, the strand does not visibly connect to the seed, so the seed reads as floating rather than suspended.",
+      "severity": "blocking"
+    }
+  ],
+  "summary": "The curled-leaf lamp concept and individual pieces are recognizable, but the seed\u2019s placement and visible suspension need revision. The numeric containment check is failing."
+}

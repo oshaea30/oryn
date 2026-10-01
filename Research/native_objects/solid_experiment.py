@@ -8,6 +8,7 @@ import os
 from pathlib import Path
 import subprocess
 import time
+import urllib.error
 from Research.native_objects import construction_solid as geom
 from Research.native_objects.construction_experiment import (
     ROOT,write,send,parse,policy,quote_cost,settled_usage,digest,PRICE_EXPIRES,
@@ -90,8 +91,20 @@ def request_model(case,attempt,stage,p,request,folder,ledger,key):
       'price_version':p['price_version'],'input_tokens':tokens,'max_output_tokens':p['max_output_tokens'],
       'reserved_nanos':cost,'ceiling_nanos':p['ceiling_nanos'],'created':now,'expires':min(now+120,PRICE_EXPIRES)}
     ledger.create_quote(quote);ledger.reserve(ident,'developer',quote['fingerprint'],cost)
+    started=time.perf_counter()
     try:result=send(key,request)
-    except Exception:ledger.uncertain(ident);raise CommandError('Response unavailable; budget held, no retry') from None
+    except Exception as error:
+        ledger.uncertain(ident)
+        # Retain only bounded diagnostics, never exception text, URLs or headers.
+        cause=error.reason if isinstance(error,urllib.error.URLError) else error
+        category=('timeout' if isinstance(cause,TimeoutError) else
+                  'http_error' if isinstance(error,urllib.error.HTTPError) else
+                  'network_error' if isinstance(error,urllib.error.URLError) else
+                  'invalid_response' if isinstance(error,ValueError) else 'response_unavailable')
+        write(folder/(stage+'-failure.json'),{'category':category,
+              'dispatch_elapsed_seconds':time.perf_counter()-started,
+              'budget_reservation_held':True,'automatic_retry':False})
+        raise CommandError('Response unavailable; budget held, no retry') from None
     # Preserve response before parsing/validation. No credentials in request/result journals.
     write(folder/(stage+'-response.json'),result)
     try:incoming,outgoing,calculated=settled_usage(result,quote)

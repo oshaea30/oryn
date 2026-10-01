@@ -103,6 +103,15 @@ seconds with role plans replayed. No GPU rental or Quest import. Preserve this p
 structural-control evidence; the next unresolved decision concerns general interface
 geometry and omitted essential connections, not another successful-generator claim.
 
+The subsequent [solid construction and feedback experiment](Research/native_objects/SOLID_RESULT.md)
+added general boolean geometry and an application-owned review/correction loop.
+The lamp and sharpener each corrected a measured geometric failure automatically,
+but neither passed visual/semantic assembly review. Drone and speaker returned no
+retained response around the sender's 120-second limit; their geometry is unassessed,
+not failed. Completed usage estimate $0.4415 plus $0.25535 held for uncertain calls.
+No GPU or Quest run. This frozen batch is stopped; response diagnostics and interface
+observability precede further paid comparisons. No finished generator is established.
+
 Generation research is the active track. The product remains stable; answering,
 voice and motion-inference expansion are paused. Research output does not enter
 production automatically. The existing $5 research ceiling includes the prior run.

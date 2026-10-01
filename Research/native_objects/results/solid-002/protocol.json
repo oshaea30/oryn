@@ -1,0 +1,66 @@
+{
+  "id": "solid-002",
+  "maximum_attempts_per_case": 2,
+  "experiment_budget_nanos": 1350000000,
+  "generator": {
+    "provider": "openai",
+    "profile": "solid_research_construct",
+    "model": "gpt-6-sol",
+    "effort": "high",
+    "ceiling_nanos": 160000000,
+    "max_output_tokens": 12288,
+    "price_version": "openai-standard-text-2026-09-27-v1",
+    "rates": {
+      "input": 2000,
+      "cached": 200,
+      "cache_write": 2500,
+      "output": 10000
+    },
+    "price_expires": 1791072000,
+    "service_tier": "default"
+  },
+  "reviewer": {
+    "provider": "openai",
+    "profile": "solid_research_review",
+    "model": "gpt-6-sol",
+    "effort": "medium",
+    "ceiling_nanos": 50000000,
+    "max_output_tokens": 2048,
+    "price_version": "openai-standard-text-2026-09-27-v1",
+    "rates": {
+      "input": 2000,
+      "cached": 200,
+      "cache_write": 2500,
+      "output": 10000
+    },
+    "price_expires": 1791072000,
+    "service_tier": "default"
+  },
+  "instructions_sha256": "6aa4f4268e6223bd2f86a976a626c3e4e92504769032ca1d935ef53e0dfd160a",
+  "schema_sha256": "98334d47e3b8306897c033b8d545a86ae09b50c2f2c1a92ef06ed90f622b0fbe",
+  "review_instructions_sha256": "7d38cee8a45cfad59b70f1ab3abd12579d0bb9a37b5e3e802b4e5a1cf9589ab8",
+  "case_requests": [
+    {
+      "case_id": "generic-drone",
+      "request": "Show me a generic quadcopter drone I can explore and take apart into its major components."
+    },
+    {
+      "case_id": "generic-speaker",
+      "request": "Generate a generic portable Bluetooth speaker I can take apart to understand its main systems."
+    },
+    {
+      "case_id": "exact-product",
+      "request": "Show me the internal assembly of a JBL Flip 7, including how the battery is mounted."
+    },
+    {
+      "case_id": "creative-concept",
+      "request": "Create a desk lamp shaped like a curled leaf, with a glowing seed suspended inside. Let me inspect its main pieces; it does not need to be a buildable electrical product."
+    },
+    {
+      "case_id": "heldout-001",
+      "request": "Create a generic hand-cranked pencil sharpener I can take apart to understand its main pieces."
+    }
+  ],
+  "execute": true,
+  "baseline_negative": false
+}

@@ -1,0 +1,61 @@
+{
+  "review": {
+    "decision": "revise",
+    "scores": {
+      "concept": 1,
+      "coherence": 1,
+      "role_geometry": 1,
+      "interfaces": 0,
+      "visual_finish": 1
+    },
+    "issues": [
+      {
+        "part_ids": [
+          "crank",
+          "drive"
+        ],
+        "observation": "The crank appears offset from the plain drive cylinder, with no visible coupling between them.",
+        "severity": "blocking"
+      },
+      {
+        "part_ids": [
+          "drive",
+          "cutter",
+          "housing"
+        ],
+        "observation": "The drive sits outside the housing, while the cutter is inside; no shaft, opening, or other visible connection reaches the cutter.",
+        "severity": "blocking"
+      },
+      {
+        "part_ids": [
+          "guide",
+          "cutter",
+          "housing"
+        ],
+        "observation": "The guide appears to attach to a solid housing wall. No visible passage carries a pencil from the guide to the cutter.",
+        "severity": "blocking"
+      },
+      {
+        "part_ids": [
+          "cutter"
+        ],
+        "observation": "The cutter is represented mainly by a cylinder with one spiral strip, rather than clearly legible helical cutting geometry.",
+        "severity": "minor"
+      },
+      {
+        "part_ids": [
+          "drawer",
+          "housing"
+        ],
+        "observation": "The drawer is a removable open box, but the housing has no visible drawer opening or pull feature; its intended access is unclear.",
+        "severity": "minor"
+      }
+    ],
+    "summary": "The six proposed pieces are distinguishable and can be viewed apart, but the assembled geometry does not show the essential pencil path or a continuous crank-to-cutter drive. Passing numeric checks do not resolve those missing interfaces."
+  },
+  "billing": {
+    "calculated_cost_nanos": 13160000,
+    "operation_id": "89241beef607111ad30a8615e25828fb"
+  },
+  "expected": "Must not pass the known-incomplete baseline; this tests critique, not new generation."
+}

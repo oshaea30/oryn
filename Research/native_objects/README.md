@@ -49,6 +49,12 @@ an external geometry model; no GPU run was dispatched. It identified the gap bet
 role-group proposals and spatial construction. The following procedural experiment
 tests that gap without changing the failed Cube/PartCrafter decisions.
 
+## Completed solid construction and feedback experiment
+
+[Solid result 002](SOLID_RESULT.md) records two automatic numeric corrections, two
+missing responses, and no complete visual pass. See the [frozen protocol](SOLID_EXPERIMENT.md)
+and [retained evidence](results/solid-002.json). No manual geometry repairs or GPU rental.
+
 ## Completed procedural construction experiment
 
 [Construction 001](CONSTRUCTION_RESULT.md) ran one application-owned geometry policy

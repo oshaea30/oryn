@@ -1,0 +1,543 @@
+{
+  "assumptions": [
+    "This is a visual desk-lamp concept, not a buildable electrical product.",
+    "The warm-colored seed suggests a glow; no circuitry or emitted light is modeled.",
+    "The leaf opens toward +Z so its separate seed and suspension strand can be inspected."
+  ],
+  "limitations": [
+    "The proposed attachments describe fixed geometric contact, not structural strength or a working suspension.",
+    "The curled leaf and its hollow are sculptural approximations, not a reconstruction of a specific product."
+  ],
+  "parts": [
+    {
+      "id": "desk_base",
+      "role": "Desk base",
+      "parent": "",
+      "position": [
+        0,
+        0.035,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "rounded_box",
+          "size": [
+            0.31,
+            0.07,
+            0.255
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": [],
+          "operation": "add",
+          "radius": 0.029,
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.19,
+        0.22,
+        0.2
+      ]
+    },
+    {
+      "id": "stem_support",
+      "role": "Stem support",
+      "parent": "desk_base",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "loft",
+          "size": [
+            1,
+            1,
+            1
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": [
+            [
+              -0.07,
+              0.07,
+              0,
+              0.014,
+              0.013
+            ],
+            [
+              -0.095,
+              0.25,
+              0,
+              0.012,
+              0.012
+            ],
+            [
+              -0.075,
+              0.47,
+              -0.008,
+              0.013,
+              0.012
+            ],
+            [
+              -0.025,
+              0.66,
+              -0.006,
+              0.014,
+              0.013
+            ],
+            [
+              0,
+              0.75,
+              0,
+              0.014,
+              0.013
+            ]
+          ],
+          "operation": "add",
+          "radius": 0,
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.25,
+        0.34,
+        0.27
+      ]
+    },
+    {
+      "id": "curled_leaf_shade",
+      "role": "Curled leaf shade",
+      "parent": "stem_support",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "loft",
+          "size": [
+            1,
+            1,
+            1
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": [
+            [
+              0,
+              0.75,
+              0,
+              0.014,
+              0.013
+            ],
+            [
+              0.055,
+              0.82,
+              0,
+              0.095,
+              0.05
+            ],
+            [
+              0.09,
+              0.95,
+              0,
+              0.19,
+              0.1
+            ],
+            [
+              0.025,
+              1.09,
+              -0.045,
+              0.135,
+              0.082
+            ],
+            [
+              -0.035,
+              1.23,
+              -0.1,
+              0.008,
+              0.008
+            ]
+          ],
+          "operation": "add",
+          "radius": 0,
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "loft",
+          "size": [
+            1,
+            1,
+            1
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": [
+            [
+              0.055,
+              0.82,
+              0.065,
+              0.058,
+              0.07
+            ],
+            [
+              0.09,
+              0.95,
+              0.07,
+              0.155,
+              0.11
+            ],
+            [
+              0.025,
+              1.09,
+              0.07,
+              0.108,
+              0.11
+            ],
+            [
+              -0.004,
+              1.16,
+              0.065,
+              0.048,
+              0.085
+            ],
+            [
+              -0.015,
+              1.18,
+              0.06,
+              0.018,
+              0.03
+            ]
+          ],
+          "operation": "subtract",
+          "radius": 0,
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.31,
+        0.48,
+        0.34
+      ]
+    },
+    {
+      "id": "seed_suspension_strand",
+      "role": "Seed suspension strand",
+      "parent": "curled_leaf_shade",
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "loft",
+          "size": [
+            1,
+            1,
+            1
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": [
+            [
+              0.04,
+              1.025,
+              0.025,
+              0.003,
+              0.003
+            ],
+            [
+              0.035,
+              1.085,
+              0.03,
+              0.003,
+              0.003
+            ],
+            [
+              0,
+              1.15,
+              0.03,
+              0.003,
+              0.003
+            ],
+            [
+              -0.022,
+              1.2,
+              0,
+              0.003,
+              0.003
+            ],
+            [
+              -0.035,
+              1.23,
+              -0.092,
+              0.003,
+              0.003
+            ]
+          ],
+          "operation": "add",
+          "radius": 0,
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.66,
+        0.61,
+        0.42
+      ]
+    },
+    {
+      "id": "glowing_seed",
+      "role": "Glowing seed",
+      "parent": "seed_suspension_strand",
+      "position": [
+        0.04,
+        0.96,
+        0.025
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.08,
+            0.13,
+            0.07
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": [],
+          "operation": "add",
+          "radius": 0,
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        1,
+        0.76,
+        0.37
+      ]
+    }
+  ],
+  "mounts": [
+    {
+      "a": "desk_base",
+      "b": "stem_support",
+      "point_a": [
+        -0.07,
+        0.035,
+        0
+      ],
+      "point_b": [
+        -0.07,
+        0.07,
+        0
+      ]
+    },
+    {
+      "a": "stem_support",
+      "b": "curled_leaf_shade",
+      "point_a": [
+        0,
+        0.75,
+        0
+      ],
+      "point_b": [
+        0,
+        0.75,
+        0
+      ]
+    },
+    {
+      "a": "curled_leaf_shade",
+      "b": "seed_suspension_strand",
+      "point_a": [
+        -0.035,
+        1.23,
+        -0.092
+      ],
+      "point_b": [
+        -0.035,
+        1.23,
+        -0.092
+      ]
+    },
+    {
+      "a": "seed_suspension_strand",
+      "b": "glowing_seed",
+      "point_a": [
+        0.04,
+        1.025,
+        0.025
+      ],
+      "point_b": [
+        0,
+        0.065,
+        0
+      ]
+    }
+  ],
+  "containments": [
+    {
+      "outer": "curled_leaf_shade",
+      "inner": "glowing_seed",
+      "clearance": 0.005
+    }
+  ],
+  "clearances": [],
+  "symmetries": [],
+  "passages": [
+    {
+      "part": "curled_leaf_shade",
+      "start": [
+        0.08,
+        1.065,
+        0.25
+      ],
+      "end": [
+        0.08,
+        1.065,
+        -0.005
+      ],
+      "radius": 0.01,
+      "purpose": "Sightline through the leaf's front opening into its hollow interior."
+    }
+  ]
+}

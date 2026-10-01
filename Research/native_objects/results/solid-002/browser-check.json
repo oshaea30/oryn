@@ -1,0 +1,30 @@
+{
+  "records": [
+    {
+      "entry": "creative-concept-0",
+      "parts": 5,
+      "selection_and_explosion": true,
+      "motion_disabled": true
+    },
+    {
+      "entry": "creative-concept-1",
+      "parts": 5,
+      "selection_and_explosion": true,
+      "motion_disabled": true
+    },
+    {
+      "entry": "heldout-001-0",
+      "parts": 6,
+      "selection_and_explosion": true,
+      "motion_disabled": true
+    },
+    {
+      "entry": "heldout-001-1",
+      "parts": 6,
+      "selection_and_explosion": true,
+      "motion_disabled": true
+    }
+  ],
+  "errors": [],
+  "reset": true
+}

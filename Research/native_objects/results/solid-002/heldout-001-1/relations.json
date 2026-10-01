@@ -1,0 +1,345 @@
+{
+  "declared_relations_passed": true,
+  "checks": [
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "housing",
+        "b": "pencil_guide",
+        "point_a": [
+          0.093,
+          0.05,
+          0.18
+        ],
+        "point_b": [
+          0.058,
+          0.004,
+          0
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 0.0,
+        "surface_distances_m": [
+          7.152557379708213e-09,
+          7.152557379708213e-09
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "housing",
+        "b": "shavings_drawer",
+        "point_a": [
+          0,
+          -0.142,
+          0
+        ],
+        "point_b": [
+          0,
+          -0.042,
+          -0.09
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 2.7755575615628914e-17,
+        "surface_distances_m": [
+          6.079673736669733e-09,
+          6.0796737644253085e-09
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "housing",
+        "b": "drive",
+        "point_a": [
+          0.1,
+          0.05,
+          -0.25
+        ],
+        "point_b": [
+          0.025,
+          -0.05,
+          0
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 0.0,
+        "surface_distances_m": [
+          0.0,
+          0.0
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "drive",
+        "b": "helical_cutter",
+        "point_a": [
+          0,
+          0.11,
+          0
+        ],
+        "point_b": [
+          0,
+          -0.055,
+          0
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 1.3877787807814457e-17,
+        "surface_distances_m": [
+          3.5762786759763188e-09,
+          3.5762786898541066e-09
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "drive",
+        "b": "crank",
+        "point_a": [
+          0,
+          -0.18,
+          0
+        ],
+        "point_b": [
+          -0.075,
+          0,
+          0.014
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 0.0,
+        "surface_distances_m": [
+          4.768371586472142e-09,
+          4.768371586472142e-09
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "housing"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "pencil_guide"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "shavings_drawer"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "drive"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "helical_cutter"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "crank"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "clearance",
+      "relation": {
+        "a": "shavings_drawer",
+        "b": "helical_cutter",
+        "minimum": 0.05
+      },
+      "passed": true,
+      "measurement": {
+        "gap_m": 0.051000000000000004,
+        "intersection_volume_m3": 0.0
+      }
+    },
+    {
+      "kind": "clearance",
+      "relation": {
+        "a": "pencil_guide",
+        "b": "helical_cutter",
+        "minimum": 0.005
+      },
+      "passed": true,
+      "measurement": {
+        "gap_m": 0.006,
+        "intersection_volume_m3": 0.0
+      }
+    },
+    {
+      "kind": "passage",
+      "relation": {
+        "part": "housing",
+        "start": [
+          0.035,
+          0.32,
+          0.29
+        ],
+        "end": [
+          0.035,
+          0.32,
+          0.084
+        ],
+        "radius": 0.021,
+        "purpose": "Pencil path through the front housing opening toward the cutter"
+      },
+      "passed": true,
+      "measurement": {
+        "blocked_volume_m3": 0.0,
+        "convex_envelope_probe_volume_m3": 0.00013148835712152376,
+        "scope": "declared finite cylindrical path only"
+      }
+    },
+    {
+      "kind": "passage",
+      "relation": {
+        "part": "pencil_guide",
+        "start": [
+          0.035,
+          0.32,
+          0.29
+        ],
+        "end": [
+          0.035,
+          0.32,
+          0.084
+        ],
+        "radius": 0.021,
+        "purpose": "Pencil entry through both ends of the guide bore"
+      },
+      "passed": true,
+      "measurement": {
+        "blocked_volume_m3": 0.0,
+        "convex_envelope_probe_volume_m3": 0.00024106198805612695,
+        "scope": "declared finite cylindrical path only"
+      }
+    },
+    {
+      "kind": "passage",
+      "relation": {
+        "part": "housing",
+        "start": [
+          0.075,
+          0.32,
+          -0.28
+        ],
+        "end": [
+          0.075,
+          0.32,
+          -0.12
+        ],
+        "radius": 0.013,
+        "purpose": "Shaft access through the rear housing wall and boss"
+      },
+      "passed": true,
+      "measurement": {
+        "blocked_volume_m3": 0.0,
+        "convex_envelope_probe_volume_m3": 6.823505305082854e-05,
+        "scope": "declared finite cylindrical path only"
+      }
+    },
+    {
+      "kind": "passage",
+      "relation": {
+        "part": "housing",
+        "start": [
+          0,
+          0.219,
+          0.25
+        ],
+        "end": [
+          0,
+          0.219,
+          0.12
+        ],
+        "radius": 0.003,
+        "purpose": "Front drawer opening above the installed tray lip"
+      },
+      "passed": true,
+      "measurement": {
+        "blocked_volume_m3": 0.0,
+        "convex_envelope_probe_volume_m3": 1.6771474122643366e-06,
+        "scope": "declared finite cylindrical path only"
+      }
+    },
+    {
+      "kind": "passage",
+      "relation": {
+        "part": "shavings_drawer",
+        "start": [
+          0.075,
+          0.245,
+          0.03
+        ],
+        "end": [
+          0.075,
+          0.165,
+          0.03
+        ],
+        "radius": 0.01,
+        "purpose": "Open-top path for shavings into the drawer"
+      },
+      "passed": true,
+      "measurement": {
+        "blocked_volume_m3": 0.0,
+        "convex_envelope_probe_volume_m3": 1.459739414378217e-05,
+        "scope": "declared finite cylindrical path only"
+      }
+    }
+  ],
+  "semantic_completeness": "not_assessed",
+  "global_collisions": "not_assessed",
+  "engineering_correctness": "not_assessed",
+  "native_generation_goal_passed": false
+}

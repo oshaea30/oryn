@@ -1,0 +1,423 @@
+{
+  "experiment": "solid-002",
+  "frozen_commit": "d51af37",
+  "result": "partial_progress_not_product_pass",
+  "native_generation_goal_passed": false,
+  "manual_output_repairs": 0,
+  "transport_retries": 0,
+  "cases": [
+    {
+      "case": "generic-drone",
+      "attempts": [
+        {
+          "attempt": 0,
+          "status": "failed",
+          "error": "Response unavailable; budget held, no retry"
+        }
+      ],
+      "elapsed_seconds": 120.49467574991286,
+      "estimated_experiment_spend_nanos": 140790000
+    },
+    {
+      "case": "generic-speaker",
+      "attempts": [
+        {
+          "attempt": 0,
+          "status": "failed",
+          "error": "Response unavailable; budget held, no retry"
+        }
+      ],
+      "elapsed_seconds": 120.31680225010496,
+      "estimated_experiment_spend_nanos": 268510000
+    },
+    {
+      "case": "exact-product",
+      "status": "blocked_evidence"
+    },
+    {
+      "case": "creative-concept",
+      "attempts": [
+        {
+          "attempt": 0,
+          "status": "reviewed",
+          "model_seconds": 91.23773604107555,
+          "construction_billing": {
+            "calculated_cost_nanos": 90047500,
+            "operation_id": "590aff0ae434feed8c40140b5b8f21b3"
+          },
+          "build_check_export_seconds": 0.026382916956208646,
+          "render_ready_seconds_since_case_start": 92.20523658394814,
+          "parts": 5,
+          "numeric_pass": false,
+          "review_seconds": 9.02127120795194,
+          "review_billing": {
+            "calculated_cost_nanos": 11020000,
+            "operation_id": "b6ae48b0eeead526589977587049d563"
+          },
+          "review": {
+            "decision": "revise",
+            "scores": {
+              "concept": 2,
+              "coherence": 1,
+              "role_geometry": 2,
+              "interfaces": 1,
+              "visual_finish": 2
+            },
+            "issues": [
+              {
+                "part_ids": [
+                  "curled_leaf_shade",
+                  "glowing_seed"
+                ],
+                "observation": "The seed sits at the leaf opening rather than convincingly inside its hollow. The supplied containment check also fails, reporting part of the seed outside the shade\u2019s convex envelope.",
+                "severity": "blocking"
+              },
+              {
+                "part_ids": [
+                  "seed_suspension_strand",
+                  "glowing_seed"
+                ],
+                "observation": "In the assembled views, the strand does not visibly connect to the seed, so the seed reads as floating rather than suspended.",
+                "severity": "blocking"
+              }
+            ],
+            "summary": "The curled-leaf lamp concept and individual pieces are recognizable, but the seed\u2019s placement and visible suspension need revision. The numeric containment check is failing."
+          }
+        },
+        {
+          "attempt": 1,
+          "status": "reviewed",
+          "model_seconds": 58.449290374992415,
+          "construction_billing": {
+            "calculated_cost_nanos": 64187500,
+            "operation_id": "c01fb94c46610470a19978e5bd4d5962"
+          },
+          "build_check_export_seconds": 0.024493000004440546,
+          "render_ready_seconds_since_case_start": 160.4921178750228,
+          "parts": 5,
+          "numeric_pass": true,
+          "review_seconds": 14.701572124962695,
+          "review_billing": {
+            "calculated_cost_nanos": 15130000,
+            "operation_id": "84d605564aa3469dc0548faa1144bdd5"
+          },
+          "review": {
+            "decision": "revise",
+            "scores": {
+              "concept": 2,
+              "coherence": 2,
+              "role_geometry": 2,
+              "interfaces": 1,
+              "visual_finish": 1
+            },
+            "issues": [
+              {
+                "part_ids": [
+                  "seed_suspension_strand",
+                  "glowing_seed"
+                ],
+                "observation": "The seed is visible inside the curled shade, but the assembled and exploded views do not clearly show the strand reaching and supporting it. It reads as floating rather than visibly suspended.",
+                "severity": "blocking"
+              },
+              {
+                "part_ids": [
+                  "glowing_seed",
+                  "curled_leaf_shade"
+                ],
+                "observation": "The seed is warm-colored, but there is little visible glow or illumination on the nearby leaf to distinguish it from a colored insert.",
+                "severity": "minor"
+              }
+            ],
+            "summary": "The leaf-shaped lamp and its main pieces are recognizable, and the numeric checks pass. Clarify the strand-to-seed connection and strengthen the seed\u2019s luminous appearance."
+          }
+        }
+      ],
+      "elapsed_seconds": 175.19441916700453,
+      "estimated_experiment_spend_nanos": 448895000
+    },
+    {
+      "case": "heldout-001",
+      "attempts": [
+        {
+          "attempt": 0,
+          "status": "reviewed",
+          "model_seconds": 103.16161233407911,
+          "construction_billing": {
+            "calculated_cost_nanos": 100542500,
+            "operation_id": "5f66ebf77bf24896fbf54593c7739ca6"
+          },
+          "build_check_export_seconds": 0.045274000032804906,
+          "render_ready_seconds_since_case_start": 104.02374333306216,
+          "parts": 6,
+          "numeric_pass": false,
+          "review_seconds": 11.609775249962695,
+          "review_billing": {
+            "calculated_cost_nanos": 14482500,
+            "operation_id": "816f789e3e4922e54b0d5211774fa0e9"
+          },
+          "review": {
+            "decision": "revise",
+            "scores": {
+              "concept": 2,
+              "coherence": 1,
+              "role_geometry": 1,
+              "interfaces": 0,
+              "visual_finish": 1
+            },
+            "issues": [
+              {
+                "part_ids": [
+                  "drive",
+                  "helical_cutter"
+                ],
+                "observation": "The views do not show the drive shaft reaching or engaging the cutter. Placing both in the housing does not establish the connection needed to explain how cranking turns the cutter.",
+                "severity": "blocking"
+              },
+              {
+                "part_ids": [
+                  "pencil_guide",
+                  "helical_cutter",
+                  "housing"
+                ],
+                "observation": "The guide has a visible bore, but the assembled views do not establish a clear pencil path from that bore to the cutter.",
+                "severity": "blocking"
+              },
+              {
+                "part_ids": [
+                  "shavings_drawer"
+                ],
+                "observation": "The reported connected-component check fails: the drawer has two solid islands. Its pull feature should be visibly attached to the removable tray.",
+                "severity": "blocking"
+              },
+              {
+                "part_ids": [
+                  "helical_cutter"
+                ],
+                "observation": "The isolated cutter reads chiefly as a capped cylinder with straight raised features; a helical cutting form is not clearly visible.",
+                "severity": "minor"
+              }
+            ],
+            "summary": "The open housing, guide, drawer and crank convey the intended take-apart sharpener concept, but the pencil-to-cutter and drive-to-cutter interfaces are not convincingly shown. The failed drawer check also prevents a pass."
+          }
+        },
+        {
+          "attempt": 1,
+          "status": "reviewed",
+          "model_seconds": 110.23064758395776,
+          "construction_billing": {
+            "calculated_cost_nanos": 112785000,
+            "operation_id": "2a2202be94a6a23db0281f5b18739043"
+          },
+          "build_check_export_seconds": 0.05185404093936086,
+          "render_ready_seconds_since_case_start": 226.9974688750226,
+          "parts": 6,
+          "numeric_pass": true,
+          "review_seconds": 20.038336375029758,
+          "review_billing": {
+            "calculated_cost_nanos": 20137500,
+            "operation_id": "bd00bcf57d43646ba53545053a0234b3"
+          },
+          "review": {
+            "decision": "revise",
+            "scores": {
+              "concept": 2,
+              "coherence": 1,
+              "role_geometry": 1,
+              "interfaces": 1,
+              "visual_finish": 2
+            },
+            "issues": [
+              {
+                "part_ids": [
+                  "drive",
+                  "helical_cutter",
+                  "crank"
+                ],
+                "observation": "The views do not show a continuous drive path from the crank through the drive shaft to the cutter. The shaft has smooth discs, but no visible coupling or engagement with the cutter.",
+                "severity": "blocking"
+              },
+              {
+                "part_ids": [
+                  "pencil_guide",
+                  "helical_cutter"
+                ],
+                "observation": "The guide has a clear entry bore, but the assembled views do not make clear where a pencil leaving it meets a cutting edge. This essential feed-to-cutter interface remains unresolved.",
+                "severity": "blocking"
+              },
+              {
+                "part_ids": [
+                  "helical_cutter"
+                ],
+                "observation": "The cutter reads mostly as a ribbed cylinder; distinct helical cutting edges are not apparent, making its intended role harder to understand when taken apart.",
+                "severity": "minor"
+              }
+            ],
+            "summary": "The open housing, removable drawer, guide and crank communicate the intended take-apart sharpener. Revise the visible drive coupling and pencil-to-cutter interface so the main pieces form a convincing assembly."
+          }
+        }
+      ],
+      "elapsed_seconds": 247.0367691250285,
+      "estimated_experiment_spend_nanos": 696842500
+    }
+  ],
+  "ledger_records": [
+    {
+      "case": "generic-drone",
+      "attempt": 0,
+      "stage": "construct",
+      "status": "uncertain",
+      "charged_nanos": 127630000,
+      "calculated_cost_nanos": null,
+      "created": 1790825843,
+      "finished": 1790825963
+    },
+    {
+      "case": "generic-speaker",
+      "attempt": 0,
+      "stage": "construct",
+      "status": "uncertain",
+      "charged_nanos": 127720000,
+      "calculated_cost_nanos": null,
+      "created": 1790825964,
+      "finished": 1790826084
+    },
+    {
+      "case": "creative-concept",
+      "attempt": 0,
+      "stage": "construct",
+      "status": "completed",
+      "charged_nanos": 90047500,
+      "calculated_cost_nanos": 90047500,
+      "created": 1790826084,
+      "finished": 1790826175
+    },
+    {
+      "case": "creative-concept",
+      "attempt": 0,
+      "stage": "review",
+      "status": "completed",
+      "charged_nanos": 11020000,
+      "calculated_cost_nanos": 11020000,
+      "created": 1790826176,
+      "finished": 1790826185
+    },
+    {
+      "case": "creative-concept",
+      "attempt": 1,
+      "stage": "construct",
+      "status": "completed",
+      "charged_nanos": 64187500,
+      "calculated_cost_nanos": 64187500,
+      "created": 1790826185,
+      "finished": 1790826243
+    },
+    {
+      "case": "creative-concept",
+      "attempt": 1,
+      "stage": "review",
+      "status": "completed",
+      "charged_nanos": 15130000,
+      "calculated_cost_nanos": 15130000,
+      "created": 1790826244,
+      "finished": 1790826259
+    },
+    {
+      "case": "heldout-001",
+      "attempt": 0,
+      "stage": "construct",
+      "status": "completed",
+      "charged_nanos": 100542500,
+      "calculated_cost_nanos": 100542500,
+      "created": 1790826259,
+      "finished": 1790826362
+    },
+    {
+      "case": "heldout-001",
+      "attempt": 0,
+      "stage": "review",
+      "status": "completed",
+      "charged_nanos": 14482500,
+      "calculated_cost_nanos": 14482500,
+      "created": 1790826363,
+      "finished": 1790826374
+    },
+    {
+      "case": "heldout-001",
+      "attempt": 1,
+      "stage": "construct",
+      "status": "completed",
+      "charged_nanos": 112785000,
+      "calculated_cost_nanos": 112785000,
+      "created": 1790826375,
+      "finished": 1790826485
+    },
+    {
+      "case": "heldout-001",
+      "attempt": 1,
+      "stage": "review",
+      "status": "completed",
+      "charged_nanos": 20137500,
+      "calculated_cost_nanos": 20137500,
+      "created": 1790826486,
+      "finished": 1790826506
+    },
+    {
+      "case": "baseline-negative",
+      "attempt": 0,
+      "stage": "review",
+      "status": "completed",
+      "charged_nanos": 13160000,
+      "calculated_cost_nanos": 13160000,
+      "created": 1790825793,
+      "finished": 1790825805
+    }
+  ],
+  "calculated_completed_cost_nanos": 441492500,
+  "uncertain_reserved_nanos": 255350000,
+  "charged_and_held_nanos": 696842500,
+  "invoice_cost": null,
+  "artifact_sha256": {
+    "creative-concept-0/relations.json": "11f976bd61ef5e5af23f343aaf18bc5a71acc84a82cfdcb53d4c2e3852bb5db1",
+    "creative-concept-0/inspection.png": "327e8b0c85a917762b949f4296229a7d66d75b97ce27242804af58f2c3e4bd61",
+    "creative-concept-0/construct-request.json": "4819bfd4728469ce50519bbcc9903f848809b6d9292c30dceaed5527c0134968",
+    "creative-concept-0/report.json": "c38ae82f5412cc800e8b71281b7ceed2ea1516b9f136b9f57d681714ef952513",
+    "creative-concept-0/package.json": "8880c562b625fe6a56ac6714458bc9b6efd6efc8ec39c1930798809ff4b81525",
+    "creative-concept-0/review-response.json": "823a7b3b026899f2128c83102c96f1ca1dd6c1fb4bc31b3adaff21abdaadb2be",
+    "creative-concept-0/construct-response.json": "645df00755b7d197dbb380c33a4a5172420edaab8f526dadd98713c0a4be7d2b",
+    "creative-concept-0/review-request.json": "d8c453ee30e812cbf3cc05bd3aa3e12fc1637c2048ed9c6657e2f14b6b46b652",
+    "creative-concept-0/review.json": "2ce6d9479c4cb6b61fbd9031009268597dd8822e8610328d036afb0e505cd175",
+    "creative-concept-0/proposal.json": "d92c9324060b116581dd90dc97cae33e730f42744f3f3872becfeaa05c8e1f7c",
+    "creative-concept-1/relations.json": "9c8228b0360193045630d9b35075bdf7bb41035d3da98d6e20750d4d4ca91875",
+    "creative-concept-1/inspection.png": "ef5e8c3382c374ca3b775320656917549a2385447a85ae2d836bbe92ec1e4c30",
+    "creative-concept-1/construct-request.json": "ddb8d2c183ddd0a221461e5df15530e3c1c301e95b0c9066b56f4823b8aeb78e",
+    "creative-concept-1/report.json": "c38ae82f5412cc800e8b71281b7ceed2ea1516b9f136b9f57d681714ef952513",
+    "creative-concept-1/package.json": "a708918f9b329f73986d24210ec45c5613dcaa26d9ac9c7527a71b2ee23d2e61",
+    "creative-concept-1/review-response.json": "a36cc1c73bba91d60a232ada9556e8addf343b5192f75e77581f96893b865efe",
+    "creative-concept-1/construct-response.json": "3e5036089c5c3de9958afad4ef3c69b14adaf26e1f37706a717eb461171bba60",
+    "creative-concept-1/review-request.json": "c8e5bc31e71474f44c8c3ecc206d89e4df0c7786d7035046ab076d9e147eb782",
+    "creative-concept-1/review.json": "f96b6d384669e0f1852b9debaf7fc70f8188f7eed33cd8a9204b79bb39639721",
+    "creative-concept-1/proposal.json": "aa7b9480eea06e732eaf9a391d3210b685236157a0edb1b9c02041813c60a56a",
+    "generic-drone-0/construct-request.json": "ffd88d05344bba428104a1632653307050bc2f182157338216c23c938e557441",
+    "generic-speaker-0/construct-request.json": "00e8345ec30a5ba097371044430df507803358f5e8303eb02bac65e3e29ebace",
+    "heldout-001-0/relations.json": "142d99f52bef262efe29e433bf7250ef87e6b4bbfb14594343258766569a42c7",
+    "heldout-001-0/inspection.png": "d1c711270e2a484ea59ccefcb56e8c20ffac2ef169ada0078dda517d27448bda",
+    "heldout-001-0/construct-request.json": "e91525365d831a8e842915b6f077125bfca17e6e95e413270933da3fcb3504a5",
+    "heldout-001-0/report.json": "0734396c5053cb6315c569417a4808784e6bfcc87d7dbf5e4d25b51619480d1c",
+    "heldout-001-0/package.json": "89aa0d60ca2b08b53e357d034eb80cee135d9e55619123029b824e11c0d14491",
+    "heldout-001-0/review-response.json": "bb5a0ebf05d35965f70ddbef51d74f9dfb62fbf667d4f946ae2c94929b7d954e",
+    "heldout-001-0/construct-response.json": "112981ea40c1d03b0e46b3b0928bc608e30728f6cbabd2b2d60760b4d679bfb7",
+    "heldout-001-0/review-request.json": "0df25170a6055274fa2400b4a9d5d04916520a548a8da3db94556f7a86cb4750",
+    "heldout-001-0/review.json": "02c4d44f836614a0e4a016613af475a2b61b726221e4757f1e0ced793e812677",
+    "heldout-001-0/proposal.json": "e6170bbace59567cf41e86b2f646c7205c57f4e085bc5cc0fe4adcb2ffe88845",
+    "heldout-001-1/relations.json": "cf1c19f918ecbb756f6e8bd5d570882690fa0f0b05c288d0be2a77a25c4faad2",
+    "heldout-001-1/inspection.png": "d83af8175008873bbd72c7dce9fdf0cb331ebfb0e48038d3619701305b351a5e",
+    "heldout-001-1/construct-request.json": "1009e7b28df31bebe9f5df878d7c4dc1f544d0b9cbf79d1d381a73555b59a6bf",
+    "heldout-001-1/report.json": "b3a2a2479241cd6a27e6795b9a1c06ae9ecddb71daa10f3f6f636d3240f7aa21",
+    "heldout-001-1/package.json": "2840524d56bb141287489931f7a4cf55997bbe53eeedb5d1fd7d62adf6304b5c",
+    "heldout-001-1/review-response.json": "0a3e715d0c5556299d52ca77e61f1e5c184faad4b408461166dfa570fb22637d",
+    "heldout-001-1/construct-response.json": "7278c85b2cee657c4a5a3d381c709a211d888b7c9668625914a0be5486e7736a",
+    "heldout-001-1/review-request.json": "d783ebbba47c316723e59d0b21677b9557cad3b9d4e316200c94e1daccb91aeb",
+    "heldout-001-1/review.json": "7214623de7d7d6ec0e82bba2c19aca567188ab2b6b19affb927956183d9aa6a1",
+    "heldout-001-1/proposal.json": "50ee14f1fe9ddcaa54da1f4a098dbd772d8be682b2ada87f3bfacbcaa6aa7d9e"
+  }
+}

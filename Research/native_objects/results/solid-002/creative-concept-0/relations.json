@@ -1,0 +1,202 @@
+{
+  "declared_relations_passed": false,
+  "checks": [
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "desk_base",
+        "b": "stem_support",
+        "point_a": [
+          -0.07,
+          0.035,
+          0
+        ],
+        "point_b": [
+          -0.07,
+          0.07,
+          0
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 0.0,
+        "surface_distances_m": [
+          2.9802321721561503e-10,
+          2.98023217215615e-10
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "stem_support",
+        "b": "curled_leaf_shade",
+        "point_a": [
+          0,
+          0.75,
+          0
+        ],
+        "point_b": [
+          0,
+          0.75,
+          0
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 0.0,
+        "surface_distances_m": [
+          0.0,
+          0.0
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "curled_leaf_shade",
+        "b": "seed_suspension_strand",
+        "point_a": [
+          -0.035,
+          1.23,
+          -0.092
+        ],
+        "point_b": [
+          -0.035,
+          1.23,
+          -0.092
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 0.0,
+        "surface_distances_m": [
+          1.2296912762991697e-08,
+          1.907348634588857e-08
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "mount",
+      "relation": {
+        "a": "seed_suspension_strand",
+        "b": "glowing_seed",
+        "point_a": [
+          0.04,
+          1.025,
+          0.025
+        ],
+        "point_b": [
+          0,
+          0.065,
+          0
+        ]
+      },
+      "passed": true,
+      "measurement": {
+        "anchor_gap_m": 0.0,
+        "surface_distances_m": [
+          2.3841857821338408e-08,
+          2.3861523899977105e-08
+        ],
+        "tolerance_m": 0.001
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "desk_base"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "stem_support"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "curled_leaf_shade"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "seed_suspension_strand"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "connected_component",
+      "relation": {
+        "part": "glowing_seed"
+      },
+      "passed": true,
+      "measurement": {
+        "solid_islands": 1
+      }
+    },
+    {
+      "kind": "containment",
+      "relation": {
+        "outer": "curled_leaf_shade",
+        "inner": "glowing_seed",
+        "clearance": 0.005
+      },
+      "passed": false,
+      "measurement": {
+        "intersection_volume_m3": 0.0,
+        "outside_convex_envelope_m3": 1.554773693755105e-05,
+        "minimum_surface_gap_m": 0.006,
+        "scope": "convex envelope and solid intersection, not semantic containment"
+      }
+    },
+    {
+      "kind": "passage",
+      "relation": {
+        "part": "curled_leaf_shade",
+        "start": [
+          0.08,
+          1.065,
+          0.25
+        ],
+        "end": [
+          0.08,
+          1.065,
+          -0.005
+        ],
+        "radius": 0.01,
+        "purpose": "Sightline through the leaf's front opening into its hollow interior."
+      },
+      "passed": true,
+      "measurement": {
+        "blocked_volume_m3": 0.0,
+        "convex_envelope_probe_volume_m3": 8.47059017617906e-06,
+        "scope": "declared finite cylindrical path only"
+      }
+    }
+  ],
+  "semantic_completeness": "not_assessed",
+  "global_collisions": "not_assessed",
+  "engineering_correctness": "not_assessed",
+  "native_generation_goal_passed": false
+}

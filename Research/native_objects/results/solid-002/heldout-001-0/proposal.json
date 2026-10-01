@@ -1,0 +1,893 @@
+{
+  "assumptions": [
+    "This is an educational, separable-looking assembly with an open-top housing so the main pieces remain visible.",
+    "The cutter has a stylized double-helical surface. The pencil enters from the front; the crank is at the rear."
+  ],
+  "limitations": [
+    "This is generic visual construction geometry, not a fabrication-ready or verified sharpener.",
+    "The shaft-to-housing contact locates the drive in the assembly; it does not define a working rotary bearing. Drawer retention, fasteners, cutting performance, and motion are not modeled."
+  ],
+  "parts": [
+    {
+      "id": "housing",
+      "role": "Outer housing",
+      "parent": "",
+      "position": [
+        0,
+        0.27,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "box_shell",
+          "size": [
+            0.36,
+            0.32,
+            0.36
+          ],
+          "wall": 0.018,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": [],
+          "operation": "add",
+          "radius": 0,
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "tube",
+          "size": [
+            0.064,
+            0.07,
+            0.064
+          ],
+          "wall": 0.015,
+          "offset": [
+            0.075,
+            0.05,
+            -0.215
+          ],
+          "rotation": [
+            90,
+            0,
+            0
+          ],
+          "sections": [],
+          "operation": "add",
+          "radius": 0,
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.064,
+            0.12,
+            0.064
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0.05,
+            0.17
+          ],
+          "rotation": [
+            90,
+            0,
+            0
+          ],
+          "sections": [],
+          "operation": "subtract",
+          "radius": 0,
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.034,
+            0.15,
+            0.034
+          ],
+          "wall": 0,
+          "offset": [
+            0.075,
+            0.05,
+            -0.183
+          ],
+          "rotation": [
+            90,
+            0,
+            0
+          ],
+          "sections": [],
+          "operation": "subtract",
+          "radius": 0,
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.302,
+            0.099,
+            0.09
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            -0.0955,
+            0.185
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": [],
+          "operation": "subtract",
+          "radius": 0,
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.48,
+        0.53,
+        0.55
+      ]
+    },
+    {
+      "id": "pencil_guide",
+      "role": "Pencil guide",
+      "parent": "housing",
+      "position": [
+        0,
+        0.32,
+        0.22
+      ],
+      "rotation": [
+        90,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "tube",
+          "size": [
+            0.104,
+            0.08,
+            0.104
+          ],
+          "wall": 0.02,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": [],
+          "operation": "add",
+          "radius": 0,
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.68,
+        0.7,
+        0.67
+      ]
+    },
+    {
+      "id": "shavings_drawer",
+      "role": "Shavings drawer",
+      "parent": "housing",
+      "position": [
+        0,
+        0.17,
+        0.09
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "box_shell",
+          "size": [
+            0.29,
+            0.084,
+            0.205
+          ],
+          "wall": 0.01,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": [],
+          "operation": "add",
+          "radius": 0,
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "rounded_box",
+          "size": [
+            0.08,
+            0.02,
+            0.017
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0.003,
+            0.111
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": [],
+          "operation": "add",
+          "radius": 0.005,
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.3,
+        0.37,
+        0.4
+      ]
+    },
+    {
+      "id": "drive",
+      "role": "Drive mechanism",
+      "parent": "housing",
+      "position": [
+        0.075,
+        0.32,
+        -0.215
+      ],
+      "rotation": [
+        90,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.034,
+            0.16,
+            0.034
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": [],
+          "operation": "add",
+          "radius": 0,
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.074,
+            0.015,
+            0.074
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            -0.055,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": [],
+          "operation": "add",
+          "radius": 0,
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.64,
+        0.66,
+        0.63
+      ]
+    },
+    {
+      "id": "helical_cutter",
+      "role": "Helical cutter assembly",
+      "parent": "drive",
+      "position": [
+        0.075,
+        0.32,
+        -0.035
+      ],
+      "rotation": [
+        90,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "cylinder",
+          "size": [
+            0.084,
+            0.2,
+            0.084
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": [],
+          "operation": "add",
+          "radius": 0,
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "loft",
+          "size": [
+            1,
+            1,
+            1
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": [
+            [
+              0.038,
+              -0.095,
+              0,
+              0.009,
+              0.009
+            ],
+            [
+              0.031,
+              -0.076,
+              0.022,
+              0.009,
+              0.009
+            ],
+            [
+              0.012,
+              -0.057,
+              0.036,
+              0.009,
+              0.009
+            ],
+            [
+              -0.012,
+              -0.038,
+              0.036,
+              0.009,
+              0.009
+            ],
+            [
+              -0.031,
+              -0.019,
+              0.022,
+              0.009,
+              0.009
+            ],
+            [
+              -0.038,
+              0,
+              0,
+              0.009,
+              0.009
+            ],
+            [
+              -0.031,
+              0.019,
+              -0.022,
+              0.009,
+              0.009
+            ],
+            [
+              -0.012,
+              0.038,
+              -0.036,
+              0.009,
+              0.009
+            ],
+            [
+              0.012,
+              0.057,
+              -0.036,
+              0.009,
+              0.009
+            ],
+            [
+              0.031,
+              0.076,
+              -0.022,
+              0.009,
+              0.009
+            ],
+            [
+              0.038,
+              0.095,
+              0,
+              0.009,
+              0.009
+            ]
+          ],
+          "operation": "add",
+          "radius": 0,
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "loft",
+          "size": [
+            1,
+            1,
+            1
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": [
+            [
+              -0.038,
+              -0.095,
+              0,
+              0.009,
+              0.009
+            ],
+            [
+              -0.031,
+              -0.076,
+              -0.022,
+              0.009,
+              0.009
+            ],
+            [
+              -0.012,
+              -0.057,
+              -0.036,
+              0.009,
+              0.009
+            ],
+            [
+              0.012,
+              -0.038,
+              -0.036,
+              0.009,
+              0.009
+            ],
+            [
+              0.031,
+              -0.019,
+              -0.022,
+              0.009,
+              0.009
+            ],
+            [
+              0.038,
+              0,
+              0,
+              0.009,
+              0.009
+            ],
+            [
+              0.031,
+              0.019,
+              0.022,
+              0.009,
+              0.009
+            ],
+            [
+              0.012,
+              0.038,
+              0.036,
+              0.009,
+              0.009
+            ],
+            [
+              -0.012,
+              0.057,
+              0.036,
+              0.009,
+              0.009
+            ],
+            [
+              -0.031,
+              0.076,
+              0.022,
+              0.009,
+              0.009
+            ],
+            [
+              -0.038,
+              0.095,
+              0,
+              0.009,
+              0.009
+            ]
+          ],
+          "operation": "add",
+          "radius": 0,
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.72,
+        0.73,
+        0.69
+      ]
+    },
+    {
+      "id": "crank",
+      "role": "Crank handle",
+      "parent": "drive",
+      "position": [
+        0.15,
+        0.32,
+        -0.309
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "forms": [
+        {
+          "kind": "rounded_box",
+          "size": [
+            0.17,
+            0.026,
+            0.028
+          ],
+          "wall": 0,
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "sections": [],
+          "operation": "add",
+          "radius": 0.007,
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "cylinder",
+          "size": [
+            0.036,
+            0.082,
+            0.036
+          ],
+          "wall": 0,
+          "offset": [
+            0.075,
+            0,
+            -0.055
+          ],
+          "rotation": [
+            90,
+            0,
+            0
+          ],
+          "sections": [],
+          "operation": "add",
+          "radius": 0,
+          "repeat": [
+            1,
+            1,
+            1
+          ],
+          "step": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "color": [
+        0.32,
+        0.36,
+        0.36
+      ]
+    }
+  ],
+  "mounts": [
+    {
+      "a": "housing",
+      "b": "pencil_guide",
+      "point_a": [
+        0.044,
+        0.05,
+        0.18
+      ],
+      "point_b": [
+        0.044,
+        -0.04,
+        0
+      ]
+    },
+    {
+      "a": "housing",
+      "b": "shavings_drawer",
+      "point_a": [
+        0,
+        -0.142,
+        0
+      ],
+      "point_b": [
+        0,
+        -0.042,
+        -0.09
+      ]
+    },
+    {
+      "a": "housing",
+      "b": "drive",
+      "point_a": [
+        0.092,
+        0.05,
+        -0.225
+      ],
+      "point_b": [
+        0.017,
+        -0.01,
+        0
+      ]
+    },
+    {
+      "a": "drive",
+      "b": "helical_cutter",
+      "point_a": [
+        0,
+        0.08,
+        0
+      ],
+      "point_b": [
+        0,
+        -0.1,
+        0
+      ]
+    },
+    {
+      "a": "drive",
+      "b": "crank",
+      "point_a": [
+        0,
+        -0.08,
+        0
+      ],
+      "point_b": [
+        -0.075,
+        0,
+        0.014
+      ]
+    }
+  ],
+  "containments": [],
+  "clearances": [
+    {
+      "a": "shavings_drawer",
+      "b": "helical_cutter",
+      "minimum": 0.05
+    }
+  ],
+  "symmetries": [],
+  "passages": [
+    {
+      "part": "housing",
+      "start": [
+        0,
+        0.32,
+        0.29
+      ],
+      "end": [
+        0,
+        0.32,
+        -0.08
+      ],
+      "radius": 0.024,
+      "purpose": "Proposed pencil entry through the guide and front housing wall toward the cutter"
+    },
+    {
+      "part": "housing",
+      "start": [
+        0,
+        0.219,
+        0.12
+      ],
+      "end": [
+        0,
+        0.219,
+        0.25
+      ],
+      "radius": 0.003,
+      "purpose": "Free space through the drawer opening above the drawer lip"
+    }
+  ]
+}

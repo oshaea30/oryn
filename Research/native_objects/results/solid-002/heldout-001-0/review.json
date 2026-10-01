@@ -1,0 +1,44 @@
+{
+  "decision": "revise",
+  "scores": {
+    "concept": 2,
+    "coherence": 1,
+    "role_geometry": 1,
+    "interfaces": 0,
+    "visual_finish": 1
+  },
+  "issues": [
+    {
+      "part_ids": [
+        "drive",
+        "helical_cutter"
+      ],
+      "observation": "The views do not show the drive shaft reaching or engaging the cutter. Placing both in the housing does not establish the connection needed to explain how cranking turns the cutter.",
+      "severity": "blocking"
+    },
+    {
+      "part_ids": [
+        "pencil_guide",
+        "helical_cutter",
+        "housing"
+      ],
+      "observation": "The guide has a visible bore, but the assembled views do not establish a clear pencil path from that bore to the cutter.",
+      "severity": "blocking"
+    },
+    {
+      "part_ids": [
+        "shavings_drawer"
+      ],
+      "observation": "The reported connected-component check fails: the drawer has two solid islands. Its pull feature should be visibly attached to the removable tray.",
+      "severity": "blocking"
+    },
+    {
+      "part_ids": [
+        "helical_cutter"
+      ],
+      "observation": "The isolated cutter reads chiefly as a capped cylinder with straight raised features; a helical cutting form is not clearly visible.",
+      "severity": "minor"
+    }
+  ],
+  "summary": "The open housing, guide, drawer and crank convey the intended take-apart sharpener concept, but the pencil-to-cutter and drive-to-cutter interfaces are not convincingly shown. The failed drawer check also prevents a pass."
+}

@@ -1,0 +1,29 @@
+{
+  "decision": "revise",
+  "scores": {
+    "concept": 2,
+    "coherence": 2,
+    "role_geometry": 2,
+    "interfaces": 1,
+    "visual_finish": 1
+  },
+  "issues": [
+    {
+      "part_ids": [
+        "seed_suspension_strand",
+        "glowing_seed"
+      ],
+      "observation": "The seed is visible inside the curled shade, but the assembled and exploded views do not clearly show the strand reaching and supporting it. It reads as floating rather than visibly suspended.",
+      "severity": "blocking"
+    },
+    {
+      "part_ids": [
+        "glowing_seed",
+        "curled_leaf_shade"
+      ],
+      "observation": "The seed is warm-colored, but there is little visible glow or illumination on the nearby leaf to distinguish it from a colored insert.",
+      "severity": "minor"
+    }
+  ],
+  "summary": "The leaf-shaped lamp and its main pieces are recognizable, and the numeric checks pass. Clarify the strand-to-seed connection and strengthen the seed\u2019s luminous appearance."
+}
